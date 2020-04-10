@@ -1,0 +1,181 @@
+#include "gameState.h"
+
+/**
+     * DoInit is responsible for initializing this State.  HandleCleanup will
+     * be called if mCleanup is true so Derived classes should always call
+     * IState::DoInit() first before initializing their assets.
+     */
+    void GameState::doInit(void)
+    {
+
+    }
+
+    /**
+     * ReInit is responsible for Reseting this state when the
+     * StateManager::ResetActiveState() method is called.  This way a Game
+     * State can be restarted without unloading and reloading the game assets
+     */
+    void GameState::reInit(void)
+    {
+
+    }
+
+    /**
+     * DeInit is responsible for marking this state to be cleaned up
+     */
+    void GameState::deInit(void)
+    {
+      
+    }
+
+    /**
+     * Pause is responsible for pausing this State since the Application
+     * may have lost focus or another State has become activate.
+     */
+    void GameState::pause(void)
+    {
+
+    }
+
+    /**
+     * Resume is responsible for resuming this State since the Application
+     * may have gained focus or the previous State was removed.
+     */
+    void GameState::resume(void)
+    {
+
+    }
+
+    /**
+     * HandleEvents is responsible for handling input events for this
+     * State when it is the active State.
+     * @param[in] theEvent to process from the App class Loop method
+     */
+    void GameState::handleEvents(sf::Event theEvent)
+    {
+
+    }
+
+    void GameState::handleUI(sf::RenderWindow& window, sf::Event theEvent)
+    {
+
+    }
+
+    /**
+     * UpdateFixed is responsible for handling all State fixed update needs for this
+     * State when it is the active State.
+     */
+    void GameState::updateFixed(void)
+    {
+
+    }
+
+    /**
+     * UpdateVariable is responsible for handling all State variable update needs for this
+     * State when it is the active State.
+     */
+    void GameState::updateVariable(void)
+    {
+
+    }
+
+    /**
+     * Draw is responsible for handling all Drawing needs for this State
+     * when it is the Active State.
+     */
+    void GameState::Draw(sf::RenderWindow& window)
+    {
+
+      window.setView(m_camera);
+      window.clear(sf::Color::White);
+
+      //Draw the skybox of the level
+      window.draw(m_backDrop.getDrawable());
+
+      //Draw the objects behind the player i.e. street lamps
+      for(int i = 0; i < m_background.size();i++)
+      {
+        window.draw(m_background[i]->getDrawable());
+      }
+
+      //Draw the stuff in the midground that the player can interact with
+      for(int i = 0; i < m_midGround.size();i++)
+      {
+
+        window.draw(m_midGround[i]->getDrawable());
+        window.draw(m_midGround[i]->getRigidBody()->drawAABB());
+
+      }
+
+      //Draw the objects in front of the player i.e. walls in thge foreground
+      for(int i = 0; i < m_foreground.size();i++)
+      {
+
+        window.draw(m_foreground[i]->getDrawable());
+
+      }
+
+      //Draw the user interface objects in front of everything else
+      for(int i = 0; i < m_stateUI.size();i++)
+      {
+
+        window.draw(m_stateUI[i]->getDrawable());
+
+      }
+
+      window.display();
+
+    }
+
+   /**
+     * HandleCleanup is responsible for performing any cleanup required before
+     * this State is removed.
+     */
+    void GameState::handleCleanup(void)
+    {
+
+    }
+
+    //getStateFlag determines whether or not the current state is
+    //asking to change to a different state
+    bool GameState::getStateFlag()
+    {
+
+      return m_changeStateFlag;
+
+    }
+
+    //Tell the state manager what state to change to
+    int GameState::getNextState()
+    {
+
+      return m_nextState;
+
+    }
+
+    //Set the flag to say the current state wants to change the state
+    void GameState::setStateFlag(bool value)
+    {
+
+      m_changeStateFlag = value;
+
+    }
+
+    //Determine if the current state is asking to quit the game
+    bool GameState::getQuitFlag()
+    {
+
+      return m_quitGame;
+
+    }
+
+    //Determine whether or not the state is active
+    bool GameState::isActive()
+    {
+      return isStateActive;
+    }
+
+    std::vector<GameObject*> GameState::getMidGround(void)
+    {
+      return m_midGround;
+    } 
