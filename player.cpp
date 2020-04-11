@@ -1,9 +1,10 @@
 #include "player.h"
+#include <iostream>
 
 void Player::start()
 {
 
-this->addAnimation(16, 2, 2, "./Assets/Images/knoxIdleSheet.png"); // Animation 0, idle state
+  this->addAnimation(16, 2, 2, "./Assets/Images/knoxIdleSheet.png"); // Animation 0, idle state
 
 }
 
@@ -45,6 +46,11 @@ void Player::update()
       this->getRigidBody()->addVelocity(sf::Vector2f(0,20));
   }
 
+  if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+  {
+      this->getRigidBody()->addVelocity(sf::Vector2f(0,-20));
+  }
+
   //Jump if the player hits space bar
   if(this->getHasJumped() == false && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
   {
@@ -63,6 +69,8 @@ void Player::update()
   {
     this->setHasJumped(false);
   }
+
+  //std::cout << this->getRigidBody()->getVertex(1).y <<std::endl;
 
   //Don't let the player go off the left side of the screen
   if(shapeXMin < 0 && sf::Keyboard::isKeyPressed(sf::Keyboard::A))

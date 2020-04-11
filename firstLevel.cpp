@@ -1,4 +1,5 @@
 #include "firstLevel.h"
+#include <chrono>
 
 /**
      * DoInit is responsible for initializing this State.  HandleCleanup will
@@ -15,12 +16,12 @@
 
       m_midGround = {
 
-      &m_player,
+      
       &m_ball,
-
+    &m_player,
       //Create the level floor
       &m_groundTile1,
-      &m_groundTile2,
+      /*&m_groundTile2,
       &m_groundTile3,
       &m_groundTile4,
       &m_groundTile5,
@@ -28,28 +29,34 @@
       &m_groundTile7,
       &m_groundTile8,
       &m_groundTile9,
-      &m_groundTile10
+      &m_groundTile10*/
       };
 
       m_camera.setSize(sf::Vector2f(512.f,256.f));
+      m_ball.objectInit(100,600,16,16,"./Assets/Images/ball.png");
+      m_player.objectInit(50.0,500.f,16,32,"./Assets/Images/knoxV1.png");
+      
+      m_backDrop.objectInit(1280.0/2,720.0/2,1280,720,"./Assets/Images/background.png");
 
-      m_player.objectInit(50.0,624.f,16,32,"./Assets/Images/knoxV1.png");
-      m_ball.objectInit(70,600,16,16,"./Assets/Images/ball.png");
-      m_backDrop.objectInit(1280.0/2,720.0/2.0,1280,720,"./Assets/Images/background.png",0);
-
-      m_groundTile1.objectInit(64,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile2.objectInit(192.f,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile3.objectInit(320.f,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile4.objectInit(448.f,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile5.objectInit(576,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile6.objectInit(704,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile7.objectInit(832,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile8.objectInit(960,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile9.objectInit(1080,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile10.objectInit(1208,m_sceneHeight-64,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile1.objectInit(64,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      /*m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile3.objectInit(320.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile4.objectInit(448.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile5.objectInit(576,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile6.objectInit(704,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile7.objectInit(832,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile8.objectInit(960,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile9.objectInit(1080,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile10.objectInit(1208,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);*/
 
       MessageManager::setMidGroundObjects(m_midGround);
 
+      dT = MessageManager::getDeltaTime();
+      accumulator = 0;
+
+      // In units seconds
+      variableClock.restart();
+      frameStart = variableClock.getElapsedTime().asMilliseconds() / 1000.0;
     }
 
     /**
@@ -120,22 +127,11 @@
         m_nextState = 0;
       }
 
-      std::vector<RigidBody*> rigidBodies(m_midGround.size());
-
       for(int i = 0; i < m_midGround.size();i++)
       {
-
-        m_midGround[i]->update();
-        rigidBodies[i] = m_midGround[i]->getRigidBody();
-
+        //m_midGround[i]->update();
       }
 
-      updatePhysics(rigidBodies,MessageManager::getDeltaTime());
-
-      for(int i = 0; i < m_midGround.size();i++)
-      {
-        m_midGround[i]->updatePosition();
-      }
     }
 
     /**
@@ -155,6 +151,42 @@
       if(m_player.getRigidBody()->getBoundingBox().min.x > m_sceneLength-cameraSize.x/2)
       {
         m_camera.setCenter(sf::Vector2f(m_sceneLength-cameraSize.x/2,m_sceneHeight - (cameraSize.y/2)));
+      }
+      
+      float currentTime = variableClock.getElapsedTime().asMilliseconds()/1000.0;
+      
+      accumulator += currentTime - frameStart;
+      frameStart = currentTime;
+      
+      std::vector<RigidBody*> rigidBodies(m_midGround.size());
+
+      for(int i = 0; i < m_midGround.size();i++)
+      {
+
+        rigidBodies[i] = m_midGround[i]->getRigidBody();
+
+      }
+
+      if(accumulator > 0.2)
+      {
+        accumulator = 0.2;
+      }
+
+      //Deal with physics updates
+      while(accumulator > dT)
+      {
+
+        updatePhysics(rigidBodies,dT);
+
+        accumulator -= dT;
+
+      }
+
+      const float alpha = accumulator / dT;
+
+      for(int i = 0; i < m_midGround.size();i++)
+      {
+        m_midGround[i]->updatePosition(alpha);
       }
 
     }

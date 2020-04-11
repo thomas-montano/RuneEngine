@@ -1,4 +1,5 @@
 #include "physicsEngine.h"
+#include <cmath>
 
 void updatePhysics(std::vector<RigidBody*> objects, float dT)
 {
@@ -103,10 +104,10 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
         currentCollision.objectTwo = boundingBoxes[i < j? j : i];
 
         //Generate each normal vector based on the AABB hit box
-        float normal1 = abs(box2.min.x - box1.max.x); // Left <-1,0>
-        float normal2 = abs(box2.max.x - box1.min.x); //Right <1,0>
-        float normal3 = abs(box2.min.y - box1.max.y); //Up <0,1>
-        float normal4 = abs(box2.max.y - box1.min.y); //Down <0,-1>
+        float normal1 = std::abs(box2.min.x - box1.max.x); // Left <-1,0>
+        float normal2 = std::abs(box2.max.x - box1.min.x); //Right <1,0>
+        float normal3 = std::abs(box2.min.y - box1.max.y); //Up <0,1>
+        float normal4 = std::abs(box2.max.y - box1.min.y); //Down <0,-1>
 
         //Determine the minimum axis of penetration
         float xNormal = normal1 < normal2 ? normal1 : normal2;
@@ -115,12 +116,12 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
         //Assign the appropriate normal vector based on the axis of least penetration
         if(xNormal < yNormal)
         {
-          currentCollision.depth = abs(xNormal);
+          currentCollision.depth = std::abs(xNormal);
           currentCollision.normalVector = normal1 < normal2 ? sf::Vector2f(-1,0):sf::Vector2f(1,0);
         }
         else if(xNormal > yNormal)
         {
-          currentCollision.depth = abs(yNormal);
+          currentCollision.depth = std::abs(yNormal);
           currentCollision.normalVector = normal3 < normal4 ? sf::Vector2f(0,1):sf::Vector2f(0,-1);
         }
         //Default to a zero vector normal
@@ -152,7 +153,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
   {
     collision currentCollision;
     sf::Vector2f normals[4];
-    float penetrations[4] = {0};
+    float penetrations[4] = {0.0};
 
     RigidBody object1 = *possibleCollisions[i].objectOne;
     RigidBody object2 = *possibleCollisions[i].objectTwo;
@@ -219,7 +220,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
       }
       else
       {
-        penetrations[j] = std::min(abs(minProjBox1 - maxProjBox2),abs(minProjBox2 - maxProjBox1));
+        penetrations[j] = std::min(std::abs(minProjBox1 - maxProjBox2),std::abs(minProjBox2 - maxProjBox1));
       }
 
       //Find the penetration depth and normal
@@ -231,7 +232,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
       if(penetrations[j] <= currentCollision.depth)
       {
         currentCollision.depth = penetrations[j];
-        currentCollision.normalVector = abs(minProjBox1 - maxProjBox2) < abs(minProjBox2 - maxProjBox1) ? sf::Vector2f(normals[j].x,-1*normals[j].y):sf::Vector2f(-1*normals[j].x,normals[j].y);
+        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? sf::Vector2f(normals[j].x,-1*normals[j].y):sf::Vector2f(-1*normals[j].x,normals[j].y);
       }
 
     }
@@ -239,7 +240,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
     //Check to see if the two objects are oriented similarly
     //If they are, its a face to face collision
     //Otherwise, its a vertex to face collision
-    if(abs(static_cast<int>(object1.getOrientation())%90 - static_cast<int>(object2.getOrientation())%90) < 1)
+    if(std::abs(static_cast<int>(object1.getOrientation())%90 - static_cast<int>(object2.getOrientation())%90) < 1)
     {
       currentCollision.contactVectorBox1 = sf::Vector2f(-1*(object2.getPosition().x - object1.getPosition().x + (0.5*object1.getHeight()*currentCollision.normalVector.x)), object2.getPosition().y - object1.getPosition().y - (0.5*object1.getHeight()*currentCollision.normalVector.y));
       currentCollision.contactVectorBox2 = currentCollision.contactVectorBox1;
@@ -280,7 +281,7 @@ void resolveCollisions(std::vector<collision> collisions)
     RigidBody* object1 = collisions[i].objectOne;
     RigidBody* object2 = collisions[i].objectTwo;
 
-    sf::Vector2f relativeV = sf::Vector2f(object2->getVelocity().x - object1->getVelocity().x,object2->getVelocity().y - object1->getVelocity().y);
+    sf::Vector2f relativeV = sf::Vector2f(object2->getVelocity().x - object1->getVelocity().x, object2->getVelocity().y - object1->getVelocity().y);
     sf::Vector2f tangent = sf::Vector2f(relativeV.x - dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.x, relativeV.y - dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.y);
     
     tangent = normalize(tangent);
@@ -289,6 +290,7 @@ void resolveCollisions(std::vector<collision> collisions)
 
     if(velAlongNormal > 0)
     {
+
       //Move the objects out of each other
       positionalCorrection(object1,object2,collisions[i].depth, collisions[i].normalVector);
 
@@ -304,7 +306,7 @@ void resolveCollisions(std::vector<collision> collisions)
 
       //Apply friction force
       sf::Vector2f frictionImpulse;
-      if(abs(jt) < j * mu)
+      if(std::abs(jt) < j * mu)
       {
         frictionImpulse = sf::Vector2f(jt*tangent.x, jt * tangent.y);
       }
@@ -314,6 +316,7 @@ void resolveCollisions(std::vector<collision> collisions)
         frictionImpulse = sf::Vector2f(jt*tangent.x*dynamicFriction, jt * tangent.y*dynamicFriction);
       }
       
+      //HandleFriction
       object1->addVelocity(sf::Vector2f(-1*object1->getInvMass()*frictionImpulse.x,-1*object1->getInvMass()*frictionImpulse.y));
       object2->addVelocity(sf::Vector2f(object2->getInvMass()*frictionImpulse.x,object2->getInvMass()*frictionImpulse.y));
 
@@ -338,23 +341,17 @@ void resolveCollisions(std::vector<collision> collisions)
 void positionalCorrection(RigidBody* object1, RigidBody* object2, float depth, sf::Vector2f normal)
 {
 
-  /*if(depth == 0)
-  {
-    depth = 1;
-  }*/
+  const float percent = .8; // usually 20% to 80%
+  const float slop = 0.01; // usually 0.01 to 0.1
 
-  depth++;
+  std::cout << depth << std::endl;
 
-  sf::Vector2f correction = sf::Vector2f(depth*normal.x, depth*normal.y);
+  float correctionFactor = (std::max( depth - slop, 0.0f ) / (object1->getInvMass() + object2->getInvMass())) * percent;
 
-  if(object1->getInvMass() != 0)
-  {
-    object1->addPosition(sf::Vector2f(correction.x, correction.y));
-  }
-  else
-  { 
-    object2->addPosition(sf::Vector2f(-1*correction.x, -1*correction.y));
-  }
+  sf::Vector2f correction = sf::Vector2f(normal.x*correctionFactor,normal.y*correctionFactor);
+  object1->addPosition(sf::Vector2f(object1->getInvMass() * correction.x,object1->getInvMass() * correction.y));
+  object2->addPosition(sf::Vector2f(-1*object2->getInvMass() * correction.x,-1*object2->getInvMass() * correction.y));
+
 }
 
 void printVector(sf::Vector2f vector)

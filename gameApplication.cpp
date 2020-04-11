@@ -113,7 +113,7 @@ void GameApplication::gameLoop(void)
     //Handle UI that needs reference to window
     m_currentState->handleUI(m_mainWindow, m_windowEvent);
 
-    //Update anything that doesnt depend on ticks
+    //Update anything that doesnt depend on ticks such as physics
     m_currentState->updateVariable();
 
     //Draw the current window

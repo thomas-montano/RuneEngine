@@ -139,7 +139,7 @@ sf::RectangleShape RigidBody::drawAABB(void)
     sf::RectangleShape AABB;
 
     AABB.setFillColor(sf::Color::Transparent);
-    AABB.setOutlineThickness(1);
+    AABB.setOutlineThickness(-.5);
     AABB.setOutlineColor(sf::Color::Red);
     AABB.setPosition(objectBody.boundingBox.min);
 
@@ -152,7 +152,7 @@ sf::RectangleShape RigidBody::drawAABB(void)
 void RigidBody::updateAABB(void)
 {
 
-    float rotation = abs(static_cast<int>(objectBody.angleOfRotation)) % 180;
+    float rotation = std::abs(static_cast<int>(objectBody.angleOfRotation)) % 180;
     float width = 2*objectBody.vertexes[1].x;
     float height = 2*objectBody.vertexes[1].y;
 
@@ -278,4 +278,14 @@ int RigidBody::getHeight(void)
 float RigidBody::getInvIntertia(void)
 {
     return objectBody.invInertia;
+}
+
+sf::Vector2f RigidBody::getPreviousPosition(void)
+{
+    return objectBody.oldPosition;
+}
+
+void RigidBody::setPreviousPosition(sf::Vector2f newPos)
+{
+    objectBody.oldPosition = newPos;
 }

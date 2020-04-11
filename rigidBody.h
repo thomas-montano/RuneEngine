@@ -18,6 +18,7 @@ struct body
     AABB boundingBox; //Broad phase Minimum bounding box
     float xPos; //X position in world coordinates
     float yPos; //Y Position in world coordinates
+    sf::Vector2f oldPosition; //Previous position in world coordinates
     sf::Vector2f velocity; //Velocity
     sf::RectangleShape box; //For drawing things
     float invMass; // 1/mass of the object
@@ -81,6 +82,9 @@ public:
 
     int getWidth(void);
     int getHeight(void);
+
+    sf::Vector2f getPreviousPosition(void);
+    void setPreviousPosition(sf::Vector2f);
 
 };
 

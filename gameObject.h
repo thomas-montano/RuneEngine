@@ -45,7 +45,7 @@ public:
   virtual void update();
   virtual void start();
 
-  virtual void updatePosition(void);
+  virtual void updatePosition(float alpha);
   virtual sf::Sprite getDrawable(void);
 
   virtual void setHasJumped(bool);

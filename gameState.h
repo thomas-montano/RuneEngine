@@ -24,6 +24,11 @@ protected:
   int m_nextState;
   bool m_quitGame = false;
 
+  sf::Clock variableClock;
+  float dT; //Time between variable update calls
+  float accumulator;
+  float frameStart;
+
   std::vector<GameObject*> m_background;
   std::vector<GameObject*> m_midGround;
   std::vector<GameObject*> m_foreground;

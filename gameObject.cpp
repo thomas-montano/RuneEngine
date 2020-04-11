@@ -12,11 +12,12 @@
 void GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
 {
 
-  m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
-
   m_objectSprite.setOrigin(sf::Vector2f(0.5*width,0.5*height));
 
+  m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
+  
   this->start();
+  updatePosition(0);
 
   //If the actual texture can't be loaded, load the error texture
   if(filePath != "" && !m_objectTexture.loadFromFile(filePath))
@@ -90,10 +91,16 @@ sf::Sprite GameObject::getDrawable(void)
 }
 
 //Move the object sprite to the current location
-void GameObject::updatePosition(void)
+void GameObject::updatePosition(float alpha)
 {
+  sf::Vector2f oldPosition = m_objectRigidBody.getPreviousPosition();
+  sf::Vector2f currentPos = m_objectRigidBody.getPosition();
 
-  m_objectSprite.setPosition(m_objectRigidBody.getPosition());
+  sf::Vector2f newPos = sf::Vector2f(oldPosition.x*alpha,oldPosition.y*alpha) + sf::Vector2f(currentPos.x*(1.0-alpha),currentPos.y*(1.0-alpha));
+
+  m_objectSprite.setPosition(newPos);
+
+  m_objectRigidBody.setPreviousPosition(currentPos);
 
 }
 

@@ -2,7 +2,7 @@
 #define OBJECT_ANIMATION_HEADER_DEFINED
 
 #include <SFML/Graphics.hpp>
-#include <string.h>
+#include <string>
 
 class ObjectAnimation
 {
