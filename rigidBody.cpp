@@ -265,12 +265,12 @@ float RigidBody::getOrientation(void)
     return objectBody.angleOfRotation;
 }
 
-int RigidBody::getWidth(void)
+float RigidBody::getWidth(void)
 {
     return 2*objectBody.vertexes[1].x;
 }
 
-int RigidBody::getHeight(void)
+float RigidBody::getHeight(void)
 {
     return 2*objectBody.vertexes[1].y;
 }

@@ -9,7 +9,7 @@ class Player : public GameObject
 {
 
 private:
-
+  bool hasJumped;
 public:
   virtual void update(void);
   virtual void start(void);

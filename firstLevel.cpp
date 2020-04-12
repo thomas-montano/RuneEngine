@@ -18,10 +18,10 @@
 
       
       &m_ball,
-    &m_player,
+      &m_player,
       //Create the level floor
       &m_groundTile1,
-      /*&m_groundTile2,
+      &m_groundTile2,
       &m_groundTile3,
       &m_groundTile4,
       &m_groundTile5,
@@ -29,7 +29,7 @@
       &m_groundTile7,
       &m_groundTile8,
       &m_groundTile9,
-      &m_groundTile10*/
+      &m_groundTile10
       };
 
       m_camera.setSize(sf::Vector2f(512.f,256.f));
@@ -39,7 +39,7 @@
       m_backDrop.objectInit(1280.0/2,720.0/2,1280,720,"./Assets/Images/background.png");
 
       m_groundTile1.objectInit(64,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
-      /*m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile3.objectInit(320.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile4.objectInit(448.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile5.objectInit(576,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
@@ -47,7 +47,7 @@
       m_groundTile7.objectInit(832,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile8.objectInit(960,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile9.objectInit(1080,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
-      m_groundTile10.objectInit(1208,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);*/
+      m_groundTile10.objectInit(1208,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
 
       MessageManager::setMidGroundObjects(m_midGround);
 
@@ -129,7 +129,7 @@
 
       for(int i = 0; i < m_midGround.size();i++)
       {
-        //m_midGround[i]->update();
+        m_midGround[i]->update();
       }
 
     }
@@ -140,6 +140,7 @@
      */
     void FirstLevel::updateVariable(void)
     {
+      //Handle camera movement
       sf::Vector2f cameraSize = m_camera.getSize();
       m_camera.setCenter(sf::Vector2f(m_player.getRigidBody()->getBoundingBox().min.x,m_sceneHeight - (cameraSize.y/2)));
 
@@ -177,7 +178,7 @@
       {
 
         updatePhysics(rigidBodies,dT);
-
+        std::cout << dT << std::endl;
         accumulator -= dT;
 
       }

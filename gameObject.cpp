@@ -15,9 +15,9 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
   m_objectSprite.setOrigin(sf::Vector2f(0.5*width,0.5*height));
 
   m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
-  
-  this->start();
-  updatePosition(0);
+
+  m_objectRigidBody.setPreviousPosition(sf::Vector2f(xPos,yPos));
+  updatePosition(1);
 
   //If the actual texture can't be loaded, load the error texture
   if(filePath != "" && !m_objectTexture.loadFromFile(filePath))
@@ -30,6 +30,8 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
   {
     m_objectSprite.setTexture(m_objectTexture);
   }
+
+  this->start();
 
 }
 
@@ -101,20 +103,6 @@ void GameObject::updatePosition(float alpha)
   m_objectSprite.setPosition(newPos);
 
   m_objectRigidBody.setPreviousPosition(currentPos);
-
-}
-
-void GameObject::setHasJumped(bool value)
-{
-
-  m_hasJumped = value;
-
-}
-
-bool GameObject::getHasJumped(void)
-{
-
-  return m_hasJumped;
 
 }
 

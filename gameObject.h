@@ -26,11 +26,8 @@ private:
   sf::Texture m_objectTexture; //Texture for the object
   sf::Sprite m_objectSprite; //Drawable sprite object
   std::vector<ObjectAnimation*> animations; //Animations to be played
-  //sf::Vector2f m_position;
 
   RigidBody m_objectRigidBody;
-
-  bool m_hasJumped;
 
   bool m_mirrorSprite;
 
@@ -47,10 +44,7 @@ public:
 
   virtual void updatePosition(float alpha);
   virtual sf::Sprite getDrawable(void);
-
-  virtual void setHasJumped(bool);
-  virtual bool getHasJumped(void);
-
+  
   virtual RigidBody* getRigidBody(void);
 
 };

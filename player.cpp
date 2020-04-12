@@ -16,10 +16,10 @@ void Player::update()
   sf::Vector2f moveVelocity;
   sf::RenderWindow* window = MessageManager::getWindow();
 
+  this->playAnimation(0);
+
   float shapeXMin = this->getRigidBody()->getBoundingBox().min.x;
   float shapeXMax = this->getRigidBody()->getBoundingBox().max.x;
-
-  this->playAnimation(0);
 
   //Flipping the sprite based on mouse position
   if(window->mapCoordsToPixel(sf::Vector2f(shapeXMin + (0.5)*(shapeXMax - shapeXMin),0) ).x > sf::Mouse::getPosition(*MessageManager::getWindow()).x)
@@ -52,10 +52,10 @@ void Player::update()
   }
 
   //Jump if the player hits space bar
-  if(this->getHasJumped() == false && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+  if(hasJumped == false && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
   {
 
-    this->setHasJumped(true);
+    //this->setHasJumped(true);
     moveVelocity.y = 200;
 
   }
@@ -67,15 +67,14 @@ void Player::update()
   //If the player is standing on the ground, let them jump again
   if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Space))// && areObjectsColliding(jumpObject,MessageManager::getMidGroundObjects()))
   {
-    this->setHasJumped(false);
+    //this->setHasJumped(false);
   }
 
-  //std::cout << this->getRigidBody()->getVertex(1).y <<std::endl;
-
   //Don't let the player go off the left side of the screen
-  if(shapeXMin < 0 && sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+  if(shapeXMin < 0)
   {
-    moveVelocity.x = 0;
+    this->getRigidBody()->setVelocity(sf::Vector2f(0,this->getRigidBody()->getVelocity().y));
+    this->getRigidBody()->setPosition(sf::Vector2f(0.501*this->getRigidBody()->getWidth(),this->getRigidBody()->getPosition().y));
   }
 
 }

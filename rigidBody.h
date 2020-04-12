@@ -23,10 +23,10 @@ struct body
     sf::RectangleShape box; //For drawing things
     float invMass; // 1/mass of the object
     float gravityFactor; //How much gravity does this object have
-    float restitution = 0; //How bouncy, between 0 and 1
+    float restitution = .3; //How bouncy, between 0 and 1
 
     float staticFriction = .4; //Coefficient of static friction
-    float dynamicFriction = .25; //Coefficient of dynamic friction
+    float dynamicFriction = .2; //Coefficient of dynamic friction
 
     float angleOfRotation; //Current angle of rotation
     float angularVelocity; //Rate of change of rotation
@@ -80,8 +80,8 @@ public:
 
     float getOrientation(void);
 
-    int getWidth(void);
-    int getHeight(void);
+    float getWidth(void);
+    float getHeight(void);
 
     sf::Vector2f getPreviousPosition(void);
     void setPreviousPosition(sf::Vector2f);
