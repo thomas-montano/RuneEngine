@@ -9,7 +9,7 @@
     void FirstLevel::doInit(void)
     {
 
-      testParticle = new Particles(sf::Vector2f(100,650), sf::Vector2f(0,20), sf::Color::Green, 100,sf::Vector2f(0,-5));
+      testParticle = new Particles(sf::Vector2f(100,650), sf::Vector2f(0,100), sf::Color::Green, 4,sf::Vector2f(0,-80));
 
       isStateActive = true;
 
@@ -138,6 +138,8 @@
       {
         m_midGround[i]->update();
       }
+
+      testParticle->update(MessageManager::getDeltaTime());
 
     }
 

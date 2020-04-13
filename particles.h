@@ -13,7 +13,8 @@ protected:
     sf::Vector2f m_pixelPosition;
     sf::Color m_pixelColor; //Color of all particles
     sf::Vector2f m_particleSpeed; //Rate at which particles travel
-    sf::RectangleShape m_particleSprite;
+    sf::Vertex m_particleSprite[4];
+    int m_timeExisted; //Time the pixel has existed in milliseconds
   };
 
 private:
@@ -26,8 +27,6 @@ private:
   sf::Vector2f m_gravity; //Influence particle velocities
   
   std::vector<particle> m_particles;
-
-  sf::Clock dissolutionClock;
 
 public:
   Particles(sf::Vector2f startPos,  sf::Vector2f initVel, sf::Color color, int dissolutionRate = 5, sf::Vector2f gravity = sf::Vector2f(0,-10));
