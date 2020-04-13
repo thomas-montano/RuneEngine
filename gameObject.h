@@ -27,8 +27,6 @@ private:
 
   RigidBody m_objectRigidBody;
 
-  std::vector<collision> involvedCollisions;
-
   bool m_mirrorSprite;
 
 public:
@@ -47,8 +45,6 @@ public:
   
   RigidBody* getRigidBody(void);
 
-  void clearCollisions(void);
-  void addCollision(collision);
   std::vector<collision> getCollisions(void);
 
 };

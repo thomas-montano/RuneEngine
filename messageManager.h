@@ -1,3 +1,15 @@
+/*
+
+  MessageManager
+
+  Class responsible for passing global information around the game
+  with static variables
+
+  Thomas Montano
+  3/2/20
+
+*/
+
 #ifndef MESSAGE_MANAGER_DEFINED
 #define MESSAGE_MANAGER_DEFINED
 

@@ -1,3 +1,14 @@
+/*
+
+  Player
+
+  Main game object controlled by the player
+
+  Thomas Montano
+  3/2/20
+
+*/
+
 #ifndef PLAYER_OBJECT_DEFINED
 #define PLAYER_OBJECT_DEFINED
 

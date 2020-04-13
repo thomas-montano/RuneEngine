@@ -9,7 +9,7 @@
     void FirstLevel::doInit(void)
     {
 
-      testParticle = new Particles(sf::Vector2f(100,650), sf::Vector2f(0,100), sf::Color::Green, 4,sf::Vector2f(0,-80));
+      testParticle = new ParticleEmitter(sf::Vector2f(100,450), sf::Vector2f(0,-100), sf::Color::Blue, 4,sf::Vector2f(0,-80));
 
       isStateActive = true;
 

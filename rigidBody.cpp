@@ -1,6 +1,5 @@
 #include "rigidBody.h"
 #include "math.h"
-#include <iostream>
 
 RigidBody::RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation)
 {
@@ -288,4 +287,19 @@ sf::Vector2f RigidBody::getPreviousPosition(void)
 void RigidBody::setPreviousPosition(sf::Vector2f newPos)
 {
     objectBody.oldPosition = newPos;
+}
+
+void RigidBody::clearCollisions(void)
+{
+  involvedCollisions.clear();
+}
+
+void RigidBody::addCollision(collision newCollision)
+{
+  involvedCollisions.push_back(newCollision);
+}
+
+std::vector<collision> RigidBody::getCollisions(void)
+{
+  return involvedCollisions;
 }

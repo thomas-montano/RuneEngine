@@ -53,15 +53,16 @@ void updatePhysics(std::vector<RigidBody*> objects, float dT)
   //Resolve the collision and apply physics
   resolveCollisions(definiteCollisions);  
 
+  for(int i = 0; i < objects.size();i++)
+  {
+    objects[i]->clearCollisions();
+  }
+
   //Tell the objects about the collisions they've been involved with
   for(int i = 0; i < definiteCollisions.size();i++)
   {
-    definiteCollisions[i].objectOne;
-  }
-
-  for(int i = 0; i < definiteCollisions.size();i++)
-  {
-    definiteCollisions[i].objectOne;
+    definiteCollisions[i].objectOne->addCollision(definiteCollisions[i]);
+    definiteCollisions[i].objectTwo->addCollision(definiteCollisions[i]);
   }
 
 }

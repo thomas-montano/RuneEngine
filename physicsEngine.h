@@ -1,3 +1,15 @@
+/*
+
+  PhysicsEngine
+
+  Function file responsible for broad and narrow phase detection and
+  collision response
+
+  Thomas Montano
+  3/2/20
+
+*/
+
 #ifndef PHYSICS_ENGINE_H
 #define PHYSICS_ENGINE_H
 
@@ -5,19 +17,7 @@
 #include <iostream>
 #include "rigidBody.h"
 #include <math.h>
-#include <algorithm>
 
-struct collision
-{
-
-    RigidBody* objectOne;
-    RigidBody* objectTwo;
-    sf::Vector2f normalVector;
-    sf::Vector2f contactVectorBox1;
-    sf::Vector2f contactVectorBox2;
-    float depth;
-
-};
 
 void updatePhysics(std::vector<RigidBody*> objects, float dT);
 std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes);

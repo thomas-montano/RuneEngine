@@ -1,3 +1,14 @@
+/*
+
+  MainMenu
+
+  This is the main menu screen and is displayed when game starts
+
+  Thomas Montano
+  4/13/20
+
+*/
+
 #ifndef MAINMENU_H_INCLUDED
 #define MAINMENU_H_INCLUDED
 
@@ -6,7 +17,6 @@
 #include "gameState.h"
 #include "gameObject.h"
 #include "gameUI.h"
-#include <iostream>
 
 class MainMenu : public GameState
 {

@@ -15,7 +15,6 @@ Thomas Montano
 #include "physicsEngine.h"
 #include "player.h"
 #include "gameObject.h"
-#include <iostream>
 
 class FirstLevel : public GameState
 {

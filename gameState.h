@@ -15,7 +15,7 @@
 #include "gameObject.h"
 #include "gameUI.h"
 #include "messageManager.h"
-#include "particles.h"
+#include "particleEmitter.h"
 
 class GameState
 {
@@ -36,7 +36,7 @@ protected:
   std::vector<GameObject*> m_foreground;
   std::vector<GameUI*> m_stateUI;
 
-  Particles* testParticle;
+  ParticleEmitter* testParticle;
 
   GameObject m_backDrop;
   sf::View m_camera;

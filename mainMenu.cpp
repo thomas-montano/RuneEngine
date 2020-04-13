@@ -9,7 +9,7 @@
     void MainMenu::doInit(void)
     {
 
-      testParticle = new Particles(sf::Vector2f(100,550), sf::Vector2f(3,3), sf::Color::Green);
+      testParticle = new ParticleEmitter(sf::Vector2f(100,550), sf::Vector2f(3,3), sf::Color::Green);
 
       isStateActive = true;
 

@@ -1,10 +1,22 @@
+/*
+
+  ParticleEmitter
+
+  Class responsible for creating particle emitters and managing
+  the creation of particles
+
+  Thomas Montano
+  3/2/20
+
+*/
+
 #ifndef PARTICLES_H_DEFINED
 #define PARTICLES_H_DEFINED
 
 #include <SFML/Graphics.hpp>
 #include "messageManager.h"
 
-class Particles
+class ParticleEmitter
 {
 
 protected:
@@ -18,6 +30,8 @@ protected:
   };
 
 private:
+
+  const int PARTICLELIMIT = 1000;
   int m_dissolutionRate; //Rate at which particles disappear
 
   sf::Color m_pixelBaseColor; //Starting color, can apply modifiers later
@@ -29,7 +43,7 @@ private:
   std::vector<particle> m_particles;
 
 public:
-  Particles(sf::Vector2f startPos,  sf::Vector2f initVel, sf::Color color, int dissolutionRate = 5, sf::Vector2f gravity = sf::Vector2f(0,-10));
+  ParticleEmitter(sf::Vector2f startPos,  sf::Vector2f initVel, sf::Color color, int dissolutionRate = 5, sf::Vector2f gravity = sf::Vector2f(0,-10));
   
   void setDissolutionRate(int rate);
   void setGravity(sf::Vector2f gravity);

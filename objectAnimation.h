@@ -1,3 +1,15 @@
+/*
+
+  ObjectAnimation
+
+  Class responsible for managing sprite animations and 
+  updating which frame of the animation is to be shown
+
+  Thomas Montano
+  4/13/20
+
+*/
+
 #ifndef OBJECT_ANIMATION_HEADER_DEFINED
 #define OBJECT_ANIMATION_HEADER_DEFINED
 

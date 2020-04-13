@@ -1,7 +1,6 @@
-#include "particles.h"
-#include <iostream>
+#include "particleEmitter.h"
 
-Particles::Particles(sf::Vector2f startPos, sf::Vector2f initVel, sf::Color color, int dissolutionRate, sf::Vector2f gravity)
+ParticleEmitter::ParticleEmitter(sf::Vector2f startPos, sf::Vector2f initVel, sf::Color color, int dissolutionRate, sf::Vector2f gravity)
 {
   m_startPos = startPos;
   m_pixelBaseColor = color;
@@ -11,7 +10,7 @@ Particles::Particles(sf::Vector2f startPos, sf::Vector2f initVel, sf::Color colo
 
 }
 
-void Particles::draw(sf::RenderWindow &window)
+void ParticleEmitter::draw(sf::RenderWindow &window)
 {
 
   for(int i = 0; i < m_particles.size();i++)
@@ -21,7 +20,7 @@ void Particles::draw(sf::RenderWindow &window)
 
 }
 
-void Particles::fuel(int particles)
+void ParticleEmitter::fuel(int particles)
 { 
   
   for(int i = 0; i < particles; i++)
@@ -57,13 +56,13 @@ void Particles::fuel(int particles)
   }
 
   //Limit number of particles
-  while(m_particles.size() > 500)
+  while(m_particles.size() > PARTICLELIMIT)
   {
     m_particles.erase(m_particles.begin());
   }
 }
 
-void Particles::update(float dT)
+void ParticleEmitter::update(float dT)
 {
 
   for(int i = 0; i < m_particles.size();i++)
@@ -96,12 +95,12 @@ void Particles::update(float dT)
 
 }
 
-void Particles::setDissolutionRate(int rate)
+void ParticleEmitter::setDissolutionRate(int rate)
 {
   m_dissolutionRate = rate;
 }
 
-void Particles::setGravity(sf::Vector2f gravity)
+void ParticleEmitter::setGravity(sf::Vector2f gravity)
 {
   m_gravity = gravity;
 }

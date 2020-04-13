@@ -8,7 +8,6 @@
 #include "gameState.h"
 #include "firstLevel.h"
 #include "mainMenu.h"
-#include <iostream>
 
 //Return a pointer to the current game state
 GameState* StateManager::getCurrentState(void)

@@ -3,6 +3,21 @@
 
 #include <SFML/Graphics.hpp>
 
+//Forward declaration of rigidbody class
+class RigidBody;
+
+struct collision
+{
+
+    RigidBody* objectOne;
+    RigidBody* objectTwo;
+    sf::Vector2f normalVector;
+    sf::Vector2f contactVectorBox1;
+    sf::Vector2f contactVectorBox2;
+    float depth;
+
+};
+
 struct AABB
 {
 
@@ -23,7 +38,7 @@ struct body
     sf::RectangleShape box; //For drawing things
     float invMass; // 1/mass of the object
     float gravityFactor; //How much gravity does this object have
-    float restitution = .3; //How bouncy, between 0 and 1
+    float restitution = 0; //How bouncy, between 0 and 1
 
     float staticFriction = .4; //Coefficient of static friction
     float dynamicFriction = .2; //Coefficient of dynamic friction
@@ -42,6 +57,7 @@ class RigidBody
 private:
     body objectBody;
     bool isSleeping;
+    std::vector<collision> involvedCollisions;
 
 public:
     RigidBody();
@@ -85,6 +101,10 @@ public:
 
     sf::Vector2f getPreviousPosition(void);
     void setPreviousPosition(sf::Vector2f);
+
+    void clearCollisions(void);
+    void addCollision(collision);
+    std::vector<collision> getCollisions(void);
 
 };
 

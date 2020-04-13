@@ -6,7 +6,6 @@
 
 #include "gameObject.h"
 #include "messageManager.h"
-#include <iostream>
 
 //This function must always be called when creating an object
 //Sets up position, size, and texture
@@ -126,17 +125,7 @@ RigidBody* GameObject::getRigidBody(void)
   return &m_objectRigidBody;
 }
 
-void GameObject::clearCollisions(void)
-{
-  involvedCollisions.clear();
-}
-
-void GameObject::addCollision(collision newCollision)
-{
-  involvedCollisions.push_back(newCollision);
-}
-
 std::vector<collision> GameObject::getCollisions(void)
 {
-  return involvedCollisions;
+  return m_objectRigidBody.getCollisions();
 }

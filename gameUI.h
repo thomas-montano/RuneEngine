@@ -1,8 +1,19 @@
+/*
+
+  GameUI
+
+  Class responsible for managing the user interface
+  elements and baking text into other textures
+
+  Thomas Montano
+  4/13/20
+
+*/
+
 #ifndef GUI_H_INCLUDED
 #define GUI_H_INCLUDED
 
 #include <SFML/Graphics.hpp>
-#include <iostream>
 #include "messageManager.h"
 
 class GameUI

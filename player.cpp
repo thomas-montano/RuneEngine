@@ -41,18 +41,28 @@ void Player::update()
       this->getRigidBody()->addVelocity(sf::Vector2f(-20,0));
   }
 
+  //If the player is standing on something, set touchingGround to TRUE
+  std::vector<collision> playerCollisions = this->getCollisions();
+
+  for(int i = 0; i < playerCollisions.size();i++)
+  {
+    if(playerCollisions[0].normalVector.y>0)
+    {
+      touchingGround = true;
+    }
+    
+  }
+
   //Jump if the player hits space bar
   if(hasJumped == false && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
   {
-    //this->setHasJumped(true);
-  }
-  else
-  {
-    moveVelocity.y = this->getRigidBody()->getVelocity().y;
+    hasJumped = true;
+    touchingGround = false;
+    this->getRigidBody()->addVelocity(sf::Vector2f(0,200));
   }
 
   //If the player is standing on the ground, let them jump again
-  if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Space))// && areObjectsColliding(jumpObject,MessageManager::getMidGroundObjects()))
+  if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && touchingGround == true)
   {
     hasJumped = false;
   }
