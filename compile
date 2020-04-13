@@ -1,4 +1,0 @@
-#!/bin/bash
-
-g++-5 -std=c++11 -c *.cpp
-g++-5 *.o -o PrivateEye.exe -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
