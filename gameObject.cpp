@@ -6,6 +6,7 @@
 
 #include "gameObject.h"
 #include "messageManager.h"
+#include <iostream>
 
 //This function must always be called when creating an object
 //Sets up position, size, and texture
@@ -16,8 +17,7 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
 
   m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
 
-  m_objectRigidBody.setPreviousPosition(sf::Vector2f(xPos,yPos));
-  updatePosition(1);
+  m_objectRigidBody.setPreviousPosition(sf::Vector2f(xPos,yPos));  
 
   //If the actual texture can't be loaded, load the error texture
   if(filePath != "" && !m_objectTexture.loadFromFile(filePath))
@@ -30,8 +30,9 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
   {
     m_objectSprite.setTexture(m_objectTexture);
   }
-
+  
   this->start();
+  m_objectSprite.setPosition(xPos,yPos);
 
 }
 
@@ -41,12 +42,14 @@ void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std:
   ObjectAnimation* newAnimation = new ObjectAnimation;
   sf::Texture* spriteSheet = new sf::Texture;
 
+  newAnimation->setCurrentFame(0);
   newAnimation->setFrameWidth(frameWidth);
   newAnimation->setNumFrames(numFrames);
   newAnimation->setFrameRate(frameRate);
 
-  newAnimation->setFile(fileName);
   spriteSheet->loadFromFile(fileName);
+  newAnimation->setFile(fileName);
+  
   newAnimation->setSheet(*spriteSheet);
 
   animations.push_back(newAnimation);
@@ -121,4 +124,19 @@ void GameObject::start()
 RigidBody* GameObject::getRigidBody(void)
 {
   return &m_objectRigidBody;
+}
+
+void GameObject::clearCollisions(void)
+{
+  involvedCollisions.clear();
+}
+
+void GameObject::addCollision(collision newCollision)
+{
+  involvedCollisions.push_back(newCollision);
+}
+
+std::vector<collision> GameObject::getCollisions(void)
+{
+  return involvedCollisions;
 }

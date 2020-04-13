@@ -14,6 +14,8 @@
 #include <SFML/Graphics.hpp>
 #include "gameObject.h"
 #include "gameUI.h"
+#include "messageManager.h"
+#include "particles.h"
 
 class GameState
 {
@@ -33,6 +35,8 @@ protected:
   std::vector<GameObject*> m_midGround;
   std::vector<GameObject*> m_foreground;
   std::vector<GameUI*> m_stateUI;
+
+  Particles* testParticle;
 
   GameObject m_backDrop;
   sf::View m_camera;

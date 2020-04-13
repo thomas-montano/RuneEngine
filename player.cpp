@@ -41,23 +41,10 @@ void Player::update()
       this->getRigidBody()->addVelocity(sf::Vector2f(-20,0));
   }
 
-  if(sf::Keyboard::isKeyPressed(sf::Keyboard::W))
-  {
-      this->getRigidBody()->addVelocity(sf::Vector2f(0,20));
-  }
-
-  if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-  {
-      this->getRigidBody()->addVelocity(sf::Vector2f(0,-20));
-  }
-
   //Jump if the player hits space bar
   if(hasJumped == false && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
   {
-
     //this->setHasJumped(true);
-    moveVelocity.y = 200;
-
   }
   else
   {
@@ -67,7 +54,7 @@ void Player::update()
   //If the player is standing on the ground, let them jump again
   if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Space))// && areObjectsColliding(jumpObject,MessageManager::getMidGroundObjects()))
   {
-    //this->setHasJumped(false);
+    hasJumped = false;
   }
 
   //Don't let the player go off the left side of the screen

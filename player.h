@@ -10,6 +10,7 @@ class Player : public GameObject
 
 private:
   bool hasJumped;
+  bool touchingGround;
 public:
   virtual void update(void);
   virtual void start(void);

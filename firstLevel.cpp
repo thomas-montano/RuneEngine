@@ -9,6 +9,8 @@
     void FirstLevel::doInit(void)
     {
 
+      testParticle = new Particles(sf::Vector2f(100,650), sf::Vector2f(0,20), sf::Color::Green, 100,sf::Vector2f(0,-5));
+
       isStateActive = true;
 
       m_sceneHeight = 720;
@@ -127,6 +129,11 @@
         m_nextState = 0;
       }
 
+      if(sf::Keyboard::isKeyPressed(sf::Keyboard::P))
+      {
+        testParticle->fuel(5);
+      }
+
       for(int i = 0; i < m_midGround.size();i++)
       {
         m_midGround[i]->update();
@@ -178,7 +185,6 @@
       {
 
         updatePhysics(rigidBodies,dT);
-        std::cout << dT << std::endl;
         accumulator -= dT;
 
       }

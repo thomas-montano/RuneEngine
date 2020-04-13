@@ -107,6 +107,9 @@
 
       }
 
+      testParticle->update(MessageManager::getDeltaTime());
+      testParticle->draw(window);
+
       //Draw the objects in front of the player i.e. walls in thge foreground
       for(int i = 0; i < m_foreground.size();i++)
       {

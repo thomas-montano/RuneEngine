@@ -37,6 +37,7 @@ public:
     sf::Texture* getSheet(void);
 
     int getCurrentFrame(void);
+    void setCurrentFame(int);
     void incCurrentFrame(void);
 
     void setFile(std::string);

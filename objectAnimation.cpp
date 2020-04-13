@@ -73,6 +73,11 @@ int ObjectAnimation::getCurrentFrame()
     return m_currentFrame;
 }
 
+void ObjectAnimation::setCurrentFame(int frame)
+{
+    m_currentFrame = frame;
+}
+
 void ObjectAnimation::incCurrentFrame()
 {   
 

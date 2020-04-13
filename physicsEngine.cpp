@@ -33,19 +33,18 @@ void updatePhysics(std::vector<RigidBody*> objects, float dT)
   //Check for objects that may possibly be colliding
   std::vector<collision> possibleCollisions = broadPhaseCollisions(objects);
 
-  //For some reason removing this makes things work worse
   //Remove any duplicate possible collisions
-  /*for(int i = 0; i < possibleCollisions.size();i++)
+  for(int i = 0; i < possibleCollisions.size();i++)
   {
     for(int j = 0; j < possibleCollisions.size();j++)
     {
-      if(possibleCollisions[i].objectOne == possibleCollisions[j].objectOne
-        && possibleCollisions[i].objectTwo == possibleCollisions[j].objectTwo)
+      if(possibleCollisions[i].objectOne == possibleCollisions[j].objectTwo
+        && possibleCollisions[i].objectTwo == possibleCollisions[j].objectOne)
         {
           possibleCollisions.erase(possibleCollisions.begin() + j);
         }
     }
-  }*/
+  }
 
   //Check to see if the objects that might be colliding are actually colliding
   std::vector<collision> definiteCollisions = narrowPhaseCollisions(possibleCollisions);
@@ -53,6 +52,17 @@ void updatePhysics(std::vector<RigidBody*> objects, float dT)
   //Now that we have all the objects that are definitely colliding
   //Resolve the collision and apply physics
   resolveCollisions(definiteCollisions);  
+
+  //Tell the objects about the collisions they've been involved with
+  for(int i = 0; i < definiteCollisions.size();i++)
+  {
+    definiteCollisions[i].objectOne;
+  }
+
+  for(int i = 0; i < definiteCollisions.size();i++)
+  {
+    definiteCollisions[i].objectOne;
+  }
 
 }
 
@@ -100,8 +110,8 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
       if(objectsCollided == true)
       {
 
-        currentCollision.objectOne = boundingBoxes[i < j ? i : j];
-        currentCollision.objectTwo = boundingBoxes[i < j ? j : i];
+        currentCollision.objectOne = boundingBoxes[i];
+        currentCollision.objectTwo = boundingBoxes[j];
 
         //Generate each normal vector based on the AABB hit box
         float normal1 = std::abs(box2.min.x - box1.max.x); // Left <-1,0>
@@ -341,10 +351,10 @@ void resolveCollisions(std::vector<collision> collisions)
 void positionalCorrection(RigidBody* object1, RigidBody* object2, float depth, sf::Vector2f normal)
 {
 
-  const float percent = .7; // usually 20% to 80%
+  const float percent = .8; // usually 20% to 80%
   const float slop = 0.01; // usually 0.01 to 0.1
 
-  float correctionFactor = (std::max( depth - slop, 0.01f ) / (object1->getInvMass() + object2->getInvMass())) * percent;
+  const float correctionFactor = (std::max( depth - slop, 0.01f ) / (object1->getInvMass() + object2->getInvMass())) * percent;
 
   sf::Vector2f correction = sf::Vector2f(normal.x*correctionFactor,normal.y*correctionFactor);
   object1->addPosition(sf::Vector2f(object1->getInvMass() * correction.x,object1->getInvMass() * correction.y));
