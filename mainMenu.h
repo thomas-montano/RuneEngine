@@ -14,11 +14,11 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include "gameState.h"
+#include "gameScene.h"
 #include "gameObject.h"
 #include "gameUI.h"
 
-class MainMenu : public GameState
+class MainMenu : public GameScene
 {
 private:
 

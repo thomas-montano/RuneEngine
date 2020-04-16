@@ -11,12 +11,12 @@ Thomas Montano
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include "gameState.h"
+#include "gameScene.h"
 #include "physicsEngine.h"
 #include "player.h"
 #include "gameObject.h"
 
-class FirstLevel : public GameState
+class FirstLevel : public GameScene
 {
 private:
 

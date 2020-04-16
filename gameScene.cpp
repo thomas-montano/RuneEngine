@@ -1,11 +1,11 @@
-#include "gameState.h"
+#include "gameScene.h"
 
 /**
      * DoInit is responsible for initializing this State.  HandleCleanup will
      * be called if mCleanup is true so Derived classes should always call
      * IState::DoInit() first before initializing their assets.
      */
-    void GameState::doInit(void)
+    void GameScene::doInit(void)
     {
 
     }
@@ -15,7 +15,7 @@
      * StateManager::ResetActiveState() method is called.  This way a Game
      * State can be restarted without unloading and reloading the game assets
      */
-    void GameState::reInit(void)
+    void GameScene::reInit(void)
     {
 
     }
@@ -23,7 +23,7 @@
     /**
      * DeInit is responsible for marking this state to be cleaned up
      */
-    void GameState::deInit(void)
+    void GameScene::deInit(void)
     {
       
     }
@@ -32,7 +32,7 @@
      * Pause is responsible for pausing this State since the Application
      * may have lost focus or another State has become activate.
      */
-    void GameState::pause(void)
+    void GameScene::pause(void)
     {
 
     }
@@ -41,7 +41,7 @@
      * Resume is responsible for resuming this State since the Application
      * may have gained focus or the previous State was removed.
      */
-    void GameState::resume(void)
+    void GameScene::resume(void)
     {
 
     }
@@ -51,12 +51,12 @@
      * State when it is the active State.
      * @param[in] theEvent to process from the App class Loop method
      */
-    void GameState::handleEvents(sf::Event theEvent)
+    void GameScene::handleEvents(sf::Event theEvent)
     {
 
     }
 
-    void GameState::handleUI(sf::RenderWindow& window, sf::Event theEvent)
+    void GameScene::handleUI(sf::RenderWindow& window, sf::Event theEvent)
     {
 
     }
@@ -65,7 +65,7 @@
      * UpdateFixed is responsible for handling all State fixed update needs for this
      * State when it is the active State.
      */
-    void GameState::updateFixed(void)
+    void GameScene::updateFixed(void)
     {
 
     }
@@ -74,7 +74,7 @@
      * UpdateVariable is responsible for handling all State variable update needs for this
      * State when it is the active State.
      */
-    void GameState::updateVariable(void)
+    void GameScene::updateVariable(void)
     {
 
     }
@@ -83,7 +83,7 @@
      * Draw is responsible for handling all Drawing needs for this State
      * when it is the Active State.
      */
-    void GameState::Draw(sf::RenderWindow& window)
+    void GameScene::Draw(sf::RenderWindow& window)
     {
 
       window.setView(m_camera);
@@ -133,14 +133,14 @@
      * HandleCleanup is responsible for performing any cleanup required before
      * this State is removed.
      */
-    void GameState::handleCleanup(void)
+    void GameScene::handleCleanup(void)
     {
 
     }
 
     //getStateFlag determines whether or not the current state is
     //asking to change to a different state
-    bool GameState::getStateFlag()
+    bool GameScene::getStateFlag()
     {
 
       return m_changeStateFlag;
@@ -148,7 +148,7 @@
     }
 
     //Tell the state manager what state to change to
-    int GameState::getNextState()
+    int GameScene::getNextState()
     {
 
       return m_nextState;
@@ -156,7 +156,7 @@
     }
 
     //Set the flag to say the current state wants to change the state
-    void GameState::setStateFlag(bool value)
+    void GameScene::setStateFlag(bool value)
     {
 
       m_changeStateFlag = value;
@@ -164,7 +164,7 @@
     }
 
     //Determine if the current state is asking to quit the game
-    bool GameState::getQuitFlag()
+    bool GameScene::getQuitFlag()
     {
 
       return m_quitGame;
@@ -172,12 +172,12 @@
     }
 
     //Determine whether or not the state is active
-    bool GameState::isActive()
+    bool GameScene::isActive()
     {
       return isStateActive;
     }
 
-    std::vector<GameObject*> GameState::getMidGround(void)
+    std::vector<GameObject*> GameScene::getMidGround(void)
     {
       return m_midGround;
     } 

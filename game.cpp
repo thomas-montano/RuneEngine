@@ -11,6 +11,8 @@ Thomas Montano
 
 #include <SFML/Graphics.hpp>
 #include "gameApplication.h"
+#include "firstLevel.h"
+#include "mainMenu.h"
 #include <iostream>
 
 using namespace sf;
@@ -18,8 +20,14 @@ using namespace sf;
 int main(int argc, char* argv[])
 {
 
-    //Initialize our game application
-    GameApplication* mainApplication = new GameApplication();
+    //Initialize our game application at a 60 Hz clock
+    GameApplication* mainApplication = new GameApplication(60);
+
+    MainMenu* titleScreen = new MainMenu();
+    mainApplication->loadScene(titleScreen);
+
+    FirstLevel* firstLevel = new FirstLevel();
+    mainApplication->loadScene(firstLevel);
 
     //Start the game
     mainApplication->run();
@@ -29,7 +37,8 @@ int main(int argc, char* argv[])
 
     //Once the game has ended, clean up
     delete mainApplication;
-    mainApplication = NULL;
+    delete firstLevel;
+    delete titleScreen;
 
     return 0;
 }

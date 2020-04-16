@@ -14,7 +14,7 @@
 #ifndef GAMEAPP_H_INCLUDED
 #define GAMEAPP_H_INCLUDED
 
-#include "stateManager.h"
+#include "sceneManager.h"
 #include "messageManager.h"
 #include  <SFML/Graphics.hpp>
 #include <iostream>
@@ -28,13 +28,15 @@ private:
   sf::Event m_windowEvent;
   short m_updateRate;
 
-  StateManager m_stateManager;
-  GameState* m_currentState;
+  SceneManager m_sceneManager;
+  GameScene* m_currentScene;
 
 public:
   int m_errorCode;
 
-  GameApplication(void);
+  GameApplication(int updateRate);
+
+  void loadScene(GameScene* newScene);
 
   int run(void);
   void gameLoop(void);

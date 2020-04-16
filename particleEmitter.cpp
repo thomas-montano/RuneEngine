@@ -1,4 +1,5 @@
 #include "particleEmitter.h"
+#include <cmath>
 
 ParticleEmitter::ParticleEmitter(sf::Vector2f startPos, sf::Vector2f initVel, sf::Color color, int dissolutionRate, sf::Vector2f gravity)
 {
@@ -47,7 +48,7 @@ void ParticleEmitter::fuel(int particles)
 
     std::copy(vertices, vertices+4,newParticle.m_particleSprite);
 
-    float randomFactor = m_initVel.y;
+    float randomFactor = std::abs(m_initVel.y);
     randomFactor = rand()%((int)randomFactor*1000) - 500*randomFactor;
     
     newParticle.m_particleSpeed = sf::Vector2f(m_initVel.x+randomFactor/1000.0,m_initVel.y);

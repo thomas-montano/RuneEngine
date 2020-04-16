@@ -4,6 +4,8 @@
 void Player::start()
 {
 
+  touchingGround = false;
+  hasJumped = true;
   this->addAnimation(16, 2, 2, "./Assets/Images/knoxIdleSheet.png"); // Animation 0, idle state
 
 }

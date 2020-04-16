@@ -5,14 +5,13 @@ Function file for gameApplication.h
 */
 
 #include "gameApplication.h"
-#include "messageManager.h"
 #include "icon.c"
 
 //Game Application constructor to initialize variables
-GameApplication::GameApplication(void)
+GameApplication::GameApplication(int updateRate)
 {
 
-  m_updateRate = 60; //Update ticks per second
+  m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
 
 }
@@ -31,7 +30,14 @@ int GameApplication::run(void)
 
   //Default the game to the first available state
   //In this case its the main menu
-  m_stateManager.setState(0);
+  if(m_sceneManager.getNumScenes() > 0)
+  {
+    m_sceneManager.setScene(0);
+  }
+  else
+  {
+    m_errorCode = 1;
+  }
 
   //Go ahead and start the game loop
   gameLoop();
@@ -60,7 +66,7 @@ void GameApplication::gameLoop(void)
   int frames = 0;
 
   //While window is open, run an infinite loop
-  while(m_mainWindow.isOpen())
+  while(m_mainWindow.isOpen() && m_errorCode == 0)
   {
     //Reset the amount of updates that have happened
     updates = 0;
@@ -69,13 +75,13 @@ void GameApplication::gameLoop(void)
     processInput();
 
     //Check to see if the state manager has thrown any flags
-    m_stateManager.checkFlags();
+    m_sceneManager.checkFlags();
 
     //Set the currentState pointer to be equal to the current state
-    m_currentState = m_stateManager.getCurrentState();
+    m_currentScene = m_sceneManager.getCurrentScene();
 
     //If the state threw a quit flag, close game
-    if(m_currentState->getQuitFlag())
+    if(m_currentScene->getQuitFlag())
     {
 
       m_mainWindow.close();
@@ -90,7 +96,7 @@ void GameApplication::gameLoop(void)
     while((currentTime - nextTick) >= (1000/m_updateRate) && updates++ < m_updateRate)
     {
       //Current Game state updates here
-      m_currentState->updateFixed();
+      m_currentScene->updateFixed();
 
       MessageManager::setDeltaTime(currentTime - nextTick);
 
@@ -108,16 +114,16 @@ void GameApplication::gameLoop(void)
     }
 
     //This is to handle state level events
-    m_currentState->handleEvents(m_windowEvent);
+    m_currentScene->handleEvents(m_windowEvent);
 
     //Handle UI that needs reference to window
-    m_currentState->handleUI(m_mainWindow, m_windowEvent);
+    m_currentScene->handleUI(m_mainWindow, m_windowEvent);
 
     //Update anything that doesnt depend on ticks such as physics
-    m_currentState->updateVariable();
+    m_currentScene->updateVariable();
 
     //Draw the current window
-    m_currentState->Draw(m_mainWindow);
+    m_currentScene->Draw(m_mainWindow);
 
     //Update the amount of frames that have been rendered
     frames++;
@@ -141,5 +147,12 @@ void GameApplication::processInput(void)
     }
 
   }
+
+}
+
+void GameApplication::loadScene(GameScene* newScene)
+{
+
+  m_sceneManager.addScene(newScene);
 
 }

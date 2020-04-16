@@ -17,7 +17,7 @@
 #include "messageManager.h"
 #include "particleEmitter.h"
 
-class GameState
+class GameScene
 {
 private:
   bool isStateActive = false;
