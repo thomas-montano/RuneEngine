@@ -11,10 +11,10 @@ Thomas Montano
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include "gameScene.h"
-#include "physicsEngine.h"
+#include "Engine/gameScene.h"
+#include "Engine/physicsEngine.h"
+#include "Engine/gameObject.h"
 #include "player.h"
-#include "gameObject.h"
 
 class FirstLevel : public GameScene
 {

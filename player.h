@@ -12,8 +12,8 @@
 #ifndef PLAYER_OBJECT_DEFINED
 #define PLAYER_OBJECT_DEFINED
 
-#include "gameObject.h"
-#include "messageManager.h"
+#include "Engine/gameObject.h"
+#include "Engine/messageManager.h"
 #include <SFML/Graphics.hpp>
 
 class Player : public GameObject

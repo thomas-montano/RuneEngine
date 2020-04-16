@@ -184,7 +184,6 @@
       }
 
       //Deal with physics updates
-      std::cout << dT << std::endl;
       while(accumulator > dT)
       {
 

@@ -5,7 +5,7 @@ Function file for gameApplication.h
 */
 
 #include "gameApplication.h"
-#include "icon.c"
+
 
 //Game Application constructor to initialize variables
 GameApplication::GameApplication(int updateRate)
@@ -25,9 +25,6 @@ int GameApplication::run(void)
   //Create the render window
   m_mainWindow.create(sf::VideoMode(1280, 720), "Private Eye");
   MessageManager::setWindow(&m_mainWindow);
-
-  //Change the icon on the task bar to the image in icon.c
-  m_mainWindow.setIcon(icon.width,icon.height,icon.pixel_data);
 
   //Default the game to the first available state
   //In this case its the main menu

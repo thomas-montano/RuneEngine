@@ -10,15 +10,17 @@ Thomas Montano
 */
 
 #include <SFML/Graphics.hpp>
-#include "gameApplication.h"
+#include "Engine/gameApplication.h"
 #include "firstLevel.h"
 #include "mainMenu.h"
 #include <iostream>
+#include "icon.c"
 
 using namespace sf;
 
 int main(int argc, char* argv[])
 {
+    
 
     //Initialize our game application at a 60 Hz clock
     GameApplication* mainApplication = new GameApplication(60);
@@ -28,6 +30,9 @@ int main(int argc, char* argv[])
 
     FirstLevel* firstLevel = new FirstLevel();
     mainApplication->loadScene(firstLevel);
+
+    //Change the icon on the task bar to the image in icon.c
+    //m_mainWindow.setIcon(icon.width,icon.height,icon.pixel_data);
 
     //Start the game
     mainApplication->run();
