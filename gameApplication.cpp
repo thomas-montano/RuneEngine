@@ -13,6 +13,7 @@ GameApplication::GameApplication(int updateRate)
 
   m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
+  m_gameRunning = true;
 
 }
 
@@ -32,6 +33,7 @@ int GameApplication::run(void)
   //In this case its the main menu
   if(m_sceneManager.getNumScenes() > 0)
   {
+    MessageManager::setDeltaTime(1000.0/m_updateRate);
     m_sceneManager.setScene(0);
   }
   else
@@ -68,6 +70,7 @@ void GameApplication::gameLoop(void)
   //While window is open, run an infinite loop
   while(m_mainWindow.isOpen() && m_errorCode == 0)
   {
+
     //Reset the amount of updates that have happened
     updates = 0;
 
@@ -93,16 +96,17 @@ void GameApplication::gameLoop(void)
 
     //Every tick run fixed updates and then keep track of how many ticks
     //have happened
-    while((currentTime - nextTick) >= (1000/m_updateRate) && updates++ < m_updateRate)
+    while((currentTime - nextTick) >= (1000.0/m_updateRate) && updates++ < m_updateRate)
     {
       //Current Game state updates here
       m_currentScene->updateFixed();
 
+      //std::cout << "Update Fixed" << std::endl;
+
       MessageManager::setDeltaTime(currentTime - nextTick);
 
-      //Set the next tick to 1/updateRate in milliseconds from now
-      nextTick += (1000/m_updateRate);
-
+      //Set the next tick to 1/updateRate in milliseconds from now on
+      nextTick += (1000.0/m_updateRate);
     }
 
     //This is an FPS clock that runs once per second and keeps track of frames

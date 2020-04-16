@@ -26,7 +26,7 @@ private:
   bool m_gameRunning;
   sf::RenderWindow m_mainWindow;
   sf::Event m_windowEvent;
-  short m_updateRate;
+  int m_updateRate;
 
   SceneManager m_sceneManager;
   GameScene* m_currentScene;

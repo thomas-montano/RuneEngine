@@ -31,5 +31,5 @@ float MessageManager::getDeltaTime()
 
 void MessageManager::setDeltaTime(float dT)
 {
-    MessageManager::deltaTime = dT/1000;
+    MessageManager::deltaTime = dT/1000.0;
 }

@@ -17,7 +17,6 @@
       m_sceneLength = 1280;
 
       m_midGround = {
-
       
       &m_ball,
       &m_player,
@@ -34,7 +33,9 @@
       &m_groundTile10
       };
 
-      m_camera.setSize(sf::Vector2f(512.f,256.f));
+      m_camera.setSize(512.f,256.f);
+      m_camera.setCenter(1280/2,720/2);
+
       m_ball.objectInit(100,600,16,16,"./Assets/Images/ball.png");
       m_player.objectInit(50.0,500.f,16,32,"./Assets/Images/knoxV1.png");
       
@@ -139,7 +140,7 @@
         m_midGround[i]->update();
       }
 
-      testParticle->update(MessageManager::getDeltaTime());
+      testParticle->update(dT);
 
     }
 
@@ -183,6 +184,7 @@
       }
 
       //Deal with physics updates
+      std::cout << dT << std::endl;
       while(accumulator > dT)
       {
 
