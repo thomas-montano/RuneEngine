@@ -87,34 +87,12 @@
     {
 
       window.setView(m_camera);
-      window.clear(sf::Color::White);
+      window.clear(sf::Color(102,153,255));
 
-      //Draw the skybox of the level
-      window.draw(m_backDrop.getDrawable());
-
-      //Draw the objects behind the player i.e. street lamps
-      for(int i = 0; i < m_background.size();i++)
+      //Draw the scene layers
+      for(int i = 0; i < sceneLayers.size();i++)
       {
-        window.draw(m_background[i]->getDrawable());
-      }
-
-      //Draw the stuff in the midground that the player can interact with
-      for(int i = 0; i < m_midGround.size();i++)
-      {
-
-        window.draw(m_midGround[i]->getDrawable());
-        window.draw(m_midGround[i]->getRigidBody()->drawAABB());
-
-      }
-
-      testParticle->draw(window);
-
-      //Draw the objects in front of the player i.e. walls in thge foreground
-      for(int i = 0; i < m_foreground.size();i++)
-      {
-
-        window.draw(m_foreground[i]->getDrawable());
-
+        window.draw(sceneLayers[i]);
       }
 
       //Draw the user interface objects in front of everything else
@@ -176,8 +154,3 @@
     {
       return isStateActive;
     }
-
-    std::vector<GameObject*> GameScene::getMidGround(void)
-    {
-      return m_midGround;
-    } 

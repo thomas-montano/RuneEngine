@@ -15,16 +15,18 @@
 #include "gameObject.h"
 #include "gameUI.h"
 #include "messageManager.h"
+#include "layer.h"
 #include "particleEmitter.h"
 
 class GameScene
 {
 private:
   bool isStateActive = false;
-protected:
+protected:  
   bool m_changeStateFlag = false;
   int m_nextState;
   bool m_quitGame = false;
+  std::vector<RenderLayer> sceneLayers;
 
   sf::Clock variableClock;
   float dT; //Time between variable update calls
@@ -35,8 +37,6 @@ protected:
   std::vector<GameObject*> m_midGround;
   std::vector<GameObject*> m_foreground;
   std::vector<GameUI*> m_stateUI;
-
-  ParticleEmitter* testParticle;
 
   GameObject m_backDrop;
   sf::View m_camera;
@@ -59,7 +59,7 @@ public:
   virtual void setStateFlag(bool value);
   virtual bool getQuitFlag(void);
   virtual bool isActive(void);
-  std::vector<GameObject*> getMidGround(void); 
+
 
 };
 

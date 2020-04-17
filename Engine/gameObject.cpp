@@ -5,7 +5,6 @@
 */
 
 #include "gameObject.h"
-#include "messageManager.h"
 
 //This function must always be called when creating an object
 //Sets up position, size, and texture

@@ -9,7 +9,23 @@
     void FirstLevel::doInit(void)
     {
 
-      testParticle = new ParticleEmitter(sf::Vector2f(100,450), sf::Vector2f(0,-100), sf::Color::Blue, 4,sf::Vector2f(0,-80));
+      RenderLayer midGround(true);
+
+      midGround.addToLayer(testParticle);
+      midGround.addToLayer(&m_player);
+      midGround.addToLayer(&m_ball);
+      midGround.addToLayer(&m_groundTile1);
+      midGround.addToLayer(&m_groundTile2);
+      midGround.addToLayer(&m_groundTile3);
+      midGround.addToLayer(&m_groundTile4);
+      midGround.addToLayer(&m_groundTile5);
+      midGround.addToLayer(&m_groundTile6);
+      midGround.addToLayer(&m_groundTile7);
+      midGround.addToLayer(&m_groundTile8);
+      midGround.addToLayer(&m_groundTile9);
+      midGround.addToLayer(&m_groundTile10);
+
+      sceneLayers.push_back(midGround);
 
       isStateActive = true;
 
@@ -39,7 +55,6 @@
       m_ball.objectInit(100,600,16,16,"./Assets/Images/ball.png");
       m_player.objectInit(50.0,500.f,16,32,"./Assets/Images/knoxV1.png");
       
-      m_backDrop.objectInit(1280.0/2,720.0/2,1280,720,"./Assets/Images/background.png");
 
       m_groundTile1.objectInit(64,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
@@ -51,8 +66,6 @@
       m_groundTile8.objectInit(960,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile9.objectInit(1080,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile10.objectInit(1208,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
-
-      MessageManager::setMidGroundObjects(m_midGround);
 
       dT = MessageManager::getDeltaTime();
       accumulator = 0;

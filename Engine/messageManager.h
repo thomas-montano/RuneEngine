@@ -19,13 +19,9 @@
 class MessageManager
 {
 private:
-    static std::vector<GameObject*> m_messagerMidGround;
     static sf::RenderWindow* m_messagerWindow;
     static float deltaTime;
 public:
-    static void setMidGroundObjects(std::vector<GameObject*> midGroundObjects);
-    static std::vector<GameObject*> getMidGroundObjects(void);
-
     static void setWindow(sf::RenderWindow* window);
     static sf::RenderWindow* getWindow(void);
 

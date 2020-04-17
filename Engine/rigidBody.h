@@ -51,7 +51,7 @@ struct body
 
 };
 
-class RigidBody
+class RigidBody : public sf::Drawable
 {
 
 private:
@@ -59,9 +59,24 @@ private:
     bool isSleeping;
     std::vector<collision> involvedCollisions;
 
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+    {
+
+        sf::RectangleShape AABB;
+
+        AABB.setFillColor(sf::Color::Transparent);
+        AABB.setOutlineThickness(-.5);
+        AABB.setOutlineColor(sf::Color::Red);
+        AABB.setPosition(objectBody.boundingBox.min);
+
+        AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);
+
+        target.draw(AABB);
+    }
+
 public:
     RigidBody();
-    RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation = true);
+    RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity = 0, bool rotation = true);
     void setUpObject(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation);
     sf::RectangleShape getDrawable(void);
     void setOrigin(sf::Vector2f newOrigin);

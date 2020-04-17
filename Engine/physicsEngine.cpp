@@ -352,7 +352,7 @@ void resolveCollisions(std::vector<collision> collisions)
 void positionalCorrection(RigidBody* object1, RigidBody* object2, float depth, sf::Vector2f normal)
 {
 
-  const float percent = .8; // usually 20% to 80%
+  const float percent = 1; // usually 20% to 80%
   const float slop = 0.01; // usually 0.01 to 0.1
 
   const float correctionFactor = (std::max( depth - slop, 0.01f ) / (object1->getInvMass() + object2->getInvMass())) * percent;

@@ -15,6 +15,7 @@ void Player::update()
 {
 
   //Get some info from the message manager needed later
+  const int moveSpeed = 100;
   sf::Vector2f moveVelocity;
   sf::RenderWindow* window = MessageManager::getWindow();
 
@@ -33,14 +34,18 @@ void Player::update()
     this->mirrorSprite(true);
   }
 
+  //Move the player left and right based on keyboard input
   if(sf::Keyboard::isKeyPressed(sf::Keyboard::D))
   {
-      this->getRigidBody()->addVelocity(sf::Vector2f(20,0));
+      moveVelocity.x = moveSpeed;
   }
-
-  if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+  else if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
   {
-      this->getRigidBody()->addVelocity(sf::Vector2f(-20,0));
+      moveVelocity.x = -1*moveSpeed;
+  }
+  else
+  {
+    moveVelocity.x = this->getRigidBody()->getVelocity().x;
   }
 
   //If the player is standing on something, set touchingGround to TRUE
@@ -48,7 +53,7 @@ void Player::update()
 
   for(int i = 0; i < playerCollisions.size();i++)
   {
-    if(playerCollisions[0].normalVector.y>0)
+    if(playerCollisions[i].normalVector.y>0)
     {
       touchingGround = true;
     }
@@ -60,8 +65,15 @@ void Player::update()
   {
     hasJumped = true;
     touchingGround = false;
-    this->getRigidBody()->addVelocity(sf::Vector2f(0,200));
+    moveVelocity.y = 200;
   }
+  else
+  {
+    moveVelocity.y = this->getRigidBody()->getVelocity().y;
+  }
+  
+  //Update player movement based on input
+  this->getRigidBody()->setVelocity(moveVelocity);
 
   //If the player is standing on the ground, let them jump again
   if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && touchingGround == true)

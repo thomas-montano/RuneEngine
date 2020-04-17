@@ -18,7 +18,7 @@
 #include "rigidBody.h"
 #include "physicsEngine.h"
 
-class GameObject
+class GameObject : public sf::Drawable
 {
 private:
   sf::Texture m_objectTexture; //Texture for the object
@@ -28,6 +28,11 @@ private:
   RigidBody m_objectRigidBody;
 
   bool m_mirrorSprite;
+
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+  {
+    target.draw(m_objectSprite);
+  }
 
 public:
   void objectInit(float xPos, float yPos, int width, int height, std::string filePath,float mass = 10,float gravity = 10);
