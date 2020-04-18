@@ -36,6 +36,8 @@ private:
 
   sf::Color m_pixelBaseColor; //Starting color, can apply modifiers later
 
+  sf::Vector2f m_canvasSize;
+
   sf::Vector2f m_initVel;
   sf::Vector2f m_startPos; //Location at which the particles start
   sf::Vector2f m_gravity; //Influence particle velocities
@@ -58,6 +60,8 @@ public:
   void draw(sf::RenderWindow &window);
   void fuel(int particles); //Adds new particles
   void update(float dT); //Updates particles
+
+  void setCanvasSize(sf::Vector2f);
 
 };
 

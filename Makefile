@@ -3,14 +3,17 @@ CXXFLAGS = -std=c++11
 EXE = PrivateEye.exe
 LDLIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-SOURCES=$(wildcard *.cpp Engine/*.cpp)
-OBJECTS=$(SOURCES:.cpp=.o)
+ODIR = obj
 
-%.o : %.cpp
+SOURCES=$(wildcard *.cpp Engine/*.cpp)
+_OBJECTS=$(SOURCES:.cpp=.o)
+OBJECTS = $(patsubst %,$(ODIR)/%,$(_OBJECTS))
+
+$(ODIR)/%.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(EXE) : $(OBJECTS)
-	$(CXX) $(CXXFLAGS) *.o Engine/*.o -o $(EXE) $(LDLIBS)
+	$(CXX) $(CXXFLAGS) obj/*.o obj/Engine/*.o -o $(EXE) $(LDLIBS)
 
 clean:
 	rm -f $(OBJECTS)

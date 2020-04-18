@@ -49,12 +49,13 @@
       &m_groundTile10
       };
 
+      testParticle->setCanvasSize(sf::Vector2f(40,20));
+
       m_camera.setSize(512.f,256.f);
       m_camera.setCenter(1280/2,720/2);
 
       m_ball.objectInit(100,600,16,16,"./Assets/Images/ball.png");
       m_player.objectInit(50.0,500.f,16,32,"./Assets/Images/knoxV1.png");
-      
 
       m_groundTile1.objectInit(64,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
@@ -175,41 +176,6 @@
       if(m_player.getRigidBody()->getBoundingBox().min.x > m_sceneLength-cameraSize.x/2)
       {
         m_camera.setCenter(sf::Vector2f(m_sceneLength-cameraSize.x/2,m_sceneHeight - (cameraSize.y/2)));
-      }
-      
-      float currentTime = variableClock.getElapsedTime().asMilliseconds()/1000.0;
-      
-      accumulator += currentTime - frameStart;
-      frameStart = currentTime;
-      
-      std::vector<RigidBody*> rigidBodies(m_midGround.size());
-
-      for(int i = 0; i < m_midGround.size();i++)
-      {
-
-        rigidBodies[i] = m_midGround[i]->getRigidBody();
-
-      }
-
-      if(accumulator > 0.2)
-      {
-        accumulator = 0.2;
-      }
-
-      //Deal with physics updates
-      while(accumulator > dT)
-      {
-
-        updatePhysics(rigidBodies,dT);
-        accumulator -= dT;
-
-      }
-
-      const float alpha = accumulator / dT;
-
-      for(int i = 0; i < m_midGround.size();i++)
-      {
-        m_midGround[i]->updatePosition(alpha);
       }
 
     }

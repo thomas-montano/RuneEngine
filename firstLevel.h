@@ -12,8 +12,6 @@ Thomas Montano
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "Engine/gameScene.h"
-#include "Engine/physicsEngine.h"
-#include "Engine/gameObject.h"
 #include "player.h"
 
 class FirstLevel : public GameScene
@@ -22,7 +20,7 @@ private:
 
   bool isStateActive = false;
 
-  ParticleEmitter* testParticle = new ParticleEmitter(sf::Vector2f(100,450), sf::Vector2f(0,-100), sf::Color::Blue, 4,sf::Vector2f(0,-80));
+  ParticleEmitter* testParticle = new ParticleEmitter(sf::Vector2f(100,635), sf::Vector2f(0,40), sf::Color::Blue, 4,sf::Vector2f(0,-80));
 
   Player m_player;
   GameObject m_ball;

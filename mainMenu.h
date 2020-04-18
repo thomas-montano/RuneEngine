@@ -15,7 +15,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 #include "Engine/gameScene.h"
-#include "Engine/gameObject.h"
 #include "Engine/gameUI.h"
 
 class MainMenu : public GameScene

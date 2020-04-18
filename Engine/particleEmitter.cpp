@@ -74,6 +74,26 @@ void ParticleEmitter::update(float dT)
     m_particles[i].m_particleSpeed.x += m_gravity.x * dT;
     m_particles[i].m_particleSpeed.y += m_gravity.y * dT;
 
+    //Enforce boundary conditions
+    if(m_particles[i].m_pixelPosition.x - m_startPos.x > 0.5*m_canvasSize.x)
+    {
+      m_particles.erase(m_particles.begin() + i);
+    }
+    else if(m_particles[i].m_pixelPosition.x - m_startPos.x < -0.5*m_canvasSize.x)
+    {
+      m_particles.erase(m_particles.begin() + i);
+    }
+
+    if(m_particles[i].m_pixelPosition.y - m_startPos.y < -m_canvasSize.y)
+    {
+      m_particles.erase(m_particles.begin() + i);
+    }
+
+    if(m_particles[i].m_pixelPosition.y - m_startPos.y > m_canvasSize.y)
+    {
+      m_particles[i].m_pixelPosition.y = m_startPos.y + m_canvasSize.y;
+    }
+
     sf::Vertex vertices[4] =
     {
       sf::Vertex(sf::Vector2f(m_particles[i].m_pixelPosition.x,m_particles[i].m_pixelPosition.y), m_pixelBaseColor),
@@ -104,4 +124,9 @@ void ParticleEmitter::setDissolutionRate(int rate)
 void ParticleEmitter::setGravity(sf::Vector2f gravity)
 {
   m_gravity = gravity;
+}
+
+void ParticleEmitter::setCanvasSize(sf::Vector2f canvas)
+{
+  m_canvasSize = canvas;
 }

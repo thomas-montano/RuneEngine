@@ -12,6 +12,7 @@
 #define GAMESTATE_H_INCLUDED
 
 #include <SFML/Graphics.hpp>
+#include "physicsEngine.h"
 #include "gameObject.h"
 #include "gameUI.h"
 #include "messageManager.h"
@@ -51,6 +52,7 @@ public:
   virtual void updateFixed(void);
   virtual void updateVariable(void);
   virtual void Draw(sf::RenderWindow& window);
+  virtual void updateLayerPhysics(void);
   virtual void handleCleanup(void);
   virtual void handleUI(sf::RenderWindow& window, sf::Event theEvent);
 

@@ -9,6 +9,13 @@
     void MainMenu::doInit(void)
     {
 
+      dT = MessageManager::getDeltaTime();
+      accumulator = 0;
+
+      // In units seconds
+      variableClock.restart();
+      frameStart = variableClock.getElapsedTime().asMilliseconds() / 1000.0;
+
       isStateActive = true;
 
       m_stateUI =

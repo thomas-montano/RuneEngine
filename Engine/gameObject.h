@@ -52,6 +52,8 @@ public:
 
   std::vector<collision> getCollisions(void);
 
+  void setRotation(float angle);
+
 };
 
 #endif

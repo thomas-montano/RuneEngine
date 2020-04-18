@@ -105,6 +105,8 @@ void GameObject::updatePosition(float alpha)
 
   m_objectRigidBody.setPreviousPosition(currentPos);
 
+  m_objectSprite.setRotation(m_objectRigidBody.getOrientation());
+
 }
 
 void GameObject::update()
@@ -128,3 +130,8 @@ std::vector<collision> GameObject::getCollisions(void)
 {
   return m_objectRigidBody.getCollisions();
 }
+
+ void GameObject::setRotation(float angle)
+ {
+   m_objectRigidBody.setRotation(angle);
+ }

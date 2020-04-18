@@ -126,6 +126,9 @@ void GameApplication::gameLoop(void)
     //Draw the current window
     m_currentScene->Draw(m_mainWindow);
 
+    //Make sure that each layer gets their collisions updated
+    m_currentScene->updateLayerPhysics();
+
     //Update the amount of frames that have been rendered
     frames++;
 

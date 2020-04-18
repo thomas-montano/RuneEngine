@@ -68,6 +68,8 @@
     void GameScene::updateFixed(void)
     {
 
+
+
     }
 
     /**
@@ -76,6 +78,44 @@
      */
     void GameScene::updateVariable(void)
     {
+
+    }
+
+    void GameScene::updateLayerPhysics(void)
+    {
+
+      float currentTime = variableClock.getElapsedTime().asMilliseconds()/1000.0;
+      
+      accumulator += currentTime - frameStart;
+      frameStart = currentTime;
+      
+      std::vector<RigidBody*> rigidBodies(m_midGround.size());
+
+      for(int i = 0; i < m_midGround.size();i++)
+      {
+
+        rigidBodies[i] = m_midGround[i]->getRigidBody();
+
+      }
+
+      if(accumulator > 0.2)
+      {
+        accumulator = 0.2;
+      }
+
+      //Deal with physics updates
+      while(accumulator > dT)
+      {
+        updatePhysics(rigidBodies,dT);
+        accumulator -= dT;
+      }
+
+      const float alpha = accumulator / dT;
+
+      for(int i = 0; i < m_midGround.size();i++)
+      {
+        m_midGround[i]->updatePosition(alpha);
+      }
 
     }
 
