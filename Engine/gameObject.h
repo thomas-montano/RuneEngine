@@ -29,10 +29,7 @@ private:
 
   bool m_mirrorSprite;
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
-  {
-    target.draw(m_objectSprite);
-  }
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
   void objectInit(float xPos, float yPos, int width, int height, std::string filePath,float mass = 10,float gravity = 10);
@@ -46,7 +43,6 @@ public:
   virtual void start();
 
   void updatePosition(float alpha);
-  sf::Sprite getDrawable(void);
   
   RigidBody* getRigidBody(void);
 

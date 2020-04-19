@@ -140,8 +140,7 @@
       //Debugging escape code to get back to main menu
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
       {
-        m_changeStateFlag = true;
-        m_nextState = 0;
+        changeState(1);
       }
 
       if(sf::Keyboard::isKeyPressed(sf::Keyboard::P))

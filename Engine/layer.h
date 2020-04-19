@@ -16,25 +16,21 @@ private:
   std::vector<GameObject*> objects;
   std::vector<ParticleEmitter*> particles;
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
-  {
-    for(int i = 0; i < objects.size(); i++)
-    {
-      target.draw(*objects[i]);
-    }
+  float layerOpacity;
 
-    for(int i = 0; i < particles.size(); i++)
-    {
-      target.draw(*particles[i]);
-    }
-  }
+  float layerLighting;
+
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
-  RenderLayer(bool);
+  RenderLayer(bool hasPhysics, float opacity = 1.0);
+
   void addToLayer(GameObject* object);
   void addToLayer(ParticleEmitter* object);
+
   int getTotalSize(void);
   std::vector<GameObject*> getObjects(void);
+  void setOpacity(float opacity);
 
 };
 

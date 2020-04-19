@@ -324,6 +324,13 @@ void resolveCollisions(std::vector<collision> collisions)
       else
       {
         float dynamicFriction = pythagoreanSolve(object1->getDynamicFriction(),object2->getDynamicFriction());
+        
+        //If the contact is purely vertical, don't apply friction
+        if(std::abs(collisions[i].normalVector.y) < 0.001)
+        {
+          tangent.y = 0;
+        }
+
         frictionImpulse = sf::Vector2f(jt*tangent.x*dynamicFriction, jt * tangent.y*dynamicFriction);
       }
       

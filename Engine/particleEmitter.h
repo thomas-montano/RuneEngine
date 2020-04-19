@@ -44,13 +44,7 @@ private:
   
   std::vector<particle> m_particles;
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
-  {
-    for(int i = 0; i < m_particles.size();i++)
-    {
-      target.draw(m_particles[i].m_particleSprite,4,sf::Quads,states);
-    }
-  }
+  virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
   ParticleEmitter(sf::Vector2f startPos,  sf::Vector2f initVel, sf::Color color, int dissolutionRate = 5, sf::Vector2f gravity = sf::Vector2f(0,-10));

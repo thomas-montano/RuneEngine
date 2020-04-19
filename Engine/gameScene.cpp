@@ -127,7 +127,7 @@
     {
 
       window.setView(m_camera);
-      window.clear(sf::Color(102,153,255));
+      window.clear(sf::Color(105,105,105));
 
       //Draw the scene layers
       for(int i = 0; i < sceneLayers.size();i++)
@@ -193,4 +193,10 @@
     bool GameScene::isActive()
     {
       return isStateActive;
+    }
+
+    void GameScene::changeState(int nextState)
+    {
+        m_changeStateFlag = true;
+        m_nextState = nextState;
     }

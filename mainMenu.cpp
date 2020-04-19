@@ -97,9 +97,7 @@
 
       if(m_startButton.isClicked(mousePosition,theEvent))
       {
-        //m_soundEffect.play();
-        m_changeStateFlag = true;
-        m_nextState = 1;
+        changeState(0);
         isStateActive = false;
 
       }

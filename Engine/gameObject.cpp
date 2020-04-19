@@ -86,13 +86,6 @@ sf::Sprite* GameObject::getSprite(void)
   return &m_objectSprite;
 }
 
-//This function returns a drawable pointer so that the current state
-//can render the object on the screen
-sf::Sprite GameObject::getDrawable(void)
-{
-  return m_objectSprite;
-}
-
 //Move the object sprite to the current location
 void GameObject::updatePosition(float alpha)
 {
@@ -135,3 +128,8 @@ std::vector<collision> GameObject::getCollisions(void)
  {
    m_objectRigidBody.setRotation(angle);
  }
+
+void GameObject::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  target.draw(m_objectSprite,states);
+}

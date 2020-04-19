@@ -25,6 +25,8 @@ int GameApplication::run(void)
   m_mainWindow.create(sf::VideoMode(1280, 720), "Private Eye");
   MessageManager::setWindow(&m_mainWindow);
 
+  //m_mainWindow.setVerticalSyncEnabled(true);
+
   //If the icon file doesn't exist, dont add an icon
   #if __has_include("../icon.c")
     #include "../icon.c"

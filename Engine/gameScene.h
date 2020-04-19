@@ -61,6 +61,7 @@ public:
   virtual void setStateFlag(bool value);
   virtual bool getQuitFlag(void);
   virtual bool isActive(void);
+  void changeState(int nextState);
 
 
 };

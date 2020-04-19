@@ -116,6 +116,14 @@ void ParticleEmitter::update(float dT)
 
 }
 
+void ParticleEmitter::draw(sf::RenderTarget& target, sf::RenderStates states) const
+{
+  for(int i = 0; i < m_particles.size();i++)
+  {
+    target.draw(m_particles[i].m_particleSprite,4,sf::Quads,states);
+  }
+}
+
 void ParticleEmitter::setDissolutionRate(int rate)
 {
   m_dissolutionRate = rate;
