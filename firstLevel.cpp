@@ -54,10 +54,10 @@
       m_camera.setSize(512.f,256.f);
       m_camera.setCenter(1280/2,720/2);
 
-      m_ball.objectInit(100,600,16,16,"./Assets/Images/ball.png");
+      m_ball.objectInit(100,500,16,16,"./Assets/Images/ball.png");
       m_player.objectInit(50.0,500.f,16,32,"./Assets/Images/knoxV1.png");
 
-      m_groundTile1.objectInit(64,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
+      m_groundTile1.objectInit(64,m_sceneHeight-128,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile3.objectInit(320.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile4.objectInit(448.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);

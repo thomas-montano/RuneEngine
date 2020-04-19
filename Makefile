@@ -1,5 +1,5 @@
 CXX = g++-5
-CXXFLAGS = -std=c++11
+CXXFLAGS = -std=c++17
 EXE = PrivateEye.exe
 LDLIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
@@ -13,7 +13,7 @@ $(ODIR)/%.o : %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(EXE) : $(OBJECTS)
-	$(CXX) $(CXXFLAGS) obj/*.o obj/Engine/*.o -o $(EXE) $(LDLIBS)
+	$(CXX) $(CXXFLAGS) $(ODIR)/*.o $(ODIR)/Engine/*.o -o $(EXE) $(LDLIBS)
 
 clean:
 	rm -f $(OBJECTS)
