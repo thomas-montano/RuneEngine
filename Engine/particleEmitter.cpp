@@ -138,3 +138,8 @@ void ParticleEmitter::setCanvasSize(sf::Vector2f canvas)
 {
   m_canvasSize = canvas;
 }
+
+void ParticleEmitter::setPosition(sf::Vector2f newPos)
+{
+  m_startPos = newPos;
+}

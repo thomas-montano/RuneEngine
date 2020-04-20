@@ -15,8 +15,11 @@
 
 #include <SFML/Graphics.hpp>
 #include "objectAnimation.h"
+#include "particleEmitter.h"
 #include "rigidBody.h"
-#include "physicsEngine.h"
+
+//Forward declaration of layer object
+class SceneLayer;
 
 class GameObject : public sf::Drawable
 {
@@ -24,6 +27,8 @@ private:
   sf::Texture m_objectTexture; //Texture for the object
   sf::Sprite m_objectSprite; //Drawable sprite object
   std::vector<ObjectAnimation*> animations; //Animations to be played
+
+  SceneLayer* myLayer;
 
   RigidBody m_objectRigidBody;
 
@@ -49,6 +54,9 @@ public:
   std::vector<collision> getCollisions(void);
 
   void setRotation(float angle);
+
+  void setLayer(SceneLayer* layer);
+  SceneLayer* getLayer(void);
 
 };
 

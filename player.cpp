@@ -1,5 +1,4 @@
 #include "player.h"
-#include <iostream>
 
 void Player::start()
 {
@@ -8,11 +7,20 @@ void Player::start()
   hasJumped = true;
   this->addAnimation(16, 2, 2, "./Assets/Images/knoxIdleSheet.png"); // Animation 0, idle state
 
+  SceneLayer* currentLayer = this->getLayer();
+
+  currentLayer->addToLayer(testParticle);
+  testParticle->setCanvasSize(sf::Vector2f(40,15));
+
 }
 
 // /brief This function gets called once per frame for every object
 void Player::update()
 {
+
+  testParticle->update(.01);
+
+  //std::cout << this->getLayer()->getTotalSize() << std::endl;
 
   //Get some info from the message manager needed later
   const int moveSpeed = 100;
@@ -66,6 +74,9 @@ void Player::update()
   if(touchingGround == true && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
   {
     touchingGround = false;
+
+    testParticle->setPosition(this->getRigidBody()->getPosition());
+    testParticle->fuel(20);
     moveVelocity.y = 200;
   }
   else

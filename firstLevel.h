@@ -24,6 +24,7 @@ private:
 
   Player m_player;
   GameObject m_ball;
+  GameObject grassTile;
 
   //Create the level floor
   GameObject m_groundTile1;

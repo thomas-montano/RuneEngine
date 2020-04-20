@@ -5,6 +5,7 @@
 */
 
 #include "gameObject.h"
+#include "layer.h"
 
 //This function must always be called when creating an object
 //Sets up position, size, and texture
@@ -132,4 +133,14 @@ std::vector<collision> GameObject::getCollisions(void)
 void GameObject::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   target.draw(m_objectSprite,states);
+}
+
+void GameObject::setLayer(SceneLayer* layer)
+{
+  myLayer = layer;
+}
+
+SceneLayer* GameObject::getLayer(void)
+{
+  return myLayer;
 }

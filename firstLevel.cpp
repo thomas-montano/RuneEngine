@@ -9,9 +9,10 @@
     void FirstLevel::doInit(void)
     {
 
-      RenderLayer midGround(true);
+      SceneLayer midGround(true);
 
       midGround.addToLayer(testParticle);
+      midGround.addToLayer(&grassTile);
       midGround.addToLayer(&m_player);
       midGround.addToLayer(&m_ball);
       midGround.addToLayer(&m_groundTile1);
@@ -25,29 +26,12 @@
       midGround.addToLayer(&m_groundTile9);
       midGround.addToLayer(&m_groundTile10);
 
-      sceneLayers.push_back(midGround);
+      addLayerToScene(midGround);
 
       isStateActive = true;
 
       m_sceneHeight = 720;
       m_sceneLength = 1280;
-
-      m_midGround = {
-      
-      &m_ball,
-      &m_player,
-      //Create the level floor
-      &m_groundTile1,
-      &m_groundTile2,
-      &m_groundTile3,
-      &m_groundTile4,
-      &m_groundTile5,
-      &m_groundTile6,
-      &m_groundTile7,
-      &m_groundTile8,
-      &m_groundTile9,
-      &m_groundTile10
-      };
 
       testParticle->setCanvasSize(sf::Vector2f(40,20));
 
@@ -56,6 +40,7 @@
 
       m_ball.objectInit(100,500,16,16,"./Assets/Images/ball.png");
       m_player.objectInit(50.0,500.f,16,32,"./Assets/Images/knoxV1.png");
+      grassTile.objectInit(200,600,16,16,"./Assets/Images/grassTile.png",0);
 
       m_groundTile1.objectInit(64,m_sceneHeight-128,128,64,"./Assets/Images/groundTile.png",0);
       m_groundTile2.objectInit(192.f,m_sceneHeight-32,128,64,"./Assets/Images/groundTile.png",0);
@@ -148,9 +133,16 @@
         testParticle->fuel(5);
       }
 
-      for(int i = 0; i < m_midGround.size();i++)
+      for(int j = 0; j < sceneLayers.size();j++)
       {
-        m_midGround[i]->update();
+
+        std::vector<GameObject*> layerObjects = sceneLayers[j].getObjects();
+
+        for(int i = 0; i < layerObjects.size();i++)
+        {
+          layerObjects[i]->update();
+        }
+
       }
 
       testParticle->update(dT);

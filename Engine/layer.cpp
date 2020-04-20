@@ -1,40 +1,44 @@
 #include "layer.h"
+#include <iostream>
 
-RenderLayer::RenderLayer(bool physics, float opacity)
+SceneLayer::SceneLayer(bool physics, float brightness, float opacity)
 {
   hasPhysics = physics;
   layerOpacity = opacity;
+  layerBrightness = brightness;
+
+  globalLightColor = sf::Color(255,255,255);
+
 }
 
-void RenderLayer::addToLayer(GameObject* object)
+void SceneLayer::addToLayer(GameObject* object)
 {
 
   objects.push_back(object);
+  objectRigidBodies.push_back(object->getRigidBody());
 
 }
 
-void RenderLayer::addToLayer(ParticleEmitter* object)
+void SceneLayer::addToLayer(ParticleEmitter* object)
 {
 
   particles.push_back(object);
 
 }
 
-std::vector<GameObject*> RenderLayer::getObjects(void)
+std::vector<GameObject*> SceneLayer::getObjects(void)
 {
-
   return objects;
-
 }
 
-int RenderLayer::getTotalSize(void)
+int SceneLayer::getTotalSize(void)
 {
 
   return objects.size() + particles.size();
 
 }
 
-void RenderLayer::setOpacity(float opacity)
+void SceneLayer::setOpacity(float opacity)
 {
 
   if(opacity > 1.0)
@@ -48,17 +52,33 @@ void RenderLayer::setOpacity(float opacity)
 
 }
 
-void RenderLayer::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void SceneLayer::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 
   for(int i = 0; i < objects.size(); i++)
   {
-    objects[i]->getSprite()->setColor(sf::Color(255,255,255,255*layerOpacity));
-    target.draw(*objects[i],sf::BlendAdd);
+    objects[i]->getSprite()->setColor(sf::Color(globalLightColor.r*layerBrightness,globalLightColor.g*layerBrightness,globalLightColor.b*layerBrightness,255*layerOpacity));
+    target.draw(*objects[i],states);
   }
 
   for(int i = 0; i < particles.size(); i++)
   {
     target.draw(*particles[i]);
   }
+}
+
+void SceneLayer::setScenePointer(SceneLayer* newSelfPointer)
+{
+  selfPointer = newSelfPointer;
+
+  for(int i = 0; i < objects.size(); i ++)
+  {
+    objects[i]->setLayer(selfPointer);
+  }
+
+}
+
+std::vector<RigidBody*> SceneLayer::getRigidBodies()
+{
+  return objectRigidBodies;
 }

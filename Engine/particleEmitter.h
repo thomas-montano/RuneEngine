@@ -36,7 +36,7 @@ private:
 
   sf::Color m_pixelBaseColor; //Starting color, can apply modifiers later
 
-  sf::Vector2f m_canvasSize;
+  sf::Vector2f m_canvasSize = sf::Vector2f(100,100);
 
   sf::Vector2f m_initVel;
   sf::Vector2f m_startPos; //Location at which the particles start
@@ -56,6 +56,8 @@ public:
   void update(float dT); //Updates particles
 
   void setCanvasSize(sf::Vector2f);
+
+  void setPosition(sf::Vector2f);
 
 };
 

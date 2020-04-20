@@ -23,23 +23,21 @@ class GameScene
 {
 private:
   bool isStateActive = false;
+  
 protected:  
   bool m_changeStateFlag = false;
   int m_nextState;
   bool m_quitGame = false;
-  std::vector<RenderLayer> sceneLayers;
 
+  std::vector<SceneLayer> sceneLayers;
+  
   sf::Clock variableClock;
   float dT; //Time between variable update calls
   float accumulator;
   float frameStart;
 
-  std::vector<GameObject*> m_background;
-  std::vector<GameObject*> m_midGround;
-  std::vector<GameObject*> m_foreground;
   std::vector<GameUI*> m_stateUI;
 
-  GameObject m_backDrop;
   sf::View m_camera;
 
 public:
@@ -62,6 +60,7 @@ public:
   virtual bool getQuitFlag(void);
   virtual bool isActive(void);
   void changeState(int nextState);
+  void addLayerToScene(SceneLayer);
 
 
 };
