@@ -132,7 +132,7 @@ void GameScene::Draw(sf::RenderWindow& window)
 {
 
   window.setView(m_camera);
-  window.clear(sf::Color(102, 102, 102));
+  window.clear(sf::Color(30,144,255));
 
   //Draw the scene layers
   for(int i = 0; i < sceneLayers.size();i++)

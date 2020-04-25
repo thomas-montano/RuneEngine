@@ -22,7 +22,7 @@ int GameApplication::run(void)
 {
 
   //Create the render window
-  m_mainWindow.create(sf::VideoMode(1280, 720), "Private Eye");
+  m_mainWindow.create(sf::VideoMode(1440, 720), "Private Eye");
   MessageManager::setWindow(&m_mainWindow);
 
   //m_mainWindow.setVerticalSyncEnabled(true);

@@ -23,7 +23,7 @@ class Player : public GameObject
 private:
   bool hasJumped;
   bool touchingGround;
-  ParticleEmitter* testParticle = new ParticleEmitter(sf::Vector2f(100,635), sf::Vector2f(0,20), sf::Color::Blue, 4,sf::Vector2f(0,-80));
+  ParticleEmitter* testParticle = new ParticleEmitter(sf::Vector2f(100,635), sf::Vector2f(0,20), sf::Color::Blue, 2,sf::Vector2f(0,-80));
 public:
   virtual void update(void);
   virtual void start(void);

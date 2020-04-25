@@ -14,7 +14,7 @@ void Player::start()
 
 }
 
-// /brief This function gets called once per frame for every object
+//This function gets called once per frame for every object
 void Player::update()
 {
 
@@ -24,6 +24,7 @@ void Player::update()
 
   //Get some info from the message manager needed later
   const int moveSpeed = 100;
+  const int jumpSpeed = 200;
   sf::Vector2f moveVelocity;
   sf::RenderWindow* window = MessageManager::getWindow();
 
@@ -77,7 +78,7 @@ void Player::update()
 
     testParticle->setPosition(this->getRigidBody()->getPosition());
     testParticle->fuel(20);
-    moveVelocity.y = 200;
+    moveVelocity.y = jumpSpeed;
   }
   else
   {
