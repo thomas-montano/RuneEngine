@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['display',['display',['../classRenderWindow.html#afd60c6d15bf62dff8ac99d823e3a7cb5',1,'RenderWindow']]],
-  ['draw',['draw',['../classRenderWindow.html#a7707c369e1281cbce55478f8a5ea481c',1,'RenderWindow']]]
+  ['changestate',['changeState',['../classGameScene.html#a4de3828f98c139522d88c165d42917d7',1,'GameScene']]],
+  ['clearcollisions',['clearCollisions',['../classRigidBody.html#af35b2cc2a5dea4935673f782893364b5',1,'RigidBody']]],
+  ['createbutton',['createButton',['../classGameUI.html#a144a4edc570cfece53e9a8755218ad58',1,'GameUI']]]
 ];
