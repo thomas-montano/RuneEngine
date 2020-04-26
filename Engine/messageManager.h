@@ -1,4 +1,5 @@
 /**
+ * @class MessageManager
  * @brief Container for passing of information globally
  * 
  * @author Thomas Montano

@@ -1,7 +1,8 @@
 /**
+ * @class GameObject
  * @brief Entity control system main object used for all objects in the scene
- * @author Thomas Montano
  * 
+ * @author Thomas Montano
  * @date March 2 2020
 */
 
@@ -43,6 +44,8 @@ public:
 
   ///Returns the sprite object for drawing (DEPRECATED).
   sf::Sprite* getSprite(void);
+
+  ///Whether or not the sprite should be flipped around the vertical axis.
   void mirrorSprite(bool);
 
   ///Virtual function to be overloaded by the user so that object behavior can be customized in a more organized way. Gets called once per frame.

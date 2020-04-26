@@ -1,4 +1,5 @@
 /**
+ * @class LightSource
  * @brief A light source to be used in a scene. Casts light and shadows on objects.
  * 
  * @author Thomas Montano
@@ -8,7 +9,7 @@
 #ifndef LIGHTSOURCE_H_DEFINED
 #define LIGHTSOURCE_H_DEFINED
 
-class lightSource
+class LightSource
 {
 
 public:

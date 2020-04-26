@@ -1,4 +1,5 @@
 /**
+ * @class ParticleEmitter
  * @brief Class responsible for creating particle emitters and managing
  * the creation of particles.
  * 
@@ -16,6 +17,7 @@ class ParticleEmitter : public sf::Drawable
 {
 
 protected:
+  ///Data container for each individual particle.
   struct particle
   {
     sf::Vector2f m_pixelPosition;

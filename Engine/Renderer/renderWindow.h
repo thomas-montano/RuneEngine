@@ -1,3 +1,11 @@
+/**
+ * @class RenderWindow
+ * @brief A window that the game can be drawn to.
+ * 
+ * @author Thomas Montano
+ * @date April 20 2020
+*/
+
 #ifndef RENDER_WINDOW_H
 #define RENDER_WINDOW_H
 

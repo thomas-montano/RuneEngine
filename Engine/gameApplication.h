@@ -1,4 +1,5 @@
 /**
+ * @class GameApplication
  * @brief Entry point for all programs using the engine, must instantiate a game application for every new game
  * @author Thomas Montano
  * 

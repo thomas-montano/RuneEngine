@@ -1,3 +1,11 @@
+/**
+ * @class RectangleShape
+ * @brief Base class for a rectangle to be drawn on the screen.
+ * 
+ * @author Thomas Montano
+ * @date April 20 2020
+*/
+
 #ifndef RECTANGLE_H_DEFINED
 #define RECTANGLE_H_DEFINED
 

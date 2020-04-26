@@ -1,9 +1,10 @@
 /**
+ * @class RigidBody
  * @brief Game object component that allows a game object to have collisions with other objects.
  * 
  * @author Thomas Montano
  * @date March 2 2020
-*/
+ */
 
 #ifndef RIGIDBODY_H
 #define RIGIDBODY_H
@@ -13,7 +14,7 @@
 //Forward declaration of rigidbody class
 class RigidBody;
 
-///Collision manifold used for reportingrigid body collisions.
+///Collision manifold used for reporting rigid body collisions.
 struct collision
 {
 
@@ -35,10 +36,11 @@ struct AABB
 
 };
 
+///Rigid body struct containing all the information for a physically realistic response.
 struct body
 {
 
-    sf::Vector2f vertexes[4]; //Specific Vertexes
+    sf::Vector2f vertexes[4]; ///Specific Vertexes
     AABB boundingBox; //Broad phase Minimum bounding box
     float xPos; //X position in world coordinates
     float yPos; //Y Position in world coordinates

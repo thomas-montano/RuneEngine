@@ -6,7 +6,9 @@ Function file for gameApplication.h
 
 #include "gameApplication.h"
 
-//Game Application constructor to initialize variables
+/**
+ * @param updateRate How many times per second the game will run the main update loop.
+ */
 GameApplication::GameApplication(int updateRate)
 {
 
@@ -16,8 +18,9 @@ GameApplication::GameApplication(int updateRate)
 
 }
 
-//Main run loop responsible for starting the game loop and
-//initializing the window
+/**
+ * @return The generated error code
+*/
 int GameApplication::run(void)
 {
 
@@ -51,7 +54,6 @@ int GameApplication::run(void)
   return m_errorCode;
 }
 
-//Main game loop that runs indefinitely until the player quits
 void GameApplication::gameLoop(void)
 {
 
@@ -143,8 +145,7 @@ void GameApplication::gameLoop(void)
 
 }
 
-//Deal with any event input from the window, and update the events
-//Object for other functions
+
 void GameApplication::processInput(void)
 {
 
@@ -161,6 +162,9 @@ void GameApplication::processInput(void)
 
 }
 
+/**
+ * @param newScene A pointer to a GameScene object that should be loaded into the scene buffer.
+*/
 void GameApplication::loadScene(GameScene* newScene)
 {
 

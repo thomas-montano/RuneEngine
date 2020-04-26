@@ -1,13 +1,13 @@
-/*
-
-Main function for Private Eye
-This file just instantiates the game application and handles
-the return code
-
-Thomas Montano
-2/27/19
-
-*/
+/**
+ * @mainpage
+ * This is the initalization of the Private Eye game. Here is where
+ * the levels are loaded and sent into the game application.
+ * 
+ * 
+ * @author Thomas Montano
+ * @date February 19 2020 
+ * 
+ */
 
 #include <SFML/Graphics.hpp>
 #include "Engine/gameApplication.h"

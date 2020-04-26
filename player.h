@@ -1,12 +1,9 @@
-/*
-
-  Player
-
-  Main game object controlled by the player
-
-  Thomas Montano
-  3/2/20
-
+/**
+ * @class Player
+ * @brief Main game object for the palyer controller.
+ * 
+ * @author Thomas Montano
+ * @date March 3 2020
 */
 
 #ifndef PLAYER_OBJECT_DEFINED

@@ -1,4 +1,5 @@
 /**
+ * @class GameScene
  * @brief This class is responsible for serving as a parent class for each instance
   of the game. In order to create a new instance for the game, copy this class
   and add objects as needed

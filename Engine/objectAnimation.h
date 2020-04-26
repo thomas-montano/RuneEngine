@@ -1,4 +1,5 @@
 /**
+ * @class ObjectAnimation
  * @brief Class responsible for managing sprite animations and 
  * updating which frame of the animation is to be shown
  * 

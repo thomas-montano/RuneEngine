@@ -7,8 +7,15 @@
 #include "gameObject.h"
 #include "layer.h"
 
-//This function must always be called when creating an object
-//Sets up position, size, and texture
+/**
+ * @param xPos The horizontal position of the object relative to the bottom left corner of the sprite.
+ * @param yPos The vertical position of the object relative to the bottom left corner of the sprite.
+ * @param width Width of the sprite in pixels.
+ * @param height Height of the sprite in pixels.
+ * @param filePath Path to the sprite relative to the top level main function.
+ * @param mass Mass of the object in units relative to the game. (0 mass = infinite mass)
+ * @param gravity Gravity vector that the object will be subject to.
+*/
 void GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
 {
 
@@ -35,6 +42,12 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
 
 }
 
+/**
+ * @param frameWidth the width of the individual frame in pixels
+ * @param numFrames the total number of frames in the animation
+ * @param frameRate the rate in Hz that the animation will be played
+ * @param fileName Path to the sprite sheet relative to the top level main function.
+*/
 void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName)
 {
 
@@ -55,6 +68,9 @@ void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std:
 
 }
 
+/**
+ * @param animation Integer index in the animation array that refers to the order in which the animations where loaded
+*/
 void GameObject::playAnimation(int animation)
 {
 
@@ -77,6 +93,9 @@ void GameObject::playAnimation(int animation)
 
 }
 
+/**
+ * @param mirror Whether or not the sprite should be mirrored vertically.
+*/
 void GameObject::mirrorSprite(bool mirror)
 {
   m_mirrorSprite = mirror;
@@ -87,7 +106,9 @@ sf::Sprite* GameObject::getSprite(void)
   return &m_objectSprite;
 }
 
-//Move the object sprite to the current location
+/**
+ * @param alpha coefficient of linear interpolation
+*/
 void GameObject::updatePosition(float alpha)
 {
   sf::Vector2f oldPosition = m_objectRigidBody.getPreviousPosition();
@@ -103,13 +124,13 @@ void GameObject::updatePosition(float alpha)
 
 }
 
-void GameObject::update()
+void GameObject::update(void)
 {
 
   return;
 }
 
-void GameObject::start()
+void GameObject::start(void)
 {
 
   return;
@@ -125,16 +146,28 @@ std::vector<collision> GameObject::getCollisions(void)
   return m_objectRigidBody.getCollisions();
 }
 
+/**
+ * @param angle Angle in degrees that the object should be rotated to.
+*/
  void GameObject::setRotation(float angle)
  {
    m_objectRigidBody.setRotation(angle);
  }
 
+
+
+/**
+ * @param target Drawable that needs to be rendered to the screen
+ * @param states Render state to be applied to the object
+*/
 void GameObject::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   target.draw(m_objectSprite,states);
 }
 
+/**
+ * @param layer SceneLayer object that should be referenced by the game object
+*/
 void GameObject::setLayer(SceneLayer* layer)
 {
   myLayer = layer;

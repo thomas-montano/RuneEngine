@@ -1,3 +1,11 @@
+/**
+ * @class Event
+ * @brief Object that holds all the events for a render window.
+ * 
+ * @author Thomas Montano
+ * @date April 20 2020
+*/
+
 #ifndef EVENT_H_DEFINED
 #define EVENT_H_DEFINED
 

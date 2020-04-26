@@ -1,5 +1,11 @@
 #include "gameUI.h"
 
+/**
+ * @param posX Horizontal position relative to the bottom left corner of the button to place the button on the screen.
+ * @param posY Vertical position relative to the bottom left corner of the button to place the button on the screen.
+ * @param width The width of the button in pixels.
+ * @param height The height of the button in pixels.
+*/
 void GameUI::createButton(float posX, float posY, float width, float height)
 {
 
@@ -32,6 +38,11 @@ sf::Sprite GameUI::getDrawable(void)
 
 }
 
+/**
+ * @param mouseLocation The location at which the mouse button was clicked.
+ * @param mouseEvent The event triggered by the mouse click.
+ * @return Whether or not the button was clicked.
+*/
 bool GameUI::isClicked(sf::Vector2i mouseLocation, sf::Event mouseEvent)
 {
 

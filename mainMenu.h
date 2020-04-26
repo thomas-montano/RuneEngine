@@ -1,12 +1,9 @@
-/*
-
-  MainMenu
-
-  This is the main menu screen and is displayed when game starts
-
-  Thomas Montano
-  4/13/20
-
+/**
+ * @class MainMenu
+ * @brief This is the main menu screen and is displayed on game startup.
+ * 
+ * @author Thomas Montano
+ * @date April 13 2020
 */
 
 #ifndef MAINMENU_H_INCLUDED

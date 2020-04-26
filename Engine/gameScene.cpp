@@ -49,7 +49,7 @@ void GameScene::resume(void)
 /**
  * HandleEvents is responsible for handling input events for this
  * State when it is the active State.
- * @param[in] theEvent to process from the App class Loop method
+ * @param theEvent to process from the App class Loop method
  */
 void GameScene::handleEvents(sf::Event theEvent)
 {
@@ -58,7 +58,9 @@ void GameScene::handleEvents(sf::Event theEvent)
 
 /**
  * Handle scene level UI that needs to be run independent of the update rate.
-*/
+ * @param window Render window that should be used for mouse positions
+ * @param theEvent Event object used for mouse position at the moment of click 
+ */
 void GameScene::handleUI(sf::RenderWindow& window, sf::Event theEvent)
 {
 
@@ -128,6 +130,7 @@ void GameScene::updateLayerPhysics(void)
 /**
  * Draw is responsible for handling all Drawing needs for this State
  * when it is the Active State.
+ * @param window RenderWindow to which the object should be drawn to.
  */
 void GameScene::Draw(sf::RenderWindow& window)
 {
@@ -165,6 +168,7 @@ void GameScene::handleCleanup(void)
 /** 
  * Determines whether or not the current state is
  * asking to change to a different state.
+ * @return Whether or not the state manager is being asked to change the scene.
  */
 bool GameScene::getStateFlag()
 {
@@ -175,6 +179,7 @@ bool GameScene::getStateFlag()
 
 /**
  * Tells the state manager what state should be switched to next.
+ * @return The state that the state manager should switch to.
  */
 int GameScene::getNextState()
 {
@@ -185,6 +190,7 @@ int GameScene::getNextState()
 
 /**
  * Set a flag that says the current scene wants to change to a different scene
+ * @param value Set the flag that controls whether or not the state is going to be changed.
 */
 void GameScene::setStateFlag(bool value)
 {
@@ -195,6 +201,7 @@ void GameScene::setStateFlag(bool value)
 
 /**
  * Determines whether or not the current scene is asking for the game to be shut down. Used for things like quit buttons.
+ * @return Whether or not the state flag has been thrown.
 */
 bool GameScene::getQuitFlag()
 {
@@ -205,6 +212,7 @@ bool GameScene::getQuitFlag()
 
 /**
  * Determines whether or not the state is currently active.
+ * @return Whether or not the current scene is flagged as active.
  */
 bool GameScene::isActive()
 {
@@ -213,7 +221,8 @@ bool GameScene::isActive()
 
 /**
  * Change the currently active state. Scene index must be handled by the user.
- * */
+ * @param nextState The index in the GameApplication GameScene buffer.
+ */
 void GameScene::changeState(int nextState)
 {
     m_changeStateFlag = true;
@@ -223,7 +232,8 @@ void GameScene::changeState(int nextState)
 /**
  * Take a layer and add it to the sceneLayers array as well as pushing the correct pointer
  * to the layer so that objects can be given a pointer back
-*/
+ * @param newScene The SceneLayer to add to the scene's layer buffer.
+ */
 void GameScene::addLayerToScene(SceneLayer newScene)
 {
 

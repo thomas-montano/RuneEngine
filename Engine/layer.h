@@ -1,4 +1,5 @@
 /**
+ * @class SceneLayer
  * @brief Main component of scenes. Can have objects, particles, light sources, or any other in game entity
  * added to a level through a layer.
  * 

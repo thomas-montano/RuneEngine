@@ -1,3 +1,11 @@
+/**
+ * @class Drawable
+ * @brief Interface class for creating something that can be drawn to the screen.
+ * 
+ * @author Thomas Montano
+ * @date April 20 2020
+ */
+
 #ifndef DRAWABLE_DEFINED
 #define DRAWABLE_DEFINED
 

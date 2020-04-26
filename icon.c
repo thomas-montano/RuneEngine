@@ -1,4 +1,10 @@
 /* GIMP RGBA C-Source image dump (FanArt.c) */
+/**
+ * @brief data file for the taskbar icon.
+ * 
+ * @author Thomas Montano
+ * @date April 20 2020
+*/
 
 const struct iconFile{
   unsigned int 	 width;

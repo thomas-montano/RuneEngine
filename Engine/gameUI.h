@@ -1,4 +1,5 @@
 /**
+ * @class GameUI
  * @brief Class responsible for managing the user interface
  * elements and baking text into other textures.
  * 
