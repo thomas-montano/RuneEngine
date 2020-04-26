@@ -1,7 +1,0 @@
-<map id="Engine/messageManager.cpp" name="Engine/messageManager.cpp">
-<area shape="rect" id="node2" href="$messageManager_8h.html" title="messageManager.h" alt="" coords="310,80,446,107"/>
-<area shape="rect" id="node3" href="$gameObject_8h.html" title="gameObject.h" alt="" coords="200,155,303,181"/>
-<area shape="rect" id="node5" href="$objectAnimation_8h.html" title="objectAnimation.h" alt="" coords="5,229,132,256"/>
-<area shape="rect" id="node7" href="$particleEmitter_8h.html" title="particleEmitter.h" alt="" coords="319,229,437,256"/>
-<area shape="rect" id="node8" href="$rigidBody_8h.html" title="rigidBody.h" alt="" coords="208,229,295,256"/>
-</map>

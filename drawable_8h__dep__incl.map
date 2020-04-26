@@ -1,8 +1,0 @@
-<map id="Engine/Renderer/drawable.h" name="Engine/Renderer/drawable.h">
-<area shape="rect" id="node2" href="$renderWindow_8h.html" title="Engine/Renderer/renderWindow.h" alt="" coords="365,80,582,107"/>
-<area shape="rect" id="node4" href="$rectangleShape_8h.html" title="Engine/Renderer/rectangle\lShape.h" alt="" coords="217,155,393,196"/>
-<area shape="rect" id="node7" href="$renderWindow_8cpp.html" title="Engine/Renderer/renderWindow.cpp" alt="" coords="519,162,750,189"/>
-<area shape="rect" id="node3" href="$Graphics_8hpp.html" title="Engine/Renderer/Graphics.hpp" alt="" coords="205,251,405,278"/>
-<area shape="rect" id="node5" href="$main_8cpp.html" title="Engine/Renderer/main.cpp" alt="" coords="429,251,605,278"/>
-<area shape="rect" id="node6" href="$rectangleShape_8cpp.html" title="Engine/Renderer/rectangle\lShape.cpp" alt="" coords="5,244,181,285"/>
-</map>

@@ -1,7 +1,0 @@
-<map id="Engine/gameScene.h" name="Engine/gameScene.h">
-<area shape="rect" id="node2" href="$sceneManager_8h.html" title="Engine/sceneManager.h" alt="" coords="97,80,260,107"/>
-<area shape="rect" id="node5" href="$sceneManager_8cpp.html" title="Engine/sceneManager.cpp" alt="" coords="209,155,385,181"/>
-<area shape="rect" id="node6" href="$gameScene_8cpp.html" title="Engine/gameScene.cpp" alt="" coords="335,80,495,107"/>
-<area shape="rect" id="node3" href="$gameApplication_8h.html" title="Engine/gameApplication.h" alt="" coords="12,155,185,181"/>
-<area shape="rect" id="node4" href="$gameApplication_8cpp.html" title="Engine/gameApplication.cpp" alt="" coords="5,229,192,256"/>
-</map>
