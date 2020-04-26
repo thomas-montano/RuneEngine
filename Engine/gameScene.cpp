@@ -56,6 +56,9 @@ void GameScene::handleEvents(sf::Event theEvent)
 
 }
 
+/**
+ * Handle scene level UI that needs to be run independent of the update rate.
+*/
 void GameScene::handleUI(sf::RenderWindow& window, sf::Event theEvent)
 {
 
@@ -67,8 +70,6 @@ void GameScene::handleUI(sf::RenderWindow& window, sf::Event theEvent)
  */
 void GameScene::updateFixed(void)
 {
-
-
 
 }
 
@@ -161,8 +162,10 @@ void GameScene::handleCleanup(void)
 
 }
 
-//getStateFlag determines whether or not the current state is
-//asking to change to a different state
+/** 
+ * Determines whether or not the current state is
+ * asking to change to a different state.
+ */
 bool GameScene::getStateFlag()
 {
 
@@ -170,7 +173,9 @@ bool GameScene::getStateFlag()
 
 }
 
-//Tell the state manager what state to change to
+/**
+ * Tells the state manager what state should be switched to next.
+ */
 int GameScene::getNextState()
 {
 
@@ -178,7 +183,9 @@ int GameScene::getNextState()
 
 }
 
-//Set the flag to say the current state wants to change the state
+/**
+ * Set a flag that says the current scene wants to change to a different scene
+*/
 void GameScene::setStateFlag(bool value)
 {
 
@@ -186,7 +193,9 @@ void GameScene::setStateFlag(bool value)
 
 }
 
-//Determine if the current state is asking to quit the game
+/**
+ * Determines whether or not the current scene is asking for the game to be shut down. Used for things like quit buttons.
+*/
 bool GameScene::getQuitFlag()
 {
 
@@ -194,21 +203,27 @@ bool GameScene::getQuitFlag()
 
 }
 
-//Determine whether or not the state is active
+/**
+ * Determines whether or not the state is currently active.
+ */
 bool GameScene::isActive()
 {
   return isStateActive;
 }
 
-//Function to change the current active state
+/**
+ * Change the currently active state. Scene index must be handled by the user.
+ * */
 void GameScene::changeState(int nextState)
 {
     m_changeStateFlag = true;
     m_nextState = nextState;
 }
 
-//Take a layer and add it to the sceneLayers array as well as pushing the correct pointer
-//to the layer so that objects can be given a pointer back
+/**
+ * Take a layer and add it to the sceneLayers array as well as pushing the correct pointer
+ * to the layer so that objects can be given a pointer back
+*/
 void GameScene::addLayerToScene(SceneLayer newScene)
 {
 

@@ -1,9 +1,8 @@
-/*
-
-First level (actual level design remaining)
-Thomas Montano
-2/29/20
-
+/**
+ * @brief Main level operating as an engine test bed
+ * @author Thomas Montano
+ * 
+ * @date Februray 29 2020
 */
 
 #ifndef FIRSTLEVEL_H_INCLUDED
@@ -45,7 +44,7 @@ private:
   sf::Sound m_soundEffect;
 
 public:
-  virtual void doInit(void);
+  virtual void doInit(void); 
   virtual void reInit(void);
   void deInit(void);
   virtual void pause(void);

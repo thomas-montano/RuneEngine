@@ -59,6 +59,7 @@ void SceneLayer::draw(sf::RenderTarget& target, sf::RenderStates states) const
   {
     objects[i]->getSprite()->setColor(sf::Color(globalLightColor.r*layerBrightness,globalLightColor.g*layerBrightness,globalLightColor.b*layerBrightness,255*layerOpacity));
     target.draw(*objects[i],states);
+    target.draw(*objects[i]->getRigidBody(),states);
   }
 
   for(int i = 0; i < particles.size(); i++)

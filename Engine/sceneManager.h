@@ -1,14 +1,10 @@
-/*
-
-stateManager
-
-The state manager is responsible for handling the transfer of the
-current state pointer that refers to the overwritten state class
-for each instance of the game.
-
-Thomas Montano
-3/2/20
-
+/**
+ * @brief The state manager is responsible for handling the transfer of the
+ * current state pointer that refers to the overwritten state class
+ * for each instance of the game.
+ * 
+ * @author Thomas Montano
+ * @date March 2 2020
 */
 
 #ifndef STATEMANAGER_H_INCLUDED

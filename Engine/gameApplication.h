@@ -1,14 +1,8 @@
-/*
-
-  GameApplication
-
-  Class responsible for managing the game Loop
-  The tick system is also created here
-  As well as updating the events
-
-  Thomas Montano
-  3/2/20
-
+/**
+ * @brief Entry point for all programs using the engine, must instantiate a game application for every new game
+ * @author Thomas Montano
+ * 
+ * @date March 2 2020
 */
 
 #ifndef GAMEAPP_H_INCLUDED
@@ -34,12 +28,19 @@ private:
 public:
   int m_errorCode;
 
+  ///Default constructor for setting up a new game.
   GameApplication(int updateRate);
 
+  ///Loads in a scene file and stores it in the game application.
   void loadScene(GameScene* newScene);
 
+  ///Starts the main game loop
   int run(void);
+
+  ///Main game loop used to keep the game running and updating.
   void gameLoop(void);
+
+  ///Window level input handling.
   void processInput(void);
 };
 

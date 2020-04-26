@@ -1,13 +1,8 @@
-/*
-
-  MessageManager
-
-  Class responsible for passing global information around the game
-  with static variables
-
-  Thomas Montano
-  3/2/20
-
+/**
+ * @brief Container for passing of information globally
+ * 
+ * @author Thomas Montano
+ * @date March 2 2020
 */
 
 #ifndef MESSAGE_MANAGER_DEFINED
@@ -19,14 +14,20 @@
 class MessageManager
 {
 private:
-    static sf::RenderWindow* m_messagerWindow;
-    static float deltaTime;
+  static sf::RenderWindow* m_messagerWindow;
+  static float deltaTime;
 public:
-    static void setWindow(sf::RenderWindow* window);
-    static sf::RenderWindow* getWindow(void);
+  ///Sets the reference to the currently active render window.
+  static void setWindow(sf::RenderWindow* window);
 
-    static float getDeltaTime(void);
-    static void setDeltaTime(float dT);
+  ///Returns the reference to the currently active render window.
+  static sf::RenderWindow* getWindow(void);
+
+  ///Gets the change in time since the last frame in seconds.
+  static float getDeltaTime(void);
+
+  ///Sets the change in time since the last frame in seconds.
+  static void setDeltaTime(float dT);
 };
 
 #endif

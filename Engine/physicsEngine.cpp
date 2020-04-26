@@ -411,13 +411,3 @@ float crossProduct(sf::Vector2f vector1,sf::Vector2f vector2 )
 {
   return vector1.x * vector2.y - vector1.y * vector2.x;
 }
-
-sf::Vector2f crossProduct(float scalar,sf::Vector2f vector1)
-{
-  return sf::Vector2f(-scalar*vector1.y,-scalar * vector1.x);
-}
-
-sf::Vector2f crossProduct(sf::Vector2f vector1,float scalar)
-{
-  return sf::Vector2f(scalar * vector1.y,scalar * vector1.x);
-}

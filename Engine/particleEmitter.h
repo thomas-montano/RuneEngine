@@ -1,13 +1,9 @@
-/*
-
-  ParticleEmitter
-
-  Class responsible for creating particle emitters and managing
-  the creation of particles
-
-  Thomas Montano
-  3/2/20
-
+/**
+ * @brief Class responsible for creating particle emitters and managing
+ * the creation of particles.
+ * 
+ * @author Thomas Montano
+ * @date March 2 2020
 */
 
 #ifndef PARTICLES_H_DEFINED
@@ -47,16 +43,28 @@ private:
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
+  ///Default constructor for a particle emitter that establishes position, color, and velocity constraints.
   ParticleEmitter(sf::Vector2f startPos,  sf::Vector2f initVel, sf::Color color, int dissolutionRate = 5, sf::Vector2f gravity = sf::Vector2f(0,-10));
   
+  ///The amount of time in seconds that a particle will exist before it gets destroyed.
   void setDissolutionRate(int rate);
-  void setGravity(sf::Vector2f gravity);
-  void draw(sf::RenderWindow &window);
-  void fuel(int particles); //Adds new particles
-  void update(float dT); //Updates particles
 
+  ///Sets the gravity that a particle will be subjected to.
+  void setGravity(sf::Vector2f gravity);
+
+  ///Overloaded draw function to render particles to the screen.
+  void draw(sf::RenderWindow &window);
+
+  ///Spawn particles from the particles emitter.
+  void fuel(int particles);
+
+  ///Update the position of the particles based on velocity and gravity.
+  void update(float dT);
+
+  //Set the region that the particle is allowed to move around in.
   void setCanvasSize(sf::Vector2f);
 
+  //Set the position of the particles emitter.
   void setPosition(sf::Vector2f);
 
 };

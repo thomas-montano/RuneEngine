@@ -1,11 +1,10 @@
-/*
-
-  GameState
-
-  This class is responsible for serving as a parent class for each instance
+/**
+ * @brief This class is responsible for serving as a parent class for each instance
   of the game. In order to create a new instance for the game, copy this class
   and add objects as needed
-
+ * 
+ * @author Thomas Montano
+ * @date March 2 2020
 */
 
 #ifndef GAMESTATE_H_INCLUDED
@@ -41,7 +40,10 @@ protected:
   sf::View m_camera;
 
 public:
+  ///Initializes the state
   virtual void doInit(void);
+
+  ///Reset the scene without unloading game objects
   virtual void reInit(void);
   void deInit(void);
   virtual void pause(void);

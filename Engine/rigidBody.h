@@ -1,3 +1,10 @@
+/**
+ * @brief Game object component that allows a game object to have collisions with other objects.
+ * 
+ * @author Thomas Montano
+ * @date March 2 2020
+*/
+
 #ifndef RIGIDBODY_H
 #define RIGIDBODY_H
 
@@ -6,6 +13,7 @@
 //Forward declaration of rigidbody class
 class RigidBody;
 
+///Collision manifold used for reportingrigid body collisions.
 struct collision
 {
 
@@ -18,6 +26,7 @@ struct collision
 
 };
 
+///Axis aligned bounding box for each object.
 struct AABB
 {
 
@@ -59,6 +68,7 @@ private:
     bool isSleeping;
     std::vector<collision> involvedCollisions;
 
+    ///Overloaded draw functions for rendering the AABB to the screen.
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
 
@@ -75,50 +85,103 @@ private:
     }
 
 public:
+    ///Default constructor to initialize an empty rigid body object.
     RigidBody();
+
+    ///Set the parameters for the rigid body to establish a physical object in the scene.
     RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity = 0, bool rotation = true);
+
+    ///Set up the object. Identical to the constructor but can be used to set up an object after it's been created.
     void setUpObject(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation);
+
+    ///Get the bounding box sprite (DEPRECATED).
     sf::RectangleShape getDrawable(void);
+
+    ///Set the origin of the rigid body.
     void setOrigin(sf::Vector2f newOrigin);
 
+    ///Get a rectangle shape object for the bounding box.
     sf::RectangleShape drawAABB(void);
+
+    ///Recalculate the AABB based on the rigid body position.
     void updateAABB();
+
+    ///Return an AABB containing the information about the rigid body bounding box.
     AABB getBoundingBox(void);
 
+    ///Adds to the rigid body angular velocity making it spin faster or slower.
     void addAngularVelocity(float angularVel);
-    void setRotation(float angle);
-    void setPosition(sf::Vector2f);
-    void addPosition(sf::Vector2f newPos);
-    sf::Vector2f getPosition(void);
 
+    ///Overwrite the orientation of the rigid body to be something new.
+    void setRotation(float angle);
+
+    ///Overwrite the position of the rigid body to be something new.
+    void setPosition(sf::Vector2f);
+
+    ///Add some vector to the current position.
+    void addPosition(sf::Vector2f newPos);
+
+    //Get the current rigid body position
+    sf::Vector2f getPosition(void);
+    
+    ///Add to the objects current velocity vector.
     void addVelocity(sf::Vector2f);
+
+    ///Update the position of the object based on collisions and velocities.
     void updatePosition(float dT);
+
+    ///Get the gravity vector of the object.
     float getGravity(void);
 
+    ///Get the current velocity of the rigid body.
     sf::Vector2f getVelocity(void);
+
+    ///Set the current velocity of the rigid body.
     void setVelocity(sf::Vector2f);
 
+    ///Return the current position of a vertex in world coordinates.
     sf::Vector2f getVertex(int);
 
+    ///Get the inverse mass of the rigid body.
     float getInvMass(void);
+
+    ///Get the inverse inertia of the rigid body.
     float getInvIntertia(void);
 
+    ///Return the restitution (bounciness) of the rigid body.
     float getRestitution(void);
+
+    ///Set the restitution (bounciness) of the rigid body.
     void setRestitution(float);
 
+    ///Get the coefficient of static friction.
     float getStaticFriction(void);
+
+    //Get the coefficient of dynamic friction.
     float getDynamicFriction(void);
 
+    ///Get the current orientation of the rigid body.
     float getOrientation(void);
 
+    ///Get the width of the AABB.
     float getWidth(void);
+
+    ///Get the height of the AABB.
     float getHeight(void);
 
+    ///Get the position that the rigid body was in last frame.
     sf::Vector2f getPreviousPosition(void);
+
+    ///Set the position that the rigid body was in last frame.
     void setPreviousPosition(sf::Vector2f);
 
+    ///Clear the list of collisions that rigid body is involved with.
     void clearCollisions(void);
+
+    ///Add a collision to the list of collisions the rigid body was involved in.
     void addCollision(collision);
+
+    ///Get the list of collisions the rigid body was involved in.
     std::vector<collision> getCollisions(void);
 
 };

@@ -1,5 +1,5 @@
 #include "rigidBody.h"
-#include "math.h"
+#include <math.h>
 
 RigidBody::RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation)
 {

@@ -1,7 +1,6 @@
 # Prerequisites
 *.d
-html/
-latex/
+*.dox
 
 # Object files
 *.o
