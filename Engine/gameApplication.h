@@ -1,3 +1,43 @@
+/*!
+ * @mainpage
+ * In order to start a new project, all you have to do is load in your scenes, create a new
+ * GameApplication object, pass the scenes in, and set the GameApplication to run. 
+ * \section Intro How to Start a New Project
+ * 
+ * @code 
+ * #include "Engine/gameApplication.h"
+ * #include "firstLevel.h"
+ * #include <iostream>
+ * 
+ * int main(int argc, char* argv[])
+ * {
+ *  //Initialize our game application at a 60 Hz clock
+    GameApplication* mainApplication = new GameApplication(60);
+
+    //Load the first level into the game application
+    FirstLevel* firstLevel = new FirstLevel();
+    mainApplication->loadScene(firstLevel);
+
+    //Start the game
+    mainApplication->run();
+
+    //Command line output
+    std::cout << "Returned code: " << mainApplication->m_errorCode << std::endl;
+
+    //Once the game has ended, clean up
+    delete mainApplication;
+    delete firstLevel;
+
+    return 0;
+ * }
+ * 
+ * @endcode
+ * 
+ * @author Thomas Montano
+ * @date February 20 2020 
+ * 
+ */
+
 /**
  * @class GameApplication
  * @brief Entry point for all programs using the engine, must instantiate a game application for every new game

@@ -73,15 +73,6 @@ $(function() {
  <a href="classGameScene.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="gameScene_8h_source.html">gameScene.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for GameScene:</div>
-<div class="dyncontent">
-<div class="center"><img src="classGameScene__inherit__graph.png" border="0" usemap="#GameScene_inherit__map" alt="Inheritance graph"/></div>
-<map name="GameScene_inherit__map" id="GameScene_inherit__map">
-<area shape="rect" id="node2" href="classFirstLevel.html" title="Main level operating as an engine test bed. " alt="" coords="5,80,84,107"/>
-<area shape="rect" id="node3" href="classMainMenu.html" title="This is the main menu screen and is displayed on game startup. " alt="" coords="109,80,191,107"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -248,8 +239,6 @@ Protected Attributes</h2></td></tr>
 <p>Initializes the state. </p>
 <p>DoInit is responsible for initializing this State. HandleCleanup will be called if mCleanup is true so Derived classes should always call IState::DoInit() first before initializing their assets. </p>
 
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#a975944304f6c0e475f076e0d91c587d7">FirstLevel</a>, and <a class="el" href="classMainMenu.html#a8056a2e97dfc3acdd09328b83446cef3">MainMenu</a>.</p>
-
 </div>
 </div>
 <a id="a3363561dca5e0bce2bd759efb52a885b"></a>
@@ -388,8 +377,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>HandleCleanup is responsible for performing any cleanup required before this State is removed. </p>
 
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#a37b27f87928eb02837840246953eb2ad">FirstLevel</a>, and <a class="el" href="classMainMenu.html#a0a82d2cac4c5323dd3ecfcaf058fa422">MainMenu</a>.</p>
-
 </div>
 </div>
 <a id="ac756f0e43d32ae0037bb0ba8a6094e8b"></a>
@@ -421,8 +408,6 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#a5d8d1c040f161e1628e5ea978506c1a6">FirstLevel</a>, and <a class="el" href="classMainMenu.html#a04211f9810a878e2207b189cc06429c1">MainMenu</a>.</p>
 
 </div>
 </div>
@@ -467,8 +452,6 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classMainMenu.html#a160cf5bb1c35958411cd15f5abc6debc">MainMenu</a>.</p>
-
 </div>
 </div>
 <a id="a4866d911421cd18a41aa48c15e555613"></a>
@@ -496,8 +479,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Determines whether or not the state is currently active. </p><dl class="section return"><dt>Returns</dt><dd>Whether or not the current scene is flagged as active. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#ad3f37f6fd93418a36b5c8a4ddd4bfefd">FirstLevel</a>, and <a class="el" href="classMainMenu.html#ac734a317a50df87fdc0f6b0d81421551">MainMenu</a>.</p>
-
 </div>
 </div>
 <a id="a65cea457864dd4d9a47835caad8110e7"></a>
@@ -524,8 +505,6 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Pause is responsible for pausing this State since the Application may have lost focus or another State has become activate. </p>
-
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#abdfd5520bbaec03af8252737c29cce24">FirstLevel</a>, and <a class="el" href="classMainMenu.html#a70b38abf8db9af19820fd592350be22d">MainMenu</a>.</p>
 
 </div>
 </div>
@@ -556,8 +535,6 @@ Protected Attributes</h2></td></tr>
 <p>Reset the scene without unloading game objects. </p>
 <p>ReInit is responsible for Reseting this state when the StateManager::ResetActiveState() method is called. This way a Game State can be restarted without unloading and reloading the game assets </p>
 
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#a60ed283cdbf85bb0ac7189723b038cf1">FirstLevel</a>, and <a class="el" href="classMainMenu.html#af002732a3f58819bd943e9d1e35025ec">MainMenu</a>.</p>
-
 </div>
 </div>
 <a id="aa496af1eb5bfa378c466ab2dd47b698e"></a>
@@ -584,8 +561,6 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Resume is responsible for resuming this State since the Application may have gained focus or the previous State was removed. </p>
-
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#a3d5684779372a2714b30d34c97940fc7">FirstLevel</a>, and <a class="el" href="classMainMenu.html#ab73d89c44ea824e4300f709db8355cee">MainMenu</a>.</p>
 
 </div>
 </div>
@@ -646,8 +621,6 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>UpdateFixed is responsible for handling all State fixed update needs for this State when it is the active State. </p>
 
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#abc600a1ca73e43d47d81c74aa5c5c6a4">FirstLevel</a>, and <a class="el" href="classMainMenu.html#aa28493771054ae61a0ceef286ce9fc5b">MainMenu</a>.</p>
-
 </div>
 </div>
 <a id="ab0f84dc375099d8cbe98af9eacb16b7f"></a>
@@ -700,8 +673,6 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>UpdateVariable is responsible for handling all State variable update needs for this State when it is the active State. </p>
-
-<p>Reimplemented in <a class="el" href="classFirstLevel.html#a2d7cd6b1ad9e05d4ba10ad35f0a5a32b">FirstLevel</a>, and <a class="el" href="classMainMenu.html#ae402286c443711147dca2f4f0f369dc0">MainMenu</a>.</p>
 
 </div>
 </div>

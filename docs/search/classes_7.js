@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['iconfile',['iconFile',['../structiconFile.html',1,'']]]
+  ['messagemanager',['MessageManager',['../classMessageManager.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lightsource',['LightSource',['../classLightSource.html',1,'']]]
+  ['objectanimation',['ObjectAnimation',['../classObjectAnimation.html',1,'']]]
 ];

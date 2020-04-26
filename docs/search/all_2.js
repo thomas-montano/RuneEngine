@@ -7,7 +7,6 @@ var searchData=
   ['closed',['Closed',['../event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa30c0b4dad1e3a3b93f822b9cef26244b',1,'event.h']]],
   ['collision',['collision',['../structcollision.html',1,'']]],
   ['compileshader',['CompileShader',['../renderWindow_8cpp.html#a4b8d583f2a188d2fe05ce3523195426a',1,'renderWindow.cpp']]],
-  ['config_2edox',['config.dox',['../config_8dox.html',1,'']]],
   ['contactvectorbox1',['contactVectorBox1',['../structcollision.html#a13557718a0616a242d3561587efede46',1,'collision']]],
   ['contactvectorbox2',['contactVectorBox2',['../structcollision.html#a4349e3007c2e4d2b54593b525e8b2fb1',1,'collision']]],
   ['createbutton',['createButton',['../classGameUI.html#a144a4edc570cfece53e9a8755218ad58',1,'GameUI']]],

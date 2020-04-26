@@ -1,14 +1,3 @@
-/**
- * @mainpage
- * This is the initalization of the Private Eye game. Here is where
- * the levels are loaded and sent into the game application.
- * 
- * 
- * @author Thomas Montano
- * @date February 19 2020 
- * 
- */
-
 #include <SFML/Graphics.hpp>
 #include "Engine/gameApplication.h"
 #include "firstLevel.h"
@@ -20,7 +9,6 @@ using namespace sf;
 int main(int argc, char* argv[])
 {
     
-
     //Initialize our game application at a 60 Hz clock
     GameApplication* mainApplication = new GameApplication(60);
 

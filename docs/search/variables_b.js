@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pixel_5fdata',['pixel_data',['../structiconFile.html#a7d81e4348d679040bb1bcabf50660574',1,'iconFile']]]
+  ['scenelayers',['sceneLayers',['../classGameScene.html#af77b5cf1f8ae6ede32be679cd5f64b4b',1,'GameScene']]],
+  ['staticfriction',['staticFriction',['../structbody.html#abc630e89be38f19a48fac1cb703f373e',1,'body']]]
 ];

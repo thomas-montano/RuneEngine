@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['objectanimation',['ObjectAnimation',['../classObjectAnimation.html',1,'']]]
+  ['rectangleshape',['RectangleShape',['../classRectangleShape.html',1,'']]],
+  ['renderwindow',['RenderWindow',['../classRenderWindow.html',1,'']]],
+  ['rigidbody',['RigidBody',['../classRigidBody.html',1,'']]]
 ];

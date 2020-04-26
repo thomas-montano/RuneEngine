@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['objectanimation_2ecpp',['objectAnimation.cpp',['../objectAnimation_8cpp.html',1,'']]],
-  ['objectanimation_2eh',['objectAnimation.h',['../objectAnimation_8h.html',1,'']]]
+  ['scenemanager_2ecpp',['sceneManager.cpp',['../sceneManager_8cpp.html',1,'']]],
+  ['scenemanager_2eh',['sceneManager.h',['../sceneManager_8h.html',1,'']]]
 ];
