@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classDrawable.html" title="Interface class for creating something that can be drawn to the screen. " alt="" coords="5,5,83,32"/>
+<area shape="rect" id="node2" href="$classRectangleShape.html" title="Base class for a rectangle to be drawn on the screen. " alt="" coords="131,5,249,32"/>
+</map>
