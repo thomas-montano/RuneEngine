@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node2" href="$classGameObject.html" title="Entity control system main object used for all objects in the scene. " alt="" coords="137,5,232,32"/>
+<area shape="rect" id="node3" href="$classParticleEmitter.html" title="Class responsible for creating particle emitters and managing the creation of particles. " alt="" coords="131,56,239,83"/>
+<area shape="rect" id="node4" href="$classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. " alt="" coords="143,107,226,133"/>
+<area shape="rect" id="node5" href="$classSceneLayer.html" title="Main component of scenes. Can have objects, particles, light sources, or any other in game entity add..." alt="" coords="139,157,230,184"/>
+</map>
