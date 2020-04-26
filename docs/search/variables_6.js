@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['height',['height',['../structiconFile.html#a0c3742c8600f9e4a01564c9781a21f65',1,'iconFile']]]
+  ['invinertia',['invInertia',['../structbody.html#aed3b156e160e684e007e31da55f03932',1,'body']]],
+  ['invmass',['invMass',['../structbody.html#ad9044f84cd61d54ac1e72d30f0194b08',1,'body']]]
 ];

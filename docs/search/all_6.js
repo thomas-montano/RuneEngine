@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['game_2ecpp',['game.cpp',['../game_8cpp.html',1,'']]],
   ['gameapplication',['GameApplication',['../classGameApplication.html',1,'GameApplication'],['../classGameApplication.html#a339b5afc96791dbb17a3829bedfcab99',1,'GameApplication::GameApplication()']]],
   ['gameapplication_2ecpp',['gameApplication.cpp',['../gameApplication_8cpp.html',1,'']]],
   ['gameapplication_2eh',['gameApplication.h',['../gameApplication_8h.html',1,'']]],
@@ -51,7 +50,6 @@ var searchData=
   ['getvertex',['getVertex',['../classRigidBody.html#a862064888f9d23aec259ac609554de12',1,'RigidBody']]],
   ['getwidth',['getWidth',['../classRigidBody.html#a4cbcda90f888b62c6cca402a7d8e7f72',1,'RigidBody']]],
   ['getwindow',['getWindow',['../classMessageManager.html#aa4a35ec412139ab52d4e2c77228cacbc',1,'MessageManager']]],
-  ['gimp_5fimage',['gimp_image',['../icon_8c.html#ab264f8b757b94c2e170665d765c04dd4',1,'icon.c']]],
   ['graphics_2ehpp',['Graphics.hpp',['../Graphics_8hpp.html',1,'']]],
   ['gravityfactor',['gravityFactor',['../structbody.html#a479f3c2c0e12dcece5dcc4be7f6c26be',1,'body']]]
 ];

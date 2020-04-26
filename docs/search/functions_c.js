@@ -1,7 +1,7 @@
 var searchData=
 [
   ['particleemitter',['ParticleEmitter',['../classParticleEmitter.html#ab94b7180b86d61848cc498c471babd8a',1,'ParticleEmitter']]],
-  ['pause',['pause',['../classGameScene.html#a65cea457864dd4d9a47835caad8110e7',1,'GameScene::pause()'],['../classFirstLevel.html#abdfd5520bbaec03af8252737c29cce24',1,'FirstLevel::pause()'],['../classMainMenu.html#a70b38abf8db9af19820fd592350be22d',1,'MainMenu::pause()']]],
+  ['pause',['pause',['../classGameScene.html#a65cea457864dd4d9a47835caad8110e7',1,'GameScene']]],
   ['playanimation',['playAnimation',['../classGameObject.html#a37042d00bc59bde67be0fb72e62b2549',1,'GameObject']]],
   ['pollevents',['pollEvents',['../classRenderWindow.html#ae0f8abb7948e490193fccdd1fbcbe91c',1,'RenderWindow']]],
   ['positionalcorrection',['positionalCorrection',['../physicsEngine_8cpp.html#a1ecaf7543a6105671d2b4e68dc6d890c',1,'positionalCorrection(RigidBody *object1, RigidBody *object2, float depth, sf::Vector2f normal):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#af9cd76db4b88157d1dc2ed02bdf761e4',1,'positionalCorrection(RigidBody *object1, RigidBody *object2, float penetration, sf::Vector2f normal):&#160;physicsEngine.cpp']]],
