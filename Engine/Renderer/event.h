@@ -9,6 +9,7 @@
 #ifndef EVENT_H_DEFINED
 #define EVENT_H_DEFINED
 
+///Possible window level events that can be triggered
 enum EventType{None,Closed,Resized,KeyPressed};
 
 class Event

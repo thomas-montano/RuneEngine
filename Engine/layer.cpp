@@ -1,6 +1,11 @@
 #include "layer.h"
 #include <iostream>
 
+/**
+ * @param physics Whether or not the layer should have collisions.
+ * @param brightness The ambient lighting level for the scene (0.0-1.0).
+ * @param opacity The opacity level for the layer (0.0-1.0).
+*/
 SceneLayer::SceneLayer(bool physics, float brightness, float opacity)
 {
   hasPhysics = physics;
@@ -11,6 +16,9 @@ SceneLayer::SceneLayer(bool physics, float brightness, float opacity)
 
 }
 
+/**
+ * @param object GameObject to add to the scene on this layer.
+*/
 void SceneLayer::addToLayer(GameObject* object)
 {
 
@@ -19,6 +27,9 @@ void SceneLayer::addToLayer(GameObject* object)
 
 }
 
+/**
+ * @param object ParticleEmitter to add to the scene on this layer.
+*/
 void SceneLayer::addToLayer(ParticleEmitter* object)
 {
 
@@ -26,11 +37,18 @@ void SceneLayer::addToLayer(ParticleEmitter* object)
 
 }
 
+
+/**
+ * @return An array of pointers to the objects on this layer.
+*/
 std::vector<GameObject*> SceneLayer::getObjects(void)
 {
   return objects;
 }
 
+/**
+ * @return The number of objects on the current layer.
+*/
 int SceneLayer::getTotalSize(void)
 {
 
@@ -38,6 +56,9 @@ int SceneLayer::getTotalSize(void)
 
 }
 
+/**
+ * @param opacity Global opacity level for the layer (0.0-1.0).
+*/
 void SceneLayer::setOpacity(float opacity)
 {
 
@@ -52,6 +73,10 @@ void SceneLayer::setOpacity(float opacity)
 
 }
 
+/**
+ * @param target RenderTarget to draw to.
+ * @param states States variable to affect the rendering
+*/
 void SceneLayer::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
 
@@ -68,6 +93,9 @@ void SceneLayer::draw(sf::RenderTarget& target, sf::RenderStates states) const
   }
 }
 
+/**
+ * @param newSelfPointer Pointer that is passed to GameObject in the scene to use as a reference back to the current SceneLayer.
+*/
 void SceneLayer::setScenePointer(SceneLayer* newSelfPointer)
 {
   selfPointer = newSelfPointer;
@@ -79,6 +107,9 @@ void SceneLayer::setScenePointer(SceneLayer* newSelfPointer)
 
 }
 
+/**
+ * @return All the rigid bodies currently in the GameScene.
+*/
 std::vector<RigidBody*> SceneLayer::getRigidBodies()
 {
   return objectRigidBodies;

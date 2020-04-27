@@ -1,3 +1,12 @@
+/*
+  Main function used as a sandbox for the renderer
+
+  This class provides a rectangle that can be rendered to a render window
+
+  Thomas Montano
+  4/25/20
+*/
+
 #include <string>
 #include <iostream>
 #include "renderWindow.h"
@@ -17,15 +26,13 @@ int main(void)
   Event event;
 
   RectangleShape myRectangle(Vec2(50,50),Vec2(100,100));
-  RectangleShape myRectangle2(Vec2(200,150),Vec2(100,200));
-
+  
   while(myWindow.isOpen())
   {
     myWindow.clear();
 
     //Draw first triangle
     myWindow.draw(myRectangle);
-    myWindow.draw(myRectangle2);
 
     /* Swap front and back buffers */
     myWindow.display();

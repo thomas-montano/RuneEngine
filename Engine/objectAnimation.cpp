@@ -1,5 +1,8 @@
 #include "objectAnimation.h"
 
+/**
+ * @param frameRate The framerate of the new ObjectAnimation.
+*/
 void ObjectAnimation::setFrameRate(int frameRate)
 {
 
@@ -7,6 +10,9 @@ void ObjectAnimation::setFrameRate(int frameRate)
 
 }
 
+/**
+ * @return The framerate of the ObjectAnimation.
+*/
 int ObjectAnimation::getFrameRate(void)
 {
 
@@ -14,6 +20,9 @@ int ObjectAnimation::getFrameRate(void)
 
 }
 
+/**
+ * @param frameWidth The width in pixels of each frame from the sprite sheet.
+*/
 void ObjectAnimation::setFrameWidth(int frameWidth)
 {
 
@@ -21,6 +30,9 @@ void ObjectAnimation::setFrameWidth(int frameWidth)
 
 }
 
+/**
+ * @return The width in pixels of each frame from the sprite sheet.
+*/
 int ObjectAnimation::getFrameWidth(void)
 {
 
@@ -28,6 +40,9 @@ int ObjectAnimation::getFrameWidth(void)
 
 }
 
+/**
+ * @param frameHeight The height in pixels of each frame from the sprite sheet.
+*/
 void ObjectAnimation::setFrameHeight(int frameHeight)
 {
 
@@ -35,6 +50,9 @@ void ObjectAnimation::setFrameHeight(int frameHeight)
 
 }
 
+/**
+ * @return The height in pixels of each frame from the sprite sheet.
+*/
 int ObjectAnimation::getFrameHeight(void)
 {
 
@@ -42,6 +60,9 @@ int ObjectAnimation::getFrameHeight(void)
 
 }
 
+/**
+ * @param numFrames The total number of frames that are present in the sprite sheet.
+*/
 void ObjectAnimation::setNumFrames(int numFrames)
 {
 
@@ -49,6 +70,9 @@ void ObjectAnimation::setNumFrames(int numFrames)
 
 }
 
+/**
+ * @return The total number of frames that are present in the sprite sheet.
+*/
 int ObjectAnimation::getNumFrames(void)
 {
 
@@ -56,6 +80,9 @@ int ObjectAnimation::getNumFrames(void)
 
 }
 
+/**
+ * @param animationSheet The texture to be used as the sprite sheet.
+*/
 void ObjectAnimation::setSheet(sf::Texture& animationSheet)
 {
 
@@ -63,16 +90,25 @@ void ObjectAnimation::setSheet(sf::Texture& animationSheet)
 
 }
 
+/**
+ * @return A pointer referencing the texture to be used as the sprite sheet.
+*/
 sf::Texture* ObjectAnimation::getSheet(void)
 {
     return m_animationSheet;
 }
 
+/**
+ * @return Which frame the animation is currently on.
+*/
 int ObjectAnimation::getCurrentFrame()
 {
     return m_currentFrame;
 }
 
+/**
+ * @param frame The frame that the current animation should be set to.
+*/
 void ObjectAnimation::setCurrentFame(int frame)
 {
     m_currentFrame = frame;
@@ -92,11 +128,17 @@ void ObjectAnimation::incCurrentFrame()
 
 }
 
+/**
+ * @param fileName A string representing the file location of the sprite sheet.
+*/
 void ObjectAnimation::setFile(std::string fileName)
 {
     m_filePath = fileName;
 }
 
+/**
+ * @return A string representing the file location of the sprite sheet.
+*/
 std::string ObjectAnimation::getFile(void)
 {
     return m_filePath;

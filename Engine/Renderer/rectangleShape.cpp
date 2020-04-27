@@ -1,15 +1,28 @@
 #include "rectangleShape.h"
+#include "shader.h"
 #include <iostream>
 
-RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize)
+RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader("./rectangle.shader")
 {
   position = newPosition;
-  size = newSize;
+  size = newSize;  
 
   vertices[0] = Vec2(position.x, position.y+size.y);
   vertices[1] = Vec2(position.x + size.x, position.y+size.y);
   vertices[2] = Vec2(position.x + size.x, position.y);
   vertices[3] = Vec2(position.x, position.y);
+
+  //Generate and bind vertex array object
+  glGenVertexArrays(1, &VAO);
+  glBindVertexArray(VAO);
+
+  //Generate and bind the vertices array in the buffer
+  glGenBuffers(1,&buffer);
+  glBindBuffer(GL_ARRAY_BUFFER, buffer);
+
+  // Set vertex attribute pointer and enable buffer
+  glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,(void*)0);
+  glEnableVertexAttribArray(0);
 
 }
 
@@ -18,11 +31,13 @@ void RectangleShape::draw(Vec2 windowSize)
 
   const int vertexes = 12;
 
-  glGenVertexArrays(1, &VAO);
+  //Set the current shader to the rectangle shader
+  rectangleShader.setActive();
+
+  //Bind the vertex array object
   glBindVertexArray(VAO);
 
-  glGenBuffers(1,&buffer);
-
+  //Update vertex data
   float drawVertices[vertexes] = 
   {
 
@@ -34,14 +49,10 @@ void RectangleShape::draw(Vec2 windowSize)
     (position.x+size.x)/windowSize.x-1, position.y/windowSize.y-1
   };
 
-  glBindBuffer(GL_ARRAY_BUFFER, buffer);
-
+  //Push new data into vertex array
   glBufferData(GL_ARRAY_BUFFER,vertexes*sizeof(float), drawVertices, GL_DYNAMIC_DRAW);
 
-  glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,(void*)0);
-  glEnableVertexAttribArray(0);
-
-  //Draw Two Triangles
+  //Draw Two Triangles to make a square
   glBindVertexArray(VAO);
   glDrawArrays(GL_TRIANGLES,0,3);
   glDrawArrays(GL_TRIANGLES,3,3);
@@ -54,7 +65,8 @@ void RectangleShape::addPosition(Vec2 newPos)
   position.y += newPos.y;
 }
 
-void RectangleShape::setPosition(Vec2)
+void RectangleShape::setPosition(Vec2 newPos)
 {
-  
+  position.x = newPos.x;
+  position.y = newPos.y;
 }

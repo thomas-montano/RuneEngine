@@ -31,6 +31,9 @@ void GameUI::createButton(float posX, float posY, float width, float height)
 
 }
 
+/**
+ * @return Drawable sprite object
+*/
 sf::Sprite GameUI::getDrawable(void)
 {
 

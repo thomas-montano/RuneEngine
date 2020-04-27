@@ -4,6 +4,44 @@
  * GameApplication object, pass the scenes in, and set the GameApplication to run. 
  * \section Intro How to Start a New Project
  * 
+ * 
+ * Create your first GameScene:
+ * 
+ * firstLevel.h:
+ * @code
+ * 
+ * #ifndef FIRSTLEVEL_H_INCLUDED
+ * #define FIRSTLEVEL_H_INCLUDED
+ * 
+ * #include <SFML/Graphics.hpp>
+ * #include <SFML/Audio.hpp>
+ * #include "Engine/gameScene.h"
+ * 
+ * class FirstLevel : public GameScene
+ * {
+ * private:
+ * 
+ * public:
+ * 
+ * };
+ * 
+ * @endcode
+ * 
+ * firstLevel.cpp:
+ * 
+ * @code
+ * 
+ * #include "firstLevel.h"
+ * 
+ * void FirstLevel::doInit(void)
+ * {
+ * 
+ * }
+ * 
+ * @endcode
+ * 
+ * Load that scene into the game application:
+ * 
  * @code 
  * #include "Engine/gameApplication.h"
  * #include "firstLevel.h"
@@ -11,19 +49,23 @@
  * 
  * int main(int argc, char* argv[])
  * {
- *  //Initialize our game application at a 60 Hz clock
-    GameApplication* mainApplication = new GameApplication(60);
-    //Load the first level into the game application
-    FirstLevel* firstLevel = new FirstLevel();
-    mainApplication->loadScene(firstLevel);
-    //Start the game
-    mainApplication->run();
-    //Command line output
-    std::cout << "Returned code: " << mainApplication->m_errorCode << std::endl;
-    //Once the game has ended, clean up
-    delete mainApplication;
-    delete firstLevel;
-    return 0;
+ *   //Initialize our game application at a 60 Hz clock
+ *   GameApplication* mainApplication = new GameApplication(60);
+ * 
+ *   //Load the first level into the game application
+ *   FirstLevel* firstLevel = new FirstLevel();
+ *   mainApplication->loadScene(firstLevel);
+ * 
+ *   //Start the game
+ *   mainApplication->run();
+ * 
+ *   //Command line output
+ *   std::cout << "Returned code: " << mainApplication->m_errorCode << std::endl;
+ * 
+ *   //Once the game has ended, clean up
+ *   delete mainApplication;
+ *   delete firstLevel;
+ *   return 0;
  * }
  * 
  * @endcode
@@ -61,6 +103,12 @@ private:
   SceneManager m_sceneManager;
   GameScene* m_currentScene;
 
+  ///Main game loop used to keep the game running and updating.
+  void gameLoop(void);
+
+  ///Window level input handling.
+  void processInput(void);
+
 public:
   int m_errorCode;
 
@@ -73,11 +121,6 @@ public:
   ///Starts the main game loop
   int run(void);
 
-  ///Main game loop used to keep the game running and updating.
-  void gameLoop(void);
-
-  ///Window level input handling.
-  void processInput(void);
 };
 
 

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+g++ -c *.cpp
+g++ *.o -lglfw3 -lGLEW -lGLU -lGL -pthread -ldl -lGLEW -lrt -lXrandr -lXi -lXinerama -lX11

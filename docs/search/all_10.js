@@ -5,10 +5,11 @@ var searchData=
   ['scenemanager',['SceneManager',['../classSceneManager.html',1,'']]],
   ['scenemanager_2ecpp',['sceneManager.cpp',['../sceneManager_8cpp.html',1,'']]],
   ['scenemanager_2eh',['sceneManager.h',['../sceneManager_8h.html',1,'']]],
+  ['setactive',['setActive',['../classShader.html#a060b870ffec4a2eadeb01aa4f05a5ff5',1,'Shader']]],
   ['setcanvassize',['setCanvasSize',['../classParticleEmitter.html#a199ab41f8f7c8cf20cff052539aad941',1,'ParticleEmitter']]],
   ['setcurrentfame',['setCurrentFame',['../classObjectAnimation.html#ad08112ffb12d2d1befa6ed73f7a52b41',1,'ObjectAnimation']]],
   ['setdeltatime',['setDeltaTime',['../classMessageManager.html#ab000d918faf9ac0b78eabca9683a0ce1',1,'MessageManager']]],
-  ['setdissolutionrate',['setDissolutionRate',['../classParticleEmitter.html#ac5ddef5979b090441152e90ccb8e8363',1,'ParticleEmitter']]],
+  ['setdissolutionrate',['setDissolutionRate',['../classParticleEmitter.html#ae1e332a305ceda82bed596a838cd39e3',1,'ParticleEmitter']]],
   ['setfile',['setFile',['../classObjectAnimation.html#a736d4d558c2e2a08483684ea1f60f154',1,'ObjectAnimation']]],
   ['setframeheight',['setFrameHeight',['../classObjectAnimation.html#af6d1d027c02b2e69d2417864d12711a0',1,'ObjectAnimation']]],
   ['setframerate',['setFrameRate',['../classObjectAnimation.html#ac6d0a1ed28cb5816334851f6f40ddd93',1,'ObjectAnimation']]],
@@ -29,6 +30,10 @@ var searchData=
   ['setupobject',['setUpObject',['../classRigidBody.html#a3611ebd648baa406595e6eef766df967',1,'RigidBody']]],
   ['setvelocity',['setVelocity',['../classRigidBody.html#ad0bdd224f00de7cfde38e0ed4c69e85b',1,'RigidBody']]],
   ['setwindow',['setWindow',['../classMessageManager.html#a1b809cfa12c4195382901a0e3404e4d2',1,'MessageManager']]],
+  ['shader',['Shader',['../classShader.html',1,'Shader'],['../classShader.html#a2604eec6d191e6d5931448581f18c740',1,'Shader::Shader()']]],
+  ['shader_2ecpp',['shader.cpp',['../shader_8cpp.html',1,'']]],
+  ['shader_2eh',['shader.h',['../shader_8h.html',1,'']]],
+  ['shaderprogramsource',['ShaderProgramSource',['../structShaderProgramSource.html',1,'']]],
   ['start',['start',['../classGameObject.html#a746f9f2a00f69a9cdf2fd1ec281c5cda',1,'GameObject']]],
   ['staticfriction',['staticFriction',['../structbody.html#abc630e89be38f19a48fac1cb703f373e',1,'body']]]
 ];

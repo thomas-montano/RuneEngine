@@ -1,15 +1,17 @@
-/**
- * @class RectangleShape
- * @brief Base class for a rectangle to be drawn on the screen.
- * 
- * @author Thomas Montano
- * @date April 20 2020
+/*
+  RectangleShape
+
+  This class provides a rectangle that can be rendered to a render window
+
+  Thomas Montano
+  4/25/20
 */
 
 #ifndef RECTANGLE_H_DEFINED
 #define RECTANGLE_H_DEFINED
 
 #include "renderWindow.h"
+#include "shader.h"
 #include "drawable.h"
 #include "vec2.h"
 
@@ -17,6 +19,8 @@ class RectangleShape : public Drawable
 {
 
 private:
+
+  Shader rectangleShader;
 
   unsigned int buffer;
   unsigned int VAO;

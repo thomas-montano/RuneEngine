@@ -76,14 +76,19 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2ea934aa378fc7c9cf6777e4cdcea610"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneManager.html#a2ea934aa378fc7c9cf6777e4cdcea610">checkFlags</a> (void)</td></tr>
+<tr class="memdesc:a2ea934aa378fc7c9cf6777e4cdcea610"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the current state has thrown any flags. This lets us know whether or not <a class="el" href="classGameApplication.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">GameApplication</a> needs to do anything.  <a href="#a2ea934aa378fc7c9cf6777e4cdcea610">More...</a><br /></td></tr>
 <tr class="separator:a2ea934aa378fc7c9cf6777e4cdcea610"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abaf5b69c780c3fd935e73c3209981929"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneManager.html#abaf5b69c780c3fd935e73c3209981929">addScene</a> (<a class="el" href="classGameScene.html">GameScene</a> *newScene)</td></tr>
+<tr class="memdesc:abaf5b69c780c3fd935e73c3209981929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a> into the <a class="el" href="classSceneManager.html" title="The state manager is responsible for handling the transfer of the current state pointer that refers t...">SceneManager</a> scene buffer.  <a href="#abaf5b69c780c3fd935e73c3209981929">More...</a><br /></td></tr>
 <tr class="separator:abaf5b69c780c3fd935e73c3209981929"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e725467342ae1ef4118f34531df6fdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classGameScene.html">GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneManager.html#a6e725467342ae1ef4118f34531df6fdf">getCurrentScene</a> (void)</td></tr>
+<tr class="memdesc:a6e725467342ae1ef4118f34531df6fdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently active <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a>.  <a href="#a6e725467342ae1ef4118f34531df6fdf">More...</a><br /></td></tr>
 <tr class="separator:a6e725467342ae1ef4118f34531df6fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5855c3ba80bf9eaac5f6e21482ea5d45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneManager.html#a5855c3ba80bf9eaac5f6e21482ea5d45">setScene</a> (int newState)</td></tr>
+<tr class="memdesc:a5855c3ba80bf9eaac5f6e21482ea5d45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the currently active <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a>.  <a href="#a5855c3ba80bf9eaac5f6e21482ea5d45">More...</a><br /></td></tr>
 <tr class="separator:a5855c3ba80bf9eaac5f6e21482ea5d45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0f9aaf32fbab08c412127d2242209a8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSceneManager.html#ac0f9aaf32fbab08c412127d2242209a8">getNumScenes</a> (void)</td></tr>
+<tr class="memdesc:ac0f9aaf32fbab08c412127d2242209a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of scenes currently stored in the SceneManger scene buffer.  <a href="#ac0f9aaf32fbab08c412127d2242209a8">More...</a><br /></td></tr>
 <tr class="separator:ac0f9aaf32fbab08c412127d2242209a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -107,6 +112,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Adds a <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a> into the <a class="el" href="classSceneManager.html" title="The state manager is responsible for handling the transfer of the current state pointer that refers t...">SceneManager</a> scene buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newScene</td><td>New <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a> to be added into the <a class="el" href="classSceneManager.html" title="The state manager is responsible for handling the transfer of the current state pointer that refers t...">SceneManager</a> scene buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a2ea934aa378fc7c9cf6777e4cdcea610"></a>
@@ -124,6 +137,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Check to see if the current state has thrown any flags. This lets us know whether or not <a class="el" href="classGameApplication.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">GameApplication</a> needs to do anything. </p>
 
 </div>
 </div>
@@ -143,6 +158,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the currently active <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pointer to the currently active <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a> </dd></dl>
+
 </div>
 </div>
 <a id="ac0f9aaf32fbab08c412127d2242209a8"></a>
@@ -161,6 +179,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the total number of scenes currently stored in the SceneManger scene buffer. </p>
+<dl class="section return"><dt>Returns</dt><dd>The total number of scenes currently stored in the <a class="el" href="classSceneManager.html" title="The state manager is responsible for handling the transfer of the current state pointer that refers t...">SceneManager</a> scene buffer. </dd></dl>
+
 </div>
 </div>
 <a id="a5855c3ba80bf9eaac5f6e21482ea5d45"></a>
@@ -173,11 +194,19 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void SceneManager::setScene </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>newState</em></td><td>)</td>
+          <td class="paramname"><em>newScene</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Set the currently active <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newScene</td><td>Index in the scene buffer that determines what scene should be set as </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

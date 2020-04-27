@@ -151,6 +151,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Broad phase collision responsible for determining collisions based off of <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a>'s only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boundingBoxes</td><td>An array of pointers to rigid bodies that should be considered for collision. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Collision manifolds that have been found to be possibly colliding. </dd></dl>
 
 </div>
 </div>
@@ -162,36 +169,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">float crossProduct </td>
-          <td>(</td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Cross product of two vectors. </p>
-
-</div>
-</div>
-<a id="a5ae206ebaca331c2406a862b84fbe4fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ae206ebaca331c2406a862b84fbe4fa">&#9670;&nbsp;</a></span>dotProduct()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float dotProduct </td>
           <td>(</td>
           <td class="paramtype">sf::Vector2f&#160;</td>
           <td class="paramname"><em>vector1</em>, </td>
@@ -210,7 +187,53 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Cross product of two vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector1</td><td>First vector to be used in the cross product calculation. </td></tr>
+    <tr><td class="paramname">vector2</td><td>Seconds vector to be used in the cross product calculation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the cross product calculation. </dd></dl>
+
+</div>
+</div>
+<a id="a5ae206ebaca331c2406a862b84fbe4fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae206ebaca331c2406a862b84fbe4fa">&#9670;&nbsp;</a></span>dotProduct()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float dotProduct </td>
+          <td>(</td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>v1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">sf::Vector2f&#160;</td>
+          <td class="paramname"><em>v2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Dot product calculation of two vectors. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v1</td><td>First vector to be used in the dot product. </td></tr>
+    <tr><td class="paramname">v2</td><td>Seconds vector to be used in the dot product. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The result of the dot product calculation. </dd></dl>
 
 </div>
 </div>
@@ -231,6 +254,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Find the vector normal to a surface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">axis</td><td>Vector to use to calculate the surface normal. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Left hand normal of the surface. </dd></dl>
 
 </div>
 </div>
@@ -244,13 +274,20 @@ Functions</h2></td></tr>
           <td class="memname">std::vector&lt;<a class="el" href="structcollision.html">collision</a>&gt; narrowPhaseCollisions </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="structcollision.html">collision</a> &gt;&#160;</td>
-          <td class="paramname"><em>boundingBoxes</em></td><td>)</td>
+          <td class="paramname"><em>possibleCollisions</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into accout. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">possibleCollisions</td><td>Collision manifolds for <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a>'s that were found to be colliding </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Collision manifols that have been found to be definitely colliding. </dd></dl>
 
 </div>
 </div>
@@ -264,13 +301,20 @@ Functions</h2></td></tr>
           <td class="memname">sf::Vector2f normalize </td>
           <td>(</td>
           <td class="paramtype">sf::Vector2f&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>vector</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Vector that should be normalized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector in the direction of vector but with magnitude of 1. </dd></dl>
 
 </div>
 </div>
@@ -296,7 +340,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>penetration</em>, </td>
+          <td class="paramname"><em>depth</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -311,6 +355,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object1</td><td>The first object in the collision. </td></tr>
+    <tr><td class="paramname">object2</td><td>The seconds object in the collision. </td></tr>
+    <tr><td class="paramname">normal</td><td>The normal vector for the collision. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -331,6 +383,12 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Print vector function for debugging. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vector</td><td>Vector to be displayed to the console. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -344,13 +402,13 @@ Functions</h2></td></tr>
           <td class="memname">float pythagoreanSolve </td>
           <td>(</td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname">, </td>
+          <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">float&#160;</td>
-          <td class="paramname">&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -361,6 +419,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Solve for the hypotenuse given the two sides of a triangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>First side of the triangle. </td></tr>
+    <tr><td class="paramname">b</td><td>Seconds side of the triangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The length of the hypotenuse. </dd></dl>
 
 </div>
 </div>
@@ -374,11 +440,17 @@ Functions</h2></td></tr>
           <td class="memname">void resolveCollisions </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="structcollision.html">collision</a> &gt;&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramname"><em>collisions</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">collisions</td><td>Collision manifolds for OBB's that were found to be definitely colliding. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -410,7 +482,14 @@ Functions</h2></td></tr>
 
 <p>Function file responsible for broad and narrow phase detection and collision resolution. </p>
 <dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>March 2 2020Function call made by the game scene to have objects get updated </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>March 2 2020Function call made by the game scene to have objects get updated</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">objects</td><td>An array of pointers to rigid bodies that should be considered for collision </td></tr>
+    <tr><td class="paramname">dT</td><td>The amount of time that the physics frame occupies </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

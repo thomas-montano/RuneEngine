@@ -30,7 +30,7 @@ protected:
 private:
 
   const int PARTICLELIMIT = 1000;
-  int m_dissolutionRate; //Rate at which particles disappear
+  float m_dissolutionRate; //Rate at which particles disappear
 
   sf::Color m_pixelBaseColor; //Starting color, can apply modifiers later
 
@@ -42,6 +42,7 @@ private:
   
   std::vector<particle> m_particles;
 
+  ///Overloaded draw function to render particles to the screen.
   virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
@@ -49,13 +50,10 @@ public:
   ParticleEmitter(sf::Vector2f startPos,  sf::Vector2f initVel, sf::Color color, int dissolutionRate = 5, sf::Vector2f gravity = sf::Vector2f(0,-10));
   
   ///The amount of time in seconds that a particle will exist before it gets destroyed.
-  void setDissolutionRate(int rate);
+  void setDissolutionRate(float rate);
 
   ///Sets the gravity that a particle will be subjected to.
   void setGravity(sf::Vector2f gravity);
-
-  ///Overloaded draw function to render particles to the screen.
-  void draw(sf::RenderWindow &window);
 
   ///Spawn particles from the particles emitter.
   void fuel(int particles);

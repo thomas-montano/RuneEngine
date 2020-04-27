@@ -1,6 +1,10 @@
 #include "physicsEngine.h"
 #include <cmath>
 
+/**
+ * @param objects An array of pointers to rigid bodies that should be considered for collision
+ * @param dT The amount of time that the physics frame occupies
+*/
 void updatePhysics(std::vector<RigidBody*> objects, float dT)
 {
 
@@ -67,6 +71,10 @@ void updatePhysics(std::vector<RigidBody*> objects, float dT)
 
 }
 
+/**
+ * @param boundingBoxes An array of pointers to rigid bodies that should be considered for collision.
+ * @return Collision manifolds that have been found to be possibly colliding.
+*/
 std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes)
 {
 
@@ -153,6 +161,10 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
   return collisions;
 }
 
+/**
+ * @param possibleCollisions Collision manifolds for AABB's that were found to be colliding
+ * @return Collision manifols that have been found to be definitely colliding.
+*/
 std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleCollisions)
 {
 
@@ -283,6 +295,9 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
 
 }
 
+/**
+ * @param collisions Collision manifolds for OBB's that were found to be definitely colliding. 
+*/
 void resolveCollisions(std::vector<collision> collisions)
 {
 
@@ -356,6 +371,11 @@ void resolveCollisions(std::vector<collision> collisions)
   }
 }
 
+/**
+ * @param object1 The first object in the collision.
+ * @param object2 The seconds object in the collision.
+ * @param normal The normal vector for the collision. 
+*/
 void positionalCorrection(RigidBody* object1, RigidBody* object2, float depth, sf::Vector2f normal)
 {
 
@@ -370,6 +390,9 @@ void positionalCorrection(RigidBody* object1, RigidBody* object2, float depth, s
 
 }
 
+/**
+ * @param vector Vector to be displayed to the console. 
+*/
 void printVector(sf::Vector2f vector)
 {
 
@@ -377,6 +400,11 @@ void printVector(sf::Vector2f vector)
 
 }
 
+/**
+ * @param v1 First vector to be used in the dot product.
+ * @param v2 Seconds vector to be used in the dot product.
+ * @return The result of the dot product calculation.
+*/
 float dotProduct(sf::Vector2f v1, sf::Vector2f v2)
 {
 
@@ -386,6 +414,10 @@ float dotProduct(sf::Vector2f v1, sf::Vector2f v2)
 
 }
 
+/**
+ * @param axis Vector to use to calculate the surface normal.
+ * @return Left hand normal of the surface. 
+*/
 sf::Vector2f findNormal(sf::Vector2f axis)
 {
 
@@ -396,17 +428,31 @@ sf::Vector2f findNormal(sf::Vector2f axis)
 
 }
 
+/**
+ * @param vector Vector that should be normalized.
+ * @return Vector in the direction of vector but with magnitude of 1. 
+*/
 sf::Vector2f normalize(sf::Vector2f vector)
 {
   float magnitude = sqrt(pow(vector.x,2) + pow(vector.y,2));
   return sf::Vector2f(magnitude != 0 ? vector.x/magnitude:0, magnitude != 0 ? vector.y/magnitude:0);
 }
 
+/**
+ * @param a First side of the triangle.
+ * @param b Seconds side of the triangle.
+ * @return The length of the hypotenuse. 
+*/
 float pythagoreanSolve(float a, float b)
 {
   return sqrt(pow(a,2) + pow(b,2));
 }
 
+/**
+ * @param vector1 First vector to be used in the cross product calculation.
+ * @param vector2 Seconds vector to be used in the cross product calculation.
+ * @return The result of the cross product calculation. 
+*/
 float crossProduct(sf::Vector2f vector1,sf::Vector2f vector2 )
 {
   return vector1.x * vector2.y - vector1.y * vector2.x;

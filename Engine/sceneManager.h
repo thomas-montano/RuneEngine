@@ -21,11 +21,19 @@ private:
   //Array to hold all of the object pointers for the virtual functions
   std::vector<GameScene*> m_scenes;
 public:
-  
+  ///Check to see if the current state has thrown any flags. This lets us know whether or not GameApplication needs to do anything
   void checkFlags(void);
+  
+  ///Adds a GameScene into the SceneManager scene buffer.
   void addScene(GameScene* newScene);
+
+  ///Get the currently active GameScene.
   GameScene* getCurrentScene(void);
+
+  ///Set the currently active GameScene.
   void setScene(int newState);
+
+  ///Get the total number of scenes currently stored in the SceneManger scene buffer.
   int getNumScenes(void);
 };
 

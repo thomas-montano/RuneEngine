@@ -5,7 +5,7 @@ LDLIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 ODIR = obj
 
-SOURCES=$(wildcard *.cpp Engine/*.cpp)
+SOURCES=$(wildcard *.cpp Engine/*.cpp Engine/Renderer/*.cpp)
 _OBJECTS=$(SOURCES:.cpp=.o)
 OBJECTS = $(patsubst %,$(ODIR)/%,$(_OBJECTS))
 

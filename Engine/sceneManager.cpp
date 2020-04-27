@@ -7,13 +7,17 @@
 #include "sceneManager.h"
 #include "gameScene.h"
 
-//Return a pointer to the current game state
+/**
+ * @return A pointer to the currently active GameScene
+*/
 GameScene* SceneManager::getCurrentScene(void)
 {
   return m_scenes[m_currentScene];
 }
 
-//Change the current game state
+/**
+ * @param newScene Index in the scene buffer that determines what scene should be set as 
+*/
 void SceneManager::setScene(int newScene)
 {
 
@@ -41,9 +45,6 @@ void SceneManager::setScene(int newScene)
 
 }
 
-//Check to see if the current state has thrown any flags
-//this lets us know whether or not GameApplication needs to
-//do anything
 void SceneManager::checkFlags(void)
 {
 
@@ -61,6 +62,9 @@ void SceneManager::checkFlags(void)
 
 }
 
+/**
+ * @return The total number of scenes currently stored in the SceneManager scene buffer.
+*/
 int SceneManager::getNumScenes(void)
 {
 
@@ -68,6 +72,9 @@ int SceneManager::getNumScenes(void)
 
 }
 
+/**
+ * @param newScene New GameScene to be added into the SceneManager scene buffer. 
+*/
 void SceneManager::addScene(GameScene* newScene)
 {
 

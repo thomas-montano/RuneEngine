@@ -28,21 +28,29 @@ private:
 
   unsigned int VBO;
 public:
+  ///Default constructor to give an openGL context and window.
   RenderWindow(int newWidth, int newHeight, std::string title);
 
+  ///Renders a drawable to the screen.
   void draw(Drawable&);
 
+  ///Determines whether a key has been pressed.
   bool isKeyPressed(unsigned int keyCode);
 
+  ///Determines if any window level events have happened.
   void pollEvents(Event& event);
 
+  ///Display on screen what has been rendered to the window so far.
   void display(void);
 
+  ///Clear the entire screen with a single color.
   void clear(void);
 
-  bool isOpen();
+  ///Tell whether or not the window is open.
+  bool isOpen(void);
 
-  Vec2 getSize();
+  ///Gets the current size of the RenderWindow.
+  Vec2 getSize(void);
 
 };
 

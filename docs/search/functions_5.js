@@ -1,7 +1,6 @@
 var searchData=
 [
   ['gameapplication',['GameApplication',['../classGameApplication.html#a339b5afc96791dbb17a3829bedfcab99',1,'GameApplication']]],
-  ['gameloop',['gameLoop',['../classGameApplication.html#a8d9872ff900df21943ccbe560a0a71c6',1,'GameApplication']]],
   ['getboundingbox',['getBoundingBox',['../classRigidBody.html#a7ebade150283cd6f8750b7e90857004f',1,'RigidBody']]],
   ['getcollisions',['getCollisions',['../classGameObject.html#a91c0ae1b11524ff31b56770eadc26d15',1,'GameObject::getCollisions()'],['../classRigidBody.html#a781b08ba0a48d325f09d39f4ace6a728',1,'RigidBody::getCollisions()']]],
   ['getcurrentframe',['getCurrentFrame',['../classObjectAnimation.html#a9ceed86ce3192d25b7e6564b0f2786f6',1,'ObjectAnimation']]],
@@ -30,7 +29,7 @@ var searchData=
   ['getrigidbodies',['getRigidBodies',['../classSceneLayer.html#ae683ed6e045ca69b4b678b5d97ae4b54',1,'SceneLayer']]],
   ['getrigidbody',['getRigidBody',['../classGameObject.html#ad2fa537ef834bcbfc967f6dccbefc566',1,'GameObject']]],
   ['getsheet',['getSheet',['../classObjectAnimation.html#ab5ab0530b7fe82c3b58918ed159e35e7',1,'ObjectAnimation']]],
-  ['getsize',['getSize',['../classRenderWindow.html#a6fd1cbe1ced31738613ccb2ac89a5768',1,'RenderWindow']]],
+  ['getsize',['getSize',['../classRenderWindow.html#a0d8afd448685cbe6bd1982d44a22b643',1,'RenderWindow']]],
   ['getsprite',['getSprite',['../classGameObject.html#afc223c6ee3d7a3b2f141d9aca9e830e4',1,'GameObject']]],
   ['getstateflag',['getStateFlag',['../classGameScene.html#a36f51f71cc42044a5163bcb74ec74558',1,'GameScene']]],
   ['getstaticfriction',['getStaticFriction',['../classRigidBody.html#a453dacb0b27a3705cfd2696fedcb8c63',1,'RigidBody']]],

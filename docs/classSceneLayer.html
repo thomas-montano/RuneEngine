@@ -127,7 +127,7 @@ Public Member Functions</h2></td></tr>
           <td class="memname">SceneLayer::SceneLayer </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>hasPhysics</em>, </td>
+          <td class="paramname"><em>physics</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -150,6 +150,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor for setting up layer parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">physics</td><td>Whether or not the layer should have collisions. </td></tr>
+    <tr><td class="paramname">brightness</td><td>The ambient lighting level for the scene (0.0-1.0). </td></tr>
+    <tr><td class="paramname">opacity</td><td>The opacity level for the layer (0.0-1.0). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -171,6 +179,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> to the layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td><a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> to add to the scene on this layer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -191,6 +205,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds a particle emitter to the layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">object</td><td><a class="el" href="classParticleEmitter.html" title="Class responsible for creating particle emitters and managing the creation of particles. ">ParticleEmitter</a> to add to the scene on this layer. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -211,6 +231,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an array of pointers to the GameObjects stored in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>An array of pointers to the objects on this layer. </dd></dl>
 
 </div>
 </div>
@@ -231,6 +252,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns an array of pointers to the rigid body elements currently stored in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>All the rigid bodies currently in the <a class="el" href="classGameScene.html" title="This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed. ">GameScene</a>. </dd></dl>
 
 </div>
 </div>
@@ -251,6 +273,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the total number of objects currently stored in the scene. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of objects on the current layer. </dd></dl>
 
 </div>
 </div>
@@ -271,6 +294,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the global opacity of the layer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opacity</td><td>Global opacity level for the layer (0.0-1.0). </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -291,6 +320,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Sets the <a class="el" href="classSceneLayer.html" title="Main component of scenes. Can have objects, particles, light sources, or any other in game entity add...">SceneLayer</a> pointer contained in the scene to be the location of the layer stored by the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newSelfPointer</td><td>Pointer that is passed to <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> in the scene to use as a reference back to the current <a class="el" href="classSceneLayer.html" title="Main component of scenes. Can have objects, particles, light sources, or any other in game entity add...">SceneLayer</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

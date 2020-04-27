@@ -1,6 +1,13 @@
 #include "particleEmitter.h"
 #include <cmath>
 
+/**
+ * @param startPos The location in world coordinates of where the particle emitter should spawn particles.
+ * @param initVel The initial velocity that particles should be subjected to.
+ * @param color The base color of the particles.
+ * @param dissolutionRate The time in seconds that a particle should exist before it gets deleted.
+ * @param gravity The gravity vector each particle will be subjected to.
+*/
 ParticleEmitter::ParticleEmitter(sf::Vector2f startPos, sf::Vector2f initVel, sf::Color color, int dissolutionRate, sf::Vector2f gravity)
 {
   m_startPos = startPos;
@@ -11,16 +18,10 @@ ParticleEmitter::ParticleEmitter(sf::Vector2f startPos, sf::Vector2f initVel, sf
 
 }
 
-void ParticleEmitter::draw(sf::RenderWindow &window)
-{
 
-  for(int i = 0; i < m_particles.size();i++)
-  {
-    window.draw(m_particles[i].m_particleSprite,4,sf::Quads);
-  }
-
-}
-
+/**
+ * @param particles The number of particles that should be generated.
+*/
 void ParticleEmitter::fuel(int particles)
 { 
   
@@ -63,6 +64,9 @@ void ParticleEmitter::fuel(int particles)
   }
 }
 
+/**
+ * @param dT The amount of time that has passed since the last update call, used to update position of particles.
+*/
 void ParticleEmitter::update(float dT)
 {
 
@@ -116,6 +120,9 @@ void ParticleEmitter::update(float dT)
 
 }
 
+/**
+ * @param window Overloaded draw function for rendering the particles to the screen.
+*/
 void ParticleEmitter::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
   for(int i = 0; i < m_particles.size();i++)
@@ -124,22 +131,33 @@ void ParticleEmitter::draw(sf::RenderTarget& target, sf::RenderStates states) co
   }
 }
 
-void ParticleEmitter::setDissolutionRate(int rate)
+/**
+ * @param rate The amount of time in seconds that a particle should exist before being deleted.
+*/
+void ParticleEmitter::setDissolutionRate(float rate)
 {
   m_dissolutionRate = rate;
 }
 
+/**
+ * @param gravity The gravity vector that each particle will be subjected to.
+*/
 void ParticleEmitter::setGravity(sf::Vector2f gravity)
 {
   m_gravity = gravity;
 }
 
+/**
+ * @param canvas A vector describing the area that a particle will be allowed to exist in.
+*/
 void ParticleEmitter::setCanvasSize(sf::Vector2f canvas)
 {
   m_canvasSize = canvas;
 }
 
+/**
+ * @param newPos The new position that the particle emitter should start generating particle from.
+*/
 void ParticleEmitter::setPosition(sf::Vector2f newPos)
-{
-  m_startPos = newPos;
+{  m_startPos = newPos;
 }
