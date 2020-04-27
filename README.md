@@ -1,3 +1,4 @@
+![Private Eye Logo](https://github.com/ThomasMontanoGames/PrivateEye/blob/master/Assets/Images/FanArt.png)
 # PrivateEye
 Private eye video game repo
 
