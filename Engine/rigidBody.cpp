@@ -1,6 +1,15 @@
 #include "rigidBody.h"
 #include <math.h>
 
+/**
+ * @param width Width of the rigid body in pixels, should be the same as the GameObject sprite.
+ * @param height Height of the rigid body in pixels, should be the same as the GameObject sprite.
+ * @param xPos Horizontal position of the RigidBody with respect to the center of the object.
+ * @param yPos Vertical position of the RigidBody with respect to the center of the object.
+ * @param mass Mass of the RigidBody to be used for physical simulations.
+ * @param gravity Vertical gravity that the RigidBody should be subjected to.
+ * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
+*/
 RigidBody::RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation)
 {
 
@@ -53,6 +62,15 @@ RigidBody::RigidBody()
 
 }
 
+/**
+ * @param width Width of the rigid body in pixels, should be the same as the GameObject sprite.
+ * @param height Height of the rigid body in pixels, should be the same as the GameObject sprite.
+ * @param xPos Horizontal position of the RigidBody with respect to the center of the object.
+ * @param yPos Vertical position of the RigidBody with respect to the center of the object.
+ * @param mass Mass of the RigidBody to be used for physical simulations.
+ * @param gravity Vertical gravity that the RigidBody should be subjected to.
+ * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
+*/
 void RigidBody::setUpObject(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation)
 {
 
@@ -100,6 +118,9 @@ void RigidBody::setUpObject(int width, int height, float xPos, float yPos, float
 
 }
 
+/**
+ * @param velocity Velocity vector to be added to the current object velocity.
+*/
 void RigidBody::addVelocity(sf::Vector2f velocity)
 {
 
@@ -108,12 +129,18 @@ void RigidBody::addVelocity(sf::Vector2f velocity)
 
 }
 
+/**
+ * @param newVel Velocity vector that will override the current object velocity.
+*/
 void RigidBody::setVelocity(sf::Vector2f newVel)
 {
     objectBody.velocity.x = newVel.x;
     objectBody.velocity.y = newVel.y;
 }
 
+/**
+ * @param dT Amount of time in seconds that has passed since the last update. Used to calculate change in position based on velocity.
+*/
 void RigidBody::updatePosition(float dT)
 {
 
@@ -124,6 +151,9 @@ void RigidBody::updatePosition(float dT)
 
 }
 
+/**
+ * @return A drawable sprite object (DEPRECATED).
+*/
 sf::RectangleShape RigidBody::getDrawable(void)
 {
     objectBody.box.setPosition(sf::Vector2f(objectBody.xPos,objectBody.yPos));
@@ -132,6 +162,9 @@ sf::RectangleShape RigidBody::getDrawable(void)
     return objectBody.box;
 }
 
+/**
+ * @return A drawable RectangleShape that represents the AABB (DEPRECATED).
+*/
 sf::RectangleShape RigidBody::drawAABB(void)
 {
 
@@ -174,58 +207,92 @@ void RigidBody::updateAABB(void)
 
 }
 
+/**
+ * @return The current gravity the object is being subjected to.
+*/
 float RigidBody::getGravity(void)
 {
     return objectBody.gravityFactor;
 }
 
+/**
+ * @return Get 1 divided by the mass of the RigidBody.
+*/
 float RigidBody::getInvMass(void)
 {
     return objectBody.invMass;
 }
 
+/**
+ * @return Get the restitution of the object.
+*/
 float RigidBody::getRestitution(void)
 {
     return objectBody.restitution;
 }
 
+/**
+ * @param newRest Override the restitution of the RigidBody.
+*/
 void RigidBody::setRestitution(float newRest)
 {
     objectBody.restitution = newRest;
 }
 
+/**
+ * @param angularVel Angular velocity to be added to the RigidBody.
+*/
 void RigidBody::addAngularVelocity(float angularVel)
 {
     objectBody.angularVelocity += angularVel;
 }
 
+/**
+ * @param angle New orientation for the RigidBody to be set to.
+*/
 void RigidBody::setRotation(float angle)
 {
     objectBody.angleOfRotation = angle;
 }
 
+/**
+ * @return the AABB associated with the RigidBody.
+*/
 AABB RigidBody::getBoundingBox(void)
 {
     return objectBody.boundingBox;
 }
 
+/**
+ * @param newPos Set the position of the RigidBody in world coordinates.
+*/
 void RigidBody::setPosition(sf::Vector2f newPos)
 {
     objectBody.xPos = newPos.x;
     objectBody.yPos = newPos.y;
 }
 
+/**
+ * @param newPos Position vector to be added to the object's current position.
+*/
 void RigidBody::addPosition(sf::Vector2f newPos)
 {
     objectBody.xPos += newPos.x;
     objectBody.yPos -= newPos.y;
 }
 
+/**
+ * @return A vector that corresponds to the RigidBody position.
+*/
 sf::Vector2f RigidBody::getPosition(void)
 {
     return sf::Vector2f(objectBody.xPos,objectBody.yPos);
 }
 
+/**
+ * @param i The index of the RigidBody vertex starting in the top left and going counter clockwise around.
+ * @return The location of the vertex in world coordinates.
+*/
 sf::Vector2f RigidBody::getVertex(int i)
 {
     float xPrime, yPrime;
@@ -244,46 +311,73 @@ sf::Vector2f RigidBody::getVertex(int i)
     return finalVertex;
 }
 
+/**
+ * @return The velocity vector of the RigidBody.
+*/
 sf::Vector2f RigidBody::getVelocity(void)
 {
     return objectBody.velocity;
 }
 
+/**
+ * @return The coefficient of static friction for the RigidBody.
+*/
 float RigidBody::getStaticFriction(void)
 {
     return objectBody.staticFriction;
 }
 
+/**
+ * @return The coefficient of dynamic friction for the RigidBody.
+*/
 float RigidBody::getDynamicFriction(void)
 {
     return objectBody.dynamicFriction;
 }
 
+/**
+ * @return The current angle of the RigidBody.
+*/
 float RigidBody::getOrientation(void)
 {
     return objectBody.angleOfRotation;
 }
 
+/**
+ * @return The width in pixels of the RigidBody object.
+*/
 float RigidBody::getWidth(void)
 {
     return 2*objectBody.vertexes[1].x;
 }
 
+/**
+ * @return The height in pixels of the RigidBody object.
+*/
 float RigidBody::getHeight(void)
 {
     return 2*objectBody.vertexes[1].y;
 }
 
+/**
+ * @return 1 divided by the rotational inertia of the RigidBody.
+*/
 float RigidBody::getInvIntertia(void)
 {
     return objectBody.invInertia;
 }
 
+/**
+ * @return The position vector of the RigidBody from last frame.
+*/
 sf::Vector2f RigidBody::getPreviousPosition(void)
 {
     return objectBody.oldPosition;
 }
 
+/**
+ * @param newPos The position that the RigidBody was last frame.
+*/
 void RigidBody::setPreviousPosition(sf::Vector2f newPos)
 {
     objectBody.oldPosition = newPos;
@@ -294,11 +388,17 @@ void RigidBody::clearCollisions(void)
   involvedCollisions.clear();
 }
 
+/**
+ * @param newCollision Collision manifold to be stored in the GameObject associated with the RigidBody.
+*/
 void RigidBody::addCollision(collision newCollision)
 {
   involvedCollisions.push_back(newCollision);
 }
 
+/**
+ * @return The collision manifolds associated with this RigidBody.
+*/
 std::vector<collision> RigidBody::getCollisions(void)
 {
   return involvedCollisions;

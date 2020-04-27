@@ -68,22 +68,25 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A shader that can be used to render objects to the screen.  
+ <a href="classShader.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="shader_8h_source.html">shader.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a2604eec6d191e6d5931448581f18c740"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShader.html#a2604eec6d191e6d5931448581f18c740">Shader</a> (const std::string &amp;filePath)</td></tr>
+<tr class="memdesc:a2604eec6d191e6d5931448581f18c740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to create and load a shader.  <a href="#a2604eec6d191e6d5931448581f18c740">More...</a><br /></td></tr>
 <tr class="separator:a2604eec6d191e6d5931448581f18c740"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45d0ed9766d61ed6465c378ad4bdea13"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShader.html#a45d0ed9766d61ed6465c378ad4bdea13">CreateShader</a> (const std::string &amp;vertexShader, const std::string &amp;fragmentShader)</td></tr>
-<tr class="separator:a45d0ed9766d61ed6465c378ad4bdea13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1900863bd04b0c682fddef6cdb2b16bd"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShader.html#a1900863bd04b0c682fddef6cdb2b16bd">CompileShader</a> (unsigned int type, const std::string &amp;source)</td></tr>
-<tr class="separator:a1900863bd04b0c682fddef6cdb2b16bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfb869af6858304521bdd8c3653b60db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structShaderProgramSource.html">ShaderProgramSource</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShader.html#abfb869af6858304521bdd8c3653b60db">ParseShader</a> (const std::string &amp;filePath)</td></tr>
-<tr class="separator:abfb869af6858304521bdd8c3653b60db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a060b870ffec4a2eadeb01aa4f05a5ff5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShader.html#a060b870ffec4a2eadeb01aa4f05a5ff5">setActive</a> (void)</td></tr>
+<tr class="memdesc:a060b870ffec4a2eadeb01aa4f05a5ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the shader to be active on the GPU, must be done before drawing something.  <a href="#a060b870ffec4a2eadeb01aa4f05a5ff5">More...</a><br /></td></tr>
 <tr class="separator:a060b870ffec4a2eadeb01aa4f05a5ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A shader that can be used to render objects to the screen. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>April 25 2020 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2604eec6d191e6d5931448581f18c740"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2604eec6d191e6d5931448581f18c740">&#9670;&nbsp;</a></span>Shader()</h2>
 
@@ -100,83 +103,17 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Default constructor to create and load a shader. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The file path for the shader code to be compiled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1900863bd04b0c682fddef6cdb2b16bd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1900863bd04b0c682fddef6cdb2b16bd">&#9670;&nbsp;</a></span>CompileShader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int Shader::CompileShader </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>source</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a45d0ed9766d61ed6465c378ad4bdea13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45d0ed9766d61ed6465c378ad4bdea13">&#9670;&nbsp;</a></span>CreateShader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned int Shader::CreateShader </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>vertexShader</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>fragmentShader</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="abfb869af6858304521bdd8c3653b60db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfb869af6858304521bdd8c3653b60db">&#9670;&nbsp;</a></span>ParseShader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structShaderProgramSource.html">ShaderProgramSource</a> Shader::ParseShader </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>filePath</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a060b870ffec4a2eadeb01aa4f05a5ff5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a060b870ffec4a2eadeb01aa4f05a5ff5">&#9670;&nbsp;</a></span>setActive()</h2>
 
@@ -192,6 +129,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Configure the shader to be active on the GPU, must be done before drawing something. </p>
 
 </div>
 </div>

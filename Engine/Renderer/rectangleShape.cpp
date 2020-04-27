@@ -2,6 +2,10 @@
 #include "shader.h"
 #include <iostream>
 
+/**
+ * @param newPosition The position of the new RectangleShape with respect to the bottom left corner.
+ * @param newSize The size of the new RectangleShape.
+*/
 RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader("./rectangle.shader")
 {
   position = newPosition;
@@ -26,6 +30,9 @@ RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader
 
 }
 
+/**
+ * @param windowSize The size of the window that the RectangleShape is being drawn on.
+*/
 void RectangleShape::draw(Vec2 windowSize)
 {
 
@@ -59,14 +66,20 @@ void RectangleShape::draw(Vec2 windowSize)
 
 }
 
+/**
+ * @param newPos The new position of the RectangleShape with respect to the bottom left corner.
+*/
 void RectangleShape::addPosition(Vec2 newPos)
 {
   position.x += newPos.x;
   position.y += newPos.y;
 }
 
-void RectangleShape::setPosition(Vec2 newPos)
+/**
+ * @param newSize The new size of the RectangleShape.
+*/
+void RectangleShape::setPosition(Vec2 newSize)
 {
-  position.x = newPos.x;
-  position.y = newPos.y;
+  position.x = newSize.x;
+  position.y = newSize.y;
 }

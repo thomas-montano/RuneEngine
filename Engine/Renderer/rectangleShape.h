@@ -1,10 +1,10 @@
-/*
-  RectangleShape
-
-  This class provides a rectangle that can be rendered to a render window
-
-  Thomas Montano
-  4/25/20
+/**
+ * @class RectangleShape
+ * @brief A rectangle that can be drawn to the screen.
+ * 
+ * @author Thomas Montano
+ * @date April 25 2020
+ * 
 */
 
 #ifndef RECTANGLE_H_DEFINED

@@ -1,5 +1,8 @@
 #include "shader.h"
 
+/**
+ * @param filePath The file path for the shader code to be compiled.
+*/
 Shader::Shader(const std::string& filePath)
 {
   ShaderProgramSource source = ParseShader(filePath.c_str());

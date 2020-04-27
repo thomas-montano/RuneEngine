@@ -68,6 +68,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A rectangle that can be drawn to the screen.  
+ <a href="classRectangleShape.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="rectangleShape_8h_source.html">rectangleShape.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RectangleShape:</div>
@@ -97,7 +100,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a16a7a43777f99f1ccdd71bbbd731b1cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRectangleShape.html#a16a7a43777f99f1ccdd71bbbd731b1cb">setPosition</a> (<a class="el" href="classVec2.html">Vec2</a>)</td></tr>
 <tr class="separator:a16a7a43777f99f1ccdd71bbbd731b1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A rectangle that can be drawn to the screen. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>April 25 2020 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa8204672f01f594f628809eaabc8e146"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa8204672f01f594f628809eaabc8e146">&#9670;&nbsp;</a></span>RectangleShape()</h2>
 
@@ -108,13 +115,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">RectangleShape::RectangleShape </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classVec2.html">Vec2</a>&#160;</td>
-          <td class="paramname"><em>position</em>, </td>
+          <td class="paramname"><em>newPosition</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classVec2.html">Vec2</a>&#160;</td>
-          <td class="paramname"><em>Size</em>&#160;</td>
+          <td class="paramname"><em>newSize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -123,6 +130,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPosition</td><td>The position of the new <a class="el" href="classRectangleShape.html" title="A rectangle that can be drawn to the screen. ">RectangleShape</a> with respect to the bottom left corner. </td></tr>
+    <tr><td class="paramname">newSize</td><td>The size of the new <a class="el" href="classRectangleShape.html" title="A rectangle that can be drawn to the screen. ">RectangleShape</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -142,6 +156,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPos</td><td>The new position of the <a class="el" href="classRectangleShape.html" title="A rectangle that can be drawn to the screen. ">RectangleShape</a> with respect to the bottom left corner. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -168,6 +188,12 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">windowSize</td><td>The size of the window that the <a class="el" href="classRectangleShape.html" title="A rectangle that can be drawn to the screen. ">RectangleShape</a> is being drawn on. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="classDrawable.html#af639ad6a1b6ab32aee46be7f7f8b558e">Drawable</a>.</p>
 
@@ -183,11 +209,17 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void RectangleShape::setPosition </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classVec2.html">Vec2</a>&#160;</td>
-          <td class="paramname"><em>newPos</em></td><td>)</td>
+          <td class="paramname"><em>newSize</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newSize</td><td>The new size of the <a class="el" href="classRectangleShape.html" title="A rectangle that can be drawn to the screen. ">RectangleShape</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

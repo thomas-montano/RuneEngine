@@ -138,6 +138,14 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor to give an openGL context and window. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newWidth</td><td>The width of the window in pixels to be created. </td></tr>
+    <tr><td class="paramname">newHeight</td><td>The height of the window in pixels to be created. </td></tr>
+    <tr><td class="paramname">title</td><td>The title of the window to be displayed at the top. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -199,6 +207,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Renders a drawable to the screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">drawObject</td><td><a class="el" href="classDrawable.html" title="Interface class for creating something that can be drawn to the screen. ">Drawable</a> that should be displayed on the screen. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -219,6 +233,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the current size of the <a class="el" href="classRenderWindow.html" title="A window that the game can be drawn to. ">RenderWindow</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classVec2.html" title="2 x 1 vector to be used for math. ">Vec2</a> corresponding to the size in pixels of the <a class="el" href="classRenderWindow.html" title="A window that the game can be drawn to. ">RenderWindow</a>. </dd></dl>
 
 </div>
 </div>
@@ -239,6 +254,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines whether a key has been pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyCode</td><td>The integer keycode of the key that's being tested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not the key is being pressed. </dd></dl>
 
 </div>
 </div>
@@ -259,6 +281,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tell whether or not the window is open. </p>
+<dl class="section return"><dt>Returns</dt><dd>Whether or not the <a class="el" href="classRenderWindow.html" title="A window that the game can be drawn to. ">RenderWindow</a> is currently open. </dd></dl>
 
 </div>
 </div>
@@ -279,6 +302,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Determines if any window level events have happened. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>the <a class="el" href="classEvent.html" title="Object that holds all the events for a render window. ">Event</a> object for the events to be stored in. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

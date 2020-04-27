@@ -22,6 +22,7 @@ class Drawable
 {
 
 public:
+  ///Draw the object to a render target.
   virtual void draw(Vec2 windowSize) = 0;
 
 };

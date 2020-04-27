@@ -264,6 +264,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the parameters for the rigid body to establish a physical object in the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Width of the rigid body in pixels, should be the same as the <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> sprite. </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the rigid body in pixels, should be the same as the <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> sprite. </td></tr>
+    <tr><td class="paramname">xPos</td><td>Horizontal position of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> with respect to the center of the object. </td></tr>
+    <tr><td class="paramname">yPos</td><td>Vertical position of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> with respect to the center of the object. </td></tr>
+    <tr><td class="paramname">mass</td><td>Mass of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> to be used for physical simulations. </td></tr>
+    <tr><td class="paramname">gravity</td><td>Vertical gravity that the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> should be subjected to. </td></tr>
+    <tr><td class="paramname">rotation</td><td>Whether or not the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> is allowed to rotate in 2D space. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -285,6 +297,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Adds to the rigid body angular velocity making it spin faster or slower. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angularVel</td><td>Angular velocity to be added to the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -305,6 +323,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a collision to the list of collisions the rigid body was involved in. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newCollision</td><td>Collision manifold to be stored in the <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> associated with the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -325,6 +349,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add some vector to the current position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPos</td><td>Position vector to be added to the object's current position. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -345,6 +375,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add to the objects current velocity vector. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">velocity</td><td>Velocity vector to be added to the current object velocity. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -385,6 +421,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get a rectangle shape object for the bounding box. </p>
+<dl class="section return"><dt>Returns</dt><dd>A drawable <a class="el" href="classRectangleShape.html" title="A rectangle that can be drawn to the screen. ">RectangleShape</a> that represents the <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a> (DEPRECATED). </dd></dl>
 
 </div>
 </div>
@@ -405,6 +442,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return an <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a> containing the information about the rigid body bounding box. </p>
+<dl class="section return"><dt>Returns</dt><dd>the <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a> associated with the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -425,6 +463,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the list of collisions the rigid body was involved in. </p>
+<dl class="section return"><dt>Returns</dt><dd>The collision manifolds associated with this <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -445,6 +484,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the bounding box sprite (DEPRECATED). </p>
+<dl class="section return"><dt>Returns</dt><dd>A drawable sprite object (DEPRECATED). </dd></dl>
 
 </div>
 </div>
@@ -463,6 +503,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>The coefficient of dynamic friction for the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -483,6 +524,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the gravity vector of the object. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current gravity the object is being subjected to. </dd></dl>
 
 </div>
 </div>
@@ -503,6 +545,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the height of the <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The height in pixels of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> object. </dd></dl>
 
 </div>
 </div>
@@ -523,6 +566,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the inverse inertia of the rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>1 divided by the rotational inertia of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -543,6 +587,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the inverse mass of the rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>Get 1 divided by the mass of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -563,6 +608,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current orientation of the rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current angle of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -581,6 +627,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>A vector that corresponds to the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> position. </dd></dl>
 
 </div>
 </div>
@@ -601,6 +648,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the position that the rigid body was in last frame. </p>
+<dl class="section return"><dt>Returns</dt><dd>The position vector of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> from last frame. </dd></dl>
 
 </div>
 </div>
@@ -621,6 +669,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the restitution (bounciness) of the rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>Get the restitution of the object. </dd></dl>
 
 </div>
 </div>
@@ -641,6 +690,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the coefficient of static friction. </p>
+<dl class="section return"><dt>Returns</dt><dd>The coefficient of static friction for the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -661,6 +711,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current velocity of the rigid body. </p>
+<dl class="section return"><dt>Returns</dt><dd>The velocity vector of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </dd></dl>
 
 </div>
 </div>
@@ -681,6 +732,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Return the current position of a vertex in world coordinates. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>The index of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> vertex starting in the top left and going counter clockwise around. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The location of the vertex in world coordinates. </dd></dl>
 
 </div>
 </div>
@@ -701,6 +759,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the width of the <a class="el" href="structAABB.html" title="Axis aligned bounding box for each object. ">AABB</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The width in pixels of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> object. </dd></dl>
 
 </div>
 </div>
@@ -741,6 +800,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Overwrite the position of the rigid body to be something new. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPos</td><td>Set the position of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> in world coordinates. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -761,6 +826,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the position that the rigid body was in last frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newPos</td><td>The position that the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> was last frame. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -781,6 +852,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the restitution (bounciness) of the rigid body. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newRest</td><td>Override the restitution of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -801,6 +878,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Overwrite the orientation of the rigid body to be something new. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>New orientation for the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> to be set to. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -861,6 +944,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set up the object. Identical to the constructor but can be used to set up an object after it's been created. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Width of the rigid body in pixels, should be the same as the <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> sprite. </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the rigid body in pixels, should be the same as the <a class="el" href="classGameObject.html" title="Entity control system main object used for all objects in the scene. ">GameObject</a> sprite. </td></tr>
+    <tr><td class="paramname">xPos</td><td>Horizontal position of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> with respect to the center of the object. </td></tr>
+    <tr><td class="paramname">yPos</td><td>Vertical position of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> with respect to the center of the object. </td></tr>
+    <tr><td class="paramname">mass</td><td>Mass of the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> to be used for physical simulations. </td></tr>
+    <tr><td class="paramname">gravity</td><td>Vertical gravity that the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> should be subjected to. </td></tr>
+    <tr><td class="paramname">rotation</td><td>Whether or not the <a class="el" href="classRigidBody.html" title="Game object component that allows a game object to have collisions with other objects. ">RigidBody</a> is allowed to rotate in 2D space. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -881,6 +976,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the current velocity of the rigid body. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newVel</td><td>Velocity vector that will override the current object velocity. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -921,6 +1022,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Update the position of the object based on collisions and velocities. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dT</td><td>Amount of time in seconds that has passed since the last update. Used to calculate change in position based on velocity. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

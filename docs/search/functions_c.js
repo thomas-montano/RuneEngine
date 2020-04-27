@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parseshader',['ParseShader',['../classShader.html#abfb869af6858304521bdd8c3653b60db',1,'Shader']]],
   ['particleemitter',['ParticleEmitter',['../classParticleEmitter.html#ab94b7180b86d61848cc498c471babd8a',1,'ParticleEmitter']]],
   ['pause',['pause',['../classGameScene.html#a65cea457864dd4d9a47835caad8110e7',1,'GameScene']]],
   ['playanimation',['playAnimation',['../classGameObject.html#a37042d00bc59bde67be0fb72e62b2549',1,'GameObject']]],

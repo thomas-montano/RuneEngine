@@ -75,6 +75,12 @@
  * 
  */
 
+
+
+/**
+ * @page gameobjects_page Creating Custom GameObject Behavior
+*/
+
 /**
  * @class GameApplication
  * @brief Entry point for all programs using the engine, must instantiate a game application for every new game
