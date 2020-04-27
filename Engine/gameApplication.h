@@ -47,7 +47,7 @@
  * #include "firstLevel.h"
  * #include <iostream>
  * 
- * int main(int argc, char* argv[])
+ * int main(void)
  * {
  *   //Initialize our game application at a 60 Hz clock
  *   GameApplication* mainApplication = new GameApplication(60);
