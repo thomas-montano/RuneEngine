@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7etexture',['~Texture',['../classTexture.html#a38ba89d0fe85916b94031971a7299533',1,'Texture']]]
+  ['vec2',['Vec2',['../classVec2.html#a76080feed7005893ecc634f903cfbae0',1,'Vec2::Vec2()'],['../classVec2.html#ac0472666a6cdbd216dfa4b28f669bb1c',1,'Vec2::Vec2(float newX, float newY)']]]
 ];

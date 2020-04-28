@@ -29,7 +29,7 @@ int main(void)
   Clock myClock;
 
   
-  Sprite mySprite(Vec2(128,256),Vec2(300,300),"./knoxIdleSheet.png");
+  Sprite mySprite(Vec2(128,256),Vec2(300,300),"./knoxV1.png");
   //RectangleShape myRectangle(Vec2(50,50),Vec2(64,128));
 
   while(myWindow.isOpen())

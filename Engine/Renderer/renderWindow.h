@@ -52,6 +52,9 @@ public:
   ///Gets the current size of the RenderWindow.
   Vec2 getSize(void);
 
+  ///Enables or disables Vsync.
+  void enableVsync(bool enable);
+
 };
 
 #endif

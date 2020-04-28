@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['inccurrentframe',['incCurrentFrame',['../classObjectAnimation.html#a8219af895c2eae6a8f64e895997eff08',1,'ObjectAnimation']]],
-  ['isactive',['isActive',['../classGameScene.html#a4866d911421cd18a41aa48c15e555613',1,'GameScene']]],
-  ['isclicked',['isClicked',['../classGameUI.html#a8b9cffa748fc4b1dabbb3d732e148ff2',1,'GameUI']]],
-  ['iskeypressed',['isKeyPressed',['../classRenderWindow.html#a49182e9b53688ef1105c76ed6d1055eb',1,'RenderWindow']]],
-  ['isopen',['isOpen',['../classRenderWindow.html#a4ec22d45464c8e2fe2405abe70c8e067',1,'RenderWindow']]]
+  ['handlecleanup',['handleCleanup',['../classGameScene.html#a117f66aab169cef8baaf88eaddcf7685',1,'GameScene']]],
+  ['handleevents',['handleEvents',['../classGameScene.html#ac756f0e43d32ae0037bb0ba8a6094e8b',1,'GameScene']]],
+  ['handleui',['handleUI',['../classGameScene.html#a19e6ac9aea4b11b93f4eea490348c69e',1,'GameScene']]]
 ];

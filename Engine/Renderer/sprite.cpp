@@ -43,22 +43,13 @@ void Sprite::draw(Vec2 windowSize)
   spriteShader.bind();
   glBindVertexArray(VAO);
 
-  /*float drawVertices[32] = 
+  float drawVertices[32] = 
   {
     // positions                                                                                // colors           // texture coords
     (m_position.x + m_size.x)/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,    1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
     (m_position.x+m_size.x)/windowSize.x-1, m_position.y/windowSize.y-1, 0.0f,                  0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
     m_position.x/windowSize.x-1, m_position.y/windowSize.y-1, 0.0f,                             0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
     m_position.x/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,                 0.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
-  };*/
-
-  float drawVertices[32] = 
-  {
-    // positions                                                                                // colors           // texture coords
-    (m_position.x + m_size.x)/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,    1.0f, 0.0f, 0.0f,   0.0f, 1.0f,   // top right
-    (m_position.x+m_size.x)/windowSize.x-1, m_position.y/windowSize.y-1, 0.0f,                  0.0f, 1.0f, 0.0f,   0.0f, 0.0f,   // bottom right
-    m_position.x/windowSize.x-1, m_position.y/windowSize.y-1, 0.0f,                             0.0f, 0.0f, 1.0f,   0.5f, 0.0f,   // bottom left
-    m_position.x/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,                 0.0f, 1.0f, 0.0f,   0.5f, 1.0f    // top left 
   };
 
   glBufferData(GL_ARRAY_BUFFER, sizeof(drawVertices), drawVertices, GL_DYNAMIC_DRAW);

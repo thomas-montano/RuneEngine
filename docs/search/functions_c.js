@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['particleemitter',['ParticleEmitter',['../classParticleEmitter.html#ab94b7180b86d61848cc498c471babd8a',1,'ParticleEmitter']]],
-  ['pause',['pause',['../classGameScene.html#a65cea457864dd4d9a47835caad8110e7',1,'GameScene']]],
-  ['playanimation',['playAnimation',['../classGameObject.html#a37042d00bc59bde67be0fb72e62b2549',1,'GameObject']]],
-  ['pollevents',['pollEvents',['../classRenderWindow.html#ae0f8abb7948e490193fccdd1fbcbe91c',1,'RenderWindow']]],
-  ['positionalcorrection',['positionalCorrection',['../physicsEngine_8cpp.html#a1ecaf7543a6105671d2b4e68dc6d890c',1,'positionalCorrection(RigidBody *object1, RigidBody *object2, float depth, sf::Vector2f normal):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#af9cd76db4b88157d1dc2ed02bdf761e4',1,'positionalCorrection(RigidBody *object1, RigidBody *object2, float penetration, sf::Vector2f normal):&#160;physicsEngine.cpp']]],
-  ['printvector',['printVector',['../physicsEngine_8cpp.html#a63f4c03a52af483e58de027292e0e77d',1,'printVector(sf::Vector2f vector):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#a63f4c03a52af483e58de027292e0e77d',1,'printVector(sf::Vector2f vector):&#160;physicsEngine.cpp']]],
-  ['pythagoreansolve',['pythagoreanSolve',['../physicsEngine_8cpp.html#a836822e2beec55f63acec3776a433f7b',1,'pythagoreanSolve(float a, float b):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#a2776e76179f8adf8f2a72e2db13ff633',1,'pythagoreanSolve(float, float):&#160;physicsEngine.cpp']]]
+  ['objectinit',['objectInit',['../classGameObject.html#a393586ab5f8bbe9f1113a22f13cc4282',1,'GameObject']]],
+  ['operator_2a',['operator*',['../classVec2.html#a8e0155a2a46ba9506fe15a5810140f63',1,'Vec2']]],
+  ['operator_2b',['operator+',['../classVec2.html#a80e6a1e115f27c882acdb076a7d409f7',1,'Vec2']]],
+  ['operator_2d',['operator-',['../classVec2.html#a7cc458b5ddeba3f5924d385de29fa163',1,'Vec2']]],
+  ['operator_2f',['operator/',['../classVec2.html#a820bf413ff1a43d90bab0b3e00a47ccd',1,'Vec2']]]
 ];

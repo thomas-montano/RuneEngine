@@ -1,4 +1,11 @@
 var searchData=
 [
-  ['vec2',['Vec2',['../classVec2.html#a76080feed7005893ecc634f903cfbae0',1,'Vec2::Vec2()'],['../classVec2.html#ac0472666a6cdbd216dfa4b28f669bb1c',1,'Vec2::Vec2(float newX, float newY)']]]
+  ['unbind',['unbind',['../classTexture.html#a8480eed7ed703a937c3e6ab528f559bd',1,'Texture']]],
+  ['update',['update',['../classGameObject.html#adad7d284b670db722a2fda8e6a7997e3',1,'GameObject::update()'],['../classParticleEmitter.html#ad8074d2e3d3663e40379cbce122204b0',1,'ParticleEmitter::update()']]],
+  ['updateaabb',['updateAABB',['../classRigidBody.html#a64d937eae72042d983c0b50a8e79d138',1,'RigidBody']]],
+  ['updatefixed',['updateFixed',['../classGameScene.html#af55d3536538384dc3f08087493cd52ab',1,'GameScene']]],
+  ['updatelayerphysics',['updateLayerPhysics',['../classGameScene.html#ab0f84dc375099d8cbe98af9eacb16b7f',1,'GameScene']]],
+  ['updatephysics',['updatePhysics',['../physicsEngine_8cpp.html#aecf2a74593b488cd6b582fb13a833271',1,'updatePhysics(std::vector&lt; RigidBody *&gt; objects, float dT):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#aecf2a74593b488cd6b582fb13a833271',1,'updatePhysics(std::vector&lt; RigidBody *&gt; objects, float dT):&#160;physicsEngine.cpp']]],
+  ['updateposition',['updatePosition',['../classGameObject.html#a702a4e2fb3f6d7ae3eee090ea73a1a99',1,'GameObject::updatePosition()'],['../classRigidBody.html#a6a9af080da27f6181be8f9da737ac110',1,'RigidBody::updatePosition()']]],
+  ['updatevariable',['updateVariable',['../classGameScene.html#a21a4ef138ebc9ad251244a572ea6f175',1,'GameScene']]]
 ];

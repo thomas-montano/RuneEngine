@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['objectinit',['objectInit',['../classGameObject.html#a393586ab5f8bbe9f1113a22f13cc4282',1,'GameObject']]],
-  ['operator_2a',['operator*',['../classVec2.html#a8e0155a2a46ba9506fe15a5810140f63',1,'Vec2']]],
-  ['operator_2b',['operator+',['../classVec2.html#a80e6a1e115f27c882acdb076a7d409f7',1,'Vec2']]],
-  ['operator_2d',['operator-',['../classVec2.html#a7cc458b5ddeba3f5924d385de29fa163',1,'Vec2']]],
-  ['operator_2f',['operator/',['../classVec2.html#a820bf413ff1a43d90bab0b3e00a47ccd',1,'Vec2']]]
+  ['narrowphasecollisions',['narrowPhaseCollisions',['../physicsEngine_8cpp.html#a402af04adf33d9b566648e1c09827d0e',1,'narrowPhaseCollisions(std::vector&lt; collision &gt; possibleCollisions):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#a4758b941419f20b732f0d02396a46d86',1,'narrowPhaseCollisions(std::vector&lt; collision &gt; boundingBoxes):&#160;physicsEngine.cpp']]],
+  ['normalize',['normalize',['../physicsEngine_8cpp.html#a41727dc8828dab30855177f571021a5f',1,'normalize(sf::Vector2f vector):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#a402be0b66df3335bd1a575f62336725f',1,'normalize(sf::Vector2f):&#160;physicsEngine.cpp']]]
 ];

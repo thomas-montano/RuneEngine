@@ -39,9 +39,6 @@ Texture::Texture(const std::string& path)
   {
     std::cout << "Failed to load texture" << std::endl;
   }
-
-  std::cout << m_width << std::endl;
-  std::cout << m_height << std::endl;
   
 }
 

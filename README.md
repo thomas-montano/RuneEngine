@@ -1,12 +1,9 @@
 ![Private Eye Logo](https://github.com/ThomasMontanoGames/PrivateEye/blob/master/Assets/Images/FanArt.png)
 # PrivateEye
-Private eye video game repo
-
 This is the GitHub for developing the engine being used by the game Private Eye. The game and engine are being developed by Thomas Montano, a Senior at Missouri University of Science and Technology.
 
 ## Install
 - Download Library
-- Create ./obj ./obj/Engine and ./obj/Engine/Renderer in project directory
 - Run make file
 
 ## Engine Features

@@ -107,3 +107,19 @@ Vec2 RenderWindow::getSize()
 {
   return Vec2(width,height);
 }
+
+/**
+ * @param enable Whether or not Vsync should be turned on.
+*/
+void RenderWindow::enableVsync(bool enable)
+{ 
+  if(enable)
+  {
+    glfwSwapInterval(1);
+  }
+  else
+  {
+    glfwSwapInterval(0);
+  }
+  
+}
