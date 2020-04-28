@@ -9,6 +9,5 @@ var searchData=
   ['contactvectorbox1',['contactVectorBox1',['../structcollision.html#a13557718a0616a242d3561587efede46',1,'collision']]],
   ['contactvectorbox2',['contactVectorBox2',['../structcollision.html#a4349e3007c2e4d2b54593b525e8b2fb1',1,'collision']]],
   ['createbutton',['createButton',['../classGameUI.html#a144a4edc570cfece53e9a8755218ad58',1,'GameUI']]],
-  ['crossproduct',['crossProduct',['../physicsEngine_8cpp.html#a9452ed46d7633090a23302c3530c10a4',1,'crossProduct(sf::Vector2f vector1, sf::Vector2f vector2):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#abc909bde21b020aeadef358b4b3dba80',1,'crossProduct(sf::Vector2f, sf::Vector2f):&#160;physicsEngine.cpp']]],
-  ['creating_20custom_20gameobject_20behavior',['Creating Custom GameObject Behavior',['../gameobjects_page.html',1,'']]]
+  ['crossproduct',['crossProduct',['../physicsEngine_8cpp.html#a9452ed46d7633090a23302c3530c10a4',1,'crossProduct(sf::Vector2f vector1, sf::Vector2f vector2):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#abc909bde21b020aeadef358b4b3dba80',1,'crossProduct(sf::Vector2f, sf::Vector2f):&#160;physicsEngine.cpp']]]
 ];

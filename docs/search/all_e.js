@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['particle',['particle',['../structParticleEmitter_1_1particle.html',1,'ParticleEmitter']]],
   ['particleemitter',['ParticleEmitter',['../classParticleEmitter.html',1,'ParticleEmitter'],['../classParticleEmitter.html#ab94b7180b86d61848cc498c471babd8a',1,'ParticleEmitter::ParticleEmitter()']]],
   ['particleemitter_2ecpp',['particleEmitter.cpp',['../particleEmitter_8cpp.html',1,'']]],
   ['particleemitter_2eh',['particleEmitter.h',['../particleEmitter_8h.html',1,'']]],

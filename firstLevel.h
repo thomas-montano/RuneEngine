@@ -11,7 +11,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
-#include "Engine/gameScene.h"
+#include "./Engine/gameScene.h"
 #include "player.h"
 
 class FirstLevel : public GameScene

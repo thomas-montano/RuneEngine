@@ -71,15 +71,9 @@
  * @endcode
  * 
  * @author Thomas Montano
- * @date February 20 2020 
+ * @date April 27 2020 
  * 
  */
-
-
-
-/**
- * @page gameobjects_page Creating Custom GameObject Behavior
-*/
 
 /**
  * @class GameApplication

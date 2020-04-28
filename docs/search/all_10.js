@@ -33,7 +33,9 @@ var searchData=
   ['shader',['Shader',['../classShader.html',1,'Shader'],['../classShader.html#a2604eec6d191e6d5931448581f18c740',1,'Shader::Shader()']]],
   ['shader_2ecpp',['shader.cpp',['../shader_8cpp.html',1,'']]],
   ['shader_2eh',['shader.h',['../shader_8h.html',1,'']]],
-  ['shaderprogramsource',['ShaderProgramSource',['../structShaderProgramSource.html',1,'']]],
+  ['sprite',['Sprite',['../classSprite.html',1,'Sprite'],['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite::Sprite()']]],
+  ['sprite_2ecpp',['sprite.cpp',['../sprite_8cpp.html',1,'']]],
+  ['sprite_2eh',['sprite.h',['../sprite_8h.html',1,'']]],
   ['start',['start',['../classGameObject.html#a746f9f2a00f69a9cdf2fd1ec281c5cda',1,'GameObject']]],
   ['staticfriction',['staticFriction',['../structbody.html#abc630e89be38f19a48fac1cb703f373e',1,'body']]]
 ];

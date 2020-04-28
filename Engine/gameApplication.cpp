@@ -1,9 +1,3 @@
-/*
-
-Function file for gameApplication.h
-
-*/
-
 #include "gameApplication.h"
 
 /**

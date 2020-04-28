@@ -27,5 +27,6 @@ var searchData=
   ['setvelocity',['setVelocity',['../classRigidBody.html#ad0bdd224f00de7cfde38e0ed4c69e85b',1,'RigidBody']]],
   ['setwindow',['setWindow',['../classMessageManager.html#a1b809cfa12c4195382901a0e3404e4d2',1,'MessageManager']]],
   ['shader',['Shader',['../classShader.html#a2604eec6d191e6d5931448581f18c740',1,'Shader']]],
+  ['sprite',['Sprite',['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite']]],
   ['start',['start',['../classGameObject.html#a746f9f2a00f69a9cdf2fd1ec281c5cda',1,'GameObject']]]
 ];

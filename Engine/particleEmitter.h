@@ -16,7 +16,7 @@
 class ParticleEmitter : public sf::Drawable
 {
 
-protected:
+private:
   ///Data container for each individual particle.
   struct particle
   {
@@ -26,8 +26,6 @@ protected:
     sf::Vertex m_particleSprite[4];
     int m_timeExisted; //Time the pixel has existed in milliseconds
   };
-
-private:
 
   const int PARTICLELIMIT = 1000;
   float m_dissolutionRate; //Rate at which particles disappear
