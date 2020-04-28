@@ -39,7 +39,7 @@ void RectangleShape::draw(Vec2 windowSize)
   const int vertexes = 12;
 
   //Set the current shader to the rectangle shader
-  rectangleShader.setActive();
+  rectangleShader.bind();
 
   //Bind the vertex array object
   glBindVertexArray(VAO);

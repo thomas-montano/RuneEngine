@@ -10,14 +10,38 @@
 #define TEXTURE_H_DEFINED
 
 #include <string>
+#include "renderWindow.h"
 
 
 class Texture
 {
 private:
-  unsigned int m_RendererID;
+  unsigned int m_textureID;
+  std::string m_filePath;
+  unsigned char* m_localBuffer;
+  int m_width, m_height, m_BPP;
 
+public:
+  ///Default constructor to generate a texture that can be bound and drawn.
+  Texture(const std::string& path);
 
+  ///Default constructor to clean up a no longer needed texture.
+  ~Texture(void);
+
+  ///Binds the texture to one of the texture slots on the GPU.
+  void bind(unsigned int slot = 0);
+
+  ///Unbind the texture to free up space.
+  void unbind();
+
+  ///Get the index of the texture ID.
+  unsigned int getTextureID(void);
+
+  ///Get the height of the texture.
+  unsigned int getHeight(void);
+
+  //Get the width of the texture.
+  unsigned int getWidth(void);
 };
 
 

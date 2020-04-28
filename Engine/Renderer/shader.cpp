@@ -16,6 +16,10 @@ Shader::Shader(const std::string& filePath)
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 }
 
+/**
+ * @param filePath The file path of the texture code to be loaded.
+ * @return A ShaderProgramSource containing the raw shader text for a fragment and vertex shader.
+*/
 ShaderProgramSource Shader::ParseShader(const std::string& filePath)
 {
 
@@ -59,6 +63,11 @@ ShaderProgramSource Shader::ParseShader(const std::string& filePath)
 
 }
 
+/**
+ * @param type A enum specifying the type of shader to be compiled.
+ * @param source The file source of the shader code.
+ * @return The OpenGL shader ID pointing to the compiled shader.
+*/
 unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
 {
   unsigned int id = glCreateShader(type);
@@ -85,6 +94,11 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
   return id;
 }
 
+/**
+ * @param vertexShader The raw shader code for the vertex shader.
+ * @param fragmentShader The raw shader code for the fragment shader.
+ * @return The OpenGL shader ID pointing to the created shader program.
+*/
 unsigned int Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
 
@@ -104,7 +118,58 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 
 }
 
-void Shader::setActive()
+void Shader::bind()
 {
   glUseProgram(m_shaderID);
+}
+
+/**
+ * @return The id for the OpenGL uniform specified.
+*/
+int Shader::getUniformLocation(const std::string& name)
+{
+  if(m_UniformLocationCache.find(name) != m_UniformLocationCache.end())
+  {
+    return m_UniformLocationCache[name];
+  }
+
+  int location = glGetUniformLocation(m_shaderID, name.c_str());
+
+  if(location == -1)
+  {
+    std::cout << "Warning: uniform '" << name << "' doesn't exist!" << std::endl;
+  }
+
+  m_UniformLocationCache[name] = location;
+  return location;
+}
+
+/**
+ * @param name The exact name of the uniform that is being created.
+ * @param value The value being passed to the uniform.
+*/
+void Shader::setUniform1f(const std::string& name, float value)
+{
+  glUniform1f(getUniformLocation(name), value);
+}
+
+/**
+ * @param name The exact name of the uniform that is being created.
+ * @param v0 The value being passed to the uniform.
+ * @param v1 The value being passed to the uniform.
+ * @param v2 The value being passed to the uniform.
+ * @param v3 The value being passed to the uniform.
+*/
+void Shader::setUniform4f(const std::string&name, float v0, float v1, float v2, float v3)
+{
+  glUniform4f(getUniformLocation(name), v0, v1, v2, v3);
+}
+
+/**
+ * @param name The exact name of the uniform that is being created.
+ * @param value The value being passed to the uniform.
+*/
+void Shader::setUniform1i(const std::string& name, int value)
+{
+  glUniform1i(getUniformLocation(name), value);
 }

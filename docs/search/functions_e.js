@@ -1,7 +1,6 @@
 var searchData=
 [
   ['scenelayer',['SceneLayer',['../classSceneLayer.html#a1abfb2e2f3cc3295eb6e6f417cca7ffa',1,'SceneLayer']]],
-  ['setactive',['setActive',['../classShader.html#a060b870ffec4a2eadeb01aa4f05a5ff5',1,'Shader']]],
   ['setcanvassize',['setCanvasSize',['../classParticleEmitter.html#a199ab41f8f7c8cf20cff052539aad941',1,'ParticleEmitter']]],
   ['setcurrentfame',['setCurrentFame',['../classObjectAnimation.html#ad08112ffb12d2d1befa6ed73f7a52b41',1,'ObjectAnimation']]],
   ['setdeltatime',['setDeltaTime',['../classMessageManager.html#ab000d918faf9ac0b78eabca9683a0ce1',1,'MessageManager']]],
@@ -15,7 +14,7 @@ var searchData=
   ['setnumframes',['setNumFrames',['../classObjectAnimation.html#a9b0b66c0e2a240c539efb8ac71c9b77f',1,'ObjectAnimation']]],
   ['setopacity',['setOpacity',['../classSceneLayer.html#a22e0b1d7f0d9dbc7290c6ea57601412a',1,'SceneLayer']]],
   ['setorigin',['setOrigin',['../classRigidBody.html#a2b9c0947fe9f610b223a9ba414abdf5f',1,'RigidBody']]],
-  ['setposition',['setPosition',['../classParticleEmitter.html#ae9364b79330aa54eea69344442f64835',1,'ParticleEmitter::setPosition()'],['../classRectangleShape.html#a16a7a43777f99f1ccdd71bbbd731b1cb',1,'RectangleShape::setPosition()'],['../classRigidBody.html#a079cd300247fd47cb610cbfe394b43cf',1,'RigidBody::setPosition()']]],
+  ['setposition',['setPosition',['../classParticleEmitter.html#ae9364b79330aa54eea69344442f64835',1,'ParticleEmitter::setPosition()'],['../classRectangleShape.html#a16a7a43777f99f1ccdd71bbbd731b1cb',1,'RectangleShape::setPosition()'],['../classSprite.html#aeb11e1891e7f6509e08d009dd27ea99e',1,'Sprite::setPosition()'],['../classRigidBody.html#a079cd300247fd47cb610cbfe394b43cf',1,'RigidBody::setPosition()']]],
   ['setpreviousposition',['setPreviousPosition',['../classRigidBody.html#a93cc35666e81e6c1f4ac564d9f5c9ef7',1,'RigidBody']]],
   ['setrestitution',['setRestitution',['../classRigidBody.html#a56eeaa8c76f57c05a57d04263dddc9ce',1,'RigidBody']]],
   ['setrotation',['setRotation',['../classGameObject.html#a320a94559557834d53bffa538d8349c9',1,'GameObject::setRotation()'],['../classRigidBody.html#a4304a0c32162564a26ef197a19b63000',1,'RigidBody::setRotation()']]],
@@ -23,10 +22,13 @@ var searchData=
   ['setscenepointer',['setScenePointer',['../classSceneLayer.html#a895dc184d0c532081dd516f8754ff6a6',1,'SceneLayer']]],
   ['setsheet',['setSheet',['../classObjectAnimation.html#a64c26762ee6c379667cbbbdc41a67528',1,'ObjectAnimation']]],
   ['setstateflag',['setStateFlag',['../classGameScene.html#a2daad182182e5dcaac9778dd23c5ac81',1,'GameScene']]],
+  ['setuniform1f',['setUniform1f',['../classShader.html#a514a718cd4afdbe525cc977963d46c54',1,'Shader']]],
+  ['setuniform1i',['setUniform1i',['../classShader.html#a6a3ad7b19c1b78b851a21dcfb69ed6c2',1,'Shader']]],
+  ['setuniform4f',['setUniform4f',['../classShader.html#a4580a5874d65651a6632d497f9675934',1,'Shader']]],
   ['setupobject',['setUpObject',['../classRigidBody.html#a3611ebd648baa406595e6eef766df967',1,'RigidBody']]],
   ['setvelocity',['setVelocity',['../classRigidBody.html#ad0bdd224f00de7cfde38e0ed4c69e85b',1,'RigidBody']]],
   ['setwindow',['setWindow',['../classMessageManager.html#a1b809cfa12c4195382901a0e3404e4d2',1,'MessageManager']]],
   ['shader',['Shader',['../classShader.html#a2604eec6d191e6d5931448581f18c740',1,'Shader']]],
-  ['sprite',['Sprite',['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite']]],
+  ['sprite',['Sprite',['../classSprite.html#a48682aa35e49c50619552c2c33195535',1,'Sprite']]],
   ['start',['start',['../classGameObject.html#a746f9f2a00f69a9cdf2fd1ec281c5cda',1,'GameObject']]]
 ];

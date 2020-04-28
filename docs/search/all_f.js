@@ -7,6 +7,7 @@ var searchData=
   ['renderwindow',['RenderWindow',['../classRenderWindow.html',1,'RenderWindow'],['../classRenderWindow.html#a51e455305cb9b319d730ecc8881a9a53',1,'RenderWindow::RenderWindow()']]],
   ['renderwindow_2ecpp',['renderWindow.cpp',['../renderWindow_8cpp.html',1,'']]],
   ['renderwindow_2eh',['renderWindow.h',['../renderWindow_8h.html',1,'']]],
+  ['reset',['reset',['../classClock.html#a0ab5423b0a997aa13d7b6131c46d1358',1,'Clock']]],
   ['resized',['Resized',['../event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa86b68978703679cae01d7269f8a836fc',1,'event.h']]],
   ['resolvecollisions',['resolveCollisions',['../physicsEngine_8cpp.html#a57607f639d1a3703b6301b5fba000dd7',1,'resolveCollisions(std::vector&lt; collision &gt; collisions):&#160;physicsEngine.cpp'],['../physicsEngine_8h.html#a6320cbdcf8f36456c01ab6cb9c5dbb1c',1,'resolveCollisions(std::vector&lt; collision &gt;):&#160;physicsEngine.cpp']]],
   ['restitution',['restitution',['../structbody.html#a8cdc4e2e043d312faeaaf494f6abb11f',1,'body']]],
