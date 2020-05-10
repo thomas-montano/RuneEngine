@@ -9,13 +9,14 @@
 #ifndef SPRITE_H_DEFINED
 #define SPRITE_H_DEFINED
 
+#include "core.h"
 #include "renderWindow.h"
 #include "texture.h"
 #include "rectangleShape.h"
 #include "vec2.h"
 #include <string>
 
-class Sprite : public Drawable
+class RUNE_ENGINE Sprite : public Drawable
 {
 private:
   Texture spriteTexture;
@@ -47,6 +48,7 @@ public:
   ///Default constructor for generating a sprite
   Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation);
   virtual void draw(Vec2 windowSize);
+  void setTexture(Texture);
   void addPosition(Vec2 newPos);
   void setPosition(Vec2 newPos);
 

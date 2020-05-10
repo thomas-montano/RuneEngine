@@ -9,6 +9,7 @@
 #ifndef SHADER_H_DEFINED
 #define SHADER_H_DEFINED
 
+#include "core.h"
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -26,7 +27,7 @@ struct ShaderProgramSource
   std::string FragmentSource;
 };
 
-class Shader
+class RUNE_ENGINE Shader
 {
 
 private:

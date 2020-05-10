@@ -14,6 +14,7 @@ Vec2::Vec2(float newX, float newY)
 Vec2& Vec2::operator -(const Vec2& right)
 {
 
+  return *this;
 }
 
 Vec2& Vec2::operator +(const Vec2& right)
@@ -22,14 +23,19 @@ Vec2& Vec2::operator +(const Vec2& right)
   this->x += right.x;
   this->y += right.y;
 
+  return *this;
 }
 
 Vec2* Vec2::operator *(const Vec2& right)
 {
 
+  return this;
+
 }
 
 Vec2* Vec2::operator /(const Vec2& right)
 {
+
+  return this;
 
 }

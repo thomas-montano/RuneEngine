@@ -9,11 +9,12 @@
 #ifndef TEXTURE_H_DEFINED
 #define TEXTURE_H_DEFINED
 
+#include "core.h"
 #include <string>
 #include "renderWindow.h"
 
 
-class Texture
+class RUNE_ENGINE Texture
 {
 private:
   unsigned int m_textureID;
@@ -25,8 +26,12 @@ public:
   ///Default constructor to generate a texture that can be bound and drawn.
   Texture(const std::string& path);
 
+  Texture();
+
   ///Default constructor to clean up a no longer needed texture.
   ~Texture(void);
+
+  bool loadFromFile(const std::string& path);
 
   ///Binds the texture to one of the texture slots on the GPU.
   void bind(unsigned int slot = 0);

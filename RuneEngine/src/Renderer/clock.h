@@ -9,9 +9,10 @@
 #ifndef CLOCK_H_DEFINED
 #define CLOCK_H_DEFINED
 
+#include "core.h"
 #include <time.h>
 
-class Clock
+class RUNE_ENGINE Clock
 {
 private:
   struct timespec ts;

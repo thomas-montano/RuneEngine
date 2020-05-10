@@ -9,7 +9,9 @@
 #ifndef VEC2_H_DEFINED
 #define VEC2_H_DEFINED
 
-class Vec2
+#include "core.h"
+
+class RUNE_ENGINE Vec2
 {
 public:
   float x;

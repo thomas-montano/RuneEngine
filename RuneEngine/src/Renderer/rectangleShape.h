@@ -10,12 +10,13 @@
 #ifndef RECTANGLE_H_DEFINED
 #define RECTANGLE_H_DEFINED
 
+#include "core.h"
 #include "renderWindow.h"
 #include "shader.h"
 #include "drawable.h"
 #include "vec2.h"
 
-class RectangleShape : public Drawable
+class RUNE_ENGINE RectangleShape : public Drawable
 {
 
 private:

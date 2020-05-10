@@ -76,3 +76,10 @@ void Sprite::setPosition(Vec2 newSize)
   m_position.x = newSize.x;
   m_position.y = newSize.y;
 }
+
+void Sprite::setTexture(Texture newTexture)
+{
+
+  spriteTexture = newTexture;
+
+}

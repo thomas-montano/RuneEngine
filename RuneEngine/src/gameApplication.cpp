@@ -3,7 +3,7 @@
 /**
  * @param updateRate How many times per second the game will run the main update loop.
  */
-GameApplication::GameApplication(int updateRate)
+GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720, "Rune Engine")
 {
 
   m_updateRate = updateRate; //Update ticks per second
@@ -18,8 +18,6 @@ GameApplication::GameApplication(int updateRate)
 int GameApplication::run(void)
 {
 
-  //Create the render window
-  m_mainWindow.create(sf::VideoMode(1440, 720), "Private Eye");
   MessageManager::setWindow(&m_mainWindow);
 
   //m_mainWindow.setVerticalSyncEnabled(true);
@@ -52,19 +50,19 @@ void GameApplication::gameLoop(void)
 {
 
   //Clock object for getting the time
-  sf::Clock tickClock;
-  tickClock.restart(); //Set the time in milliseconds to 0
+  Clock tickClock;
+  tickClock.reset(); //Set the time in milliseconds to 0
 
   short updates = 0; //Number of updates that have happened
 
   //nextTick is the time when the next tick should occur
-  sf::Int32 nextTick = tickClock.getElapsedTime().asMilliseconds();
+  int nextTick = tickClock.getElapsedTimeAsMilliseconds();
 
   //currentTime is what time it currently is
-  sf::Int32 currentTime;
+  int currentTime;
 
   //Debugging purposes only, remove later
-  sf::Int32 framerateClock = tickClock.getElapsedTime().asMilliseconds();
+  int framerateClock = tickClock.getElapsedTimeAsMilliseconds();
   int frames = 0;
 
   //While window is open, run an infinite loop
@@ -92,7 +90,7 @@ void GameApplication::gameLoop(void)
     }
 
     //Update current time clock
-    currentTime = tickClock.getElapsedTime().asMilliseconds();
+    currentTime = tickClock.getElapsedTimeAsMilliseconds();
 
     //Every tick run fixed updates and then keep track of how many ticks
     //have happened
@@ -112,7 +110,7 @@ void GameApplication::gameLoop(void)
     //This is an FPS clock that runs once per second and keeps track of frames
     if((currentTime - framerateClock) >= 1000)
     {
-      framerateClock = tickClock.getElapsedTime().asMilliseconds();
+      framerateClock = tickClock.getElapsedTimeAsMilliseconds();
       std::cout << frames << " FPS" << std::endl;
       frames = 0;
     }
@@ -144,14 +142,11 @@ void GameApplication::processInput(void)
 {
 
   //Loop to poll events and updates the m_windowEvent object
-  while(m_mainWindow.pollEvent(m_windowEvent))
+  m_mainWindow.pollEvents(m_windowEvent);
+
+  if(m_windowEvent.type == EventType::Closed)
   {
-
-    if(m_windowEvent.type == sf::Event::Closed)
-    {
-      m_mainWindow.close();
-    }
-
+    m_mainWindow.close();
   }
 
 }

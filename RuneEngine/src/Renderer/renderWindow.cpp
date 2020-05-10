@@ -92,6 +92,11 @@ bool RenderWindow::isOpen()
   return windowOpen;
 }
 
+void RenderWindow::close(void)
+{
+  glfwSetWindowShouldClose(GLwindow, true);
+}
+
 /**
  * @param drawObject Drawable that should be displayed on the screen.
 */

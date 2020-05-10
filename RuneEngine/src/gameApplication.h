@@ -86,18 +86,21 @@
 #ifndef GAMEAPP_H_INCLUDED
 #define GAMEAPP_H_INCLUDED
 
-#include "sceneManager.h"
-#include "messageManager.h"
-#include  <SFML/Graphics.hpp>
+#include "core.h"
+#include <SceneTools\sceneManager.h>
+#include <SceneTools\messageManager.h>
+#include <Renderer\RenderWindow.h>
+#include <Renderer\clock.h>
+#include <Events\event.h>
 #include <iostream>
 
-class GameApplication
+class RUNE_ENGINE GameApplication
 {
 private:
 
   bool m_gameRunning;
-  sf::RenderWindow m_mainWindow;
-  sf::Event m_windowEvent;
+  RenderWindow m_mainWindow;
+  Event m_windowEvent;
   int m_updateRate;
 
   SceneManager m_sceneManager;
