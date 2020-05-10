@@ -15,6 +15,7 @@
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
+#include <Renderer\clock.h>
 #include "messageManager.h"
 #include "layer.h"
 #include <Entities\particleEmitter.h>
@@ -41,6 +42,7 @@ protected:
   //View m_camera;
 
 public:
+
   ///Initializes the state
   virtual void doInit(void);
 

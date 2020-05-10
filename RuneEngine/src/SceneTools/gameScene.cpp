@@ -1,5 +1,10 @@
 #include "gameScene.h"
 
+GameScene::GameScene()
+{
+
+}
+
 /**
  * DoInit is responsible for initializing this State.  HandleCleanup will
  * be called if mCleanup is true so Derived classes should always call
