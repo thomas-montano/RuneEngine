@@ -51,4 +51,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 .vscode/settings.json
-doc/html/
+.vs/
+bin/
+bin-int/
