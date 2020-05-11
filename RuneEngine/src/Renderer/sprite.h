@@ -46,6 +46,7 @@ private:
 
 public:
   ///Default constructor for generating a sprite
+  Sprite();
   Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation);
   virtual void draw(Vec2 windowSize);
   void setTexture(Texture);

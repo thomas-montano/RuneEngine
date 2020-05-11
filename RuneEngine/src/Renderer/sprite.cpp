@@ -1,5 +1,11 @@
 #include "sprite.h"
 
+Sprite::Sprite() : spriteShader("./sprite.shader")
+{
+
+
+}
+
 /**
  * @param dimensions A Vec2 specifying the size of the sprite.
  * @param position A Vec2 specifying the location of the sprite with respect to the bottom left corner.

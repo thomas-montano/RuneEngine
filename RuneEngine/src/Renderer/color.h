@@ -17,6 +17,8 @@ public:
   Color(double, double, double, double alpha = 1);
   Color();
 
+  static Color Blue;
+
 };
 
 #endif

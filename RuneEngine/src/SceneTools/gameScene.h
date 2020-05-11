@@ -8,16 +8,17 @@
  * @date March 2 2020
 */
 
-#ifndef GAMESTATE_H_INCLUDED
-#define GAMESTATE_H_INCLUDED
+#ifndef GAMESCENE_H_INCLUDED
+#define GAMESCENE_H_INCLUDED
 
-#include "core.h"
+#include <core.h>
+#include <vector>
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
 #include <Renderer\clock.h>
-#include "messageManager.h"
-#include "layer.h"
+#include <SceneTools\messageManager.h>
+#include <SceneTools\layer.h>
 #include <Entities\particleEmitter.h>
 
 class RUNE_ENGINE GameScene
@@ -42,6 +43,7 @@ protected:
   //View m_camera;
 
 public:
+
 
   ///Initializes the state
   virtual void doInit(void);

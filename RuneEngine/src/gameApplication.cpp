@@ -48,7 +48,7 @@ int GameApplication::run(void)
 
 void GameApplication::gameLoop(void)
 {
-
+  
   //Clock object for getting the time
   Clock tickClock;
   tickClock.reset(); //Set the time in milliseconds to 0
@@ -56,13 +56,13 @@ void GameApplication::gameLoop(void)
   short updates = 0; //Number of updates that have happened
 
   //nextTick is the time when the next tick should occur
-  int nextTick = tickClock.getElapsedTimeAsMilliseconds();
+  long nextTick = tickClock.getElapsedTimeAsMilliseconds();
 
   //currentTime is what time it currently is
-  int currentTime;
+  long currentTime;
 
   //Debugging purposes only, remove later
-  int framerateClock = tickClock.getElapsedTimeAsMilliseconds();
+  long framerateClock = tickClock.getElapsedTimeAsMilliseconds();
   int frames = 0;
 
   //While window is open, run an infinite loop
