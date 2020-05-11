@@ -14,6 +14,7 @@
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
 #include "drawable.h"
+#include "color.h"
 #include <Events\event.h>
 #include "vec2.h"
 #include <string>
@@ -44,7 +45,7 @@ public:
   void display(void);
 
   ///Clear the entire screen with a single color.
-  void clear(void);
+  void clear(Color);
 
   ///Tell whether or not the window is open.
   bool isOpen(void);

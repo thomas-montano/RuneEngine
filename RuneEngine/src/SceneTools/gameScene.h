@@ -44,7 +44,6 @@ protected:
 
 public:
 
-
   ///Initializes the state
   virtual void doInit(void);
 

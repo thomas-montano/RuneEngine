@@ -36,6 +36,13 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
 
 }
 
+void GameObject::draw(Vec2 winSize)
+{
+
+  m_objectSprite.draw(winSize);
+
+}
+
 /**
  * @param frameWidth the width of the individual frame in pixels
  * @param numFrames the total number of frames in the animation
@@ -72,7 +79,7 @@ void GameObject::playAnimation(int animation)
 
   currentAnimation->getSheet()->loadFromFile(currentAnimation->getFile());
 
-  m_objectSprite.setTexture(*currentAnimation->getSheet());
+  //m_objectSprite.setTexture(*currentAnimation->getSheet());
 
   /*if(m_mirrorSprite)
   {

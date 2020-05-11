@@ -135,8 +135,8 @@ void GameScene::updateLayerPhysics(void)
 void GameScene::Draw(RenderWindow& window)
 {
 
-  /*window.setView(m_camera);
-  window.clear(sf::Color(30,144,255));
+  //window.setView(m_camera);
+  window.clear(Color(30,144,255));
 
   //Draw the scene layers
   for(int i = 0; i < sceneLayers.size();i++)
@@ -145,14 +145,14 @@ void GameScene::Draw(RenderWindow& window)
   }
 
   //Draw the user interface objects in front of everything else
-  for(int i = 0; i < m_stateUI.size();i++)
+  /*for(int i = 0; i < m_stateUI.size();i++)
   {
 
     window.draw(m_stateUI[i]->getDrawable());
 
-  }
+  }*/
 
-  window.display();*/
+  window.display();
 
 }
 

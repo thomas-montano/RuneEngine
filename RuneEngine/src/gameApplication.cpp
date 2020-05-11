@@ -20,13 +20,13 @@ int GameApplication::run(void)
 
   MessageManager::setWindow(&m_mainWindow);
 
-  //m_mainWindow.setVerticalSyncEnabled(true);
+  m_mainWindow.enableVsync(false);
 
   //If the icon file doesn't exist, dont add an icon
-  #if __has_include("../icon.c")
+  /*#if __has_include("../icon.c")
     #include "../icon.c"
     m_mainWindow.setIcon(gimp_image.width,gimp_image.height,gimp_image.pixel_data);
-  #endif
+  #endif*/
 
   //Default the game to the first available state
   //In this case its the main menu
@@ -128,7 +128,7 @@ void GameApplication::gameLoop(void)
     m_currentScene->Draw(m_mainWindow);
 
     //Make sure that each layer gets their collisions updated
-    m_currentScene->updateLayerPhysics();
+    //m_currentScene->updateLayerPhysics();
 
     //Update the amount of frames that have been rendered
     frames++;

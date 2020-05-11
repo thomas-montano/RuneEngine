@@ -76,21 +76,20 @@ void SceneLayer::setOpacity(float opacity)
  * @param target RenderTarget to draw to.
  * @param states States variable to affect the rendering
 */
-/*void SceneLayer::draw(sf::RenderTarget& target, sf::RenderStates states) const
+void SceneLayer::draw(Vec2 winSize)
 {
 
   for(int i = 0; i < objects.size(); i++)
   {
-    objects[i]->getSprite()->setColor(sf::Color(globalLightColor.r*layerBrightness,globalLightColor.g*layerBrightness,globalLightColor.b*layerBrightness,255*layerOpacity));
-    target.draw(*objects[i],states);
-    target.draw(*objects[i]->getRigidBody(),states);
+    //objects[i]->getSprite()->setColor(sf::Color(globalLightColor.r*layerBrightness,globalLightColor.g*layerBrightness,globalLightColor.b*layerBrightness,255*layerOpacity));
+    objects[i]->draw(winSize);
   }
 
-  for(int i = 0; i < particles.size(); i++)
+  /*for(int i = 0; i < particles.size(); i++)
   {
     target.draw(*particles[i]);
-  }
-}*/
+  }*/
+}
 
 /**
  * @param newSelfPointer Pointer that is passed to GameObject in the scene to use as a reference back to the current SceneLayer.

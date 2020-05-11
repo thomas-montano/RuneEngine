@@ -21,7 +21,7 @@
 #include <Entities\particleEmitter.h>
 #include <Physics\rigidBody.h>
 
-class RUNE_ENGINE SceneLayer //: public Drawable
+class RUNE_ENGINE SceneLayer : public Drawable
 {
 private:
   bool hasPhysics;
@@ -38,7 +38,7 @@ private:
   Color globalLightColor;
   float layerLighting;
 
-  //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+  virtual void draw(Vec2);
 
 public:
   ///Default constructor for setting up layer parameters.

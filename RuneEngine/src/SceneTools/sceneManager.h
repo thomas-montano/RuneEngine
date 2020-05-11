@@ -18,7 +18,7 @@
 class RUNE_ENGINE SceneManager
 {
 private:
-  int m_currentScene; //Index for the current state
+  int m_currentScene = 0; //Index for the current state
 
   //Array to hold all of the object pointers for the virtual functions
   std::vector<GameScene*> m_scenes;

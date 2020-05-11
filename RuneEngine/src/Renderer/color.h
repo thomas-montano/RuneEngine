@@ -7,13 +7,12 @@
 
 class RUNE_ENGINE Color
 {
-private:
+public:
   double red;
   double green;
   double blue;
   double alpha;
 
-public:
   Color(double, double, double, double alpha = 1);
   Color();
 

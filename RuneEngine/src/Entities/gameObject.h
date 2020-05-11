@@ -19,7 +19,7 @@
 //Forward declaration of layer object
 class SceneLayer;
 
-class RUNE_ENGINE GameObject// : public Drawable
+class RUNE_ENGINE GameObject : public Drawable
 {
 private:
   Texture m_objectTexture; //Texture for the object
@@ -32,9 +32,11 @@ private:
 
   bool m_mirrorSprite;
 
-  //virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 public:
+
+  virtual void draw(Vec2);
+
   ///Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.
   void objectInit(float xPos, float yPos, int width, int height, std::string filePath,float mass = 10,float gravity = 10);
 

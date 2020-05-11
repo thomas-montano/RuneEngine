@@ -15,14 +15,17 @@ GameScene* SceneManager::getCurrentScene(void)
 void SceneManager::setScene(int newScene)
 {
 
-  if(m_scenes[m_currentScene]->isActive())
+  if(!m_scenes.empty())
   {
-    m_scenes[m_currentScene]->pause();
-  }
-  else
-  {
-    //Handle cleanup from the old state if state is no longer active
-    m_scenes[m_currentScene]->handleCleanup();
+    if(m_scenes[m_currentScene]->isActive())
+    {
+      m_scenes[m_currentScene]->pause();
+    }
+    else
+    {
+      //Handle cleanup from the old state if state is no longer active
+      m_scenes[m_currentScene]->handleCleanup();
+    }
   }
 
   //Set current state index to the new state

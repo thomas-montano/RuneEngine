@@ -60,11 +60,6 @@ void RenderWindow::pollEvents(Event& event)
     windowOpen = false;
   }
 
-  if(glfwGetKey(GLwindow, GLFW_KEY_ESCAPE)==GLFW_PRESS)
-  {
-    glfwSetWindowShouldClose(GLwindow,true);
-  }
-
 }
 
 void RenderWindow::display(void)
@@ -74,8 +69,9 @@ void RenderWindow::display(void)
 
 }
 
-void RenderWindow::clear(void)
+void RenderWindow::clear(Color clearColor)
 {
+  glClearColor(clearColor.red/255.0, clearColor.green / 255.0, clearColor.blue / 255.0, clearColor.alpha / 255.0);
   glClear(GL_COLOR_BUFFER_BIT);
 }
 

@@ -43,7 +43,7 @@ Texture::Texture(const std::string& path)
 }
 
 Texture::Texture()
-:m_textureID(0), m_filePath(NULL), m_localBuffer(nullptr),
+:m_textureID(0), m_filePath(" "), m_localBuffer(nullptr),
 m_width(0), m_height(0), m_BPP(0)
 {
 
