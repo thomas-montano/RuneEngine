@@ -17,7 +17,7 @@
 #include <algorithm>
 
 ///Function call made by the game scene to have objects get updated
-void updatePhysics(std::vector<RigidBody*> objects, float dT);
+void updatePhysics(std::vector<RigidBody*> objects, double dT);
 
 ///Broad phase collision responsible for determining collisions based off of AABB's only.
 std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes);
@@ -29,13 +29,13 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> boundingBoxe
 void resolveCollisions(std::vector<collision>);
 
 //Correct the position of the object each frame so that it doesn't look like two objects are overlapping.
-void positionalCorrection(RigidBody* object1, RigidBody* object2, float penetration, Vec2 normal);
+void positionalCorrection(RigidBody* object1, RigidBody* object2, double penetration, Vec2 normal);
 
 ///Print vector function for debugging.
 void printVector(Vec2 vector);
 
 ///Dot product calculation of two vectors.
-float dotProduct(Vec2 vector1, Vec2 vector2);
+double dotProduct(Vec2 vector1, Vec2 vector2);
 
 ///Find the vector normal to a surface
 Vec2 findNormal(Vec2 axis);
@@ -44,9 +44,9 @@ Vec2 findNormal(Vec2 axis);
 Vec2 normalize(Vec2);
 
 ///Solve for the hypotenuse given the two sides of a triangle.
-float pythagoreanSolve(float,float);
+double pythagoreanSolve(double,double);
 
 ///Cross product of two vectors
-float crossProduct(Vec2,Vec2);
+double crossProduct(Vec2,Vec2);
 
 #endif

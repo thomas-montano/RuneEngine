@@ -11,6 +11,7 @@
 
 #include "core.h"
 #include <Renderer\drawable.h>
+#include <Renderer\renderWindow.h>
 #include <Entities\objectAnimation.h>
 #include <Entities\particleEmitter.h>
 #include <Renderer\sprite.h>
@@ -22,8 +23,9 @@ class SceneLayer;
 class RUNE_ENGINE GameObject : public Drawable
 {
 private:
-  Texture m_objectTexture; //Texture for the object
   Sprite m_objectSprite; //Drawable sprite object
+  Texture m_objectTexture;
+
   std::vector<ObjectAnimation*> animations; //Animations to be played
 
   SceneLayer* myLayer;
@@ -35,7 +37,7 @@ private:
 
 public:
 
-  virtual void draw(Vec2);
+  virtual void draw(RenderWindow&);
 
   ///Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.
   void objectInit(float xPos, float yPos, int width, int height, std::string filePath,float mass = 10,float gravity = 10);

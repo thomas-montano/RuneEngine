@@ -4,7 +4,7 @@
  * @param objects An array of pointers to rigid bodies that should be considered for collision
  * @param dT The amount of time that the physics frame occupies
 */
-void updatePhysics(std::vector<RigidBody*> objects, float dT)
+void updatePhysics(std::vector<RigidBody*> objects, double dT)
 {
 
   //Update the positions of all objects
@@ -122,14 +122,14 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
         currentCollision.objectTwo = boundingBoxes[j];
 
         //Generate each normal vector based on the AABB hit box
-        float normal1 = std::abs(box2.min.x - box1.max.x); // Left <-1,0>
-        float normal2 = std::abs(box2.max.x - box1.min.x); //Right <1,0>
-        float normal3 = std::abs(box2.min.y - box1.max.y); //Up <0,1>
-        float normal4 = std::abs(box2.max.y - box1.min.y); //Down <0,-1>
+        double normal1 = std::abs(box2.min.x - box1.max.x); // Left <-1,0>
+        double normal2 = std::abs(box2.max.x - box1.min.x); //Right <1,0>
+        double normal3 = std::abs(box2.min.y - box1.max.y); //Up <0,1>
+        double normal4 = std::abs(box2.max.y - box1.min.y); //Down <0,-1>
 
         //Determine the minimum axis of penetration
-        float xNormal = normal1 < normal2 ? normal1 : normal2;
-        float yNormal = normal3 < normal4 ? normal3 : normal4;
+        double xNormal = normal1 < normal2 ? normal1 : normal2;
+        double yNormal = normal3 < normal4 ? normal3 : normal4;
 
         //Assign the appropriate normal vector based on the axis of least penetration
         if(xNormal < yNormal)
@@ -175,16 +175,16 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
   {
     collision currentCollision;
     Vec2 normals[4];
-    float penetrations[4] = {0.0};
+    double penetrations[4] = {0.0};
 
     RigidBody object1 = *possibleCollisions[i].objectOne;
     RigidBody object2 = *possibleCollisions[i].objectTwo;
     
     //Min and max projections of the boxes
-    float minProjBox1;
-    float maxProjBox1;
-    float minProjBox2;
-    float maxProjBox2;
+    double minProjBox1;
+    double maxProjBox1;
+    double minProjBox2;
+    double maxProjBox2;
 
     //Axis P
     normals[0] = findNormal(Vec2(object1.getVertex(1)-object1.getVertex(0)));
@@ -311,7 +311,7 @@ void resolveCollisions(std::vector<collision> collisions)
     
     tangent = normalize(tangent);
 
-    float velAlongNormal = dotProduct(relativeV, collisions[i].normalVector);
+    double velAlongNormal = dotProduct(relativeV, collisions[i].normalVector);
 
     if(velAlongNormal > 0)
     {
@@ -319,15 +319,15 @@ void resolveCollisions(std::vector<collision> collisions)
       //Move the objects out of each other
       positionalCorrection(object1,object2,collisions[i].depth, collisions[i].normalVector);
 
-      float e = std::min(object1->getRestitution(),object2->getRestitution()); // Restitution factor
+      double e = std::min(object1->getRestitution(),object2->getRestitution()); // Restitution factor
 
-      float j = -(1 + e) * velAlongNormal;
-      float jt = -1*dotProduct(relativeV,tangent);
+      double j = -(1 + e) * velAlongNormal;
+      double jt = -1*dotProduct(relativeV,tangent);
 
       jt /= object1->getInvMass() + object2->getInvMass();
       j /= (object1->getInvMass() + object2->getInvMass());
 
-      float mu = pythagoreanSolve(object1->getStaticFriction(),object2->getStaticFriction());
+      double mu = pythagoreanSolve(object1->getStaticFriction(),object2->getStaticFriction());
 
       //Apply friction force
       Vec2 frictionImpulse;
@@ -337,7 +337,7 @@ void resolveCollisions(std::vector<collision> collisions)
       }
       else
       {
-        float dynamicFriction = pythagoreanSolve(object1->getDynamicFriction(),object2->getDynamicFriction());
+        double dynamicFriction = pythagoreanSolve(object1->getDynamicFriction(),object2->getDynamicFriction());
         
         //If the contact is purely vertical, don't apply friction
         if(std::abs(collisions[i].normalVector.y) < 0.001)
@@ -359,7 +359,7 @@ void resolveCollisions(std::vector<collision> collisions)
 
       /*
       //Handle rotation
-      float jr = -(1 + e)*dotProduct(relativeV,tangent);
+      double jr = -(1 + e)*dotProduct(relativeV,tangent);
       jr /= object1->getInvMass() + object2->getInvMass() + pow(crossProduct(collisions[i].contactVectorBox1,tangent),2)*object1->getInvIntertia() + pow(crossProduct(collisions[i].contactVectorBox2,tangent),2)*object2->getInvIntertia();
       impulse = Vec2(jr * collisions[i].normalVector.x, jr * collisions[i].normalVector.y);
 
@@ -375,13 +375,13 @@ void resolveCollisions(std::vector<collision> collisions)
  * @param object2 The seconds object in the collision.
  * @param normal The normal vector for the collision. 
 */
-void positionalCorrection(RigidBody* object1, RigidBody* object2, float depth, Vec2 normal)
+void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, Vec2 normal)
 {
 
-  const float percent = 1; // usually 20% to 80%
-  const float slop = 0.01; // usually 0.01 to 0.1
+  const double percent = 1; // usually 20% to 80%
+  const double slop = 0.01; // usually 0.01 to 0.1
 
-  float correctionFactor = (std::max( depth - slop, 0.01f ) / (object1->getInvMass() + object2->getInvMass())) * percent;
+  double correctionFactor = (std::max( depth - slop, 0.01 ) / (object1->getInvMass() + object2->getInvMass())) * percent;
 
   Vec2 correction = Vec2(normal.x*correctionFactor,normal.y*correctionFactor);
   object1->addPosition(Vec2(object1->getInvMass() * correction.x,object1->getInvMass() * correction.y));
@@ -404,10 +404,10 @@ void printVector(Vec2 vector)
  * @param v2 Seconds vector to be used in the dot product.
  * @return The result of the dot product calculation.
 */
-float dotProduct(Vec2 v1, Vec2 v2)
+double dotProduct(Vec2 v1, Vec2 v2)
 {
 
-  float dotProduct = v1.x * v2.x + v1.y*v2.y;
+  double dotProduct = v1.x * v2.x + v1.y*v2.y;
 
   return dotProduct;
 
@@ -421,7 +421,7 @@ Vec2 findNormal(Vec2 axis)
 {
 
   Vec2 normal = Vec2(-axis.y,axis.x);
-  float magnitude = sqrt(pow(axis.y,2)+pow(axis.x,2));
+  double magnitude = sqrt(pow(axis.y,2)+pow(axis.x,2));
 
   return Vec2(normal.x/magnitude,normal.y/magnitude);
 
@@ -433,7 +433,7 @@ Vec2 findNormal(Vec2 axis)
 */
 Vec2 normalize(Vec2 vector)
 {
-  float magnitude = sqrt(pow(vector.x,2) + pow(vector.y,2));
+  double magnitude = sqrt(pow(vector.x,2) + pow(vector.y,2));
   return Vec2(magnitude != 0 ? vector.x/magnitude:0, magnitude != 0 ? vector.y/magnitude:0);
 }
 
@@ -442,7 +442,7 @@ Vec2 normalize(Vec2 vector)
  * @param b Seconds side of the triangle.
  * @return The length of the hypotenuse. 
 */
-float pythagoreanSolve(float a, float b)
+double pythagoreanSolve(double a, double b)
 {
   return sqrt(pow(a,2) + pow(b,2));
 }
@@ -452,7 +452,7 @@ float pythagoreanSolve(float a, float b)
  * @param vector2 Seconds vector to be used in the cross product calculation.
  * @return The result of the cross product calculation. 
 */
-float crossProduct(Vec2 vector1,Vec2 vector2 )
+double crossProduct(Vec2 vector1,Vec2 vector2 )
 {
   return vector1.x * vector2.y - vector1.y * vector2.x;
 }

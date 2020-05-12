@@ -64,12 +64,15 @@ Sprite::Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation) : m_po
 /**
  * @param windowSize The size of the window the sprite is being drawn to.
 */
-void Sprite::draw(Vec2 windowSize)
+void Sprite::draw(RenderWindow& window)
 {
+
   //Bind the vertex array object
   spriteTexture.bind();
   spriteShader.bind();
   glBindVertexArray(VAO);
+
+  Vec2 windowSize = window.getSize();
 
   float drawVertices[32] = 
   {
@@ -105,7 +108,7 @@ void Sprite::setPosition(Vec2 newSize)
   m_position.y = newSize.y;
 }
 
-void Sprite::setTexture(Texture newTexture)
+void Sprite::setTexture(Texture& newTexture)
 {
 
   spriteTexture = newTexture;

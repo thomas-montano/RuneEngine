@@ -1,6 +1,7 @@
 #include "texture.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+#include <iostream>
 
 /**
  * @param path The file path for the texture that you would like to load relative to the main executable.

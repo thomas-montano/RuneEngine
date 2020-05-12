@@ -48,8 +48,8 @@ public:
   ///Default constructor for generating a sprite
   Sprite();
   Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation);
-  virtual void draw(Vec2 windowSize);
-  void setTexture(Texture);
+  virtual void draw(RenderWindow&);
+  void setTexture(Texture&);
   void addPosition(Vec2 newPos);
   void setPosition(Vec2 newPos);
 

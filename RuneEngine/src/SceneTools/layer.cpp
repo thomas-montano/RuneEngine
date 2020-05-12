@@ -76,13 +76,13 @@ void SceneLayer::setOpacity(float opacity)
  * @param target RenderTarget to draw to.
  * @param states States variable to affect the rendering
 */
-void SceneLayer::draw(Vec2 winSize)
+void SceneLayer::draw(RenderWindow& window)
 {
 
   for(int i = 0; i < objects.size(); i++)
   {
     //objects[i]->getSprite()->setColor(sf::Color(globalLightColor.r*layerBrightness,globalLightColor.g*layerBrightness,globalLightColor.b*layerBrightness,255*layerOpacity));
-    objects[i]->draw(winSize);
+    window.draw(*objects[i]);
   }
 
   /*for(int i = 0; i < particles.size(); i++)

@@ -20,26 +20,25 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
   m_objectRigidBody.setPreviousPosition(Vec2(xPos,yPos));
 
   //If the actual texture can't be loaded, load the error texture
-  if(filePath != "" && !m_objectTexture.loadFromFile(filePath))
+  if(filePath != "")
   {
 
-    m_objectTexture.loadFromFile("./Assets/Images/textureFailure.png");
-    m_objectSprite.setTexture(m_objectTexture);
+    m_objectSprite = *new Sprite(Vec2(width,height),Vec2(xPos,yPos),filePath);
 
   }else if (filePath != "")
   {
-    m_objectSprite.setTexture(m_objectTexture);
+    //m_objectSprite.setTexture(m_objectTexture);
   }
   
   this->start();
-  m_objectSprite.setPosition(Vec2(xPos,yPos));
+  //m_objectSprite.setPosition(Vec2(xPos,yPos));
 
 }
 
-void GameObject::draw(Vec2 winSize)
+void GameObject::draw(RenderWindow& window)
 {
 
-  m_objectSprite.draw(winSize);
+  window.draw(m_objectSprite);
 
 }
 
@@ -52,7 +51,7 @@ void GameObject::draw(Vec2 winSize)
 void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName)
 {
 
-  ObjectAnimation* newAnimation = new ObjectAnimation;
+  /*ObjectAnimation* newAnimation = new ObjectAnimation;
   Texture* spriteSheet = new Texture;
 
   newAnimation->setCurrentFame(0);
@@ -65,7 +64,7 @@ void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std:
   
   newAnimation->setSheet(*spriteSheet);
 
-  animations.push_back(newAnimation);
+  animations.push_back(newAnimation);*/
 
 }
 
@@ -75,22 +74,22 @@ void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std:
 void GameObject::playAnimation(int animation)
 {
 
-  ObjectAnimation* currentAnimation = animations[animation];
+  /*ObjectAnimation* currentAnimation = animations[animation];
 
   currentAnimation->getSheet()->loadFromFile(currentAnimation->getFile());
 
   //m_objectSprite.setTexture(*currentAnimation->getSheet());
 
-  /*if(m_mirrorSprite)
+  if(m_mirrorSprite)
   {
     m_objectSprite.setTextureRect(sf::IntRect((currentAnimation->getCurrentFrame() * currentAnimation->getFrameWidth()),0,currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y));
   }
   else
   {
     m_objectSprite.setTextureRect(sf::IntRect(((currentAnimation->getCurrentFrame()+1) * currentAnimation->getFrameWidth()),0,-currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y));
-  }*/
+  }
   
-  currentAnimation->incCurrentFrame();
+  currentAnimation->incCurrentFrame();*/
 
 }
 

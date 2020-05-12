@@ -38,7 +38,7 @@ private:
   Color globalLightColor;
   float layerLighting;
 
-  virtual void draw(Vec2);
+  virtual void draw(RenderWindow&);
 
 public:
   ///Default constructor for setting up layer parameters.

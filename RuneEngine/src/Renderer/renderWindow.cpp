@@ -1,4 +1,5 @@
 #include "renderWindow.h"
+#include "drawable.h"
 
 /**
  * @param newWidth The width of the window in pixels to be created.
@@ -60,6 +61,11 @@ void RenderWindow::pollEvents(Event& event)
     windowOpen = false;
   }
 
+  if (glfwGetKey(GLwindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+  {
+    glfwSetWindowShouldClose(GLwindow, true);
+  }
+
 }
 
 void RenderWindow::display(void)
@@ -98,7 +104,7 @@ void RenderWindow::close(void)
 */
 void RenderWindow::draw(Drawable& drawObject)
 {
-  drawObject.draw(Vec2(width,height));
+  drawObject.draw(*this);
 }
 
 /**

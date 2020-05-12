@@ -10,14 +10,13 @@
 #define RENDER_WINDOW_H
 
 #include "core.h"
-#include <GL\glew.h>
-#include <GL\glu.h>
-#include <GLFW\glfw3.h>
-#include "drawable.h"
+#include "opengl.h"
 #include "color.h"
 #include <Events\event.h>
 #include "vec2.h"
 #include <string>
+
+class Drawable;
 
 class RUNE_ENGINE RenderWindow
 {

@@ -9,21 +9,19 @@
 #ifndef DRAWABLE_DEFINED
 #define DRAWABLE_DEFINED
 
-#include <GL\glew.h>
-#include <GL\glu.h>
-#include <GLFW\glfw3.h>
 #include "core.h"
+#include "opengl.h"
 #include <iostream>
 #include <Renderer\vec2.h>
-
-class RenderWindow;
+#include <Renderer\RenderWindow.h>
 
 class RUNE_ENGINE Drawable
 {
 
 public:
   ///Draw the object to a render target.
-  virtual void draw(Vec2 windowSize) = 0;
+  virtual void draw(RenderWindow&) = 0;
+  //void drawer(RenderWindow&);
 
 };
 
