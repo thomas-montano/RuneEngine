@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['inccurrentframe',['incCurrentFrame',['../classObjectAnimation.html#a8219af895c2eae6a8f64e895997eff08',1,'ObjectAnimation']]],
-  ['invinertia',['invInertia',['../structbody.html#aed3b156e160e684e007e31da55f03932',1,'body']]],
-  ['invmass',['invMass',['../structbody.html#ad9044f84cd61d54ac1e72d30f0194b08',1,'body']]],
-  ['isactive',['isActive',['../classGameScene.html#a4866d911421cd18a41aa48c15e555613',1,'GameScene']]],
-  ['isclicked',['isClicked',['../classGameUI.html#a8b9cffa748fc4b1dabbb3d732e148ff2',1,'GameUI']]],
-  ['iskeypressed',['isKeyPressed',['../classRenderWindow.html#a49182e9b53688ef1105c76ed6d1055eb',1,'RenderWindow']]],
-  ['isopen',['isOpen',['../classRenderWindow.html#a4ec22d45464c8e2fe2405abe70c8e067',1,'RenderWindow']]]
+  ['i_146',['I',['../classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a177ad5dfe84032a3151122962a5b6b02',1,'rune::Keyboard']]],
+  ['inccurrentframe_147',['incCurrentFrame',['../classObjectAnimation.html#a8219af895c2eae6a8f64e895997eff08',1,'ObjectAnimation']]],
+  ['insert_148',['INSERT',['../classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a0e0e2089cae540375382f4e812186dbb',1,'rune::Keyboard']]],
+  ['invinertia_149',['invInertia',['../structbody.html#aed3b156e160e684e007e31da55f03932',1,'body']]],
+  ['invmass_150',['invMass',['../structbody.html#ad9044f84cd61d54ac1e72d30f0194b08',1,'body']]],
+  ['isactive_151',['isActive',['../classGameScene.html#a4866d911421cd18a41aa48c15e555613',1,'GameScene']]],
+  ['isclicked_152',['isClicked',['../classGameUI.html#a593c3a1b3d7b903fa08b93728ab5a2ae',1,'GameUI']]],
+  ['iskeypressed_153',['isKeyPressed',['../classrune_1_1Keyboard.html#a7a99e63693e78544a4a08173220e88a9',1,'rune::Keyboard']]],
+  ['isopen_154',['isOpen',['../classRenderWindow.html#a4ec22d45464c8e2fe2405abe70c8e067',1,'RenderWindow']]]
 ];

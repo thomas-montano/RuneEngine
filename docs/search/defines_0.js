@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stb_5fimage_5fimplementation',['STB_IMAGE_IMPLEMENTATION',['../texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'texture.cpp']]]
+  ['color_5fh_5fdefined_704',['COLOR_H_DEFINED',['../color_8h.html#a747ee153ecfe985beed5979b5a90c5d0',1,'color.h']]]
 ];

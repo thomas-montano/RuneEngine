@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['handlecleanup',['handleCleanup',['../classGameScene.html#a117f66aab169cef8baaf88eaddcf7685',1,'GameScene']]],
-  ['handleevents',['handleEvents',['../classGameScene.html#ac756f0e43d32ae0037bb0ba8a6094e8b',1,'GameScene']]],
-  ['handleui',['handleUI',['../classGameScene.html#a19e6ac9aea4b11b93f4eea490348c69e',1,'GameScene']]]
+  ['handlecleanup_488',['handleCleanup',['../classGameScene.html#a117f66aab169cef8baaf88eaddcf7685',1,'GameScene']]],
+  ['handleevents_489',['handleEvents',['../classGameScene.html#a56e5084c73a3e71e45180e10aac79402',1,'GameScene']]],
+  ['handleui_490',['handleUI',['../classGameScene.html#a5235ab31a185096e16d1d952111e3fb8',1,'GameScene']]]
 ];
