@@ -47,7 +47,7 @@ Sprite::Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation) : m_po
   glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_DYNAMIC_DRAW);
 
   glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_DYNAMIC_DRAW);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
   // position attribute
   glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
@@ -70,8 +70,7 @@ void Sprite::draw(RenderWindow& window)
   //Bind the vertex array object
   spriteTexture.bind();
   spriteShader.bind();
-  glBindVertexArray(VAO);
-
+  
   Vec2 windowSize = window.getSize();
 
   float drawVertices[32] = 
@@ -83,11 +82,15 @@ void Sprite::draw(RenderWindow& window)
     m_position.x/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,                 0.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
   };
 
+  glBindVertexArray(VAO);
+
+  glBindBuffer(GL_ARRAY_BUFFER,VBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(drawVertices), drawVertices, GL_DYNAMIC_DRAW);
 
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
   spriteTexture.unbind();
+
 }
 
 /**
@@ -108,9 +111,24 @@ void Sprite::setPosition(Vec2 newSize)
   m_position.y = newSize.y;
 }
 
-void Sprite::setTexture(Texture& newTexture)
+void Sprite::setTexture(std::string texture)
 {
 
-  spriteTexture = newTexture;
+  spriteTexture.loadFromFile(texture.c_str());
 
+}
+
+void Sprite::setSize(Vec2 newSize)
+{
+  m_size = newSize;
+}
+
+Vec2 Sprite::getPosition(void)
+{
+  return m_position;
+}
+
+Vec2 Sprite::getSize(void)
+{
+  return m_size;
 }

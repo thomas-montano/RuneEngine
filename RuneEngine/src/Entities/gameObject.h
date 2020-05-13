@@ -34,7 +34,6 @@ private:
 
   bool m_mirrorSprite;
 
-
 public:
 
   virtual void draw(RenderWindow&);

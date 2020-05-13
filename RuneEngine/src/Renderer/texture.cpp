@@ -1,13 +1,13 @@
 #include "texture.h"
+#include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
-#include <iostream>
 
 /**
  * @param path The file path for the texture that you would like to load relative to the main executable.
 */
 Texture::Texture(const std::string& path)
-  : m_textureID(0), m_filePath(path), m_localBuffer(nullptr),
+  : m_textureID(0), m_filePath(path), m_localBuffer(0),
   m_width(0), m_height(0), m_BPP(0)
 { 
   //Load the png file and prepare it to be loaded as a texture
@@ -44,7 +44,7 @@ Texture::Texture(const std::string& path)
 }
 
 Texture::Texture()
-:m_textureID(0), m_filePath(" "), m_localBuffer(nullptr),
+:m_textureID(0), m_filePath(""), m_localBuffer(0),
 m_width(0), m_height(0), m_BPP(0)
 {
 
@@ -53,12 +53,7 @@ m_width(0), m_height(0), m_BPP(0)
 bool Texture::loadFromFile(const std::string& path)
 {
 
-  m_textureID = 0;
   m_filePath = path;
-  m_localBuffer = nullptr;
-  m_width = 0;
-  m_height = 0;
-  m_BPP = 0;
 
   //Load the png file and prepare it to be loaded as a texture
   stbi_set_flip_vertically_on_load(1);
@@ -74,13 +69,15 @@ bool Texture::loadFromFile(const std::string& path)
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-  //Set the border to be invisible
-  //float borderColor[] = { 0.0f, 0.0f, 0.0f, 0.0f };
-  //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
-
   //load image, create texture and generate mipmaps
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_localBuffer);
   glGenerateMipmap(GL_TEXTURE_2D);
+
+  //Set the border to be red
+  //float borderColor[] = { 1.0f, 0.0f, 0.0f, 0.0f };
+  //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+
+  glBindTexture(GL_TEXTURE_2D, 0);
 
   if (m_localBuffer)
   {
@@ -106,8 +103,10 @@ Texture::~Texture()
 */
 void Texture::bind(unsigned int slot)
 {
+
   glActiveTexture(GL_TEXTURE0 + slot);
   glBindTexture(GL_TEXTURE_2D, m_textureID);
+
 }
 
 void Texture::unbind()

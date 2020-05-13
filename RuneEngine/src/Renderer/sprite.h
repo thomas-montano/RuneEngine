@@ -12,7 +12,8 @@
 #include "core.h"
 #include "renderWindow.h"
 #include "texture.h"
-#include "rectangleShape.h"
+#include "drawable.h"
+#include "shader.h"
 #include "vec2.h"
 #include <string>
 
@@ -22,14 +23,7 @@ private:
   Texture spriteTexture;
   Shader spriteShader;
 
-  float vertices[32] = 
-  {
-    // positions          // colors           // texture coords
-     0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
-     0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
-    -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
-    -0.5f,  0.5f, 0.0f,   1.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
-  };
+  float vertices[32] = {0};
 
   unsigned int indices[6] = 
   {  
@@ -49,9 +43,14 @@ public:
   Sprite();
   Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation);
   virtual void draw(RenderWindow&);
-  void setTexture(Texture&);
+  void setTexture(std::string texture);
   void addPosition(Vec2 newPos);
   void setPosition(Vec2 newPos);
+
+  void setSize(Vec2);
+
+  Vec2 getPosition(void);
+  Vec2 getSize(void);
 
 };
 

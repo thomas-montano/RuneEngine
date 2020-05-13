@@ -19,11 +19,11 @@ void GameUI::createButton(float posX, float posY, float width, float height)
   {
 
     m_objectTexture.loadFromFile("./Assets/Images/textureFailure.png");
-    m_uiObject.setTexture(m_objectTexture);
+    //m_uiObject.setTexture(m_objectTexture);
 
   }else
   {
-    m_uiObject.setTexture(m_objectTexture);
+    //m_uiObject.setTexture(m_objectTexture);
     //m_uiObject.setTextureRect(IntRect(0,0,120,60));
   }
 

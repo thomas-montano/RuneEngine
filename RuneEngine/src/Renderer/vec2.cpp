@@ -11,6 +11,15 @@ Vec2::Vec2(float newX, float newY)
   y = newY;
 }
 
+std::ostream& operator<<(std::ostream& os, const Vec2& vector)
+{
+
+  os << vector.x << "," << vector.y;
+
+  return os;
+
+}
+
 Vec2& Vec2::operator -(const Vec2& right)
 {
 

@@ -15,22 +15,30 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
 
   //m_objectSprite.setOrigin(sf::Vector2f(0.5*width,0.5*height));
 
-  m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
+  m_objectSprite.setTexture(filePath.c_str());
+  m_objectSprite.setSize(Vec2(width, height));
+  m_objectSprite.setPosition(Vec2(xPos, yPos));
 
-  m_objectRigidBody.setPreviousPosition(Vec2(xPos,yPos));
+  //m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
 
-  //If the actual texture can't be loaded, load the error texture
-  if(filePath != "")
+  //m_objectRigidBody.setPreviousPosition(Vec2(xPos,yPos));
+
+  
+  
+  //std::cout << m_objectSprite.
+
+  /*//If the actual texture can't be loaded, load the error texture
+  //if(filePath != "")
   {
 
-    m_objectSprite = *new Sprite(Vec2(width,height),Vec2(xPos,yPos),filePath);
+    
 
-  }else if (filePath != "")
+  }//else if (filePath != "")
   {
     //m_objectSprite.setTexture(m_objectTexture);
-  }
+  }*/
   
-  this->start();
+  //this->start();
   //m_objectSprite.setPosition(Vec2(xPos,yPos));
 
 }

@@ -78,6 +78,8 @@ void SceneLayer::setOpacity(float opacity)
 */
 void SceneLayer::draw(RenderWindow& window)
 {
+  
+   
 
   for(int i = 0; i < objects.size(); i++)
   {

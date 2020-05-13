@@ -26,16 +26,12 @@ private:
   Event windowEvents;
   GLFWwindow* GLwindow;
 
-  unsigned int VBO;
 public:
   ///Default constructor to give an openGL context and window.
   RenderWindow(int newWidth, int newHeight, std::string title);
 
   ///Renders a drawable to the screen.
   void draw(Drawable&);
-
-  ///Determines whether a key has been pressed.
-  bool isKeyPressed(unsigned int keyCode);
 
   ///Determines if any window level events have happened.
   void pollEvents(Event& event);

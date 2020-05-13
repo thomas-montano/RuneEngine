@@ -1,5 +1,6 @@
 #include "renderWindow.h"
 #include "drawable.h"
+#include <Input\keyboard.h>
 
 /**
  * @param newWidth The width of the window in pixels to be created.
@@ -28,23 +29,12 @@ RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 
   glewInit();
 
-  glClearColor(1.0f,1.0f,1.0f,1.0f);
+  glClearColor(0.0f,0.0f,0.0f,0.0f);
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
-}
+  rune::Keyboard::SetWindow(GLwindow);
 
-/**
- * @param keyCode The integer keycode of the key that's being tested.
- * @return Whether or not the key is being pressed.
-*/
-bool RenderWindow::isKeyPressed(unsigned int keyCode)
-{
-  if(glfwGetKey(GLwindow, keyCode)==GLFW_PRESS)
-  {
-    return true;
-  }
-  return false;
 }
 
 /**
@@ -61,11 +51,6 @@ void RenderWindow::pollEvents(Event& event)
     windowOpen = false;
   }
 
-  if (glfwGetKey(GLwindow, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-  {
-    glfwSetWindowShouldClose(GLwindow, true);
-  }
-
 }
 
 void RenderWindow::display(void)
@@ -77,6 +62,7 @@ void RenderWindow::display(void)
 
 void RenderWindow::clear(Color clearColor)
 {
+
   glClearColor(clearColor.red/255.0, clearColor.green / 255.0, clearColor.blue / 255.0, clearColor.alpha / 255.0);
   glClear(GL_COLOR_BUFFER_BIT);
 }

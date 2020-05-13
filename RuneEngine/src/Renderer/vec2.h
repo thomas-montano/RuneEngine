@@ -10,6 +10,7 @@
 #define VEC2_H_DEFINED
 
 #include "core.h"
+#include <iostream>
 
 class RUNE_ENGINE Vec2
 {
@@ -25,6 +26,8 @@ public:
 
   Vec2* operator *(const Vec2& right);
   Vec2* operator /(const Vec2& right);
+
+  friend std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 
 };
 

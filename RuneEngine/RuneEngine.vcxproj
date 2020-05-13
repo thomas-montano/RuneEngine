@@ -97,6 +97,7 @@
   <ItemGroup>
     <ClCompile Include="src\gameApplication.cpp" />
     <ClCompile Include="src\Entities\gameObject.cpp" />
+    <ClCompile Include="src\Input\keyboard.cpp" />
     <ClCompile Include="src\Renderer\color.cpp" />
     <ClCompile Include="src\SceneTools\gameScene.cpp" />
     <ClCompile Include="src\Entities\gameUI.cpp" />
@@ -121,6 +122,7 @@
     <ClInclude Include="src\core.h" />
     <ClInclude Include="src\gameApplication.h" />
     <ClInclude Include="src\Entities\gameObject.h" />
+    <ClInclude Include="src\Input\keyboard.h" />
     <ClInclude Include="src\Renderer\color.h" />
     <ClInclude Include="src\Renderer\opengl.h" />
     <ClInclude Include="src\RuneEngine.h" />
