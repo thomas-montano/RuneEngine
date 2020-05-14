@@ -31,7 +31,7 @@ private:
   Vec2 vertices[4];
 
 public:
-  virtual void draw(Vec2 windowSize);
+  virtual void draw(RenderWindow&);
   
   RectangleShape(Vec2 position, Vec2 Size);
 

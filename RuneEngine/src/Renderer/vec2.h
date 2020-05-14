@@ -27,7 +27,7 @@ public:
   Vec2* operator *(const Vec2& right);
   Vec2* operator /(const Vec2& right);
 
-  friend std::ostream& operator<<(std::ostream& os, const Vec2& vector);
+  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 
 };
 

@@ -33,9 +33,10 @@ RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader
 /**
  * @param windowSize The size of the window that the RectangleShape is being drawn on.
 */
-void RectangleShape::draw(Vec2 windowSize)
+void RectangleShape::draw(RenderWindow& window)
 {
 
+  Vec2 windowSize = window.getSize();
   const int vertexes = 12;
 
   //Set the current shader to the rectangle shader

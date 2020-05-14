@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite::Sprite() : spriteShader("./sprite.shader")
+Sprite::Sprite() : spriteShader("./RuneEngine/src/Renderer/sprite.shader")
 {
 
   glGenVertexArrays(1, &VAO);
@@ -33,7 +33,7 @@ Sprite::Sprite() : spriteShader("./sprite.shader")
  * @param position A Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite .png file to be drawn.
 */
-Sprite::Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./sprite.shader") 
+Sprite::Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./RuneEngine/src/Renderer/sprite.shader") 
 {
   //Generate and bind vertex array object
   glGenVertexArrays(1, &VAO);
@@ -107,8 +107,7 @@ void Sprite::addPosition(Vec2 newPos)
 */
 void Sprite::setPosition(Vec2 newSize)
 {
-  m_position.x = newSize.x;
-  m_position.y = newSize.y;
+  m_position = newSize;
 }
 
 void Sprite::setTexture(std::string texture)

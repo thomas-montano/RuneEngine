@@ -38,6 +38,8 @@ private:
   std::unordered_map<std::string, int> m_UniformLocationCache;
 
 public:
+  Shader();
+
   ///Default constructor to create and load a shader.
   Shader(const std::string& filePath);
 

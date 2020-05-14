@@ -1,5 +1,10 @@
 #include "shader.h"
 
+Shader::Shader()
+{
+
+}
+
 /**
  * @param filePath The file path for the shader code to be compiled.
 */

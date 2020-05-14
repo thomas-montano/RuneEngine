@@ -19,13 +19,9 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
   m_objectSprite.setSize(Vec2(width, height));
   m_objectSprite.setPosition(Vec2(xPos, yPos));
 
-  //m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
+  m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
 
-  //m_objectRigidBody.setPreviousPosition(Vec2(xPos,yPos));
-
-  
-  
-  //std::cout << m_objectSprite.
+  m_objectRigidBody.setPreviousPosition(Vec2(xPos,yPos));
 
   /*//If the actual texture can't be loaded, load the error texture
   //if(filePath != "")
@@ -38,8 +34,8 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
     //m_objectSprite.setTexture(m_objectTexture);
   }*/
   
-  //this->start();
-  //m_objectSprite.setPosition(Vec2(xPos,yPos));
+  this->start();
+  m_objectSprite.setPosition(Vec2(xPos,yPos));
 
 }
 
@@ -47,6 +43,7 @@ void GameObject::draw(RenderWindow& window)
 {
 
   window.draw(m_objectSprite);
+  window.draw(m_objectRigidBody);
 
 }
 
@@ -161,17 +158,6 @@ std::vector<collision> GameObject::getCollisions(void)
  {
    m_objectRigidBody.setRotation(angle);
  }
-
-
-
-/**
- * @param target Drawable that needs to be rendered to the screen
- * @param states Render state to be applied to the object
-*/
-/*void GameObject::draw(sf::RenderTarget& target, sf::RenderStates states) const
-{
-  target.draw(m_objectSprite,states);
-}*/
 
 /**
  * @param layer SceneLayer object that should be referenced by the game object

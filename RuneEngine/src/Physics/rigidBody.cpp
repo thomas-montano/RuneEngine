@@ -24,10 +24,12 @@ RigidBody::RigidBody(int width, int height, float xPos, float yPos, float mass, 
     if(mass == 0)
     {
         objectBody.invMass = 0;
+        objectBody.gravityFactor = 0;
     }
     else
     {
         objectBody.invMass = 1.0 / mass;
+        objectBody.gravityFactor = gravity;
     }
     
     if(rotation == false)
@@ -38,15 +40,6 @@ RigidBody::RigidBody(int width, int height, float xPos, float yPos, float mass, 
     {
         objectBody.invInertia = 1.0 / (mass*(pow(height,2)+pow(width,2))/12);
     }
-
-    objectBody.gravityFactor = gravity;
-
-    /*objectBody.box.setPosition(Vec2(xPos,yPos));
-    objectBody.box.setSize(Vec2(width,height));
-    objectBody.box.setOrigin(0.5*width,0.5*height);
-    objectBody.box.setFillColor(sf::Color(255,102,178,128));
-    objectBody.box.setOutlineThickness(-1);
-    objectBody.box.setOutlineColor(sf::Color::White);*/
 
     objectBody.boundingBox.min = Vec2(xPos-0.5*width,yPos-0.5*height);
     objectBody.boundingBox.max = objectBody.vertexes[1] + objectBody.boundingBox.min;
@@ -145,7 +138,7 @@ void RigidBody::updatePosition(float dT)
 {
 
     objectBody.xPos += objectBody.velocity.x * dT;
-    objectBody.yPos -= objectBody.velocity.y * dT;
+    objectBody.yPos += objectBody.velocity.y * dT;
     objectBody.angleOfRotation += objectBody.angularVelocity * dT;
     updateAABB();
 
