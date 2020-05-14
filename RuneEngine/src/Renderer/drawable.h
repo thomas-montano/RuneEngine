@@ -19,9 +19,8 @@ class RUNE_ENGINE Drawable
 {
 
 public:
-  ///Draw the object to a render target.
+  ///Draw the object to a render window.
   virtual void draw(RenderWindow&) = 0;
-  //void drawer(RenderWindow&);
 
 };
 

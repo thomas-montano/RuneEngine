@@ -1,3 +1,11 @@
+/**
+ * @class rune::Keyboard
+ * @brief This class allows for access to the keyboard.
+ *
+ * @author Thomas Montano
+ * @date May 13 2020
+ */
+
 #pragma once
 #include "core.h"
 #include <Renderer\opengl.h>
@@ -9,103 +17,181 @@ class RUNE_ENGINE Keyboard
 
 public: 
 
-  enum Key
-  {
-    /* The unknown key */
-    UNKNOWN = -1,
+enum Key
+{
+  ///Unhandled key.
+  UNKNOWN = -1,
+  ///The Space bar.
+  SPACE = 32,
+  ///The ' key.
+  APOSTROPHE = 39,
+  ///The , key.
+  COMMA = 44,
+  ///The - key.
+  DASH = 45,
+  ///The . key.
+  PERIOD = 46,
+  ///The / key.
+  SLASH = 47,
+  ///The 0 key.
+  Num0 = 48,
+  ///The 1 key.
+  Num1 = 49,
+  ///The 2 key.
+  Num2 = 50,
+  ///The 3 key.
+  Num3 = 51,
+  ///The 4 key.
+  Num4 = 52,
+  ///The 5 key.
+  Num5 = 53,
+  ///The 6 key.
+  Num6 = 54,
+  ///The 7 key.
+  Num7 = 55,
+  ///The 8 key.
+  Num8 = 56,
+  ///The 9 key.
+  Num9 = 57,
+  ///The ; key.
+  SEMICOLON = 59,
+  ///The = key.
+  EQUAL = 61,
+  ///The A key.
+  A = 65,
+  ///The B key.
+  B = 66,
+  ///The C key.
+  C = 67,
+  ///The D key.
+  D = 68,
+  ///The E key.
+  E = 69,
+  ///The F key.
+  F = 70,
+  ///The G key.
+  G = 71,
+  ///The H key.
+  H = 72,
+  ///The I key.
+  I = 73,
+  ///The J key.
+  J = 74,
+  ///The K key.
+  K = 75,
+  ///The L key.
+  L = 76,
+  ///The M key.
+  M = 77,
+  ///The N key.
+  N = 78,
+  ///The O key.
+  O = 79,
+  ///The P key.
+  P = 80,
+  ///The Q key.
+  Q = 81,
+  ///The R key.
+  R = 82,
+  ///The S key.
+  S = 83,
+  ///The T key.
+  T = 84,
+  ///The U key.
+  U = 85,
+  ///The V key.
+  V = 86,
+  ///The W key.
+  W = 87,
+  ///The X key.
+  X = 88,
+  ///The Y key.
+  Y = 89,
+  ///The Z key.
+  Z = 90,
+  ///The [ key.
+  LEFT_BRACKET = 91,
+  ///The \ key.
+  BACKSLASH = 92,
+  ///The ] key.
+  RIGHT_BRACKET = 93,
+  ///The ~ key.
+  GRAVE_ACCENT = 96,
+  ///The Esc key.
+  ESCAPE = 256,
+  ///The Enter key.
+  ENTER = 257,
+  ///The Tab key.
+  TAB = 258,
+  ///The Backspace key.
+  BACKSPACE = 259,
+  ///The Ins key.
+  INSERT = 260,
+  ///The Del key.
+  DELETE = 261,
+  ///The Right Arrow key. 
+  RIGHT = 262,
+  ///The Left Arrow key. 
+  LEFT = 263,
+  ///The Down Arrow key.  
+  DOWN = 264,
+  ///The Up Arrow key.  
+  UP = 265,
+  ///The Page Up key.  
+  PAGE_UP = 266,
+  ///The Page Down key.  
+  PAGE_DOWN = 267,
+  ///The Home key.  
+  HOME = 268,
+  ///The End key.  
+  END = 269,
+  ///The Caps Lock key.  
+  CAPS_LOCK = 280,
+  ///The Scroll Lock key.  
+  SCROLL_LOCK = 281,
+  ///The Number Lock key.  
+  NUM_LOCK = 282,
+  ///The Print Screen Key.  
+  PRINT_SCREEN = 283,
+  ///The F1 key.  
+  F1 = 290,
+  ///The F2 key.  
+  F2 = 291,
+  ///The F3 key.  
+  F3 = 292,
+  ///The F4 key.  
+  F4 = 293,
+  ///The F5 key.  
+  F5 = 294,
+  ///The F6 key.  
+  F6 = 295,
+  ///The F7 key.  
+  F7 = 296,
+  ///The F8 key.  
+  F8 = 297,
+  ///The F9 key.  
+  F9 = 298,
+  ///The F10 key.  
+  F10 = 299,
+  ///The F11 key.  
+  F11 = 300,
+  ///The F12 key.  
+  F12 = 301,
+  ///The Left Shift key.  
+  LEFT_SHIFT = 340,
+  ///The Left Control key.  
+  LEFT_CONTROL = 341,
+  ///The Left Alt key.  
+  LEFT_ALT = 342,
+  ///The Right Shift key.  
+  RIGHT_SHIFT = 344,
+  ///The Right Control Key. 
+  RIGHT_CONTROL = 345,
+  ///The Right Alt Key.  
+  RIGHT_ALT = 346
+};
 
-    /* Printable keys */
-    SPACE = 32,
-    APOSTROPHE = 39  /* ' */,
-    COMMA = 44  /* , */,
-    MINUS = 45  /* - */,
-    PERIOD = 46  /* . */,
-    SLASH = 47  /* / */,
-    Num0 = 48,
-    Num1 = 49,
-    Num2 = 50,
-    Num3 = 51,
-    Num4 = 52,
-    Num5 = 53,
-    Num6 = 54,
-    Num7 = 55,
-    Num8 = 56,
-    Num9 = 57,
-    SEMICOLON = 59  /* ; */,
-    EQUAL = 61  /* = */,
-    A = 65,
-    B = 66,
-    C = 67,
-    D = 68,
-    E = 69,
-    F = 70,
-    G = 71,
-    H = 72,
-    I = 73,
-    J = 74,
-    K = 75,
-    L = 76,
-    M = 77,
-    N = 78,
-    O = 79,
-    P = 80,
-    Q = 81,
-    R = 82,
-    S = 83,
-    T = 84,
-    U = 85,
-    V = 86,
-    W = 87,
-    X = 88,
-    Y = 89,
-    Z = 90,
-    LEFT_BRACKET = 91,  /* [ */
-    BACKSLASH = 92,  /* \ */
-    RIGHT_BRACKET = 93,  /* ] */
-    GRAVE_ACCENT = 96, /* ` */
-
-    /* Function keys */
-    ESCAPE = 256,
-    ENTER = 257,
-    TAB = 258,
-    BACKSPACE = 259,
-    INSERT = 260,
-    DELETE = 261,
-    RIGHT = 262,
-    LEFT = 263,
-    DOWN = 264,
-    UP = 265,
-    PAGE_UP = 266,
-    PAGE_DOWN = 267,
-    HOME = 268,
-    END = 269,
-    CAPS_LOCK = 280,
-    SCROLL_LOCK = 281,
-    NUM_LOCK = 282,
-    PRINT_SCREEN = 283,
-    PAUSE = 284,
-    F1 = 290,
-    F2 = 291,
-    F3 = 292,
-    F4 = 293,
-    F5 = 294,
-    F6 = 295,
-    F7 = 296,
-    F8 = 297,
-    F9 = 298,
-    F10 = 299,
-    F11 = 300,
-    F12 = 301,
-    LEFT_SHIFT = 340,
-    LEFT_CONTROL = 341,
-    LEFT_ALT = 342,
-    LEFT_SUPER = 343,
-    RIGHT_SHIFT = 344,
-    RIGHT_CONTROL = 345,
-    RIGHT_ALT = 346,
-    RIGHT_SUPER = 347
-  };
-
+  ///Determines whether or not the key is being pressed.
   static bool isKeyPressed(Key);
   static void SetWindow(GLFWwindow*);
 

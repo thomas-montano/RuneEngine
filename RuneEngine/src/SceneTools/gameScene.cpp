@@ -87,7 +87,7 @@ void GameScene::updateVariable(void)
 void GameScene::updateLayerPhysics(void)
 {
 
-  /*float currentTime = variableClock.getElapsedTimeAsMilliseconds()/1000.0;
+  float currentTime = variableClock.getElapsedTimeAsMilliseconds()/1000.0;
   
   accumulator += currentTime - frameStart;
   frameStart = currentTime;
@@ -123,13 +123,6 @@ void GameScene::updateLayerPhysics(void)
     {
       sceneObjects[j]->updatePosition(alpha);
     }
-  }*/
-
-  std::vector<GameObject*> sceneObjects = sceneLayers[0].getObjects();
-
-  for (int j = 0; j < sceneObjects.size(); j++)
-  {
-    sceneObjects[j]->updatePosition(0);
   }
 
 }

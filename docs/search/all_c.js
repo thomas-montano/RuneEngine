@@ -11,6 +11,5 @@ var searchData=
   ['messagemanager_2ecpp_184',['messageManager.cpp',['../messageManager_8cpp.html',1,'']]],
   ['messagemanager_2eh_185',['messageManager.h',['../messageManager_8h.html',1,'']]],
   ['min_186',['min',['../structAABB.html#af7497c48e66420ae4b36f396a4f896f2',1,'AABB']]],
-  ['minus_187',['MINUS',['../classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8addd51c846ffb4f73286666f93caac495',1,'rune::Keyboard']]],
-  ['mirrorsprite_188',['mirrorSprite',['../classGameObject.html#a3ebbd71aececebd446718c7ae615fddb',1,'GameObject']]]
+  ['mirrorsprite_187',['mirrorSprite',['../classGameObject.html#a3ebbd71aececebd446718c7ae615fddb',1,'GameObject']]]
 ];

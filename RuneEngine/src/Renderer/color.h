@@ -1,3 +1,11 @@
+/**
+ * @class Color
+ * @brief A color object to be applied to drawable objects.
+ *
+ * @author Thomas Montano
+ * @date May 13 2020
+ */
+
 #pragma once
 
 #ifndef COLOR_H_DEFINED
@@ -8,9 +16,13 @@
 class RUNE_ENGINE Color
 {
 public:
+  ///The Red component.
   double red;
+  ///The Green component.
   double green;
+  ///The Blue component.
   double blue;
+  ///The Opacity Component.
   double alpha;
 
   Color(double, double, double, double alpha = 1);
