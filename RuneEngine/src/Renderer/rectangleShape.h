@@ -33,10 +33,13 @@ private:
 public:
   virtual void draw(RenderWindow&);
   
+  RectangleShape();
   RectangleShape(Vec2 position, Vec2 Size);
 
   void addPosition(Vec2);
   void setPosition(Vec2);
+
+  void setSize(Vec2);
 
 };
 

@@ -11,7 +11,7 @@ void updatePhysics(std::vector<RigidBody*> objects, double dT)
   for(int i = 0; i < objects.size(); i++)
   {
     objects[i]->updatePosition(dT);
-    //objects[i]->addVelocity(Vec2(0,-1*objects[i]->getGravity()));
+    objects[i]->addVelocity(Vec2(0,-1*objects[i]->getGravity()));
   }
 
   //Sort the objects by vertical position so the top ones are checked first
@@ -254,7 +254,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
       if(penetrations[j] <= currentCollision.depth)
       {
         currentCollision.depth = penetrations[j];
-        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? Vec2(normals[j].x,-1*normals[j].y):Vec2(-1*normals[j].x,normals[j].y);
+        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? Vec2(normals[j].x,normals[j].y):Vec2(-1*normals[j].x, -1*normals[j].y);
       }
 
     }

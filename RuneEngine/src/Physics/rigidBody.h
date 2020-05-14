@@ -66,19 +66,21 @@ struct body
 
 };
 
-class RUNE_ENGINE RigidBody// : public Drawable
+class RUNE_ENGINE RigidBody : public Drawable
 {
 
 private:
     body objectBody;
     bool isSleeping;
     std::vector<collision> involvedCollisions;
+    RectangleShape drawBox;
 
     ///Overloaded draw functions for rendering the AABB to the screen.
     virtual void draw(RenderWindow& window)
     {
 
-        RectangleShape AABB(Vec2(objectBody.xPos,objectBody.yPos), Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
+        drawBox.setPosition(Vec2(objectBody.xPos,objectBody.yPos));
+        drawBox.setSize(Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
 
         /*AABB.setFillColor(sf::Color::Transparent);
         AABB.setOutlineThickness(-.5);
@@ -86,8 +88,8 @@ private:
         AABB.setPosition(objectBody.boundingBox.min);
 
         AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);
-
-        target.draw(AABB);*/
+        */
+        window.draw(drawBox);
     }
 
 public:

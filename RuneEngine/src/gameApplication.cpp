@@ -9,6 +9,7 @@ GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720, "Rune
   m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
   m_gameRunning = true;
+  m_mainWindow.enableVsync(true);
 
 }
 
@@ -128,7 +129,7 @@ void GameApplication::gameLoop(void)
     m_currentScene->Draw(m_mainWindow);
 
     //Make sure that each layer gets their collisions updated
-    //m_currentScene->updateLayerPhysics();
+    m_currentScene->updateLayerPhysics();
 
     //Update the amount of frames that have been rendered
     frames++;

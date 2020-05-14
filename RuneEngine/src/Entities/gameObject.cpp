@@ -35,7 +35,6 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
   }*/
   
   this->start();
-  m_objectSprite.setPosition(Vec2(xPos,yPos));
 
 }
 
@@ -43,7 +42,6 @@ void GameObject::draw(RenderWindow& window)
 {
 
   window.draw(m_objectSprite);
-  window.draw(m_objectRigidBody);
 
 }
 

@@ -1,6 +1,6 @@
 #include "vec2.h"
 
-Vec2::Vec2()
+Vec2::Vec2() : x(0), y(0)
 {
 
 }
@@ -22,6 +22,9 @@ std::ostream& operator<<(std::ostream& os, const Vec2& vector)
 
 Vec2& Vec2::operator -(const Vec2& right)
 {
+  
+  this->x = this->x - right.x;
+  this->y = this->y - right.y;
 
   return *this;
 }
@@ -29,22 +32,28 @@ Vec2& Vec2::operator -(const Vec2& right)
 Vec2& Vec2::operator +(const Vec2& right)
 {
 
-  this->x += right.x;
-  this->y += right.y;
+  this->x = this->x * right.x;
+  this->y = this->y * right.y;
 
   return *this;
 }
 
-Vec2* Vec2::operator *(const Vec2& right)
+Vec2& Vec2::operator *(const Vec2& right)
 {
 
-  return this;
+  this->x = this->x * right.x;
+  this->y = this->y * right.y;
+
+  return *this;
 
 }
 
-Vec2* Vec2::operator /(const Vec2& right)
+Vec2& Vec2::operator /(const Vec2& right)
 {
 
-  return this;
+  this->x = this->x / right.x;
+  this->y = this->y / right.y;
+
+  return *this;
 
 }
