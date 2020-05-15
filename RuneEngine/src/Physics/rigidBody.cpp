@@ -10,7 +10,7 @@
  * @param gravity Vertical gravity that the RigidBody should be subjected to.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-RigidBody::RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation)
+RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
 {
 
     objectBody.vertexes[0] = Vec2(-0.5*width,0.5*height); //Top left
@@ -64,7 +64,7 @@ RigidBody::RigidBody()
  * @param gravity Vertical gravity that the RigidBody should be subjected to.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-void RigidBody::setUpObject(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation)
+void RigidBody::setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
 {
 
     objectBody.vertexes[0] = Vec2(-0.5*width,0.5*height); //Top left
@@ -134,7 +134,7 @@ void RigidBody::setVelocity(Vec2 newVel)
 /**
  * @param dT Amount of time in seconds that has passed since the last update. Used to calculate change in position based on velocity.
 */
-void RigidBody::updatePosition(float dT)
+void RigidBody::updatePosition(double dT)
 {
 
     objectBody.xPos += objectBody.velocity.x * dT;
@@ -177,12 +177,12 @@ void RigidBody::updatePosition(float dT)
 void RigidBody::updateAABB(void)
 {
 
-    float rotation = std::abs(static_cast<int>(objectBody.angleOfRotation)) % 180;
-    float width = 2*objectBody.vertexes[1].x;
-    float height = 2*objectBody.vertexes[1].y;
+    double rotation = std::abs(static_cast<int>(objectBody.angleOfRotation)) % 180;
+    double width = 2*objectBody.vertexes[1].x;
+    double height = 2*objectBody.vertexes[1].y;
 
-    float xProjection;
-    float yProjection;
+    double xProjection;
+    double yProjection;
 
     if(rotation < 90)
     {
@@ -203,7 +203,7 @@ void RigidBody::updateAABB(void)
 /**
  * @return The current gravity the object is being subjected to.
 */
-float RigidBody::getGravity(void)
+double RigidBody::getGravity(void)
 {
     return objectBody.gravityFactor;
 }
@@ -211,7 +211,7 @@ float RigidBody::getGravity(void)
 /**
  * @return Get 1 divided by the mass of the RigidBody.
 */
-float RigidBody::getInvMass(void)
+double RigidBody::getInvMass(void)
 {
     return objectBody.invMass;
 }
@@ -219,7 +219,7 @@ float RigidBody::getInvMass(void)
 /**
  * @return Get the restitution of the object.
 */
-float RigidBody::getRestitution(void)
+double RigidBody::getRestitution(void)
 {
     return objectBody.restitution;
 }
@@ -227,7 +227,7 @@ float RigidBody::getRestitution(void)
 /**
  * @param newRest Override the restitution of the RigidBody.
 */
-void RigidBody::setRestitution(float newRest)
+void RigidBody::setRestitution(double newRest)
 {
     objectBody.restitution = newRest;
 }
@@ -235,7 +235,7 @@ void RigidBody::setRestitution(float newRest)
 /**
  * @param angularVel Angular velocity to be added to the RigidBody.
 */
-void RigidBody::addAngularVelocity(float angularVel)
+void RigidBody::addAngularVelocity(double angularVel)
 {
     objectBody.angularVelocity += angularVel;
 }
@@ -243,7 +243,7 @@ void RigidBody::addAngularVelocity(float angularVel)
 /**
  * @param angle New orientation for the RigidBody to be set to.
 */
-void RigidBody::setRotation(float angle)
+void RigidBody::setRotation(double angle)
 {
     objectBody.angleOfRotation = angle;
 }
@@ -271,7 +271,7 @@ void RigidBody::setPosition(Vec2 newPos)
 void RigidBody::addPosition(Vec2 newPos)
 {
     objectBody.xPos += newPos.x;
-    objectBody.yPos -= newPos.y;
+    objectBody.yPos += newPos.y;
 }
 
 /**
@@ -288,10 +288,10 @@ Vec2 RigidBody::getPosition(void)
 */
 Vec2 RigidBody::getVertex(int i)
 {
-    float xPrime, yPrime;
-    float x = objectBody.vertexes[i].x;
-    float y = objectBody.vertexes[i].y;
-    float angle = objectBody.angleOfRotation * (3.14/180);
+    double xPrime, yPrime;
+    double x = objectBody.vertexes[i].x;
+    double y = objectBody.vertexes[i].y;
+    double angle = objectBody.angleOfRotation * (3.14/180);
 
     Vec2 finalVertex;
 
@@ -315,7 +315,7 @@ Vec2 RigidBody::getVelocity(void)
 /**
  * @return The coefficient of static friction for the RigidBody.
 */
-float RigidBody::getStaticFriction(void)
+double RigidBody::getStaticFriction(void)
 {
     return objectBody.staticFriction;
 }
@@ -323,7 +323,7 @@ float RigidBody::getStaticFriction(void)
 /**
  * @return The coefficient of dynamic friction for the RigidBody.
 */
-float RigidBody::getDynamicFriction(void)
+double RigidBody::getDynamicFriction(void)
 {
     return objectBody.dynamicFriction;
 }
@@ -331,7 +331,7 @@ float RigidBody::getDynamicFriction(void)
 /**
  * @return The current angle of the RigidBody.
 */
-float RigidBody::getOrientation(void)
+double RigidBody::getOrientation(void)
 {
     return objectBody.angleOfRotation;
 }
@@ -339,7 +339,7 @@ float RigidBody::getOrientation(void)
 /**
  * @return The width in pixels of the RigidBody object.
 */
-float RigidBody::getWidth(void)
+double RigidBody::getWidth(void)
 {
     return 2*objectBody.vertexes[1].x;
 }
@@ -347,7 +347,7 @@ float RigidBody::getWidth(void)
 /**
  * @return The height in pixels of the RigidBody object.
 */
-float RigidBody::getHeight(void)
+double RigidBody::getHeight(void)
 {
     return 2*objectBody.vertexes[1].y;
 }
@@ -355,7 +355,7 @@ float RigidBody::getHeight(void)
 /**
  * @return 1 divided by the rotational inertia of the RigidBody.
 */
-float RigidBody::getInvIntertia(void)
+double RigidBody::getInvIntertia(void)
 {
     return objectBody.invInertia;
 }
@@ -373,7 +373,8 @@ Vec2 RigidBody::getPreviousPosition(void)
 */
 void RigidBody::setPreviousPosition(Vec2 newPos)
 {
-    objectBody.oldPosition = newPos;
+    objectBody.oldPosition.x = newPos.x;
+    objectBody.oldPosition.y = newPos.y;
 }
 
 void RigidBody::clearCollisions(void)

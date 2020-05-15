@@ -15,17 +15,17 @@
 class RUNE_ENGINE Vec2
 {
 public:
-  float x;
-  float y;
+  double x;
+  double y;
 
   Vec2();
   Vec2(float newX, float newY);
 
-  Vec2& operator -(const Vec2& right);
-  Vec2& operator +(const Vec2& right);
+  Vec2 operator -(const Vec2& right);
+  Vec2 operator +(const Vec2& right);
 
-  Vec2& operator *(const Vec2& right);
-  Vec2& operator /(const Vec2& right);
+  Vec2 operator *(const Vec2& right);
+  Vec2 operator /(const Vec2& right);
 
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 

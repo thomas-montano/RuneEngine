@@ -28,7 +28,7 @@ struct collision
     Vec2 normalVector;
     Vec2 contactVectorBox1;
     Vec2 contactVectorBox2;
-    float depth;
+    double depth;
 
 };
 
@@ -47,26 +47,26 @@ struct body
 
   Vec2 vertexes[4]; ///Specific Vertexes
   AABB boundingBox; //Broad phase Minimum bounding box
-  float xPos; //X position in world coordinates
-  float yPos; //Y Position in world coordinates
+  double xPos; //X position in world coordinates
+  double yPos; //Y Position in world coordinates
   Vec2 oldPosition; //Previous position in world coordinates
   Vec2 velocity; //Velocity
-  float invMass; // 1/mass of the object
-  float gravityFactor; //How much gravity does this object have
-  float restitution = 0; //How bouncy, between 0 and 1
+  double invMass; // 1/mass of the object
+  double gravityFactor; //How much gravity does this object have
+  double restitution = 0; //How bouncy, between 0 and 1
 
-  float staticFriction = .4; //Coefficient of static friction
-  float dynamicFriction = .2; //Coefficient of dynamic friction
+  double staticFriction = .4; //Coefficient of static friction
+  double dynamicFriction = .2; //Coefficient of dynamic friction
 
-  float angleOfRotation; //Current angle of rotation
-  float angularVelocity; //Rate of change of rotation
-  float torque; //Rotational torque on the object
-  float invInertia;
-  float rotationalRadius;
+  double angleOfRotation; //Current angle of rotation
+  double angularVelocity; //Rate of change of rotation
+  double torque; //Rotational torque on the object
+  double invInertia;
+  double rotationalRadius;
 
 };
 
-class RUNE_ENGINE RigidBody : public Drawable
+class RUNE_ENGINE RigidBody// : public Drawable
 {
 
 private:
@@ -76,7 +76,7 @@ private:
     RectangleShape drawBox;
 
     ///Overloaded draw functions for rendering the AABB to the screen.
-    virtual void draw(RenderWindow& window)
+    /*virtual void draw(RenderWindow& window)
     {
 
         drawBox.setPosition(Vec2(objectBody.xPos,objectBody.yPos));
@@ -88,19 +88,19 @@ private:
         AABB.setPosition(objectBody.boundingBox.min);
 
         AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);
-        */
+        
         window.draw(drawBox);
-    }
+    }*/
 
 public:
     ///Default constructor to initialize an empty rigid body object.
     RigidBody();
 
     ///Set the parameters for the rigid body to establish a physical object in the scene.
-    RigidBody(int width, int height, float xPos, float yPos, float mass, float gravity = 0, bool rotation = true);
+    RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity = 0, bool rotation = true);
 
     ///Set up the object. Identical to the constructor but can be used to set up an object after it's been created.
-    void setUpObject(int width, int height, float xPos, float yPos, float mass, float gravity, bool rotation);
+    void setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation);
 
     ///Get the bounding box sprite (DEPRECATED).
     //sf::RectangleShape getDrawable(void);
@@ -118,10 +118,10 @@ public:
     AABB getBoundingBox(void);
 
     ///Adds to the rigid body angular velocity making it spin faster or slower.
-    void addAngularVelocity(float angularVel);
+    void addAngularVelocity(double angularVel);
 
     ///Overwrite the orientation of the rigid body to be something new.
-    void setRotation(float angle);
+    void setRotation(double angle);
 
     ///Overwrite the position of the rigid body to be something new.
     void setPosition(Vec2);
@@ -136,10 +136,10 @@ public:
     void addVelocity(Vec2);
 
     ///Update the position of the object based on collisions and velocities.
-    void updatePosition(float dT);
+    void updatePosition(double dT);
 
     ///Get the gravity vector of the object.
-    float getGravity(void);
+    double getGravity(void);
 
     ///Get the current velocity of the rigid body.
     Vec2 getVelocity(void);
@@ -151,31 +151,31 @@ public:
     Vec2 getVertex(int);
 
     ///Get the inverse mass of the rigid body.
-    float getInvMass(void);
+    double getInvMass(void);
 
     ///Get the inverse inertia of the rigid body.
-    float getInvIntertia(void);
+    double getInvIntertia(void);
 
     ///Return the restitution (bounciness) of the rigid body.
-    float getRestitution(void);
+    double getRestitution(void);
 
     ///Set the restitution (bounciness) of the rigid body.
-    void setRestitution(float);
+    void setRestitution(double);
 
     ///Get the coefficient of static friction.
-    float getStaticFriction(void);
+    double getStaticFriction(void);
 
     //Get the coefficient of dynamic friction.
-    float getDynamicFriction(void);
+    double getDynamicFriction(void);
 
     ///Get the current orientation of the rigid body.
-    float getOrientation(void);
+    double getOrientation(void);
 
     ///Get the width of the AABB.
-    float getWidth(void);
+    double getWidth(void);
 
     ///Get the height of the AABB.
-    float getHeight(void);
+    double getHeight(void);
 
     ///Get the position that the rigid body was in last frame.
     Vec2 getPreviousPosition(void);

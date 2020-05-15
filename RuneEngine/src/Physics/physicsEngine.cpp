@@ -54,8 +54,7 @@ void updatePhysics(std::vector<RigidBody*> objects, double dT)
 
   //Now that we have all the objects that are definitely colliding
   //Resolve the collision and apply physics
-  std::cout << "Collisions: " << definiteCollisions.size() << std::endl;
-  //resolveCollisions(definiteCollisions);  
+  resolveCollisions(definiteCollisions);  
 
   for(int i = 0; i < objects.size();i++)
   {
