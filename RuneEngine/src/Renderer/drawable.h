@@ -12,7 +12,7 @@
 #include "core.h"
 #include "opengl.h"
 #include <iostream>
-#include <Renderer\vec2.h>
+#include <Math\vec2.h>
 #include <Renderer\RenderWindow.h>
 
 class RUNE_ENGINE Drawable

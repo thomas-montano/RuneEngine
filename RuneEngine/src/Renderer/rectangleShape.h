@@ -14,7 +14,7 @@
 #include "renderWindow.h"
 #include "shader.h"
 #include "drawable.h"
-#include "vec2.h"
+#include <Math\vec2.h>
 
 class RUNE_ENGINE RectangleShape : public Drawable
 {

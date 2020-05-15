@@ -11,7 +11,7 @@
 
 #include "core.h"
 #include <vector>
-#include <Renderer\vec2.h>
+#include <Math\vec2.h>
 #include <Renderer\drawable.h>
 #include <Renderer\renderWindow.h>
 #include <Renderer\rectangleShape.h>

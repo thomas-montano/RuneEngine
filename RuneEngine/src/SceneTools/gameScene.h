@@ -16,7 +16,7 @@
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
-#include <Renderer\clock.h>
+#include <Events\clock.h>
 #include <SceneTools\messageManager.h>
 #include <SceneTools\layer.h>
 #include <Entities\particleEmitter.h>

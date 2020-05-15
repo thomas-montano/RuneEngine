@@ -14,7 +14,7 @@
 #include "texture.h"
 #include "drawable.h"
 #include "shader.h"
-#include "vec2.h"
+#include <Math\vec2.h>
 #include <string>
 
 class RUNE_ENGINE Sprite : public Drawable

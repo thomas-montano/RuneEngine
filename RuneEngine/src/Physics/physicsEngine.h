@@ -12,7 +12,7 @@
 #include <vector>
 #include <iostream>
 #include <Physics\rigidBody.h>
-#include <Renderer\vec2.h>
+#include <Math\vec2.h>
 #include <math.h>
 #include <algorithm>
 

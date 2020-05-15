@@ -26,6 +26,7 @@ public:
   ///Default constructor to generate a texture that can be bound and drawn.
   Texture(const std::string& path);
 
+  ///Default empty constructor that sets all members to 0.
   Texture();
 
   ///Default constructor to clean up a no longer needed texture.

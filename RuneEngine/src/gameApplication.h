@@ -90,7 +90,7 @@
 #include <SceneTools\sceneManager.h>
 #include <SceneTools\messageManager.h>
 #include <Renderer\RenderWindow.h>
-#include <Renderer\clock.h>
+#include <Events\clock.h>
 #include <Events\event.h>
 #include <iostream>
 

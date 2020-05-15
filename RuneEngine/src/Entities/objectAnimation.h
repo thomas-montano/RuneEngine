@@ -12,7 +12,7 @@
 
 #include "core.h"
 #include <string>
-#include <Renderer\clock.h>
+#include <Events\clock.h>
 #include <Renderer\texture.h>
 
 class RUNE_ENGINE ObjectAnimation

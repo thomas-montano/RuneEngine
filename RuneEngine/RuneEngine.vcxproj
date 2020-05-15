@@ -95,6 +95,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\math\mat2.cpp" />
     <ClCompile Include="src\gameApplication.cpp" />
     <ClCompile Include="src\Entities\gameObject.cpp" />
     <ClCompile Include="src\Input\keyboard.cpp" />
@@ -107,18 +108,19 @@
     <ClCompile Include="src\Entities\objectAnimation.cpp" />
     <ClCompile Include="src\Entities\particleEmitter.cpp" />
     <ClCompile Include="src\Physics\physicsEngine.cpp" />
-    <ClCompile Include="src\Renderer\clock.cpp" />
+    <ClCompile Include="src\Events\clock.cpp" />
     <ClCompile Include="src\Events\event.cpp" />
     <ClCompile Include="src\Renderer\rectangleShape.cpp" />
     <ClCompile Include="src\Renderer\renderWindow.cpp" />
     <ClCompile Include="src\Renderer\shader.cpp" />
     <ClCompile Include="src\Renderer\sprite.cpp" />
     <ClCompile Include="src\Renderer\texture.cpp" />
-    <ClCompile Include="src\Renderer\vec2.cpp" />
+    <ClCompile Include="src\math\vec2.cpp" />
     <ClCompile Include="src\Physics\rigidBody.cpp" />
     <ClCompile Include="src\SceneTools\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\math\mat2.h" />
     <ClInclude Include="src\core.h" />
     <ClInclude Include="src\gameApplication.h" />
     <ClInclude Include="src\Entities\gameObject.h" />
@@ -134,7 +136,7 @@
     <ClInclude Include="src\Entities\objectAnimation.h" />
     <ClInclude Include="src\Entities\particleEmitter.h" />
     <ClInclude Include="src\Physics\physicsEngine.h" />
-    <ClInclude Include="src\Renderer\clock.h" />
+    <ClInclude Include="src\Events\clock.h" />
     <ClInclude Include="src\Renderer\drawable.h" />
     <ClInclude Include="src\Events\event.h" />
     <ClInclude Include="src\Renderer\rectangleShape.h" />
@@ -143,12 +145,11 @@
     <ClInclude Include="src\Renderer\sprite.h" />
     <ClInclude Include="src\Renderer\stb_image.h" />
     <ClInclude Include="src\Renderer\texture.h" />
-    <ClInclude Include="src\Renderer\vec2.h" />
+    <ClInclude Include="src\math\vec2.h" />
     <ClInclude Include="src\Physics\rigidBody.h" />
     <ClInclude Include="src\SceneTools\sceneManager.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Renderer\compile" />
     <None Include="src\Shaders\rectangle.shader" />
     <None Include="src\Shaders\sprite.shader" />
   </ItemGroup>

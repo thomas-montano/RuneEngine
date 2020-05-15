@@ -13,7 +13,7 @@
 #include "opengl.h"
 #include "color.h"
 #include <Events\event.h>
-#include "vec2.h"
+#include "Math\vec2.h"
 #include <string>
 
 class Drawable;
