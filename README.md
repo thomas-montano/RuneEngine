@@ -8,7 +8,7 @@ Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other 
 
 You can clone the repository to a local destination using git:
 
-`git clone https://github.com/ThomasMontanoGames/PrivateEye`
+`git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
 
 ## Engine Features
 - Custom 2D renderer
