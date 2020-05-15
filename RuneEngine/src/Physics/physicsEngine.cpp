@@ -11,7 +11,7 @@ void updatePhysics(std::vector<RigidBody*> objects, double dT)
   for(int i = 0; i < objects.size(); i++)
   {
     objects[i]->updatePosition(dT);
-    //objects[i]->addVelocity(Vec2(0,-1*objects[i]->getGravity()));
+    objects[i]->addVelocity(Vec2(0,-1*objects[i]->getGravity()));
   }
 
   //Sort the objects by vertical position so the top ones are checked first
@@ -254,7 +254,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
       if(penetrations[j] <= currentCollision.depth)
       {
         currentCollision.depth = penetrations[j];
-        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? Vec2(normals[j].x,normals[j].y):Vec2(-1*normals[j].x, -1*normals[j].y);
+        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? Vec2(normals[j].x,normals[j].y):Vec2(-1.0*normals[j].x, -1.0*normals[j].y);
       }
 
     }
@@ -390,54 +390,6 @@ void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, 
 }
 
 /**
- * @param vector Vector to be displayed to the console. 
-*/
-void printVector(Vec2 vector)
-{
-
-  std::cout << "<" << vector.x << "," << vector.y << ">" << std::endl;
-
-}
-
-/**
- * @param v1 First vector to be used in the dot product.
- * @param v2 Seconds vector to be used in the dot product.
- * @return The result of the dot product calculation.
-*/
-double dotProduct(Vec2 v1, Vec2 v2)
-{
-
-  double dotProduct = v1.x * v2.x + v1.y*v2.y;
-
-  return dotProduct;
-
-}
-
-/**
- * @param axis Vector to use to calculate the surface normal.
- * @return Left hand normal of the surface. 
-*/
-Vec2 findNormal(Vec2 axis)
-{
-
-  Vec2 normal = Vec2(-axis.y,axis.x);
-  double magnitude = sqrt(pow(axis.y,2)+pow(axis.x,2));
-
-  return Vec2(normal.x/magnitude,normal.y/magnitude);
-
-}
-
-/**
- * @param vector Vector that should be normalized.
- * @return Vector in the direction of vector but with magnitude of 1. 
-*/
-Vec2 normalize(Vec2 vector)
-{
-  double magnitude = sqrt(pow(vector.x,2) + pow(vector.y,2));
-  return Vec2(magnitude != 0 ? vector.x/magnitude:0, magnitude != 0 ? vector.y/magnitude:0);
-}
-
-/**
  * @param a First side of the triangle.
  * @param b Seconds side of the triangle.
  * @return The length of the hypotenuse. 
@@ -445,14 +397,4 @@ Vec2 normalize(Vec2 vector)
 double pythagoreanSolve(double a, double b)
 {
   return sqrt(pow(a,2) + pow(b,2));
-}
-
-/**
- * @param vector1 First vector to be used in the cross product calculation.
- * @param vector2 Seconds vector to be used in the cross product calculation.
- * @return The result of the cross product calculation. 
-*/
-double crossProduct(Vec2 vector1,Vec2 vector2 )
-{
-  return vector1.x * vector2.y - vector1.y * vector2.x;
 }

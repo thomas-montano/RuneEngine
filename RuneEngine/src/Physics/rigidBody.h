@@ -102,14 +102,8 @@ public:
     ///Set up the object. Identical to the constructor but can be used to set up an object after it's been created.
     void setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation);
 
-    ///Get the bounding box sprite (DEPRECATED).
-    //sf::RectangleShape getDrawable(void);
-
     ///Set the origin of the rigid body.
     void setOrigin(Vec2 newOrigin);
-
-    ///Get a rectangle shape object for the bounding box.
-    //sf::RectangleShape drawAABB(void);
 
     ///Recalculate the AABB based on the rigid body position.
     void updateAABB();

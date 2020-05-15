@@ -47,9 +47,6 @@ public:
   ///Plays the specified animation on the game object, animation must be defined before it can be played.
   void playAnimation(int animation);
 
-  ///Returns the sprite object for drawing (DEPRECATED).
-  Sprite* getSprite(void);
-
   ///Whether or not the sprite should be flipped around the vertical axis.
   void mirrorSprite(bool);
 

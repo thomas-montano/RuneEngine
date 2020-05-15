@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite::Sprite() : spriteShader("./RuneEngine/src/Renderer/sprite.shader")
+Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(Vec2(0, 0))
 {
 
   glGenVertexArrays(1, &VAO);
@@ -33,7 +33,7 @@ Sprite::Sprite() : spriteShader("./RuneEngine/src/Renderer/sprite.shader")
  * @param position A Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite .png file to be drawn.
 */
-Sprite::Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./RuneEngine/src/Renderer/sprite.shader") 
+Sprite::Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(Vec2(0,0))
 {
   //Generate and bind vertex array object
   glGenVertexArrays(1, &VAO);
@@ -76,10 +76,10 @@ void Sprite::draw(RenderWindow& window)
   float drawVertices[32] = 
   {
     // positions                                                                                // colors           // texture coords
-    (m_position.x + m_size.x)/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,    1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
-    (m_position.x+m_size.x)/windowSize.x-1, m_position.y/windowSize.y-1, 0.0f,                  0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
-    m_position.x/windowSize.x-1, m_position.y/windowSize.y-1, 0.0f,                             0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
-    m_position.x/windowSize.x-1, (m_position.y+ m_size.y)/windowSize.y-1, 0.0f,                 0.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
+    (m_position.x + m_size.x - origin.x)/windowSize.x-1, (m_position.y+ m_size.y - origin.y)/windowSize.y-1, 0.0f,    1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
+    (m_position.x+m_size.x - origin.x)/windowSize.x-1, (m_position.y - origin.y)/windowSize.y-1, 0.0f,                  0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
+    (m_position.x - origin.x)/windowSize.x-1, (m_position.y - origin.y)/windowSize.y-1, 0.0f,                             0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
+    (m_position.x - origin.x)/windowSize.x-1, (m_position.y+ m_size.y - origin.y)/windowSize.y-1, 0.0f,                 0.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
   };
 
   glBindVertexArray(VAO);
@@ -108,6 +108,11 @@ void Sprite::addPosition(Vec2 newPos)
 void Sprite::setPosition(Vec2 newSize)
 {
   m_position = newSize;
+}
+
+void Sprite::setOrigin(Vec2 newOrigin)
+{
+  origin = newOrigin;
 }
 
 void Sprite::setTexture(std::string texture)

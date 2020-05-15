@@ -167,8 +167,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Renderer\compile" />
-    <None Include="src\Renderer\rectangle.shader" />
-    <None Include="src\Renderer\sprite.shader" />
+    <None Include="src\Shaders\sprite.shader" />
+    <None Include="src\Shaders\rectangle.shader" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Renderer\knoxIdleSheet.png">

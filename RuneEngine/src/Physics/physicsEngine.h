@@ -31,22 +31,7 @@ void resolveCollisions(std::vector<collision>);
 //Correct the position of the object each frame so that it doesn't look like two objects are overlapping.
 void positionalCorrection(RigidBody* object1, RigidBody* object2, double penetration, Vec2 normal);
 
-///Print vector function for debugging.
-void printVector(Vec2 vector);
-
-///Dot product calculation of two vectors.
-double dotProduct(Vec2 vector1, Vec2 vector2);
-
-///Find the vector normal to a surface
-Vec2 findNormal(Vec2 axis);
-
-///Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
-Vec2 normalize(Vec2);
-
 ///Solve for the hypotenuse given the two sides of a triangle.
 double pythagoreanSolve(double,double);
-
-///Cross product of two vectors
-double crossProduct(Vec2,Vec2);
 
 #endif

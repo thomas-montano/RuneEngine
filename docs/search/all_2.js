@@ -21,5 +21,5 @@ var searchData=
   ['contactvectorbox2_41',['contactVectorBox2',['../dc/dc9/structcollision.html#a7b345a940f3646a8f54b8a610c81094e',1,'collision']]],
   ['core_2eh_42',['core.h',['../d5/dc4/core_8h.html',1,'']]],
   ['createbutton_43',['createButton',['../d0/db2/classGameUI.html#a144a4edc570cfece53e9a8755218ad58',1,'GameUI']]],
-  ['crossproduct_44',['crossProduct',['../db/d0c/physicsEngine_8cpp.html#a21f69a08d4c06b013b46ebba29d5d38a',1,'crossProduct(Vec2 vector1, Vec2 vector2):&#160;physicsEngine.cpp'],['../d5/dae/physicsEngine_8h.html#aa0c3b67e414e79093727bb4ecf9c171c',1,'crossProduct(Vec2, Vec2):&#160;physicsEngine.cpp']]]
+  ['crossproduct_44',['crossProduct',['../d3/d95/classVec2.html#aa8a61b562a9c393e795e42bfc7597e5b',1,'Vec2::crossProduct()'],['../da/d32/vec2_8cpp.html#a21f69a08d4c06b013b46ebba29d5d38a',1,'crossProduct():&#160;vec2.cpp']]]
 ];

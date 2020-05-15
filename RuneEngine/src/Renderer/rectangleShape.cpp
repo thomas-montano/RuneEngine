@@ -2,7 +2,7 @@
 #include "shader.h"
 #include <iostream>
 
-RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Renderer/rectangle.shader")
+RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
 {
 
 }
@@ -11,7 +11,7 @@ RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Renderer/re
  * @param newPosition The position of the new RectangleShape with respect to the bottom left corner.
  * @param newSize The size of the new RectangleShape.
 */
-RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader("./RuneEngine/src/Renderer/rectangle.shader")
+RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
 {
   position = newPosition;
   size = newSize;  

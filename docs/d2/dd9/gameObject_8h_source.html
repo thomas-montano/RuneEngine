@@ -111,29 +111,27 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> playAnimation(<span class="keywordtype">int</span> animation);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d1/d6d/classSprite.html">Sprite</a>* getSprite(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> mirrorSprite(<span class="keywordtype">bool</span>);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> mirrorSprite(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> update();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> start();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> start();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">float</span> alpha);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d6/d88/classRigidBody.html">RigidBody</a>* getRigidBody(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">float</span> alpha);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../d6/d88/classRigidBody.html">RigidBody</a>* getRigidBody(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  std::vector&lt;collision&gt; getCollisions(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  std::vector&lt;collision&gt; getCollisions(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> setRotation(<span class="keywordtype">float</span> angle);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> setRotation(<span class="keywordtype">float</span> angle);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> setLayer(<a class="code" href="../../dc/da1/classSceneLayer.html">SceneLayer</a>* layer);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> setLayer(<a class="code" href="../../dc/da1/classSceneLayer.html">SceneLayer</a>* layer);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="../../dc/da1/classSceneLayer.html">SceneLayer</a>* getLayer(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="../../dc/da1/classSceneLayer.html">SceneLayer</a>* getLayer(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassGameObject_html"><div class="ttname"><a href="../../de/d1c/classGameObject.html">GameObject</a></div><div class="ttdoc">Entity control system main object used for all objects in the scene.</div><div class="ttdef"><b>Definition:</b> gameObject.h:23</div></div>
 <div class="ttc" id="aclassRigidBody_html"><div class="ttname"><a href="../../d6/d88/classRigidBody.html">RigidBody</a></div><div class="ttdoc">Game object component that allows a game object to have collisions with other objects.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:69</div></div>

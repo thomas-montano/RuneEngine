@@ -13,7 +13,7 @@
 void GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
 {
 
-  //m_objectSprite.setOrigin(sf::Vector2f(0.5*width,0.5*height));
+  m_objectSprite.setOrigin(Vec2(0.5*width,0.5*height));
 
   m_objectSprite.setTexture(filePath.c_str());
   m_objectSprite.setSize(Vec2(width, height));
@@ -102,11 +102,6 @@ void GameObject::playAnimation(int animation)
 void GameObject::mirrorSprite(bool mirror)
 {
   m_mirrorSprite = mirror;
-}
-
-Sprite* GameObject::getSprite(void)
-{
-  return &m_objectSprite;
 }
 
 /**
