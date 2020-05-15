@@ -21,7 +21,7 @@ var searchData=
   ['setscene_538',['setScene',['../classSceneManager.html#a5855c3ba80bf9eaac5f6e21482ea5d45',1,'SceneManager']]],
   ['setscenepointer_539',['setScenePointer',['../classSceneLayer.html#a895dc184d0c532081dd516f8754ff6a6',1,'SceneLayer']]],
   ['setsheet_540',['setSheet',['../classObjectAnimation.html#a1e23916792434f185f7c20338e74c5a0',1,'ObjectAnimation']]],
-  ['setsize_541',['setSize',['../classSprite.html#a2a067f91b418d344671ed3af3ed9f9ea',1,'Sprite']]],
+  ['setsize_541',['setSize',['../classRectangleShape.html#a1bfbe3aaf4fb9247a4e675e7489f6701',1,'RectangleShape::setSize()'],['../classSprite.html#a2a067f91b418d344671ed3af3ed9f9ea',1,'Sprite::setSize()']]],
   ['setstateflag_542',['setStateFlag',['../classGameScene.html#a2daad182182e5dcaac9778dd23c5ac81',1,'GameScene']]],
   ['settexture_543',['setTexture',['../classSprite.html#ab4fc7b0cda4c24b9e2a07859587bbe04',1,'Sprite']]],
   ['setuniform1f_544',['setUniform1f',['../classShader.html#a514a718cd4afdbe525cc977963d46c54',1,'Shader']]],
@@ -29,8 +29,8 @@ var searchData=
   ['setuniform4f_546',['setUniform4f',['../classShader.html#a4580a5874d65651a6632d497f9675934',1,'Shader']]],
   ['setupobject_547',['setUpObject',['../classRigidBody.html#a3611ebd648baa406595e6eef766df967',1,'RigidBody']]],
   ['setvelocity_548',['setVelocity',['../classRigidBody.html#a3b33b231631acb0e03eb2d7626b97685',1,'RigidBody']]],
-  ['setwindow_549',['setWindow',['../classMessageManager.html#ac3edd35fdadb99d79933b5cc75c3b519',1,'MessageManager::setWindow()'],['../classrune_1_1Keyboard.html#a768ebac3443b4136d64881c69b7fc47b',1,'rune::Keyboard::SetWindow()']]],
-  ['shader_550',['Shader',['../classShader.html#a2604eec6d191e6d5931448581f18c740',1,'Shader']]],
+  ['setwindow_549',['SetWindow',['../classrune_1_1Keyboard.html#a768ebac3443b4136d64881c69b7fc47b',1,'rune::Keyboard::SetWindow()'],['../classMessageManager.html#ac3edd35fdadb99d79933b5cc75c3b519',1,'MessageManager::setWindow()']]],
+  ['shader_550',['Shader',['../classShader.html#a0d654ebaca4e0555197c0724c6d30610',1,'Shader::Shader()'],['../classShader.html#a2604eec6d191e6d5931448581f18c740',1,'Shader::Shader(const std::string &amp;filePath)']]],
   ['sprite_551',['Sprite',['../classSprite.html#a12cba3ac1868418add3c4d95ce87e615',1,'Sprite::Sprite()'],['../classSprite.html#a48682aa35e49c50619552c2c33195535',1,'Sprite::Sprite(Vec2 dimensions, Vec2 position, std::string spriteLocation)']]],
   ['start_552',['start',['../classGameObject.html#a746f9f2a00f69a9cdf2fd1ec281c5cda',1,'GameObject']]]
 ];

@@ -121,7 +121,7 @@ void GameScene::updateLayerPhysics(void)
 
     for(int j = 0; j < sceneObjects.size(); j++)
     {
-      sceneObjects[j]->updatePosition(alpha);
+      sceneObjects[j]->updatePosition(1);//alpha);
     }
   }
 

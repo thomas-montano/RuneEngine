@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['rectangleshape_512',['RectangleShape',['../classRectangleShape.html#aa8204672f01f594f628809eaabc8e146',1,'RectangleShape']]],
+  ['rectangleshape_512',['RectangleShape',['../classRectangleShape.html#a5b5c1d644f21071bb14c77bc986ecae7',1,'RectangleShape::RectangleShape()'],['../classRectangleShape.html#aa8204672f01f594f628809eaabc8e146',1,'RectangleShape::RectangleShape(Vec2 position, Vec2 Size)']]],
   ['reinit_513',['reInit',['../classGameScene.html#a99159f17b2885776e8867e220714458f',1,'GameScene']]],
   ['renderwindow_514',['RenderWindow',['../classRenderWindow.html#a51e455305cb9b319d730ecc8881a9a53',1,'RenderWindow']]],
   ['reset_515',['reset',['../classClock.html#a0ab5423b0a997aa13d7b6131c46d1358',1,'Clock']]],

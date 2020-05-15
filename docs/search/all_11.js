@@ -1,7 +1,7 @@
 var searchData=
 [
   ['r_235',['R',['../classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a23625c183382dcbbbd4b6ebcb31a045f',1,'rune::Keyboard']]],
-  ['rectangleshape_236',['RectangleShape',['../classRectangleShape.html',1,'RectangleShape'],['../classRectangleShape.html#aa8204672f01f594f628809eaabc8e146',1,'RectangleShape::RectangleShape()']]],
+  ['rectangleshape_236',['RectangleShape',['../classRectangleShape.html',1,'RectangleShape'],['../classRectangleShape.html#a5b5c1d644f21071bb14c77bc986ecae7',1,'RectangleShape::RectangleShape()'],['../classRectangleShape.html#aa8204672f01f594f628809eaabc8e146',1,'RectangleShape::RectangleShape(Vec2 position, Vec2 Size)']]],
   ['rectangleshape_2ecpp_237',['rectangleShape.cpp',['../rectangleShape_8cpp.html',1,'']]],
   ['rectangleshape_2eh_238',['rectangleShape.h',['../rectangleShape_8h.html',1,'']]],
   ['red_239',['red',['../classColor.html#a2337ea72bc849039f73077d00ab42bbb',1,'Color']]],
