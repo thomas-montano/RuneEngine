@@ -6,6 +6,7 @@
  * @date April 20 2020
 */
 
+#pragma once
 #ifndef VEC2_H_DEFINED
 #define VEC2_H_DEFINED
 

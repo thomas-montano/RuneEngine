@@ -8,9 +8,11 @@
  * @date May 15 2020
 */
 
+#include "core.h"
+
 namespace rune{
 
-class Mat2
+class RUNE_ENGINE Mat2
 {
 
 };
