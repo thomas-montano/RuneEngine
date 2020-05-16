@@ -1,5 +1,5 @@
 /**
- * @class Vec2
+ * @class rune::Vec2
  * @brief 2 x 1 vector to be used for math.
  * 
  * @author Thomas Montano
