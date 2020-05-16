@@ -6,7 +6,7 @@ var searchData=
   ['m_5fnextstate_178',['m_nextState',['../db/d9f/classGameScene.html#a8a5ec0e21144a65b5810fb1f6fdc81a5',1,'GameScene']]],
   ['m_5fquitgame_179',['m_quitGame',['../db/d9f/classGameScene.html#a9cc3266c893d6f09636d16713a07044e',1,'GameScene']]],
   ['m_5fstateui_180',['m_stateUI',['../db/d9f/classGameScene.html#a3b022ce754cf58490435b8f868ba93a3',1,'GameScene']]],
-  ['mat2_181',['mat2',['../d1/db9/classrune_1_1mat2.html',1,'rune']]],
+  ['mat2_181',['Mat2',['../df/db1/classrune_1_1Mat2.html',1,'rune']]],
   ['mat2_2ecpp_182',['mat2.cpp',['../d1/d77/mat2_8cpp.html',1,'']]],
   ['mat2_2eh_183',['mat2.h',['../d8/d13/mat2_8h.html',1,'']]],
   ['max_184',['max',['../d9/d4d/structAABB.html#addd408866a6fb2542e36d4b6d512c0a6',1,'AABB']]],
