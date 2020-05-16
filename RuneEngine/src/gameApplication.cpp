@@ -1,11 +1,14 @@
 #include "gameApplication.h"
 
+RenderWindow* rune::GameApplication::winPtr = nullptr;
+double rune::GameApplication::deltaTime = 0.0;
+
 /**
  * @param updateRate How many times per second the game will run the main update loop.
  */
-GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720, "Rune Engine")
+rune::GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720, "Rune Engine")
 {
-
+  winPtr = &m_mainWindow;
   m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
   m_gameRunning = true;
@@ -16,10 +19,8 @@ GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720, "Rune
 /**
  * @return The generated error code
 */
-int GameApplication::run(void)
+int rune::GameApplication::run(void)
 {
-
-  MessageManager::setWindow(&m_mainWindow);
 
   m_mainWindow.enableVsync(false);
 
@@ -33,7 +34,7 @@ int GameApplication::run(void)
   //In this case its the main menu
   if(m_sceneManager.getNumScenes() > 0)
   {
-    MessageManager::setDeltaTime(1000.0/m_updateRate);
+    deltaTime = 1.0/m_updateRate;
     m_sceneManager.setScene(0);
   }
   else
@@ -47,7 +48,7 @@ int GameApplication::run(void)
   return m_errorCode;
 }
 
-void GameApplication::gameLoop(void)
+void rune::GameApplication::gameLoop(void)
 {
   
   //Clock object for getting the time
@@ -100,9 +101,7 @@ void GameApplication::gameLoop(void)
       //Current Game state updates here
       m_currentScene->updateFixed();
 
-      //std::cout << "Update Fixed" << std::endl;
-
-      MessageManager::setDeltaTime(currentTime - nextTick);
+      deltaTime = (currentTime - nextTick)/1000.0;
 
       //Set the next tick to 1/updateRate in milliseconds from now on
       nextTick += (1000.0/m_updateRate);
@@ -138,8 +137,7 @@ void GameApplication::gameLoop(void)
 
 }
 
-
-void GameApplication::processInput(void)
+void rune::GameApplication::processInput(void)
 {
 
   //Loop to poll events and updates the m_windowEvent object
@@ -155,9 +153,21 @@ void GameApplication::processInput(void)
 /**
  * @param newScene A pointer to a GameScene object that should be loaded into the scene buffer.
 */
-void GameApplication::loadScene(GameScene* newScene)
+void rune::GameApplication::loadScene(GameScene* newScene)
 {
 
   m_sceneManager.addScene(newScene);
 
+}
+
+///Returns the reference to the currently active render window.
+RenderWindow* rune::GameApplication::getWindow(void)
+{
+  return winPtr;
+}
+
+///Gets the change in time since the last frame in seconds.
+double rune::GameApplication::getDeltaTime(void)
+{
+  return deltaTime;
 }

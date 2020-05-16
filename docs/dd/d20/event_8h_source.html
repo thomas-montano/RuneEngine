@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.3.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -76,25 +76,29 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef EVENT_H_DEFINED</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define EVENT_H_DEFINED</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa86b68978703679cae01d7269f8a836fc">   13</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a>{<a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faac9d3e887722f2bc482bcca9d41c512af">None</a>,<a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa30c0b4dad1e3a3b93f822b9cef26244b">Closed</a>,<a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa86b68978703679cae01d7269f8a836fc">Resized</a>,<a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa005fad55c29e390c81a8b8b9f5034a49">KeyPressed</a>};</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d5/da5/classEvent.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d5/da5/classEvent.html">Event</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d5/da5/classEvent.html#ac721e4f34b3b9a1ae302165412221724">   19</a></span>&#160;  <a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a> <a class="code" href="../../d5/da5/classEvent.html#ac721e4f34b3b9a1ae302165412221724">type</a> = <a class="code" href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faac9d3e887722f2bc482bcca9d41c512af">None</a>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a792b7dbd45b47e91dcb1e45e1104bb32">   15</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">EventType</a>{<a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a8ec2d9a27779cbafe5b3d2361f0b0c44">None</a>,<a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a6953542fd51ac06611d48e5b1d7ad8ec">Closed</a>,<a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a792b7dbd45b47e91dcb1e45e1104bb32">Resized</a>,<a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a43698ae0a0db2b24c0eec4949fc4ed62">KeyPressed</a>};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d3/d44/classrune_1_1Event.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d44/classrune_1_1Event.html">Event</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d44/classrune_1_1Event.html#a1b660f3bf61a6fe818b5695c07ece295">   21</a></span>&#160;  <a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">EventType</a> <a class="code" href="../../d3/d44/classrune_1_1Event.html#a1b660f3bf61a6fe818b5695c07ece295">type</a> = <a class="code" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a8ec2d9a27779cbafe5b3d2361f0b0c44">None</a>;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassEvent_html_ac721e4f34b3b9a1ae302165412221724"><div class="ttname"><a href="../../d5/da5/classEvent.html#ac721e4f34b3b9a1ae302165412221724">Event::type</a></div><div class="ttdeci">EventType type</div><div class="ttdef"><b>Definition:</b> event.h:19</div></div>
-<div class="ttc" id="aevent_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faa86b68978703679cae01d7269f8a836fc"><div class="ttname"><a href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa86b68978703679cae01d7269f8a836fc">Resized</a></div><div class="ttdeci">@ Resized</div><div class="ttdef"><b>Definition:</b> event.h:13</div></div>
-<div class="ttc" id="aclassEvent_html"><div class="ttname"><a href="../../d5/da5/classEvent.html">Event</a></div><div class="ttdoc">Object that holds all the events for a render window.</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
-<div class="ttc" id="aevent_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faac9d3e887722f2bc482bcca9d41c512af"><div class="ttname"><a href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faac9d3e887722f2bc482bcca9d41c512af">None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> event.h:13</div></div>
-<div class="ttc" id="aevent_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faa005fad55c29e390c81a8b8b9f5034a49"><div class="ttname"><a href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa005fad55c29e390c81a8b8b9f5034a49">KeyPressed</a></div><div class="ttdeci">@ KeyPressed</div><div class="ttdef"><b>Definition:</b> event.h:13</div></div>
-<div class="ttc" id="aevent_8h_html_a2628ea8d12e8b2563c32f05dc7fff6faa30c0b4dad1e3a3b93f822b9cef26244b"><div class="ttname"><a href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6faa30c0b4dad1e3a3b93f822b9cef26244b">Closed</a></div><div class="ttdeci">@ Closed</div><div class="ttdef"><b>Definition:</b> event.h:13</div></div>
-<div class="ttc" id="aevent_8h_html_a2628ea8d12e8b2563c32f05dc7fff6fa"><div class="ttname"><a href="../../dd/d20/event_8h.html#a2628ea8d12e8b2563c32f05dc7fff6fa">EventType</a></div><div class="ttdeci">EventType</div><div class="ttdoc">Possible window level events that can be triggered.</div><div class="ttdef"><b>Definition:</b> event.h:13</div></div>
+<div class="ttc" id="anamespacerune_html_a1df9bd01e014c6f3e4122d8b92cccd28a8ec2d9a27779cbafe5b3d2361f0b0c44"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a8ec2d9a27779cbafe5b3d2361f0b0c44">rune::None</a></div><div class="ttdeci">@ None</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
+<div class="ttc" id="anamespacerune_html_a1df9bd01e014c6f3e4122d8b92cccd28a6953542fd51ac06611d48e5b1d7ad8ec"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a6953542fd51ac06611d48e5b1d7ad8ec">rune::Closed</a></div><div class="ttdeci">@ Closed</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
+<div class="ttc" id="anamespacerune_html_a1df9bd01e014c6f3e4122d8b92cccd28a43698ae0a0db2b24c0eec4949fc4ed62"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a43698ae0a0db2b24c0eec4949fc4ed62">rune::KeyPressed</a></div><div class="ttdeci">@ KeyPressed</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
+<div class="ttc" id="aclassrune_1_1Event_html_a1b660f3bf61a6fe818b5695c07ece295"><div class="ttname"><a href="../../d3/d44/classrune_1_1Event.html#a1b660f3bf61a6fe818b5695c07ece295">rune::Event::type</a></div><div class="ttdeci">EventType type</div><div class="ttdef"><b>Definition:</b> event.h:21</div></div>
+<div class="ttc" id="anamespacerune_html_a1df9bd01e014c6f3e4122d8b92cccd28"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">rune::EventType</a></div><div class="ttdeci">EventType</div><div class="ttdoc">Possible window level events that can be triggered.</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
+<div class="ttc" id="anamespacerune_html_a1df9bd01e014c6f3e4122d8b92cccd28a792b7dbd45b47e91dcb1e45e1104bb32"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a792b7dbd45b47e91dcb1e45e1104bb32">rune::Resized</a></div><div class="ttdeci">@ Resized</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
+<div class="ttc" id="aclassrune_1_1Event_html"><div class="ttname"><a href="../../d3/d44/classrune_1_1Event.html">rune::Event</a></div><div class="ttdoc">Object that holds all the events for a render window.</div><div class="ttdef"><b>Definition:</b> event.h:17</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdef"><b>Definition:</b> mat3.h:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

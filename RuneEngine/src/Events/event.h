@@ -1,5 +1,5 @@
 /**
- * @class Event
+ * @class rune::Event
  * @brief Object that holds all the events for a render window.
  * 
  * @author Thomas Montano
@@ -8,6 +8,8 @@
 
 #ifndef EVENT_H_DEFINED
 #define EVENT_H_DEFINED
+
+namespace rune{
 
 ///Possible window level events that can be triggered
 enum EventType{None,Closed,Resized,KeyPressed};
@@ -19,5 +21,6 @@ public:
   EventType type = None;
 
 };
+}
 
 #endif

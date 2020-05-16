@@ -40,14 +40,14 @@ RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 /**
  * @param event the Event object for the events to be stored in.
 */
-void RenderWindow::pollEvents(Event& event)
+void RenderWindow::pollEvents(rune::Event& event)
 {
 
   glfwPollEvents();
 
   if(glfwWindowShouldClose(GLwindow))
   {
-    event.type = Closed;
+    event.type = rune::Closed;
     windowOpen = false;
   }
 
@@ -60,7 +60,7 @@ void RenderWindow::display(void)
 
 }
 
-void RenderWindow::clear(Color clearColor)
+void RenderWindow::clear(rune::Color clearColor)
 {
 
   glClearColor(clearColor.red/255.0, clearColor.green / 255.0, clearColor.blue / 255.0, clearColor.alpha / 255.0);

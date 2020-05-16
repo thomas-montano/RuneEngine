@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.3.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -72,32 +72,37 @@ $(function() {
 <div class="title">clock.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d7/d6e/clock_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef CLOCK_H_DEFINED</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define CLOCK_H_DEFINED</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../df/d45/classClock.html">   15</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../df/d45/classClock.html">Clock</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keyword">struct </span>timespec ts;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keywordtype">long</span> startTime;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">long</span> lastNanos;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <a class="code" href="../../df/d45/classClock.html">Clock</a>();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">long</span> getElapsedTimeAsMilliseconds();</div>
+<a href="../../d7/d6e/clock_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#ifndef CLOCK_H_DEFINED</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d7/d6e/clock_8h.html#a0935f552ba2c0eaba0eb3138d62fb6c3">   11</a></span>&#160;<span class="preprocessor">#define CLOCK_H_DEFINED</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;time.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d0/d27/classrune_1_1Clock.html">   18</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d0/d27/classrune_1_1Clock.html">Clock</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">struct </span>timespec ts;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">long</span> startTime;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">long</span> lastNanos;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d0/d27/classrune_1_1Clock.html">Clock</a>();</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> reset();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">long</span> getElapsedTimeAsMilliseconds();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> reset();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassClock_html"><div class="ttname"><a href="../../df/d45/classClock.html">Clock</a></div><div class="ttdoc">A clock that can be used to tell how much time has passed.</div><div class="ttdef"><b>Definition:</b> clock.h:15</div></div>
+<div class="ttc" id="aclassrune_1_1Clock_html"><div class="ttname"><a href="../../d0/d27/classrune_1_1Clock.html">rune::Clock</a></div><div class="ttdoc">A clock that can be used to tell how much time has passed.</div><div class="ttdef"><b>Definition:</b> clock.h:18</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdef"><b>Definition:</b> mat3.h:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

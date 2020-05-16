@@ -1,7 +1,7 @@
 #include "clock.h"
 #include <iostream>
 
-Clock::Clock()
+rune::Clock::Clock()
 {
   timespec_get(&ts,TIME_UTC);
   startTime = ts.tv_sec;
@@ -11,14 +11,14 @@ Clock::Clock()
 /**
  * @return The total elapsed time in milliseconds.
 */
-long Clock::getElapsedTimeAsMilliseconds()
+long rune::Clock::getElapsedTimeAsMilliseconds()
 {
   timespec_get(&ts,TIME_UTC);
   return ((ts.tv_nsec - lastNanos)/1000000.0) + (ts.tv_sec - startTime)*1000;
 
 }
 
-void Clock::reset()
+void rune::Clock::reset()
 {
   timespec_get(&ts,TIME_UTC);
   startTime = ts.tv_sec;

@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.3.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -90,7 +90,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">bool</span> windowOpen;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">int</span> width, height;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d5/da5/classEvent.html">Event</a> windowEvents;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a> windowEvents;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  GLFWwindow* GLwindow;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
@@ -98,11 +98,11 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">void</span> draw(<a class="code" href="../../de/db8/classDrawable.html">Drawable</a>&amp;);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> pollEvents(<a class="code" href="../../d5/da5/classEvent.html">Event</a>&amp; event);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">void</span> pollEvents(<a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a>&amp; event);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> display(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> clear(<a class="code" href="../../d2/d37/classColor.html">Color</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> clear(<a class="code" href="../../d8/d25/classrune_1_1Color.html">rune::Color</a>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keywordtype">bool</span> isOpen(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
@@ -116,14 +116,14 @@ $(function() {
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassrune_1_1Color_html"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html">rune::Color</a></div><div class="ttdoc">A color object to be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> color.h:18</div></div>
 <div class="ttc" id="aclassRenderWindow_html"><div class="ttname"><a href="../../d9/d40/classRenderWindow.html">RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:21</div></div>
 <div class="ttc" id="aclassDrawable_html"><div class="ttname"><a href="../../de/db8/classDrawable.html">Drawable</a></div><div class="ttdoc">Interface class for creating something that can be drawn to the screen.</div><div class="ttdef"><b>Definition:</b> drawable.h:18</div></div>
-<div class="ttc" id="aclassrune_1_1Vec2_html"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a></div><div class="ttdef"><b>Definition:</b> vec2.h:17</div></div>
-<div class="ttc" id="aclassEvent_html"><div class="ttname"><a href="../../d5/da5/classEvent.html">Event</a></div><div class="ttdoc">Object that holds all the events for a render window.</div><div class="ttdef"><b>Definition:</b> event.h:15</div></div>
+<div class="ttc" id="aclassrune_1_1Vec2_html"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a></div><div class="ttdoc">2 x 1 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:19</div></div>
+<div class="ttc" id="aclassrune_1_1Event_html"><div class="ttname"><a href="../../d3/d44/classrune_1_1Event.html">rune::Event</a></div><div class="ttdoc">Object that holds all the events for a render window.</div><div class="ttdef"><b>Definition:</b> event.h:17</div></div>
 <div class="ttc" id="aopengl_8h_html"><div class="ttname"><a href="../../d5/d2a/opengl_8h.html">opengl.h</a></div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
 <div class="ttc" id="acolor_8h_html"><div class="ttname"><a href="../../da/dec/color_8h.html">color.h</a></div></div>
-<div class="ttc" id="aclassColor_html"><div class="ttname"><a href="../../d2/d37/classColor.html">Color</a></div><div class="ttdoc">A color object to be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> color.h:16</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

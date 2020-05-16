@@ -13,9 +13,7 @@
  * #ifndef FIRSTLEVEL_H_INCLUDED
  * #define FIRSTLEVEL_H_INCLUDED
  * 
- * #include <SFML/Graphics.hpp>
- * #include <SFML/Audio.hpp>
- * #include "Engine/gameScene.h"
+ * #include <RuneEngine.h>
  * 
  * class FirstLevel : public GameScene
  * {
@@ -43,7 +41,7 @@
  * Load that scene into the game application:
  * 
  * @code 
- * #include "Engine/gameApplication.h"
+ * #include <RuneEngine.h>
  * #include "firstLevel.h"
  * #include <iostream>
  * 
@@ -76,7 +74,7 @@
  */
 
 /**
- * @class GameApplication
+ * @class rune::GameApplication
  * @brief Entry point for all programs using the engine, must instantiate a game application for every new game
  * @author Thomas Montano
  * 
@@ -88,18 +86,23 @@
 
 #include "core.h"
 #include <SceneTools\sceneManager.h>
-#include <SceneTools\messageManager.h>
 #include <Renderer\RenderWindow.h>
 #include <Events\clock.h>
 #include <Events\event.h>
 #include <iostream>
 
+namespace rune{
+
 class RUNE_ENGINE GameApplication
 {
 private:
 
-  bool m_gameRunning;
   RenderWindow m_mainWindow;
+
+  static RenderWindow* winPtr;
+  static double deltaTime;
+  
+  bool m_gameRunning;
   Event m_windowEvent;
   int m_updateRate;
 
@@ -124,7 +127,13 @@ public:
   ///Starts the main game loop
   int run(void);
 
-};
+  ///Returns the reference to the currently active render window.
+  static RenderWindow* getWindow(void);
 
+  ///Gets the change in time since the last frame in seconds.
+  static double getDeltaTime(void);
+
+};
+}
 
 #endif

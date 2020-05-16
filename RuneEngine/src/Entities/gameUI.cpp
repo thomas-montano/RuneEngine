@@ -1,4 +1,5 @@
 #include "gameUI.h"
+#include <gameApplication.h>
 
 /**
  * @param posX Horizontal position relative to the bottom left corner of the button to place the button on the screen.
@@ -6,7 +7,7 @@
  * @param width The width of the button in pixels.
  * @param height The height of the button in pixels.
 */
-void GameUI::createButton(float posX, float posY, float width, float height)
+void rune::GameUI::createButton(float posX, float posY, float width, float height)
 {
 
   m_posX = posX;
@@ -32,27 +33,17 @@ void GameUI::createButton(float posX, float posY, float width, float height)
 }
 
 /**
- * @return Drawable sprite object
-*/
-Sprite GameUI::getDrawable(void)
-{
-
-  return m_uiObject;
-
-}
-
-/**
  * @param mouseLocation The location at which the mouse button was clicked.
  * @param mouseEvent The event triggered by the mouse click.
  * @return Whether or not the button was clicked.
 */
-bool GameUI::isClicked(rune::Vec2 mouseLocation, Event mouseEvent)
+bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
 {
 
   int My = mouseLocation.y;
   int Mx = mouseLocation.x;
 
-  RenderWindow* window = MessageManager::getWindow();
+  RenderWindow* window = rune::GameApplication::getWindow();
 
   //int xPos = window->mapCoordsToPixel(Vector2f(m_posX,0)).x;
   //int yPos = window->mapCoordsToPixel(Vector2f(0,m_posY)).y;

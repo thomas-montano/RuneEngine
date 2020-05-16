@@ -23,7 +23,7 @@ class RUNE_ENGINE RenderWindow
 private:
   bool windowOpen;
   int width, height;
-  Event windowEvents;
+  rune::Event windowEvents;
   GLFWwindow* GLwindow;
 
 public:
@@ -34,13 +34,13 @@ public:
   void draw(Drawable&);
 
   ///Determines if any window level events have happened.
-  void pollEvents(Event& event);
+  void pollEvents(rune::Event& event);
 
   ///Display on screen what has been rendered to the window so far.
   void display(void);
 
   ///Clear the entire screen with a single color.
-  void clear(Color);
+  void clear(rune::Color);
 
   ///Tell whether or not the window is open.
   bool isOpen(void);

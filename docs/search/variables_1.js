@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['blue_580',['blue',['../d2/d37/classColor.html#a0a35e5de46315db828b5bd56866d9fea',1,'Color::blue()'],['../d2/d37/classColor.html#a7bc662a92370952bf21058bc7d1e7965',1,'Color::Blue()']]],
+  ['blue_580',['blue',['../d8/d25/classrune_1_1Color.html#ad78e4d08f8aefd04098a0f7ae8162648',1,'rune::Color::blue()'],['../d8/d25/classrune_1_1Color.html#a5958b48f6e41cfabb99105e1b3dbab97',1,'rune::Color::Blue()']]],
   ['boundingbox_581',['boundingBox',['../d2/d07/structbody.html#adbb2eaaab9ced4914c7ae2fba07b01d4',1,'body']]]
 ];

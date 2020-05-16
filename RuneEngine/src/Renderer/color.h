@@ -1,5 +1,5 @@
 /**
- * @class Color
+ * @class rune::Color
  * @brief A color object to be applied to drawable objects.
  *
  * @author Thomas Montano
@@ -12,6 +12,8 @@
 #define COLOR_H_DEFINED
 
 #include "core.h"
+
+namespace rune{
 
 class RUNE_ENGINE Color
 {
@@ -31,5 +33,6 @@ public:
   static Color Blue;
 
 };
+}
 
 #endif

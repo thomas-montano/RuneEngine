@@ -21,16 +21,16 @@ private:
   int m_currentScene = 0; //Index for the current state
 
   //Array to hold all of the object pointers for the virtual functions
-  std::vector<GameScene*> m_scenes;
+  std::vector<rune::GameScene*> m_scenes;
 public:
   ///Check to see if the current state has thrown any flags. This lets us know whether or not GameApplication needs to do anything
   void checkFlags(void);
   
   ///Adds a GameScene into the SceneManager scene buffer.
-  void addScene(GameScene* newScene);
+  void addScene(rune::GameScene* newScene);
 
   ///Get the currently active GameScene.
-  GameScene* getCurrentScene(void);
+  rune::GameScene* getCurrentScene(void);
 
   ///Set the currently active GameScene.
   void setScene(int newState);

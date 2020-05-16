@@ -4,7 +4,7 @@
 /**
  * @return A pointer to the currently active GameScene
 */
-GameScene* SceneManager::getCurrentScene(void)
+rune::GameScene* SceneManager::getCurrentScene(void)
 {
   return m_scenes[m_currentScene];
 }
@@ -72,7 +72,7 @@ int SceneManager::getNumScenes(void)
 /**
  * @param newScene New GameScene to be added into the SceneManager scene buffer. 
 */
-void SceneManager::addScene(GameScene* newScene)
+void SceneManager::addScene(rune::GameScene* newScene)
 {
 
   m_scenes.push_back(newScene);

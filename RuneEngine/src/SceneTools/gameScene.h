@@ -1,5 +1,5 @@
 /**
- * @class GameScene
+ * @class rune::GameScene
  * @brief This class is responsible for serving as a parent class for each instance
   of the game. In order to create a new instance for the game, copy this class
   and add objects as needed
@@ -17,9 +17,10 @@
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
 #include <Events\clock.h>
-#include <SceneTools\messageManager.h>
 #include <SceneTools\layer.h>
 #include <Entities\particleEmitter.h>
+
+namespace rune{
 
 class RUNE_ENGINE GameScene
 {
@@ -33,7 +34,7 @@ protected:
 
   std::vector<SceneLayer> sceneLayers;
   
-  Clock variableClock;
+  rune::Clock variableClock;
   float dT; //Time between variable update calls
   float accumulator;
   float frameStart;
@@ -52,13 +53,13 @@ public:
   void deInit(void);
   virtual void pause(void);
   virtual void resume(void);
-  virtual void handleEvents(Event theEvent);
+  virtual void handleEvents(rune::Event theEvent);
   virtual void updateFixed(void);
   virtual void updateVariable(void);
   virtual void Draw(RenderWindow& window);
   virtual void updateLayerPhysics(void);
   virtual void handleCleanup(void);
-  virtual void handleUI(RenderWindow& window, Event theEvent);
+  virtual void handleUI(RenderWindow& window, rune::Event theEvent);
 
   virtual bool getStateFlag();
   virtual int getNextState();
@@ -70,6 +71,7 @@ public:
 
 
 };
+}
 
 
 #endif

@@ -42,9 +42,6 @@
     <ClCompile Include="src\SceneTools\layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\SceneTools\messageManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SceneTools\sceneManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -84,6 +81,9 @@
     <ClCompile Include="src\Events\clock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="mat3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameApplication.h">
@@ -117,9 +117,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SceneTools\layer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SceneTools\messageManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SceneTools\sceneManager.h">
@@ -168,6 +165,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Events\clock.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mat3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

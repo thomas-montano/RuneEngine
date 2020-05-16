@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.3.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -86,13 +86,13 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keywordtype">int</span> m_currentScene = 0; <span class="comment">//Index for the current state</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="comment">//Array to hold all of the object pointers for the virtual functions</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  std::vector&lt;GameScene*&gt; m_scenes;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  std::vector&lt;rune::GameScene*&gt; m_scenes;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> checkFlags(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> addScene(<a class="code" href="../../db/d9f/classGameScene.html">GameScene</a>* newScene);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> addScene(<a class="code" href="../../dd/ddc/classrune_1_1GameScene.html">rune::GameScene</a>* newScene);</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../db/d9f/classGameScene.html">GameScene</a>* getCurrentScene(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../dd/ddc/classrune_1_1GameScene.html">rune::GameScene</a>* getCurrentScene(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> setScene(<span class="keywordtype">int</span> newState);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
@@ -102,7 +102,7 @@ $(function() {
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="agameScene_8h_html"><div class="ttname"><a href="../../db/def/gameScene_8h.html">gameScene.h</a></div></div>
-<div class="ttc" id="aclassGameScene_html"><div class="ttname"><a href="../../db/d9f/classGameScene.html">GameScene</a></div><div class="ttdoc">This class is responsible for serving as a parent class for each instance of the game....</div><div class="ttdef"><b>Definition:</b> gameScene.h:24</div></div>
+<div class="ttc" id="aclassrune_1_1GameScene_html"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html">rune::GameScene</a></div><div class="ttdoc">This class is responsible for serving as a parent class for each instance of the game....</div><div class="ttdef"><b>Definition:</b> gameScene.h:25</div></div>
 <div class="ttc" id="aclassSceneManager_html"><div class="ttname"><a href="../../d5/d9e/classSceneManager.html">SceneManager</a></div><div class="ttdoc">The state manager is responsible for handling the transfer of the current state pointer that refers t...</div><div class="ttdef"><b>Definition:</b> sceneManager.h:18</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
 <!-- start footer part -->

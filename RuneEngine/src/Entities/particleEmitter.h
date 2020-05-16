@@ -11,7 +11,6 @@
 #define PARTICLES_H_DEFINED
 
 #include "core.h"
-#include <SceneTools\messageManager.h>
 #include <Renderer\rectangleShape.h>
 #include <Renderer\color.h>
 
@@ -23,7 +22,7 @@ private:
   struct particle
   {
     rune::Vec2 m_pixelPosition;
-    Color m_pixelColor; //Color of all particles
+    rune::Color m_pixelColor; //Color of all particles
     rune::Vec2 m_particleSpeed; //Rate at which particles travel
     //RectangleShape m_particleSprite[4];
     int m_timeExisted; //Time the pixel has existed in milliseconds
@@ -32,7 +31,7 @@ private:
   const int PARTICLELIMIT = 1000;
   float m_dissolutionRate; //Rate at which particles disappear
 
-  Color m_pixelBaseColor; //Starting color, can apply modifiers later
+  rune::Color m_pixelBaseColor; //Starting color, can apply modifiers later
 
   rune::Vec2 m_canvasSize = rune::Vec2(100,100);
 
@@ -47,7 +46,7 @@ private:
 
 public:
   ///Default constructor for a particle emitter that establishes position, color, and velocity constraints.
-  ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, Color color, int dissolutionRate = 5, rune::Vec2 gravity = rune::Vec2(0,0));
+  ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, rune::Color color, int dissolutionRate = 5, rune::Vec2 gravity = rune::Vec2(0,0));
   
   ///The amount of time in seconds that a particle will exist before it gets destroyed.
   void setDissolutionRate(float rate);

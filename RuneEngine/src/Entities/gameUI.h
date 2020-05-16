@@ -1,5 +1,5 @@
 /**
- * @class GameUI
+ * @class rune::GameUI
  * @brief Class responsible for managing the user interface
  * elements and baking text into other textures.
  * 
@@ -11,7 +11,12 @@
 #define GUI_H_INCLUDED
 
 #include "core.h"
-#include <SceneTools\messageManager.h>
+#include <Math\vec2.h>
+#include <Events\event.h>
+#include <Renderer\sprite.h>
+#include <Renderer\texture.h>
+
+namespace rune{
 
 class RUNE_ENGINE GameUI// :public Drawable
 {
@@ -28,11 +33,8 @@ public:
   ///Creates a UI level button.
   void createButton(float posX, float posY,float width, float height);
 
-  ///Returns a sprite to be drawn to the screen (DEPRECATED).
-  Sprite getDrawable();
-
   ///Determines whether or not the UI element has been clicked on.
-  bool isClicked(rune::Vec2, Event mouseEvent);
+  bool isClicked(rune::Vec2, rune::Event mouseEvent);
 };
-
+}
 #endif

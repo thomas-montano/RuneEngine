@@ -1,5 +1,5 @@
 /**
- * @class GameObject
+ * @class rune::GameObject
  * @brief Entity control system main object used for all objects in the scene
  * 
  * @author Thomas Montano
@@ -19,6 +19,8 @@
 
 //Forward declaration of layer object
 class SceneLayer;
+
+namespace rune{
 
 class RUNE_ENGINE GameObject : public Drawable
 {
@@ -75,5 +77,6 @@ public:
   SceneLayer* getLayer(void);
 
 };
+}
 
 #endif

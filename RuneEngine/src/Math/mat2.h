@@ -9,11 +9,15 @@
 */
 
 #include "core.h"
+#include "vec2.h"
 
 namespace rune{
 
 class RUNE_ENGINE Mat2
 {
+public:
+  Vec2 col1;
+  Vec2 col2;
 
 };
 

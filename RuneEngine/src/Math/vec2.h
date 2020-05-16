@@ -1,3 +1,5 @@
+#pragma once
+
 /**
  * @class rune::Vec2
  * @brief 2 x 1 vector to be used for math.
@@ -6,7 +8,6 @@
  * @date April 20 2020
 */
 
-#pragma once
 #ifndef VEC2_H_DEFINED
 #define VEC2_H_DEFINED
 
@@ -56,25 +57,25 @@ public:
 };
 
 /**
- * @memberof Vec2
+ * @memberof rune::Vec2
  * @brief Dot product calculation of two vectors.
  */
 RUNE_ENGINE double dotProduct(rune::Vec2 vector1, rune::Vec2 vector2);
 
 /**
- * @memberof Vec2
+ * @memberof rune::Vec2
  * @brief Find the vector normal to a surface 
  */
 RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 axis);
 
 /**
- * @memberof Vec2
+ * @memberof rune::Vec2
  * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
  */
 RUNE_ENGINE rune::Vec2 normalize(rune::Vec2);
 
 /**
- * @memberof Vec2
+ * @memberof rune::Vec2
  * @brief Cross product of two vectors.
  */
 RUNE_ENGINE double crossProduct(rune::Vec2, rune::Vec2);

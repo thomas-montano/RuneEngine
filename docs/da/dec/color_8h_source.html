@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.3.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -80,30 +80,34 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d2/d37/classColor.html">   16</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d2/d37/classColor.html">Color</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d37/classColor.html#a2337ea72bc849039f73077d00ab42bbb">   20</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d2/d37/classColor.html#a2337ea72bc849039f73077d00ab42bbb">red</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d2/d37/classColor.html#a0398a30128909996780fce10e039ac24">   22</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d2/d37/classColor.html#a0398a30128909996780fce10e039ac24">green</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d2/d37/classColor.html#a0a35e5de46315db828b5bd56866d9fea">   24</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d2/d37/classColor.html#a0a35e5de46315db828b5bd56866d9fea">blue</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d2/d37/classColor.html#aa14c59ce06c2a70f4683df266e26a261">   26</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d2/d37/classColor.html#aa14c59ce06c2a70f4683df266e26a261">alpha</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d2/d37/classColor.html">Color</a>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span> alpha = 1);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d2/d37/classColor.html">Color</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d2/d37/classColor.html#a7bc662a92370952bf21058bc7d1e7965">   31</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d2/d37/classColor.html">Color</a> <a class="code" href="../../d2/d37/classColor.html#a7bc662a92370952bf21058bc7d1e7965">Blue</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d8/d25/classrune_1_1Color.html">   18</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d8/d25/classrune_1_1Color.html">Color</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d8/d25/classrune_1_1Color.html#af389c727b8048b2118d019975cd4733f">   22</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d8/d25/classrune_1_1Color.html#af389c727b8048b2118d019975cd4733f">red</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d8/d25/classrune_1_1Color.html#a8a102c8489cc7d8b3ac83bc13b79b44c">   24</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d8/d25/classrune_1_1Color.html#a8a102c8489cc7d8b3ac83bc13b79b44c">green</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d8/d25/classrune_1_1Color.html#ad78e4d08f8aefd04098a0f7ae8162648">   26</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d8/d25/classrune_1_1Color.html#ad78e4d08f8aefd04098a0f7ae8162648">blue</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d8/d25/classrune_1_1Color.html#aa730d371919c74f0e8fb4261bf4f6799">   28</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="../../d8/d25/classrune_1_1Color.html#aa730d371919c74f0e8fb4261bf4f6799">alpha</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d8/d25/classrune_1_1Color.html">Color</a>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span> alpha = 1);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../d8/d25/classrune_1_1Color.html">Color</a>();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d8/d25/classrune_1_1Color.html#a5958b48f6e41cfabb99105e1b3dbab97">   33</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d8/d25/classrune_1_1Color.html">Color</a> <a class="code" href="../../d8/d25/classrune_1_1Color.html#a5958b48f6e41cfabb99105e1b3dbab97">Blue</a>;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassColor_html_aa14c59ce06c2a70f4683df266e26a261"><div class="ttname"><a href="../../d2/d37/classColor.html#aa14c59ce06c2a70f4683df266e26a261">Color::alpha</a></div><div class="ttdeci">double alpha</div><div class="ttdoc">The Opacity Component.</div><div class="ttdef"><b>Definition:</b> color.h:26</div></div>
-<div class="ttc" id="aclassColor_html_a0a35e5de46315db828b5bd56866d9fea"><div class="ttname"><a href="../../d2/d37/classColor.html#a0a35e5de46315db828b5bd56866d9fea">Color::blue</a></div><div class="ttdeci">double blue</div><div class="ttdoc">The Blue component.</div><div class="ttdef"><b>Definition:</b> color.h:24</div></div>
-<div class="ttc" id="aclassColor_html_a2337ea72bc849039f73077d00ab42bbb"><div class="ttname"><a href="../../d2/d37/classColor.html#a2337ea72bc849039f73077d00ab42bbb">Color::red</a></div><div class="ttdeci">double red</div><div class="ttdoc">The Red component.</div><div class="ttdef"><b>Definition:</b> color.h:20</div></div>
-<div class="ttc" id="aclassColor_html_a7bc662a92370952bf21058bc7d1e7965"><div class="ttname"><a href="../../d2/d37/classColor.html#a7bc662a92370952bf21058bc7d1e7965">Color::Blue</a></div><div class="ttdeci">static Color Blue</div><div class="ttdef"><b>Definition:</b> color.h:31</div></div>
+<div class="ttc" id="aclassrune_1_1Color_html"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html">rune::Color</a></div><div class="ttdoc">A color object to be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> color.h:18</div></div>
+<div class="ttc" id="aclassrune_1_1Color_html_a5958b48f6e41cfabb99105e1b3dbab97"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html#a5958b48f6e41cfabb99105e1b3dbab97">rune::Color::Blue</a></div><div class="ttdeci">static Color Blue</div><div class="ttdef"><b>Definition:</b> color.h:33</div></div>
+<div class="ttc" id="aclassrune_1_1Color_html_af389c727b8048b2118d019975cd4733f"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html#af389c727b8048b2118d019975cd4733f">rune::Color::red</a></div><div class="ttdeci">double red</div><div class="ttdoc">The Red component.</div><div class="ttdef"><b>Definition:</b> color.h:22</div></div>
+<div class="ttc" id="aclassrune_1_1Color_html_aa730d371919c74f0e8fb4261bf4f6799"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html#aa730d371919c74f0e8fb4261bf4f6799">rune::Color::alpha</a></div><div class="ttdeci">double alpha</div><div class="ttdoc">The Opacity Component.</div><div class="ttdef"><b>Definition:</b> color.h:28</div></div>
+<div class="ttc" id="aclassrune_1_1Color_html_a8a102c8489cc7d8b3ac83bc13b79b44c"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html#a8a102c8489cc7d8b3ac83bc13b79b44c">rune::Color::green</a></div><div class="ttdeci">double green</div><div class="ttdoc">The Green component.</div><div class="ttdef"><b>Definition:</b> color.h:24</div></div>
+<div class="ttc" id="aclassrune_1_1Color_html_ad78e4d08f8aefd04098a0f7ae8162648"><div class="ttname"><a href="../../d8/d25/classrune_1_1Color.html#ad78e4d08f8aefd04098a0f7ae8162648">rune::Color::blue</a></div><div class="ttdeci">double blue</div><div class="ttdoc">The Blue component.</div><div class="ttdef"><b>Definition:</b> color.h:26</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
-<div class="ttc" id="aclassColor_html"><div class="ttname"><a href="../../d2/d37/classColor.html">Color</a></div><div class="ttdoc">A color object to be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> color.h:16</div></div>
-<div class="ttc" id="aclassColor_html_a0398a30128909996780fce10e039ac24"><div class="ttname"><a href="../../d2/d37/classColor.html#a0398a30128909996780fce10e039ac24">Color::green</a></div><div class="ttdeci">double green</div><div class="ttdoc">The Green component.</div><div class="ttdef"><b>Definition:</b> color.h:22</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdef"><b>Definition:</b> mat3.h:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

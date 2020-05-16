@@ -11,14 +11,14 @@ SceneLayer::SceneLayer(bool physics, float brightness, float opacity)
   layerOpacity = opacity;
   layerBrightness = brightness;
 
-  globalLightColor = Color(255,255,255);
+  globalLightColor = rune::Color(255,255,255);
 
 }
 
 /**
  * @param object GameObject to add to the scene on this layer.
 */
-void SceneLayer::addToLayer(GameObject* object)
+void SceneLayer::addToLayer(rune::GameObject* object)
 {
 
   objects.push_back(object);
@@ -40,7 +40,7 @@ void SceneLayer::addToLayer(ParticleEmitter* object)
 /**
  * @return An array of pointers to the objects on this layer.
 */
-std::vector<GameObject*> SceneLayer::getObjects(void)
+std::vector<rune::GameObject*> SceneLayer::getObjects(void)
 {
   return objects;
 }

@@ -26,7 +26,7 @@ private:
 
   bool m_mirror;
 
-  Clock m_animationClock;
+  rune::Clock m_animationClock;
 
   std::string m_filePath;
   Texture* m_animationSheet;

@@ -1,5 +1,6 @@
+#pragma once
 /**
- * @class Clock
+ * @class rune::Clock
  * @brief A clock that can be used to tell how much time has passed.
  * 
  * @author Thomas Montano
@@ -11,6 +12,8 @@
 
 #include "core.h"
 #include <time.h>
+
+namespace rune{
 
 class RUNE_ENGINE Clock
 {
@@ -29,5 +32,6 @@ public:
   ///Reset the clock so that the total amount of time pass equals 0.
   void reset();
 };
+}
 
 #endif

@@ -8,7 +8,7 @@
  * @param dissolutionRate The time in seconds that a particle should exist before it gets deleted.
  * @param gravity The gravity vector each particle will be subjected to.
 */
-ParticleEmitter::ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, Color color, int dissolutionRate, rune::Vec2 gravity) : m_pixelBaseColor(color)
+ParticleEmitter::ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, rune::Color color, int dissolutionRate, rune::Vec2 gravity) : m_pixelBaseColor(color)
 {
   m_startPos = startPos;
   m_initVel = initVel;

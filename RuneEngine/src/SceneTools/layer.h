@@ -17,7 +17,6 @@
 #include "core.h"
 #include <Entities\gameobject.h>
 #include <Entities\gameUI.h>
-#include "messageManager.h"
 #include <Entities\particleEmitter.h>
 #include <Physics\rigidBody.h>
 
@@ -26,7 +25,7 @@ class RUNE_ENGINE SceneLayer : public Drawable
 private:
   bool hasPhysics;
 
-  std::vector<GameObject*> objects;
+  std::vector<rune::GameObject*> objects;
   std::vector<ParticleEmitter*> particles;
   std::vector<RigidBody*> objectRigidBodies;
 
@@ -35,7 +34,7 @@ private:
   float layerOpacity;
   float layerBrightness;
 
-  Color globalLightColor;
+  rune::Color globalLightColor;
   float layerLighting;
 
   virtual void draw(RenderWindow&);
@@ -45,7 +44,7 @@ public:
   SceneLayer(bool hasPhysics, float brightness = 1.0, float opacity = 1.0);
 
   ///Adds a GameObject to the layer.
-  void addToLayer(GameObject* object);
+  void addToLayer(rune::GameObject* object);
 
   ///Adds a particle emitter to the layer.
   void addToLayer(ParticleEmitter* object);
@@ -57,7 +56,7 @@ public:
   int getTotalSize(void);
 
   ///Returns an array of pointers to the GameObjects stored in the scene.
-  std::vector<GameObject*> getObjects(void);
+  std::vector<rune::GameObject*> getObjects(void);
 
   ///Returns an array of pointers to the rigid body elements currently stored in the scene.
   std::vector<RigidBody*> getRigidBodies(void);
@@ -66,5 +65,6 @@ public:
   void setOpacity(float opacity);
 
 };
+
 
 #endif

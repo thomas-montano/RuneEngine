@@ -10,7 +10,7 @@
  * @param mass Mass of the object in units relative to the game. (0 mass = infinite mass)
  * @param gravity Gravity vector that the object will be subject to.
 */
-void GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
+void rune::GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
 {
 
   m_objectSprite.setOrigin(rune::Vec2(0.5*width,0.5*height));
@@ -38,7 +38,7 @@ void GameObject::objectInit(float xPos, float yPos, int width, int height, std::
 
 }
 
-void GameObject::draw(RenderWindow& window)
+void rune::GameObject::draw(RenderWindow& window)
 {
 
   window.draw(m_objectSprite);
@@ -51,7 +51,7 @@ void GameObject::draw(RenderWindow& window)
  * @param frameRate the rate in Hz that the animation will be played
  * @param fileName Path to the sprite sheet relative to the top level main function.
 */
-void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName)
+void rune::GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName)
 {
 
   /*ObjectAnimation* newAnimation = new ObjectAnimation;
@@ -74,7 +74,7 @@ void GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std:
 /**
  * @param animation Integer index in the animation array that refers to the order in which the animations where loaded
 */
-void GameObject::playAnimation(int animation)
+void rune::GameObject::playAnimation(int animation)
 {
 
   /*ObjectAnimation* currentAnimation = animations[animation];
@@ -99,7 +99,7 @@ void GameObject::playAnimation(int animation)
 /**
  * @param mirror Whether or not the sprite should be mirrored vertically.
 */
-void GameObject::mirrorSprite(bool mirror)
+void rune::GameObject::mirrorSprite(bool mirror)
 {
   m_mirrorSprite = mirror;
 }
@@ -107,7 +107,7 @@ void GameObject::mirrorSprite(bool mirror)
 /**
  * @param alpha coefficient of linear interpolation
 */
-void GameObject::updatePosition(float alpha)
+void rune::GameObject::updatePosition(float alpha)
 {
   rune::Vec2 oldPosition = m_objectRigidBody.getPreviousPosition();
   rune::Vec2 currentPos = m_objectRigidBody.getPosition();
@@ -122,24 +122,24 @@ void GameObject::updatePosition(float alpha)
 
 }
 
-void GameObject::update(void)
+void rune::GameObject::update(void)
 {
 
   return;
 }
 
-void GameObject::start(void)
+void rune::GameObject::start(void)
 {
 
   return;
 }
 
-RigidBody* GameObject::getRigidBody(void)
+RigidBody* rune::GameObject::getRigidBody(void)
 {
   return &m_objectRigidBody;
 }
 
-std::vector<collision> GameObject::getCollisions(void)
+std::vector<collision> rune::GameObject::getCollisions(void)
 {
   return m_objectRigidBody.getCollisions();
 }
@@ -147,7 +147,7 @@ std::vector<collision> GameObject::getCollisions(void)
 /**
  * @param angle Angle in degrees that the object should be rotated to.
 */
- void GameObject::setRotation(float angle)
+ void rune::GameObject::setRotation(float angle)
  {
    m_objectRigidBody.setRotation(angle);
  }
@@ -155,12 +155,12 @@ std::vector<collision> GameObject::getCollisions(void)
 /**
  * @param layer SceneLayer object that should be referenced by the game object
 */
-void GameObject::setLayer(SceneLayer* layer)
+void rune::GameObject::setLayer(SceneLayer* layer)
 {
   myLayer = layer;
 }
 
-SceneLayer* GameObject::getLayer(void)
+SceneLayer* rune::GameObject::getLayer(void)
 {
   return myLayer;
 }
