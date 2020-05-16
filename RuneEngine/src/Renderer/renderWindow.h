@@ -46,7 +46,7 @@ public:
   bool isOpen(void);
 
   ///Gets the current size of the RenderWindow.
-  Vec2 getSize(void);
+  rune::Vec2 getSize(void);
 
   ///Enables or disables Vsync.
   void enableVsync(bool enable);

@@ -27,7 +27,7 @@ void GameUI::createButton(float posX, float posY, float width, float height)
     //m_uiObject.setTextureRect(IntRect(0,0,120,60));
   }
 
-  m_uiObject.setPosition(Vec2(m_posX,m_posY));
+  m_uiObject.setPosition(rune::Vec2(m_posX,m_posY));
 
 }
 
@@ -46,7 +46,7 @@ Sprite GameUI::getDrawable(void)
  * @param mouseEvent The event triggered by the mouse click.
  * @return Whether or not the button was clicked.
 */
-bool GameUI::isClicked(Vec2 mouseLocation, Event mouseEvent)
+bool GameUI::isClicked(rune::Vec2 mouseLocation, Event mouseEvent)
 {
 
   int My = mouseLocation.y;

@@ -29,7 +29,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> boundingBoxe
 void resolveCollisions(std::vector<collision>);
 
 //Correct the position of the object each frame so that it doesn't look like two objects are overlapping.
-void positionalCorrection(RigidBody* object1, RigidBody* object2, double penetration, Vec2 normal);
+void positionalCorrection(RigidBody* object1, RigidBody* object2, double penetration, rune::Vec2 normal);
 
 ///Solve for the hypotenuse given the two sides of a triangle.
 double pythagoreanSolve(double,double);

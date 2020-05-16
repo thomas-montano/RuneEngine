@@ -11,7 +11,7 @@
 
 #include "core.h"
 #include <vector>
-#include <Math\vec2.h>
+#include <Math\Vec2.h>
 #include <Renderer\drawable.h>
 #include <Renderer\renderWindow.h>
 #include <Renderer\rectangleShape.h>
@@ -25,9 +25,9 @@ struct collision
 
     RigidBody* objectOne;
     RigidBody* objectTwo;
-    Vec2 normalVector;
-    Vec2 contactVectorBox1;
-    Vec2 contactVectorBox2;
+    rune::Vec2 normalVector;
+    rune::Vec2 contactVectorBox1;
+    rune::Vec2 contactVectorBox2;
     double depth;
 
 };
@@ -36,8 +36,8 @@ struct collision
 struct AABB
 {
 
-  Vec2 min;
-  Vec2 max;
+  rune::Vec2 min;
+  rune::Vec2 max;
 
 };
 
@@ -45,12 +45,12 @@ struct AABB
 struct body
 {
 
-  Vec2 vertexes[4]; ///Specific Vertexes
+  rune::Vec2 vertexes[4]; ///Specific Vertexes
   AABB boundingBox; //Broad phase Minimum bounding box
   double xPos; //X position in world coordinates
   double yPos; //Y Position in world coordinates
-  Vec2 oldPosition; //Previous position in world coordinates
-  Vec2 velocity; //Velocity
+  rune::Vec2 oldPosition; //Previous position in world coordinates
+  rune::Vec2 velocity; //Velocity
   double invMass; // 1/mass of the object
   double gravityFactor; //How much gravity does this object have
   double restitution = 0; //How bouncy, between 0 and 1
@@ -79,8 +79,8 @@ private:
     /*virtual void draw(RenderWindow& window)
     {
 
-        drawBox.setPosition(Vec2(objectBody.xPos,objectBody.yPos));
-        drawBox.setSize(Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
+        drawBox.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
+        drawBox.setSize(rune::Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
 
         /*AABB.setFillColor(sf::Color::Transparent);
         AABB.setOutlineThickness(-.5);
@@ -103,7 +103,7 @@ public:
     void setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation);
 
     ///Set the origin of the rigid body.
-    void setOrigin(Vec2 newOrigin);
+    void setOrigin(rune::Vec2 newOrigin);
 
     ///Recalculate the AABB based on the rigid body position.
     void updateAABB();
@@ -118,16 +118,16 @@ public:
     void setRotation(double angle);
 
     ///Overwrite the position of the rigid body to be something new.
-    void setPosition(Vec2);
+    void setPosition(rune::Vec2);
 
     ///Add some vector to the current position.
-    void addPosition(Vec2 newPos);
+    void addPosition(rune::Vec2 newPos);
 
     //Get the current rigid body position
-    Vec2 getPosition(void);
+    rune::Vec2 getPosition(void);
     
     ///Add to the objects current velocity vector.
-    void addVelocity(Vec2);
+    void addVelocity(rune::Vec2);
 
     ///Update the position of the object based on collisions and velocities.
     void updatePosition(double dT);
@@ -136,13 +136,13 @@ public:
     double getGravity(void);
 
     ///Get the current velocity of the rigid body.
-    Vec2 getVelocity(void);
+    rune::Vec2 getVelocity(void);
 
     ///Set the current velocity of the rigid body.
-    void setVelocity(Vec2);
+    void setVelocity(rune::Vec2);
 
     ///Return the current position of a vertex in world coordinates.
-    Vec2 getVertex(int);
+    rune::Vec2 getVertex(int);
 
     ///Get the inverse mass of the rigid body.
     double getInvMass(void);
@@ -172,10 +172,10 @@ public:
     double getHeight(void);
 
     ///Get the position that the rigid body was in last frame.
-    Vec2 getPreviousPosition(void);
+    rune::Vec2 getPreviousPosition(void);
 
     ///Set the position that the rigid body was in last frame.
-    void setPreviousPosition(Vec2);
+    void setPreviousPosition(rune::Vec2);
 
     ///Clear the list of collisions that rigid body is involved with.
     void clearCollisions(void);

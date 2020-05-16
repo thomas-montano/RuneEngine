@@ -87,9 +87,9 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">struct </span>particle</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> m_pixelPosition;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_pixelPosition;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../d2/d37/classColor.html">Color</a> m_pixelColor; <span class="comment">//Color of all particles</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> m_particleSpeed; <span class="comment">//Rate at which particles travel</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_particleSpeed; <span class="comment">//Rate at which particles travel</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">//RectangleShape m_particleSprite[4];</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> m_timeExisted; <span class="comment">//Time the pixel has existed in milliseconds</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  };</div>
@@ -99,38 +99,38 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d2/d37/classColor.html">Color</a> m_pixelBaseColor; <span class="comment">//Starting color, can apply modifiers later</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> m_canvasSize = <a class="code" href="../../d3/d95/classVec2.html">Vec2</a>(100,100);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_canvasSize = <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>(100,100);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> m_initVel;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> m_startPos; <span class="comment">//Location at which the particles start</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> m_gravity; <span class="comment">//Influence particle velocities</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_initVel;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_startPos; <span class="comment">//Location at which the particles start</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_gravity; <span class="comment">//Influence particle velocities</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::vector&lt;particle&gt; m_particles;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">//virtual void draw(sf::RenderTarget&amp; target, sf::RenderStates states) const;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../d0/dd2/classParticleEmitter.html">ParticleEmitter</a>(<a class="code" href="../../d3/d95/classVec2.html">Vec2</a> startPos, <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> initVel, <a class="code" href="../../d2/d37/classColor.html">Color</a> color, <span class="keywordtype">int</span> dissolutionRate = 5, <a class="code" href="../../d3/d95/classVec2.html">Vec2</a> gravity = <a class="code" href="../../d3/d95/classVec2.html">Vec2</a>(0,0));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../d0/dd2/classParticleEmitter.html">ParticleEmitter</a>(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> startPos, <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> initVel, <a class="code" href="../../d2/d37/classColor.html">Color</a> color, <span class="keywordtype">int</span> dissolutionRate = 5, <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> gravity = <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>(0,0));</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> setDissolutionRate(<span class="keywordtype">float</span> rate);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> setGravity(<a class="code" href="../../d3/d95/classVec2.html">Vec2</a> gravity);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> setGravity(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> gravity);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> fuel(<span class="keywordtype">int</span> particles);</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> dT);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="comment">//Set the region that the particle is allowed to move around in.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> setCanvasSize(<a class="code" href="../../d3/d95/classVec2.html">Vec2</a>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> setCanvasSize(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">//Set the position of the particles emitter.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> setPosition(<a class="code" href="../../d3/d95/classVec2.html">Vec2</a>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> setPosition(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassVec2_html"><div class="ttname"><a href="../../d3/d95/classVec2.html">Vec2</a></div><div class="ttdoc">2 x 1 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:15</div></div>
+<div class="ttc" id="aclassrune_1_1Vec2_html"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a></div><div class="ttdef"><b>Definition:</b> vec2.h:17</div></div>
 <div class="ttc" id="aclassParticleEmitter_html"><div class="ttname"><a href="../../d0/dd2/classParticleEmitter.html">ParticleEmitter</a></div><div class="ttdoc">Class responsible for creating particle emitters and managing the creation of particles.</div><div class="ttdef"><b>Definition:</b> particleEmitter.h:18</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
 <div class="ttc" id="aclassColor_html"><div class="ttname"><a href="../../d2/d37/classColor.html">Color</a></div><div class="ttdoc">A color object to be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> color.h:16</div></div>

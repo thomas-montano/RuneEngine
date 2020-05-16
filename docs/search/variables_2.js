@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['contactvectorbox1_582',['contactVectorBox1',['../dc/dc9/structcollision.html#af31343af4b0275000902e92e7444b61d',1,'collision']]],
-  ['contactvectorbox2_583',['contactVectorBox2',['../dc/dc9/structcollision.html#a7b345a940f3646a8f54b8a610c81094e',1,'collision']]]
+  ['contactvectorbox1_582',['contactVectorBox1',['../dc/dc9/structcollision.html#ade3655d50516c4c7be236b5254ae38a5',1,'collision']]],
+  ['contactvectorbox2_583',['contactVectorBox2',['../dc/dc9/structcollision.html#a7aa489a7050386ddeea3c94ac84b9511',1,'collision']]]
 ];

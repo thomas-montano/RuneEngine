@@ -12,6 +12,8 @@
 #include "core.h"
 #include <iostream>
 
+namespace rune{
+
 class RUNE_ENGINE Vec2
 {
 public:
@@ -56,24 +58,26 @@ public:
  * @memberof Vec2
  * @brief Dot product calculation of two vectors.
  */
-RUNE_ENGINE double dotProduct(Vec2 vector1, Vec2 vector2);
+RUNE_ENGINE double dotProduct(rune::Vec2 vector1, rune::Vec2 vector2);
 
 /**
  * @memberof Vec2
  * @brief Find the vector normal to a surface 
  */
-RUNE_ENGINE Vec2 findNormal(Vec2 axis);
+RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 axis);
 
 /**
  * @memberof Vec2
  * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
  */
-RUNE_ENGINE Vec2 normalize(Vec2);
+RUNE_ENGINE rune::Vec2 normalize(rune::Vec2);
 
 /**
  * @memberof Vec2
  * @brief Cross product of two vectors.
  */
-RUNE_ENGINE double crossProduct(Vec2, Vec2);
+RUNE_ENGINE double crossProduct(rune::Vec2, rune::Vec2);
+
+}
 
 #endif

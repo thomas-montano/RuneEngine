@@ -13,15 +13,15 @@
 void GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
 {
 
-  m_objectSprite.setOrigin(Vec2(0.5*width,0.5*height));
+  m_objectSprite.setOrigin(rune::Vec2(0.5*width,0.5*height));
 
   m_objectSprite.setTexture(filePath.c_str());
-  m_objectSprite.setSize(Vec2(width, height));
-  m_objectSprite.setPosition(Vec2(xPos, yPos));
+  m_objectSprite.setSize(rune::Vec2(width, height));
+  m_objectSprite.setPosition(rune::Vec2(xPos, yPos));
 
   m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
 
-  m_objectRigidBody.setPreviousPosition(Vec2(xPos,yPos));
+  m_objectRigidBody.setPreviousPosition(rune::Vec2(xPos,yPos));
 
   /*//If the actual texture can't be loaded, load the error texture
   //if(filePath != "")
@@ -109,10 +109,10 @@ void GameObject::mirrorSprite(bool mirror)
 */
 void GameObject::updatePosition(float alpha)
 {
-  Vec2 oldPosition = m_objectRigidBody.getPreviousPosition();
-  Vec2 currentPos = m_objectRigidBody.getPosition();
+  rune::Vec2 oldPosition = m_objectRigidBody.getPreviousPosition();
+  rune::Vec2 currentPos = m_objectRigidBody.getPosition();
 
-  Vec2 newPos = Vec2(oldPosition.x*alpha,oldPosition.y*alpha) + Vec2(currentPos.x*(1.0-alpha),currentPos.y*(1.0-alpha));
+  rune::Vec2 newPos = rune::Vec2(oldPosition.x*alpha,oldPosition.y*alpha) + rune::Vec2(currentPos.x*(1.0-alpha),currentPos.y*(1.0-alpha));
 
   m_objectSprite.setPosition(newPos);
 

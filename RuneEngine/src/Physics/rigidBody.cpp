@@ -13,10 +13,10 @@
 RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
 {
 
-    objectBody.vertexes[0] = Vec2(-0.5*width,0.5*height); //Top left
-    objectBody.vertexes[1] = Vec2(0.5*width,0.5*height); //Top right
-    objectBody.vertexes[2] = Vec2(0.5*width,-0.5*height); //Bottom right
-    objectBody.vertexes[3] = Vec2(-0.5*width,-0.5*height); //Bottom left
+    objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
+    objectBody.vertexes[1] = rune::Vec2(0.5*width,0.5*height); //Top right
+    objectBody.vertexes[2] = rune::Vec2(0.5*width,-0.5*height); //Bottom right
+    objectBody.vertexes[3] = rune::Vec2(-0.5*width,-0.5*height); //Bottom left
 
     objectBody.xPos = xPos;
     objectBody.yPos = yPos;
@@ -41,12 +41,12 @@ RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mas
         objectBody.invInertia = 1.0 / (mass*(pow(height,2)+pow(width,2))/12);
     }
 
-    objectBody.boundingBox.min = Vec2(xPos-0.5*width,yPos-0.5*height);
+    objectBody.boundingBox.min = rune::Vec2(xPos-0.5*width,yPos-0.5*height);
     objectBody.boundingBox.max = objectBody.vertexes[1] + objectBody.boundingBox.min;
 
     objectBody.angleOfRotation = 0;
     objectBody.angularVelocity = 0;
-    objectBody.velocity = Vec2(0,0);
+    objectBody.velocity = rune::Vec2(0,0);
 
 }
 
@@ -67,10 +67,10 @@ RigidBody::RigidBody()
 void RigidBody::setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
 {
 
-    objectBody.vertexes[0] = Vec2(-0.5*width,0.5*height); //Top left
-    objectBody.vertexes[1] = Vec2(0.5*width,0.5*height); //Top right
-    objectBody.vertexes[2] = Vec2(0.5*width,-0.5*height); //Bottom right
-    objectBody.vertexes[3] = Vec2(-0.5*width,-0.5*height); //Bottom left
+    objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
+    objectBody.vertexes[1] = rune::Vec2(0.5*width,0.5*height); //Top right
+    objectBody.vertexes[2] = rune::Vec2(0.5*width,-0.5*height); //Bottom right
+    objectBody.vertexes[3] = rune::Vec2(-0.5*width,-0.5*height); //Bottom left
 
     objectBody.xPos = xPos;
     objectBody.yPos = yPos;
@@ -95,26 +95,26 @@ void RigidBody::setUpObject(int width, int height, double xPos, double yPos, dou
         objectBody.invInertia = 1.0 / (mass*(pow(height,2)+pow(width,2))/12);
     }
 
-    /*objectBody.box.setPosition(Vec2(xPos,yPos));
-    objectBody.box.setSize(Vec2(width,height));
+    /*objectBody.box.setPosition(rune::Vec2(xPos,yPos));
+    objectBody.box.setSize(rune::Vec2(width,height));
     objectBody.box.setOrigin(0.5*width,0.5*height);
     objectBody.box.setFillColor(sf::Color(255,102,178,128));
     objectBody.box.setOutlineThickness(-1);
     objectBody.box.setOutlineColor(sf::Color::White);*/
 
-    objectBody.boundingBox.min = Vec2(xPos-0.5*width,yPos-0.5*height);
+    objectBody.boundingBox.min = rune::Vec2(xPos-0.5*width,yPos-0.5*height);
     objectBody.boundingBox.max = objectBody.vertexes[1] + objectBody.boundingBox.min;
 
     objectBody.angleOfRotation = 0;
     objectBody.angularVelocity = 0;
-    objectBody.velocity = Vec2(0,0);
+    objectBody.velocity = rune::Vec2(0,0);
 
 }
 
 /**
  * @param velocity Velocity vector to be added to the current object velocity.
 */
-void RigidBody::addVelocity(Vec2 velocity)
+void RigidBody::addVelocity(rune::Vec2 velocity)
 {
 
     objectBody.velocity.x += velocity.x;
@@ -125,7 +125,7 @@ void RigidBody::addVelocity(Vec2 velocity)
 /**
  * @param newVel Velocity vector that will override the current object velocity.
 */
-void RigidBody::setVelocity(Vec2 newVel)
+void RigidBody::setVelocity(rune::Vec2 newVel)
 {
     objectBody.velocity.x = newVel.x;
     objectBody.velocity.y = newVel.y;
@@ -149,7 +149,7 @@ void RigidBody::updatePosition(double dT)
 */
 /*sf::RectangleShape RigidBody::getDrawable(void)
 {
-    objectBody.box.setPosition(Vec2(objectBody.xPos,objectBody.yPos));
+    objectBody.box.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
     objectBody.box.setRotation(objectBody.angleOfRotation);
     
     return objectBody.box;
@@ -195,8 +195,8 @@ void RigidBody::updateAABB(void)
         yProjection = height*-cos((rotation)*(3.14/180)) + width*-cos((90+rotation)*(3.14/180));
     }
     
-    objectBody.boundingBox.min = Vec2(objectBody.xPos - 0.5*xProjection,objectBody.yPos-0.5*yProjection);
-    objectBody.boundingBox.max = Vec2(objectBody.xPos + 0.5*xProjection,objectBody.yPos+0.5*yProjection);
+    objectBody.boundingBox.min = rune::Vec2(objectBody.xPos - 0.5*xProjection,objectBody.yPos-0.5*yProjection);
+    objectBody.boundingBox.max = rune::Vec2(objectBody.xPos + 0.5*xProjection,objectBody.yPos+0.5*yProjection);
 
 }
 
@@ -259,7 +259,7 @@ AABB RigidBody::getBoundingBox(void)
 /**
  * @param newPos Set the position of the RigidBody in world coordinates.
 */
-void RigidBody::setPosition(Vec2 newPos)
+void RigidBody::setPosition(rune::Vec2 newPos)
 {
     objectBody.xPos = newPos.x;
     objectBody.yPos = newPos.y;
@@ -268,7 +268,7 @@ void RigidBody::setPosition(Vec2 newPos)
 /**
  * @param newPos Position vector to be added to the object's current position.
 */
-void RigidBody::addPosition(Vec2 newPos)
+void RigidBody::addPosition(rune::Vec2 newPos)
 {
     objectBody.xPos += newPos.x;
     objectBody.yPos += newPos.y;
@@ -277,29 +277,29 @@ void RigidBody::addPosition(Vec2 newPos)
 /**
  * @return A vector that corresponds to the RigidBody position.
 */
-Vec2 RigidBody::getPosition(void)
+rune::Vec2 RigidBody::getPosition(void)
 {
-    return Vec2(objectBody.xPos,objectBody.yPos);
+    return rune::Vec2(objectBody.xPos,objectBody.yPos);
 }
 
 /**
  * @param i The index of the RigidBody vertex starting in the top left and going counter clockwise around.
  * @return The location of the vertex in world coordinates.
 */
-Vec2 RigidBody::getVertex(int i)
+rune::Vec2 RigidBody::getVertex(int i)
 {
     double xPrime, yPrime;
     double x = objectBody.vertexes[i].x;
     double y = objectBody.vertexes[i].y;
     double angle = objectBody.angleOfRotation * (3.14/180);
 
-    Vec2 finalVertex;
+    rune::Vec2 finalVertex;
 
     xPrime = x * cos(angle) - y * sin(angle);
     yPrime = x * sin(angle) + y * cos(angle);
 
 
-    finalVertex = Vec2(xPrime,yPrime) + Vec2(objectBody.xPos,objectBody.yPos);
+    finalVertex = rune::Vec2(xPrime,yPrime) + rune::Vec2(objectBody.xPos,objectBody.yPos);
 
     return finalVertex;
 }
@@ -307,7 +307,7 @@ Vec2 RigidBody::getVertex(int i)
 /**
  * @return The velocity vector of the RigidBody.
 */
-Vec2 RigidBody::getVelocity(void)
+rune::Vec2 RigidBody::getVelocity(void)
 {
     return objectBody.velocity;
 }
@@ -363,7 +363,7 @@ double RigidBody::getInvIntertia(void)
 /**
  * @return The position vector of the RigidBody from last frame.
 */
-Vec2 RigidBody::getPreviousPosition(void)
+rune::Vec2 RigidBody::getPreviousPosition(void)
 {
     return objectBody.oldPosition;
 }
@@ -371,7 +371,7 @@ Vec2 RigidBody::getPreviousPosition(void)
 /**
  * @param newPos The position that the RigidBody was last frame.
 */
-void RigidBody::setPreviousPosition(Vec2 newPos)
+void RigidBody::setPreviousPosition(rune::Vec2 newPos)
 {
     objectBody.oldPosition.x = newPos.x;
     objectBody.oldPosition.y = newPos.y;

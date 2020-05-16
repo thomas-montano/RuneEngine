@@ -94,11 +94,11 @@ void RenderWindow::draw(Drawable& drawObject)
 }
 
 /**
- * @return A Vec2 corresponding to the size in pixels of the RenderWindow.
+ * @return A rune::Vec2 corresponding to the size in pixels of the RenderWindow.
 */
-Vec2 RenderWindow::getSize()
+rune::Vec2 RenderWindow::getSize()
 {
-  return Vec2(width,height);
+  return rune::Vec2(width,height);
 }
 
 /**

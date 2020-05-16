@@ -25,21 +25,21 @@ private:
 
   unsigned int buffer;
   unsigned int VAO;
-  Vec2 position;
-  Vec2 size;
+  rune::Vec2 position;
+  rune::Vec2 size;
 
-  Vec2 vertices[4];
+  rune::Vec2 vertices[4];
 
 public:
   virtual void draw(RenderWindow&);
   
   RectangleShape();
-  RectangleShape(Vec2 position, Vec2 Size);
+  RectangleShape(rune::Vec2 position, rune::Vec2 Size);
 
-  void addPosition(Vec2);
-  void setPosition(Vec2);
+  void addPosition(rune::Vec2);
+  void setPosition(rune::Vec2);
 
-  void setSize(Vec2);
+  void setSize(rune::Vec2);
 
 };
 

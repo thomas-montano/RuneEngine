@@ -11,7 +11,7 @@ void updatePhysics(std::vector<RigidBody*> objects, double dT)
   for(int i = 0; i < objects.size(); i++)
   {
     objects[i]->updatePosition(dT);
-    objects[i]->addVelocity(Vec2(0,-1*objects[i]->getGravity()));
+    objects[i]->addVelocity(rune::Vec2(0,-1*objects[i]->getGravity()));
   }
 
   //Sort the objects by vertical position so the top ones are checked first
@@ -135,17 +135,17 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
         if(xNormal < yNormal)
         {
           currentCollision.depth = std::abs(xNormal);
-          currentCollision.normalVector = normal1 < normal2 ? Vec2(-1,0):Vec2(1,0);
+          currentCollision.normalVector = normal1 < normal2 ? rune::Vec2(-1,0):rune::Vec2(1,0);
         }
         else if(xNormal > yNormal)
         {
           currentCollision.depth = std::abs(yNormal);
-          currentCollision.normalVector = normal3 < normal4 ? Vec2(0,1):Vec2(0,-1);
+          currentCollision.normalVector = normal3 < normal4 ? rune::Vec2(0,1):rune::Vec2(0,-1);
         }
         //Default to a zero vector normal
         else
         {
-          currentCollision.normalVector = Vec2(0,0);
+          currentCollision.normalVector = rune::Vec2(0,0);
         }
 
         //Add the resolved collision to the collision vector
@@ -174,7 +174,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
   for(int i = 0; i < possibleCollisions.size();i++)
   {
     collision currentCollision;
-    Vec2 normals[4];
+    rune::Vec2 normals[4];
     double penetrations[4] = {0.0};
 
     RigidBody object1 = *possibleCollisions[i].objectOne;
@@ -187,16 +187,16 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
     double maxProjBox2;
 
     //Axis P
-    normals[0] = findNormal(Vec2(object1.getVertex(1)-object1.getVertex(0)));
+    normals[0] = rune::findNormal(rune::Vec2(object1.getVertex(1)-object1.getVertex(0)));
 
     //Axis Q
-    normals[1] = findNormal(Vec2(object1.getVertex(2)-object1.getVertex(1)));
+    normals[1] = rune::findNormal(rune::Vec2(object1.getVertex(2)-object1.getVertex(1)));
 
     //Axis R
-    normals[2] = findNormal(Vec2(object2.getVertex(1)-object2.getVertex(0)));
+    normals[2] = rune::findNormal(rune::Vec2(object2.getVertex(1)-object2.getVertex(0)));
     
     //Axis S
-    normals[3] = findNormal(Vec2(object2.getVertex(2)-object2.getVertex(1)));
+    normals[3] = rune::findNormal(rune::Vec2(object2.getVertex(2)-object2.getVertex(1)));
 
     //One boolean for each of the four axes
     bool axisSeperation[4] = {false};
@@ -206,31 +206,31 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
     {
 
       //Default the min and max to be the first projection
-      minProjBox1 = maxProjBox1 = dotProduct(object1.getVertex(0),normals[j]);
-      minProjBox2 = maxProjBox2 = dotProduct(object2.getVertex(0),normals[j]);
+      minProjBox1 = maxProjBox1 = rune::dotProduct(object1.getVertex(0),normals[j]);
+      minProjBox2 = maxProjBox2 = rune::dotProduct(object2.getVertex(0),normals[j]);
 
       //Find the max and min point for each vertex on the current axis
       for(int k = 0; k < 4; k++)
       { 
 
-        if(dotProduct(object1.getVertex(k),normals[j]) < minProjBox1)
+        if(rune::dotProduct(object1.getVertex(k),normals[j]) < minProjBox1)
         {
-          minProjBox1 = dotProduct(object1.getVertex(k),normals[j]);
+          minProjBox1 = rune::dotProduct(object1.getVertex(k),normals[j]);
         }
 
-        if(dotProduct(object1.getVertex(k),normals[j]) > maxProjBox1)
+        if(rune::dotProduct(object1.getVertex(k),normals[j]) > maxProjBox1)
         {
-          maxProjBox1 = dotProduct(object1.getVertex(k),normals[j]);
+          maxProjBox1 = rune::dotProduct(object1.getVertex(k),normals[j]);
         }
 
-        if(dotProduct(object2.getVertex(k),normals[j]) < minProjBox2)
+        if(rune::dotProduct(object2.getVertex(k),normals[j]) < minProjBox2)
         {
-          minProjBox2 = dotProduct(object2.getVertex(k),normals[j]);
+          minProjBox2 = rune::dotProduct(object2.getVertex(k),normals[j]);
         }
 
-        if(dotProduct(object2.getVertex(k),normals[j]) > maxProjBox2)
+        if(rune::dotProduct(object2.getVertex(k),normals[j]) > maxProjBox2)
         {
-          maxProjBox2 = dotProduct(object2.getVertex(k),normals[j]);
+          maxProjBox2 = rune::dotProduct(object2.getVertex(k),normals[j]);
         }
 
       }
@@ -254,7 +254,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
       if(penetrations[j] <= currentCollision.depth)
       {
         currentCollision.depth = penetrations[j];
-        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? Vec2(normals[j].x,normals[j].y):Vec2(-1.0*normals[j].x, -1.0*normals[j].y);
+        currentCollision.normalVector = std::abs(minProjBox1 - maxProjBox2) < std::abs(minProjBox2 - maxProjBox1) ? rune::Vec2(normals[j].x,normals[j].y):rune::Vec2(-1.0*normals[j].x, -1.0*normals[j].y);
       }
 
     }
@@ -264,7 +264,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
     //Otherwise, its a vertex to face collision
     if(std::abs(static_cast<int>(object1.getOrientation())%90 - static_cast<int>(object2.getOrientation())%90) < 1)
     {
-      currentCollision.contactVectorBox1 = Vec2(-1*(object2.getPosition().x - object1.getPosition().x + (0.5*object1.getHeight()*currentCollision.normalVector.x)), object2.getPosition().y - object1.getPosition().y - (0.5*object1.getHeight()*currentCollision.normalVector.y));
+      currentCollision.contactVectorBox1 = rune::Vec2(-1*(object2.getPosition().x - object1.getPosition().x + (0.5*object1.getHeight()*currentCollision.normalVector.x)), object2.getPosition().y - object1.getPosition().y - (0.5*object1.getHeight()*currentCollision.normalVector.y));
       currentCollision.contactVectorBox2 = currentCollision.contactVectorBox1;
     }
     else
@@ -306,12 +306,12 @@ void resolveCollisions(std::vector<collision> collisions)
     RigidBody* object1 = collisions[i].objectOne;
     RigidBody* object2 = collisions[i].objectTwo;
 
-    Vec2 relativeV = Vec2(object2->getVelocity().x - object1->getVelocity().x, object2->getVelocity().y - object1->getVelocity().y);
-    Vec2 tangent = Vec2(relativeV.x - dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.x, relativeV.y - dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.y);
+    rune::Vec2 relativeV = rune::Vec2(object2->getVelocity().x - object1->getVelocity().x, object2->getVelocity().y - object1->getVelocity().y);
+    rune::Vec2 tangent = rune::Vec2(relativeV.x - rune::dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.x, relativeV.y - dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.y);
     
-    tangent = normalize(tangent);
+    tangent = rune::normalize(tangent);
 
-    double velAlongNormal = dotProduct(relativeV, collisions[i].normalVector);
+    double velAlongNormal = rune::dotProduct(relativeV, collisions[i].normalVector);
 
     if(velAlongNormal > 0)
     {
@@ -322,7 +322,7 @@ void resolveCollisions(std::vector<collision> collisions)
       double e = std::min(object1->getRestitution(),object2->getRestitution()); // Restitution factor
 
       double j = -(1 + e) * velAlongNormal;
-      double jt = -1*dotProduct(relativeV,tangent);
+      double jt = -1* rune::dotProduct(relativeV,tangent);
 
       jt /= object1->getInvMass() + object2->getInvMass();
       j /= (object1->getInvMass() + object2->getInvMass());
@@ -330,10 +330,10 @@ void resolveCollisions(std::vector<collision> collisions)
       double mu = pythagoreanSolve(object1->getStaticFriction(),object2->getStaticFriction());
 
       //Apply friction force
-      Vec2 frictionImpulse;
+      rune::Vec2 frictionImpulse;
       if(std::abs(jt) < j * mu)
       {
-        frictionImpulse = Vec2(jt*tangent.x, jt * tangent.y);
+        frictionImpulse = rune::Vec2(jt*tangent.x, jt * tangent.y);
       }
       else
       {
@@ -345,23 +345,23 @@ void resolveCollisions(std::vector<collision> collisions)
           tangent.y = 0;
         }
 
-        frictionImpulse = Vec2(jt*tangent.x*dynamicFriction, jt * tangent.y*dynamicFriction);
+        frictionImpulse = rune::Vec2(jt*tangent.x*dynamicFriction, jt * tangent.y*dynamicFriction);
       }
       
       //HandleFriction
-      object1->addVelocity(Vec2(-1*object1->getInvMass()*frictionImpulse.x,-1*object1->getInvMass()*frictionImpulse.y));
-      object2->addVelocity(Vec2(object2->getInvMass()*frictionImpulse.x,object2->getInvMass()*frictionImpulse.y));
+      object1->addVelocity(rune::Vec2(-1*object1->getInvMass()*frictionImpulse.x,-1*object1->getInvMass()*frictionImpulse.y));
+      object2->addVelocity(rune::Vec2(object2->getInvMass()*frictionImpulse.x,object2->getInvMass()*frictionImpulse.y));
 
       //Push objects away from each other
-      Vec2 impulse = Vec2(j * collisions[i].normalVector.x, j * collisions[i].normalVector.y);
-      object1->addVelocity(Vec2(-1*object1->getInvMass()*impulse.x,-1*object1->getInvMass()*impulse.y));
-      object2->addVelocity(Vec2(object2->getInvMass()*impulse.x,object2->getInvMass()*impulse.y));
+      rune::Vec2 impulse = rune::Vec2(j * collisions[i].normalVector.x, j * collisions[i].normalVector.y);
+      object1->addVelocity(rune::Vec2(-1*object1->getInvMass()*impulse.x,-1*object1->getInvMass()*impulse.y));
+      object2->addVelocity(rune::Vec2(object2->getInvMass()*impulse.x,object2->getInvMass()*impulse.y));
 
       /*
       //Handle rotation
-      double jr = -(1 + e)*dotProduct(relativeV,tangent);
+      double jr = -(1 + e)*rune::dotProduct(relativeV,tangent);
       jr /= object1->getInvMass() + object2->getInvMass() + pow(crossProduct(collisions[i].contactVectorBox1,tangent),2)*object1->getInvIntertia() + pow(crossProduct(collisions[i].contactVectorBox2,tangent),2)*object2->getInvIntertia();
-      impulse = Vec2(jr * collisions[i].normalVector.x, jr * collisions[i].normalVector.y);
+      impulse = rune::Vec2(jr * collisions[i].normalVector.x, jr * collisions[i].normalVector.y);
 
       collisions[i].objectOne->addAngularVelocity(-1*crossProduct(collisions[i].contactVectorBox1,impulse));
       collisions[i].objectTwo->addAngularVelocity(-1*crossProduct(collisions[i].contactVectorBox2,impulse));*/
@@ -375,7 +375,7 @@ void resolveCollisions(std::vector<collision> collisions)
  * @param object2 The seconds object in the collision.
  * @param normal The normal vector for the collision. 
 */
-void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, Vec2 normal)
+void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, rune::Vec2 normal)
 {
 
   const double percent = 1; // usually 20% to 80%
@@ -383,9 +383,9 @@ void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, 
 
   double correctionFactor = (std::max( depth - slop, 0.01 ) / (object1->getInvMass() + object2->getInvMass())) * percent;
 
-  Vec2 correction = Vec2(normal.x*correctionFactor,normal.y*correctionFactor);
-  object1->addPosition(Vec2(object1->getInvMass() * correction.x,object1->getInvMass() * correction.y));
-  object2->addPosition(Vec2(-1*object2->getInvMass() * correction.x,-1*object2->getInvMass() * correction.y));
+  rune::Vec2 correction = rune::Vec2(normal.x*correctionFactor,normal.y*correctionFactor);
+  object1->addPosition(rune::Vec2(object1->getInvMass() * correction.x,object1->getInvMass() * correction.y));
+  object2->addPosition(rune::Vec2(-1*object2->getInvMass() * correction.x,-1*object2->getInvMass() * correction.y));
 
 }
 

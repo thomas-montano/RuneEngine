@@ -22,7 +22,7 @@ class RUNE_ENGINE Sprite : public Drawable
 private:
   Texture spriteTexture;
   Shader spriteShader;
-  Vec2 origin;
+  rune::Vec2 origin;
 
   float vertices[32] = {0};
 
@@ -36,30 +36,30 @@ private:
   unsigned int EBO;
   unsigned int VAO;
 
-  Vec2 m_position;
-  Vec2 m_size;
+  rune::Vec2 m_position;
+  rune::Vec2 m_size;
 
 public:
   ///Default empty constructor for generating a sprite
   Sprite();
   ///Default constructor that initializes the sprite to a drawable state.
-  Sprite(Vec2 dimensions,Vec2 position, std::string spriteLocation);
+  Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation);
   ///Draw overload so that sprite can be displayed to the screen.
   virtual void draw(RenderWindow&);
   ///Set the texture of the sprite.
   void setTexture(std::string texture);
   ///Add to the current position of the sprite.
-  void addPosition(Vec2 newPos);
+  void addPosition(rune::Vec2 newPos);
   ///Overwrite the position of the sprite.
-  void setPosition(Vec2 newPos);
+  void setPosition(rune::Vec2 newPos);
   ///Set the offset of the sprite with respect to the bottom left corner.
-  void setOrigin(Vec2 newOrigin);
+  void setOrigin(rune::Vec2 newOrigin);
   ///Set the dimensions of the sprite.
-  void setSize(Vec2);
+  void setSize(rune::Vec2);
   ///Get the current position of the center of the sprite.
-  Vec2 getPosition(void);
+  rune::Vec2 getPosition(void);
   ///Get the current dimensions of the sprite.
-  Vec2 getSize(void);
+  rune::Vec2 getSize(void);
 
 };
 

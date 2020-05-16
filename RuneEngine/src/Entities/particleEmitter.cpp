@@ -8,7 +8,7 @@
  * @param dissolutionRate The time in seconds that a particle should exist before it gets deleted.
  * @param gravity The gravity vector each particle will be subjected to.
 */
-ParticleEmitter::ParticleEmitter(Vec2 startPos, Vec2 initVel, Color color, int dissolutionRate, Vec2 gravity) : m_pixelBaseColor(color)
+ParticleEmitter::ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, Color color, int dissolutionRate, rune::Vec2 gravity) : m_pixelBaseColor(color)
 {
   m_startPos = startPos;
   m_initVel = initVel;
@@ -51,7 +51,7 @@ void ParticleEmitter::fuel(int particles)
     float randomFactor = std::abs(m_initVel.y);
     randomFactor = rand()%((int)randomFactor*1000) - 500*randomFactor;
     
-    newParticle.m_particleSpeed = Vec2(m_initVel.x+randomFactor/1000.0,m_initVel.y);
+    newParticle.m_particleSpeed = rune::Vec2(m_initVel.x+randomFactor/1000.0,m_initVel.y);
 
     m_particles.push_back(newParticle);
   }
@@ -141,7 +141,7 @@ void ParticleEmitter::setDissolutionRate(float rate)
 /**
  * @param gravity The gravity vector that each particle will be subjected to.
 */
-void ParticleEmitter::setGravity(Vec2 gravity)
+void ParticleEmitter::setGravity(rune::Vec2 gravity)
 {
   m_gravity = gravity;
 }
@@ -149,7 +149,7 @@ void ParticleEmitter::setGravity(Vec2 gravity)
 /**
  * @param canvas A vector describing the area that a particle will be allowed to exist in.
 */
-void ParticleEmitter::setCanvasSize(Vec2 canvas)
+void ParticleEmitter::setCanvasSize(rune::Vec2 canvas)
 {
   m_canvasSize = canvas;
 }
@@ -157,6 +157,6 @@ void ParticleEmitter::setCanvasSize(Vec2 canvas)
 /**
  * @param newPos The new position that the particle emitter should start generating particle from.
 */
-void ParticleEmitter::setPosition(Vec2 newPos)
+void ParticleEmitter::setPosition(rune::Vec2 newPos)
 {  m_startPos = newPos;
 }

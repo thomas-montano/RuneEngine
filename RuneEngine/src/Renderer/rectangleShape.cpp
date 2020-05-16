@@ -11,15 +11,15 @@ RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rec
  * @param newPosition The position of the new RectangleShape with respect to the bottom left corner.
  * @param newSize The size of the new RectangleShape.
 */
-RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
+RectangleShape::RectangleShape(rune::Vec2 newPosition, rune::Vec2 newSize) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
 {
   position = newPosition;
   size = newSize;  
 
-  vertices[0] = Vec2(position.x, position.y+size.y);
-  vertices[1] = Vec2(position.x + size.x, position.y+size.y);
-  vertices[2] = Vec2(position.x + size.x, position.y);
-  vertices[3] = Vec2(position.x, position.y);
+  vertices[0] = rune::Vec2(position.x, position.y+size.y);
+  vertices[1] = rune::Vec2(position.x + size.x, position.y+size.y);
+  vertices[2] = rune::Vec2(position.x + size.x, position.y);
+  vertices[3] = rune::Vec2(position.x, position.y);
 
   //Generate and bind vertex array object
   glGenVertexArrays(1, &VAO);
@@ -41,7 +41,7 @@ RectangleShape::RectangleShape(Vec2 newPosition, Vec2 newSize) : rectangleShader
 void RectangleShape::draw(RenderWindow& window)
 {
 
-  Vec2 windowSize = window.getSize();
+  rune::Vec2 windowSize = window.getSize();
   const int vertexes = 12;
 
   //Set the current shader to the rectangle shader
@@ -75,7 +75,7 @@ void RectangleShape::draw(RenderWindow& window)
 /**
  * @param newPos The new position of the RectangleShape with respect to the bottom left corner.
 */
-void RectangleShape::addPosition(Vec2 newPos)
+void RectangleShape::addPosition(rune::Vec2 newPos)
 {
   position.x += newPos.x;
   position.y += newPos.y;
@@ -84,13 +84,13 @@ void RectangleShape::addPosition(Vec2 newPos)
 /**
  * @param newSize The new size of the RectangleShape.
 */
-void RectangleShape::setPosition(Vec2 newSize)
+void RectangleShape::setPosition(rune::Vec2 newSize)
 {
   position.x = newSize.x;
   position.y = newSize.y;
 }
 
-void RectangleShape::setSize(Vec2 newSize)
+void RectangleShape::setSize(rune::Vec2 newSize)
 {
   size = newSize;
 }

@@ -32,7 +32,7 @@ public:
   Sprite getDrawable();
 
   ///Determines whether or not the UI element has been clicked on.
-  bool isClicked(Vec2, Event mouseEvent);
+  bool isClicked(rune::Vec2, Event mouseEvent);
 };
 
 #endif

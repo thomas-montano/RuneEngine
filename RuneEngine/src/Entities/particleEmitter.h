@@ -22,9 +22,9 @@ private:
   ///Data container for each individual particle.
   struct particle
   {
-    Vec2 m_pixelPosition;
+    rune::Vec2 m_pixelPosition;
     Color m_pixelColor; //Color of all particles
-    Vec2 m_particleSpeed; //Rate at which particles travel
+    rune::Vec2 m_particleSpeed; //Rate at which particles travel
     //RectangleShape m_particleSprite[4];
     int m_timeExisted; //Time the pixel has existed in milliseconds
   };
@@ -34,11 +34,11 @@ private:
 
   Color m_pixelBaseColor; //Starting color, can apply modifiers later
 
-  Vec2 m_canvasSize = Vec2(100,100);
+  rune::Vec2 m_canvasSize = rune::Vec2(100,100);
 
-  Vec2 m_initVel;
-  Vec2 m_startPos; //Location at which the particles start
-  Vec2 m_gravity; //Influence particle velocities
+  rune::Vec2 m_initVel;
+  rune::Vec2 m_startPos; //Location at which the particles start
+  rune::Vec2 m_gravity; //Influence particle velocities
   
   std::vector<particle> m_particles;
 
@@ -47,13 +47,13 @@ private:
 
 public:
   ///Default constructor for a particle emitter that establishes position, color, and velocity constraints.
-  ParticleEmitter(Vec2 startPos, Vec2 initVel, Color color, int dissolutionRate = 5, Vec2 gravity = Vec2(0,0));
+  ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, Color color, int dissolutionRate = 5, rune::Vec2 gravity = rune::Vec2(0,0));
   
   ///The amount of time in seconds that a particle will exist before it gets destroyed.
   void setDissolutionRate(float rate);
 
   ///Sets the gravity that a particle will be subjected to.
-  void setGravity(Vec2 gravity);
+  void setGravity(rune::Vec2 gravity);
 
   ///Spawn particles from the particles emitter.
   void fuel(int particles);
@@ -62,10 +62,10 @@ public:
   void update(float dT);
 
   //Set the region that the particle is allowed to move around in.
-  void setCanvasSize(Vec2);
+  void setCanvasSize(rune::Vec2);
 
   //Set the position of the particles emitter.
-  void setPosition(Vec2);
+  void setPosition(rune::Vec2);
 
 };
 
