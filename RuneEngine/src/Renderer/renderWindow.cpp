@@ -7,7 +7,7 @@
  * @param newHeight The height of the window in pixels to be created.
  * @param title The title of the window to be displayed at the top.
 */
-RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
+rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 {
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -46,7 +46,7 @@ RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 
 }
 
-RenderWindow::~RenderWindow(void)
+rune::RenderWindow::~RenderWindow(void)
 {
 
   //Shutdown
@@ -57,30 +57,39 @@ RenderWindow::~RenderWindow(void)
 
 }
 
+
+/**
+ * \param newTitle The title that should be displayed on the window.
+ */
+void rune::RenderWindow::setWindowTitle(std::string newTitle)
+{
+  glfwSetWindowTitle(GLwindow,newTitle.c_str());
+}
+
 /**
  * @param event the Event object for the events to be stored in.
 */
-void RenderWindow::pollEvents(rune::Event& event)
+void rune::RenderWindow::pollEvents(rune::Event& event)
 {
 
   glfwPollEvents();
 
   if(glfwWindowShouldClose(GLwindow))
   {
-    event.type = rune::Closed;
+    event.type = rune::EventType::WindowClose;
     windowOpen = false;
   }
 
 }
 
-void RenderWindow::display(void)
+void rune::RenderWindow::display(void)
 {
 
   glfwSwapBuffers(GLwindow);
 
 }
 
-void RenderWindow::clear(rune::Color clearColor)
+void rune::RenderWindow::clear(rune::Color clearColor)
 {
 
   glClearColor(clearColor.red/255.0, clearColor.green / 255.0, clearColor.blue / 255.0, clearColor.alpha / 255.0);
@@ -90,7 +99,7 @@ void RenderWindow::clear(rune::Color clearColor)
 /**
  * @return Whether or not the RenderWindow is currently open.
 */
-bool RenderWindow::isOpen()
+bool rune::RenderWindow::isOpen()
 {
   if(!windowOpen)
   {
@@ -100,7 +109,7 @@ bool RenderWindow::isOpen()
   return windowOpen;
 }
 
-void RenderWindow::close(void)
+void rune::RenderWindow::close(void)
 {
   glfwSetWindowShouldClose(GLwindow, true);
 }
@@ -108,7 +117,7 @@ void RenderWindow::close(void)
 /**
  * @param drawObject Drawable that should be displayed on the screen.
 */
-void RenderWindow::draw(Drawable& drawObject)
+void rune::RenderWindow::draw(Drawable& drawObject)
 {
   drawObject.draw(*this);
 }
@@ -116,7 +125,7 @@ void RenderWindow::draw(Drawable& drawObject)
 /**
  * @return A rune::Vec2 corresponding to the size in pixels of the RenderWindow.
 */
-rune::Vec2 RenderWindow::getSize()
+rune::Vec2 rune::RenderWindow::getSize()
 {
   return rune::Vec2(width,height);
 }
@@ -124,7 +133,7 @@ rune::Vec2 RenderWindow::getSize()
 /**
  * @param enable Whether or not Vsync should be turned on.
 */
-void RenderWindow::enableVsync(bool enable)
+void rune::RenderWindow::enableVsync(bool enable)
 { 
   if(enable)
   {

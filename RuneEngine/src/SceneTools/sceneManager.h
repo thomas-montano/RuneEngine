@@ -1,5 +1,5 @@
 /**
- * @class SceneManager
+ * @class rune::SceneManager
  * @brief The state manager is responsible for handling the transfer of the
  * current state pointer that refers to the overwritten state class
  * for each instance of the game.
@@ -14,6 +14,8 @@
 #include "core.h"
 #include <vector>
 #include "gameScene.h"
+
+namespace rune{
 
 class RUNE_ENGINE SceneManager
 {
@@ -38,5 +40,6 @@ public:
   ///Get the total number of scenes currently stored in the SceneManger scene buffer.
   int getNumScenes(void);
 };
+}
 
 #endif

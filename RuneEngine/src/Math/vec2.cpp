@@ -9,14 +9,14 @@ rune::Vec2::Vec2() : x(0), y(0)
  * \param newX The initial value for the X component.
  * \param newY The initial value for the Y component.
  */
-rune::Vec2::Vec2(float newX, float newY)
+rune::Vec2::Vec2(double newX, double newY)
 {
   x = newX;
   y = newY;
 }
 
 ///@memberof Vec2
-std::ostream& operator<<(std::ostream& os, const rune::Vec2& vector)
+std::ostream& rune::operator<<(std::ostream& os, const rune::Vec2& vector)
 {
 
   os << vector.x << "," << vector.y;
@@ -159,7 +159,7 @@ bool rune::Vec2::operator!=(const rune::Vec2& right)
  * \param vec The vector to be multiplied.
  * \return A memberwise multiplication.
  */
-rune::Vec2 operator* (double scalar, rune::Vec2& vec)
+rune::Vec2 rune::operator* (double scalar, rune::Vec2& vec)
 {
 
   return rune::Vec2(vec.x*scalar,vec.y*scalar);
@@ -172,7 +172,7 @@ rune::Vec2 operator* (double scalar, rune::Vec2& vec)
  * \param vec The vector to be multiplied.
  * \return A memberwise multiplication.
  */
-rune::Vec2 operator* (rune::Vec2& vec, double scalar)
+rune::Vec2 rune::operator* (rune::Vec2& vec, double scalar)
 {
   return rune::Vec2(vec.x * scalar, vec.y * scalar);
 }

@@ -6,7 +6,7 @@
 /**
  * @param path The file path for the texture that you would like to load relative to the main executable.
 */
-Texture::Texture(const std::string& path)
+rune::Texture::Texture(const std::string& path)
   : m_textureID(0), m_filePath(path), m_localBuffer(0),
   m_width(0), m_height(0), m_BPP(0)
 { 
@@ -25,7 +25,7 @@ Texture::Texture(const std::string& path)
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
   //Set the border to be invisible
-  //float borderColor[] = { 0.0f, 0.0f, 0.0f, 0.0f };
+  //double borderColor[] = { 0.0f, 0.0f, 0.0f, 0.0f };
   //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 
   //load image, create texture and generate mipmaps
@@ -43,14 +43,14 @@ Texture::Texture(const std::string& path)
   
 }
 
-Texture::Texture()
+rune::Texture::Texture()
 :m_textureID(0), m_filePath(""), m_localBuffer(0),
 m_width(0), m_height(0), m_BPP(0)
 {
 
 }
 
-bool Texture::loadFromFile(const std::string& path)
+bool rune::Texture::loadFromFile(const std::string& path)
 {
 
   m_filePath = path;
@@ -74,7 +74,7 @@ bool Texture::loadFromFile(const std::string& path)
   glGenerateMipmap(GL_TEXTURE_2D);
 
   //Set the border to be red
-  //float borderColor[] = { 1.0f, 0.0f, 0.0f, 0.0f };
+  //double borderColor[] = { 1.0f, 0.0f, 0.0f, 0.0f };
   //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
 
   glBindTexture(GL_TEXTURE_2D, 0);
@@ -93,7 +93,7 @@ bool Texture::loadFromFile(const std::string& path)
 
 }
 
-Texture::~Texture()
+rune::Texture::~Texture()
 {
   glDeleteTextures(1,&m_textureID);
 }
@@ -101,7 +101,7 @@ Texture::~Texture()
 /**
  * @param slot The texture slot on the GPU that you would like to bind this texture to.
 */
-void Texture::bind(unsigned int slot)
+void rune::Texture::bind(unsigned int slot)
 {
 
   glActiveTexture(GL_TEXTURE0 + slot);
@@ -109,7 +109,7 @@ void Texture::bind(unsigned int slot)
 
 }
 
-void Texture::unbind()
+void rune::Texture::unbind()
 {
   glBindTexture(GL_TEXTURE_2D,0);
 }
@@ -117,7 +117,7 @@ void Texture::unbind()
 /**
  * @return The index of the texture in OpenGL.
 */
-unsigned int Texture::getTextureID(void)
+unsigned int rune::Texture::getTextureID(void)
 {
   return m_textureID;
 }
@@ -125,7 +125,7 @@ unsigned int Texture::getTextureID(void)
 /**
  * @return The total height of the texture.
 */
-unsigned int Texture::getHeight(void)
+unsigned int rune::Texture::getHeight(void)
 {
   return m_height;
 }
@@ -133,7 +133,7 @@ unsigned int Texture::getHeight(void)
 /**
  * @return The total width of the texture.
 */
-unsigned int Texture::getWidth(void)
+unsigned int rune::Texture::getWidth(void)
 {
   return m_width;
 }

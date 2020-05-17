@@ -35,9 +35,9 @@ protected:
   std::vector<SceneLayer> sceneLayers;
   
   rune::Clock variableClock;
-  float dT; //Time between variable update calls
-  float accumulator;
-  float frameStart;
+  double dT; //Time between variable update calls
+  double accumulator;
+  double frameStart;
 
   std::vector<GameUI*> m_stateUI;
 

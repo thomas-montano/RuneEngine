@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Rune Engine: Drawable Class Reference</title>
+<title>Rune Engine: rune::Drawable Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.4.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -62,10 +62,17 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../d3/d30/namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="../../d1/d29/classrune_1_1Drawable.html">Drawable</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="../../d3/d7f/classrune_1_1Drawable-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Drawable Class Reference</div>  </div>
+<div class="title">rune::Drawable Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -74,19 +81,62 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="../../d5/dea/drawable_8h_source.html">drawable.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for Drawable:</div>
+Inheritance diagram for rune::Drawable:</div>
 <div class="dyncontent">
-<div class="center"><img src="../../db/d3c/classrune_1_1Drawable__inherit__graph.png" border="0" usemap="#Drawable_inherit__map" alt="Inheritance graph"/></div>
-<map name="Drawable_inherit__map" id="Drawable_inherit__map">
-<area shape="rect" title="Interface class for creating something that can be drawn to the screen." alt="" coords="33,5,117,32"/>
-<area shape="rect" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene." alt="" coords="5,80,145,107"/>
+<div class="center"><img src="../../db/d3c/classrune_1_1Drawable__inherit__graph.png" border="0" usemap="#rune_1_1Drawable_inherit__map" alt="Inheritance graph"/></div>
+<map name="rune_1_1Drawable_inherit__map" id="rune_1_1Drawable_inherit__map">
+<area shape="rect" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,132,127,159"/>
+<area shape="rect" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene." alt="" coords="187,5,327,32"/>
+<area shape="rect" href="../../d0/d2a/classrune_1_1GameUI.html" title="Class responsible for managing the user interface elements and baking text into other textures." alt="" coords="201,56,313,83"/>
+<area shape="rect" href="../../d0/da8/classrune_1_1LightSource.html" title="A light source to be used in a scene. Casts light and shadows on objects." alt="" coords="189,107,324,133"/>
+<area shape="rect" href="../../d7/d43/classrune_1_1RectangleShape.html" title="A rectangle that can be drawn to the screen." alt="" coords="175,157,339,184"/>
+<area shape="rect" href="../../da/d9b/classrune_1_1SceneLayer.html" title="Main component of scenes. Can have objects, particles, light sources, or any other in game entity add..." alt="" coords="189,208,324,235"/>
+<area shape="rect" href="../../d1/d12/classrune_1_1Sprite.html" title="A sprite that can be given a texture and animated." alt="" coords="208,259,305,285"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a005d2711ac41f1c2224ef0b35a5471e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d29/classrune_1_1Drawable.html#a005d2711ac41f1c2224ef0b35a5471e4">draw</a> (<a class="el" href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a> &amp;)=0</td></tr>
+<tr class="memdesc:a005d2711ac41f1c2224ef0b35a5471e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the object to a render window.  <a href="../../d1/d29/classrune_1_1Drawable.html#a005d2711ac41f1c2224ef0b35a5471e4">More...</a><br /></td></tr>
+<tr class="separator:a005d2711ac41f1c2224ef0b35a5471e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface class for creating something that can be drawn to the screen. </p>
 <dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>April 20 2020 </dd></dl>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a005d2711ac41f1c2224ef0b35a5471e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005d2711ac41f1c2224ef0b35a5471e4">&#9670;&nbsp;</a></span>draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void rune::Drawable::draw </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Draw the object to a render window. </p>
+
+<p>Implemented in <a class="el" href="../../d1/d12/classrune_1_1Sprite.html#abfc36c0067b7ba56d91dab5c4d4e7a31">rune::Sprite</a>, <a class="el" href="../../d7/d43/classrune_1_1RectangleShape.html#a6b50b1427ebb04d7a5963862813dd94e">rune::RectangleShape</a>, <a class="el" href="../../d9/df8/classrune_1_1GameObject.html#a89b721076422c24a502c7729870a8bb6">rune::GameObject</a>, and <a class="el" href="../../d0/d2a/classrune_1_1GameUI.html#a4ea6b43c91168af5990362587cb4f24c">rune::GameUI</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d5/dea/drawable_8h_source.html">drawable.h</a></li>
 </ul>
 </div><!-- contents -->

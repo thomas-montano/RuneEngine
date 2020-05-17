@@ -5,7 +5,7 @@
  * @param brightness The ambient lighting level for the scene (0.0-1.0).
  * @param opacity The opacity level for the layer (0.0-1.0).
 */
-SceneLayer::SceneLayer(bool physics, float brightness, float opacity)
+rune::SceneLayer::SceneLayer(bool physics, double brightness, double opacity)
 {
   hasPhysics = physics;
   layerOpacity = opacity;
@@ -18,7 +18,7 @@ SceneLayer::SceneLayer(bool physics, float brightness, float opacity)
 /**
  * @param object GameObject to add to the scene on this layer.
 */
-void SceneLayer::addToLayer(rune::GameObject* object)
+void rune::SceneLayer::addToLayer(rune::GameObject* object)
 {
 
   objects.push_back(object);
@@ -29,7 +29,7 @@ void SceneLayer::addToLayer(rune::GameObject* object)
 /**
  * @param object ParticleEmitter to add to the scene on this layer.
 */
-void SceneLayer::addToLayer(ParticleEmitter* object)
+void rune::SceneLayer::addToLayer(rune::ParticleEmitter* object)
 {
 
   particles.push_back(object);
@@ -40,7 +40,7 @@ void SceneLayer::addToLayer(ParticleEmitter* object)
 /**
  * @return An array of pointers to the objects on this layer.
 */
-std::vector<rune::GameObject*> SceneLayer::getObjects(void)
+std::vector<rune::GameObject*> rune::SceneLayer::getObjects(void)
 {
   return objects;
 }
@@ -48,7 +48,7 @@ std::vector<rune::GameObject*> SceneLayer::getObjects(void)
 /**
  * @return The number of objects on the current layer.
 */
-int SceneLayer::getTotalSize(void)
+int rune::SceneLayer::getTotalSize(void)
 {
 
   return objects.size() + particles.size();
@@ -58,7 +58,7 @@ int SceneLayer::getTotalSize(void)
 /**
  * @param opacity Global opacity level for the layer (0.0-1.0).
 */
-void SceneLayer::setOpacity(float opacity)
+void rune::SceneLayer::setOpacity(double opacity)
 {
 
   if(opacity > 1.0)
@@ -76,7 +76,7 @@ void SceneLayer::setOpacity(float opacity)
  * @param target RenderTarget to draw to.
  * @param states States variable to affect the rendering
 */
-void SceneLayer::draw(RenderWindow& window)
+void rune::SceneLayer::draw(rune::RenderWindow& window)
 {
   
    
@@ -96,7 +96,7 @@ void SceneLayer::draw(RenderWindow& window)
 /**
  * @param newSelfPointer Pointer that is passed to GameObject in the scene to use as a reference back to the current SceneLayer.
 */
-void SceneLayer::setScenePointer(SceneLayer* newSelfPointer)
+void rune::SceneLayer::setScenePointer(rune::SceneLayer* newSelfPointer)
 {
   selfPointer = newSelfPointer;
 
@@ -110,7 +110,7 @@ void SceneLayer::setScenePointer(SceneLayer* newSelfPointer)
 /**
  * @return All the rigid bodies currently in the GameScene.
 */
-std::vector<RigidBody*> SceneLayer::getRigidBodies()
+std::vector<physics::RigidBody*> rune::SceneLayer::getRigidBodies()
 {
   return objectRigidBodies;
 }

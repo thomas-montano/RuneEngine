@@ -3,7 +3,7 @@
 /**
  * @param frameRate The framerate of the new ObjectAnimation.
 */
-void ObjectAnimation::setFrameRate(int frameRate)
+void rune::ObjectAnimation::setFrameRate(int frameRate)
 {
 
     m_frameRate = frameRate;
@@ -13,7 +13,7 @@ void ObjectAnimation::setFrameRate(int frameRate)
 /**
  * @return The framerate of the ObjectAnimation.
 */
-int ObjectAnimation::getFrameRate(void)
+int rune::ObjectAnimation::getFrameRate(void)
 {
 
     return m_frameRate;
@@ -23,7 +23,7 @@ int ObjectAnimation::getFrameRate(void)
 /**
  * @param frameWidth The width in pixels of each frame from the sprite sheet.
 */
-void ObjectAnimation::setFrameWidth(int frameWidth)
+void rune::ObjectAnimation::setFrameWidth(int frameWidth)
 {
 
     m_frameWidth = frameWidth;
@@ -33,7 +33,7 @@ void ObjectAnimation::setFrameWidth(int frameWidth)
 /**
  * @return The width in pixels of each frame from the sprite sheet.
 */
-int ObjectAnimation::getFrameWidth(void)
+int rune::ObjectAnimation::getFrameWidth(void)
 {
 
     return m_frameWidth;
@@ -43,7 +43,7 @@ int ObjectAnimation::getFrameWidth(void)
 /**
  * @param frameHeight The height in pixels of each frame from the sprite sheet.
 */
-void ObjectAnimation::setFrameHeight(int frameHeight)
+void rune::ObjectAnimation::setFrameHeight(int frameHeight)
 {
 
     m_frameHeight = frameHeight;
@@ -53,7 +53,7 @@ void ObjectAnimation::setFrameHeight(int frameHeight)
 /**
  * @return The height in pixels of each frame from the sprite sheet.
 */
-int ObjectAnimation::getFrameHeight(void)
+int rune::ObjectAnimation::getFrameHeight(void)
 {
 
     return m_frameHeight;
@@ -63,7 +63,7 @@ int ObjectAnimation::getFrameHeight(void)
 /**
  * @param numFrames The total number of frames that are present in the sprite sheet.
 */
-void ObjectAnimation::setNumFrames(int numFrames)
+void rune::ObjectAnimation::setNumFrames(int numFrames)
 {
 
     m_numFrames = numFrames;
@@ -73,7 +73,7 @@ void ObjectAnimation::setNumFrames(int numFrames)
 /**
  * @return The total number of frames that are present in the sprite sheet.
 */
-int ObjectAnimation::getNumFrames(void)
+int rune::ObjectAnimation::getNumFrames(void)
 {
 
     return m_numFrames;
@@ -83,7 +83,7 @@ int ObjectAnimation::getNumFrames(void)
 /**
  * @param animationSheet The texture to be used as the sprite sheet.
 */
-void ObjectAnimation::setSheet(Texture& animationSheet)
+void rune::ObjectAnimation::setSheet(Texture& animationSheet)
 {
 
     m_animationSheet = &animationSheet;
@@ -93,7 +93,7 @@ void ObjectAnimation::setSheet(Texture& animationSheet)
 /**
  * @return A pointer referencing the texture to be used as the sprite sheet.
 */
-Texture* ObjectAnimation::getSheet(void)
+rune::Texture* rune::ObjectAnimation::getSheet(void)
 {
     return m_animationSheet;
 }
@@ -101,7 +101,7 @@ Texture* ObjectAnimation::getSheet(void)
 /**
  * @return Which frame the animation is currently on.
 */
-int ObjectAnimation::getCurrentFrame()
+int rune::ObjectAnimation::getCurrentFrame()
 {
     return m_currentFrame;
 }
@@ -109,12 +109,12 @@ int ObjectAnimation::getCurrentFrame()
 /**
  * @param frame The frame that the current animation should be set to.
 */
-void ObjectAnimation::setCurrentFame(int frame)
+void rune::ObjectAnimation::setCurrentFame(int frame)
 {
     m_currentFrame = frame;
 }
 
-void ObjectAnimation::incCurrentFrame()
+void rune::ObjectAnimation::incCurrentFrame()
 {   
 
     int currentTime = m_animationClock.getElapsedTimeAsMilliseconds();
@@ -131,7 +131,7 @@ void ObjectAnimation::incCurrentFrame()
 /**
  * @param fileName A string representing the file location of the sprite sheet.
 */
-void ObjectAnimation::setFile(std::string fileName)
+void rune::ObjectAnimation::setFile(std::string fileName)
 {
     m_filePath = fileName;
 }
@@ -139,7 +139,7 @@ void ObjectAnimation::setFile(std::string fileName)
 /**
  * @return A string representing the file location of the sprite sheet.
 */
-std::string ObjectAnimation::getFile(void)
+std::string rune::ObjectAnimation::getFile(void)
 {
     return m_filePath;
 }

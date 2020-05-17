@@ -1,5 +1,5 @@
 /**
- * @class Texture
+ * @class rune::Texture
  * @brief A texture that can be applied to drawable objects.
  * 
  * @author Thomas Montano
@@ -13,6 +13,7 @@
 #include <string>
 #include "renderWindow.h"
 
+namespace rune{
 
 class RUNE_ENGINE Texture
 {
@@ -49,6 +50,6 @@ public:
   //Get the width of the texture.
   unsigned int getWidth(void);
 };
-
+}
 
 #endif

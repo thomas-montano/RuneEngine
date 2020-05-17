@@ -8,7 +8,7 @@
  * @param dissolutionRate The time in seconds that a particle should exist before it gets deleted.
  * @param gravity The gravity vector each particle will be subjected to.
 */
-ParticleEmitter::ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, rune::Color color, int dissolutionRate, rune::Vec2 gravity) : m_pixelBaseColor(color)
+rune::ParticleEmitter::ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, rune::Color color, int dissolutionRate, rune::Vec2 gravity) : m_pixelBaseColor(color)
 {
   m_startPos = startPos;
   m_initVel = initVel;
@@ -21,7 +21,7 @@ ParticleEmitter::ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, rune::
 /**
  * @param particles The number of particles that should be generated.
 */
-void ParticleEmitter::fuel(int particles)
+void rune::ParticleEmitter::fuel(int particles)
 { 
   
   for(int i = 0; i < particles; i++)
@@ -48,7 +48,7 @@ void ParticleEmitter::fuel(int particles)
 
     //std::copy(vertices, vertices+4,newParticle.m_particleSprite);
 
-    float randomFactor = std::abs(m_initVel.y);
+    double randomFactor = std::abs(m_initVel.y);
     randomFactor = rand()%((int)randomFactor*1000) - 500*randomFactor;
     
     newParticle.m_particleSpeed = rune::Vec2(m_initVel.x+randomFactor/1000.0,m_initVel.y);
@@ -66,7 +66,7 @@ void ParticleEmitter::fuel(int particles)
 /**
  * @param dT The amount of time that has passed since the last update call, used to update position of particles.
 */
-void ParticleEmitter::update(float dT)
+void rune::ParticleEmitter::update(double dT)
 {
 
   for(int i = 0; i < m_particles.size();i++)
@@ -133,7 +133,7 @@ void ParticleEmitter::update(float dT)
 /**
  * @param rate The amount of time in seconds that a particle should exist before being deleted.
 */
-void ParticleEmitter::setDissolutionRate(float rate)
+void rune::ParticleEmitter::setDissolutionRate(double rate)
 {
   m_dissolutionRate = rate;
 }
@@ -141,7 +141,7 @@ void ParticleEmitter::setDissolutionRate(float rate)
 /**
  * @param gravity The gravity vector that each particle will be subjected to.
 */
-void ParticleEmitter::setGravity(rune::Vec2 gravity)
+void rune::ParticleEmitter::setGravity(rune::Vec2 gravity)
 {
   m_gravity = gravity;
 }
@@ -149,7 +149,7 @@ void ParticleEmitter::setGravity(rune::Vec2 gravity)
 /**
  * @param canvas A vector describing the area that a particle will be allowed to exist in.
 */
-void ParticleEmitter::setCanvasSize(rune::Vec2 canvas)
+void rune::ParticleEmitter::setCanvasSize(rune::Vec2 canvas)
 {
   m_canvasSize = canvas;
 }
@@ -157,6 +157,6 @@ void ParticleEmitter::setCanvasSize(rune::Vec2 canvas)
 /**
  * @param newPos The new position that the particle emitter should start generating particle from.
 */
-void ParticleEmitter::setPosition(rune::Vec2 newPos)
+void rune::ParticleEmitter::setPosition(rune::Vec2 newPos)
 {  m_startPos = newPos;
 }

@@ -1,5 +1,10 @@
 #pragma once
 
+/**
+ * @namespace rune
+ * @brief The main namespace to be used for interfacing with the engine
+ */
+
 #include <gameApplication.h>
 #include <physics\rigidBody.h>
 #include <Entities\gameObject.h>

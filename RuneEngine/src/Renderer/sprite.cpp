@@ -1,6 +1,6 @@
 #include "sprite.h"
 
-Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(rune::Vec2(0, 0))
+rune::Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(rune::Vec2(0, 0))
 {
 
   glGenVertexArrays(1, &VAO);
@@ -17,13 +17,13 @@ Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origi
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_DYNAMIC_DRAW);
 
   // position attribute
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 3, GL_DOUBLE, GL_FALSE, 8 * sizeof(double), (void*)0);
   glEnableVertexAttribArray(0);
   // color attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+  glVertexAttribPointer(1, 3, GL_DOUBLE, GL_FALSE, 8 * sizeof(double), (void*)(3 * sizeof(double)));
   glEnableVertexAttribArray(1);
   // texture coord attribute
-  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+  glVertexAttribPointer(2, 2, GL_DOUBLE, GL_FALSE, 8 * sizeof(double), (void*)(6 * sizeof(double)));
   glEnableVertexAttribArray(2);
 
 }
@@ -33,7 +33,7 @@ Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origi
  * @param position A rune::Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite .png file to be drawn.
 */
-Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(rune::Vec2(0,0))
+rune::Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(rune::Vec2(0,0))
 {
   //Generate and bind vertex array object
   glGenVertexArrays(1, &VAO);
@@ -50,13 +50,13 @@ Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLoca
   glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
   // position attribute
-  glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
+  glVertexAttribPointer(0, 3, GL_DOUBLE, GL_FALSE, 8 * sizeof(double), (void*)0);
   glEnableVertexAttribArray(0);
   // color attribute
-  glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3 * sizeof(float)));
+  glVertexAttribPointer(1, 3, GL_DOUBLE, GL_FALSE, 8 * sizeof(double), (void*)(3 * sizeof(double)));
   glEnableVertexAttribArray(1);
   // texture coord attribute
-  glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+  glVertexAttribPointer(2, 2, GL_DOUBLE, GL_FALSE, 8 * sizeof(double), (void*)(6 * sizeof(double)));
   glEnableVertexAttribArray(2);
 
 }
@@ -64,7 +64,7 @@ Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLoca
 /**
  * @param windowSize The size of the window the sprite is being drawn to.
 */
-void Sprite::draw(RenderWindow& window)
+void rune::Sprite::draw(rune::RenderWindow& window)
 {
 
   //Bind the vertex array object
@@ -73,7 +73,7 @@ void Sprite::draw(RenderWindow& window)
   
   rune::Vec2 windowSize = window.getSize();
 
-  float drawVertices[32] = 
+  double drawVertices[32] = 
   {
     // positions                                                                                // colors           // texture coords
     (m_position.x + m_size.x - origin.x)/windowSize.x-1, (m_position.y+ m_size.y - origin.y)/windowSize.y-1, 0.0f,    1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
@@ -96,7 +96,7 @@ void Sprite::draw(RenderWindow& window)
 /**
  * @param newPos The new position of the RectangleShape with respect to the bottom left corner.
 */
-void Sprite::addPosition(rune::Vec2 newPos)
+void rune::Sprite::addPosition(rune::Vec2 newPos)
 {
   m_position.x += newPos.x;
   m_position.y += newPos.y;
@@ -105,34 +105,34 @@ void Sprite::addPosition(rune::Vec2 newPos)
 /**
  * @param newSize The new size of the RectangleShape.
 */
-void Sprite::setPosition(rune::Vec2 newSize)
+void rune::Sprite::setPosition(rune::Vec2 newSize)
 {
   m_position = newSize;
 }
 
-void Sprite::setOrigin(rune::Vec2 newOrigin)
+void rune::Sprite::setOrigin(rune::Vec2 newOrigin)
 {
   origin = newOrigin;
 }
 
-void Sprite::setTexture(std::string texture)
+void rune::Sprite::setTexture(std::string texture)
 {
 
   spriteTexture.loadFromFile(texture.c_str());
 
 }
 
-void Sprite::setSize(rune::Vec2 newSize)
+void rune::Sprite::setSize(rune::Vec2 newSize)
 {
   m_size = newSize;
 }
 
-rune::Vec2 Sprite::getPosition(void)
+rune::Vec2 rune::Sprite::getPosition(void)
 {
   return m_position;
 }
 
-rune::Vec2 Sprite::getSize(void)
+rune::Vec2 rune::Sprite::getSize(void)
 {
   return m_size;
 }

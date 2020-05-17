@@ -1,5 +1,5 @@
 /**
- * @class ParticleEmitter
+ * @class rune::ParticleEmitter
  * @brief Class responsible for creating particle emitters and managing
  * the creation of particles.
  * 
@@ -13,6 +13,8 @@
 #include "core.h"
 #include <Renderer\rectangleShape.h>
 #include <Renderer\color.h>
+
+namespace rune{
 
 class RUNE_ENGINE ParticleEmitter// : public Drawable
 {
@@ -29,7 +31,7 @@ private:
   };
 
   const int PARTICLELIMIT = 1000;
-  float m_dissolutionRate; //Rate at which particles disappear
+  double m_dissolutionRate; //Rate at which particles disappear
 
   rune::Color m_pixelBaseColor; //Starting color, can apply modifiers later
 
@@ -49,7 +51,7 @@ public:
   ParticleEmitter(rune::Vec2 startPos, rune::Vec2 initVel, rune::Color color, int dissolutionRate = 5, rune::Vec2 gravity = rune::Vec2(0,0));
   
   ///The amount of time in seconds that a particle will exist before it gets destroyed.
-  void setDissolutionRate(float rate);
+  void setDissolutionRate(double rate);
 
   ///Sets the gravity that a particle will be subjected to.
   void setGravity(rune::Vec2 gravity);
@@ -58,7 +60,7 @@ public:
   void fuel(int particles);
 
   ///Update the position of the particles based on velocity and gravity.
-  void update(float dT);
+  void update(double dT);
 
   //Set the region that the particle is allowed to move around in.
   void setCanvasSize(rune::Vec2);
@@ -67,5 +69,6 @@ public:
   void setPosition(rune::Vec2);
 
 };
+}
 
 #endif

@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['addangularvelocity_431',['addAngularVelocity',['../d6/d88/classRigidBody.html#acb63f44786511baac35bf24d1e80f242',1,'RigidBody']]],
-  ['addanimation_432',['addAnimation',['../d9/df8/classrune_1_1GameObject.html#adca4c6169cfca01ba0e1217785702ab8',1,'rune::GameObject']]],
-  ['addcollision_433',['addCollision',['../d6/d88/classRigidBody.html#a9588ce5e01186157d88647b4c4e20823',1,'RigidBody']]],
-  ['addlayertoscene_434',['addLayerToScene',['../dd/ddc/classrune_1_1GameScene.html#a303cad0de5c4a34d8f6e78b1adf88dce',1,'rune::GameScene']]],
-  ['addposition_435',['addPosition',['../d6/d88/classRigidBody.html#a891c93a9e7f4d39f0eb09adefe0e24d7',1,'RigidBody::addPosition()'],['../df/df7/classRectangleShape.html#a9be63f4e7ae353547baf09e00fbddd64',1,'RectangleShape::addPosition()'],['../d1/d6d/classSprite.html#a292750456be259dd9a4c743b4e333ff1',1,'Sprite::addPosition()']]],
-  ['addscene_436',['addScene',['../d5/d9e/classSceneManager.html#af09e192cb10904e93ef4e91953ae327f',1,'SceneManager']]],
-  ['addtolayer_437',['addToLayer',['../dc/da1/classSceneLayer.html#a3ffebade06363655cde4bc98aeab37ed',1,'SceneLayer::addToLayer(rune::GameObject *object)'],['../dc/da1/classSceneLayer.html#a12bfd295176065a85da0eba3de0ab910',1,'SceneLayer::addToLayer(ParticleEmitter *object)']]],
-  ['addvelocity_438',['addVelocity',['../d6/d88/classRigidBody.html#a23e77341e4ebe006a00ca4544f366c56',1,'RigidBody']]]
+  ['addangularvelocity_442',['addAngularVelocity',['../d1/dd3/classphysics_1_1RigidBody.html#a3c8bac31b07c9bc1633529db8eb648a8',1,'physics::RigidBody']]],
+  ['addanimation_443',['addAnimation',['../d9/df8/classrune_1_1GameObject.html#adca4c6169cfca01ba0e1217785702ab8',1,'rune::GameObject']]],
+  ['addcollision_444',['addCollision',['../d1/dd3/classphysics_1_1RigidBody.html#a87f0c0522089807e3e5be6cccb9c9e91',1,'physics::RigidBody']]],
+  ['addlayertoscene_445',['addLayerToScene',['../dd/ddc/classrune_1_1GameScene.html#a303cad0de5c4a34d8f6e78b1adf88dce',1,'rune::GameScene']]],
+  ['addposition_446',['addPosition',['../d1/dd3/classphysics_1_1RigidBody.html#a388548ea590211e728242beda511bbca',1,'physics::RigidBody::addPosition()'],['../d7/d43/classrune_1_1RectangleShape.html#aab559fd2685d94af6943c437fd3ad6c5',1,'rune::RectangleShape::addPosition()'],['../d1/d12/classrune_1_1Sprite.html#a8db404ebd2b7c26a9fb28b5c654ab5fc',1,'rune::Sprite::addPosition()']]],
+  ['addscene_447',['addScene',['../d5/d8a/classrune_1_1SceneManager.html#ac4dac7b8157618f69f30a098e4655d4b',1,'rune::SceneManager']]],
+  ['addtolayer_448',['addToLayer',['../da/d9b/classrune_1_1SceneLayer.html#a8204c67de530240740037df4d89df498',1,'rune::SceneLayer::addToLayer(rune::GameObject *object)'],['../da/d9b/classrune_1_1SceneLayer.html#a067689d79336bc76e47baad1ba401eb9',1,'rune::SceneLayer::addToLayer(rune::ParticleEmitter *object)']]],
+  ['addvelocity_449',['addVelocity',['../d1/dd3/classphysics_1_1RigidBody.html#a10e2318ca354c4b862c68c48d012c086',1,'physics::RigidBody']]]
 ];

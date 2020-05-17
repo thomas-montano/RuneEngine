@@ -1,7 +1,7 @@
 #include "gameApplication.h"
 
 //Initialize Static variables
-RenderWindow* rune::GameApplication::winPtr = nullptr;
+rune::RenderWindow* rune::GameApplication::winPtr = nullptr;
 double rune::GameApplication::deltaTime = 0.0;
 int rune::GameApplication::frameRate = 0;
 
@@ -16,6 +16,14 @@ rune::GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720,
   m_gameRunning = true;
   m_mainWindow.enableVsync(true);
 
+}
+
+/**
+ * \param newTitle The title that should be displayed on the window.
+ */
+void rune::GameApplication::setWindowTitle(std::string newTitle)
+{
+  m_mainWindow.setWindowTitle(newTitle);
 }
 
 /**
@@ -145,7 +153,7 @@ void rune::GameApplication::processInput(void)
   //Loop to poll events and updates the m_windowEvent object
   m_mainWindow.pollEvents(m_windowEvent);
 
-  if(m_windowEvent.type == EventType::Closed)
+  if(m_windowEvent.type == EventType::WindowClose)
   {
     m_mainWindow.close();
   }
@@ -162,18 +170,19 @@ void rune::GameApplication::loadScene(GameScene* newScene)
 
 }
 
-///Returns the reference to the currently active render window.
-RenderWindow* rune::GameApplication::getWindow(void)
+///@returns the reference to the currently active render window.
+rune::RenderWindow* rune::GameApplication::getWindow(void)
 {
   return winPtr;
 }
 
-///Gets the change in time since the last frame in seconds.
+///@returns The time in seconds since the last game tick.
 double rune::GameApplication::getDeltaTime(void)
 {
   return deltaTime;
 }
 
+///@returns The number of frames since the last game tick.
 int rune::GameApplication::getFrameRate(void)
 {
   return frameRate;

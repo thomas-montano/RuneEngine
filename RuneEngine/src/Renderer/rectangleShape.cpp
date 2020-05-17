@@ -2,7 +2,7 @@
 #include "shader.h"
 #include <iostream>
 
-RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
+rune::RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
 {
 
 }
@@ -11,7 +11,7 @@ RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rec
  * @param newPosition The position of the new RectangleShape with respect to the bottom left corner.
  * @param newSize The size of the new RectangleShape.
 */
-RectangleShape::RectangleShape(rune::Vec2 newPosition, rune::Vec2 newSize) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
+rune::RectangleShape::RectangleShape(rune::Vec2 newPosition, rune::Vec2 newSize) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
 {
   position = newPosition;
   size = newSize;  
@@ -30,7 +30,7 @@ RectangleShape::RectangleShape(rune::Vec2 newPosition, rune::Vec2 newSize) : rec
   glBindBuffer(GL_ARRAY_BUFFER, buffer);
 
   // Set vertex attribute pointer and enable buffer
-  glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(float)*2,(void*)0);
+  glVertexAttribPointer(0,2,GL_FLOAT,GL_FALSE,sizeof(double)*2,(void*)0);
   glEnableVertexAttribArray(0);
 
 }
@@ -38,7 +38,7 @@ RectangleShape::RectangleShape(rune::Vec2 newPosition, rune::Vec2 newSize) : rec
 /**
  * @param windowSize The size of the window that the RectangleShape is being drawn on.
 */
-void RectangleShape::draw(RenderWindow& window)
+void rune::RectangleShape::draw(rune::RenderWindow& window)
 {
 
   rune::Vec2 windowSize = window.getSize();
@@ -51,7 +51,7 @@ void RectangleShape::draw(RenderWindow& window)
   glBindVertexArray(VAO);
 
   //Update vertex data
-  float drawVertices[vertexes] = 
+  double drawVertices[vertexes] = 
   {
 
     position.x/windowSize.x-1, position.y/windowSize.y-1,
@@ -63,7 +63,7 @@ void RectangleShape::draw(RenderWindow& window)
   };
 
   //Push new data into vertex array
-  glBufferData(GL_ARRAY_BUFFER,vertexes*sizeof(float), drawVertices, GL_DYNAMIC_DRAW);
+  glBufferData(GL_ARRAY_BUFFER,vertexes*sizeof(double), drawVertices, GL_DYNAMIC_DRAW);
 
   //Draw Two Triangles to make a square
   glBindVertexArray(VAO);
@@ -75,7 +75,7 @@ void RectangleShape::draw(RenderWindow& window)
 /**
  * @param newPos The new position of the RectangleShape with respect to the bottom left corner.
 */
-void RectangleShape::addPosition(rune::Vec2 newPos)
+void rune::RectangleShape::addPosition(rune::Vec2 newPos)
 {
   position.x += newPos.x;
   position.y += newPos.y;
@@ -84,13 +84,13 @@ void RectangleShape::addPosition(rune::Vec2 newPos)
 /**
  * @param newSize The new size of the RectangleShape.
 */
-void RectangleShape::setPosition(rune::Vec2 newSize)
+void rune::RectangleShape::setPosition(rune::Vec2 newSize)
 {
   position.x = newSize.x;
   position.y = newSize.y;
 }
 
-void RectangleShape::setSize(rune::Vec2 newSize)
+void rune::RectangleShape::setSize(rune::Vec2 newSize)
 {
   size = newSize;
 }

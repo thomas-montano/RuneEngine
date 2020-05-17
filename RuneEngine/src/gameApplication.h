@@ -1,7 +1,10 @@
 /*!
  * @mainpage
  * In order to start a new project, all you have to do is load in your scenes, create a new
- * GameApplication object, pass the scenes in, and set the GameApplication to run. 
+ * rune::GameApplication object, pass the scenes in, and set the rune::GameApplication to run. 
+ * 
+ * The window will open with a default title of "Rune Engine", but you can change this by calling mainApplication->setWindowTitle("Your Title");
+ * 
  * \section Intro How to Start a New Project
  * 
  * 
@@ -117,23 +120,25 @@ private:
   void processInput(void);
 
 public:
+  /** 
+   * A code that will be returned when the application closes that says what happened if execution failed.\n
+   * 0 = Execution concluded successfully.\n
+   * 1 = A rune::GameScene had not been loaded into the application at run time.
+   */
   int m_errorCode;
-
   ///Default constructor for setting up a new game.
   GameApplication(int updateRate);
-
+  ///Set the title of the window
+  void setWindowTitle(std::string);
   ///Loads in a scene file and stores it in the game application.
   void loadScene(GameScene* newScene);
-
   ///Starts the main game loop
   int run(void);
-
   ///Returns the reference to the currently active render window.
   static RenderWindow* getWindow(void);
-
   ///Gets the change in time since the last frame in seconds.
   static double getDeltaTime(void);
-
+  ///Gets the number of frames since the last game tick.
   static int getFrameRate(void);
 
 };

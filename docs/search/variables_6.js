@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['invinertia_595',['invInertia',['../d2/d07/structbody.html#a8d352d20eb7c13419008ed933bb793c5',1,'body']]],
-  ['invmass_596',['invMass',['../d2/d07/structbody.html#a734a023e7a0f37d52c70d45d7b2c83a7',1,'body']]]
+  ['invinertia_608',['invInertia',['../d0/d74/structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555',1,'physics::body']]],
+  ['invmass_609',['invMass',['../d0/d74/structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07',1,'physics::body']]]
 ];

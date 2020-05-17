@@ -27,13 +27,13 @@ private:
   Texture m_objectTexture;
   bool m_clickedUp = false;
   bool m_clickedDown = false;
-  float m_posX;
-  float m_posY;
-  float m_height;
-  float m_width;
+  double m_posX;
+  double m_posY;
+  double m_height;
+  double m_width;
 public:
   ///Creates a UI level button.
-  void createButton(float posX, float posY,float width, float height);
+  void createButton(double posX, double posY,double width, double height);
 
   ///Determines whether or not the UI element has been clicked on.
   bool isClicked(rune::Vec2, rune::Event mouseEvent);

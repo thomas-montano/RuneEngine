@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['i_148',['I',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a177ad5dfe84032a3151122962a5b6b02',1,'rune::Keyboard']]],
-  ['inccurrentframe_149',['incCurrentFrame',['../d1/d4f/classObjectAnimation.html#a8219af895c2eae6a8f64e895997eff08',1,'ObjectAnimation']]],
-  ['insert_150',['INSERT',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a0e0e2089cae540375382f4e812186dbb',1,'rune::Keyboard']]],
-  ['invinertia_151',['invInertia',['../d2/d07/structbody.html#a8d352d20eb7c13419008ed933bb793c5',1,'body']]],
-  ['invmass_152',['invMass',['../d2/d07/structbody.html#a734a023e7a0f37d52c70d45d7b2c83a7',1,'body']]],
-  ['isactive_153',['isActive',['../dd/ddc/classrune_1_1GameScene.html#a6d698b0b5515beeab72b325ebffa8c84',1,'rune::GameScene']]],
-  ['isclicked_154',['isClicked',['../d0/d2a/classrune_1_1GameUI.html#a9e1f8b105d3cba0f981e65115287ed08',1,'rune::GameUI']]],
-  ['iskeypressed_155',['isKeyPressed',['../d9/df4/classrune_1_1Keyboard.html#a7a99e63693e78544a4a08173220e88a9',1,'rune::Keyboard']]],
-  ['isopen_156',['isOpen',['../d9/d40/classRenderWindow.html#a4ec22d45464c8e2fe2405abe70c8e067',1,'RenderWindow']]]
+  ['i_147',['I',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a177ad5dfe84032a3151122962a5b6b02',1,'rune::Keyboard']]],
+  ['inccurrentframe_148',['incCurrentFrame',['../d4/db6/classrune_1_1ObjectAnimation.html#ade733b41b8f967a5a16b40cd04aa8105',1,'rune::ObjectAnimation']]],
+  ['insert_149',['INSERT',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a0e0e2089cae540375382f4e812186dbb',1,'rune::Keyboard']]],
+  ['invinertia_150',['invInertia',['../d0/d74/structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555',1,'physics::body']]],
+  ['invmass_151',['invMass',['../d0/d74/structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07',1,'physics::body']]],
+  ['isactive_152',['isActive',['../dd/ddc/classrune_1_1GameScene.html#a6d698b0b5515beeab72b325ebffa8c84',1,'rune::GameScene']]],
+  ['isclicked_153',['isClicked',['../d0/d2a/classrune_1_1GameUI.html#a9e1f8b105d3cba0f981e65115287ed08',1,'rune::GameUI']]],
+  ['iskeypressed_154',['isKeyPressed',['../d9/df4/classrune_1_1Keyboard.html#a7a99e63693e78544a4a08173220e88a9',1,'rune::Keyboard']]],
+  ['isopen_155',['isOpen',['../d1/d58/classrune_1_1RenderWindow.html#a74b3b71ef4f502fb7aaae284d17457f5',1,'rune::RenderWindow']]]
 ];

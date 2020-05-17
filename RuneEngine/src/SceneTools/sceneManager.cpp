@@ -4,7 +4,7 @@
 /**
  * @return A pointer to the currently active GameScene
 */
-rune::GameScene* SceneManager::getCurrentScene(void)
+rune::GameScene* rune::SceneManager::getCurrentScene(void)
 {
   return m_scenes[m_currentScene];
 }
@@ -12,7 +12,7 @@ rune::GameScene* SceneManager::getCurrentScene(void)
 /**
  * @param newScene Index in the scene buffer that determines what scene should be set as 
 */
-void SceneManager::setScene(int newScene)
+void rune::SceneManager::setScene(int newScene)
 {
 
   if(!m_scenes.empty())
@@ -42,7 +42,7 @@ void SceneManager::setScene(int newScene)
 
 }
 
-void SceneManager::checkFlags(void)
+void rune::SceneManager::checkFlags(void)
 {
 
   //If the current state is asking to change the state
@@ -62,7 +62,7 @@ void SceneManager::checkFlags(void)
 /**
  * @return The total number of scenes currently stored in the SceneManager scene buffer.
 */
-int SceneManager::getNumScenes(void)
+int rune::SceneManager::getNumScenes(void)
 {
 
   return m_scenes.size();
@@ -72,7 +72,7 @@ int SceneManager::getNumScenes(void)
 /**
  * @param newScene New GameScene to be added into the SceneManager scene buffer. 
 */
-void SceneManager::addScene(rune::GameScene* newScene)
+void rune::SceneManager::addScene(rune::GameScene* newScene)
 {
 
   m_scenes.push_back(newScene);

@@ -12,13 +12,21 @@
 namespace rune{
 
 ///Possible window level events that can be triggered
-enum EventType{None,Closed,Resized,KeyPressed};
+enum class EventType
+{
+
+  None = 0,
+  WindowClose, WindowResize, WindowFocus, WindowLostFocus, WindowMoved,
+  KeyPressed, KeyReleased,
+  MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
+
+};
 
 class Event
 {
 
 public:
-  EventType type = None;
+  EventType type = EventType::None;
 
 };
 }

@@ -1,5 +1,5 @@
 /**
- * @class RenderWindow
+ * @class rune::RenderWindow
  * @brief A window that the game can be drawn to.
  * 
  * @author Thomas Montano
@@ -18,6 +18,10 @@
 #include <Events\event.h>
 #include "Math\vec2.h"
 #include <string>
+
+
+
+namespace rune{
 
 class Drawable;
 
@@ -42,6 +46,9 @@ public:
   ///Determines if any window level events have happened.
   void pollEvents(rune::Event& event);
 
+  ///Set the window title.
+  void setWindowTitle(std::string);
+
   ///Display on screen what has been rendered to the window so far.
   void display(void);
 
@@ -61,5 +68,6 @@ public:
   void close(void);
 
 };
+}
 
 #endif

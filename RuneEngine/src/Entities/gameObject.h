@@ -18,21 +18,23 @@
 #include <Physics\rigidBody.h>
 
 //Forward declaration of layer object
+namespace rune{
 class SceneLayer;
+}
 
 namespace rune{
 
 class RUNE_ENGINE GameObject : public Drawable
 {
 private:
-  Sprite m_objectSprite; //Drawable sprite object
-  Texture m_objectTexture;
+  rune::Sprite m_objectSprite; //Drawable sprite object
+  rune::Texture m_objectTexture;
 
   std::vector<ObjectAnimation*> animations; //Animations to be played
 
-  SceneLayer* myLayer;
+  rune::SceneLayer* myLayer;
 
-  RigidBody m_objectRigidBody;
+  physics::RigidBody m_objectRigidBody;
 
   bool m_mirrorSprite;
 
@@ -41,7 +43,7 @@ public:
   virtual void draw(RenderWindow&);
 
   ///Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.
-  void objectInit(float xPos, float yPos, int width, int height, std::string filePath,float mass = 10,float gravity = 10);
+  void objectInit(double xPos, double yPos, int width, int height, std::string filePath,double mass = 10,double gravity = 10);
 
   ///Add an animation to the animation array
   void addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName);
@@ -59,22 +61,22 @@ public:
   virtual void start();
 
   ///Update the position of the object based on velocities acting on the object.
-  void updatePosition(float alpha);
+  void updatePosition(double alpha);
   
   ///Returns a pointer to the rigid body component.
-  RigidBody* getRigidBody(void);
+  physics::RigidBody* getRigidBody(void);
 
   ///Returns a list of collisions that the object is currently involved in.
-  std::vector<collision> getCollisions(void);
+  std::vector<physics::collision> getCollisions(void);
 
   ///Set the rotation of the object.
-  void setRotation(float angle);
+  void setRotation(double angle);
 
   ///Set the layer pointer for the object.
-  void setLayer(SceneLayer* layer);
+  void setLayer(rune::SceneLayer* layer);
 
   ///Returns a pointer to the layer the object is on. Layer pointer is stored in the scene.
-  SceneLayer* getLayer(void);
+  rune::SceneLayer* getLayer(void);
 
 };
 }

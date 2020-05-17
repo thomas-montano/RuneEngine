@@ -4,7 +4,7 @@
  * @param objects An array of pointers to rigid bodies that should be considered for collision
  * @param dT The amount of time that the physics frame occupies
 */
-void updatePhysics(std::vector<RigidBody*> objects, double dT)
+void physics::updatePhysics(std::vector<physics::RigidBody*> objects, double dT)
 {
 
   //Update the positions of all objects
@@ -16,7 +16,7 @@ void updatePhysics(std::vector<RigidBody*> objects, double dT)
 
   //Sort the objects by vertical position so the top ones are checked first
   int i,j;
-  RigidBody* key;
+  physics::RigidBody* key;
   for(i = 1; i < objects.size();i++)
   { 
     key = objects[i];
@@ -74,7 +74,7 @@ void updatePhysics(std::vector<RigidBody*> objects, double dT)
  * @param boundingBoxes An array of pointers to rigid bodies that should be considered for collision.
  * @return Collision manifolds that have been found to be possibly colliding.
 */
-std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes)
+std::vector<physics::collision> physics::broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes)
 {
 
   std::vector<collision> collisions(0); //Total collisions detected
@@ -164,7 +164,7 @@ std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxe
  * @param possibleCollisions Collision manifolds for AABB's that were found to be colliding
  * @return Collision manifols that have been found to be definitely colliding.
 */
-std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleCollisions)
+std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<collision> possibleCollisions)
 {
 
   std::vector<collision> definiteCollisions(0);
@@ -297,7 +297,7 @@ std::vector<collision> narrowPhaseCollisions(std::vector<collision> possibleColl
 /**
  * @param collisions Collision manifolds for OBB's that were found to be definitely colliding. 
 */
-void resolveCollisions(std::vector<collision> collisions)
+void physics::resolveCollisions(std::vector<physics::collision> collisions)
 {
 
   for(int i = 0; i < collisions.size();i++)
@@ -375,7 +375,7 @@ void resolveCollisions(std::vector<collision> collisions)
  * @param object2 The seconds object in the collision.
  * @param normal The normal vector for the collision. 
 */
-void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, rune::Vec2 normal)
+void physics::positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, rune::Vec2 normal)
 {
 
   const double percent = 1; // usually 20% to 80%
@@ -394,7 +394,7 @@ void positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, 
  * @param b Seconds side of the triangle.
  * @return The length of the hypotenuse. 
 */
-double pythagoreanSolve(double a, double b)
+double physics::pythagoreanSolve(double a, double b)
 {
   return sqrt(pow(a,2) + pow(b,2));
 }

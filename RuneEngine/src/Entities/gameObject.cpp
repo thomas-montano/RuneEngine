@@ -10,7 +10,7 @@
  * @param mass Mass of the object in units relative to the game. (0 mass = infinite mass)
  * @param gravity Gravity vector that the object will be subject to.
 */
-void rune::GameObject::objectInit(float xPos, float yPos, int width, int height, std::string filePath, float mass, float gravity)
+void rune::GameObject::objectInit(double xPos, double yPos, int width, int height, std::string filePath, double mass, double gravity)
 {
 
   m_objectSprite.setOrigin(rune::Vec2(0.5*width,0.5*height));
@@ -107,7 +107,7 @@ void rune::GameObject::mirrorSprite(bool mirror)
 /**
  * @param alpha coefficient of linear interpolation
 */
-void rune::GameObject::updatePosition(float alpha)
+void rune::GameObject::updatePosition(double alpha)
 {
   rune::Vec2 oldPosition = m_objectRigidBody.getPreviousPosition();
   rune::Vec2 currentPos = m_objectRigidBody.getPosition();
@@ -134,12 +134,12 @@ void rune::GameObject::start(void)
   return;
 }
 
-RigidBody* rune::GameObject::getRigidBody(void)
+physics::RigidBody* rune::GameObject::getRigidBody(void)
 {
   return &m_objectRigidBody;
 }
 
-std::vector<collision> rune::GameObject::getCollisions(void)
+std::vector<physics::collision> rune::GameObject::getCollisions(void)
 {
   return m_objectRigidBody.getCollisions();
 }
@@ -147,7 +147,7 @@ std::vector<collision> rune::GameObject::getCollisions(void)
 /**
  * @param angle Angle in degrees that the object should be rotated to.
 */
- void rune::GameObject::setRotation(float angle)
+ void rune::GameObject::setRotation(double angle)
  {
    m_objectRigidBody.setRotation(angle);
  }
@@ -155,12 +155,12 @@ std::vector<collision> rune::GameObject::getCollisions(void)
 /**
  * @param layer SceneLayer object that should be referenced by the game object
 */
-void rune::GameObject::setLayer(SceneLayer* layer)
+void rune::GameObject::setLayer(rune::SceneLayer* layer)
 {
   myLayer = layer;
 }
 
-SceneLayer* rune::GameObject::getLayer(void)
+rune::SceneLayer* rune::GameObject::getLayer(void)
 {
   return myLayer;
 }

@@ -11,6 +11,6 @@ var searchData=
   ['lightsource_172',['LightSource',['../d0/da8/classrune_1_1LightSource.html',1,'rune']]],
   ['lightsource_2ecpp_173',['lightSource.cpp',['../d1/d61/lightSource_8cpp.html',1,'']]],
   ['lightsource_2eh_174',['lightSource.h',['../da/d14/lightSource_8h.html',1,'']]],
-  ['loadfromfile_175',['loadFromFile',['../d6/d97/classTexture.html#af9efb762284fb3f271d2f1c6a5c98b6b',1,'Texture']]],
+  ['loadfromfile_175',['loadFromFile',['../d6/df4/classrune_1_1Texture.html#a1fcca007c667eacb6e5311f4cce49660',1,'rune::Texture']]],
   ['loadscene_176',['loadScene',['../de/dfb/classrune_1_1GameApplication.html#a55a887116d0bdc7e8bd7cd68b197b675',1,'rune::GameApplication']]]
 ];

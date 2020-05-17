@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.3.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.4.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -84,48 +84,52 @@ $(function() {
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/da0/renderWindow_8h.html">renderWindow.h</a>&quot;</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../dc/d76/structShaderProgramSource.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../dc/d76/structShaderProgramSource.html">ShaderProgramSource</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{ </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../dc/d76/structShaderProgramSource.html#a3024eb3311331ec8ab58d4b5ee12d232">   24</a></span>&#160;  std::string <a class="code" href="../../dc/d76/structShaderProgramSource.html#a3024eb3311331ec8ab58d4b5ee12d232">VertexSource</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../dc/d76/structShaderProgramSource.html#a332e9f1bba047b29bd872301ce5289ab">   27</a></span>&#160;  std::string <a class="code" href="../../dc/d76/structShaderProgramSource.html#a332e9f1bba047b29bd872301ce5289ab">FragmentSource</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d9/d69/classShader.html">   30</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d9/d69/classShader.html">Shader</a></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_shaderID;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> CreateShader(<span class="keyword">const</span> std::string&amp; vertexShader, <span class="keyword">const</span> std::string&amp; fragmentShader);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> CompileShader(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type, <span class="keyword">const</span> std::string&amp; source);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../dc/d76/structShaderProgramSource.html">ShaderProgramSource</a> ParseShader(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  std::unordered_map&lt;std::string, int&gt; m_UniformLocationCache;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d9/d69/classShader.html">Shader</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d9/d69/classShader.html">Shader</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> bind(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> getUniformLocation(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> setUniform1f(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> setUniform4f(<span class="keyword">const</span> std::string&amp;name, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1, <span class="keywordtype">float</span> v2, <span class="keywordtype">float</span> v3);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> setUniform1i(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../df/dc8/structrune_1_1ShaderProgramSource.html">   23</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../df/dc8/structrune_1_1ShaderProgramSource.html">ShaderProgramSource</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{ </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../df/dc8/structrune_1_1ShaderProgramSource.html#a98c69241117349fda3d4cf25afb2fb97">   26</a></span>&#160;  std::string <a class="code" href="../../df/dc8/structrune_1_1ShaderProgramSource.html#a98c69241117349fda3d4cf25afb2fb97">VertexSource</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../df/dc8/structrune_1_1ShaderProgramSource.html#ac1fcf4afb7ab3c230968674e8bb4e752">   29</a></span>&#160;  std::string <a class="code" href="../../df/dc8/structrune_1_1ShaderProgramSource.html#ac1fcf4afb7ab3c230968674e8bb4e752">FragmentSource</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d4/df0/classrune_1_1Shader.html">   32</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d4/df0/classrune_1_1Shader.html">Shader</a></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_shaderID;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> CreateShader(<span class="keyword">const</span> std::string&amp; vertexShader, <span class="keyword">const</span> std::string&amp; fragmentShader);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> CompileShader(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> type, <span class="keyword">const</span> std::string&amp; source);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../df/dc8/structrune_1_1ShaderProgramSource.html">ShaderProgramSource</a> ParseShader(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  std::unordered_map&lt;std::string, int&gt; m_UniformLocationCache;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d4/df0/classrune_1_1Shader.html">Shader</a>();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d4/df0/classrune_1_1Shader.html">Shader</a>(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordtype">void</span> bind(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">int</span> getUniformLocation(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordtype">void</span> setUniform1f(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> setUniform4f(<span class="keyword">const</span> std::string&amp;name, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1, <span class="keywordtype">float</span> v2, <span class="keywordtype">float</span> v3);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> setUniform1i(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructShaderProgramSource_html_a3024eb3311331ec8ab58d4b5ee12d232"><div class="ttname"><a href="../../dc/d76/structShaderProgramSource.html#a3024eb3311331ec8ab58d4b5ee12d232">ShaderProgramSource::VertexSource</a></div><div class="ttdeci">std::string VertexSource</div><div class="ttdoc">The vertex shader code to be compiled.</div><div class="ttdef"><b>Definition:</b> shader.h:24</div></div>
-<div class="ttc" id="aclassShader_html"><div class="ttname"><a href="../../d9/d69/classShader.html">Shader</a></div><div class="ttdoc">A shader that can be used to render objects to the screen.</div><div class="ttdef"><b>Definition:</b> shader.h:30</div></div>
+<div class="ttc" id="astructrune_1_1ShaderProgramSource_html_ac1fcf4afb7ab3c230968674e8bb4e752"><div class="ttname"><a href="../../df/dc8/structrune_1_1ShaderProgramSource.html#ac1fcf4afb7ab3c230968674e8bb4e752">rune::ShaderProgramSource::FragmentSource</a></div><div class="ttdeci">std::string FragmentSource</div><div class="ttdoc">The fragment shader code to be compiled.</div><div class="ttdef"><b>Definition:</b> shader.h:29</div></div>
 <div class="ttc" id="arenderWindow_8h_html"><div class="ttname"><a href="../../d5/da0/renderWindow_8h.html">renderWindow.h</a></div></div>
-<div class="ttc" id="astructShaderProgramSource_html"><div class="ttname"><a href="../../dc/d76/structShaderProgramSource.html">ShaderProgramSource</a></div><div class="ttdoc">Compilable GLSL code generated by the shader file.</div><div class="ttdef"><b>Definition:</b> shader.h:21</div></div>
+<div class="ttc" id="astructrune_1_1ShaderProgramSource_html_a98c69241117349fda3d4cf25afb2fb97"><div class="ttname"><a href="../../df/dc8/structrune_1_1ShaderProgramSource.html#a98c69241117349fda3d4cf25afb2fb97">rune::ShaderProgramSource::VertexSource</a></div><div class="ttdeci">std::string VertexSource</div><div class="ttdoc">The vertex shader code to be compiled.</div><div class="ttdef"><b>Definition:</b> shader.h:26</div></div>
+<div class="ttc" id="astructrune_1_1ShaderProgramSource_html"><div class="ttname"><a href="../../df/dc8/structrune_1_1ShaderProgramSource.html">rune::ShaderProgramSource</a></div><div class="ttdoc">Compilable GLSL code generated by the shader file.</div><div class="ttdef"><b>Definition:</b> shader.h:23</div></div>
+<div class="ttc" id="aclassrune_1_1Shader_html"><div class="ttname"><a href="../../d4/df0/classrune_1_1Shader.html">rune::Shader</a></div><div class="ttdoc">A shader that can be used to render objects to the screen.</div><div class="ttdef"><b>Definition:</b> shader.h:32</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
-<div class="ttc" id="astructShaderProgramSource_html_a332e9f1bba047b29bd872301ce5289ab"><div class="ttname"><a href="../../dc/d76/structShaderProgramSource.html#a332e9f1bba047b29bd872301ce5289ab">ShaderProgramSource::FragmentSource</a></div><div class="ttdeci">std::string FragmentSource</div><div class="ttdoc">The fragment shader code to be compiled.</div><div class="ttdef"><b>Definition:</b> shader.h:27</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> gameObject.h:21</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

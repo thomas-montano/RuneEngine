@@ -1,5 +1,5 @@
 /**
- * @class Sprite
+ * @class rune::Sprite
  * @brief A sprite that can be given a texture and animated.
  * 
  * @author Thomas Montano
@@ -17,6 +17,8 @@
 #include <Math\vec2.h>
 #include <string>
 
+namespace rune{
+
 class RUNE_ENGINE Sprite : public Drawable
 {
 private:
@@ -24,7 +26,7 @@ private:
   Shader spriteShader;
   rune::Vec2 origin;
 
-  float vertices[32] = {0};
+  double vertices[32] = {0};
 
   unsigned int indices[6] = 
   {  
@@ -45,7 +47,7 @@ public:
   ///Default constructor that initializes the sprite to a drawable state.
   Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation);
   ///Draw overload so that sprite can be displayed to the screen.
-  virtual void draw(RenderWindow&);
+  virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.
   void setTexture(std::string texture);
   ///Add to the current position of the sprite.
@@ -62,6 +64,6 @@ public:
   rune::Vec2 getSize(void);
 
 };
-
+}
 
 #endif

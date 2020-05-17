@@ -1,5 +1,5 @@
 /**
- * @class ObjectAnimation
+ * @class rune::ObjectAnimation
  * @brief Class responsible for managing sprite animations and 
  * updating which frame of the animation is to be shown
  * 
@@ -14,6 +14,8 @@
 #include <string>
 #include <Events\clock.h>
 #include <Renderer\texture.h>
+
+namespace rune{
 
 class RUNE_ENGINE ObjectAnimation
 {
@@ -78,5 +80,6 @@ public:
   std::string getFile(void);
 
 };
+}
 
 #endif

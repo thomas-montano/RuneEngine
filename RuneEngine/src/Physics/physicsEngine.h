@@ -1,5 +1,6 @@
 /**
- * @brief Function file responsible for broad and narrow phase detection and collision resolution.
+ * @namespace physics
+ * @brief The physics module responsible for handling and resolving collisions between rune::GameObject.
  * 
  * @author Thomas Montano
  * @date March 2 2020
@@ -16,22 +17,26 @@
 #include <math.h>
 #include <algorithm>
 
+namespace physics{
+
 ///Function call made by the game scene to have objects get updated
-void updatePhysics(std::vector<RigidBody*> objects, double dT);
+void updatePhysics(std::vector<physics::RigidBody*> objects, double dT);
 
 ///Broad phase collision responsible for determining collisions based off of AABB's only.
-std::vector<collision> broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes);
+std::vector<physics::collision> broadPhaseCollisions(std::vector<physics::RigidBody*> boundingBoxes);
 
 ///Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into accout.
-std::vector<collision> narrowPhaseCollisions(std::vector<collision> boundingBoxes);
+std::vector<physics::collision> narrowPhaseCollisions(std::vector<physics::collision> boundingBoxes);
 
 //Resolve the definite collisions in a physically realistic way
-void resolveCollisions(std::vector<collision>);
+void resolveCollisions(std::vector<physics::collision>);
 
 //Correct the position of the object each frame so that it doesn't look like two objects are overlapping.
-void positionalCorrection(RigidBody* object1, RigidBody* object2, double penetration, rune::Vec2 normal);
+void positionalCorrection(physics::RigidBody* object1, physics::RigidBody* object2, double penetration, rune::Vec2 normal);
 
 ///Solve for the hypotenuse given the two sides of a triangle.
 double pythagoreanSolve(double,double);
+
+}
 
 #endif

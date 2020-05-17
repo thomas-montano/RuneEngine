@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['rectangleshape_526',['RectangleShape',['../df/df7/classRectangleShape.html#a5b5c1d644f21071bb14c77bc986ecae7',1,'RectangleShape::RectangleShape()'],['../df/df7/classRectangleShape.html#a9bbee193d79349a15fda3ef1ab85fd1f',1,'RectangleShape::RectangleShape(rune::Vec2 position, rune::Vec2 Size)']]],
-  ['reinit_527',['reInit',['../dd/ddc/classrune_1_1GameScene.html#afd011719f9a50aba292900f7251b6935',1,'rune::GameScene']]],
-  ['renderwindow_528',['RenderWindow',['../d9/d40/classRenderWindow.html#a51e455305cb9b319d730ecc8881a9a53',1,'RenderWindow']]],
-  ['reset_529',['reset',['../d0/d27/classrune_1_1Clock.html#aa74c525e4be018d19c92b4cf8b3308d4',1,'rune::Clock']]],
-  ['resolvecollisions_530',['resolveCollisions',['../db/d0c/physicsEngine_8cpp.html#a57607f639d1a3703b6301b5fba000dd7',1,'resolveCollisions(std::vector&lt; collision &gt; collisions):&#160;physicsEngine.cpp'],['../d5/dae/physicsEngine_8h.html#a6320cbdcf8f36456c01ab6cb9c5dbb1c',1,'resolveCollisions(std::vector&lt; collision &gt;):&#160;physicsEngine.cpp']]],
-  ['resume_531',['resume',['../dd/ddc/classrune_1_1GameScene.html#a8662c86414ee6f27d1b3349df86bbe4c',1,'rune::GameScene']]],
-  ['rigidbody_532',['RigidBody',['../d6/d88/classRigidBody.html#a28203d38d278da0695ace20c66ee5f0a',1,'RigidBody::RigidBody()'],['../d6/d88/classRigidBody.html#abbddfc6fe72220dd5018dd0eae970f99',1,'RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity=0, bool rotation=true)']]],
-  ['run_533',['run',['../de/dfb/classrune_1_1GameApplication.html#aa33c07850613da2057ba4e5b1ed97f62',1,'rune::GameApplication']]]
+  ['rectangleshape_538',['RectangleShape',['../d7/d43/classrune_1_1RectangleShape.html#ad2f9eaf2fb4b58fd0cca3859fa64af7b',1,'rune::RectangleShape::RectangleShape()'],['../d7/d43/classrune_1_1RectangleShape.html#a37c0163f5cc49b67755fc503dc1f3af2',1,'rune::RectangleShape::RectangleShape(rune::Vec2 position, rune::Vec2 Size)']]],
+  ['reinit_539',['reInit',['../dd/ddc/classrune_1_1GameScene.html#afd011719f9a50aba292900f7251b6935',1,'rune::GameScene']]],
+  ['renderwindow_540',['RenderWindow',['../d1/d58/classrune_1_1RenderWindow.html#abf1b8e5008137e06387dfb1eda3aa3ff',1,'rune::RenderWindow']]],
+  ['reset_541',['reset',['../d0/d27/classrune_1_1Clock.html#aa74c525e4be018d19c92b4cf8b3308d4',1,'rune::Clock']]],
+  ['resolvecollisions_542',['resolveCollisions',['../d5/dd0/namespacephysics.html#aac078d9cd5e21f639c6b2bfec8b8fa7e',1,'physics']]],
+  ['resume_543',['resume',['../dd/ddc/classrune_1_1GameScene.html#a8662c86414ee6f27d1b3349df86bbe4c',1,'rune::GameScene']]],
+  ['rigidbody_544',['RigidBody',['../d1/dd3/classphysics_1_1RigidBody.html#ad4adccc0db5ff388567659e39509d723',1,'physics::RigidBody::RigidBody()'],['../d1/dd3/classphysics_1_1RigidBody.html#afd5fe78e526741e11f71f8f04a8bdf85',1,'physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity=0, bool rotation=true)']]],
+  ['run_545',['run',['../de/dfb/classrune_1_1GameApplication.html#aa33c07850613da2057ba4e5b1ed97f62',1,'rune::GameApplication']]]
 ];

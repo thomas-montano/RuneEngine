@@ -26,7 +26,7 @@ public:
   ///Default empty constructor that sets X and Y to 0.
   Vec2();
   ///Constructor that sets up a new vector.
-  Vec2(float newX, float newY);
+  Vec2(double newX, double newY);
   ///Overload of subtraction operator.
   Vec2 operator- (const Vec2& right);
   ///Overload of addition operator.

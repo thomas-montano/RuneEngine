@@ -7,7 +7,7 @@
  * @param width The width of the button in pixels.
  * @param height The height of the button in pixels.
 */
-void rune::GameUI::createButton(float posX, float posY, float width, float height)
+void rune::GameUI::createButton(double posX, double posY, double width, double height)
 {
 
   m_posX = posX;
@@ -152,7 +152,5 @@ void rune::GameUI::draw(RenderWindow&)
   }
 
   ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
-
-  ImGui::ShowDemoWindow();
 
 }

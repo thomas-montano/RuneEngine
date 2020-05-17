@@ -1,5 +1,5 @@
 /**
- * @class SceneLayer
+ * @class rune::SceneLayer
  * @brief Main component of scenes. Can have objects, particles, light sources, or any other in game entity
  * added to a level through a layer.
  * 
@@ -20,34 +20,36 @@
 #include <Entities\particleEmitter.h>
 #include <Physics\rigidBody.h>
 
+namespace rune{
+
 class RUNE_ENGINE SceneLayer : public Drawable
 {
 private:
   bool hasPhysics;
 
   std::vector<rune::GameObject*> objects;
-  std::vector<ParticleEmitter*> particles;
-  std::vector<RigidBody*> objectRigidBodies;
+  std::vector<rune::ParticleEmitter*> particles;
+  std::vector<physics::RigidBody*> objectRigidBodies;
 
-  SceneLayer* selfPointer;
+  rune::SceneLayer* selfPointer;
 
-  float layerOpacity;
-  float layerBrightness;
+  double layerOpacity;
+  double layerBrightness;
 
   rune::Color globalLightColor;
-  float layerLighting;
+  double layerLighting;
 
-  virtual void draw(RenderWindow&);
+  virtual void draw(rune::RenderWindow&);
 
 public:
   ///Default constructor for setting up layer parameters.
-  SceneLayer(bool hasPhysics, float brightness = 1.0, float opacity = 1.0);
+  SceneLayer(bool hasPhysics, double brightness = 1.0, double opacity = 1.0);
 
   ///Adds a GameObject to the layer.
   void addToLayer(rune::GameObject* object);
 
   ///Adds a particle emitter to the layer.
-  void addToLayer(ParticleEmitter* object);
+  void addToLayer(rune::ParticleEmitter* object);
 
   ///Sets the SceneLayer pointer contained in the scene to be the location of the layer stored by the scene.
   void setScenePointer(SceneLayer* newSelfPointer);
@@ -59,12 +61,12 @@ public:
   std::vector<rune::GameObject*> getObjects(void);
 
   ///Returns an array of pointers to the rigid body elements currently stored in the scene.
-  std::vector<RigidBody*> getRigidBodies(void);
+  std::vector<physics::RigidBody*> getRigidBodies(void);
 
   ///Sets the global opacity of the layer.
-  void setOpacity(float opacity);
+  void setOpacity(double opacity);
 
 };
-
+}
 
 #endif

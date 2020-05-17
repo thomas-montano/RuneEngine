@@ -1,5 +1,5 @@
 /**
- * @class Drawable
+ * @class rune::Drawable
  * @brief Interface class for creating something that can be drawn to the screen.
  * 
  * @author Thomas Montano
@@ -15,13 +15,16 @@
 #include <Math\vec2.h>
 #include <Renderer\RenderWindow.h>
 
+namespace rune{
+
 class RUNE_ENGINE Drawable
 {
 
 public:
   ///Draw the object to a render window.
-  virtual void draw(RenderWindow&) = 0;
+  virtual void draw(rune::RenderWindow&) = 0;
 
 };
+}
 
 #endif

@@ -1,6 +1,6 @@
 #include "shader.h"
 
-Shader::Shader()
+rune::Shader::Shader()
 {
 
 }
@@ -8,7 +8,7 @@ Shader::Shader()
 /**
  * @param filePath The file path for the shader code to be compiled.
 */
-Shader::Shader(const std::string& filePath)
+rune::Shader::Shader(const std::string& filePath)
 {
   ShaderProgramSource source = ParseShader(filePath.c_str());
 
@@ -25,7 +25,7 @@ Shader::Shader(const std::string& filePath)
  * @param filePath The file path of the texture code to be loaded.
  * @return A ShaderProgramSource containing the raw shader text for a fragment and vertex shader.
 */
-ShaderProgramSource Shader::ParseShader(const std::string& filePath)
+rune::ShaderProgramSource rune::Shader::ParseShader(const std::string& filePath)
 {
 
   std::ifstream stream(filePath.c_str());
@@ -73,7 +73,7 @@ ShaderProgramSource Shader::ParseShader(const std::string& filePath)
  * @param source The file source of the shader code.
  * @return The OpenGL shader ID pointing to the compiled shader.
 */
-unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
+unsigned int rune::Shader::CompileShader(unsigned int type, const std::string& source)
 {
   unsigned int id = glCreateShader(type);
   const char* src = source.c_str();
@@ -104,7 +104,7 @@ unsigned int Shader::CompileShader(unsigned int type, const std::string& source)
  * @param fragmentShader The raw shader code for the fragment shader.
  * @return The OpenGL shader ID pointing to the created shader program.
 */
-unsigned int Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
+unsigned int rune::Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
 
   unsigned int program = glCreateProgram();
@@ -123,7 +123,7 @@ unsigned int Shader::CreateShader(const std::string& vertexShader, const std::st
 
 }
 
-void Shader::bind()
+void rune::Shader::bind()
 {
   glUseProgram(m_shaderID);
 }
@@ -131,7 +131,7 @@ void Shader::bind()
 /**
  * @return The id for the OpenGL uniform specified.
 */
-int Shader::getUniformLocation(const std::string& name)
+int rune::Shader::getUniformLocation(const std::string& name)
 {
   if(m_UniformLocationCache.find(name) != m_UniformLocationCache.end())
   {
@@ -153,7 +153,7 @@ int Shader::getUniformLocation(const std::string& name)
  * @param name The exact name of the uniform that is being created.
  * @param value The value being passed to the uniform.
 */
-void Shader::setUniform1f(const std::string& name, float value)
+void rune::Shader::setUniform1f(const std::string& name, float value)
 {
   glUniform1f(getUniformLocation(name), value);
 }
@@ -165,7 +165,7 @@ void Shader::setUniform1f(const std::string& name, float value)
  * @param v2 The value being passed to the uniform.
  * @param v3 The value being passed to the uniform.
 */
-void Shader::setUniform4f(const std::string&name, float v0, float v1, float v2, float v3)
+void rune::Shader::setUniform4f(const std::string&name, float v0, float v1, float v2, float v3)
 {
   glUniform4f(getUniformLocation(name), v0, v1, v2, v3);
 }
@@ -174,7 +174,7 @@ void Shader::setUniform4f(const std::string&name, float v0, float v1, float v2, 
  * @param name The exact name of the uniform that is being created.
  * @param value The value being passed to the uniform.
 */
-void Shader::setUniform1i(const std::string& name, int value)
+void rune::Shader::setUniform1i(const std::string& name, int value)
 {
   glUniform1i(getUniformLocation(name), value);
 }

@@ -1,5 +1,5 @@
 /**
- * @class RigidBody
+ * @class physics::RigidBody
  * @brief Game object component that allows a game object to have collisions with other objects.
  * 
  * @author Thomas Montano
@@ -15,6 +15,8 @@
 #include <Renderer\drawable.h>
 #include <Renderer\renderWindow.h>
 #include <Renderer\rectangleShape.h>
+
+namespace physics{
 
 //Forward declaration of rigidbody class
 class RigidBody;
@@ -73,7 +75,7 @@ private:
     body objectBody;
     bool isSleeping;
     std::vector<collision> involvedCollisions;
-    RectangleShape drawBox;
+    rune::RectangleShape drawBox;
 
     ///Overloaded draw functions for rendering the AABB to the screen.
     /*virtual void draw(RenderWindow& window)
@@ -187,5 +189,6 @@ public:
     std::vector<collision> getCollisions(void);
 
 };
+}
 
 #endif

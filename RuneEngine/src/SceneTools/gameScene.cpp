@@ -87,7 +87,7 @@ void rune::GameScene::updateVariable(void)
 void rune::GameScene::updateLayerPhysics(void)
 {
 
-  float currentTime = variableClock.getElapsedTimeAsMilliseconds()/1000.0;
+  double currentTime = variableClock.getElapsedTimeAsMilliseconds()/1000.0;
   
   accumulator += currentTime - frameStart;
   frameStart = currentTime;
@@ -104,7 +104,7 @@ void rune::GameScene::updateLayerPhysics(void)
     for(int i = 0; i < sceneLayers.size(); i++)
     {
 
-      std::vector<RigidBody*> rigidBodies = sceneLayers[i].getRigidBodies();
+      std::vector<physics::RigidBody*> rigidBodies = sceneLayers[i].getRigidBodies();
       updatePhysics(rigidBodies,dT);
     
     }
@@ -160,7 +160,6 @@ void rune::GameScene::Draw(RenderWindow& window)
   //Draw the debug UI
   ImGui::Render();
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
 
   window.display();
 

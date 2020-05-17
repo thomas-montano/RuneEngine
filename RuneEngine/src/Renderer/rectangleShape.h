@@ -1,5 +1,5 @@
 /**
- * @class RectangleShape
+ * @class rune::RectangleShape
  * @brief A rectangle that can be drawn to the screen.
  * 
  * @author Thomas Montano
@@ -16,6 +16,8 @@
 #include "drawable.h"
 #include <Math\vec2.h>
 
+namespace rune{
+
 class RUNE_ENGINE RectangleShape : public Drawable
 {
 
@@ -31,7 +33,7 @@ private:
   rune::Vec2 vertices[4];
 
 public:
-  virtual void draw(RenderWindow&);
+  virtual void draw(rune::RenderWindow&);
   
   RectangleShape();
   RectangleShape(rune::Vec2 position, rune::Vec2 Size);
@@ -42,5 +44,6 @@ public:
   void setSize(rune::Vec2);
 
 };
+}
 
 #endif

@@ -14,7 +14,7 @@
 
 namespace rune{
 
-class RUNE_ENGINE LightSource// : public Drawable
+class RUNE_ENGINE LightSource : public Drawable
 {
 
 public:
