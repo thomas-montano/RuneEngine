@@ -11,6 +11,9 @@
 
 #include "core.h"
 #include "opengl.h"
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_opengl3.h"
+#include "imgui/imgui_impl_glfw.h"
 #include "color.h"
 #include <Events\event.h>
 #include "Math\vec2.h"
@@ -29,6 +32,9 @@ private:
 public:
   ///Default constructor to give an openGL context and window.
   RenderWindow(int newWidth, int newHeight, std::string title);
+
+  ///Destructor to handle window clean up.
+  ~RenderWindow(void);
 
   ///Renders a drawable to the screen.
   void draw(Drawable&);

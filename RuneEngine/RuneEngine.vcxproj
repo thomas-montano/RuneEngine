@@ -58,7 +58,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;RUNE_BUILD_DLL;GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;D:\PrivateEye\RuneEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)RuneEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>Default</LanguageStandard>
     </ClCompile>
     <Link>
@@ -95,11 +95,17 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="mat3.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\math\mat2.cpp" />
     <ClCompile Include="src\gameApplication.cpp" />
     <ClCompile Include="src\Entities\gameObject.cpp" />
     <ClCompile Include="src\Input\keyboard.cpp" />
+    <ClCompile Include="src\Math\mat3.cpp" />
     <ClCompile Include="src\Renderer\color.cpp" />
     <ClCompile Include="src\SceneTools\gameScene.cpp" />
     <ClCompile Include="src\Entities\gameUI.cpp" />
@@ -120,12 +126,20 @@
     <ClCompile Include="src\SceneTools\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="mat3.h" />
+    <ClInclude Include="src\imgui\imconfig.h" />
+    <ClInclude Include="src\imgui\imgui.h" />
+    <ClInclude Include="src\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="src\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\imgui\imgui_internal.h" />
+    <ClInclude Include="src\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\imgui\imstb_truetype.h" />
     <ClInclude Include="src\math\mat2.h" />
     <ClInclude Include="src\core.h" />
     <ClInclude Include="src\gameApplication.h" />
     <ClInclude Include="src\Entities\gameObject.h" />
     <ClInclude Include="src\Input\keyboard.h" />
+    <ClInclude Include="src\Math\mat3.h" />
     <ClInclude Include="src\Renderer\color.h" />
     <ClInclude Include="src\Renderer\opengl.h" />
     <ClInclude Include="src\RuneEngine.h" />
@@ -156,6 +170,9 @@
   <ItemGroup>
     <Image Include="src\Renderer\knoxIdleSheet.png" />
     <Image Include="src\Renderer\knoxV1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="src\imgui\imgui.natvis" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

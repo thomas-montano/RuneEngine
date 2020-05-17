@@ -47,7 +47,6 @@ public:
 
   ///Initializes the state
   virtual void doInit(void);
-
   ///Reset the scene without unloading game objects
   virtual void reInit(void);
   void deInit(void);
@@ -59,7 +58,7 @@ public:
   virtual void Draw(RenderWindow& window);
   virtual void updateLayerPhysics(void);
   virtual void handleCleanup(void);
-  virtual void handleUI(RenderWindow& window, rune::Event theEvent);
+  virtual void handleUI(RenderWindow& window);
 
   virtual bool getStateFlag();
   virtual int getNextState();
@@ -68,7 +67,6 @@ public:
   virtual bool isActive(void);
   void changeState(int nextState);
   void addLayerToScene(SceneLayer);
-
 
 };
 }

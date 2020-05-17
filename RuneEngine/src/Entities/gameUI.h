@@ -15,10 +15,12 @@
 #include <Events\event.h>
 #include <Renderer\sprite.h>
 #include <Renderer\texture.h>
+#include <Renderer\opengl.h>
+#include <Renderer\renderWindow.h>
 
 namespace rune{
 
-class RUNE_ENGINE GameUI// :public Drawable
+class RUNE_ENGINE GameUI : public Drawable
 {
 private:
   Sprite m_uiObject;
@@ -35,6 +37,8 @@ public:
 
   ///Determines whether or not the UI element has been clicked on.
   bool isClicked(rune::Vec2, rune::Event mouseEvent);
+
+  void draw(RenderWindow&);
 };
 }
 #endif

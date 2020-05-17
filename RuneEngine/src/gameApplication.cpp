@@ -1,7 +1,9 @@
 #include "gameApplication.h"
 
+//Initialize Static variables
 RenderWindow* rune::GameApplication::winPtr = nullptr;
 double rune::GameApplication::deltaTime = 0.0;
+int rune::GameApplication::frameRate = 0;
 
 /**
  * @param updateRate How many times per second the game will run the main update loop.
@@ -111,7 +113,7 @@ void rune::GameApplication::gameLoop(void)
     if((currentTime - framerateClock) >= 1000)
     {
       framerateClock = tickClock.getElapsedTimeAsMilliseconds();
-      std::cout << frames << " FPS" << std::endl;
+      frameRate = frames;
       frames = 0;
     }
 
@@ -119,7 +121,7 @@ void rune::GameApplication::gameLoop(void)
     m_currentScene->handleEvents(m_windowEvent);
 
     //Handle UI that needs reference to window
-    m_currentScene->handleUI(m_mainWindow, m_windowEvent);
+    m_currentScene->handleUI(m_mainWindow);
 
     //Update anything that doesnt depend on ticks such as physics
     m_currentScene->updateVariable();
@@ -170,4 +172,9 @@ RenderWindow* rune::GameApplication::getWindow(void)
 double rune::GameApplication::getDeltaTime(void)
 {
   return deltaTime;
+}
+
+int rune::GameApplication::getFrameRate(void)
+{
+  return frameRate;
 }

@@ -101,6 +101,7 @@ private:
 
   static RenderWindow* winPtr;
   static double deltaTime;
+  static int frameRate;
   
   bool m_gameRunning;
   Event m_windowEvent;
@@ -132,6 +133,8 @@ public:
 
   ///Gets the change in time since the last frame in seconds.
   static double getDeltaTime(void);
+
+  static int getFrameRate(void);
 
 };
 }

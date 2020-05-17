@@ -35,6 +35,26 @@ RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 
   rune::Keyboard::SetWindow(GLwindow);
 
+  //Setup IMGUI
+  IMGUI_CHECKVERSION();
+  ImGui::CreateContext();
+  ImGuiIO& io = ImGui::GetIO(); (void)io;
+  ImGui::StyleColorsDark();
+
+  ImGui_ImplGlfw_InitForOpenGL(GLwindow, true);
+  ImGui_ImplOpenGL3_Init((char*)glGetString(GL_NUM_SHADING_LANGUAGE_VERSIONS));
+
+}
+
+RenderWindow::~RenderWindow(void)
+{
+
+  //Shutdown
+  ImGui_ImplOpenGL3_Shutdown();
+  ImGui_ImplGlfw_Shutdown();
+
+  ImGui::DestroyContext();
+
 }
 
 /**

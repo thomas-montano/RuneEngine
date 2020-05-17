@@ -61,7 +61,7 @@ void rune::GameScene::handleEvents(rune::Event theEvent)
  * @param window Render window that should be used for mouse positions
  * @param theEvent Event object used for mouse position at the moment of click 
  */
-void rune::GameScene::handleUI(RenderWindow& window, rune::Event theEvent)
+void rune::GameScene::handleUI(RenderWindow& window)
 {
 
 }
@@ -144,13 +144,23 @@ void rune::GameScene::Draw(RenderWindow& window)
     window.draw(sceneLayers[i]);
   }
 
+  //Prepare to render debug UI
+  ImGui_ImplOpenGL3_NewFrame();
+  ImGui_ImplGlfw_NewFrame();
+  ImGui::NewFrame();
+
   //Draw the user interface objects in front of everything else
-  /*for(int i = 0; i < m_stateUI.size();i++)
+  for(int i = 0; i < m_stateUI.size();i++)
   {
 
-    window.draw(m_stateUI[i]->getDrawable());
+    window.draw(*m_stateUI[i]);
 
-  }*/
+  }
+
+  //Draw the debug UI
+  ImGui::Render();
+  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
 
   window.display();
 

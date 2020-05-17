@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['rasterizerflags_4756',['RasterizerFlags',['../df/d67/structImFontConfig.html#a80d05eea7733731a3e9ac1d9e905e5b3',1,'ImFontConfig']]],
+  ['rasterizermultiply_4757',['RasterizerMultiply',['../df/d67/structImFontConfig.html#a9365265cc52098a8ecf89ff47f6106f2',1,'ImFontConfig']]],
+  ['readlinefn_4758',['ReadLineFn',['../d5/d13/structImGuiSettingsHandler.html#a0a02bad8569c2d9f22e1a532d1e2de60',1,'ImGuiSettingsHandler']]],
+  ['readopenfn_4759',['ReadOpenFn',['../d5/d13/structImGuiSettingsHandler.html#accadc3cc1599382b55b58dac53df0b24',1,'ImGuiSettingsHandler']]],
+  ['rectrel_4760',['RectRel',['../d2/d11/structImGuiNavMoveResult.html#ae1be85fdcad1fc7c2bfa367862da2ccf',1,'ImGuiNavMoveResult']]],
+  ['rects_4761',['Rects',['../dd/d86/structImFontBuildSrcData.html#a918baffa45001ec6ba866ad18a338969',1,'ImFontBuildSrcData']]],
+  ['red_4762',['red',['../d8/d25/classrune_1_1Color.html#af389c727b8048b2118d019975cd4733f',1,'rune::Color']]],
+  ['redo_5fchar_5fpoint_4763',['redo_char_point',['../da/d59/structStbUndoState.html#aab6e5eeb964882e6d9f5d2952b7352e3',1,'StbUndoState']]],
+  ['redo_5fpoint_4764',['redo_point',['../da/d59/structStbUndoState.html#a719ba014b2db8a8ea55739664b445af0',1,'StbUndoState']]],
+  ['refframe_4765',['RefFrame',['../d3/d41/structImGuiOnceUponAFrame.html#a2d44776b8e7bdeec217f88be9f832e08',1,'ImGuiOnceUponAFrame']]],
+  ['renderdrawlistsfn_4766',['RenderDrawListsFn',['../df/d8f/structImGuiIO.html#ae16a9f25f36fe9706d8a33fb128e538a',1,'ImGuiIO']]],
+  ['reorderrequestdir_4767',['ReorderRequestDir',['../dd/df2/structImGuiTabBar.html#adb5c5e4dd8c0331a229dd9e38042677f',1,'ImGuiTabBar']]],
+  ['reorderrequesttabid_4768',['ReorderRequestTabId',['../dd/df2/structImGuiTabBar.html#a63b10062043a569efbb55462602d7b27',1,'ImGuiTabBar']]],
+  ['resizeborderheld_4769',['ResizeBorderHeld',['../df/d95/structImGuiWindow.html#a2f7c042fc7e8359d4736cab69fff8490',1,'ImGuiWindow']]],
+  ['restitution_4770',['restitution',['../d2/d07/structbody.html#a4571408b68568e5385df0f834a35e9ee',1,'body']]],
+  ['rootwindow_4771',['RootWindow',['../df/d95/structImGuiWindow.html#aef9281297b0993c8f1b7c1ff7987cb61',1,'ImGuiWindow']]],
+  ['rootwindowfornav_4772',['RootWindowForNav',['../df/d95/structImGuiWindow.html#a949a4aa260a21e8a8d2f65ffbe789712',1,'ImGuiWindow']]],
+  ['rootwindowfortitlebarhighlight_4773',['RootWindowForTitleBarHighlight',['../df/d95/structImGuiWindow.html#ae5d5c6637b63f35edc415162a5674c1e',1,'ImGuiWindow']]],
+  ['rotationalradius_4774',['rotationalRadius',['../d2/d07/structbody.html#a10fca0bfc2743f68a1ae172d11545ef1',1,'body']]]
+];

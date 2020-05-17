@@ -138,5 +138,21 @@ bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
   {
     return false;
   }
+  
+}
+
+void rune::GameUI::draw(RenderWindow&)
+{
+  
+  if (ImGui::IsItemHovered())
+  {
+    ImGui::BeginTooltip();
+    ImGui::Text("This is the debug UI!");
+    ImGui::EndTooltip();
+  }
+
+  ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
+
+  ImGui::ShowDemoWindow();
 
 }

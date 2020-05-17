@@ -22,7 +22,7 @@ var searchData=
   ['getelapsedtimeasmilliseconds_108',['getElapsedTimeAsMilliseconds',['../d0/d27/classrune_1_1Clock.html#ac5bbb2aadfc34068fbff1fac8bf8d05b',1,'rune::Clock']]],
   ['getfile_109',['getFile',['../d1/d4f/classObjectAnimation.html#a2fc0cb2c39b86dc37f3814d648958c21',1,'ObjectAnimation']]],
   ['getframeheight_110',['getFrameHeight',['../d1/d4f/classObjectAnimation.html#a2b4f3cd21dcfa48a850bea626ad4c08e',1,'ObjectAnimation']]],
-  ['getframerate_111',['getFrameRate',['../d1/d4f/classObjectAnimation.html#a5027b73ecbcbeb2a259c628b79a4417c',1,'ObjectAnimation']]],
+  ['getframerate_111',['getFrameRate',['../d1/d4f/classObjectAnimation.html#a5027b73ecbcbeb2a259c628b79a4417c',1,'ObjectAnimation::getFrameRate()'],['../de/dfb/classrune_1_1GameApplication.html#a8e52b25c008d4f90db0ba79ed9a96388',1,'rune::GameApplication::getFrameRate()']]],
   ['getframewidth_112',['getFrameWidth',['../d1/d4f/classObjectAnimation.html#ab3a2c3bc0e99b5e3600268cb63b5696b',1,'ObjectAnimation']]],
   ['getgravity_113',['getGravity',['../d6/d88/classRigidBody.html#a4ace6f7102bbc77502656b998de3acd7',1,'RigidBody']]],
   ['getheight_114',['getHeight',['../d6/d88/classRigidBody.html#a4ee956b30486e9e4fa48eb1382466d55',1,'RigidBody::getHeight()'],['../d6/d97/classTexture.html#a573771bbad50ecfc8e4fb9093472eb7d',1,'Texture::getHeight()']]],

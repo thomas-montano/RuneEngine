@@ -111,38 +111,36 @@ $(function() {
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> doInit(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> reInit(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">void</span> deInit(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> pause(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> resume(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleEvents(<a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a> theEvent);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateFixed(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateVariable(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Draw(<a class="code" href="../../d9/d40/classRenderWindow.html">RenderWindow</a>&amp; window);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateLayerPhysics(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleCleanup(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleUI(<a class="code" href="../../d9/d40/classRenderWindow.html">RenderWindow</a>&amp; window, <a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a> theEvent);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> getStateFlag();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> getNextState();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> setStateFlag(<span class="keywordtype">bool</span> value);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> getQuitFlag(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> isActive(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> changeState(<span class="keywordtype">int</span> nextState);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> addLayerToScene(<a class="code" href="../../dc/da1/classSceneLayer.html">SceneLayer</a>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> reInit(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> deInit(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> pause(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> resume(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleEvents(<a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a> theEvent);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateFixed(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateVariable(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> Draw(<a class="code" href="../../d9/d40/classRenderWindow.html">RenderWindow</a>&amp; window);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> updateLayerPhysics(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleCleanup(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> handleUI(<a class="code" href="../../d9/d40/classRenderWindow.html">RenderWindow</a>&amp; window);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> getStateFlag();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">int</span> getNextState();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> setStateFlag(<span class="keywordtype">bool</span> value);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> getQuitFlag(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">bool</span> isActive(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> changeState(<span class="keywordtype">int</span> nextState);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> addLayerToScene(<a class="code" href="../../dc/da1/classSceneLayer.html">SceneLayer</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1GameScene_html_a85e0a46896dac7a4e0805fd3fa0e080b"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html#a85e0a46896dac7a4e0805fd3fa0e080b">rune::GameScene::frameStart</a></div><div class="ttdeci">float frameStart</div><div class="ttdef"><b>Definition:</b> gameScene.h:40</div></div>
 <div class="ttc" id="aclassrune_1_1GameScene_html_ab2e8a9de6e7d4e040918ef66583f7118"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html#ab2e8a9de6e7d4e040918ef66583f7118">rune::GameScene::dT</a></div><div class="ttdeci">float dT</div><div class="ttdef"><b>Definition:</b> gameScene.h:38</div></div>
 <div class="ttc" id="aclassrune_1_1GameScene_html_a6b30e7f9d439fa10897cd302ccfdb18f"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html#a6b30e7f9d439fa10897cd302ccfdb18f">rune::GameScene::variableClock</a></div><div class="ttdeci">rune::Clock variableClock</div><div class="ttdef"><b>Definition:</b> gameScene.h:37</div></div>
-<div class="ttc" id="aclassRenderWindow_html"><div class="ttname"><a href="../../d9/d40/classRenderWindow.html">RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:21</div></div>
+<div class="ttc" id="aclassRenderWindow_html"><div class="ttname"><a href="../../d9/d40/classRenderWindow.html">RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:24</div></div>
 <div class="ttc" id="aclassrune_1_1GameScene_html_a122fd23302ad3a6c9cf4015c94c6f58d"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html#a122fd23302ad3a6c9cf4015c94c6f58d">rune::GameScene::m_stateUI</a></div><div class="ttdeci">std::vector&lt; GameUI * &gt; m_stateUI</div><div class="ttdef"><b>Definition:</b> gameScene.h:42</div></div>
 <div class="ttc" id="aclassrune_1_1Clock_html"><div class="ttname"><a href="../../d0/d27/classrune_1_1Clock.html">rune::Clock</a></div><div class="ttdoc">A clock that can be used to tell how much time has passed.</div><div class="ttdef"><b>Definition:</b> clock.h:18</div></div>
 <div class="ttc" id="aclassrune_1_1GameScene_html_a015fd1e8978f7fb70d26d4769192f7d0"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html#a015fd1e8978f7fb70d26d4769192f7d0">rune::GameScene::sceneLayers</a></div><div class="ttdeci">std::vector&lt; SceneLayer &gt; sceneLayers</div><div class="ttdef"><b>Definition:</b> gameScene.h:35</div></div>
@@ -152,7 +150,7 @@ $(function() {
 <div class="ttc" id="aclassrune_1_1GameScene_html_aafd2406065428f3317d0da0170b8762d"><div class="ttname"><a href="../../dd/ddc/classrune_1_1GameScene.html#aafd2406065428f3317d0da0170b8762d">rune::GameScene::m_nextState</a></div><div class="ttdeci">int m_nextState</div><div class="ttdef"><b>Definition:</b> gameScene.h:32</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
 <div class="ttc" id="aclassSceneLayer_html"><div class="ttname"><a href="../../dc/da1/classSceneLayer.html">SceneLayer</a></div><div class="ttdoc">Main component of scenes. Can have objects, particles, light sources, or any other in game entity add...</div><div class="ttdef"><b>Definition:</b> layer.h:23</div></div>
-<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdef"><b>Definition:</b> mat3.h:17</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdef"><b>Definition:</b> gameObject.h:23</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
