@@ -13,13 +13,14 @@
 
 #include "core.h"
 #include <Math\vec2.h>
+#include <Math\mat2.h>
 
 namespace rune{
 
 class RUNE_ENGINE Camera
 {
 private:
-
+  Mat2 viewport;
 public:
   ///Set the zoom factor of the camera.
   void setZoom(double);

@@ -75,10 +75,10 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
   float drawVertices[32] = 
   {
-    // positions                                                                                // colors           // texture coords
-    (m_position.x + m_size.x - origin.x)/windowSize.x-1, (m_position.y+ m_size.y - origin.y)/windowSize.y-1, 0.0f,    1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
+    // positions                                                                                                        // colors           // texture coords
+    (m_position.x + m_size.x - origin.x)/windowSize.x-1, (m_position.y+ m_size.y - origin.y)/windowSize.y-1, 0.0f,      1.0f, 0.0f, 0.0f,   1.0f, 1.0f,   // top right
     (m_position.x+m_size.x - origin.x)/windowSize.x-1, (m_position.y - origin.y)/windowSize.y-1, 0.0f,                  0.0f, 1.0f, 0.0f,   1.0f, 0.0f,   // bottom right
-    (m_position.x - origin.x)/windowSize.x-1, (m_position.y - origin.y)/windowSize.y-1, 0.0f,                             0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
+    (m_position.x - origin.x)/windowSize.x-1, (m_position.y - origin.y)/windowSize.y-1, 0.0f,                           0.0f, 0.0f, 1.0f,   0.0f, 0.0f,   // bottom left
     (m_position.x - origin.x)/windowSize.x-1, (m_position.y+ m_size.y - origin.y)/windowSize.y-1, 0.0f,                 0.0f, 1.0f, 0.0f,   0.0f, 1.0f    // top left 
   };
 
