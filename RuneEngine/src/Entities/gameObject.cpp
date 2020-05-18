@@ -54,7 +54,7 @@ void rune::GameObject::draw(RenderWindow& window)
 void rune::GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName)
 {
 
-  /*ObjectAnimation* newAnimation = new ObjectAnimation;
+  ObjectAnimation* newAnimation = new ObjectAnimation;
   Texture* spriteSheet = new Texture;
 
   newAnimation->setCurrentFame(0);
@@ -67,7 +67,7 @@ void rune::GameObject::addAnimation(int frameWidth, int numFrames, int frameRate
   
   newAnimation->setSheet(*spriteSheet);
 
-  animations.push_back(newAnimation);*/
+  animations.push_back(newAnimation);
 
 }
 
@@ -102,6 +102,14 @@ void rune::GameObject::playAnimation(int animation)
 void rune::GameObject::mirrorSprite(bool mirror)
 {
   m_mirrorSprite = mirror;
+}
+
+/**
+ * \return The current position of the game object.
+ */
+rune::Vec2 rune::GameObject::getPosition(void)
+{
+  return m_objectSprite.getPosition();
 }
 
 /**

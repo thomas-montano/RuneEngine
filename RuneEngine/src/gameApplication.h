@@ -127,7 +127,7 @@ public:
    */
   int m_errorCode;
   ///Default constructor for setting up a new game.
-  GameApplication(int updateRate);
+  GameApplication(std::string title = "Rune Engine", int updateRate = 60);
   ///Set the title of the window
   void setWindowTitle(std::string);
   ///Loads in a scene file and stores it in the game application.

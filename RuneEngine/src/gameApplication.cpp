@@ -6,9 +6,10 @@ double rune::GameApplication::deltaTime = 0.0;
 int rune::GameApplication::frameRate = 0;
 
 /**
+ * @param 
  * @param updateRate How many times per second the game will run the main update loop.
  */
-rune::GameApplication::GameApplication(int updateRate) : m_mainWindow(1440, 720, "Rune Engine")
+rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title)
 {
   winPtr = &m_mainWindow;
   m_updateRate = updateRate; //Update ticks per second

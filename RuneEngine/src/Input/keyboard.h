@@ -8,6 +8,7 @@
 
 #pragma once
 #include "core.h"
+#include <gameApplication.h>
 #include <Renderer\opengl.h>
 
 namespace rune{
@@ -193,10 +194,6 @@ enum Key
 
   ///Determines whether or not the key is being pressed.
   static bool isKeyPressed(Key);
-  static void SetWindow(GLFWwindow*);
-
-private:
-  static GLFWwindow* window;
 
 };
 

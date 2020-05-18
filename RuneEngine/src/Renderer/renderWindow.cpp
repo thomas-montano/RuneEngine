@@ -33,8 +33,6 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
   glEnable(GL_BLEND);
   glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
-  rune::Keyboard::SetWindow(GLwindow);
-
   //Setup IMGUI
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
@@ -64,6 +62,14 @@ rune::RenderWindow::~RenderWindow(void)
 void rune::RenderWindow::setWindowTitle(std::string newTitle)
 {
   glfwSetWindowTitle(GLwindow,newTitle.c_str());
+}
+
+/**
+ * \return A pointer for the GLFW window.
+ */
+GLFWwindow* rune::RenderWindow::GetGLWindow()
+{
+  return GLwindow;
 }
 
 /**

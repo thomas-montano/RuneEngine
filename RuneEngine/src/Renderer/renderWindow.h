@@ -67,6 +67,9 @@ public:
   ///Close the window
   void close(void);
 
+  ///Return a pointer to the OpenGL window.
+  GLFWwindow* GetGLWindow();
+
 };
 }
 

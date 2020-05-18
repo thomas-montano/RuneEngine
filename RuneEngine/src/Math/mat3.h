@@ -3,7 +3,7 @@
 /**
  * @class rune::Mat3
  * 
- * @brief A 3x3 matrix to be used for math.
+ * @brief 3 x 3 matrix to be used for math.
  * 
  * @author Thomas Montano
  * @date May 16 2020
@@ -18,6 +18,8 @@ namespace rune{
 
 class RUNE_ENGINE Mat3
 {
+
+
 };
 }
 

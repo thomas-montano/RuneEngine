@@ -26,7 +26,7 @@ private:
   Shader spriteShader;
   rune::Vec2 origin;
 
-  double vertices[32] = {0};
+  float vertices[32] = {0};
 
   unsigned int indices[6] = 
   {  

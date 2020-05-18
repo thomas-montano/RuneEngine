@@ -14,3 +14,4 @@
 #include <SceneTools\layer.h>
 #include <Input\keyboard.h>
 #include <Math\vec2.h>
+#include <Renderer\camera.h>

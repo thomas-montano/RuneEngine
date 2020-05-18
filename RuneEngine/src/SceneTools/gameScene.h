@@ -19,6 +19,7 @@
 #include <Events\clock.h>
 #include <SceneTools\layer.h>
 #include <Entities\particleEmitter.h>
+#include <Renderer\camera.h>
 
 namespace rune{
 
@@ -41,7 +42,7 @@ protected:
 
   std::vector<GameUI*> m_stateUI;
 
-  //View m_camera;
+  Camera SceneCamera;
 
 public:
 
