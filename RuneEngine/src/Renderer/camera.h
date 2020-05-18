@@ -1,5 +1,13 @@
 #pragma once
 
+/**
+ * @class rune::Camera
+ * @brief This class is used to control the viewport of the scene.
+ *
+ * @author Thomas Montano
+ * @date May 17 2020
+ */
+
 #ifndef CAMERA_H_DEFINED
 #define CAMERA_H_DEFINED
 
@@ -13,8 +21,9 @@ class RUNE_ENGINE Camera
 private:
 
 public:
-
+  ///Set the zoom factor of the camera.
   void setZoom(double);
+  ///Set the center position of the camera.
   void setCenter(rune::Vec2);
 
 };
