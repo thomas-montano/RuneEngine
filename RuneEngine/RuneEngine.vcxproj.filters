@@ -105,6 +105,9 @@
     <ClCompile Include="src\Renderer\camera.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SceneTools\console.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameApplication.h">
@@ -216,6 +219,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Renderer\camera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneTools\console.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

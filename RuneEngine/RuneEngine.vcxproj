@@ -95,6 +95,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\SceneTools\console.cpp" />
     <ClCompile Include="src\Renderer\camera.cpp" />
     <ClCompile Include="src\imgui\imgui.cpp" />
     <ClCompile Include="src\imgui\imgui_demo.cpp" />
@@ -127,6 +128,7 @@
     <ClCompile Include="src\SceneTools\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\SceneTools\console.h" />
     <ClInclude Include="src\Renderer\camera.h" />
     <ClInclude Include="src\imgui\imconfig.h" />
     <ClInclude Include="src\imgui\imgui.h" />

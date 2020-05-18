@@ -143,7 +143,12 @@ bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
 
 void rune::GameUI::draw(RenderWindow&)
 {
-  
+
+  ImGui::Begin("FPS");
+
+  ImGui::SetWindowSize(ImVec2(100, 50));
+  ImGui::SetWindowPos(ImVec2(0,0));
+
   if (ImGui::IsItemHovered())
   {
     ImGui::BeginTooltip();
@@ -152,5 +157,7 @@ void rune::GameUI::draw(RenderWindow&)
   }
 
   ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
+
+  ImGui::End();
 
 }

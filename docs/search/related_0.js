@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_2a_748',['operator*',['../dd/dca/classrune_1_1Vec2.html#aa745f3d5eb9534fb36fc8e5bfa113b87',1,'rune::Vec2::operator*()'],['../dd/dca/classrune_1_1Vec2.html#ae60974baa4d51af26fad6f5ecc99c98f',1,'rune::Vec2::operator*()']]],
-  ['operator_3c_3c_749',['operator&lt;&lt;',['../dd/dca/classrune_1_1Vec2.html#a94ea44418f9ef94d9fde750f3fe7db98',1,'rune::Vec2']]]
+  ['operator_2a_763',['operator*',['../df/db1/classrune_1_1Mat2.html#ac998f9bc7b146000230ee28d2b5fb34d',1,'rune::Mat2::operator*()'],['../df/db1/classrune_1_1Mat2.html#a61687ecab0254b850bbea204fa050983',1,'rune::Mat2::operator*()'],['../d2/d17/classrune_1_1Mat3.html#ab7613bcccc2434b146f0d9b0f6c2840e',1,'rune::Mat3::operator*()'],['../d2/d17/classrune_1_1Mat3.html#ac6abd95afc5a02726642dba42d2a852c',1,'rune::Mat3::operator*()'],['../dd/dca/classrune_1_1Vec2.html#aa745f3d5eb9534fb36fc8e5bfa113b87',1,'rune::Vec2::operator*()'],['../dd/dca/classrune_1_1Vec2.html#ae60974baa4d51af26fad6f5ecc99c98f',1,'rune::Vec2::operator*()']]],
+  ['operator_3c_3c_764',['operator&lt;&lt;',['../df/db1/classrune_1_1Mat2.html#a5e32c81fce1e96f0102dd37b50aa86a9',1,'rune::Mat2::operator&lt;&lt;()'],['../d2/d17/classrune_1_1Mat3.html#a7f033b6bebe42b2d08281615644e6771',1,'rune::Mat3::operator&lt;&lt;()'],['../dd/dca/classrune_1_1Vec2.html#a94ea44418f9ef94d9fde750f3fe7db98',1,'rune::Vec2::operator&lt;&lt;()']]]
 ];

@@ -13,6 +13,7 @@
 
 #include <core.h>
 #include <vector>
+#include <SceneTools\console.h>
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
@@ -42,7 +43,9 @@ protected:
 
   std::vector<GameUI*> m_stateUI;
 
-  Camera SceneCamera;
+  rune::Camera SceneCamera;
+
+  rune::Console debugConsole;
 
 public:
 
