@@ -13,6 +13,7 @@
 
 #include <core.h>
 #include <vector>
+#include <string>
 #include <SceneTools\console.h>
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>

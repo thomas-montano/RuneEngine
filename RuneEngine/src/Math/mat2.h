@@ -9,6 +9,7 @@
 */
 
 #include "core.h"
+#include "vec2.h"
 #include <iostream>
 
 namespace rune{
@@ -23,9 +24,11 @@ public:
   ///Default empty constructor that sets X and Y to 0.
   Mat2();
   ///Constructor that sets up a new vector.
-  Mat2(double newRow1[2], double newRow2[2]);
+  Mat2(double a11, double a12, double a21, double a22);
   ///Overload of subtraction operator.
   Mat2 operator- (const Mat2& right);
+  ///Overload of negation operator.
+  Mat2 operator-();
   ///Overload of addition operator.
   Mat2 operator+ (const Mat2& right);
   ///Overload of mutiplication operator.
@@ -48,6 +51,8 @@ public:
   friend RUNE_ENGINE Mat2 operator* (double scalar, Mat2& vec);
   ///Overload of muliplication operator for a scalar on the right.
   friend RUNE_ENGINE Mat2 operator* (Mat2& vec, double scalar);
+  ///Overload of divison operator for a scalar.
+  friend RUNE_ENGINE rune::Mat2 operator/ (rune::Mat2& vec, double scalar);
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat2& vector);
 

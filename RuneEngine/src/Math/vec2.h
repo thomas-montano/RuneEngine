@@ -29,6 +29,8 @@ public:
   Vec2(double newX, double newY);
   ///Overload of subtraction operator.
   Vec2 operator- (const Vec2& right);
+  ///Overload of negation operator.
+  Vec2 operator-();
   ///Overload of addition operator.
   Vec2 operator+ (const Vec2& right);
   ///Overload of mutiplication operator.
@@ -51,6 +53,8 @@ public:
   friend RUNE_ENGINE Vec2 operator* (double scalar, Vec2& vec);
   ///Overload of muliplication operator for a scalar on the right.
   friend RUNE_ENGINE Vec2 operator* (Vec2& vec, double scalar);
+  ///Overload of division operator for a scalar on the right.
+  friend RUNE_ENGINE Vec2 operator/ (Vec2& vec, double scalar);
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 

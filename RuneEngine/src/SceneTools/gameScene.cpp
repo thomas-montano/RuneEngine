@@ -157,8 +157,6 @@ void rune::GameScene::Draw(RenderWindow& window)
 
   }
 
-  debugConsole.update();
-
   //Draw the debug UI
   ImGui::Render();
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

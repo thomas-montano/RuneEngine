@@ -6,7 +6,7 @@ var searchData=
   ['m_5fnextstate_188',['m_nextState',['../dd/ddc/classrune_1_1GameScene.html#aafd2406065428f3317d0da0170b8762d',1,'rune::GameScene']]],
   ['m_5fquitgame_189',['m_quitGame',['../dd/ddc/classrune_1_1GameScene.html#a664ada88a68f864ffbd9e7fba75db104',1,'rune::GameScene']]],
   ['m_5fstateui_190',['m_stateUI',['../dd/ddc/classrune_1_1GameScene.html#a122fd23302ad3a6c9cf4015c94c6f58d',1,'rune::GameScene']]],
-  ['mat2_191',['Mat2',['../df/db1/classrune_1_1Mat2.html',1,'rune::Mat2'],['../df/db1/classrune_1_1Mat2.html#aa39ffffe3782114ec38d5f64002b049a',1,'rune::Mat2::Mat2()'],['../df/db1/classrune_1_1Mat2.html#a51658275e6ef4163c261b9a087abf1d8',1,'rune::Mat2::Mat2(double newRow1[2], double newRow2[2])']]],
+  ['mat2_191',['Mat2',['../df/db1/classrune_1_1Mat2.html',1,'rune::Mat2'],['../df/db1/classrune_1_1Mat2.html#aa39ffffe3782114ec38d5f64002b049a',1,'rune::Mat2::Mat2()'],['../df/db1/classrune_1_1Mat2.html#a64cab1d18e84a4c98f76c90f4021b43e',1,'rune::Mat2::Mat2(double a11, double a12, double a21, double a22)']]],
   ['mat2_2ecpp_192',['mat2.cpp',['../d1/d77/mat2_8cpp.html',1,'']]],
   ['mat2_2eh_193',['mat2.h',['../d8/d13/mat2_8h.html',1,'']]],
   ['mat3_194',['Mat3',['../d2/d17/classrune_1_1Mat3.html',1,'rune::Mat3'],['../d2/d17/classrune_1_1Mat3.html#aab3569f34497d544de32cbd7447d22b3',1,'rune::Mat3::Mat3()'],['../d2/d17/classrune_1_1Mat3.html#a59ffbf4a3b01a435a54dbe2e73ccff87',1,'rune::Mat3::Mat3(double newX, double newY)']]],

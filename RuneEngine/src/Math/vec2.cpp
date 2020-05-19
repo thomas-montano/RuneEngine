@@ -36,6 +36,11 @@ rune::Vec2 rune::Vec2::operator -(const rune::Vec2& right)
 
 }
 
+rune::Vec2 rune::Vec2::operator-()
+{
+  return rune::Vec2(-1*this->x,-1*this->y);
+}
+
 /**
  * \param right The vector to be added.
  * \return A memberwise addition.
@@ -175,6 +180,11 @@ rune::Vec2 rune::operator* (double scalar, rune::Vec2& vec)
 rune::Vec2 rune::operator* (rune::Vec2& vec, double scalar)
 {
   return rune::Vec2(vec.x * scalar, vec.y * scalar);
+}
+
+rune::Vec2 rune::operator/ (rune::Vec2& vec, double scalar)
+{
+  return rune::Vec2(vec.x/scalar,vec.y/scalar);
 }
 
 /**
