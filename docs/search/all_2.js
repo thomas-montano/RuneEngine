@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_23',['C',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a140963ced6ab92c01a43b5220762634c',1,'rune::Keyboard']]],
-  ['camera_24',['Camera',['../df/d1c/classrune_1_1Camera.html',1,'rune']]],
+  ['camera_24',['Camera',['../df/d1c/classrune_1_1Camera.html',1,'rune::Camera'],['../df/d1c/classrune_1_1Camera.html#a77c8baf49f82ab5beb128f8fe17aea32',1,'rune::Camera::Camera()']]],
   ['camera_2ecpp_25',['camera.cpp',['../d1/d6b/camera_8cpp.html',1,'']]],
   ['camera_2eh_26',['camera.h',['../d7/df6/camera_8h.html',1,'']]],
   ['camera_5fh_5fdefined_27',['CAMERA_H_DEFINED',['../d7/df6/camera_8h.html#a05165f25e19aaacad5395e133d01e2ed',1,'camera.h']]],

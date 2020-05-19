@@ -26,9 +26,7 @@ private:
   Shader spriteShader;
   rune::Vec2 origin;
 
-  float vertices[32] = {0};
-
-  unsigned int indices[6] = 
+  const unsigned int indices[6] = 
   {  
       0, 1, 3, // first triangle
       1, 2, 3  // second triangle
@@ -46,6 +44,8 @@ public:
   Sprite();
   ///Default constructor that initializes the sprite to a drawable state.
   Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation);
+  ///Initialize opengl for the sprite.
+  void setUpBuffers(void);
   ///Draw overload so that sprite can be displayed to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.

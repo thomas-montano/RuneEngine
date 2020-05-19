@@ -93,24 +93,23 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d4/df0/classrune_1_1Shader.html">Shader</a> spriteShader;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> origin;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">float</span> vertices[32] = {0};</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indices[6] = </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  {  </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      0, 1, 3, <span class="comment">// first triangle</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      1, 2, 3  <span class="comment">// second triangle</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  };</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VBO;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> EBO;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VAO;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_position;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_size;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> dimensions,<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> position, std::string spriteLocation);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indices[6] = </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  {  </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      0, 1, 3, <span class="comment">// first triangle</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;      1, 2, 3  <span class="comment">// second triangle</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VBO;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> EBO;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> VAO;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_position;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> m_size;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> dimensions,<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> position, std::string spriteLocation);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">void</span> setUpBuffers(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(<a class="code" href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a>&amp;);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">void</span> setTexture(std::string texture);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">void</span> addPosition(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> newPos);</div>

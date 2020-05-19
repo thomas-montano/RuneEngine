@@ -1,4 +1,5 @@
 #include "mat2.h"
+#include "vec2.h"
 
 rune::Mat2::Mat2(): row1{ 0,0 }, row2{ 0,0 }
 {
@@ -218,3 +219,34 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)
 
   return os;
 }
+
+/**
+ * \param right The matrix to invert.
+ * \return The inverse of the square matrix.
+ */
+rune::Mat2 rune::invert(rune::Mat2 right)
+{
+
+  double determinant = right.determinant();
+  return Mat2(right.row2[1] / determinant, -1 * right.row1[1] / determinant, -1 * right.row2[0] / determinant, right.row1[0] / determinant);
+
+}
+
+/**
+ * \return The determinant of the matrix.
+ */
+double rune::Mat2::determinant()
+{
+  return(this->row1[0] * this->row2[1]) - (this->row1[1] * this->row2[0]);
+}
+
+// Provide array-like index operators for the columns of the matrix.
+double* rune::Mat2::operator[](int index)
+{
+  //Array accessing
+  if(index == 0)
+    return row1;
+  else if(index == 1)
+    return row2;
+}
+

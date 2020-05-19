@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7erenderwindow_614',['~RenderWindow',['../d1/d58/classrune_1_1RenderWindow.html#aff982a33f1a60cbfc946008abc11d32c',1,'rune::RenderWindow']]],
-  ['_7etexture_615',['~Texture',['../d6/df4/classrune_1_1Texture.html#a0933fb0dc177949a0cfb01d37e1a51eb',1,'rune::Texture']]]
+  ['zoomin_626',['zoomIn',['../df/d1c/classrune_1_1Camera.html#a5d3aa5c557e57e0fd3cdbbab56dbc3b1',1,'rune::Camera']]],
+  ['zoomout_627',['zoomOut',['../df/d1c/classrune_1_1Camera.html#a07c9c39ba813afc934d78b35ac961f75',1,'rune::Camera']]]
 ];

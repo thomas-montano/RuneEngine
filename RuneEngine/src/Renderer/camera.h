@@ -20,12 +20,20 @@ namespace rune{
 class RUNE_ENGINE Camera
 {
 private:
-  Mat2 viewport;
+  Vec2 centerPosition;
+  static double zoom;
 public:
+  Camera(void);
   ///Set the zoom factor of the camera.
   void setZoom(double);
   ///Set the center position of the camera.
   void setCenter(rune::Vec2);
+  ///Zoom in by some amount.
+  void zoomIn(double);
+  ///Zoom out by some amount.
+  void zoomOut(double);
+  ///Return the zoom level currently set.
+  static double getZoom(void);
 
 };
 }
