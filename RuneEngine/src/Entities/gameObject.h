@@ -16,6 +16,7 @@
 #include <Entities\particleEmitter.h>
 #include <Renderer\sprite.h>
 #include <Physics\rigidBody.h>
+#include <Math\vec2.h>
 
 //Forward declaration of layer object
 namespace rune{
@@ -53,6 +54,8 @@ public:
   virtual void update();
   ///Sets up game object components and runs one time setup for customized objects. Run on object initialization.
   virtual void start();
+  ///Set the new position of the object.
+  void setPosition(rune::Vec2);
   ///Get the current center of the object.
   rune::Vec2 getPosition(void);
   ///Update the position of the object based on velocities acting on the object.

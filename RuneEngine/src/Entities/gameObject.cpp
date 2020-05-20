@@ -106,6 +106,18 @@ void rune::GameObject::mirrorSprite(bool mirror)
 }
 
 /**
+ * @param 
+ */
+void rune::GameObject::setPosition(rune::Vec2 newPos)
+{
+  
+  m_objectRigidBody.setPosition(newPos);
+  rune::Vec2 size = m_objectSprite.getSize();
+  m_objectSprite.addPosition(rune::Vec2(0.5 * size.x, 0.5 * size.y));
+
+}
+
+/**
  * \return The current position of the game object.
  */
 rune::Vec2 rune::GameObject::getPosition(void)
