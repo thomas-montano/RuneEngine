@@ -379,7 +379,7 @@ void physics::positionalCorrection(RigidBody* object1, RigidBody* object2, doubl
 {
 
   const double percent = 1; // usually 20% to 80%
-  const double slop = 0.01; // usually 0.01 to 0.1
+  const double slop = 0.05; // usually 0.01 to 0.1
 
   double correctionFactor = (std::max( depth - slop, 0.01 ) / (object1->getInvMass() + object2->getInvMass())) * percent;
 

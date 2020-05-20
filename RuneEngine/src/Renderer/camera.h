@@ -22,7 +22,7 @@ class RUNE_ENGINE Camera
 private:
   static Vec2 centerPosition;
   Vec2 cameraSize;
-  double zoomFactor;
+  static double zoomFactor;
 public:
   Camera(void);
   ///Set the zoom factor of the camera.
@@ -31,6 +31,8 @@ public:
   void setCenter(rune::Vec2);
   ///Get the current camera position
   static Vec2 getCenter(void);
+  ///Get the current zoom level
+  static double getZoom(void);
 };
 }
 

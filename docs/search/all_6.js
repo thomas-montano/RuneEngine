@@ -53,7 +53,8 @@ var searchData=
   ['getvertex_146',['getVertex',['../d1/dd3/classphysics_1_1RigidBody.html#a10c45b21844f8dd8fe8dd15a460a7723',1,'physics::RigidBody']]],
   ['getwidth_147',['getWidth',['../d1/dd3/classphysics_1_1RigidBody.html#a4e68247711b2f1506f977b70764182da',1,'physics::RigidBody::getWidth()'],['../d6/df4/classrune_1_1Texture.html#aab32fdbc6a5256ea6279466a7dacb279',1,'rune::Texture::getWidth()']]],
   ['getwindow_148',['getWindow',['../de/dfb/classrune_1_1GameApplication.html#aff4e7b7333418f8d280689d1a6c6a2e5',1,'rune::GameApplication']]],
-  ['grave_5faccent_149',['GRAVE_ACCENT',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a26f1587e83ce6e19fd6801596ed7d871',1,'rune::Keyboard']]],
-  ['gravityfactor_150',['gravityFactor',['../d0/d74/structphysics_1_1body.html#aae0df667c0253bbf6af91249d6761815',1,'physics::body']]],
-  ['green_151',['green',['../d8/d25/classrune_1_1Color.html#a8a102c8489cc7d8b3ac83bc13b79b44c',1,'rune::Color']]]
+  ['getzoom_149',['getZoom',['../df/d1c/classrune_1_1Camera.html#abf901f3ca5764879a77375a99285c7b6',1,'rune::Camera']]],
+  ['grave_5faccent_150',['GRAVE_ACCENT',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a26f1587e83ce6e19fd6801596ed7d871',1,'rune::Keyboard']]],
+  ['gravityfactor_151',['gravityFactor',['../d0/d74/structphysics_1_1body.html#aae0df667c0253bbf6af91249d6761815',1,'physics::body']]],
+  ['green_152',['green',['../d8/d25/classrune_1_1Color.html#a8a102c8489cc7d8b3ac83bc13b79b44c',1,'rune::Color']]]
 ];
