@@ -178,6 +178,38 @@ enum Key
   F11 = 300,
   ///The F12 key.  
   F12 = 301,
+  ///The numpad 0 key.
+ 	NUMPAD0 = 320,
+  ///The numpad 1 key.
+  NUMPAD1 = 321,
+  ///The numpad 2 key.
+  NUMPAD2 = 322,
+  ///The numpad 3 key.
+  NUMPAD3 = 323,
+  ///The numpad 4 key.
+  NUMPAD4 = 324,
+  ///The numpad 5 key.
+  NUMPAD5 = 325,
+  ///The numpad 6 key.
+  NUMPAD6 = 326,
+  ///The numpad 7 key.
+  NUMPAD7 = 327,
+  ///The numpad 8 key.
+  NUMPAD8 = 328,
+  ///The numpad 9 key.
+  NUMPAD9 = 329,
+  ///The numpad decimal key.
+  NUMPADDECIMAL = 330,
+  ///The numpad slash key.
+  NUMPADDIVIDE = 331,
+  ///The numpad * key.
+  NUMPADMULTIPLY = 332,
+  ///The numpad - key.
+  NUMPADSUBTRACT = 333,
+  ///The numpad + key.
+  NUMPADADD = 334,
+  ///The numpad enter key.
+  NUMPADENTER = 335,
   ///The Left Shift key.  
   LEFT_SHIFT = 340,
   ///The Left Control key.  

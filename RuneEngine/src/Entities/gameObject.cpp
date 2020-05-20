@@ -13,15 +13,16 @@
 void rune::GameObject::objectInit(double xPos, double yPos, int width, int height, std::string filePath, double mass, double gravity)
 {
 
-  m_objectSprite.setOrigin(rune::Vec2(0.5*width,0.5*height));
-
   m_objectSprite.setTexture(filePath.c_str());
   m_objectSprite.setSize(rune::Vec2(width, height));
   m_objectSprite.setPosition(rune::Vec2(xPos, yPos));
+  m_objectSprite.addPosition(rune::Vec2(0.5 * width, 0.5 * height));
 
-  m_objectRigidBody.setUpObject(width, height, xPos, yPos, mass, gravity, false);
+  m_objectSprite.setOrigin(rune::Vec2(0.5 * width, 0.5 * height));
 
-  m_objectRigidBody.setPreviousPosition(rune::Vec2(xPos,yPos));
+  m_objectRigidBody.setUpObject(width, height, xPos + 0.5 * width, yPos + 0.5 * height, mass, gravity, false);
+
+  m_objectRigidBody.setPreviousPosition(m_objectSprite.getPosition());
 
   /*//If the actual texture can't be loaded, load the error texture
   //if(filePath != "")

@@ -41,7 +41,6 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 
   ImGui_ImplGlfw_InitForOpenGL(GLwindow, true);
   ImGui_ImplOpenGL3_Init((char*)glGetString(GL_NUM_SHADING_LANGUAGE_VERSIONS));
-
 }
 
 rune::RenderWindow::~RenderWindow(void)

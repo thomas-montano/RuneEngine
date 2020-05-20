@@ -60,13 +60,15 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   spriteShader.bind();
   
   rune::Vec2 windowSize = window.getSize();
+  rune::Vec2 cameraPos = rune::Camera::getCenter();
 
-  rune::Mat2 drawMatrix((m_position.x + m_size.x - origin.x) / windowSize.x - 1, (m_position.y + m_size.y - origin.y) / windowSize.y - 1,
-                        (m_position.x - origin.x) / windowSize.x - 1,            (m_position.y - origin.y) / windowSize.y - 1);
+  //Set up camera data for shader
+  spriteShader.setUniform4f("cameraPos", -5 * cameraPos.x/windowSize.x, -5 * cameraPos.y / windowSize.y, 0, 0);
 
-  drawMatrix *= rune::Camera::getZoom();
+  rune::Mat2 drawMatrix((m_position.x + m_size.x - origin.x) / windowSize.x, (m_position.y + m_size.y - origin.y) / windowSize.y,
+                        (m_position.x - origin.x) / windowSize.x,            (m_position.y - origin.y) / windowSize.y);
 
-  std::cout << rune::Camera::getZoom() << std::endl;
+  drawMatrix *= 5;
 
   const float drawVertices[32] = 
   {
@@ -81,6 +83,8 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
   glBindBuffer(GL_ARRAY_BUFFER,VBO);
   glBufferData(GL_ARRAY_BUFFER, sizeof(drawVertices), drawVertices, GL_DYNAMIC_DRAW);
+
+  glScaled(20,0,0);
 
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
