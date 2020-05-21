@@ -6,7 +6,7 @@ var searchData=
   ['deinit_56',['deInit',['../dd/ddc/classrune_1_1GameScene.html#a3ddab49b7e0abb5a1162104e3787860e',1,'rune::GameScene']]],
   ['delete_57',['DELETE',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a597a030d2bccadcb1961d9259721255a',1,'rune::Keyboard']]],
   ['depth_58',['depth',['../d1/d91/structphysics_1_1collision.html#a0382ee077c9685bd6e3e29d02f30a833',1,'physics::collision']]],
-  ['determinant_59',['determinant',['../df/db1/classrune_1_1Mat2.html#a6b9b16da683a6a107db76aad81cd5e17',1,'rune::Mat2']]],
+  ['determinant_59',['determinant',['../df/db1/classrune_1_1Mat2.html#a6b9b16da683a6a107db76aad81cd5e17',1,'rune::Mat2::determinant()'],['../d2/d17/classrune_1_1Mat3.html#a40b5e92e927ece94316ec6834900c8e5',1,'rune::Mat3::determinant()']]],
   ['display_60',['display',['../d1/d58/classrune_1_1RenderWindow.html#a3c90c45ad48b883b509fc43e61d04b8e',1,'rune::RenderWindow']]],
   ['doinit_61',['doInit',['../dd/ddc/classrune_1_1GameScene.html#a97362f5c75fafb9eb2fce36a474e5f4e',1,'rune::GameScene']]],
   ['dotproduct_62',['dotProduct',['../dd/dca/classrune_1_1Vec2.html#afb41064b6df59c5f0ca9a7ee9676c112',1,'rune::Vec2']]],

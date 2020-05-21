@@ -9,7 +9,7 @@ var searchData=
   ['mat2_195',['Mat2',['../df/db1/classrune_1_1Mat2.html',1,'rune::Mat2'],['../df/db1/classrune_1_1Mat2.html#aa39ffffe3782114ec38d5f64002b049a',1,'rune::Mat2::Mat2()'],['../df/db1/classrune_1_1Mat2.html#a64cab1d18e84a4c98f76c90f4021b43e',1,'rune::Mat2::Mat2(double a11, double a12, double a21, double a22)']]],
   ['mat2_2ecpp_196',['mat2.cpp',['../d1/d77/mat2_8cpp.html',1,'']]],
   ['mat2_2eh_197',['mat2.h',['../d8/d13/mat2_8h.html',1,'']]],
-  ['mat3_198',['Mat3',['../d2/d17/classrune_1_1Mat3.html',1,'rune::Mat3'],['../d2/d17/classrune_1_1Mat3.html#aab3569f34497d544de32cbd7447d22b3',1,'rune::Mat3::Mat3()'],['../d2/d17/classrune_1_1Mat3.html#a59ffbf4a3b01a435a54dbe2e73ccff87',1,'rune::Mat3::Mat3(double newX, double newY)']]],
+  ['mat3_198',['Mat3',['../d2/d17/classrune_1_1Mat3.html',1,'rune::Mat3'],['../d2/d17/classrune_1_1Mat3.html#aab3569f34497d544de32cbd7447d22b3',1,'rune::Mat3::Mat3()'],['../d2/d17/classrune_1_1Mat3.html#a9cc73c72a29a52b7b021c89caafa19a5',1,'rune::Mat3::Mat3(double a11, double a12, double a13, double a21, double a22, double a23, double a31, double a32, double a33)']]],
   ['mat3_2ecpp_199',['mat3.cpp',['../d4/db8/mat3_8cpp.html',1,'']]],
   ['mat3_2eh_200',['mat3.h',['../da/d09/mat3_8h.html',1,'']]],
   ['mat3_5fh_5fdefined_201',['MAT3_H_DEFINED',['../da/d09/mat3_8h.html#a392b6de0c2dc71d0ebee4779b9ecdd2a',1,'mat3.h']]],

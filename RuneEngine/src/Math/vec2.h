@@ -2,7 +2,7 @@
 
 /**
  * @class rune::Vec2
- * @brief 2 x 1 vector to be used for math.
+ * @brief 1 x 2 vector to be used for math.
  * 
  * @author Thomas Montano
  * @date April 20 2020

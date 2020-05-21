@@ -3,7 +3,7 @@ var searchData=
   ['i_158',['I',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a177ad5dfe84032a3151122962a5b6b02',1,'rune::Keyboard']]],
   ['inccurrentframe_159',['incCurrentFrame',['../d4/db6/classrune_1_1ObjectAnimation.html#ade733b41b8f967a5a16b40cd04aa8105',1,'rune::ObjectAnimation']]],
   ['insert_160',['INSERT',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a0e0e2089cae540375382f4e812186dbb',1,'rune::Keyboard']]],
-  ['invert_161',['invert',['../df/db1/classrune_1_1Mat2.html#af594a9d9f20fe21682e11033d22efce0',1,'rune::Mat2']]],
+  ['invert_161',['invert',['../df/db1/classrune_1_1Mat2.html#af594a9d9f20fe21682e11033d22efce0',1,'rune::Mat2::invert()'],['../d2/d17/classrune_1_1Mat3.html#a90bb88375c8a282b56553480e231d219',1,'rune::Mat3::invert()']]],
   ['invinertia_162',['invInertia',['../d0/d74/structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555',1,'physics::body']]],
   ['invmass_163',['invMass',['../d0/d74/structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07',1,'physics::body']]],
   ['isactive_164',['isActive',['../dd/ddc/classrune_1_1GameScene.html#a6d698b0b5515beeab72b325ebffa8c84',1,'rune::GameScene']]],
