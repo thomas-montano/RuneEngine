@@ -2,6 +2,9 @@
 #include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
 
 /**
  * @param path The file path for the texture that you would like to load relative to the main executable.

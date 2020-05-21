@@ -15,7 +15,6 @@
 #include <Events\event.h>
 #include <Renderer\sprite.h>
 #include <Renderer\texture.h>
-#include <Renderer\opengl.h>
 #include <Renderer\renderWindow.h>
 
 namespace rune{

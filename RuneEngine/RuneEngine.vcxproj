@@ -95,6 +95,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Input\mouse.cpp" />
     <ClCompile Include="src\Math\vec3.cpp" />
     <ClCompile Include="src\SceneTools\console.cpp" />
     <ClCompile Include="src\Renderer\camera.cpp" />
@@ -129,6 +130,7 @@
     <ClCompile Include="src\SceneTools\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Input\mouse.h" />
     <ClInclude Include="src\Math\vec3.h" />
     <ClInclude Include="src\SceneTools\console.h" />
     <ClInclude Include="src\Renderer\camera.h" />
@@ -147,7 +149,6 @@
     <ClInclude Include="src\Input\keyboard.h" />
     <ClInclude Include="src\Math\mat3.h" />
     <ClInclude Include="src\Renderer\color.h" />
-    <ClInclude Include="src\Renderer\opengl.h" />
     <ClInclude Include="src\RuneEngine.h" />
     <ClInclude Include="src\SceneTools\gameScene.h" />
     <ClInclude Include="src\Entities\gameUI.h" />

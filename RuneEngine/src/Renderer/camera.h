@@ -33,6 +33,8 @@ public:
   static Vec2 getCenter(void);
   ///Get the current zoom level
   static double getZoom(void);
+  ///Move the camera in a certain direction
+  void move(rune::Vec2);
 };
 }
 

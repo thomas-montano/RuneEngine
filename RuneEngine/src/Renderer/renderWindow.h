@@ -10,16 +10,12 @@
 #define RENDER_WINDOW_H
 
 #include "core.h"
-#include "opengl.h"
-#include "imgui/imgui.h"
-#include "imgui/imgui_impl_opengl3.h"
-#include "imgui/imgui_impl_glfw.h"
 #include "color.h"
 #include <Events\event.h>
 #include "Math\vec2.h"
 #include <string>
 
-
+struct GLFWwindow;
 
 namespace rune{
 

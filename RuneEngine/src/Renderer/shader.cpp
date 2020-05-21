@@ -1,6 +1,9 @@
 #include "shader.h"
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
 
-rune::Shader::Shader()
+rune::Shader::Shader() : m_shaderID(0)
 {
 
 }

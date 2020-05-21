@@ -9,6 +9,9 @@ rune::Camera::Camera() : cameraSize(rune::GameApplication::getWindow()->getSize(
   centerPosition = rune::Vec2(0,0);
 }
 
+/**
+ * \param newZoom The new zoom level to be used by the camera.
+ */
 void rune::Camera::setZoom(double newZoom)
 {
   zoomFactor = newZoom;
@@ -22,12 +25,26 @@ void rune::Camera::setCenter(rune::Vec2 newCenter)
   centerPosition = newCenter;
 }
 
+/**
+ * \return A vector the describes the current center position of the camera.
+ */
 rune::Vec2 rune::Camera::getCenter()
 {
   return centerPosition;
 }
 
+/**
+ * \return The current zoom factor of the camera.
+ */
 double rune::Camera::getZoom(void)
 {
   return zoomFactor;
+}
+
+/**
+ * \param direction The vector to be added to the current camera position.
+ */
+void rune::Camera::move(rune::Vec2 direction)
+{
+  centerPosition += direction;
 }

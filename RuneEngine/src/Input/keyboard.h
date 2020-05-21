@@ -9,7 +9,6 @@
 #pragma once
 #include "core.h"
 #include <gameApplication.h>
-#include <Renderer\opengl.h>
 
 namespace rune{
 

@@ -378,10 +378,10 @@ void physics::resolveCollisions(std::vector<physics::collision> collisions)
 void physics::positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, rune::Vec2 normal)
 {
 
-  const double percent = 1; // usually 20% to 80%
-  const double slop = 0.05; // usually 0.01 to 0.1
+  const double percent = .8; // usually 20% to 80%
+  const double slop = 0.01; // usually 0.01 to 0.1
 
-  double correctionFactor = (std::max( depth - slop, 0.01 ) / (object1->getInvMass() + object2->getInvMass())) * percent;
+  double correctionFactor = (std::max( depth - slop, 0.00 ) / (object1->getInvMass() + object2->getInvMass())) * percent;
 
   rune::Vec2 correction = rune::Vec2(normal.x*correctionFactor,normal.y*correctionFactor);
   object1->addPosition(rune::Vec2(object1->getInvMass() * correction.x,object1->getInvMass() * correction.y));

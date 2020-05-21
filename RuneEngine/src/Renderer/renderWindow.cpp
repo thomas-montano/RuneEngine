@@ -1,5 +1,14 @@
+
+#define IMGUI_IMPL_OPENGL_LOADER_GLEW
+
 #include "renderWindow.h"
 #include "drawable.h"
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_opengl3.h"
+#include "imgui/imgui_impl_glfw.h"
 #include <Input\keyboard.h>
 
 /**
@@ -84,6 +93,13 @@ void rune::RenderWindow::pollEvents(rune::Event& event)
     event.type = rune::EventType::WindowClose;
     windowOpen = false;
   }
+  
+  //Handling window resizing, make this better
+  int width, height;
+
+  glfwGetWindowSize(GLwindow,&width,&height);
+
+  glViewport(0, 0, width, height);
 
 }
 

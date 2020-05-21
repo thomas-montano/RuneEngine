@@ -1,5 +1,13 @@
 #pragma once
 
+/**
+ * @class rune::Vec3
+ * @brief 1 x 3 vector to be used for math.
+ *
+ * @author Thomas Montano
+ * @date May 21 2020
+*/
+
 #include <core.h>
 
 #ifndef VEC3_H_DEFINED

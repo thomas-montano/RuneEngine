@@ -126,6 +126,9 @@ void rune::GameApplication::gameLoop(void)
       frames = 0;
     }
 
+    //Make sure that each layer gets their collisions updated
+    m_currentScene->updateLayerPhysics();
+
     //This is to handle state level events
     m_currentScene->handleEvents(m_windowEvent);
 
@@ -137,9 +140,6 @@ void rune::GameApplication::gameLoop(void)
 
     //Draw the current window
     m_currentScene->Draw(m_mainWindow);
-
-    //Make sure that each layer gets their collisions updated
-    m_currentScene->updateLayerPhysics();
 
     //Update the amount of frames that have been rendered
     frames++;

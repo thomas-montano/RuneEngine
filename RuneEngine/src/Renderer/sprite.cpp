@@ -1,4 +1,7 @@
 #include "sprite.h"
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
 #include <Renderer\camera.h>
 #include <Math\mat2.h>
 

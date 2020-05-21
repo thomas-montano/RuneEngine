@@ -92,6 +92,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afc0803f83f55a42c7eea9947a50256ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d1c/classrune_1_1Camera.html#afc0803f83f55a42c7eea9947a50256ff">setCenter</a> (<a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>)</td></tr>
 <tr class="memdesc:afc0803f83f55a42c7eea9947a50256ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the center position of the camera.  <a href="../../df/d1c/classrune_1_1Camera.html#afc0803f83f55a42c7eea9947a50256ff">More...</a><br /></td></tr>
 <tr class="separator:afc0803f83f55a42c7eea9947a50256ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8dffda7773217f7e4b46387491466315"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d1c/classrune_1_1Camera.html#a8dffda7773217f7e4b46387491466315">move</a> (<a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>)</td></tr>
+<tr class="memdesc:a8dffda7773217f7e4b46387491466315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move the camera in a certain direction.  <a href="../../df/d1c/classrune_1_1Camera.html#a8dffda7773217f7e4b46387491466315">More...</a><br /></td></tr>
+<tr class="separator:a8dffda7773217f7e4b46387491466315"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -151,6 +154,7 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current camera position. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector the describes the current center position of the camera. </dd></dl>
 
 </div>
 </div>
@@ -179,6 +183,33 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the current zoom level. </p>
+<dl class="section return"><dt>Returns</dt><dd>The current zoom factor of the camera. </dd></dl>
+
+</div>
+</div>
+<a id="a8dffda7773217f7e4b46387491466315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8dffda7773217f7e4b46387491466315">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rune::Camera::move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
+          <td class="paramname"><em>direction</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Move the camera in a certain direction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">direction</td><td>The vector to be added to the current camera position. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -225,6 +256,12 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the zoom factor of the camera. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newZoom</td><td>The new zoom level to be used by the camera. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

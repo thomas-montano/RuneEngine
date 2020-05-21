@@ -84,10 +84,13 @@
  * @date March 2 2020
 */
 
+
+
 #ifndef GAMEAPP_H_INCLUDED
 #define GAMEAPP_H_INCLUDED
 
 #include "core.h"
+#define IMGUI_IMPL_OPENGL_LOADER_CUSTOM
 #include <SceneTools\sceneManager.h>
 #include <Renderer\RenderWindow.h>
 #include <Events\clock.h>

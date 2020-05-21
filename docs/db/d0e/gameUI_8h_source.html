@@ -77,41 +77,43 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define GUI_H_INCLUDED</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Math\vec2.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;Events\event.h&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;Renderer\sprite.h&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;Renderer\texture.h&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Renderer\opengl.h&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;Renderer\renderWindow.h&gt;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;GL\glew.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;GL\glu.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;GLFW\glfw3.h&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;Math\vec2.h&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Events\event.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;Renderer\sprite.h&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;Renderer\texture.h&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;Renderer\renderWindow.h&gt;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d0/d2a/classrune_1_1GameUI.html">   23</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d0/d2a/classrune_1_1GameUI.html">GameUI</a> : <span class="keyword">public</span> <a class="code" href="../../d1/d29/classrune_1_1Drawable.html">Drawable</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a> m_uiObject;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="../../d6/df4/classrune_1_1Texture.html">Texture</a> m_objectTexture;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">bool</span> m_clickedUp = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">bool</span> m_clickedDown = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">double</span> m_posX;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">double</span> m_posY;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">double</span> m_height;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> m_width;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> createButton(<span class="keywordtype">double</span> posX, <span class="keywordtype">double</span> posY,<span class="keywordtype">double</span> width, <span class="keywordtype">double</span> height);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">bool</span> isClicked(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>, <a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a> mouseEvent);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">void</span> draw(<a class="code" href="../../d1/d58/classrune_1_1RenderWindow.html">RenderWindow</a>&amp;);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d0/d2a/classrune_1_1GameUI.html">   25</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d0/d2a/classrune_1_1GameUI.html">GameUI</a> : <span class="keyword">public</span> <a class="code" href="../../d1/d29/classrune_1_1Drawable.html">Drawable</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a> m_uiObject;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d6/df4/classrune_1_1Texture.html">Texture</a> m_objectTexture;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">bool</span> m_clickedUp = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">bool</span> m_clickedDown = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">double</span> m_posX;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">double</span> m_posY;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">double</span> m_height;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">double</span> m_width;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> createButton(<span class="keywordtype">double</span> posX, <span class="keywordtype">double</span> posY,<span class="keywordtype">double</span> width, <span class="keywordtype">double</span> height);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keywordtype">bool</span> isClicked(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>, <a class="code" href="../../d3/d44/classrune_1_1Event.html">rune::Event</a> mouseEvent);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> draw(<a class="code" href="../../d1/d58/classrune_1_1RenderWindow.html">RenderWindow</a>&amp;);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1Texture_html"><div class="ttname"><a href="../../d6/df4/classrune_1_1Texture.html">rune::Texture</a></div><div class="ttdoc">A texture that can be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> texture.h:18</div></div>
 <div class="ttc" id="aclassrune_1_1Vec2_html"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a></div><div class="ttdoc">1 x 2 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:19</div></div>
-<div class="ttc" id="aclassrune_1_1Drawable_html"><div class="ttname"><a href="../../d1/d29/classrune_1_1Drawable.html">rune::Drawable</a></div><div class="ttdoc">Interface class for creating something that can be drawn to the screen.</div><div class="ttdef"><b>Definition:</b> drawable.h:20</div></div>
-<div class="ttc" id="aclassrune_1_1GameUI_html"><div class="ttname"><a href="../../d0/d2a/classrune_1_1GameUI.html">rune::GameUI</a></div><div class="ttdoc">Class responsible for managing the user interface elements and baking text into other textures.</div><div class="ttdef"><b>Definition:</b> gameUI.h:23</div></div>
-<div class="ttc" id="aclassrune_1_1RenderWindow_html"><div class="ttname"><a href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:28</div></div>
+<div class="ttc" id="aclassrune_1_1Drawable_html"><div class="ttname"><a href="../../d1/d29/classrune_1_1Drawable.html">rune::Drawable</a></div><div class="ttdoc">Interface class for creating something that can be drawn to the screen.</div><div class="ttdef"><b>Definition:</b> drawable.h:19</div></div>
+<div class="ttc" id="aclassrune_1_1GameUI_html"><div class="ttname"><a href="../../d0/d2a/classrune_1_1GameUI.html">rune::GameUI</a></div><div class="ttdoc">Class responsible for managing the user interface elements and baking text into other textures.</div><div class="ttdef"><b>Definition:</b> gameUI.h:25</div></div>
+<div class="ttc" id="aclassrune_1_1RenderWindow_html"><div class="ttname"><a href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:24</div></div>
 <div class="ttc" id="aclassrune_1_1Event_html"><div class="ttname"><a href="../../d3/d44/classrune_1_1Event.html">rune::Event</a></div><div class="ttdoc">Object that holds all the events for a render window.</div><div class="ttdef"><b>Definition:</b> event.h:25</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
 <div class="ttc" id="aclassrune_1_1Sprite_html"><div class="ttname"><a href="../../d1/d12/classrune_1_1Sprite.html">rune::Sprite</a></div><div class="ttdoc">A sprite that can be given a texture and animated.</div><div class="ttdef"><b>Definition:</b> sprite.h:22</div></div>

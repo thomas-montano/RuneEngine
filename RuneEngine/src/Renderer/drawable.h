@@ -10,7 +10,6 @@
 #define DRAWABLE_DEFINED
 
 #include "core.h"
-#include "opengl.h"
 #include <iostream>
 #include <Math\vec2.h>
 #include <Renderer\RenderWindow.h>

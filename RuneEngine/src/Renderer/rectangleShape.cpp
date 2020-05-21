@@ -1,5 +1,8 @@
 #include "rectangleShape.h"
 #include "shader.h"
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
 #include <iostream>
 
 rune::RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader")
