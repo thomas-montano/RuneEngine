@@ -71,6 +71,8 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
   drawMatrix *= zoomLevel;
 
+
+
   const float drawVertices[32] = 
   {
     // positions                              // colors and alpha         // texture coords

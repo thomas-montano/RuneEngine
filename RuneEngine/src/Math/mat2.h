@@ -55,7 +55,7 @@ public:
   ///Overload of muliplication operator for a scalar on the right.
   friend RUNE_ENGINE Mat2 operator* (Mat2& vec, double scalar);
   ///Overload of divison operator for a scalar.
-  friend RUNE_ENGINE rune::Mat2 operator/ (rune::Mat2& vec, double scalar);
+  rune::Mat2 operator/ (double scalar);
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat2& vector);
   ///Inversion of the matrix.

@@ -49,16 +49,17 @@ public:
   bool operator==(const Vec2& right);
   ///Overload of != operator.
   bool operator!=(const Vec2& right);
-  ///Overload of muliplication operator for a scalar on the left.
-  friend RUNE_ENGINE Vec2 operator* (double scalar, Vec2& vec);
   ///Overload of muliplication operator for a scalar on the right.
-  friend RUNE_ENGINE Vec2 operator* (Vec2& vec, double scalar);
+  Vec2 operator* (double scalar);
   ///Overload of division operator for a scalar on the right.
-  friend RUNE_ENGINE Vec2 operator/ (Vec2& vec, double scalar);
+  Vec2 operator/ (double scalar);
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 
 };
+
+///Overload of division operator
+RUNE_ENGINE Vec2 operator/ (double scalar, Vec2 vec);
 
 /**
  * @memberof rune::Vec2
@@ -85,5 +86,8 @@ RUNE_ENGINE rune::Vec2 normalize(rune::Vec2);
 RUNE_ENGINE double crossProduct(rune::Vec2, rune::Vec2);
 
 }
+
+///Overload of muliplication operator for a scalar on the left.
+RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 mat);
 
 #endif

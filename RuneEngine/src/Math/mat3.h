@@ -19,17 +19,19 @@ namespace rune{
 
 class RUNE_ENGINE Mat3
 {
-public:
+private:
   ///First row of the matrix.
   double row1[3];
   ///Second row of the matrix.
   double row2[3];
   ///Third row of the matrix.
   double row3[3];
+
+public:
   ///Default empty constructor that sets X and Y to 0.
   Mat3();
   ///Constructor that sets up a new vector.
-  Mat3(double newX, double newY);
+  Mat3(double a11, double a12, double a13, double a21, double a22, double a23, double a31, double a32, double a33);
   ///Overload of subtraction operator.
   Mat3 operator- (const Mat3& right);
   ///Overload of addition operator.
@@ -51,13 +53,22 @@ public:
   ///Overload of != operator.
   bool operator!=(const Mat3& right);
   ///Overload of muliplication operator for a scalar on the left.
-  friend RUNE_ENGINE Mat3 operator* (double scalar, Mat3& vec);
-  ///Overload of muliplication operator for a scalar on the right.
-  friend RUNE_ENGINE Mat3 operator* (Mat3& vec, double scalar);
+  Mat3 operator* (double scalar);
+  ///Overload of division operator.
+  Mat3 operator/ (double scalar);
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat3& vector);
+  ///Inversion of the matrix.
+  friend RUNE_ENGINE Mat3 invert(Mat3);
+  ///Determinant of the matrix.
+  double determinant();
+  ///Array like accessing of elements.
+  double* operator[](int index);
 
 };
 }
+
+///Overload of muliplication operator for a scalar on the right.
+rune::Mat3 RUNE_ENGINE operator*(double scalar, rune::Mat3 mat);
 
 #endif

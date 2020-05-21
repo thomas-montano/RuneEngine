@@ -194,10 +194,10 @@ rune::Mat2 rune::operator* (double scalar, rune::Mat2& mat)
  * \param right The scalar to multiply by.
  * \return A memberwise scalar division.
  */
-rune::Mat2 rune::operator/ (rune::Mat2& mat, double scalar)
+rune::Mat2 rune::Mat2::operator/ (double scalar)
 {
 
-  return Mat2(mat.row1[0]/scalar,mat.row1[1]/scalar,mat.row2[0]/scalar,mat.row2[1]/scalar);
+  return Mat2(this->row1[0]/scalar, this->row1[1]/scalar, this->row2[0]/scalar, this->row2[1]/scalar);
 
 }
 

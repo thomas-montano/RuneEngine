@@ -25,6 +25,7 @@ private:
   Texture spriteTexture;
   Shader spriteShader;
   rune::Vec2 origin;
+  double angle;
 
   const unsigned int indices[6] = 
   {  
