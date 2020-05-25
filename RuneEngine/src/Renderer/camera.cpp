@@ -44,7 +44,7 @@ double rune::Camera::getZoom(void)
 /**
  * \param direction The vector to be added to the current camera position.
  */
-void rune::Camera::move(rune::Vec2 direction)
+void rune::Camera::move(rune::Vec2 speed)
 {
-  centerPosition += direction;
+  centerPosition += speed * rune::GameApplication::getDeltaTime();
 }

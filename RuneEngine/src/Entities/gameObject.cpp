@@ -10,7 +10,7 @@
  * @param mass Mass of the object in units relative to the game. (0 mass = infinite mass)
  * @param gravity Gravity vector that the object will be subject to.
 */
-void rune::GameObject::objectInit(double xPos, double yPos, int width, int height, std::string filePath, double mass, double gravity)
+rune::GameObject* rune::GameObject::objectInit(double xPos, double yPos, int width, int height, std::string filePath, double mass, double gravity)
 {
 
   m_objectSprite.setTexture(filePath.c_str());
@@ -37,11 +37,14 @@ void rune::GameObject::objectInit(double xPos, double yPos, int width, int heigh
   
   this->start();
 
+  return this;
+
 }
 
 void rune::GameObject::draw(RenderWindow& window)
 {
 
+  window.draw(m_objectRigidBody);
   window.draw(m_objectSprite);
 
 }

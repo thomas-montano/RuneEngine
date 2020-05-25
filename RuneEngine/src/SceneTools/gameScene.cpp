@@ -1,7 +1,13 @@
 #include "gameScene.h"
+#include <gameApplication.h>
 #include <imgui/imgui.h>
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
+
+rune::GameScene::GameScene() : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
+{
+  variableClock.reset();
+}
 
 /**
  * DoInit is responsible for initializing this State.  HandleCleanup will
@@ -28,7 +34,7 @@ void rune::GameScene::reInit(void)
  */
 void rune::GameScene::deInit(void)
 {
-  
+  isStateActive = false;
 }
 
 /**
@@ -75,6 +81,23 @@ void rune::GameScene::handleUI(RenderWindow& window)
  */
 void rune::GameScene::updateFixed(void)
 {
+
+}
+
+void rune::GameScene::runObjectUpdates()
+{
+
+  for (int j = 0; j < sceneLayers.size(); j++)
+  {
+
+    std::vector<rune::GameObject*> layerObjects = sceneLayers[j].getObjects();
+
+    for (int i = 0; i < layerObjects.size(); i++)
+    {
+      layerObjects[i]->update();
+    }
+
+  }
 
 }
 
@@ -139,7 +162,7 @@ void rune::GameScene::Draw(RenderWindow& window)
 {
 
   //window.setView(m_camera);
-  window.clear(rune::Color(30,144,255));
+  window.clear(clearColor);
 
   //Draw the scene layers
   for(int i = 0; i < sceneLayers.size();i++)
@@ -160,7 +183,21 @@ void rune::GameScene::Draw(RenderWindow& window)
 
   }
 
-  debugConsole.update();
+  ImGui::Begin("FPS");
+
+  ImGui::SetWindowSize(ImVec2(100, 50));
+  ImGui::SetWindowPos(ImVec2(0, 0));
+
+  if (ImGui::IsItemHovered())
+  {
+    ImGui::BeginTooltip();
+    ImGui::Text("This is the debug UI!");
+    ImGui::EndTooltip();
+  }
+
+  ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
+
+  ImGui::End();
 
   //Draw the debug UI
   ImGui::Render();

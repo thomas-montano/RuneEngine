@@ -27,7 +27,7 @@ private:
   rune::Vec2 origin;
   double angle;
 
-  const unsigned int indices[6] = 
+  unsigned int indices[6] = 
   {  
       0, 1, 3, // first triangle
       1, 2, 3  // second triangle

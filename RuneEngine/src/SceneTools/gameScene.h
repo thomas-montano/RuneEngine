@@ -14,6 +14,7 @@
 #include <core.h>
 #include <vector>
 #include <string>
+#include <Renderer\color.h>
 #include <SceneTools\console.h>
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
@@ -27,29 +28,35 @@ namespace rune{
 
 class RUNE_ENGINE GameScene
 {
-private:
+protected:
+  //Flags that are used to communicate with the state manager.
   bool isStateActive = false;
-  
-protected:  
   bool m_changeStateFlag = false;
   int m_nextState;
   bool m_quitGame = false;
 
+  ///All of the layers that make up the scene.
   std::vector<SceneLayer> sceneLayers;
   
+  ///A clock that records the amount of time between variable update calls.
   rune::Clock variableClock;
-  double dT; //Time between variable update calls
+  ///Time between variable update calls
+  double dT;
+  ///Clamping value for physics simulator.
   double accumulator;
+  ///The time that the current frame started.
   double frameStart;
-
+  ///The color that the screen will be when cleared.
+  rune::Color clearColor;
+  ///Ui to be included in the scene.
   std::vector<GameUI*> m_stateUI;
-
+  ///The camera used to render objects to the screen.
   rune::Camera SceneCamera;
-
+  ///A console to use for debugging.
   rune::Console debugConsole;
 
 public:
-
+  GameScene();
   ///Initializes the state
   virtual void doInit(void);
   ///Reset the scene without unloading game objects
@@ -59,6 +66,7 @@ public:
   virtual void resume(void);
   virtual void handleEvents(rune::Event theEvent);
   virtual void updateFixed(void);
+  void runObjectUpdates(void);
   virtual void updateVariable(void);
   virtual void Draw(RenderWindow& window);
   virtual void updateLayerPhysics(void);
@@ -69,12 +77,11 @@ public:
   virtual int getNextState();
   virtual void setStateFlag(bool value);
   virtual bool getQuitFlag(void);
-  virtual bool isActive(void);
+  bool isActive(void);
   void changeState(int nextState);
   void addLayerToScene(SceneLayer);
 
 };
 }
-
 
 #endif

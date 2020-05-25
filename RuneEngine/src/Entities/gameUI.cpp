@@ -19,19 +19,20 @@ void rune::GameUI::createButton(double posX, double posY, double width, double h
   m_width = width;
 
 
-  if(!m_objectTexture.loadFromFile("./Assets/Images/button-Sheet.png"))
+  /*if(!m_objectTexture.loadFromFile("./Assets/Images/button-Sheet.png"))
   {
 
-    m_objectTexture.loadFromFile("./Assets/Images/textureFailure.png");
-    //m_uiObject.setTexture(m_objectTexture);
+    
 
   }else
   {
     //m_uiObject.setTexture(m_objectTexture);
     //m_uiObject.setTextureRect(IntRect(0,0,120,60));
-  }
+  }*/
 
+  m_uiObject.setTexture("./Assets/Images/ball.png");
   m_uiObject.setPosition(rune::Vec2(m_posX,m_posY));
+  m_uiObject.setSize(rune::Vec2(width,height));
 
 }
 
@@ -144,23 +145,9 @@ bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
   
 }
 
-void rune::GameUI::draw(RenderWindow&)
+void rune::GameUI::draw(RenderWindow& window)
 {
 
-  ImGui::Begin("FPS");
-
-  ImGui::SetWindowSize(ImVec2(100, 50));
-  ImGui::SetWindowPos(ImVec2(0,0));
-
-  if (ImGui::IsItemHovered())
-  {
-    ImGui::BeginTooltip();
-    ImGui::Text("This is the debug UI!");
-    ImGui::EndTooltip();
-  }
-
-  ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
-
-  ImGui::End();
+  window.draw(m_uiObject);
 
 }

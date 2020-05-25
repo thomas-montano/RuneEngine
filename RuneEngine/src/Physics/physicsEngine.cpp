@@ -64,7 +64,10 @@ void physics::updatePhysics(std::vector<physics::RigidBody*> objects, double dT)
   //Tell the objects about the collisions they've been involved with
   for(int i = 0; i < definiteCollisions.size();i++)
   {
-    definiteCollisions[i].objectOne->addCollision(definiteCollisions[i]);
+    physics::collision oppositeCollision = definiteCollisions[i];
+    oppositeCollision.normalVector *= -1;
+
+    definiteCollisions[i].objectOne->addCollision(oppositeCollision);
     definiteCollisions[i].objectTwo->addCollision(definiteCollisions[i]);
   }
 

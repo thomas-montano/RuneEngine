@@ -9,12 +9,13 @@ int rune::GameApplication::frameRate = 0;
  * @param 
  * @param updateRate How many times per second the game will run the main update loop.
  */
-rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title)
+rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title), m_currentScene(nullptr)
 {
   winPtr = &m_mainWindow;
   m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
   m_gameRunning = true;
+  deltaTime = (1.0 / m_updateRate);
   m_mainWindow.enableVsync(true);
 
 }
@@ -42,10 +43,9 @@ int rune::GameApplication::run(void)
   #endif*/
 
   //Default the game to the first available state
-  //In this case its the main menu
   if(m_sceneManager.getNumScenes() > 0)
   {
-    deltaTime = 1.0/m_updateRate;
+    
     m_sceneManager.setScene(0);
   }
   else
@@ -111,6 +111,7 @@ void rune::GameApplication::gameLoop(void)
     {
       //Current Game state updates here
       m_currentScene->updateFixed();
+      m_currentScene->runObjectUpdates();
 
       deltaTime = (currentTime - nextTick)/1000.0;
 

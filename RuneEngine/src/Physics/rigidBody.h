@@ -68,7 +68,7 @@ struct body
 
 };
 
-class RUNE_ENGINE RigidBody// : public Drawable
+class RUNE_ENGINE RigidBody : public rune::Drawable
 {
 
 private:
@@ -78,10 +78,11 @@ private:
     rune::RectangleShape drawBox;
 
     ///Overloaded draw functions for rendering the AABB to the screen.
-    /*virtual void draw(RenderWindow& window)
+    virtual void draw(rune::RenderWindow& window)
     {
 
         drawBox.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
+        drawBox.setFillColor(rune::Color::Red);
         drawBox.setSize(rune::Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
 
         /*AABB.setFillColor(sf::Color::Transparent);
@@ -89,10 +90,10 @@ private:
         AABB.setOutlineColor(sf::Color::Red);
         AABB.setPosition(objectBody.boundingBox.min);
 
-        AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);
+        AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);*/
         
         window.draw(drawBox);
-    }*/
+    }
 
 public:
     ///Default constructor to initialize an empty rigid body object.
@@ -103,9 +104,6 @@ public:
 
     ///Set up the object. Identical to the constructor but can be used to set up an object after it's been created.
     void setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation);
-
-    ///Set the origin of the rigid body.
-    void setOrigin(rune::Vec2 newOrigin);
 
     ///Recalculate the AABB based on the rigid body position.
     void updateAABB();

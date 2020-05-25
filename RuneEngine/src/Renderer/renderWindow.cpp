@@ -112,8 +112,9 @@ void rune::RenderWindow::display(void)
 
 void rune::RenderWindow::clear(rune::Color clearColor)
 {
+  const double MAXCOLOR = 255;
 
-  glClearColor(clearColor.red/255.0, clearColor.green / 255.0, clearColor.blue / 255.0, clearColor.alpha / 255.0);
+  glClearColor(clearColor.red/ MAXCOLOR, clearColor.green / MAXCOLOR, clearColor.blue / MAXCOLOR, clearColor.alpha / MAXCOLOR);
   glClear(GL_COLOR_BUFFER_BIT);
 }
 

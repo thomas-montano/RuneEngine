@@ -27,7 +27,7 @@ namespace rune{
 
 class RUNE_ENGINE GameObject : public Drawable
 {
-private:
+protected:
   rune::Sprite m_objectSprite; //Drawable sprite object
   rune::Texture m_objectTexture;
 
@@ -43,7 +43,7 @@ public:
 
   virtual void draw(RenderWindow&);
   ///Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.
-  void objectInit(double xPos, double yPos, int width, int height, std::string filePath,double mass = 10,double gravity = 10);
+  rune::GameObject* objectInit(double xPos, double yPos, int width, int height, std::string filePath,double mass = 10,double gravity = 10);
   ///Add an animation to the animation array
   void addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName);
   ///Plays the specified animation on the game object, animation must be defined before it can be played.

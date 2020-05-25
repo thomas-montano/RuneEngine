@@ -19,17 +19,19 @@ class RUNE_ENGINE Color
 {
 public:
   ///The Red component.
-  double red;
+  unsigned char red;
   ///The Green component.
-  double green;
+  unsigned char green;
   ///The Blue component.
-  double blue;
+  unsigned char blue;
   ///The Opacity Component.
-  double alpha;
+  unsigned char alpha;
 
   Color(double, double, double, double alpha = 1);
   Color();
 
+  static Color Red;
+  static Color Green;
   static Color Blue;
 
 };

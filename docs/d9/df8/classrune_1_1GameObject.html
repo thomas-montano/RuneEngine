@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.5.2-alpha</span>
+   &#160;<span id="projectnumber">Version 0.6.0-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using Rune.</div>
   </td>
@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../dd/d85/classrune_1_1GameObject-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rune::GameObject Class Reference</div>  </div>
@@ -94,8 +95,12 @@ Collaboration diagram for rune::GameObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/daf/classrune_1_1GameObject__coll__graph.png" border="0" usemap="#rune_1_1GameObject_coll__map" alt="Collaboration graph"/></div>
 <map name="rune_1_1GameObject_coll__map" id="rune_1_1GameObject_coll__map">
-<area shape="rect" title="Entity control system main object used for all objects in the scene." alt="" coords="5,80,145,107"/>
-<area shape="rect" href="../../d1/d29/classrune_1_1Drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="15,5,136,32"/>
+<area shape="rect" title="Entity control system main object used for all objects in the scene." alt="" coords="191,171,331,197"/>
+<area shape="rect" href="../../d1/d29/classrune_1_1Drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="84,5,206,32"/>
+<area shape="rect" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects." alt="" coords="24,81,170,108"/>
+<area shape="rect" href="../../da/d9b/classrune_1_1SceneLayer.html" title="Main component of scenes. Can have objects, particles, light sources, or any other in game entity add..." alt="" coords="194,81,328,108"/>
+<area shape="rect" href="../../d1/d12/classrune_1_1Sprite.html" title="A sprite that can be given a texture and animated." alt="" coords="352,81,450,108"/>
+<area shape="rect" href="../../d6/df4/classrune_1_1Texture.html" title="A texture that can be applied to drawable objects." alt="" coords="474,81,581,108"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -104,9 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a89b721076422c24a502c7729870a8bb6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#a89b721076422c24a502c7729870a8bb6">draw</a> (<a class="el" href="../../d1/d58/classrune_1_1RenderWindow.html">RenderWindow</a> &amp;)</td></tr>
 <tr class="memdesc:a89b721076422c24a502c7729870a8bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the object to a render window.  <a href="../../d9/df8/classrune_1_1GameObject.html#a89b721076422c24a502c7729870a8bb6">More...</a><br /></td></tr>
 <tr class="separator:a89b721076422c24a502c7729870a8bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6099bf8ca5bf95ec504392e9d2c2b3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#ad6099bf8ca5bf95ec504392e9d2c2b3c">objectInit</a> (double xPos, double yPos, int width, int height, std::string filePath, double mass=10, double gravity=10)</td></tr>
-<tr class="memdesc:ad6099bf8ca5bf95ec504392e9d2c2b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.  <a href="../../d9/df8/classrune_1_1GameObject.html#ad6099bf8ca5bf95ec504392e9d2c2b3c">More...</a><br /></td></tr>
-<tr class="separator:ad6099bf8ca5bf95ec504392e9d2c2b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab243f9012024a0512e8d2c365e522fda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">rune::GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#ab243f9012024a0512e8d2c365e522fda">objectInit</a> (double xPos, double yPos, int width, int height, std::string filePath, double mass=10, double gravity=10)</td></tr>
+<tr class="memdesc:ab243f9012024a0512e8d2c365e522fda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.  <a href="../../d9/df8/classrune_1_1GameObject.html#ab243f9012024a0512e8d2c365e522fda">More...</a><br /></td></tr>
+<tr class="separator:ab243f9012024a0512e8d2c365e522fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adca4c6169cfca01ba0e1217785702ab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#adca4c6169cfca01ba0e1217785702ab8">addAnimation</a> (int frameWidth, int numFrames, int frameRate, std::string fileName)</td></tr>
 <tr class="memdesc:adca4c6169cfca01ba0e1217785702ab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an animation to the animation array.  <a href="../../d9/df8/classrune_1_1GameObject.html#adca4c6169cfca01ba0e1217785702ab8">More...</a><br /></td></tr>
 <tr class="separator:adca4c6169cfca01ba0e1217785702ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,6 +151,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae37f983fce816e816d21e7fc46cbad32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9b/classrune_1_1SceneLayer.html">rune::SceneLayer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#ae37f983fce816e816d21e7fc46cbad32">getLayer</a> (void)</td></tr>
 <tr class="memdesc:ae37f983fce816e816d21e7fc46cbad32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the layer the object is on. Layer pointer is stored in the scene.  <a href="../../d9/df8/classrune_1_1GameObject.html#ae37f983fce816e816d21e7fc46cbad32">More...</a><br /></td></tr>
 <tr class="separator:ae37f983fce816e816d21e7fc46cbad32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a515b26a6ca781035cce4225b3998d31b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/d12/classrune_1_1Sprite.html">rune::Sprite</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#a515b26a6ca781035cce4225b3998d31b">m_objectSprite</a></td></tr>
+<tr class="separator:a515b26a6ca781035cce4225b3998d31b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac171e34328eaa7ff6226b38dc3cfb72b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/df4/classrune_1_1Texture.html">rune::Texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#ac171e34328eaa7ff6226b38dc3cfb72b">m_objectTexture</a></td></tr>
+<tr class="separator:ac171e34328eaa7ff6226b38dc3cfb72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa294b38501dcae72ab00939e0807840"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d4/db6/classrune_1_1ObjectAnimation.html">ObjectAnimation</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#aaa294b38501dcae72ab00939e0807840">animations</a></td></tr>
+<tr class="separator:aaa294b38501dcae72ab00939e0807840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826495d2904baa5ba08a6a41e3a392a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d9b/classrune_1_1SceneLayer.html">rune::SceneLayer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#a826495d2904baa5ba08a6a41e3a392a0">myLayer</a></td></tr>
+<tr class="separator:a826495d2904baa5ba08a6a41e3a392a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8978ec9e4ce93147d69f2bd20c087387"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html">physics::RigidBody</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#a8978ec9e4ce93147d69f2bd20c087387">m_objectRigidBody</a></td></tr>
+<tr class="separator:a8978ec9e4ce93147d69f2bd20c087387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a768b1607b955c17fd599898111c018e7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html#a768b1607b955c17fd599898111c018e7">m_mirrorSprite</a></td></tr>
+<tr class="separator:a768b1607b955c17fd599898111c018e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Entity control system main object used for all objects in the scene. </p>
@@ -340,14 +360,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ad6099bf8ca5bf95ec504392e9d2c2b3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6099bf8ca5bf95ec504392e9d2c2b3c">&#9670;&nbsp;</a></span>objectInit()</h2>
+<a id="ab243f9012024a0512e8d2c365e522fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab243f9012024a0512e8d2c365e522fda">&#9670;&nbsp;</a></span>objectInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void rune::GameObject::objectInit </td>
+          <td class="memname"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">rune::GameObject</a> * rune::GameObject::objectInit </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>xPos</em>, </td>
@@ -593,6 +613,139 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aaa294b38501dcae72ab00939e0807840"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa294b38501dcae72ab00939e0807840">&#9670;&nbsp;</a></span>animations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="../../d4/db6/classrune_1_1ObjectAnimation.html">ObjectAnimation</a>*&gt; rune::GameObject::animations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a768b1607b955c17fd599898111c018e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a768b1607b955c17fd599898111c018e7">&#9670;&nbsp;</a></span>m_mirrorSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rune::GameObject::m_mirrorSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8978ec9e4ce93147d69f2bd20c087387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8978ec9e4ce93147d69f2bd20c087387">&#9670;&nbsp;</a></span>m_objectRigidBody</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html">physics::RigidBody</a> rune::GameObject::m_objectRigidBody</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a515b26a6ca781035cce4225b3998d31b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a515b26a6ca781035cce4225b3998d31b">&#9670;&nbsp;</a></span>m_objectSprite</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/d12/classrune_1_1Sprite.html">rune::Sprite</a> rune::GameObject::m_objectSprite</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac171e34328eaa7ff6226b38dc3cfb72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac171e34328eaa7ff6226b38dc3cfb72b">&#9670;&nbsp;</a></span>m_objectTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d6/df4/classrune_1_1Texture.html">rune::Texture</a> rune::GameObject::m_objectTexture</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a826495d2904baa5ba08a6a41e3a392a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826495d2904baa5ba08a6a41e3a392a0">&#9670;&nbsp;</a></span>myLayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d9b/classrune_1_1SceneLayer.html">rune::SceneLayer</a>* rune::GameObject::myLayer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

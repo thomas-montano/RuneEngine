@@ -24,13 +24,21 @@ class RUNE_ENGINE RectangleShape : public Drawable
 private:
 
   Shader rectangleShader;
+  Color shapeColor;
 
-  unsigned int buffer;
+  unsigned int indices[6] =
+  {
+      0, 1, 3, // first triangle
+      1, 2, 3  // second triangle
+  };
+
+  unsigned int VBO;
+  unsigned int EBO;
   unsigned int VAO;
+
   rune::Vec2 position;
   rune::Vec2 size;
-
-  rune::Vec2 vertices[4];
+  rune::Vec2 origin;
 
 public:
   virtual void draw(rune::RenderWindow&);
@@ -38,10 +46,14 @@ public:
   RectangleShape();
   RectangleShape(rune::Vec2 position, rune::Vec2 Size);
 
+  void setUpBuffers();
+
   void addPosition(rune::Vec2);
   void setPosition(rune::Vec2);
 
   void setSize(rune::Vec2);
+
+  void setFillColor(rune::Color);
 
 };
 }
