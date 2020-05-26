@@ -59,7 +59,9 @@ rune::Mat3 rune::Mat3::operator+ (const Mat3& right)
 
 rune::Mat3 rune::Mat3::operator* (const Mat3& right)
 {
-  return *this;
+  Mat3 temp;
+  
+  return temp;
 }
 
 rune::Mat3 rune::Mat3::operator/ (const Mat3& right)
@@ -138,11 +140,21 @@ rune::Mat3& rune::Mat3::operator*=(const rune::Mat3& right)
   return *this;
 }
 
+/**
+ * \param right The matrix to multiply by.
+ * \return A memberwise multiplication.
+ */
 rune::Mat3& rune::Mat3::operator*=(const double right)
 {
+  *this = *this * right;
+
   return *this;
 }
 
+/**
+ * \param right The rune::Mat3 to compare to.
+ * \return Whether or not the two matrices are equivalent.
+ */
 bool rune::Mat3::operator==(const rune::Mat3& right)
 {
   for (int i = 0; i < 3; i++)
@@ -172,6 +184,10 @@ bool rune::Mat3::operator==(const rune::Mat3& right)
   return true;
 }
 
+/**
+ * \param right The rune::Mat3 to compare to.
+ * \return Whether or not the two matrices are non equivalent.
+ */
 bool rune::Mat3::operator!=(const rune::Mat3& right)
 {
   for (int i = 0; i < 3; i++)
@@ -201,6 +217,10 @@ bool rune::Mat3::operator!=(const rune::Mat3& right)
   return false;
 }
 
+/**
+ * \param scalar The scalar to be multiplied by.
+ * \return A memberwise multiplication.
+ */
 rune::Mat3 rune::Mat3::operator* (double scalar)
 {
   Mat3 temp;
@@ -228,20 +248,17 @@ rune::Mat3 rune::Mat3::operator* (double scalar)
  * \param mat The rune::Mat3 to be multiplied by.
  * \return The result of the multiplication.
  */
-rune::Vec3 operator*(const rune::Vec3& right)
+rune::Vec3 rune::Mat3::operator*(const rune::Vec3& vec)
 {
-  rune::Vec3 temp;
-
+  
+  rune::Mat3 mat = *this;
   double newX, newY, newZ;
 
+  newX = (mat[0][0] * vec.x) + (mat[0][1] * vec.y) + (mat[0][2] * vec.z);
+  newY = (mat[1][0] * vec.x) + (mat[1][1] * vec.y) + (mat[1][2] * vec.z);
+  newZ = (mat[2][0] * vec.x) + (mat[2][1] * vec.y) + (mat[2][2] * vec.z);
 
-
-  return temp;
-}
-
-rune::Vec3 rune::Mat3::operator*(const rune::Vec3& right)
-{
-  return rune::Vec3(1, 1, 1);
+  return rune::Vec3(newX,newY,newZ);
 }
 
 /**
@@ -253,24 +270,7 @@ rune::Vec3 rune::Mat3::operator*(const rune::Vec3& right)
  */
 rune::Mat3 rune::operator*(double scalar, rune::Mat3 mat)
 {
-  rune::Mat3 temp;
-
-  for (int i = 0; i < 3; i++)
-  {
-    temp[0][i] = scalar * mat[0][i];
-  }
-
-  for (int i = 0; i < 3; i++)
-  {
-    temp[1][i] = scalar * mat[1][i];
-  }
-
-  for (int i = 0; i < 3; i++)
-  {
-    temp[2][i] = scalar * mat[2][i];
-  }
-
-  return temp;
+  return mat*scalar;
 }
 
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat3& mat)
@@ -283,9 +283,14 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Mat3& mat)
   return os;
 }
 
-rune::Mat3 rune::invert(rune::Mat3)
+rune::Mat3 rune::Mat3::invert()
 {
-  return Mat3();
+  double determinant = this->determinant();
+
+  if(determinant == 0)
+    return Mat3();
+
+  
 }
 
 double rune::Mat3::determinant()

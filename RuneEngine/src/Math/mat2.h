@@ -72,7 +72,7 @@ public:
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat2& vector);
   ///Inversion of the matrix.
-  friend RUNE_ENGINE Mat2 invert(Mat2);
+  Mat2 invert();
   ///Determinant of the matrix.
   double determinant();
   ///Array like accessing of elements.

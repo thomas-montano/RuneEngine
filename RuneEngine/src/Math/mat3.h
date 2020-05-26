@@ -76,7 +76,7 @@ public:
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat3& vector);
 
   ///Inversion of the matrix.
-  friend RUNE_ENGINE Mat3 invert(Mat3);
+  Mat3 invert();
 
   ///Determinant of the matrix.
   double determinant();
@@ -88,13 +88,6 @@ public:
 
 ///Overload of muliplication operator for a scalar on the right.
 rune::Mat3 RUNE_ENGINE operator*(double scalar, rune::Mat3 mat);
-
-///Overload of multiplication operator for a rune::Mat2
-RUNE_ENGINE rune::Vec3 operator*(rune::Vec3, rune::Mat3);
-
-///Overload of muliplication operator for a scalar on the right.
-RUNE_ENGINE Mat3 operator* (double scalar, rune::Mat3 mat);
-
 
 }
 

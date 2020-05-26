@@ -258,12 +258,19 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)
  * \param right The matrix to invert.
  * \return The inverse of the square matrix.
  */
-rune::Mat2 rune::invert(rune::Mat2 right)
+rune::Mat2 rune::Mat2::invert()
 {
 
-  double determinant = right.determinant();
-  return Mat2(right.row2[1] / determinant, -1 * right.row1[1] / determinant, -1 * right.row2[0] / determinant, right.row1[0] / determinant);
+  double determinant = this->determinant();
+  
+  if(determinant != 0)
+  {
+    return Mat2(this->row2[1] / determinant, -1 * this->row1[1] / determinant, -1 * this->row2[0] / determinant, this->row1[0] / determinant);
+  }
 
+  std::cout << "Matrix is not invertable" << std::endl;
+
+  return Mat2();
 }
 
 /**
