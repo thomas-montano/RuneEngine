@@ -11,12 +11,10 @@
 #ifndef VEC2_H_DEFINED
 #define VEC2_H_DEFINED
 
-#include "core.h"
 #include <iostream>
+#include "core.h"
 
 namespace rune{
-
-
 
 class RUNE_ENGINE Vec2
 {
@@ -64,9 +62,6 @@ public:
   bool operator==(const Vec2& right);
   ///Overload of != operator.
   bool operator!=(const Vec2& right);
-  
-  ///Overload of stream operator for printing.
-  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 
 };
 
@@ -97,9 +92,13 @@ RUNE_ENGINE rune::Vec2 normalize(rune::Vec2);
  */
 RUNE_ENGINE double crossProduct(rune::Vec2, rune::Vec2);
 
-}
-
 ///Overload of muliplication operator for a scalar on the left.
 RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 mat);
+
+///Overload of stream operator for printing.
+/// @memberof rune::Vec2
+RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const rune::Vec2& vector);
+
+}
 
 #endif

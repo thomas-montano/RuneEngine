@@ -52,8 +52,6 @@ protected:
   std::vector<GameUI*> m_stateUI;
   ///The camera used to render objects to the screen.
   rune::Camera SceneCamera;
-  ///A console to use for debugging.
-  rune::Console debugConsole;
 
 public:
   GameScene();

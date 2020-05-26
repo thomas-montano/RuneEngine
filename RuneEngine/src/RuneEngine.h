@@ -14,8 +14,8 @@
 #include <SceneTools\layer.h>
 #include <Input\keyboard.h>
 #include <Math\vec2.h>
+#include <Math\vec3.h>
 #include <Math\mat2.h>
 #include <Math\mat3.h>
-#include <Math\vec3.h>
 #include <SceneTools\console.h>
 #include <Renderer\camera.h>

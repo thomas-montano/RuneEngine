@@ -165,7 +165,7 @@ bool rune::Vec2::operator!=(const rune::Vec2& right)
  * \param vec The vector to be multiplied.
  * \return A memberwise multiplication.
  */
-rune::Vec2 operator* (double scalar, rune::Vec2 vec)
+rune::Vec2 rune::operator* (double scalar, rune::Vec2 vec)
 {
 
   return rune::Vec2(vec.x*scalar,vec.y*scalar);

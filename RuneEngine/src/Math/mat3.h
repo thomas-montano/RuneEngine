@@ -72,9 +72,6 @@ public:
   ///Overload of division operator.
   Mat3 operator/ (double scalar);
 
-  ///Overload of stream operator for printing.
-  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat3& vector);
-
   ///Inversion of the matrix.
   Mat3 invert();
 
@@ -84,10 +81,15 @@ public:
   ///Array like accessing of elements.
   double* operator[](int index);
 
+  ///Overload of stream operator for printing.
+  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat3& vector);
+
 };
 
 ///Overload of muliplication operator for a scalar on the right.
 rune::Mat3 RUNE_ENGINE operator*(double scalar, rune::Mat3 mat);
+
+
 
 }
 

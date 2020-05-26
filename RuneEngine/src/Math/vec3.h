@@ -67,10 +67,11 @@ public:
   ///Determine the magnitude of the vector.
   double magnitude(void);
 
-  ///Overload of stream operator for printing.
-  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec3& vector);
-
 };
+
+///Overload of stream operator for printing.
+/// @memberof rune::Vec3
+RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec3& vector);
 
 /**
  * @memberof rune::Vec3
@@ -90,7 +91,8 @@ RUNE_ENGINE rune::Vec3 normalize(rune::Vec3 vector);
  */
 RUNE_ENGINE rune::Vec3 crossProduct(rune::Vec3, rune::Vec3);
 
-///Overload of muliplication operator for a scalar on the left.
+/// Overload of muliplication operator for a scalar on the left.
+/// @memberof rune::Vec3
 RUNE_ENGINE rune::Vec3 operator*(double scalar, rune::Vec3 mat);
 
 }

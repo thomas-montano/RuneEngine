@@ -69,14 +69,15 @@ public:
   ///Overload of divison operator for a scalar.
   rune::Mat2 operator/ (double scalar);
 
-  ///Overload of stream operator for printing.
-  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat2& vector);
   ///Inversion of the matrix.
   Mat2 invert();
   ///Determinant of the matrix.
   double determinant();
   ///Array like accessing of elements.
   double* operator[](int index);
+
+  ///Overload of stream operator for printing.
+  friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Mat2& vector);
 };
 
 ///Overload of multiplication operator for a rune::Mat2
