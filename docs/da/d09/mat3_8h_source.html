@@ -75,52 +75,76 @@ $(function() {
 <a href="../../da/d09/mat3_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef MAT3_H_DEFINED</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../da/d09/mat3_8h.html#a392b6de0c2dc71d0ebee4779b9ecdd2a">   16</a></span>&#160;<span class="preprocessor">#define MAT3_H_DEFINED</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d2/d17/classrune_1_1Mat3.html">   20</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keywordtype">double</span> row1[3];</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keywordtype">double</span> row2[3];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">double</span> row3[3];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>(<span class="keywordtype">double</span> a11, <span class="keywordtype">double</span> a12, <span class="keywordtype">double</span> a13, <span class="keywordtype">double</span> a21, <span class="keywordtype">double</span> a22, <span class="keywordtype">double</span> a23, <span class="keywordtype">double</span> a31, <span class="keywordtype">double</span> a32, <span class="keywordtype">double</span> a33);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> operator- (<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> operator+ (<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../da/d09/mat3_8h.html#a92697e78075bc687674c2c13ca02df51">operator* </a>(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">operator/ </a>(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator-=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator+=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator*=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator*=(<span class="keyword">const</span> <span class="keywordtype">double</span> right);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../da/d09/mat3_8h.html#a92697e78075bc687674c2c13ca02df51">operator* </a>(<span class="keywordtype">double</span> scalar);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">operator/ </a>(<span class="keywordtype">double</span> scalar);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">friend</span> RUNE_ENGINE std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; vector);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">friend</span> RUNE_ENGINE <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> invert(<a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">double</span> determinant();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">double</span>* operator[](<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE <a class="code" href="../../d2/d17/classrune_1_1Mat3.html#a07741aca5a9b8f52f08c4d72084bac52">operator*</a>(<span class="keywordtype">double</span> scalar, <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d08/vec3_8h.html">vec3.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef MAT3_H_DEFINED</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../da/d09/mat3_8h.html#a392b6de0c2dc71d0ebee4779b9ecdd2a">   17</a></span>&#160;<span class="preprocessor">#define MAT3_H_DEFINED</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d2/d17/classrune_1_1Mat3.html">   21</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">double</span> row1[3];</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">double</span> row2[3];</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">double</span> row3[3];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>(<span class="keywordtype">double</span> a11, <span class="keywordtype">double</span> a12, <span class="keywordtype">double</span> a13, <span class="keywordtype">double</span> a21, <span class="keywordtype">double</span> a22, <span class="keywordtype">double</span> a23, <span class="keywordtype">double</span> a31, <span class="keywordtype">double</span> a32, <span class="keywordtype">double</span> a33);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> operator- (<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> operator+ (<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator* </a>(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator* </a>(<span class="keywordtype">double</span> scalar);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator*</a>(<span class="keyword">const</span> <a class="code" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&amp; right);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">operator/ </a>(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator-=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator+=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator+=(<span class="keyword">const</span> <span class="keywordtype">double</span> scalar);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator*=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; operator*=(<span class="keyword">const</span> <span class="keywordtype">double</span> right);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; right);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">operator/ </a>(<span class="keywordtype">double</span> scalar);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">friend</span> RUNE_ENGINE std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>&amp; vector);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keyword">friend</span> RUNE_ENGINE <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> invert(<a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">double</span> determinant();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">double</span>* operator[](<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator*</a>(<span class="keywordtype">double</span> scalar, <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;RUNE_ENGINE <a class="code" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator*</a>(<a class="code" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>, <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;RUNE_ENGINE <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">Mat3</a> <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator* </a>(<span class="keywordtype">double</span> scalar, <a class="code" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="amat3_8h_html_a92697e78075bc687674c2c13ca02df51"><div class="ttname"><a href="../../da/d09/mat3_8h.html#a92697e78075bc687674c2c13ca02df51">operator*</a></div><div class="ttdeci">rune::Mat3 RUNE_ENGINE operator*(double scalar, rune::Mat3 mat)</div><div class="ttdoc">Overload of muliplication operator for a scalar on the right.</div></div>
-<div class="ttc" id="aclassrune_1_1Mat3_html_a07741aca5a9b8f52f08c4d72084bac52"><div class="ttname"><a href="../../d2/d17/classrune_1_1Mat3.html#a07741aca5a9b8f52f08c4d72084bac52">rune::Mat3::operator*</a></div><div class="ttdeci">rune::Mat3 operator*(double scalar, rune::Mat3 mat)</div><div class="ttdef"><b>Definition:</b> mat3.cpp:133</div></div>
-<div class="ttc" id="anamespacerune_html_a94f73716402499e91db784334f918081"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">rune::operator/</a></div><div class="ttdeci">RUNE_ENGINE Vec2 operator/(double scalar, Vec2 vec)</div><div class="ttdoc">Overload of division operator.</div><div class="ttdef"><b>Definition:</b> vec2.cpp:185</div></div>
-<div class="ttc" id="aclassrune_1_1Mat3_html"><div class="ttname"><a href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a></div><div class="ttdoc">3 x 3 matrix to be used for math.</div><div class="ttdef"><b>Definition:</b> mat3.h:20</div></div>
+<div class="ttc" id="aclassrune_1_1Vec3_html"><div class="ttname"><a href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a></div><div class="ttdoc">1 x 3 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec3.h:19</div></div>
+<div class="ttc" id="avec3_8h_html"><div class="ttname"><a href="../../d8/d08/vec3_8h.html">vec3.h</a></div></div>
+<div class="ttc" id="anamespacerune_html_a94f73716402499e91db784334f918081"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">rune::operator/</a></div><div class="ttdeci">RUNE_ENGINE Vec2 operator/(double scalar, Vec2 vec)</div><div class="ttdoc">Overload of division operator.</div><div class="ttdef"><b>Definition:</b> vec2.cpp:186</div></div>
+<div class="ttc" id="aclassrune_1_1Mat3_html"><div class="ttname"><a href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a></div><div class="ttdoc">3 x 3 matrix to be used for math.</div><div class="ttdef"><b>Definition:</b> mat3.h:21</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
+<div class="ttc" id="anamespacerune_html_a7d92b23b6af2b93e77da83c0205605d6"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">rune::operator*</a></div><div class="ttdeci">RUNE_ENGINE rune::Vec2 operator*(rune::Vec2, rune::Mat2)</div><div class="ttdoc">Overload of multiplication operator for a rune::Mat2.</div><div class="ttdef"><b>Definition:</b> mat2.cpp:224</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> gameObject.h:22</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

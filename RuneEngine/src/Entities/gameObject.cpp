@@ -44,7 +44,7 @@ rune::GameObject* rune::GameObject::objectInit(double xPos, double yPos, int wid
 void rune::GameObject::draw(RenderWindow& window)
 {
 
-  window.draw(m_objectRigidBody);
+  //window.draw(m_objectRigidBody);
   window.draw(m_objectSprite);
 
 }

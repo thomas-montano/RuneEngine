@@ -16,6 +16,8 @@
 
 namespace rune{
 
+
+
 class RUNE_ENGINE Vec2
 {
 public:
@@ -23,36 +25,46 @@ public:
   double x;
   ///Y coordinate of the vector.
   double y;
+
   ///Default empty constructor that sets X and Y to 0.
   Vec2();
   ///Constructor that sets up a new vector.
   Vec2(double newX, double newY);
+
   ///Overload of subtraction operator.
   Vec2 operator- (const Vec2& right);
   ///Overload of negation operator.
   Vec2 operator-();
+
   ///Overload of addition operator.
   Vec2 operator+ (const Vec2& right);
+
   ///Overload of mutiplication operator.
   Vec2 operator* (const Vec2& right);
+
   ///Overload of division operator.
   Vec2 operator/ (const Vec2& right);
+  ///Overload of division operator for a scalar on the right.
+  Vec2 operator/ (double scalar);
+
   ///Overload of -= operator.
   Vec2& operator-=(const Vec2& right);
+
   ///Overload of += operator.
   Vec2& operator+=(const Vec2& right);
+
   ///Overload of *= operator.
   Vec2& operator*=(const Vec2& right);
   ///Overload of *= operator for a scalar multiplier.
   Vec2& operator*=(const double right);
+  ///Overload of muliplication operator for a scalar on the right.
+  Vec2 operator* (double scalar);
+
   ///Overload of comparator operator.
   bool operator==(const Vec2& right);
   ///Overload of != operator.
   bool operator!=(const Vec2& right);
-  ///Overload of muliplication operator for a scalar on the right.
-  Vec2 operator* (double scalar);
-  ///Overload of division operator for a scalar on the right.
-  Vec2 operator/ (double scalar);
+  
   ///Overload of stream operator for printing.
   friend RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec2& vector);
 

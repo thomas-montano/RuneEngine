@@ -78,14 +78,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d5/dc4/core_8h_source.html">core.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d08/vec3_8h_source.html">vec3.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for mat3.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d3/dec/mat3_8h__incl.png" border="0" usemap="#mat3_8h" alt=""/></div>
 <map name="mat3_8h" id="mat3_8h">
-<area shape="rect" title=" " alt="" coords="5,5,73,32"/>
-<area shape="rect" href="../../d5/dc4/core_8h.html" title=" " alt="" coords="8,80,71,107"/>
+<area shape="rect" title=" " alt="" coords="51,5,119,32"/>
+<area shape="rect" href="../../d5/dc4/core_8h.html" title=" " alt="" coords="5,155,68,181"/>
+<area shape="rect" href="../../d8/d08/vec3_8h.html" title=" " alt="" coords="52,80,117,107"/>
+<area shape="rect" title=" " alt="" coords="103,155,183,181"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -119,9 +122,12 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a92697e78075bc687674c2c13ca02df51"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d09/mat3_8h.html#a92697e78075bc687674c2c13ca02df51">operator*</a> (double scalar, <a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat)</td></tr>
-<tr class="memdesc:a92697e78075bc687674c2c13ca02df51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of muliplication operator for a scalar on the right.  <a href="../../da/d09/mat3_8h.html#a92697e78075bc687674c2c13ca02df51">More...</a><br /></td></tr>
-<tr class="separator:a92697e78075bc687674c2c13ca02df51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa535060a57e449bd7764895a123bbe4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#aa535060a57e449bd7764895a123bbe4d">rune::operator*</a> (double scalar, <a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat)</td></tr>
+<tr class="memdesc:aa535060a57e449bd7764895a123bbe4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of muliplication operator for a scalar on the right.  <a href="../../d3/d30/namespacerune.html#aa535060a57e449bd7764895a123bbe4d">More...</a><br /></td></tr>
+<tr class="separator:aa535060a57e449bd7764895a123bbe4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6429a0ac44671f78b35de95e8d16d5d9"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a6429a0ac44671f78b35de95e8d16d5d9">rune::operator*</a> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>, <a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a>)</td></tr>
+<tr class="memdesc:a6429a0ac44671f78b35de95e8d16d5d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of multiplication operator for a <a class="el" href="../../df/db1/classrune_1_1Mat2.html" title="2 x 2 matrix to be used for math.">rune::Mat2</a>.  <a href="../../d3/d30/namespacerune.html#a6429a0ac44671f78b35de95e8d16d5d9">More...</a><br /></td></tr>
+<tr class="separator:a6429a0ac44671f78b35de95e8d16d5d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a392b6de0c2dc71d0ebee4779b9ecdd2a"></a>
@@ -135,37 +141,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a92697e78075bc687674c2c13ca02df51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92697e78075bc687674c2c13ca02df51">&#9670;&nbsp;</a></span>operator*()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE operator* </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a>&#160;</td>
-          <td class="paramname"><em>mat</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Overload of muliplication operator for a scalar on the right. </p>
 
 </div>
 </div>

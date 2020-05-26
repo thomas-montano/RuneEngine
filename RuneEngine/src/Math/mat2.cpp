@@ -1,5 +1,4 @@
 #include "mat2.h"
-#include "vec2.h"
 
 rune::Mat2::Mat2(): row1{ 0,0 }, row2{ 0,0 }
 {
@@ -107,6 +106,20 @@ rune::Mat2& rune::Mat2::operator+=(const rune::Mat2& right)
 }
 
 /**
+ * \param scalar The scalar to be added.
+ * \return A memberwise addition.
+ */
+rune::Mat2& rune::Mat2::operator+=(const double scalar)
+{
+  this->row1[0] += scalar;
+  this->row1[1] += scalar;
+  this->row2[0] += scalar;
+  this->row2[1] += scalar;
+
+  return *this;
+}
+
+/**
  * \param right The matrix to be multiplied by.
  * \return The result of the matrix multiplication.
  */
@@ -143,7 +156,7 @@ rune::Mat2& rune::Mat2::operator*=(const double right)
 }
 
 /**
- * \param right THe matrix to compare with.
+ * \param right The matrix to compare with.
  * \return The result of a memberwise comparison.
  */
 bool rune::Mat2::operator==(const Mat2& right)
@@ -168,9 +181,9 @@ bool rune::Mat2::operator!=(const rune::Mat2& right)
 {
 
   if (this->row1[0] != right.row1[0] ||
-    this->row1[1] != right.row1[1] ||
-    this->row2[0] != right.row2[0] ||
-    this->row2[1] != right.row2[1])
+      this->row1[1] != right.row1[1] ||
+      this->row2[0] != right.row2[0] ||
+      this->row2[1] != right.row2[1])
   {
     return true;
   }
@@ -182,12 +195,35 @@ bool rune::Mat2::operator!=(const rune::Mat2& right)
  * \param right The scalar to multiply by.
  * \return A memberwise scalar multiplication.
  */
-rune::Mat2 rune::operator* (double scalar, rune::Mat2& mat)
+rune::Mat2 rune::Mat2::operator* (double scalar)
 {
 
-  Mat2 temp(mat.row1[0] * scalar, mat.row1[1] * scalar, mat.row2[0] * scalar, mat.row2[1] * scalar);
+  Mat2 temp(this->row1[0] * scalar, this->row1[1] * scalar, this->row2[0] * scalar, this->row2[1] * scalar);
 
   return temp;
+}
+
+/**
+ * \param right The rune::Vec2 to be multiplied by.
+ * \return The result of the multiplication.
+ */
+rune::Vec2 rune::Mat2::operator*(const rune::Vec2& right)
+{
+  
+  rune::Mat2 temp = *this;
+
+  return Vec2(right.x * temp[0][0] + right.x * temp[1][0], right.y * temp[0][1] + right.y * temp[1][1]);
+
+}
+
+/**
+ * \param right The left operand rune::Vec2.
+ * \param left The right operand rune::Mat2.
+ * \return The result of the multiplication.
+ */
+rune::Vec2 rune::operator*(rune::Vec2 right, rune::Mat2 left)
+{
+  return left * right;
 }
 
 /**
@@ -205,11 +241,9 @@ rune::Mat2 rune::Mat2::operator/ (double scalar)
  * \param right The scalar to multiply by.
  * \return A memberwise scalar multiplication.
  */
-rune::Mat2 rune::operator* (Mat2& mat, double scalar)
+rune::Mat2 rune::operator* (double scalar, rune::Mat2 mat)
 {
-  Mat2 temp(mat.row1[0] * scalar, mat.row1[1] * scalar, mat.row2[0] * scalar, mat.row2[1] * scalar);
-
-  return temp;
+  return scalar*mat;
 }
 
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)
@@ -248,5 +282,7 @@ double* rune::Mat2::operator[](int index)
     return row1;
   else if(index == 1)
     return row2;
+
+  return row1;
 }
 

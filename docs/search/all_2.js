@@ -30,5 +30,5 @@ var searchData=
   ['contactvectorbox2_51',['contactVectorBox2',['../d1/d91/structphysics_1_1collision.html#af388948ff4ee64dec1f0f758b2276fdd',1,'physics::collision']]],
   ['core_2eh_52',['core.h',['../d5/dc4/core_8h.html',1,'']]],
   ['createbutton_53',['createButton',['../d0/d2a/classrune_1_1GameUI.html#a63fbbe173e4acc6e45437804bca8ccee',1,'rune::GameUI']]],
-  ['crossproduct_54',['crossProduct',['../dd/dca/classrune_1_1Vec2.html#ad983757dece7c6119eaa394eb012307d',1,'rune::Vec2']]]
+  ['crossproduct_54',['crossProduct',['../dd/dca/classrune_1_1Vec2.html#ad983757dece7c6119eaa394eb012307d',1,'rune::Vec2::crossProduct()'],['../d5/d19/classrune_1_1Vec3.html#a7d50c9a3705049c5a83ea65d391882b9',1,'rune::Vec3::crossProduct()']]]
 ];

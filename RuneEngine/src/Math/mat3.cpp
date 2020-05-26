@@ -1,4 +1,5 @@
 #include "mat3.h"
+#include "mat2.h"
 
 
 rune::Mat3::Mat3() : row1{ 0,0,0 }, row2{ 0,0,0 }, row3{ 0,0,0 }
@@ -73,11 +74,62 @@ rune::Mat3 rune::Mat3::operator/ (double scalar)
 
 rune::Mat3& rune::Mat3::operator-=(const Mat3& right)
 {
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row1[i] = this->row1[i] - right.row1[i];
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row2[i] = this->row2[i] - right.row2[i];
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row3[i] = this->row3[i] - right.row3[i];
+  }
+
   return *this;
 }
 
 rune::Mat3& rune::Mat3::operator+=(const Mat3& right)
 {
+  for (int i = 0; i < 3; i++)
+  {
+    this->row1[i] = this->row1[i] + right.row1[i];
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row2[i] = this->row2[i] + right.row2[i];
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row3[i] = this->row3[i] + right.row3[i];
+  }
+
+  return *this;
+}
+
+rune::Mat3& rune::Mat3::operator+=(const double scalar)
+{
+  for (int i = 0; i < 3; i++)
+  {
+    this->row1[i] = this->row1[i] + scalar;
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row2[i] = this->row2[i] + scalar;
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    this->row3[i] = this->row3[i] + scalar;
+  }
+
   return *this;
 }
 
@@ -93,11 +145,59 @@ rune::Mat3& rune::Mat3::operator*=(const double right)
 
 bool rune::Mat3::operator==(const rune::Mat3& right)
 {
-  return false;
+  for (int i = 0; i < 3; i++)
+  {
+    if(this->row1[i] != right.row1[i])
+    {
+      return false;
+    }
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    if (this->row2[i] != right.row2[i])
+    {
+      return false;
+    }
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    if (this->row3[i] != right.row3[i])
+    {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 bool rune::Mat3::operator!=(const rune::Mat3& right)
 {
+  for (int i = 0; i < 3; i++)
+  {
+    if (this->row1[i] != right.row1[i])
+    {
+      return true;
+    }
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    if (this->row2[i] != right.row2[i])
+    {
+      return true;
+    }
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    if (this->row3[i] != right.row3[i])
+    {
+      return true;
+    }
+  }
+
   return false;
 }
 
@@ -124,13 +224,34 @@ rune::Mat3 rune::Mat3::operator* (double scalar)
 }
 
 /**
+ * \param vector The vector to be multiplied with.
+ * \param mat The rune::Mat3 to be multiplied by.
+ * \return The result of the multiplication.
+ */
+rune::Vec3 operator*(const rune::Vec3& right)
+{
+  rune::Vec3 temp;
+
+  double newX, newY, newZ;
+
+
+
+  return temp;
+}
+
+rune::Vec3 rune::Mat3::operator*(const rune::Vec3& right)
+{
+  return rune::Vec3(1, 1, 1);
+}
+
+/**
  * @memberof rune::Mat3
  * 
  * \param scalar
  * \param mat
  * \return 
  */
-rune::Mat3 operator*(double scalar, rune::Mat3 mat)
+rune::Mat3 rune::operator*(double scalar, rune::Mat3 mat)
 {
   rune::Mat3 temp;
 
@@ -169,7 +290,12 @@ rune::Mat3 rune::invert(rune::Mat3)
 
 double rune::Mat3::determinant()
 {
-  return 0.0;
+  rune::Mat3 temp = *this;
+
+  return temp[0][0] * rune::Mat2(temp[1][1], temp[1][2], temp[2][1], temp[2][2]).determinant() 
+  - temp[0][1] * rune::Mat2(temp[1][0],temp[1][2],temp[2][0],temp[2][2]).determinant()
+  + temp[0][2] * rune::Mat2(temp[1][0],temp[1][1],temp[2][0],temp[2][1]).determinant();
+
 }
 
 double* rune::Mat3::operator[](int index)
