@@ -10,8 +10,12 @@
  * @param gravity Vertical gravity that the RigidBody should be subjected to.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
+physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation) 
 {
+    
+    objectBody.restitution = 0.0;
+    objectBody.staticFriction = 0.4;
+    objectBody.dynamicFriction = 0.2;
 
     objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
     objectBody.vertexes[1] = rune::Vec2(0.5*width,0.5*height); //Top right
@@ -66,6 +70,10 @@ physics::RigidBody::RigidBody()
 */
 void physics::RigidBody::setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
 {
+
+    objectBody.restitution = 0.0;
+    objectBody.staticFriction = 0.4;
+    objectBody.dynamicFriction = 0.2;
 
     objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
     objectBody.vertexes[1] = rune::Vec2(0.5*width,0.5*height); //Top right

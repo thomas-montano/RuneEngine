@@ -31,6 +31,7 @@ private:
   double m_height;
   double m_width;
 public:
+  GameUI();
   ///Creates a UI level button.
   void createButton(double posX, double posY,double width, double height);
 

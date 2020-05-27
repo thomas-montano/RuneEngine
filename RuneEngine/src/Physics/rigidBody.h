@@ -32,6 +32,11 @@ struct collision
     rune::Vec2 contactVectorBox2;
     double depth;
 
+    collision() : objectOne(nullptr), objectTwo(nullptr), normalVector(rune::Vec2(0,0)), contactVectorBox1(rune::Vec2(0,0)), contactVectorBox2(rune::Vec2(0,0)), depth(0)
+    {
+    
+    }
+
 };
 
 ///Axis aligned bounding box for each object.
@@ -40,6 +45,11 @@ struct AABB
 
   rune::Vec2 min;
   rune::Vec2 max;
+
+  AABB() : min(rune::Vec2(0,0)), max(rune::Vec2(0,0))
+  {
+  
+  }
 
 };
 
@@ -55,10 +65,10 @@ struct body
   rune::Vec2 velocity; //Velocity
   double invMass; // 1/mass of the object
   double gravityFactor; //How much gravity does this object have
-  double restitution = 0; //How bouncy, between 0 and 1
+  double restitution; //How bouncy, between 0 and 1
 
-  double staticFriction = .4; //Coefficient of static friction
-  double dynamicFriction = .2; //Coefficient of dynamic friction
+  double staticFriction; //Coefficient of static friction
+  double dynamicFriction; //Coefficient of dynamic friction
 
   double angleOfRotation; //Current angle of rotation
   double angularVelocity; //Rate of change of rotation
@@ -73,7 +83,6 @@ class RUNE_ENGINE RigidBody : public rune::Drawable
 
 private:
     body objectBody;
-    bool isSleeping;
     std::vector<collision> involvedCollisions;
     rune::RectangleShape drawBox;
 

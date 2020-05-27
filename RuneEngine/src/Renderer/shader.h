@@ -27,6 +27,11 @@ struct ShaderProgramSource
 
   ///The fragment shader code to be compiled.
   std::string FragmentSource;
+
+  ShaderProgramSource(std::string vertex, std::string frag) : VertexSource(vertex), FragmentSource(frag)
+  {
+  }
+
 };
 
 class RUNE_ENGINE Shader
@@ -45,6 +50,8 @@ public:
 
   ///Default constructor to create and load a shader.
   Shader(const std::string& filePath);
+
+  void makeNewShader(ShaderProgramSource);
 
   ///Configure the shader to be active on the GPU, must be done before drawing something.
   void bind(void);

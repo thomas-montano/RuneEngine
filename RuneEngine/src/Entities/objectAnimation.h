@@ -34,6 +34,8 @@ private:
   Texture* m_animationSheet;
 
 public:
+  
+  ObjectAnimation();
   ///Set the frame rate for the animation.
   void setFrameRate(int frameRate);
 

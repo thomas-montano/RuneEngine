@@ -1,6 +1,11 @@
 #include "gameObject.h"
 #include <SceneTools\layer.h>
 
+rune::GameObject::GameObject() : m_mirrorSprite(false), myLayer(nullptr)
+{
+
+}
+
 /**
  * @param xPos The horizontal position of the object relative to the bottom left corner of the sprite.
  * @param yPos The vertical position of the object relative to the bottom left corner of the sprite.

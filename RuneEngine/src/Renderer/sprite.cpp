@@ -5,9 +5,9 @@
 #include <Renderer\camera.h>
 #include <Math\mat2.h>
 
-rune::Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(rune::Vec2(0, 0))
+rune::Sprite::Sprite() :  origin(rune::Vec2(0, 0))
 {
-
+  spriteShader.makeNewShader(defaultShader);
   this->setUpBuffers();
 
 }
@@ -17,9 +17,9 @@ rune::Sprite::Sprite() : spriteShader("./RuneEngine/src/Shaders/sprite.shader"),
  * @param position A rune::Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite .png file to be drawn.
 */
-rune::Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), spriteShader("./RuneEngine/src/Shaders/sprite.shader"), origin(rune::Vec2(0,0))
+rune::Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), origin(rune::Vec2(0,0))
 {
-  
+  spriteShader.makeNewShader(defaultShader);
   this->setUpBuffers();
 
 }

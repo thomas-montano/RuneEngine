@@ -15,12 +15,11 @@ rune::Shader::Shader(const std::string& filePath)
 {
   ShaderProgramSource source = ParseShader(filePath.c_str());
 
-  /*std::cout << "VERTEX" << std::endl;
-  std::cout << source.VertexSource << std::endl;
+  m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
+}
 
-  std::cout << "FRAGMENT" << std::endl;
-  std::cout << source.FragmentSource << std::endl;*/
-
+void rune::Shader::makeNewShader(ShaderProgramSource source)
+{
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 }
 

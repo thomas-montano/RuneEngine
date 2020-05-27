@@ -4,6 +4,11 @@
 #include <imgui/imgui_impl_glfw.h>
 #include <gameApplication.h>
 
+rune::GameUI::GameUI() : m_height(0), m_width(0), m_posX(0), m_posY(0)
+{
+
+}
+
 /**
  * @param posX Horizontal position relative to the bottom left corner of the button to place the button on the screen.
  * @param posY Vertical position relative to the bottom left corner of the button to place the button on the screen.
@@ -44,8 +49,8 @@ void rune::GameUI::createButton(double posX, double posY, double width, double h
 bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
 {
 
-  int My = mouseLocation.y;
-  int Mx = mouseLocation.x;
+  double My = mouseLocation.y;
+  double Mx = mouseLocation.x;
 
   RenderWindow* window = rune::GameApplication::getWindow();
 

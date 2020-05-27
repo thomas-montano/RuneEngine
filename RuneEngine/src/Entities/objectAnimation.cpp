@@ -1,5 +1,10 @@
 #include "objectAnimation.h"
 
+rune::ObjectAnimation::ObjectAnimation() : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0), m_animationSheet(nullptr)
+{
+
+}
+
 /**
  * @param frameRate The framerate of the new ObjectAnimation.
 */

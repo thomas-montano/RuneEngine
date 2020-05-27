@@ -40,7 +40,7 @@ protected:
   bool m_mirrorSprite;
 
 public:
-
+  GameObject();
   virtual void draw(RenderWindow&);
   ///Used to initialize the object, serves the same purpose as a constructor and must be called on every object for it to appear in the scene.
   rune::GameObject* objectInit(double xPos, double yPos, int width, int height, std::string filePath,double mass = 10,double gravity = 10);

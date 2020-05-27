@@ -41,9 +41,9 @@ private:
   rune::Vec2 m_size;
 
 public:
-  ///Default empty constructor for generating a sprite
+  ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
-  ///Default constructor that initializes the sprite to a drawable state.
+  ///Default constructor that initializes the sprite to a drawable state, uses default shader.
   Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation);
   ///Initialize opengl for the sprite.
   void setUpBuffers(void);
@@ -64,7 +64,43 @@ public:
   ///Get the current dimensions of the sprite.
   rune::Vec2 getSize(void);
 
+  rune::ShaderProgramSource defaultShader=
+    ShaderProgramSource(
+    "#version 330 core\n"
+
+    "layout(location = 0) in vec2 aPos;\n"
+  "layout(location = 1) in vec4 aColor;\n"
+  "layout(location = 2) in vec2 aTexCoord;\n"
+
+  "uniform vec4 cameraPos = vec4(0, 0, 0, 0);\n"
+
+  "out vec4 ourColor;\n"
+  "out vec2 TexCoord;\n"
+
+  "void main()\n"
+  "{\n"
+    "gl_Position = vec4(aPos, 1.0, 1.0) - cameraPos;\n"
+    "ourColor = aColor;\n"
+    "TexCoord = aTexCoord;\n"
+  "}\n"
+  ,
+    "#version 330 core\n"
+
+    "out vec4 FragColor;\n"
+
+  "in vec4 ourColor;\n"
+  "in vec2 TexCoord;\n"
+
+  "uniform sampler2D ourTexture;\n"
+
+  "void main()\n"
+  "{\n"
+    "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
+  "}\n");
+
+
 };
+
 }
 
 #endif
