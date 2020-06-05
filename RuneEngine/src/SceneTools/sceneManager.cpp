@@ -1,6 +1,9 @@
 #include "sceneManager.h"
 #include "gameScene.h"
 
+int rune::SceneManager::m_currentScene = 0;
+std::vector<rune::GameScene*> rune::SceneManager::m_scenes = {};
+
 /**
  * @return A pointer to the currently active GameScene
 */
@@ -38,6 +41,7 @@ void rune::SceneManager::setScene(int newScene)
   else
   {
     m_scenes[m_currentScene]->doInit();
+    m_scenes[m_currentScene]->startComponents();
   }
 
 }

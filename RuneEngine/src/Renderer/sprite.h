@@ -10,6 +10,7 @@
 #define SPRITE_H_DEFINED
 
 #include "core.h"
+#include <Entities\component.h>
 #include "renderWindow.h"
 #include "texture.h"
 #include "drawable.h"
@@ -19,7 +20,7 @@
 
 namespace rune{
 
-class RUNE_ENGINE Sprite : public Drawable
+class RUNE_ENGINE Sprite : public Drawable, public Component
 {
 private:
   Texture spriteTexture;
@@ -45,6 +46,9 @@ public:
   Sprite();
   ///Default constructor that initializes the sprite to a drawable state, uses default shader.
   Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation);
+  virtual void start();
+  /// Virtual update method being overloaded
+  virtual void update();
   ///Initialize opengl for the sprite.
   void setUpBuffers(void);
   ///Draw overload so that sprite can be displayed to the screen.

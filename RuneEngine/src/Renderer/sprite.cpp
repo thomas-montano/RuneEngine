@@ -2,6 +2,7 @@
 #include <GL\glew.h>
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
+#include <gameApplication.h>
 #include <Renderer\camera.h>
 #include <Math\mat2.h>
 
@@ -49,6 +50,20 @@ void rune::Sprite::setUpBuffers()
   // texture coord attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
+
+}
+
+void rune::Sprite::start()
+{
+
+  rune::SceneManager::getCurrentScene()->addToDrawList(this);
+
+}
+
+void rune::Sprite::update()
+{
+
+  rune::GameApplication::getWindow()->draw(*this);
 
 }
 

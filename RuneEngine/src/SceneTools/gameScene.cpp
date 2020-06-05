@@ -4,9 +4,11 @@
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
 
-rune::GameScene::GameScene() : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
+rune::GameScene::GameScene() 
+  : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
 {
   variableClock.reset();
+
 }
 
 /**
@@ -84,23 +86,6 @@ void rune::GameScene::updateFixed(void)
 
 }
 
-void rune::GameScene::runObjectUpdates()
-{
-
-  for (int j = 0; j < sceneLayers.size(); j++)
-  {
-
-    std::vector<rune::GameObject*> layerObjects = sceneLayers[j].getObjects();
-
-    for (int i = 0; i < layerObjects.size(); i++)
-    {
-      layerObjects[i]->update();
-    }
-
-  }
-
-}
-
 /**
  * UpdateVariable is responsible for handling all State variable update needs for this
  * State when it is the active State.
@@ -110,7 +95,40 @@ void rune::GameScene::updateVariable(void)
 
 }
 
-void rune::GameScene::updateLayerPhysics(void)
+void rune::GameScene::addObjectToScene(rune::GameObject newObject)
+{
+
+  sceneObjects.push_back(newObject);
+
+}
+
+void rune::GameScene::startComponents(void)
+{
+
+  for (int i = 0; i < sceneObjects.size(); i++)
+  {
+    for (int j = 0; j < sceneObjects[i].getNumComponents(); j++)
+    {
+      sceneObjects[i].getComponent(j)->start();
+    }
+  }
+
+}
+
+void rune::GameScene::updateComponents()
+{
+
+  for(int i = 0; i < sceneObjects.size(); i++)
+  {
+    for(int j = 0; j < sceneObjects[i].getNumComponents();j++)
+    {
+      sceneObjects[i].getComponent(j)->update();
+    }
+  }
+
+}
+
+void rune::GameScene::updatePhysics(void)
 {
 
   double currentTime = variableClock.getElapsedTimeAsMilliseconds()/1000.0;
@@ -124,7 +142,7 @@ void rune::GameScene::updateLayerPhysics(void)
   }
 
   //Deal with physics updates
-  while(accumulator > dT)
+  /*while(accumulator > dT)
   {
 
     for(int i = 0; i < sceneLayers.size(); i++)
@@ -149,7 +167,7 @@ void rune::GameScene::updateLayerPhysics(void)
     {
       sceneObjects[j]->updatePosition(alpha);
     }
-  }
+  }*/
 
 }
 
@@ -161,50 +179,22 @@ void rune::GameScene::updateLayerPhysics(void)
 void rune::GameScene::Draw(RenderWindow& window)
 {
 
-  //window.setView(m_camera);
   window.clear(clearColor);
 
-  //Draw the scene layers
-  for(int i = 0; i < sceneLayers.size();i++)
+  for(int i = 0; i < drawables.size();i++)
   {
-    window.draw(sceneLayers[i]);
+  
+    window.draw(*drawables[i]);
+    
   }
-
-  //Prepare to render debug UI
-  ImGui_ImplOpenGL3_NewFrame();
-  ImGui_ImplGlfw_NewFrame();
-  ImGui::NewFrame();
-
-  //Draw the user interface objects in front of everything else
-  for(int i = 0; i < m_stateUI.size();i++)
-  {
-
-    window.draw(*m_stateUI[i]);
-
-  }
-
-  ImGui::Begin("FPS");
-
-  ImGui::SetWindowSize(ImVec2(100, 50));
-  ImGui::SetWindowPos(ImVec2(0, 0));
-
-  if (ImGui::IsItemHovered())
-  {
-    ImGui::BeginTooltip();
-    ImGui::Text("This is the debug UI!");
-    ImGui::EndTooltip();
-  }
-
-  ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
-
-  ImGui::End();
-
-  //Draw the debug UI
-  ImGui::Render();
-  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
   window.display();
 
+}
+
+void rune::GameScene::addToDrawList(rune::Drawable* newDrawObject)
+{
+  drawables.push_back(newDrawObject);
 }
 
 /**
@@ -278,17 +268,4 @@ void rune::GameScene::changeState(int nextState)
 {
     m_changeStateFlag = true;
     m_nextState = nextState;
-}
-
-/**
- * Take a layer and add it to the sceneLayers array as well as pushing the correct pointer
- * to the layer so that objects can be given a pointer back
- * @param newScene The SceneLayer to add to the scene's layer buffer.
- */
-void rune::GameScene::addLayerToScene(SceneLayer newScene)
-{
-
-  sceneLayers.push_back(newScene);
-  newScene.setScenePointer(&sceneLayers[sceneLayers.size()-1]);
-
 }

@@ -1,195 +1,37 @@
 #include "gameObject.h"
-#include <SceneTools\layer.h>
 
-rune::GameObject::GameObject() : m_mirrorSprite(false), myLayer(nullptr)
+rune::GameObject::GameObject()
+{
+
+
+
+}
+
+rune::GameObject::~GameObject()
 {
 
 }
 
-/**
- * @param xPos The horizontal position of the object relative to the bottom left corner of the sprite.
- * @param yPos The vertical position of the object relative to the bottom left corner of the sprite.
- * @param width Width of the sprite in pixels.
- * @param height Height of the sprite in pixels.
- * @param filePath Path to the sprite relative to the top level main function.
- * @param mass Mass of the object in units relative to the game. (0 mass = infinite mass)
- * @param gravity Gravity vector that the object will be subject to.
-*/
-rune::GameObject* rune::GameObject::objectInit(double xPos, double yPos, int width, int height, std::string filePath, double mass, double gravity)
+void rune::GameObject::addComponent(rune::Component& newScript)
 {
-
-  m_objectSprite.setTexture(filePath.c_str());
-  m_objectSprite.setSize(rune::Vec2(width, height));
-  m_objectSprite.setPosition(rune::Vec2(xPos, yPos));
-  m_objectSprite.addPosition(rune::Vec2(0.5 * width, 0.5 * height));
-
-  m_objectSprite.setOrigin(rune::Vec2(0.5 * width, 0.5 * height));
-
-  m_objectRigidBody.setUpObject(width, height, xPos + 0.5 * width, yPos + 0.5 * height, mass, gravity, false);
-
-  m_objectRigidBody.setPreviousPosition(m_objectSprite.getPosition());
-
-  /*//If the actual texture can't be loaded, load the error texture
-  //if(filePath != "")
-  {
-
-    
-
-  }//else if (filePath != "")
-  {
-    //m_objectSprite.setTexture(m_objectTexture);
-  }*/
+  objectComponents.push_back(&newScript);
   
-  this->start();
+}
 
-  return this;
+int rune::GameObject::getNumComponents(void)
+{
+  return objectComponents.size();
+}
+
+void rune::GameObject::instantiate(rune::GameObject newObject)
+{
+
 
 }
 
-void rune::GameObject::draw(RenderWindow& window)
+rune::Component* rune::GameObject::getComponent(int index)
 {
 
-  //window.draw(m_objectRigidBody);
-  window.draw(m_objectSprite);
+  return objectComponents[index];
 
-}
-
-/**
- * @param frameWidth the width of the individual frame in pixels
- * @param numFrames the total number of frames in the animation
- * @param frameRate the rate in Hz that the animation will be played
- * @param fileName Path to the sprite sheet relative to the top level main function.
-*/
-void rune::GameObject::addAnimation(int frameWidth, int numFrames, int frameRate, std::string fileName)
-{
-
-  ObjectAnimation* newAnimation = new ObjectAnimation;
-  Texture* spriteSheet = new Texture;
-
-  newAnimation->setCurrentFame(0);
-  newAnimation->setFrameWidth(frameWidth);
-  newAnimation->setNumFrames(numFrames);
-  newAnimation->setFrameRate(frameRate);
-
-  spriteSheet->loadFromFile(fileName);
-  newAnimation->setFile(fileName);
-  
-  newAnimation->setSheet(*spriteSheet);
-
-  animations.push_back(newAnimation);
-
-}
-
-/**
- * @param animation Integer index in the animation array that refers to the order in which the animations where loaded
-*/
-void rune::GameObject::playAnimation(int animation)
-{
-
-  /*ObjectAnimation* currentAnimation = animations[animation];
-
-  currentAnimation->getSheet()->loadFromFile(currentAnimation->getFile());
-
-  //m_objectSprite.setTexture(*currentAnimation->getSheet());
-
-  if(m_mirrorSprite)
-  {
-    m_objectSprite.setTextureRect(sf::IntRect((currentAnimation->getCurrentFrame() * currentAnimation->getFrameWidth()),0,currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y));
-  }
-  else
-  {
-    m_objectSprite.setTextureRect(sf::IntRect(((currentAnimation->getCurrentFrame()+1) * currentAnimation->getFrameWidth()),0,-currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y));
-  }
-  
-  currentAnimation->incCurrentFrame();*/
-
-}
-
-/**
- * @param mirror Whether or not the sprite should be mirrored vertically.
-*/
-void rune::GameObject::mirrorSprite(bool mirror)
-{
-  m_mirrorSprite = mirror;
-}
-
-/**
- * @param 
- */
-void rune::GameObject::setPosition(rune::Vec2 newPos)
-{
-  
-  m_objectRigidBody.setPosition(newPos);
-  rune::Vec2 size = m_objectSprite.getSize();
-  m_objectSprite.addPosition(rune::Vec2(0.5 * size.x, 0.5 * size.y));
-
-}
-
-/**
- * \return The current position of the game object.
- */
-rune::Vec2 rune::GameObject::getPosition(void)
-{
-  return m_objectSprite.getPosition();
-}
-
-/**
- * @param alpha coefficient of linear interpolation
-*/
-void rune::GameObject::updatePosition(double alpha)
-{
-  rune::Vec2 oldPosition = m_objectRigidBody.getPreviousPosition();
-  rune::Vec2 currentPos = m_objectRigidBody.getPosition();
-
-  rune::Vec2 newPos = rune::Vec2(oldPosition.x*alpha,oldPosition.y*alpha) + rune::Vec2(currentPos.x*(1.0-alpha),currentPos.y*(1.0-alpha));
-
-  m_objectSprite.setPosition(newPos);
-
-  m_objectRigidBody.setPreviousPosition(currentPos);
-
-  //m_objectSprite.setRotation(m_objectRigidBody.getOrientation());
-
-}
-
-void rune::GameObject::update(void)
-{
-
-  return;
-}
-
-void rune::GameObject::start(void)
-{
-
-  return;
-}
-
-physics::RigidBody* rune::GameObject::getRigidBody(void)
-{
-  return &m_objectRigidBody;
-}
-
-std::vector<physics::collision> rune::GameObject::getCollisions(void)
-{
-  return m_objectRigidBody.getCollisions();
-}
-
-/**
- * @param angle Angle in degrees that the object should be rotated to.
-*/
- void rune::GameObject::setRotation(double angle)
- {
-   m_objectRigidBody.setRotation(angle);
- }
-
-/**
- * @param layer SceneLayer object that should be referenced by the game object
-*/
-void rune::GameObject::setLayer(rune::SceneLayer* layer)
-{
-  myLayer = layer;
-}
-
-rune::SceneLayer* rune::GameObject::getLayer(void)
-{
-  return myLayer;
 }

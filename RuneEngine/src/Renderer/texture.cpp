@@ -1,10 +1,10 @@
 #include "texture.h"
-#include <iostream>
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include <GL\glew.h>
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
+#include <iostream>
 
 /**
  * @param path The file path for the texture that you would like to load relative to the main executable.
@@ -15,7 +15,7 @@ rune::Texture::Texture(const std::string& path)
 { 
   //Load the png file and prepare it to be loaded as a texture
   stbi_set_flip_vertically_on_load(1);
-  m_localBuffer = stbi_load(path.c_str(),&m_width, &m_height, &m_BPP, 4);
+  m_localBuffer = stbi_load(m_filePath.c_str(),&m_width, &m_height, &m_BPP, 4);
 
   //Generate and bind a texture
   glGenTextures(1, &m_textureID);

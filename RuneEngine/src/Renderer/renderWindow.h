@@ -11,6 +11,7 @@
 
 #include "core.h"
 #include "color.h"
+#include <vector>
 #include <Events\event.h>
 #include "Math\vec2.h"
 #include <string>

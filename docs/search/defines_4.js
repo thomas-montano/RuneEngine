@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vec2_5fh_5fdefined_853',['VEC2_H_DEFINED',['../d3/dbe/vec2_8h.html#a466ce4ec9fb9462e84569594bf53d27a',1,'vec2.h']]],
-  ['vec3_5fh_5fdefined_854',['VEC3_H_DEFINED',['../d8/d08/vec3_8h.html#a4f6a9436b63aaedf2ee53683de075989',1,'vec3.h']]]
+  ['stb_5fimage_5fimplementation_841',['STB_IMAGE_IMPLEMENTATION',['../d2/d20/texture_8cpp.html#a18372412ad2fc3ce1e3240b3cf0efe78',1,'texture.cpp']]]
 ];

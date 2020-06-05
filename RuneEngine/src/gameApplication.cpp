@@ -111,7 +111,6 @@ void rune::GameApplication::gameLoop(void)
     {
       //Current Game state updates here
       m_currentScene->updateFixed();
-      m_currentScene->runObjectUpdates();
 
       deltaTime = (currentTime - nextTick)/1000.0;
 
@@ -128,7 +127,7 @@ void rune::GameApplication::gameLoop(void)
     }
 
     //Make sure that each layer gets their collisions updated
-    m_currentScene->updateLayerPhysics();
+    m_currentScene->updatePhysics();
 
     //This is to handle state level events
     m_currentScene->handleEvents(m_windowEvent);
@@ -138,6 +137,8 @@ void rune::GameApplication::gameLoop(void)
 
     //Update anything that doesnt depend on ticks such as physics
     m_currentScene->updateVariable();
+
+    m_currentScene->updateComponents();
 
     //Draw the current window
     m_currentScene->Draw(m_mainWindow);

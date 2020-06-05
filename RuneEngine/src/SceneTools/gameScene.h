@@ -20,7 +20,6 @@
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
 #include <Events\clock.h>
-#include <SceneTools\layer.h>
 #include <Entities\particleEmitter.h>
 #include <Renderer\camera.h>
 
@@ -35,8 +34,7 @@ protected:
   int m_nextState;
   bool m_quitGame = false;
 
-  ///All of the layers that make up the scene.
-  std::vector<SceneLayer> sceneLayers;
+  std::vector<rune::GameObject> sceneObjects;
   
   ///A clock that records the amount of time between variable update calls.
   rune::Clock variableClock;
@@ -52,6 +50,8 @@ protected:
   std::vector<GameUI*> m_stateUI;
   ///The camera used to render objects to the screen.
   rune::Camera SceneCamera;
+  ///List of things to be drawn to the screen
+  std::vector<Drawable*> drawables;
 
 public:
   GameScene();
@@ -64,12 +64,16 @@ public:
   virtual void resume(void);
   virtual void handleEvents(rune::Event theEvent);
   virtual void updateFixed(void);
-  void runObjectUpdates(void);
   virtual void updateVariable(void);
   virtual void Draw(RenderWindow& window);
-  virtual void updateLayerPhysics(void);
+  virtual void updatePhysics(void);
   virtual void handleCleanup(void);
   virtual void handleUI(RenderWindow& window);
+
+  void startComponents(void);
+  void updateComponents(void);
+
+  void addToDrawList(rune::Drawable*);
 
   virtual bool getStateFlag();
   virtual int getNextState();
@@ -77,7 +81,8 @@ public:
   virtual bool getQuitFlag(void);
   bool isActive(void);
   void changeState(int nextState);
-  void addLayerToScene(SceneLayer);
+
+  void addObjectToScene(rune::GameObject);
 
 };
 }

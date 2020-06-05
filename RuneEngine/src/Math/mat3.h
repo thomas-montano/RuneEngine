@@ -37,6 +37,8 @@ public:
 
   ///Overload of subtraction operator.
   Mat3 operator- (const Mat3& right);
+  ///Overload of negation operator.
+  Mat3 operator- ();
 
   ///Overload of addition operator.
   Mat3 operator+ (const Mat3& right);
@@ -63,6 +65,11 @@ public:
   Mat3& operator*=(const Mat3& right);
   ///Overload of *= operator for a scalar multiplier.
   Mat3& operator*=(const double right);
+
+  ///Overload of *= operator.
+  Mat3& operator/=(const Mat3& right);
+  ///Overload of *= operator for a scalar multiplier.
+  Mat3& operator/=(const double right);
 
   ///Overload of comparator operator.
   bool operator==(const Mat3& right);

@@ -95,6 +95,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
     <ClCompile Include="src\Math\vec3.cpp" />
     <ClCompile Include="src\SceneTools\console.cpp" />
@@ -113,7 +114,6 @@
     <ClCompile Include="src\Renderer\color.cpp" />
     <ClCompile Include="src\SceneTools\gameScene.cpp" />
     <ClCompile Include="src\Entities\gameUI.cpp" />
-    <ClCompile Include="src\SceneTools\layer.cpp" />
     <ClCompile Include="src\Entities\lightSource.cpp" />
     <ClCompile Include="src\Entities\objectAnimation.cpp" />
     <ClCompile Include="src\Entities\particleEmitter.cpp" />
@@ -130,6 +130,7 @@
     <ClCompile Include="src\SceneTools\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />
     <ClInclude Include="src\Math\vec3.h" />
     <ClInclude Include="src\SceneTools\console.h" />
@@ -152,7 +153,6 @@
     <ClInclude Include="src\RuneEngine.h" />
     <ClInclude Include="src\SceneTools\gameScene.h" />
     <ClInclude Include="src\Entities\gameUI.h" />
-    <ClInclude Include="src\SceneTools\layer.h" />
     <ClInclude Include="src\Entities\lightSource.h" />
     <ClInclude Include="src\Entities\objectAnimation.h" />
     <ClInclude Include="src\Entities\particleEmitter.h" />

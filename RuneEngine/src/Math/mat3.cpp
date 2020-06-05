@@ -12,6 +12,37 @@ rune::Mat3::Mat3(double a11, double a12, double a13, double a21, double a22, dou
 
 }
 
+/**
+ * \return The negative of the matrix.
+ */
+rune::Mat3 rune::Mat3::operator- ()
+{
+
+  Mat3 temp = *this;
+
+  for (int i = 0; i < 3; i++)
+  {
+    temp.row1[i] = -1*temp.row1[i];
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    temp.row2[i] = -1*temp.row2[i];
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    temp.row3[i] = -1*temp.row3[i];
+  }
+
+  return temp;
+
+}
+
+/**
+ * \param right The matrix to be subtracted.
+ * \return An element wise subtraction.
+ */
 rune::Mat3 rune::Mat3::operator- (const rune::Mat3& right)
 {
   Mat3 temp = *this;
@@ -35,6 +66,10 @@ rune::Mat3 rune::Mat3::operator- (const rune::Mat3& right)
 
 }
 
+/**
+ * \param right The matrix to be added.
+ * \return An element wise addition.
+ */
 rune::Mat3 rune::Mat3::operator+ (const Mat3& right)
 {
   Mat3 temp = *this;
@@ -57,23 +92,71 @@ rune::Mat3 rune::Mat3::operator+ (const Mat3& right)
   return temp;
 }
 
+/**
+ * \param right The matrix to be multiplied by.
+ * \return The result of the multiplication.
+ */
 rune::Mat3 rune::Mat3::operator* (const Mat3& right)
 {
-  Mat3 temp;
+  rune::Mat3 temp;
+
+  temp[0][0] = this->row1[0] * right.row1[0] + this->row1[1] * right.row2[0] + this->row1[2] * right.row3[0];
+  temp[0][1] = this->row1[0] * right.row1[1] + this->row1[1] * right.row2[1] + this->row1[2] * right.row3[1];
+  temp[0][2] = this->row1[0] * right.row1[2] + this->row1[1] * right.row2[2] + this->row1[2] * right.row3[2];
+
+  temp[1][0] = this->row2[0] * right.row1[0] + this->row2[1] * right.row2[0] + this->row2[2] * right.row3[0];
+  temp[1][1] = this->row2[0] * right.row1[1] + this->row2[1] * right.row2[1] + this->row2[2] * right.row3[1];
+  temp[1][2] = this->row2[0] * right.row1[2] + this->row2[1] * right.row2[2] + this->row2[2] * right.row3[2];
+
+  temp[2][0] = this->row3[0] * right.row1[0] + this->row3[1] * right.row2[0] + this->row3[2] * right.row3[0];
+  temp[2][1] = this->row3[0] * right.row1[1] + this->row3[1] * right.row2[1] + this->row3[2] * right.row3[1];
+  temp[2][2] = this->row3[0] * right.row1[2] + this->row3[1] * right.row2[2] + this->row3[2] * right.row3[2];
   
   return temp;
 }
 
+/**
+ * \param right The matrix to be divided by.
+ * \return The result of the multiplication by the matrix inverse.
+ */
 rune::Mat3 rune::Mat3::operator/ (const Mat3& right)
 {
-  return *this;
+  Mat3 temp = right;
+
+  return *this * temp.invert();
 }
 
+/**
+ * \param scalar The scalar value to be multiplied by.
+ * \return An elementwise multiplication.
+ */
 rune::Mat3 rune::Mat3::operator/ (double scalar)
 {
-  return *this;
+
+  Mat3 temp = *this;
+
+  for (int i = 0; i < 3; i++)
+  {
+    temp.row1[i] = temp.row1[i] / scalar;
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    temp.row2[i] = temp.row2[i] / scalar;
+  }
+
+  for (int i = 0; i < 3; i++)
+  {
+    temp.row3[i] = temp.row3[i] / scalar;
+  }
+
+  return temp;
 }
 
+/**
+ * \param right The matrix to be subtracted by.
+ * \return A reference to the modified matrix.
+ */
 rune::Mat3& rune::Mat3::operator-=(const Mat3& right)
 {
 
@@ -95,6 +178,10 @@ rune::Mat3& rune::Mat3::operator-=(const Mat3& right)
   return *this;
 }
 
+/**
+ * \param right The matrix to be added.
+ * \return A reference to the modified matrix.
+ */
 rune::Mat3& rune::Mat3::operator+=(const Mat3& right)
 {
   for (int i = 0; i < 3; i++)
@@ -115,6 +202,10 @@ rune::Mat3& rune::Mat3::operator+=(const Mat3& right)
   return *this;
 }
 
+/**
+ * \param scalar The scalar to be added.
+ * \return An elementwise addition.
+ */
 rune::Mat3& rune::Mat3::operator+=(const double scalar)
 {
   for (int i = 0; i < 3; i++)
@@ -135,8 +226,15 @@ rune::Mat3& rune::Mat3::operator+=(const double scalar)
   return *this;
 }
 
+/**
+ * \param right The matrix to be multiplied by.
+ * \return A reference to the modified matrix.
+ */
 rune::Mat3& rune::Mat3::operator*=(const rune::Mat3& right)
 {
+
+  *this = *this * right;
+
   return *this;
 }
 
@@ -146,7 +244,7 @@ rune::Mat3& rune::Mat3::operator*=(const rune::Mat3& right)
  */
 rune::Mat3& rune::Mat3::operator*=(const double right)
 {
-  *this = *this * right;
+  (*this) = (*this) * right;
 
   return *this;
 }
@@ -283,6 +381,9 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Mat3& mat)
   return os;
 }
 
+/**
+ * \return The inverted matrix, if invertible.
+ */
 rune::Mat3 rune::Mat3::invert()
 {
   double determinant = this->determinant();
@@ -290,9 +391,55 @@ rune::Mat3 rune::Mat3::invert()
   if(determinant == 0)
     return Mat3();
 
+
+  Mat3 transpose(this->row1[0], this->row2[0], this->row3[0], this->row1[1], this->row2[1], this->row3[1], this->row1[2], this->row2[2], this->row3[2]);
+
+  Mat3 determinants;
+
+  determinants[0][0] = rune::Mat2(transpose[1][1], transpose[1][2], transpose[2][1], transpose[2][2]).determinant();
+  determinants[0][1] = -1*rune::Mat2(transpose[1][0], transpose[1][2], transpose[2][0], transpose[2][2]).determinant();
+  determinants[0][2] = rune::Mat2(transpose[1][0], transpose[1][1], transpose[2][0], transpose[2][1]).determinant();
+
+  determinants[1][0] = -1*rune::Mat2(transpose[0][1], transpose[0][2], transpose[2][1], transpose[2][2]).determinant();
+  determinants[1][1] = rune::Mat2(transpose[0][0], transpose[0][2], transpose[2][0], transpose[2][2]).determinant();
+  determinants[1][2] = -1*rune::Mat2(transpose[0][0], transpose[0][1], transpose[2][0], transpose[2][1]).determinant();
+
+  determinants[2][0] = rune::Mat2(transpose[0][1], transpose[0][2], transpose[1][1], transpose[1][2]).determinant();
+  determinants[2][1] = -1*rune::Mat2(transpose[0][0], transpose[0][2], transpose[1][0], transpose[1][2]).determinant();
+  determinants[2][2] = rune::Mat2(transpose[0][0], transpose[0][1], transpose[1][0], transpose[1][1]).determinant();
+
+  determinants /= determinant;
   
+  return determinants;
 }
 
+/**
+ * \param right The matrix to be divided by.
+ * \return A reference to the modified matrix.
+ */
+rune::Mat3& rune::Mat3::operator/=(const Mat3& right)
+{
+
+  *this = *this / right;
+  
+  return *this;
+
+}
+
+/**
+ * \param right The scalar to be divided by.
+ * \return An elementwise division.
+ */
+rune::Mat3& rune::Mat3::operator/=(const double right)
+{
+  *this = *this / right;
+
+  return *this;
+}
+
+/**
+ * \return The determinant of the matrix.
+ */
 double rune::Mat3::determinant()
 {
   rune::Mat3 temp = *this;
@@ -303,6 +450,10 @@ double rune::Mat3::determinant()
 
 }
 
+/**
+ * \param index The element to be accessed.
+ * \return The accessed element.
+ */
 double* rune::Mat3::operator[](int index)
 {
   if(index == 0)
