@@ -18,7 +18,13 @@ namespace rune{
 
 class RUNE_ENGINE Mouse
 {
+public:
+  enum Button {
+    Left = 0, Right = 1, Middle = 2, XButton1 = 3,
+    XButton2 = 4
+  };
 
+  static bool isButtonPressed(rune::Mouse::Button button);
 
 };
 }

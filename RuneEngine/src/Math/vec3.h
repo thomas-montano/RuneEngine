@@ -26,10 +26,8 @@ public:
   double y;
   ///Z coordinate of the vector.
   double z;
-  ///Default empty constructor that sets X and Y to 0.
-  Vec3();
   ///Constructor that sets up a new vector.
-  Vec3(double newX, double newY, double newZ);
+  Vec3(double newX = 0, double newY = 0, double newZ = 0);
   ///Overload of subtraction operator.
   Vec3 operator- (const Vec3& right);
   ///Overload of negation operator.

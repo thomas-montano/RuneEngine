@@ -35,9 +35,9 @@ void rune::GameUI::createButton(double posX, double posY, double width, double h
     //m_uiObject.setTextureRect(IntRect(0,0,120,60));
   }*/
 
-  m_uiObject.setTexture("./Assets/Images/ball.png");
-  m_uiObject.setPosition(rune::Vec2(m_posX,m_posY));
-  m_uiObject.setSize(rune::Vec2(width,height));
+  //m_uiObject.setTexture("./Assets/Images/ball.png");
+  //m_uiObject.setPosition(rune::Vec2(m_posX,m_posY));
+  //m_uiObject.setSize(rune::Vec2(width,height));
 
 }
 

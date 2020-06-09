@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['eventtype_716',['EventType',['../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28',1,'rune']]]
+  ['button_762',['Button',['../df/d83/classrune_1_1Mouse.html#a7bd4654291a89f5c7b18e0ed8d2bb879',1,'rune::Mouse']]]
 ];

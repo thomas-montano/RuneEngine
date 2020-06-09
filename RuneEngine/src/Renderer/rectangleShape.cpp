@@ -6,22 +6,14 @@
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
 #include <iostream>
+#include <gameApplication.h>
+#include <SceneTools\sceneManager.h>
 
-rune::RectangleShape::RectangleShape() : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader"), position(rune::Vec2(0,0)), size(rune::Vec2(0,0)), origin(rune::Vec2(0,0))
+rune::RectangleShape::RectangleShape(rune::Color newColor, rune::Vec2 newOrigin) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader"), origin(newOrigin), shapeColor(newColor)
 {
   setUpBuffers();
 }
 
-/**
- * @param newPosition The position of the new RectangleShape with respect to the bottom left corner.
- * @param newSize The size of the new RectangleShape.
-*/
-rune::RectangleShape::RectangleShape(rune::Vec2 newPosition, rune::Vec2 newSize) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader"), position(newPosition), size(newSize), origin(rune::Vec2(0, 0))
-{
-
-  setUpBuffers();
-
-}
 
 void rune::RectangleShape::setUpBuffers()
 {
@@ -48,6 +40,18 @@ void rune::RectangleShape::setUpBuffers()
 
 }
 
+void rune::RectangleShape::start()
+{
+
+}
+
+void rune::RectangleShape::update()
+{
+
+  rune::GameApplication::getWindow()->draw(*this);
+
+}
+
 /**
  * @param windowSize The size of the window that the RectangleShape is being drawn on.
 */
@@ -56,6 +60,9 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
 
   //Bind the vertex array object
   rectangleShader.bind();
+
+  rune::Vec3 position = parentObject->transform.getPosition();
+  rune::Vec3 size = parentObject->transform.getScale();
 
   origin = rune::Vec2(size.x / 2.0, size.y /2.0);
 
@@ -71,10 +78,10 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
 
   drawMatrix *= zoomLevel;
 
-  const float drawVertices[32] =
+  float drawVertices[32] =
   {
     // positions                              // colors and alpha
-    drawMatrix[0][0],   drawMatrix[0][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
+    static_cast<float>(drawMatrix[0][0]),   drawMatrix[0][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
     drawMatrix[0][0],   drawMatrix[1][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
     drawMatrix[1][0],   drawMatrix[1][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
     drawMatrix[1][0],   drawMatrix[0][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
@@ -87,29 +94,6 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
 
   glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-}
-
-/**
- * @param newPos The new position of the RectangleShape with respect to the bottom left corner.
-*/
-void rune::RectangleShape::addPosition(rune::Vec2 newPos)
-{
-  position.x += newPos.x;
-  position.y += newPos.y;
-}
-
-/**
- * @param newSize The new size of the RectangleShape.
-*/
-void rune::RectangleShape::setPosition(rune::Vec2 newSize)
-{
-  position.x = newSize.x;
-  position.y = newSize.y;
-}
-
-void rune::RectangleShape::setSize(rune::Vec2 newSize)
-{
-  size = newSize;
 }
 
 void rune::RectangleShape::setFillColor(rune::Color newColor)

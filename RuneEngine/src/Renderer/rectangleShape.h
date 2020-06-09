@@ -13,17 +13,22 @@
 #include "core.h"
 #include "renderWindow.h"
 #include "shader.h"
+#include <Entities\component.h>
 #include "drawable.h"
 #include <Math\vec2.h>
 
 namespace rune{
 
-class RUNE_ENGINE RectangleShape : public Drawable
+class GameApplication;
+class SceneManager;
+
+class RUNE_ENGINE RectangleShape : public Drawable, public Component
 {
 
 private:
 
   Shader rectangleShader;
+  rune::Vec2 origin;
   Color shapeColor;
 
   unsigned int indices[6] =
@@ -36,22 +41,16 @@ private:
   unsigned int EBO;
   unsigned int VAO;
 
-  rune::Vec2 position;
-  rune::Vec2 size;
-  rune::Vec2 origin;
-
 public:
+
+  virtual void start();
+  virtual void update();
+
   virtual void draw(rune::RenderWindow&);
   
-  RectangleShape();
-  RectangleShape(rune::Vec2 position, rune::Vec2 Size);
+  RectangleShape(rune::Color newColor = rune::Color(255,255,255), rune::Vec2 newOrigin = rune::Vec2(0,0));
 
   void setUpBuffers();
-
-  void addPosition(rune::Vec2);
-  void setPosition(rune::Vec2);
-
-  void setSize(rune::Vec2);
 
   void setFillColor(rune::Color);
 

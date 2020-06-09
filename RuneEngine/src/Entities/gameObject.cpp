@@ -1,21 +1,19 @@
 #include "gameObject.h"
 
-rune::GameObject::GameObject()
+/*rune::GameObject::GameObject()
 {
-
-
 
 }
 
 rune::GameObject::~GameObject()
 {
 
-}
+}*/
 
 void rune::GameObject::addComponent(rune::Component& newScript)
 {
   objectComponents.push_back(&newScript);
-  
+  newScript.setParent(this);
 }
 
 int rune::GameObject::getNumComponents(void)

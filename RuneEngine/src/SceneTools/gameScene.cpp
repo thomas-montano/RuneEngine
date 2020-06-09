@@ -117,6 +117,8 @@ void rune::GameScene::startComponents(void)
 
 void rune::GameScene::updateComponents()
 {
+  
+  rune::GameApplication::getWindow()->clear(clearColor);
 
   for(int i = 0; i < sceneObjects.size(); i++)
   {
@@ -125,6 +127,8 @@ void rune::GameScene::updateComponents()
       sceneObjects[i].getComponent(j)->update();
     }
   }
+
+  rune::GameApplication::getWindow()->display();
 
 }
 
@@ -179,22 +183,17 @@ void rune::GameScene::updatePhysics(void)
 void rune::GameScene::Draw(RenderWindow& window)
 {
 
-  window.clear(clearColor);
+  //window.clear(clearColor);
 
-  for(int i = 0; i < drawables.size();i++)
+  /*for(int i = 0; i < drawables.size();i++)
   {
   
     window.draw(*drawables[i]);
     
-  }
+  }*/
 
-  window.display();
+  //window.display();
 
-}
-
-void rune::GameScene::addToDrawList(rune::Drawable* newDrawObject)
-{
-  drawables.push_back(newDrawObject);
 }
 
 /**

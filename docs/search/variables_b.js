@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['scenecamera_702',['SceneCamera',['../dd/ddc/classrune_1_1GameScene.html#a9f9aae375affdadc5774da7de706951a',1,'rune::GameScene']]],
-  ['sceneobjects_703',['sceneObjects',['../dd/ddc/classrune_1_1GameScene.html#a72f1bb1b7780aaa2992bc159035e3314',1,'rune::GameScene']]],
-  ['staticfriction_704',['staticFriction',['../d0/d74/structphysics_1_1body.html#afefbc158f8d05cd17c4ea27b3a2caeef',1,'physics::body']]]
+  ['red_742',['Red',['../d8/d25/classrune_1_1Color.html#a6ddf3aec445929c3605579c921886514',1,'rune::Color::Red()'],['../d8/d25/classrune_1_1Color.html#a736c8f165e05399846cd57318e2a309a',1,'rune::Color::red()']]],
+  ['restitution_743',['restitution',['../d0/d74/structphysics_1_1body.html#a77786add9ce4f9e0d3ace63eaef37a2a',1,'physics::body']]],
+  ['rotationalradius_744',['rotationalRadius',['../d0/d74/structphysics_1_1body.html#adebd1f87dcd4913736410bfebe4a0f70',1,'physics::body']]]
 ];

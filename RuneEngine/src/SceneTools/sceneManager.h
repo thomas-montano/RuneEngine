@@ -20,10 +20,10 @@ namespace rune{
 class RUNE_ENGINE SceneManager
 {
 private:
-  static int m_currentScene; //Index for the current state
+  int m_currentScene = 0; //Index for the current state
 
   //Array to hold all of the object pointers for the virtual functions
-  static std::vector<rune::GameScene*> m_scenes;
+  std::vector<rune::GameScene*> m_scenes;
 public:
   ///Check to see if the current state has thrown any flags. This lets us know whether or not GameApplication needs to do anything
   void checkFlags(void);
@@ -32,7 +32,7 @@ public:
   void addScene(rune::GameScene* newScene);
 
   ///Get the currently active GameScene.
-  static rune::GameScene* getCurrentScene(void);
+  rune::GameScene* getCurrentScene(void);
 
   ///Set the currently active GameScene.
   void setScene(int newState);

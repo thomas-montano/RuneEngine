@@ -21,7 +21,7 @@ class RUNE_ENGINE Console
 {
 
 private:
-  char InputBuf[256];
+  char InputBuf[256] = {'0'};
   std::vector<std::string> log;
 
 public:

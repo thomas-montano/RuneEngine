@@ -1,11 +1,6 @@
 #include "vec3.h"
 #include <cmath>
 
-rune::Vec3::Vec3() : x(0), y(0), z(0)
-{
-
-}
-
 rune::Vec3::Vec3(double newX, double newY, double newZ) : x(newX), y(newY), z(newZ)
 {
 

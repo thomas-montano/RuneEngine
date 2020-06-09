@@ -1,11 +1,6 @@
 #include "vec2.h"
 #include "mat2.h"
 
-rune::Vec2::Vec2() : x(0), y(0)
-{
-
-}
-
 /**
  * \param newX The initial value for the X component.
  * \param newY The initial value for the Y component.

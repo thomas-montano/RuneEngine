@@ -70,11 +70,15 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d3/db9/classrune_1_1Component-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rune::Component Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A component of a <a class="el" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a>, this class is used to add functionality to a object in the game world.  
+ <a href="../../da/daf/classrune_1_1Component.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="../../d6/dcf/component_8h_source.html">component.h</a>&gt;</code></p>
 <div class="dynheader">
@@ -82,8 +86,19 @@ Inheritance diagram for rune::Component:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../df/df6/classrune_1_1Component__inherit__graph.png" border="0" usemap="#rune_1_1Component_inherit__map" alt="Inheritance graph"/></div>
 <map name="rune_1_1Component_inherit__map" id="rune_1_1Component_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,5,140,32"/>
-<area shape="rect" href="../../d1/d12/classrune_1_1Sprite.html" title="A sprite that can be given a texture and animated." alt="" coords="24,80,121,107"/>
+<area shape="rect" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="97,5,232,32"/>
+<area shape="rect" href="../../d7/d43/classrune_1_1RectangleShape.html" title="A rectangle that can be drawn to the screen." alt="" coords="5,80,169,107"/>
+<area shape="rect" href="../../d1/d12/classrune_1_1Sprite.html" title="A sprite that can be given a texture and animated." alt="" coords="193,80,291,107"/>
+</map>
+<center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for rune::Component:</div>
+<div class="dyncontent">
+<div class="center"><img src="../../d3/d5c/classrune_1_1Component__coll__graph.png" border="0" usemap="#rune_1_1Component_coll__map" alt="Collaboration graph"/></div>
+<map name="rune_1_1Component_coll__map" id="rune_1_1Component_coll__map">
+<area shape="rect" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="8,184,143,211"/>
+<area shape="rect" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene." alt="" coords="5,95,145,121"/>
+<area shape="rect" href="../../d4/d01/classrune_1_1Transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="13,5,137,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -95,8 +110,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4bbf867f970e9e276e454096d99cb375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac24759c39a2067026fb8f17487398c0c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#ac24759c39a2067026fb8f17487398c0c">fixedUpdate</a> ()</td></tr>
 <tr class="separator:ac24759c39a2067026fb8f17487398c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f80061e4b816e8f5a9f4810f93a63e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a4f80061e4b816e8f5a9f4810f93a63e1">setParent</a> (<a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *newParent)</td></tr>
+<tr class="separator:a4f80061e4b816e8f5a9f4810f93a63e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a></td></tr>
+<tr class="separator:a3b61712b05daa87bd8de85d6bf12dd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A component of a <a class="el" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a>, this class is used to add functionality to a object in the game world. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>June 9 2020 </dd></dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ac24759c39a2067026fb8f17487398c0c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac24759c39a2067026fb8f17487398c0c">&#9670;&nbsp;</a></span>fixedUpdate()</h2>
 
@@ -116,6 +142,32 @@ Public Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f80061e4b816e8f5a9f4810f93a63e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f80061e4b816e8f5a9f4810f93a63e1">&#9670;&nbsp;</a></span>setParent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rune::Component::setParent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *&#160;</td>
+          <td class="paramname"><em>newParent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -145,7 +197,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="../../d1/d12/classrune_1_1Sprite.html#a3efc6d6f41cfbf29b1a9f64ff69e343e">rune::Sprite</a>.</p>
+<p>Reimplemented in <a class="el" href="../../d7/d43/classrune_1_1RectangleShape.html#a875e4910cd093da94e06b4af5661fc8f">rune::RectangleShape</a>, and <a class="el" href="../../d1/d12/classrune_1_1Sprite.html#a3efc6d6f41cfbf29b1a9f64ff69e343e">rune::Sprite</a>.</p>
 
 </div>
 </div>
@@ -172,7 +224,30 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="../../d1/d12/classrune_1_1Sprite.html#aba6b27715d2282bab79cb0cd6fe524d0">rune::Sprite</a>.</p>
+<p>Reimplemented in <a class="el" href="../../d7/d43/classrune_1_1RectangleShape.html#a5e6dc9487498b060cd7809041095d366">rune::RectangleShape</a>, and <a class="el" href="../../d1/d12/classrune_1_1Sprite.html#aba6b27715d2282bab79cb0cd6fe524d0">rune::Sprite</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3b61712b05daa87bd8de85d6bf12dd6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b61712b05daa87bd8de85d6bf12dd6e">&#9670;&nbsp;</a></span>parentObject</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a>* rune::Component::parentObject</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

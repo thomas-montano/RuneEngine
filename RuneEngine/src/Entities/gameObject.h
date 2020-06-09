@@ -10,6 +10,7 @@
 #define GAMEOBJECT_INCLUDE_H
 
 #include "core.h"
+#include "transform.h"
 #include <vector>
 #include <Entities\component.h>
 #include <Renderer\renderWindow.h>
@@ -23,8 +24,10 @@ private:
   std::vector<rune::Component*> objectComponents;
 
 public:
-  GameObject();
-  ~GameObject();
+  rune::Transform transform;
+
+  //GameObject();
+  //~GameObject();
   void addComponent(rune::Component&);
   int getNumComponents(void);
   void instantiate(GameObject);

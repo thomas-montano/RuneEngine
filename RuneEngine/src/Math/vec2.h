@@ -24,10 +24,8 @@ public:
   ///Y coordinate of the vector.
   double y;
 
-  ///Default empty constructor that sets X and Y to 0.
-  Vec2();
   ///Constructor that sets up a new vector.
-  Vec2(double newX, double newY);
+  Vec2(double newX = 0, double newY = 0);
 
   ///Overload of subtraction operator.
   Vec2 operator- (const Vec2& right);

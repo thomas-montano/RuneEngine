@@ -26,7 +26,6 @@ private:
   Texture spriteTexture;
   Shader spriteShader;
   rune::Vec2 origin;
-  double angle;
 
   unsigned int indices[6] = 
   {  
@@ -38,14 +37,11 @@ private:
   unsigned int EBO;
   unsigned int VAO;
 
-  rune::Vec2 m_position;
-  rune::Vec2 m_size;
-
 public:
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
   ///Default constructor that initializes the sprite to a drawable state, uses default shader.
-  Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation);
+  Sprite(std::string spriteLocation);
   virtual void start();
   /// Virtual update method being overloaded
   virtual void update();

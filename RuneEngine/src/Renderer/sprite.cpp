@@ -18,7 +18,7 @@ rune::Sprite::Sprite() :  origin(rune::Vec2(0, 0))
  * @param position A rune::Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite .png file to be drawn.
 */
-rune::Sprite::Sprite(rune::Vec2 dimensions,rune::Vec2 position, std::string spriteLocation) : m_position(position), m_size(dimensions),spriteTexture(spriteLocation.c_str()), origin(rune::Vec2(0,0))
+rune::Sprite::Sprite(std::string spriteLocation) : spriteTexture(spriteLocation.c_str()), origin(rune::Vec2(0,0))
 {
   spriteShader.makeNewShader(defaultShader);
   this->setUpBuffers();
@@ -56,8 +56,6 @@ void rune::Sprite::setUpBuffers()
 void rune::Sprite::start()
 {
 
-  rune::SceneManager::getCurrentScene()->addToDrawList(this);
-
 }
 
 void rune::Sprite::update()
@@ -81,15 +79,16 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   rune::Vec2 cameraPos = rune::Camera::getCenter();
   double zoomLevel = rune::Camera::getZoom();
 
+  rune::Vec3 position = parentObject->transform.getPosition();
+  rune::Vec3 size = parentObject->transform.getScale();
+
   //Set up camera data for shader
   spriteShader.setUniform4f("cameraPos", zoomLevel * cameraPos.x / windowSize.x, zoomLevel * cameraPos.y / windowSize.y, 0, 0);
 
-  rune::Mat2 drawMatrix((m_position.x + m_size.x - origin.x) / windowSize.x, (m_position.y + m_size.y - origin.y) / windowSize.y,
-                        (m_position.x - origin.x) / windowSize.x,            (m_position.y - origin.y) / windowSize.y);
+  rune::Mat2 drawMatrix((position.x + size.x - origin.x) / windowSize.x, (position.y + size.y - origin.y) / windowSize.y,
+                        (position.x - origin.x) / windowSize.x,            (position.y - origin.y) / windowSize.y);
 
   drawMatrix *= zoomLevel;
-
-
 
   const float drawVertices[32] = 
   {
@@ -111,23 +110,6 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
 }
 
-/**
- * @param newPos The new position of the RectangleShape with respect to the bottom left corner.
-*/
-void rune::Sprite::addPosition(rune::Vec2 newPos)
-{
-  m_position.x += newPos.x;
-  m_position.y += newPos.y;
-}
-
-/**
- * @param newSize The new size of the RectangleShape.
-*/
-void rune::Sprite::setPosition(rune::Vec2 newSize)
-{
-  m_position = newSize;
-}
-
 void rune::Sprite::setOrigin(rune::Vec2 newOrigin)
 {
   origin = newOrigin;
@@ -138,19 +120,4 @@ void rune::Sprite::setTexture(std::string texture)
 
   spriteTexture.loadFromFile(texture.c_str());
 
-}
-
-void rune::Sprite::setSize(rune::Vec2 newSize)
-{
-  m_size = newSize;
-}
-
-rune::Vec2 rune::Sprite::getPosition(void)
-{
-  return m_position;
-}
-
-rune::Vec2 rune::Sprite::getSize(void)
-{
-  return m_size;
 }

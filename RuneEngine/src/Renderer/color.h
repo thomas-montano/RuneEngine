@@ -30,9 +30,24 @@ public:
   Color(double, double, double, double alpha = 1);
   Color();
 
+  ///Red predefined color.
   static Color Red;
+  ///Green predefined color.
   static Color Green;
+  ///Blue predefined color.
   static Color Blue;
+  ///Black predefined color.
+  static Color Black;
+  ///White predefined color.
+  static Color White;
+  ///Yellow predefined color.
+  static Color Yellow;
+  ///Magenta predefined color.
+  static Color Magenta;
+  ///Cyan predefined color.
+  static Color Cyan;
+  ///Transparent predefined color.
+  static Color Transparent;
 
 };
 }

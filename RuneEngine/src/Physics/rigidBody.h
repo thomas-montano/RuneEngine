@@ -90,9 +90,9 @@ private:
     virtual void draw(rune::RenderWindow& window)
     {
 
-        drawBox.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
-        drawBox.setFillColor(rune::Color::Red);
-        drawBox.setSize(rune::Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
+        //drawBox.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
+        //drawBox.setFillColor(rune::Color::Red);
+        //drawBox.setSize(rune::Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
 
         /*AABB.setFillColor(sf::Color::Transparent);
         AABB.setOutlineThickness(-.5);

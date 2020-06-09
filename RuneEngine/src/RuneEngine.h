@@ -13,9 +13,11 @@
 #include <Events\clock.h>
 #include <Entities\particleEmitter.h>
 #include <Input\keyboard.h>
+#include <Input\mouse.h>
 #include <Math\vec2.h>
 #include <Math\vec3.h>
 #include <Math\mat2.h>
 #include <Math\mat3.h>
 #include <SceneTools\console.h>
+#include <Entities\transform.h>
 #include <Renderer\camera.h>

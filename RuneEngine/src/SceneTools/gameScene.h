@@ -48,10 +48,6 @@ protected:
   rune::Color clearColor;
   ///Ui to be included in the scene.
   std::vector<GameUI*> m_stateUI;
-  ///The camera used to render objects to the screen.
-  rune::Camera SceneCamera;
-  ///List of things to be drawn to the screen
-  std::vector<Drawable*> drawables;
 
 public:
   GameScene();
@@ -72,8 +68,6 @@ public:
 
   void startComponents(void);
   void updateComponents(void);
-
-  void addToDrawList(rune::Drawable*);
 
   virtual bool getStateFlag();
   virtual int getNextState();

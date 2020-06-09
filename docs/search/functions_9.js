@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['loadfromfile_583',['loadFromFile',['../d6/df4/classrune_1_1Texture.html#a1fcca007c667eacb6e5311f4cce49660',1,'rune::Texture']]],
-  ['loadscene_584',['loadScene',['../de/dfb/classrune_1_1GameApplication.html#a55a887116d0bdc7e8bd7cd68b197b675',1,'rune::GameApplication']]]
+  ['loadfromfile_612',['loadFromFile',['../d6/df4/classrune_1_1Texture.html#a1fcca007c667eacb6e5311f4cce49660',1,'rune::Texture']]],
+  ['loadscene_613',['loadScene',['../de/dfb/classrune_1_1GameApplication.html#a55a887116d0bdc7e8bd7cd68b197b675',1,'rune::GameApplication']]]
 ];
