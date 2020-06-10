@@ -10,7 +10,7 @@
  * @param gravity Vertical gravity that the RigidBody should be subjected to.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation) 
+physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, rune::Vec2(gravity), bool rotation) 
 {
     
     objectBody.restitution = 0.0;
@@ -211,7 +211,7 @@ void physics::RigidBody::updateAABB(void)
 /**
  * @return The current gravity the object is being subjected to.
 */
-double physics::RigidBody::getGravity(void)
+rune::Vec2 physics::RigidBody::getGravity(void)
 {
     return objectBody.gravityFactor;
 }

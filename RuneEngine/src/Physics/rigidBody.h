@@ -64,7 +64,7 @@ struct body
   rune::Vec2 oldPosition; //Previous position in world coordinates
   rune::Vec2 velocity; //Velocity
   double invMass; // 1/mass of the object
-  double gravityFactor; //How much gravity does this object have
+  rune::Vec2 gravityFactor; //How much gravity does this object have
   double restitution; //How bouncy, between 0 and 1
 
   double staticFriction; //Coefficient of static friction
@@ -78,38 +78,19 @@ struct body
 
 };
 
-class RUNE_ENGINE RigidBody : public rune::Drawable
+class RUNE_ENGINE RigidBody : public rune::Component
 {
 
 private:
     body objectBody;
     std::vector<collision> involvedCollisions;
-    rune::RectangleShape drawBox;
-
-    ///Overloaded draw functions for rendering the AABB to the screen.
-    virtual void draw(rune::RenderWindow& window)
-    {
-
-        //drawBox.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
-        //drawBox.setFillColor(rune::Color::Red);
-        //drawBox.setSize(rune::Vec2(2 * objectBody.vertexes[1].x,2 * objectBody.vertexes[1].y));
-
-        /*AABB.setFillColor(sf::Color::Transparent);
-        AABB.setOutlineThickness(-.5);
-        AABB.setOutlineColor(sf::Color::Red);
-        AABB.setPosition(objectBody.boundingBox.min);
-
-        AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);*/
-        
-        window.draw(drawBox);
-    }
 
 public:
     ///Default constructor to initialize an empty rigid body object.
     RigidBody();
 
     ///Set the parameters for the rigid body to establish a physical object in the scene.
-    RigidBody(int width, int height, double xPos, double yPos, double mass, double gravity = 0, bool rotation = true);
+    RigidBody(int width, int height, double xPos, double yPos, double mass, rune::Vec2 gravity = rune::Vec2(0,0), bool rotation = true);
 
     ///Set up the object. Identical to the constructor but can be used to set up an object after it's been created.
     void setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation);
@@ -142,7 +123,7 @@ public:
     void updatePosition(double dT);
 
     ///Get the gravity vector of the object.
-    double getGravity(void);
+    rune::Vec2 getGravity(void);
 
     ///Get the current velocity of the rigid body.
     rune::Vec2 getVelocity(void);

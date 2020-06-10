@@ -98,6 +98,7 @@
     <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
     <ClCompile Include="src\Math\vec3.cpp" />
+    <ClCompile Include="src\Physics\collider2d.cpp" />
     <ClCompile Include="src\SceneTools\console.cpp" />
     <ClCompile Include="src\Renderer\camera.cpp" />
     <ClCompile Include="src\imgui\imgui.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />
     <ClInclude Include="src\Math\vec3.h" />
+    <ClInclude Include="src\Physics\collider2d.h" />
     <ClInclude Include="src\SceneTools\console.h" />
     <ClInclude Include="src\Renderer\camera.h" />
     <ClInclude Include="src\imgui\imconfig.h" />

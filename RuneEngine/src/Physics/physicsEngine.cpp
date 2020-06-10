@@ -11,7 +11,7 @@ void physics::updatePhysics(std::vector<physics::RigidBody*> objects, double dT)
   for(int i = 0; i < objects.size(); i++)
   {
     objects[i]->updatePosition(dT);
-    objects[i]->addVelocity(rune::Vec2(0,-1*objects[i]->getGravity()));
+    objects[i]->addVelocity(objects[i]->getGravity());
   }
 
   //Sort the objects by vertical position so the top ones are checked first

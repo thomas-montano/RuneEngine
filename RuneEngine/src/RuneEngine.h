@@ -21,3 +21,4 @@
 #include <SceneTools\console.h>
 #include <Entities\transform.h>
 #include <Renderer\camera.h>
+#include <Physics\collider2d.h>

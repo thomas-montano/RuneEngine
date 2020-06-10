@@ -13,6 +13,7 @@
 #define MOUSE_H_DEFINED
 
 #include <core.h>
+#include <Math\vec2.h>
 
 namespace rune{
 
@@ -25,6 +26,7 @@ public:
   };
 
   static bool isButtonPressed(rune::Mouse::Button button);
+  static rune::Vec2 getPosition(void);
 
 };
 }

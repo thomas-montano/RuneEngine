@@ -95,11 +95,12 @@ void rune::RenderWindow::pollEvents(rune::Event& event)
   }
   
   //Handling window resizing, make this better
-  int width, height;
 
   glfwGetWindowSize(GLwindow,&width,&height);
 
   glViewport(0, 0, width, height);
+
+
 
 }
 

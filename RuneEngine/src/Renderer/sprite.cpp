@@ -61,7 +61,8 @@ void rune::Sprite::start()
 void rune::Sprite::update()
 {
 
-  rune::GameApplication::getWindow()->draw(*this);
+  //rune::GameApplication::getWindow()->draw(*this);
+  draw(*rune::GameApplication::getWindow());
 
 }
 

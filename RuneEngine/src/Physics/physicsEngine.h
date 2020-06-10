@@ -1,6 +1,6 @@
 /**
  * @namespace physics
- * @brief The physics module responsible for handling and resolving collisions between rune::GameObject.
+ * @brief The physics module responsible for handling and resolving collisions between physics::Collider2D.
  * 
  * @author Thomas Montano
  * @date March 2 2020

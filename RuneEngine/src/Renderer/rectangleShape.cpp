@@ -64,8 +64,6 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   rune::Vec3 position = parentObject->transform.getPosition();
   rune::Vec3 size = parentObject->transform.getScale();
 
-  origin = rune::Vec2(size.x / 2.0, size.y /2.0);
-
   rune::Vec2 windowSize = window.getSize();
   rune::Vec2 cameraPos = rune::Camera::getCenter();
   double zoomLevel = rune::Camera::getZoom();

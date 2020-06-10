@@ -86,7 +86,7 @@ Inheritance diagram for physics::RigidBody:</div>
 <div class="center"><img src="../../d2/d2c/classphysics_1_1RigidBody__inherit__graph.png" border="0" usemap="#physics_1_1RigidBody_inherit__map" alt="Inheritance graph"/></div>
 <map name="physics_1_1RigidBody_inherit__map" id="physics_1_1RigidBody_inherit__map">
 <area shape="rect" title="Game object component that allows a game object to have collisions with other objects." alt="" coords="5,80,151,107"/>
-<area shape="rect" href="../../d1/d29/classrune_1_1Drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="17,5,139,32"/>
+<area shape="rect" href="../../da/daf/classrune_1_1Component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="11,5,145,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -94,8 +94,10 @@ Collaboration diagram for physics::RigidBody:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../db/d6b/classphysics_1_1RigidBody__coll__graph.png" border="0" usemap="#physics_1_1RigidBody_coll__map" alt="Collaboration graph"/></div>
 <map name="physics_1_1RigidBody_coll__map" id="physics_1_1RigidBody_coll__map">
-<area shape="rect" title="Game object component that allows a game object to have collisions with other objects." alt="" coords="5,80,151,107"/>
-<area shape="rect" href="../../d1/d29/classrune_1_1Drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="17,5,139,32"/>
+<area shape="rect" title="Game object component that allows a game object to have collisions with other objects." alt="" coords="5,260,151,287"/>
+<area shape="rect" href="../../da/daf/classrune_1_1Component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="11,184,145,211"/>
+<area shape="rect" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene." alt="" coords="8,95,148,121"/>
+<area shape="rect" href="../../d4/d01/classrune_1_1Transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="16,5,140,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -104,9 +106,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad4adccc0db5ff388567659e39509d723"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#ad4adccc0db5ff388567659e39509d723">RigidBody</a> ()</td></tr>
 <tr class="memdesc:ad4adccc0db5ff388567659e39509d723"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to initialize an empty rigid body object.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#ad4adccc0db5ff388567659e39509d723">More...</a><br /></td></tr>
 <tr class="separator:ad4adccc0db5ff388567659e39509d723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd5fe78e526741e11f71f8f04a8bdf85"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#afd5fe78e526741e11f71f8f04a8bdf85">RigidBody</a> (int width, int height, double xPos, double yPos, double mass, double gravity=0, bool rotation=true)</td></tr>
-<tr class="memdesc:afd5fe78e526741e11f71f8f04a8bdf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters for the rigid body to establish a physical object in the scene.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#afd5fe78e526741e11f71f8f04a8bdf85">More...</a><br /></td></tr>
-<tr class="separator:afd5fe78e526741e11f71f8f04a8bdf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa93885a1cdee65219e4d35ec063486c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#aaa93885a1cdee65219e4d35ec063486c">RigidBody</a> (int width, int height, double xPos, double yPos, double mass, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> gravity=<a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>(0, 0), bool rotation=true)</td></tr>
+<tr class="memdesc:aaa93885a1cdee65219e4d35ec063486c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the parameters for the rigid body to establish a physical object in the scene.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#aaa93885a1cdee65219e4d35ec063486c">More...</a><br /></td></tr>
+<tr class="separator:aaa93885a1cdee65219e4d35ec063486c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a892a2fdc198d6f0b73f08a74a2fd4db7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#a892a2fdc198d6f0b73f08a74a2fd4db7">setUpObject</a> (int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)</td></tr>
 <tr class="memdesc:a892a2fdc198d6f0b73f08a74a2fd4db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up the object. Identical to the constructor but can be used to set up an object after it's been created.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#a892a2fdc198d6f0b73f08a74a2fd4db7">More...</a><br /></td></tr>
 <tr class="separator:a892a2fdc198d6f0b73f08a74a2fd4db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,9 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ad41a5506a01ce7c411ca24b72425a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#a7ad41a5506a01ce7c411ca24b72425a3">updatePosition</a> (double dT)</td></tr>
 <tr class="memdesc:a7ad41a5506a01ce7c411ca24b72425a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the position of the object based on collisions and velocities.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#a7ad41a5506a01ce7c411ca24b72425a3">More...</a><br /></td></tr>
 <tr class="separator:a7ad41a5506a01ce7c411ca24b72425a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada08e20b694006bf521bbfb42570a2b8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#ada08e20b694006bf521bbfb42570a2b8">getGravity</a> (void)</td></tr>
-<tr class="memdesc:ada08e20b694006bf521bbfb42570a2b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the gravity vector of the object.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#ada08e20b694006bf521bbfb42570a2b8">More...</a><br /></td></tr>
-<tr class="separator:ada08e20b694006bf521bbfb42570a2b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e97366f2b484d56ce9e721a4a829313"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#a5e97366f2b484d56ce9e721a4a829313">getGravity</a> (void)</td></tr>
+<tr class="memdesc:a5e97366f2b484d56ce9e721a4a829313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the gravity vector of the object.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#a5e97366f2b484d56ce9e721a4a829313">More...</a><br /></td></tr>
+<tr class="separator:a5e97366f2b484d56ce9e721a4a829313"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac061e97de90c2b9c2f1260a73be87c82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#ac061e97de90c2b9c2f1260a73be87c82">getVelocity</a> (void)</td></tr>
 <tr class="memdesc:ac061e97de90c2b9c2f1260a73be87c82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current velocity of the rigid body.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#ac061e97de90c2b9c2f1260a73be87c82">More...</a><br /></td></tr>
 <tr class="separator:ac061e97de90c2b9c2f1260a73be87c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,6 +191,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad54a0ef1c2a0e4da6bb5e3711e87a0be"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="../../d1/d91/structphysics_1_1collision.html">collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#ad54a0ef1c2a0e4da6bb5e3711e87a0be">getCollisions</a> (void)</td></tr>
 <tr class="memdesc:ad54a0ef1c2a0e4da6bb5e3711e87a0be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of collisions the rigid body was involved in.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#ad54a0ef1c2a0e4da6bb5e3711e87a0be">More...</a><br /></td></tr>
 <tr class="separator:ad54a0ef1c2a0e4da6bb5e3711e87a0be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrune_1_1Component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrune_1_1Component')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../da/daf/classrune_1_1Component.html">rune::Component</a></td></tr>
+<tr class="memitem:aae254f125303912b629182af34fad58a inherit pub_methods_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#aae254f125303912b629182af34fad58a">start</a> ()</td></tr>
+<tr class="separator:aae254f125303912b629182af34fad58a inherit pub_methods_classrune_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbf867f970e9e276e454096d99cb375 inherit pub_methods_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a4bbf867f970e9e276e454096d99cb375">update</a> ()</td></tr>
+<tr class="separator:a4bbf867f970e9e276e454096d99cb375 inherit pub_methods_classrune_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#ac24759c39a2067026fb8f17487398c0c">fixedUpdate</a> ()</td></tr>
+<tr class="separator:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f80061e4b816e8f5a9f4810f93a63e1 inherit pub_methods_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a4f80061e4b816e8f5a9f4810f93a63e1">setParent</a> (<a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *newParent)</td></tr>
+<tr class="separator:a4f80061e4b816e8f5a9f4810f93a63e1 inherit pub_methods_classrune_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classrune_1_1Component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrune_1_1Component')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../da/daf/classrune_1_1Component.html">rune::Component</a></td></tr>
+<tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a></td></tr>
+<tr class="separator:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Game object component that allows a game object to have collisions with other objects. </p>
@@ -214,8 +231,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afd5fe78e526741e11f71f8f04a8bdf85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd5fe78e526741e11f71f8f04a8bdf85">&#9670;&nbsp;</a></span>RigidBody() <span class="overload">[2/2]</span></h2>
+<a id="aaa93885a1cdee65219e4d35ec063486c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa93885a1cdee65219e4d35ec063486c">&#9670;&nbsp;</a></span>RigidBody() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -253,8 +270,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>gravity</em> = <code>0</code>, </td>
+          <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
+          <td class="paramname"><em>gravity</em> = <code><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>(0,&#160;0)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -271,18 +288,6 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the parameters for the rigid body to establish a physical object in the scene. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">width</td><td>Width of the rigid body in pixels, should be the same as the GameObject sprite. </td></tr>
-    <tr><td class="paramname">height</td><td>Height of the rigid body in pixels, should be the same as the GameObject sprite. </td></tr>
-    <tr><td class="paramname">xPos</td><td>Horizontal position of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> with respect to the center of the object. </td></tr>
-    <tr><td class="paramname">yPos</td><td>Vertical position of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> with respect to the center of the object. </td></tr>
-    <tr><td class="paramname">mass</td><td>Mass of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> to be used for physical simulations. </td></tr>
-    <tr><td class="paramname">gravity</td><td>Vertical gravity that the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> should be subjected to. </td></tr>
-    <tr><td class="paramname">rotation</td><td>Whether or not the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> is allowed to rotate in 2D space. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -472,14 +477,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ada08e20b694006bf521bbfb42570a2b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada08e20b694006bf521bbfb42570a2b8">&#9670;&nbsp;</a></span>getGravity()</h2>
+<a id="a5e97366f2b484d56ce9e721a4a829313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e97366f2b484d56ce9e721a4a829313">&#9670;&nbsp;</a></span>getGravity()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double physics::RigidBody::getGravity </td>
+          <td class="memname"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> physics::RigidBody::getGravity </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
