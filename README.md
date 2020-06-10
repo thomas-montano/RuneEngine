@@ -10,6 +10,8 @@ You can clone the repository to a local destination using git:
 
 `git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
 
+Then link the library file, move the DLL file into your games working directory, and make sure to ```#include <RuneEngine.h>```
+
 ## Engine Features
 - Custom 2D renderer
 - Custom Physics Engine
@@ -19,12 +21,7 @@ You can clone the repository to a local destination using git:
 - Physically Accurate Collisions
 - Animated Sprites
 - Debug Interface with imgui
-
-## Future Items
-- Scripting support with Lua
-- Cross platform support
-- Tile workflow an sprite workflow
-- Level editor
+- Tile workflow and sprite workflow
 
 ## Function Documentation
 - [Doxygen](https://thomasmontanogames.github.io/PrivateEye/)
