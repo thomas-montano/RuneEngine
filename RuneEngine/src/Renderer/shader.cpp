@@ -169,9 +169,7 @@ void rune::Shader::setUniform1f(const std::string& name, float value)
 
 void rune::Shader::setUniform2f(const std::string& name, float v0, float v1)
 {
-
   glUniform2f(getUniformLocation(name), v0, v1);
-
 }
 
 /**
@@ -193,4 +191,25 @@ void rune::Shader::setUniform4f(const std::string&name, float v0, float v1, floa
 void rune::Shader::setUniform1i(const std::string& name, int value)
 {
   glUniform1i(getUniformLocation(name), value);
+}
+
+
+void rune::Shader::setUniform1f(int uniformLocation, float value)
+{
+  glUniform1f(uniformLocation, value);
+}
+
+void rune::Shader::setUniform2f(int uniformLocation, float v0, float v1)
+{
+  glUniform2f(uniformLocation, v0, v1);
+}
+
+void rune::Shader::setUniform4f(int uniformLocation, float v0, float v1, float v2, float v3)
+{
+  glUniform4f(uniformLocation, v0, v1, v2, v3);
+}
+
+void rune::Shader::setUniform1i(int uniformLocation, int value)
+{
+  glUniform1i(uniformLocation, value);
 }

@@ -44,19 +44,18 @@ private:
 
   "void main()\n"
   "{\n"
-    "vec2 vertices = aPos;\n"
 
-    "vertices = cameraZoom*(vertices - cameraPos);\n"
+    "vec2 vertices = cameraZoom*aPos - cameraPos;\n"
 
     "if(rotation != 0)\n"
     "{\n"
       "float angle = radians(rotation);\n"
       "mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));\n"
 
-      "vertices = vertices - (cameraZoom*origin);\n"
+      "vertices = vertices - (cameraZoom*origin - cameraPos);\n"
       "vertices = rotationMatrix * vertices;\n"
-      "vertices = vertices + (cameraZoom*origin);\n"
-    "}\n"
+      "vertices = vertices + (cameraZoom*origin - cameraPos);\n"
+    "}\n" 
 
     "ourColor = aColor;\n"
     "gl_Position = vec4(vertices,0,1);\n"
@@ -74,6 +73,8 @@ private:
     "FragColor = ourColor;\n"
   "};\n"
   );
+
+  int u_cameraPos, u_cameraZoom, u_rotation, u_origin, u_aspectRatio;
 
   Shader rectangleShader;
   rune::Vec2 origin;
@@ -98,7 +99,9 @@ public:
   
   RectangleShape(rune::Color newColor = rune::Color(255,255,255));
 
-  void setUpBuffers();
+  void setUpBuffers(void);
+
+  void setUpUniforms(void);
 
   void setFillColor(rune::Color);
 

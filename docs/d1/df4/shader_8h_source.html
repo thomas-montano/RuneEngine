@@ -122,18 +122,21 @@ $(function() {
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">int</span> getUniformLocation(<span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> setUniform1f(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">//Set a vec2 shader uniform</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">void</span> setUniform2f(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> setUniform4f(<span class="keyword">const</span> std::string&amp;name, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1, <span class="keywordtype">float</span> v2, <span class="keywordtype">float</span> v3);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="comment">//Set a vec2 shader uniform</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> setUniform2f(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keywordtype">void</span> setUniform4f(<span class="keyword">const</span> std::string&amp;name, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1, <span class="keywordtype">float</span> v2, <span class="keywordtype">float</span> v3);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> setUniform1i(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">int</span> value);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> setUniform1i(<span class="keyword">const</span> std::string&amp; name, <span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> setUniform1f(<span class="keywordtype">int</span> uniformLocation, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="comment">//Set a vec2 shader uniform</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> setUniform2f(<span class="keywordtype">int</span> uniformLocation, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> setUniform4f(<span class="keywordtype">int</span> uniformLocation, <span class="keywordtype">float</span> v0, <span class="keywordtype">float</span> v1, <span class="keywordtype">float</span> v2, <span class="keywordtype">float</span> v3);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> setUniform1i(<span class="keywordtype">int</span> uniformLocation, <span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;};</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructrune_1_1ShaderProgramSource_html_ac1fcf4afb7ab3c230968674e8bb4e752"><div class="ttname"><a href="../../df/dc8/structrune_1_1ShaderProgramSource.html#ac1fcf4afb7ab3c230968674e8bb4e752">rune::ShaderProgramSource::FragmentSource</a></div><div class="ttdeci">std::string FragmentSource</div><div class="ttdoc">The fragment shader code to be compiled.</div><div class="ttdef"><b>Definition:</b> shader.h:29</div></div>
 <div class="ttc" id="arenderWindow_8h_html"><div class="ttname"><a href="../../d5/da0/renderWindow_8h.html">renderWindow.h</a></div></div>

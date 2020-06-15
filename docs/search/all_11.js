@@ -4,7 +4,7 @@ var searchData=
   ['rectangleshape_306',['RectangleShape',['../d7/d43/classrune_1_1RectangleShape.html',1,'rune::RectangleShape'],['../d7/d43/classrune_1_1RectangleShape.html#ae18fa4d03f1f150d67760ca376e5ada0',1,'rune::RectangleShape::RectangleShape()']]],
   ['rectangleshape_2ecpp_307',['rectangleShape.cpp',['../d9/d31/rectangleShape_8cpp.html',1,'']]],
   ['rectangleshape_2eh_308',['rectangleShape.h',['../d6/d36/rectangleShape_8h.html',1,'']]],
-  ['red_309',['red',['../d8/d25/classrune_1_1Color.html#a736c8f165e05399846cd57318e2a309a',1,'rune::Color::red()'],['../d8/d25/classrune_1_1Color.html#a6ddf3aec445929c3605579c921886514',1,'rune::Color::Red()']]],
+  ['red_309',['Red',['../d8/d25/classrune_1_1Color.html#a6ddf3aec445929c3605579c921886514',1,'rune::Color::Red()'],['../d8/d25/classrune_1_1Color.html#a736c8f165e05399846cd57318e2a309a',1,'rune::Color::red()']]],
   ['reinit_310',['reInit',['../dd/ddc/classrune_1_1GameScene.html#afd011719f9a50aba292900f7251b6935',1,'rune::GameScene']]],
   ['renderwindow_311',['RenderWindow',['../d1/d58/classrune_1_1RenderWindow.html',1,'rune::RenderWindow'],['../d1/d58/classrune_1_1RenderWindow.html#abf1b8e5008137e06387dfb1eda3aa3ff',1,'rune::RenderWindow::RenderWindow()']]],
   ['renderwindow_2ecpp_312',['renderWindow.cpp',['../d8/d5a/renderWindow_8cpp.html',1,'']]],

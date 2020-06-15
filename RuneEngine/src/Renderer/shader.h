@@ -64,15 +64,21 @@ public:
 
   ///Set a float shader uniform.
   void setUniform1f(const std::string& name, float value);
-
   //Set a vec2 shader uniform
   void setUniform2f(const std::string& name, float v0, float v1);
-
   ///Set a vec4 shader uniform.
   void setUniform4f(const std::string&name, float v0, float v1, float v2, float v3);
-
   ///Set an integer shader uniform.
   void setUniform1i(const std::string& name, int value);
+
+  ///Set a float shader uniform.
+  void setUniform1f(int uniformLocation, float value);
+  //Set a vec2 shader uniform
+  void setUniform2f(int uniformLocation, float v0, float v1);
+  ///Set a vec4 shader uniform.
+  void setUniform4f(int uniformLocation, float v0, float v1, float v2, float v3);
+  ///Set an integer shader uniform.
+  void setUniform1i(int uniformLocation, int value);
   
 };
 }

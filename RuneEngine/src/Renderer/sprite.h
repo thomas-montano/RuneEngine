@@ -43,18 +43,16 @@ private:
     "void main()\n"
     "{\n"
 
-      "vec2 vertices = aPos;\n"
-
-      "vertices = cameraZoom*(vertices - cameraPos);\n"
+      "vec2 vertices = cameraZoom*aPos - cameraPos;\n"
 
       "if(rotation != 0)\n"
       "{\n"
         "float angle = radians(rotation);\n"
         "mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));\n"
         
-        "vertices = vertices - (cameraZoom*origin);\n"
+        "vertices = vertices - (cameraZoom*origin - cameraPos);\n"
         "vertices = rotationMatrix * vertices;\n"
-        "vertices = vertices + (cameraZoom*origin);\n" 
+        "vertices = vertices + (cameraZoom*origin - cameraPos);\n" 
       "}\n"
 
       "ourColor = aColor;\n"
@@ -78,9 +76,10 @@ private:
       "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
     "}\n");
   
+  int u_cameraPos, u_cameraZoom, u_rotation, u_origin, u_aspectRatio;
+
   Texture spriteTexture;
   Shader spriteShader;
-  rune::Vec2 origin;
 
   unsigned int indices[6] = 
   {  
@@ -104,6 +103,8 @@ public:
   virtual void update();
   ///Initialize opengl for the sprite.
   void setUpBuffers(void);
+  ///Initialize uniforms
+  void setUpUniforms(void);
   ///Draw overload so that sprite can be displayed to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.

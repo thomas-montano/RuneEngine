@@ -13,6 +13,7 @@ rune::RectangleShape::RectangleShape(rune::Color newColor)
 : rectangleShader(defaultShader), origin(rune::Vec2(0,0)), shapeColor(newColor)
 {
   setUpBuffers();
+  setUpUniforms();
 }
 
 
@@ -38,6 +39,17 @@ void rune::RectangleShape::setUpBuffers()
   // color attribute
   glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(2 * sizeof(float)));
   glEnableVertexAttribArray(1);
+
+}
+
+void rune::RectangleShape::setUpUniforms()
+{
+
+  u_cameraPos = rectangleShader.getUniformLocation("cameraPos");
+  u_cameraZoom = rectangleShader.getUniformLocation("cameraZoom");
+  u_rotation = rectangleShader.getUniformLocation("rotation");
+  u_origin = rectangleShader.getUniformLocation("origin");
+  u_aspectRatio = rectangleShader.getUniformLocation("aspectRatio");
 
 }
 
@@ -70,13 +82,13 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   double zoomLevel = rune::Camera::getZoom();
 
   //Set up camera data for shader
-  rectangleShader.setUniform2f("cameraPos", zoomLevel * cameraPos.x / windowSize.x, zoomLevel * cameraPos.y / windowSize.y);
-  rectangleShader.setUniform1f("cameraZoom",zoomLevel);
+  rectangleShader.setUniform2f(u_cameraPos, zoomLevel * cameraPos.x / (0.5*windowSize.x), zoomLevel * cameraPos.y / (0.5*windowSize.y));
+  rectangleShader.setUniform1f(u_cameraZoom,zoomLevel);
 
   //Set up rotation information
-  rectangleShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
-  rectangleShader.setUniform1f("aspectRatio", rune::GameApplication::getWindow()->getSize().x / rune::GameApplication::getWindow()->getSize().y);
-  rectangleShader.setUniform2f("origin", (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
+  rectangleShader.setUniform1f(u_rotation, parentObject->transform.getRotation().z);
+  rectangleShader.setUniform1f(u_aspectRatio, rune::GameApplication::getWindow()->getSize().x / rune::GameApplication::getWindow()->getSize().y);
+  rectangleShader.setUniform2f(u_origin, (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
 
   rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),
     (position.x) / (0.5*windowSize.x), (position.y) / (0.5*windowSize.y));
