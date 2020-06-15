@@ -9,7 +9,8 @@
 #include <gameApplication.h>
 #include <SceneTools\sceneManager.h>
 
-rune::RectangleShape::RectangleShape(rune::Color newColor, rune::Vec2 newOrigin) : rectangleShader("./RuneEngine/src/Shaders/rectangle.shader"), origin(newOrigin), shapeColor(newColor)
+rune::RectangleShape::RectangleShape(rune::Color newColor) 
+: rectangleShader(defaultShader), origin(rune::Vec2(0,0)), shapeColor(newColor)
 {
   setUpBuffers();
 }
@@ -69,12 +70,16 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   double zoomLevel = rune::Camera::getZoom();
 
   //Set up camera data for shader
-  rectangleShader.setUniform4f("cameraPos", zoomLevel * cameraPos.x / windowSize.x, zoomLevel * cameraPos.y / windowSize.y, 0, 0);
+  rectangleShader.setUniform2f("cameraPos", zoomLevel * cameraPos.x / windowSize.x, zoomLevel * cameraPos.y / windowSize.y);
+  rectangleShader.setUniform1f("cameraZoom",zoomLevel);
 
-  rune::Mat2 drawMatrix((position.x + size.x - origin.x) / windowSize.x, (position.y + size.y - origin.y) / windowSize.y,
-    (position.x - origin.x) / windowSize.x, (position.y - origin.y) / windowSize.y);
+  //Set up rotation information
+  rectangleShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
+  rectangleShader.setUniform1f("aspectRatio", rune::GameApplication::getWindow()->getSize().x / rune::GameApplication::getWindow()->getSize().y);
+  rectangleShader.setUniform2f("origin", (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
 
-  drawMatrix *= zoomLevel;
+  rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),
+    (position.x) / (0.5*windowSize.x), (position.y) / (0.5*windowSize.y));
 
   float drawVertices[32] =
   {

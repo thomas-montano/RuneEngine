@@ -8,6 +8,13 @@ rune::Shader::Shader() : m_shaderID(0)
 
 }
 
+rune::Shader::Shader(ShaderProgramSource source)
+{
+
+  m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
+
+}
+
 /**
  * @param filePath The file path for the shader code to be compiled.
 */
@@ -158,6 +165,13 @@ int rune::Shader::getUniformLocation(const std::string& name)
 void rune::Shader::setUniform1f(const std::string& name, float value)
 {
   glUniform1f(getUniformLocation(name), value);
+}
+
+void rune::Shader::setUniform2f(const std::string& name, float v0, float v1)
+{
+
+  glUniform2f(getUniformLocation(name), v0, v1);
+
 }
 
 /**

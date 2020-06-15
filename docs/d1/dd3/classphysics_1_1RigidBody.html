@@ -138,6 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ad41a5506a01ce7c411ca24b72425a3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#a7ad41a5506a01ce7c411ca24b72425a3">updatePosition</a> (double dT)</td></tr>
 <tr class="memdesc:a7ad41a5506a01ce7c411ca24b72425a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the position of the object based on collisions and velocities.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#a7ad41a5506a01ce7c411ca24b72425a3">More...</a><br /></td></tr>
 <tr class="separator:a7ad41a5506a01ce7c411ca24b72425a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0316a31c45ac2cbbb49f34d3d81c4864"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#a0316a31c45ac2cbbb49f34d3d81c4864">interpolatePosition</a> (double alpha)</td></tr>
+<tr class="memdesc:a0316a31c45ac2cbbb49f34d3d81c4864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linearly interpolate the position of the rigidbody for editing to transform of the parent object.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#a0316a31c45ac2cbbb49f34d3d81c4864">More...</a><br /></td></tr>
+<tr class="separator:a0316a31c45ac2cbbb49f34d3d81c4864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e97366f2b484d56ce9e721a4a829313"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html#a5e97366f2b484d56ce9e721a4a829313">getGravity</a> (void)</td></tr>
 <tr class="memdesc:a5e97366f2b484d56ce9e721a4a829313"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the gravity vector of the object.  <a href="../../d1/dd3/classphysics_1_1RigidBody.html#a5e97366f2b484d56ce9e721a4a829313">More...</a><br /></td></tr>
 <tr class="separator:a5e97366f2b484d56ce9e721a4a829313"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,7 +207,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classrune_1_1Component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrune_1_1Component')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../da/daf/classrune_1_1Component.html">rune::Component</a></td></tr>
-<tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a></td></tr>
+<tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1Component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a> = nullptr</td></tr>
 <tr class="separator:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1Component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -271,7 +274,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
-          <td class="paramname"><em>gravity</em> = <code><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>(0,&#160;0)</code>, </td>
+          <td class="paramname"><em>gravity</em> = <code><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>(0,0)</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -288,6 +291,18 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set the parameters for the rigid body to establish a physical object in the scene. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>Width of the rigid body in pixels, should be the same as the GameObject sprite. </td></tr>
+    <tr><td class="paramname">height</td><td>Height of the rigid body in pixels, should be the same as the GameObject sprite. </td></tr>
+    <tr><td class="paramname">xPos</td><td>Horizontal position of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> with respect to the center of the object. </td></tr>
+    <tr><td class="paramname">yPos</td><td>Vertical position of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> with respect to the center of the object. </td></tr>
+    <tr><td class="paramname">mass</td><td>Mass of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> to be used for physical simulations. </td></tr>
+    <tr><td class="paramname">gravity</td><td>Vertical gravity that the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> should be subjected to. </td></tr>
+    <tr><td class="paramname">rotation</td><td>Whether or not the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> is allowed to rotate in 2D space. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -730,6 +745,32 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Get the width of the <a class="el" href="../../d3/dfb/structphysics_1_1AABB.html" title="Axis aligned bounding box for each object.">AABB</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The width in pixels of the <a class="el" href="../../d1/dd3/classphysics_1_1RigidBody.html" title="Game object component that allows a game object to have collisions with other objects.">RigidBody</a> object. </dd></dl>
+
+</div>
+</div>
+<a id="a0316a31c45ac2cbbb49f34d3d81c4864"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0316a31c45ac2cbbb49f34d3d81c4864">&#9670;&nbsp;</a></span>interpolatePosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void physics::RigidBody::interpolatePosition </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>alpha</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Linearly interpolate the position of the rigidbody for editing to transform of the parent object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alpha</td><td>linear interpolation factor. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

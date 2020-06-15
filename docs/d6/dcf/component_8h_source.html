@@ -80,14 +80,14 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifndef BEHAVIOR_H_INCLUDED</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d6/dcf/component_8h.html#a26528c77f533d70df549ed1faa66b41f">   14</a></span>&#160;<span class="preprocessor">#define BEHAVIOR_H_INCLUDED</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">class </span>GameObject;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../da/daf/classrune_1_1Component.html">   20</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../da/daf/classrune_1_1Component.html">Component</a></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">   23</a></span>&#160;  <a class="code" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a>* <a class="code" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">   23</a></span>&#160;  <a class="code" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a>* parentObject = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> start();</div>
@@ -107,11 +107,10 @@ $(function() {
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1Component_html"><div class="ttname"><a href="../../da/daf/classrune_1_1Component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:20</div></div>
-<div class="ttc" id="aclassrune_1_1Component_html_a3b61712b05daa87bd8de85d6bf12dd6e"><div class="ttname"><a href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">rune::Component::parentObject</a></div><div class="ttdeci">GameObject * parentObject</div><div class="ttdef"><b>Definition:</b> component.h:23</div></div>
 <div class="ttc" id="aclassrune_1_1GameObject_html"><div class="ttname"><a href="../../d9/df8/classrune_1_1GameObject.html">rune::GameObject</a></div><div class="ttdoc">Entity control system main object used for all objects in the scene.</div><div class="ttdef"><b>Definition:</b> gameObject.h:21</div></div>
 <div class="ttc" id="aclassrune_1_1Component_html_a4f80061e4b816e8f5a9f4810f93a63e1"><div class="ttname"><a href="../../da/daf/classrune_1_1Component.html#a4f80061e4b816e8f5a9f4810f93a63e1">rune::Component::setParent</a></div><div class="ttdeci">void setParent(GameObject *newParent)</div><div class="ttdef"><b>Definition:</b> component.h:32</div></div>
 <div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
-<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> component.h:16</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:14</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

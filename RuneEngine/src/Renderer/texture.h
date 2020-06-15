@@ -9,6 +9,11 @@
 #ifndef TEXTURE_H_DEFINED
 #define TEXTURE_H_DEFINED
 
+///Tells the texture to use the GL_LINEAR filter for generating mipmaps.
+#define LINEAR_FILTER 0x2601
+///Tells the texture to use the GL_NEAREST filter for generating mipmaps.
+#define NEAREST_FILTER 0x2600
+
 #include "core.h"
 #include <string>
 #include "renderWindow.h"
@@ -25,7 +30,7 @@ private:
 
 public:
   ///Default constructor to generate a texture that can be bound and drawn.
-  Texture(const std::string& path);
+  Texture(const std::string& path, unsigned int filerMode = LINEAR_FILTER);
 
   ///Default empty constructor that sets all members to 0.
   Texture();
@@ -33,7 +38,7 @@ public:
   ///Default constructor to clean up a no longer needed texture.
   ~Texture(void);
 
-  bool loadFromFile(const std::string& path);
+  bool loadFromFile(const std::string& path, unsigned int filterMode = LINEAR_FILTER);
 
   ///Binds the texture to one of the texture slots on the GPU.
   void bind(unsigned int slot = 0);

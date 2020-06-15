@@ -12,9 +12,8 @@
 #include "core.h"
 #include <vector>
 #include <Math\Vec2.h>
-#include <Renderer\drawable.h>
-#include <Renderer\renderWindow.h>
-#include <Renderer\rectangleShape.h>
+#include <Entities\component.h>
+#include <Entities\gameObject.h>
 
 namespace physics{
 
@@ -121,6 +120,9 @@ public:
 
     ///Update the position of the object based on collisions and velocities.
     void updatePosition(double dT);
+
+    ///Linearly interpolate the position of the rigidbody for editing to transform of the parent object.
+    void interpolatePosition(double alpha);
 
     ///Get the gravity vector of the object.
     rune::Vec2 getGravity(void);

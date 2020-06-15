@@ -20,7 +20,7 @@ class GameObject;
 class RUNE_ENGINE Component
 {
 protected:
-  GameObject* parentObject;
+  GameObject* parentObject = nullptr;
 
 public:
   virtual void start();

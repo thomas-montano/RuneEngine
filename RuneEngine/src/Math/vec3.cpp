@@ -1,9 +1,17 @@
 #include "vec3.h"
+#include "vec2.h"
 #include <cmath>
 
-rune::Vec3::Vec3(double newX, double newY, double newZ) : x(newX), y(newY), z(newZ)
+rune::Vec3::Vec3(double newX, double newY, double newZ)
+  : x(newX), y(newY), z(newZ)
 {
 
+}
+
+rune::Vec3::Vec3(rune::Vec2 castedVector)
+  : x(castedVector.x), y(castedVector.y), z(0)
+{
+  
 }
 
 /**

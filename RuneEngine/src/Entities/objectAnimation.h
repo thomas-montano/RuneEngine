@@ -31,7 +31,7 @@ private:
   rune::Clock m_animationClock;
 
   std::string m_filePath;
-  Texture* m_animationSheet;
+  Texture m_animationSheet;
 
 public:
   
@@ -64,7 +64,7 @@ public:
   void setSheet(Texture& animationSheet);
 
   ///Get the sprite sheet of the animation.
-  Texture* getSheet(void);
+  Texture getSheet(void);
 
   ///Get the frame that the animation is currently on.
   int getCurrentFrame(void);

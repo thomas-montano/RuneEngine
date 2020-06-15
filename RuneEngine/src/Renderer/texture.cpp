@@ -8,41 +8,14 @@
 
 /**
  * @param path The file path for the texture that you would like to load relative to the main executable.
+ * @param filterMode The interpolation mode to be used for drawing the sprite.
 */
-rune::Texture::Texture(const std::string& path)
+rune::Texture::Texture(const std::string& path, unsigned int filterMode)
   : m_textureID(0), m_filePath(path), m_localBuffer(0),
   m_width(0), m_height(0), m_BPP(0)
 { 
   //Load the png file and prepare it to be loaded as a texture
-  stbi_set_flip_vertically_on_load(1);
-  m_localBuffer = stbi_load(m_filePath.c_str(),&m_width, &m_height, &m_BPP, 4);
-
-  //Generate and bind a texture
-  glGenTextures(1, &m_textureID);
-  glBindTexture(GL_TEXTURE_2D, m_textureID);
-
-  //Set wrapping parameters for texture
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
-  //Set the border to be invisible
-  //double borderColor[] = { 0.0f, 0.0f, 0.0f, 0.0f };
-  //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
-
-  //load image, create texture and generate mipmaps
-  glTexImage2D(GL_TEXTURE_2D,0,GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_localBuffer);
-  glGenerateMipmap(GL_TEXTURE_2D);
-
-  if(m_localBuffer)
-  {
-    stbi_image_free(m_localBuffer);
-  }
-  else
-  {
-    std::cout << "Failed to load texture" << std::endl;
-  }
+  loadFromFile(path,filterMode);
   
 }
 
@@ -53,8 +26,15 @@ m_width(0), m_height(0), m_BPP(0)
 
 }
 
-bool rune::Texture::loadFromFile(const std::string& path)
+bool rune::Texture::loadFromFile(const std::string& path, unsigned int filterMode)
 {
+
+  if(m_textureID)
+  {
+    
+    glDeleteTextures(1, &m_textureID);
+  
+  }
 
   m_filePath = path;
 
@@ -69,8 +49,8 @@ bool rune::Texture::loadFromFile(const std::string& path)
   //Set wrapping parameters for texture
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filterMode);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filterMode);
 
   //load image, create texture and generate mipmaps
   glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_localBuffer);

@@ -23,6 +23,61 @@ namespace rune{
 class RUNE_ENGINE Sprite : public Drawable, public Component
 {
 private:
+  rune::ShaderProgramSource defaultShader =
+  rune::ShaderProgramSource(
+    "#version 330 core\n"
+
+    "layout(location = 0) in vec2 aPos;\n"
+    "layout(location = 1) in vec4 aColor;\n"
+    "layout(location = 2) in vec2 aTexCoord;\n"
+
+    "uniform vec2 cameraPos = vec2(0, 0);\n"
+    "uniform float cameraZoom = 1;\n"
+    "uniform float rotation = 0;\n"
+    "uniform vec2 origin = vec2(0,0);\n"
+    "uniform float aspectRatio = 1;\n"
+
+    "out vec4 ourColor;\n"
+    "out vec2 TexCoord;\n"
+
+    "void main()\n"
+    "{\n"
+
+      "vec2 vertices = aPos;\n"
+
+      "vertices = cameraZoom*(vertices - cameraPos);\n"
+
+      "if(rotation != 0)\n"
+      "{\n"
+        "float angle = radians(rotation);\n"
+        "mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));\n"
+        
+        "vertices = vertices - (cameraZoom*origin);\n"
+        "vertices = rotationMatrix * vertices;\n"
+        "vertices = vertices + (cameraZoom*origin);\n" 
+      "}\n"
+
+      "ourColor = aColor;\n"
+      "gl_Position = vec4(vertices,0,1);\n"
+
+      "TexCoord = aTexCoord;\n"
+
+    "}\n"
+    ,
+    "#version 330 core\n"
+
+    "out vec4 FragColor;\n"
+
+    "in vec4 ourColor;\n"
+    "in vec2 TexCoord;\n"
+
+    "uniform sampler2D ourTexture;\n"
+
+    "void main()\n"
+    "{\n"
+      "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
+    "}\n");
+  
   Texture spriteTexture;
   Shader spriteShader;
   rune::Vec2 origin;
@@ -40,8 +95,10 @@ private:
 public:
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
-  ///Default constructor that initializes the sprite to a drawable state, uses default shader.
-  Sprite(std::string spriteLocation);
+  ///Default constructor for generating a sprite from a PNG file, uses default shader.
+  /// Use NEAREST_FILTER for pixel art sprites. LINEAR_FILTER is used by default.
+  Sprite(std::string spriteLocation, unsigned int drawMode = LINEAR_FILTER);
+  /// Virtual start method being overloaded
   virtual void start();
   /// Virtual update method being overloaded
   virtual void update();
@@ -51,53 +108,6 @@ public:
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.
   void setTexture(std::string texture);
-  ///Add to the current position of the sprite.
-  void addPosition(rune::Vec2 newPos);
-  ///Overwrite the position of the sprite.
-  void setPosition(rune::Vec2 newPos);
-  ///Set the offset of the sprite with respect to the bottom left corner.
-  void setOrigin(rune::Vec2 newOrigin);
-  ///Set the dimensions of the sprite.
-  void setSize(rune::Vec2);
-  ///Get the current position of the center of the sprite.
-  rune::Vec2 getPosition(void);
-  ///Get the current dimensions of the sprite.
-  rune::Vec2 getSize(void);
-
-  rune::ShaderProgramSource defaultShader=
-    ShaderProgramSource(
-    "#version 330 core\n"
-
-    "layout(location = 0) in vec2 aPos;\n"
-  "layout(location = 1) in vec4 aColor;\n"
-  "layout(location = 2) in vec2 aTexCoord;\n"
-
-  "uniform vec4 cameraPos = vec4(0, 0, 0, 0);\n"
-
-  "out vec4 ourColor;\n"
-  "out vec2 TexCoord;\n"
-
-  "void main()\n"
-  "{\n"
-    "gl_Position = vec4(aPos, 1.0, 1.0) - cameraPos;\n"
-    "ourColor = aColor;\n"
-    "TexCoord = aTexCoord;\n"
-  "}\n"
-  ,
-    "#version 330 core\n"
-
-    "out vec4 FragColor;\n"
-
-  "in vec4 ourColor;\n"
-  "in vec2 TexCoord;\n"
-
-  "uniform sampler2D ourTexture;\n"
-
-  "void main()\n"
-  "{\n"
-    "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
-  "}\n");
-
 
 };
 

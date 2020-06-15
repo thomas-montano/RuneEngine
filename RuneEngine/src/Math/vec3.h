@@ -16,6 +16,8 @@
 
 namespace rune{
 
+class Vec2;
+
 class RUNE_ENGINE Vec3
 {
 
@@ -28,6 +30,8 @@ public:
   double z;
   ///Constructor that sets up a new vector.
   Vec3(double newX = 0, double newY = 0, double newZ = 0);
+  ///Construct a Vec3 from a Vec2
+  Vec3(rune::Vec2);
   ///Overload of subtraction operator.
   Vec3 operator- (const Vec3& right);
   ///Overload of negation operator.

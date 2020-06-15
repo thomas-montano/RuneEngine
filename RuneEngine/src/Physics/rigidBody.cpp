@@ -10,7 +10,7 @@
  * @param gravity Vertical gravity that the RigidBody should be subjected to.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, rune::Vec2(gravity), bool rotation) 
+physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, rune::Vec2 gravity, bool rotation) 
 {
     
     objectBody.restitution = 0.0;
@@ -149,6 +149,23 @@ void physics::RigidBody::updatePosition(double dT)
     objectBody.yPos += objectBody.velocity.y * dT;
     objectBody.angleOfRotation += objectBody.angularVelocity * dT;
     updateAABB();
+
+}
+
+/**
+ * \param alpha linear interpolation factor.
+ */
+void physics::RigidBody::interpolatePosition(double alpha)
+{
+
+  rune::Vec2 oldPosition = objectBody.oldPosition;
+  rune::Vec2 currentPos = rune::Vec2(objectBody.xPos, objectBody.yPos);
+
+  rune::Vec2 newPos = rune::Vec2(oldPosition.x * alpha, oldPosition.y * alpha) + rune::Vec2(currentPos.x * (1.0 - alpha), currentPos.y * (1.0 - alpha));
+
+  parentObject->transform.setPosition(rune::Vec3(newPos));
+
+  objectBody.oldPosition = currentPos;
 
 }
 

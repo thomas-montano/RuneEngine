@@ -51,6 +51,9 @@ public:
   ///Default constructor to create and load a shader.
   Shader(const std::string& filePath);
 
+  ///Create a shader from a rune::ShaderProgramSource
+  Shader(ShaderProgramSource);
+
   void makeNewShader(ShaderProgramSource);
 
   ///Configure the shader to be active on the GPU, must be done before drawing something.
@@ -61,6 +64,9 @@ public:
 
   ///Set a float shader uniform.
   void setUniform1f(const std::string& name, float value);
+
+  //Set a vec2 shader uniform
+  void setUniform2f(const std::string& name, float v0, float v1);
 
   ///Set a vec4 shader uniform.
   void setUniform4f(const std::string&name, float v0, float v1, float v2, float v3);

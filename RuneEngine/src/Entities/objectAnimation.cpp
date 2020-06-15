@@ -91,14 +91,14 @@ int rune::ObjectAnimation::getNumFrames(void)
 void rune::ObjectAnimation::setSheet(Texture& animationSheet)
 {
 
-    m_animationSheet = &animationSheet;
+    m_animationSheet = animationSheet;
 
 }
 
 /**
  * @return A pointer referencing the texture to be used as the sprite sheet.
 */
-rune::Texture* rune::ObjectAnimation::getSheet(void)
+rune::Texture rune::ObjectAnimation::getSheet(void)
 {
     return m_animationSheet;
 }

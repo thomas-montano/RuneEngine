@@ -6,11 +6,10 @@
 #include <Renderer\camera.h>
 #include <Math\mat2.h>
 
-rune::Sprite::Sprite() :  origin(rune::Vec2(0, 0))
+rune::Sprite::Sprite() 
+  : origin(rune::Vec2(0, 0)), spriteShader(defaultShader)
 {
-  spriteShader.makeNewShader(defaultShader);
-  this->setUpBuffers();
-
+  setUpBuffers();
 }
 
 /**
@@ -18,11 +17,10 @@ rune::Sprite::Sprite() :  origin(rune::Vec2(0, 0))
  * @param position A rune::Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite .png file to be drawn.
 */
-rune::Sprite::Sprite(std::string spriteLocation) : spriteTexture(spriteLocation.c_str()), origin(rune::Vec2(0,0))
+rune::Sprite::Sprite(std::string spriteLocation, unsigned int drawMode) 
+  : spriteTexture(spriteLocation.c_str(), drawMode), origin(rune::Vec2(0,0)), spriteShader(defaultShader)
 {
-  spriteShader.makeNewShader(defaultShader);
-  this->setUpBuffers();
-
+  setUpBuffers();
 }
 
 void rune::Sprite::setUpBuffers()
@@ -84,12 +82,18 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   rune::Vec3 size = parentObject->transform.getScale();
 
   //Set up camera data for shader
-  spriteShader.setUniform4f("cameraPos", zoomLevel * cameraPos.x / windowSize.x, zoomLevel * cameraPos.y / windowSize.y, 0, 0);
+  spriteShader.setUniform2f("cameraPos", zoomLevel * (cameraPos.x / windowSize.x), zoomLevel * (cameraPos.y / windowSize.y));
+  spriteShader.setUniform1f("cameraZoom",zoomLevel);
 
-  rune::Mat2 drawMatrix((position.x + size.x - origin.x) / windowSize.x, (position.y + size.y - origin.y) / windowSize.y,
-                        (position.x - origin.x) / windowSize.x,            (position.y - origin.y) / windowSize.y);
+  //Add in rotation information so that things rotate correctly
+  spriteShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
+  spriteShader.setUniform1f("aspectRatio", rune::GameApplication::getWindow()->getSize().x/ rune::GameApplication::getWindow()->getSize().y);
+  spriteShader.setUniform2f("origin", (position.x+(0.5 * size.x))/(0.5*windowSize.x), (position.y + (0.5 * size.y)) / (0.5*windowSize.y));
 
-  drawMatrix *= zoomLevel;
+  rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),
+                        (position.x) / (0.5*windowSize.x),            (position.y) / (0.5*windowSize.y));
+
+  //std::cout << ASPECTRATIO << std::endl;
 
   const float drawVertices[32] = 
   {
@@ -109,11 +113,6 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
   spriteTexture.unbind();
 
-}
-
-void rune::Sprite::setOrigin(rune::Vec2 newOrigin)
-{
-  origin = newOrigin;
 }
 
 void rune::Sprite::setTexture(std::string texture)

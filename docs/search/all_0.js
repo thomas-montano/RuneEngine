@@ -7,11 +7,15 @@ var searchData=
   ['addcollision_4',['addCollision',['../d1/dd3/classphysics_1_1RigidBody.html#a87f0c0522089807e3e5be6cccb9c9e91',1,'physics::RigidBody']]],
   ['addcomponent_5',['addComponent',['../d9/df8/classrune_1_1GameObject.html#a400268e68259e0e1631e04e30e2d9e96',1,'rune::GameObject']]],
   ['addobjecttoscene_6',['addObjectToScene',['../dd/ddc/classrune_1_1GameScene.html#a92b77351b8cb045968ce275489a86de2',1,'rune::GameScene']]],
-  ['addposition_7',['addPosition',['../d1/dd3/classphysics_1_1RigidBody.html#a388548ea590211e728242beda511bbca',1,'physics::RigidBody::addPosition()'],['../d1/d12/classrune_1_1Sprite.html#a8db404ebd2b7c26a9fb28b5c654ab5fc',1,'rune::Sprite::addPosition()']]],
+  ['addposition_7',['addPosition',['../d1/dd3/classphysics_1_1RigidBody.html#a388548ea590211e728242beda511bbca',1,'physics::RigidBody']]],
   ['addscene_8',['addScene',['../d5/d8a/classrune_1_1SceneManager.html#ac4dac7b8157618f69f30a098e4655d4b',1,'rune::SceneManager']]],
   ['addvelocity_9',['addVelocity',['../d1/dd3/classphysics_1_1RigidBody.html#a10e2318ca354c4b862c68c48d012c086',1,'physics::RigidBody']]],
   ['alpha_10',['alpha',['../d8/d25/classrune_1_1Color.html#a7fccc60da03f2555c28d66f46a29b844',1,'rune::Color']]],
   ['angleofrotation_11',['angleOfRotation',['../d0/d74/structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2',1,'physics::body']]],
   ['angularvelocity_12',['angularVelocity',['../d0/d74/structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9',1,'physics::body']]],
-  ['apostrophe_13',['APOSTROPHE',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]]
+  ['animation_5fcontroller_5fh_5fdefined_13',['ANIMATION_CONTROLLER_H_DEFINED',['../d2/d48/animationController_8h.html#acef107d1c5e586c4e9242f09d4916034',1,'animationController.h']]],
+  ['animationcontroller_14',['AnimationController',['../da/d42/classrune_1_1AnimationController.html',1,'rune']]],
+  ['animationcontroller_2ecpp_15',['animationController.cpp',['../d1/d68/animationController_8cpp.html',1,'']]],
+  ['animationcontroller_2eh_16',['animationController.h',['../d2/d48/animationController_8h.html',1,'']]],
+  ['apostrophe_17',['APOSTROPHE',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]]
 ];

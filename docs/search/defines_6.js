@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vec2_5fh_5fdefined_901',['VEC2_H_DEFINED',['../d3/dbe/vec2_8h.html#a466ce4ec9fb9462e84569594bf53d27a',1,'vec2.h']]],
-  ['vec3_5fh_5fdefined_902',['VEC3_H_DEFINED',['../d8/d08/vec3_8h.html#a4f6a9436b63aaedf2ee53683de075989',1,'vec3.h']]]
+  ['nearest_5ffilter_908',['NEAREST_FILTER',['../df/dba/texture_8h.html#a72dbc7c0fe29b994c0c36599ec8176fc',1,'texture.h']]]
 ];

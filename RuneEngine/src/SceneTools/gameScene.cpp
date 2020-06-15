@@ -128,6 +128,31 @@ void rune::GameScene::updateComponents()
     }
   }
 
+  //Prepare to render debug UI
+  ImGui_ImplOpenGL3_NewFrame();
+  ImGui_ImplGlfw_NewFrame();
+  ImGui::NewFrame();
+
+  ImGui::Begin("FPS");
+
+  ImGui::SetWindowSize(ImVec2(100, 50));
+  ImGui::SetWindowPos(ImVec2(0, 0));
+
+  if (ImGui::IsItemHovered())
+  {
+    ImGui::BeginTooltip();
+    ImGui::Text("This is the debug UI!");
+    ImGui::EndTooltip();
+  }
+
+  ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
+
+  ImGui::End();
+
+  //Draw the debug UI
+  ImGui::Render();
+  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
   rune::GameApplication::getWindow()->display();
 
 }
