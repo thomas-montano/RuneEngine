@@ -44,6 +44,9 @@ private:
   ShaderProgramSource ParseShader(const std::string& filePath);
   std::unordered_map<std::string, int> m_UniformLocationCache;
 
+  ///Retrieve the location of the uniform in the GPU
+  int getUniformLocation(const std::string& name);
+
 public:
   ///Default empty constructor.
   Shader();
@@ -54,13 +57,10 @@ public:
   ///Create a shader from a rune::ShaderProgramSource
   Shader(ShaderProgramSource);
 
-  void makeNewShader(ShaderProgramSource);
+  void makeNewShader(const std::string& filePath);
 
   ///Configure the shader to be active on the GPU, must be done before drawing something.
   void bind(void);
-
-  ///Retreive the location of the uniform in the GPU
-  int getUniformLocation(const std::string& name);
 
   ///Set a float shader uniform.
   void setUniform1f(const std::string& name, float value);
@@ -70,17 +70,90 @@ public:
   void setUniform4f(const std::string&name, float v0, float v1, float v2, float v3);
   ///Set an integer shader uniform.
   void setUniform1i(const std::string& name, int value);
-
-  ///Set a float shader uniform.
-  void setUniform1f(int uniformLocation, float value);
-  //Set a vec2 shader uniform
-  void setUniform2f(int uniformLocation, float v0, float v1);
-  ///Set a vec4 shader uniform.
-  void setUniform4f(int uniformLocation, float v0, float v1, float v2, float v3);
-  ///Set an integer shader uniform.
-  void setUniform1i(int uniformLocation, int value);
   
 };
 }
 
 #endif
+
+/**
+ * @page Shaders How To Make Your Own Shaders
+ * 
+ * Write up a vertex and fragment shader with the header #shader vertex or #shader fragment. The example code below details how this should be done.
+ * 
+ * You should then load this into a drawable component by first declaring a shader and then setting your GLSL code as active.
+ * 
+ * @code
+ * 
+ * rune::Shader mySprite;
+ * 
+ * mySprite.changeShader("path to your shader");
+ * 
+ * @endcode
+ *
+ * This will set up a new vertex and fragment shader to be used by the sprite object.
+ * 
+ * @code
+ * 
+ *#shader vertex
+ *#version 330 core
+
+  layout(location = 0) in vec2 aPos;
+  layout(location = 1) in vec4 aColor;
+  layout(location = 2) in vec2 aTexCoord;
+
+  uniform vec2 cameraPos = vec2(0, 0);
+  uniform float cameraZoom = 1;
+  uniform float rotation = 0;
+  uniform vec2 origin = vec2(0,0);
+  uniform float aspectRatio = 1;
+
+  out vec4 ourColor;
+  out vec2 TexCoord;
+
+  void main()
+  {
+
+    vec2 vertices = cameraZoom*aPos - cameraPos;
+
+    if(rotation != 0)
+    {
+      float angle = radians(rotation);\n"
+      mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));
+
+      vertices = vertices - (cameraZoom*origin - cameraPos);
+      vertices = rotationMatrix * vertices;
+      vertices = vertices + (cameraZoom*origin - cameraPos);
+    }
+
+    ourColor = aColor;
+    gl_Position = vec4(vertices,0,1);
+
+    TexCoord = aTexCoord;
+
+  }
+    
+    @endcode
+
+    Declare a fragment shader:
+
+    @code
+
+    #shader fragment
+    #version 330 core
+
+    "out vec4 FragColor;\n"
+
+    "in vec4 ourColor;\n"
+    "in vec2 TexCoord;\n"
+
+    "uniform sampler2D ourTexture;\n"
+
+    "void main()\n"
+    "{\n"
+      "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
+    "}\n");
+ * 
+ * @endcode
+ * 
+ */

@@ -10,6 +10,7 @@
 #define DRAWABLE_DEFINED
 
 #include "core.h"
+#include "shader.h"
 #include <iostream>
 #include <Math\vec2.h>
 #include <Renderer\RenderWindow.h>
@@ -20,6 +21,7 @@ class RUNE_ENGINE Drawable
 {
 
 public:
+  
   ///Draw the object to a render window.
   virtual inline void draw(rune::RenderWindow&) = 0;
 

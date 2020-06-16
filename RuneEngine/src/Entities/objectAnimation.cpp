@@ -1,6 +1,6 @@
 #include "objectAnimation.h"
 
-rune::ObjectAnimation::ObjectAnimation() : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0), m_animationSheet(nullptr)
+rune::ObjectAnimation::ObjectAnimation() : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0)
 {
 
 }
@@ -23,6 +23,11 @@ int rune::ObjectAnimation::getFrameRate(void)
 
     return m_frameRate;
 
+}
+
+bool rune::ObjectAnimation::isMirrored(void)
+{
+  return m_mirror;
 }
 
 /**
@@ -80,27 +85,23 @@ void rune::ObjectAnimation::setNumFrames(int numFrames)
 */
 int rune::ObjectAnimation::getNumFrames(void)
 {
-
-    return m_numFrames;
-
+  return m_numFrames;
 }
 
 /**
  * @param animationSheet The texture to be used as the sprite sheet.
 */
-void rune::ObjectAnimation::setSheet(Texture& animationSheet)
+void rune::ObjectAnimation::setSheet(std::string filePath)
 {
-
-    m_animationSheet = animationSheet;
-
+  m_animationSheet.loadFromFile(filePath);
 }
 
 /**
  * @return A pointer referencing the texture to be used as the sprite sheet.
 */
-rune::Texture rune::ObjectAnimation::getSheet(void)
+rune::Texture* rune::ObjectAnimation::getSheet(void)
 {
-    return m_animationSheet;
+  return &m_animationSheet;
 }
 
 /**
@@ -131,20 +132,4 @@ void rune::ObjectAnimation::incCurrentFrame()
         m_currentFrame = (m_currentFrame) % (m_numFrames);
     }
 
-}
-
-/**
- * @param fileName A string representing the file location of the sprite sheet.
-*/
-void rune::ObjectAnimation::setFile(std::string fileName)
-{
-    m_filePath = fileName;
-}
-
-/**
- * @return A string representing the file location of the sprite sheet.
-*/
-std::string rune::ObjectAnimation::getFile(void)
-{
-    return m_filePath;
 }

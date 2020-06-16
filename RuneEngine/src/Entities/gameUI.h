@@ -19,7 +19,7 @@
 
 namespace rune{
 
-class RUNE_ENGINE GameUI : public Drawable
+class RUNE_ENGINE GameUI// : public Drawable
 {
 private:
   Sprite m_uiObject;

@@ -11,6 +11,7 @@
 
 #include "core.h"
 #include "transform.h"
+#include <typeinfo>
 #include <vector>
 #include <Entities\component.h>
 #include <Renderer\renderWindow.h>
@@ -32,6 +33,27 @@ public:
   int getNumComponents(void);
   void instantiate(GameObject);
   rune::Component* getComponent(int index);
+
+  ///Locate components of the object based on data type
+  template<class classVariable>
+  classVariable* findComponent()
+  {
+
+    for(auto & objectComponent : objectComponents)
+    {
+
+      if (std::string(typeid(*objectComponent).name()) == std::string(typeid(classVariable).name()))
+      {
+
+        return dynamic_cast<classVariable*>(objectComponent);
+
+      }
+
+    }
+
+    return nullptr;
+
+  }
 
 };
 }

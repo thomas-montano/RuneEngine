@@ -77,21 +77,45 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef ANIMATION_CONTROLLER_H_DEFINED</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d2/d48/animationController_8h.html#acef107d1c5e586c4e9242f09d4916034">   12</a></span>&#160;<span class="preprocessor">#define ANIMATION_CONTROLLER_H_DEFINED</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html">   14</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../da/d42/classrune_1_1AnimationController.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/d42/classrune_1_1AnimationController.html">AnimationController</a></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/dd9/gameObject_8h.html">gameObject.h</a>&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/dcf/component_8h.html">component.h</a>&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d84/objectAnimation_8h.html">objectAnimation.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Renderer\sprite.h&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html">   21</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../da/d42/classrune_1_1AnimationController.html">   23</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../da/d42/classrune_1_1AnimationController.html">AnimationController</a> : <span class="keyword">public</span> <a class="code" href="../../da/daf/classrune_1_1Component.html">Component</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  std::unordered_map&lt;std::string, rune::ObjectAnimation&gt; m_animations;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">rune::Sprite</a>* spriteParent;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">void</span> start() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> update() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> playAnimation(std::string animationName);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> addAnimation(std::string animationName, <span class="keywordtype">int</span> frameWidth, <span class="keywordtype">int</span> numFrames, <span class="keywordtype">int</span> frameRate, std::string fileName);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassrune_1_1AnimationController_html"><div class="ttname"><a href="../../da/d42/classrune_1_1AnimationController.html">rune::AnimationController</a></div><div class="ttdoc">This class is used to animate a rune::GameObject.</div><div class="ttdef"><b>Definition:</b> animationController.h:16</div></div>
-<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:14</div></div>
+<div class="ttc" id="aclassrune_1_1Component_html"><div class="ttname"><a href="../../da/daf/classrune_1_1Component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:20</div></div>
+<div class="ttc" id="acomponent_8h_html"><div class="ttname"><a href="../../d6/dcf/component_8h.html">component.h</a></div></div>
+<div class="ttc" id="aclassrune_1_1AnimationController_html"><div class="ttname"><a href="../../da/d42/classrune_1_1AnimationController.html">rune::AnimationController</a></div><div class="ttdoc">This class is used to animate a rune::GameObject.</div><div class="ttdef"><b>Definition:</b> animationController.h:23</div></div>
+<div class="ttc" id="agameObject_8h_html"><div class="ttname"><a href="../../d2/dd9/gameObject_8h.html">gameObject.h</a></div></div>
+<div class="ttc" id="aobjectAnimation_8h_html"><div class="ttname"><a href="../../d5/d84/objectAnimation_8h.html">objectAnimation.h</a></div></div>
+<div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
+<div class="ttc" id="aclassrune_1_1Sprite_html"><div class="ttname"><a href="../../d1/d12/classrune_1_1Sprite.html">rune::Sprite</a></div><div class="ttdoc">A sprite that can be given a texture and animated.</div><div class="ttdef"><b>Definition:</b> sprite.h:23</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:21</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

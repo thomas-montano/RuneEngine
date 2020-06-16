@@ -22,7 +22,7 @@ namespace rune{
 class GameApplication;
 class SceneManager;
 
-class RUNE_ENGINE RectangleShape : public Drawable, public Component
+class RUNE_ENGINE RectangleShape : public rune::Component
 {
 
 private:
@@ -74,11 +74,9 @@ private:
   "};\n"
   );
 
-  int u_cameraPos, u_cameraZoom, u_rotation, u_origin, u_aspectRatio;
-
+  rune::Color m_fillColor;
   Shader rectangleShader;
   rune::Vec2 origin;
-  Color shapeColor;
 
   unsigned int indices[6] =
   {
@@ -90,20 +88,20 @@ private:
   unsigned int EBO;
   unsigned int VAO;
 
+  void setUpBuffers(void);
+
 public:
 
-  virtual void start();
-  virtual void update();
+  virtual void start() override;
+  virtual void update() override;
 
   virtual void draw(rune::RenderWindow&);
   
   RectangleShape(rune::Color newColor = rune::Color(255,255,255));
-
-  void setUpBuffers(void);
-
-  void setUpUniforms(void);
-
+  ///Set the color used to fill the rectangle.
   void setFillColor(rune::Color);
+  ///Change the active shader on the rune::RectangleShape to be something else.
+  void changeShader(const std::string& filePath);
 
 };
 }

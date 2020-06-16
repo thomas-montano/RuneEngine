@@ -30,7 +30,6 @@ private:
 
   rune::Clock m_animationClock;
 
-  std::string m_filePath;
   Texture m_animationSheet;
 
 public:
@@ -41,6 +40,9 @@ public:
 
   ///Get the frame rate for the animation.
   int getFrameRate(void);
+
+  ///Get whether or not the animation should be mirrored.
+  bool isMirrored(void);
 
   ///Set the width in pixels of each frame on the sprite sheet.
   void setFrameWidth(int frameWidth);
@@ -57,14 +59,14 @@ public:
   ///Set the number of frames the animation contains.
   void setNumFrames(int numFrames);
 
-  ///Get the number of frames the animtion contains.
+  ///Get the number of frames the animation contains.
   int getNumFrames(void);
 
   ///Set the sprite sheet of the animation from a texture object.
-  void setSheet(Texture& animationSheet);
+  void setSheet(std::string filePath);
 
   ///Get the sprite sheet of the animation.
-  Texture getSheet(void);
+  Texture* getSheet(void);
 
   ///Get the frame that the animation is currently on.
   int getCurrentFrame(void);
@@ -74,12 +76,6 @@ public:
 
   ///Tell the animation to go to the next frame
   void incCurrentFrame(void);
-
-  ///Set the file that the sprite sheet will be derived from
-  void setFile(std::string);
-  
-  ///Get the file location as a string
-  std::string getFile(void);
 
 };
 }

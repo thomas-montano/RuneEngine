@@ -8,10 +8,10 @@ void physics::updatePhysics(std::vector<physics::RigidBody*> objects, double dT)
 {
 
   //Update the positions of all objects
-  for(int i = 0; i < objects.size(); i++)
+  for(auto & object : objects)
   {
-    objects[i]->updatePosition(dT);
-    objects[i]->addVelocity(objects[i]->getGravity());
+    object->updatePosition(dT);
+    object->addVelocity(object->getGravity());
   }
 
   //Sort the objects by vertical position so the top ones are checked first
@@ -56,19 +56,19 @@ void physics::updatePhysics(std::vector<physics::RigidBody*> objects, double dT)
   //Resolve the collision and apply physics
   resolveCollisions(definiteCollisions);  
 
-  for(int i = 0; i < objects.size();i++)
+  for(auto & object : objects)
   {
-    objects[i]->clearCollisions();
+    object->clearCollisions();
   }
 
   //Tell the objects about the collisions they've been involved with
-  for(int i = 0; i < definiteCollisions.size();i++)
+  for(auto & definiteCollision : definiteCollisions)
   {
-    physics::collision oppositeCollision = definiteCollisions[i];
+    physics::collision oppositeCollision = definiteCollision;
     oppositeCollision.normalVector *= -1;
 
-    definiteCollisions[i].objectOne->addCollision(oppositeCollision);
-    definiteCollisions[i].objectTwo->addCollision(definiteCollisions[i]);
+    definiteCollision.objectOne->addCollision(oppositeCollision);
+    definiteCollision.objectTwo->addCollision(definiteCollision);
   }
 
 }
@@ -103,21 +103,21 @@ std::vector<physics::collision> physics::broadPhaseCollisions(std::vector<RigidB
       //Default the collision to true
       objectsCollided = true;
 
-      //If there is any x axis seperating objects, no collision
+      //If there is any x axis separating objects, no collision
       if(box1.max.x < box2.min.x  ||
           box1.min.x > box2.max.x )
       {
         objectsCollided = false;
       }
 
-      //If there is any y axis seperating objects, no collision
+      //If there is any y axis separating objects, no collision
       if(box1.max.y < box2.min.y  ||
           box1.min.y > box2.max.y )
       {
         objectsCollided = false;
       }
 
-      //If no seperating axis can be found, the objects are colliding
+      //If no separating axis can be found, the objects are colliding
       if(objectsCollided == true)
       {
 
@@ -165,7 +165,7 @@ std::vector<physics::collision> physics::broadPhaseCollisions(std::vector<RigidB
 
 /**
  * @param possibleCollisions Collision manifolds for AABB's that were found to be colliding
- * @return Collision manifols that have been found to be definitely colliding.
+ * @return Collision manifolds that have been found to be definitely colliding.
 */
 std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<collision> possibleCollisions)
 {
@@ -174,14 +174,14 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
   
   
   //Run through all possible collisions
-  for(int i = 0; i < possibleCollisions.size();i++)
+  for(auto & possibleCollision : possibleCollisions)
   {
     collision currentCollision;
     rune::Vec2 normals[4];
     double penetrations[4] = {0.0};
 
-    RigidBody object1 = *possibleCollisions[i].objectOne;
-    RigidBody object2 = *possibleCollisions[i].objectTwo;
+    RigidBody object1 = *possibleCollision.objectOne;
+    RigidBody object2 = *possibleCollision.objectTwo;
     
     //Min and max projections of the boxes
     double minProjBox1;
@@ -238,7 +238,7 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
 
       }
 
-      //Determine if there is a seperation on the current axis
+      //Determine if there is a separation on the current axis
       if(minProjBox2 > maxProjBox1 || minProjBox1 > maxProjBox2)
       {
         axisSeperation[j] = true;
@@ -283,8 +283,8 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
         !axisSeperation[3])
       {
         //Add the current objects to the current collision
-        currentCollision.objectOne = possibleCollisions[i].objectOne;
-        currentCollision.objectTwo = possibleCollisions[i].objectTwo;
+        currentCollision.objectOne = possibleCollision.objectOne;
+        currentCollision.objectTwo = possibleCollision.objectTwo;
 
         //Add the current collision to the list of definite collisions
         definiteCollisions.push_back(currentCollision);
@@ -303,24 +303,24 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
 void physics::resolveCollisions(std::vector<physics::collision> collisions)
 {
 
-  for(int i = 0; i < collisions.size();i++)
+  for(auto & collision : collisions)
   {
 
-    RigidBody* object1 = collisions[i].objectOne;
-    RigidBody* object2 = collisions[i].objectTwo;
+    RigidBody* object1 = collision.objectOne;
+    RigidBody* object2 = collision.objectTwo;
 
     rune::Vec2 relativeV = rune::Vec2(object2->getVelocity().x - object1->getVelocity().x, object2->getVelocity().y - object1->getVelocity().y);
-    rune::Vec2 tangent = rune::Vec2(relativeV.x - rune::dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.x, relativeV.y - dotProduct(relativeV,collisions[i].normalVector) * collisions[i].normalVector.y);
+    rune::Vec2 tangent = rune::Vec2(relativeV.x - rune::dotProduct(relativeV,collision.normalVector) * collision.normalVector.x, relativeV.y - dotProduct(relativeV,collision.normalVector) * collision.normalVector.y);
     
     tangent = rune::normalize(tangent);
 
-    double velAlongNormal = rune::dotProduct(relativeV, collisions[i].normalVector);
+    double velAlongNormal = rune::dotProduct(relativeV, collision.normalVector);
 
     if(velAlongNormal > 0)
     {
 
       //Move the objects out of each other
-      positionalCorrection(object1,object2,collisions[i].depth, collisions[i].normalVector);
+      positionalCorrection(object1,object2,collision.depth, collision.normalVector);
 
       double e = std::min(object1->getRestitution(),object2->getRestitution()); // Restitution factor
 
@@ -350,7 +350,7 @@ void physics::resolveCollisions(std::vector<physics::collision> collisions)
       object2->addVelocity(rune::Vec2(object2->getInvMass()*frictionImpulse.x,object2->getInvMass()*frictionImpulse.y));
 
       //Push objects away from each other
-      rune::Vec2 impulse = rune::Vec2(j * collisions[i].normalVector.x, j * collisions[i].normalVector.y);
+      rune::Vec2 impulse = rune::Vec2(j * collision.normalVector.x, j * collision.normalVector.y);
       object1->addVelocity(rune::Vec2(-1*object1->getInvMass()*impulse.x,-1*object1->getInvMass()*impulse.y));
       object2->addVelocity(rune::Vec2(object2->getInvMass()*impulse.x,object2->getInvMass()*impulse.y));
 

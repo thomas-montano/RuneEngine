@@ -1,4 +1,5 @@
 #include "gameObject.h"
+#include <iostream>
 
 /*rune::GameObject::GameObject()
 {

@@ -75,14 +75,11 @@ private:
     "{\n"
       "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
     "}\n");
-  
-  int u_cameraPos, u_cameraZoom, u_rotation, u_origin, u_aspectRatio;
 
   Texture spriteTexture;
-  Shader spriteShader;
 
-  unsigned int indices[6] = 
-  {  
+  unsigned int indices[6] =
+  {
       0, 1, 3, // first triangle
       1, 2, 3  // second triangle
   };
@@ -91,6 +88,8 @@ private:
   unsigned int EBO;
   unsigned int VAO;
 
+  Shader objectShader;
+
 public:
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
@@ -98,17 +97,21 @@ public:
   /// Use NEAREST_FILTER for pixel art sprites. LINEAR_FILTER is used by default.
   Sprite(std::string spriteLocation, unsigned int drawMode = LINEAR_FILTER);
   /// Virtual start method being overloaded
-  virtual void start();
+  virtual void start() override;
   /// Virtual update method being overloaded
-  virtual void update();
+  virtual void update() override;
+  virtual void fixedUpdate()
+  {
+    std::cout << "Cast worked!" << std::endl;
+  }
   ///Initialize opengl for the sprite.
   void setUpBuffers(void);
-  ///Initialize uniforms
-  void setUpUniforms(void);
   ///Draw overload so that sprite can be displayed to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.
   void setTexture(std::string texture);
+  ///Set a new texture as active for the sprite
+  void changeShader(const std::string& filePath);
 
 };
 

@@ -10,10 +10,11 @@
 #include <SceneTools\sceneManager.h>
 
 rune::RectangleShape::RectangleShape(rune::Color newColor) 
-: rectangleShader(defaultShader), origin(rune::Vec2(0,0)), shapeColor(newColor)
+: rectangleShader(defaultShader), origin(rune::Vec2(0,0))
 {
+  m_fillColor = newColor;
+
   setUpBuffers();
-  setUpUniforms();
 }
 
 
@@ -42,17 +43,6 @@ void rune::RectangleShape::setUpBuffers()
 
 }
 
-void rune::RectangleShape::setUpUniforms()
-{
-
-  u_cameraPos = rectangleShader.getUniformLocation("cameraPos");
-  u_cameraZoom = rectangleShader.getUniformLocation("cameraZoom");
-  u_rotation = rectangleShader.getUniformLocation("rotation");
-  u_origin = rectangleShader.getUniformLocation("origin");
-  u_aspectRatio = rectangleShader.getUniformLocation("aspectRatio");
-
-}
-
 void rune::RectangleShape::start()
 {
 
@@ -61,7 +51,7 @@ void rune::RectangleShape::start()
 void rune::RectangleShape::update()
 {
 
-  rune::GameApplication::getWindow()->draw(*this);
+  draw(*rune::GameApplication::getWindow());
 
 }
 
@@ -82,13 +72,13 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   double zoomLevel = rune::Camera::getZoom();
 
   //Set up camera data for shader
-  rectangleShader.setUniform2f(u_cameraPos, zoomLevel * cameraPos.x / (0.5*windowSize.x), zoomLevel * cameraPos.y / (0.5*windowSize.y));
-  rectangleShader.setUniform1f(u_cameraZoom,zoomLevel);
+  rectangleShader.setUniform2f("cameraPos", zoomLevel * cameraPos.x / (0.5*windowSize.x), zoomLevel * cameraPos.y / (0.5*windowSize.y));
+  rectangleShader.setUniform1f("cameraZoom",zoomLevel);
 
   //Set up rotation information
-  rectangleShader.setUniform1f(u_rotation, parentObject->transform.getRotation().z);
-  rectangleShader.setUniform1f(u_aspectRatio, rune::GameApplication::getWindow()->getSize().x / rune::GameApplication::getWindow()->getSize().y);
-  rectangleShader.setUniform2f(u_origin, (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
+  rectangleShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
+  rectangleShader.setUniform1f("aspectRatio", rune::GameApplication::getWindow()->getSize().x / rune::GameApplication::getWindow()->getSize().y);
+  rectangleShader.setUniform2f("origin", (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
 
   rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),
     (position.x) / (0.5*windowSize.x), (position.y) / (0.5*windowSize.y));
@@ -96,10 +86,10 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   float drawVertices[32] =
   {
     // positions                              // colors and alpha
-    static_cast<float>(drawMatrix[0][0]),   drawMatrix[0][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
-    drawMatrix[0][0],   drawMatrix[1][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
-    drawMatrix[1][0],   drawMatrix[1][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
-    drawMatrix[1][0],   drawMatrix[0][1],     shapeColor.red / 255.0, shapeColor.green / 255.0, shapeColor.blue / 255.0, shapeColor.alpha / 255.0,
+    drawMatrix[0][0],   drawMatrix[0][1],     m_fillColor.red / 255.0, m_fillColor.green / 255.0, m_fillColor.blue / 255.0, m_fillColor.alpha / 255.0,
+    drawMatrix[0][0],   drawMatrix[1][1],     m_fillColor.red / 255.0, m_fillColor.green / 255.0, m_fillColor.blue / 255.0, m_fillColor.alpha / 255.0,
+    drawMatrix[1][0],   drawMatrix[1][1],     m_fillColor.red / 255.0, m_fillColor.green / 255.0, m_fillColor.blue / 255.0, m_fillColor.alpha / 255.0,
+    drawMatrix[1][0],   drawMatrix[0][1],     m_fillColor.red / 255.0, m_fillColor.green / 255.0, m_fillColor.blue / 255.0, m_fillColor.alpha / 255.0,
   };
 
   glBindVertexArray(VAO);
@@ -113,5 +103,12 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
 
 void rune::RectangleShape::setFillColor(rune::Color newColor)
 {
-  shapeColor = newColor;
+  m_fillColor = newColor;
+}
+
+void rune::RectangleShape::changeShader(const std::string& filePath)
+{
+
+  rectangleShader.makeNewShader(filePath);
+
 }
