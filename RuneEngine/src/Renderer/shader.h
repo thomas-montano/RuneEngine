@@ -27,7 +27,10 @@ struct RUNE_ENGINE ShaderProgramSource
 
   ///The fragment shader code to be compiled.
   std::string FragmentSource;
-
+  /**
+   * \param vertex The code to be used for the vertex shader.
+   * \param frag The code to be used for the fragment shader.
+   */
   ShaderProgramSource(std::string vertex, std::string frag) : VertexSource(vertex), FragmentSource(frag)
   {
   }
@@ -79,6 +82,7 @@ public:
 /**
  * @page Shaders How To Make Your Own Shaders
  * 
+ * Make sure your vertex and fragment shaders are declared in the same file. The function will separate them for you.
  * Write up a vertex and fragment shader with the header #shader vertex or #shader fragment. The example code below details how this should be done.
  * 
  * You should then load this into a drawable component by first declaring a shader and then setting your GLSL code as active.

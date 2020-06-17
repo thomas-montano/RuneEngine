@@ -50,6 +50,7 @@ protected:
   std::vector<GameUI*> m_stateUI;
 
 public:
+  ///Default constructor to create a new rune::GameScene
   GameScene();
   ///Initializes the state
   virtual void doInit(void);
@@ -75,7 +76,7 @@ public:
   virtual bool getQuitFlag(void);
   bool isActive(void);
   void changeState(int nextState);
-
+  ///Place a new rune::GameObject into the scene.
   void addObjectToScene(rune::GameObject);
 
 };

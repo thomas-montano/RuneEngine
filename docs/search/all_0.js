@@ -15,7 +15,7 @@ var searchData=
   ['angleofrotation_12',['angleOfRotation',['../d0/d74/structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2',1,'physics::body']]],
   ['angularvelocity_13',['angularVelocity',['../d0/d74/structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9',1,'physics::body']]],
   ['animation_5fcontroller_5fh_5fdefined_14',['ANIMATION_CONTROLLER_H_DEFINED',['../d2/d48/animationController_8h.html#acef107d1c5e586c4e9242f09d4916034',1,'animationController.h']]],
-  ['animationcontroller_15',['AnimationController',['../da/d42/classrune_1_1AnimationController.html',1,'rune']]],
+  ['animationcontroller_15',['AnimationController',['../da/d42/classrune_1_1AnimationController.html',1,'rune::AnimationController'],['../da/d42/classrune_1_1AnimationController.html#a9bea1c6c6bea929c5659942114d7d0b9',1,'rune::AnimationController::AnimationController()']]],
   ['animationcontroller_2ecpp_16',['animationController.cpp',['../d1/d68/animationController_8cpp.html',1,'']]],
   ['animationcontroller_2eh_17',['animationController.h',['../d2/d48/animationController_8h.html',1,'']]],
   ['apostrophe_18',['APOSTROPHE',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]]

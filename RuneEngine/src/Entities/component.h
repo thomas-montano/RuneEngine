@@ -23,16 +23,14 @@ protected:
   GameObject* parentObject = nullptr;
 
 public:
+  ///A function for each component that is called once at the beginning of the components lifetime.
   virtual void start();
-  
+  ///A function for each component that is called every frame.
   virtual void update();
-  
+  ///A function for each component that is called once every physics update.
   virtual void fixedUpdate();
-
-  void setParent(GameObject* newParent)
-  {
-    parentObject = newParent;
-  }
+  ///A function to set the pointer to the parent rune::GameObject for each component.
+  void setParent(GameObject* newParent);
   
 };
 }

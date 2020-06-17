@@ -15,8 +15,3 @@ rune::Color::Color(double r, double g , double b , double a)
 {
   
 }
-
-rune::Color::Color() : red(255), green(255), blue(255), alpha(255)
-{
-
-}

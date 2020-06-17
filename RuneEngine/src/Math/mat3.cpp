@@ -240,7 +240,7 @@ rune::Mat3& rune::Mat3::operator*=(const rune::Mat3& right)
 
 /**
  * \param right The matrix to multiply by.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Mat3& rune::Mat3::operator*=(const double right)
 {
@@ -362,9 +362,9 @@ rune::Vec3 rune::Mat3::operator*(const rune::Vec3& vec)
 /**
  * @memberof rune::Mat3
  * 
- * \param scalar
- * \param mat
- * \return 
+ * \param scalar The scalar value to scale the matrix by.
+ * \param mat The rune::Mat3 to be scaled.
+ * \return An element wise scaling.
  */
 rune::Mat3 rune::operator*(double scalar, rune::Mat3 mat)
 {
@@ -428,7 +428,7 @@ rune::Mat3& rune::Mat3::operator/=(const Mat3& right)
 
 /**
  * \param right The scalar to be divided by.
- * \return An elementwise division.
+ * \return An element wise division.
  */
 rune::Mat3& rune::Mat3::operator/=(const double right)
 {

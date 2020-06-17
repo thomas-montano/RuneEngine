@@ -27,7 +27,7 @@ private:
   rune::Vec3 rotation;
 
 public:
-
+  ///Default constructor
   Transform(rune::Vec3 newPosition = rune::Vec3(0,0,0), rune::Vec3 newScale = rune::Vec3(1,1,1), rune::Vec3 newRotation = rune::Vec3(0,0,0));
 
   void setScale(rune::Vec3);

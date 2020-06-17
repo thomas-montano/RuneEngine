@@ -33,7 +33,7 @@ private:
   Texture m_animationSheet;
 
 public:
-  
+  ///Default constructor to create a new animation for a rune::GameObject.
   ObjectAnimation();
   ///Set the frame rate for the animation.
   void setFrameRate(int frameRate);

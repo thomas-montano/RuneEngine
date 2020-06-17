@@ -24,6 +24,7 @@ private:
   Vec2 cameraSize;
   static double zoomFactor;
 public:
+  ///Default constructor to create a Camera object.
   Camera(void);
   ///Set the zoom factor of the camera.
   void setZoom(double);

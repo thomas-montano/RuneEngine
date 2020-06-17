@@ -13,6 +13,7 @@
  * firstLevel.h:
  * @code
  * 
+ * 
  * #ifndef FIRSTLEVEL_H_INCLUDED
  * #define FIRSTLEVEL_H_INCLUDED
  * 
@@ -44,6 +45,10 @@
  * Load that scene into the game application:
  * 
  * @code 
+ * 
+ * //Add this pragma comment to disable the console if you haven't already done so.
+ * #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+ * 
  * #include <RuneEngine.h>
  * #include "firstLevel.h"
  * #include <iostream>

@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.6.0-alpha</span>
+   &#160;<span id="projectnumber">Version 0.7.5-alpha</span>
    </div>
-   <div id="projectbrief">Documentation for how to make games using Rune.</div>
+   <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
  </tr>
  </tbody>
@@ -93,7 +93,10 @@ How to Start a New Project</h1>
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Load that scene into the game application:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</span></div>
+<div class="fragment"><div class="line"><span class="comment">//Add this pragma comment to disable the console if you haven&#39;t already done so.</span></div>
+<div class="line"><span class="preprocessor">#pragma comment(linker, &quot;/SUBSYSTEM:windows /ENTRY:mainCRTStartup&quot;)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;firstLevel.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"> </div>

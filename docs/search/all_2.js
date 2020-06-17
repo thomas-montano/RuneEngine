@@ -22,7 +22,7 @@ var searchData=
   ['collider2d_2eh_49',['collider2d.h',['../d0/d1d/collider2d_8h.html',1,'']]],
   ['collider2d_5fh_5fdefined_50',['COLLIDER2D_H_DEFINED',['../d0/d1d/collider2d_8h.html#ac115db8938939330b5437be8ffddab45',1,'collider2d.h']]],
   ['collision_51',['collision',['../d1/d91/structphysics_1_1collision.html',1,'physics::collision'],['../d1/d91/structphysics_1_1collision.html#ac38e2791f2cd46b76b048adf2509f591',1,'physics::collision::collision()']]],
-  ['color_52',['Color',['../d8/d25/classrune_1_1Color.html',1,'rune::Color'],['../d8/d25/classrune_1_1Color.html#a322e6132a4807d89e0539c7139175969',1,'rune::Color::Color(double, double, double, double alpha=1)'],['../d8/d25/classrune_1_1Color.html#a0f0b22d0e2732ff9579a79c10a837700',1,'rune::Color::Color()']]],
+  ['color_52',['Color',['../d8/d25/classrune_1_1Color.html',1,'rune::Color'],['../d8/d25/classrune_1_1Color.html#a4f08940352bbbba911ad88f95ca9ab99',1,'rune::Color::Color()']]],
   ['color_2ecpp_53',['color.cpp',['../d3/d03/color_8cpp.html',1,'']]],
   ['color_2eh_54',['color.h',['../da/dec/color_8h.html',1,'']]],
   ['color_5fh_5fdefined_55',['COLOR_H_DEFINED',['../da/dec/color_8h.html#a747ee153ecfe985beed5979b5a90c5d0',1,'color.h']]],
@@ -38,6 +38,6 @@ var searchData=
   ['contactvectorbox2_65',['contactVectorBox2',['../d1/d91/structphysics_1_1collision.html#af388948ff4ee64dec1f0f758b2276fdd',1,'physics::collision']]],
   ['core_2eh_66',['core.h',['../d5/dc4/core_8h.html',1,'']]],
   ['createbutton_67',['createButton',['../d0/d2a/classrune_1_1GameUI.html#a63fbbe173e4acc6e45437804bca8ccee',1,'rune::GameUI']]],
-  ['crossproduct_68',['crossProduct',['../dd/dca/classrune_1_1Vec2.html#ad983757dece7c6119eaa394eb012307d',1,'rune::Vec2::crossProduct()'],['../d5/d19/classrune_1_1Vec3.html#a7d50c9a3705049c5a83ea65d391882b9',1,'rune::Vec3::crossProduct()']]],
+  ['crossproduct_68',['crossProduct',['../dd/dca/classrune_1_1Vec2.html#a9b679373193b8b1e64e8de399f58f3da',1,'rune::Vec2::crossProduct()'],['../d5/d19/classrune_1_1Vec3.html#aec83decc4e51c877f9b7accf6a558d6a',1,'rune::Vec3::crossProduct()'],['../d3/d30/namespacerune.html#a4e528c70ebb78feea20024d774359802',1,'rune::crossProduct(rune::Vec2 vec1, rune::Vec2 vec2)'],['../d3/d30/namespacerune.html#ad5b699ccf39d830c03a5106d1df7bd37',1,'rune::crossProduct(rune::Vec3, rune::Vec3)']]],
   ['cyan_69',['Cyan',['../d8/d25/classrune_1_1Color.html#aec07aad2b13baee3ed11ab90ffdf75fb',1,'rune::Color']]]
 ];

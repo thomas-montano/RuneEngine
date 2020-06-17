@@ -35,7 +35,7 @@ public:
   ///Overload of addition operator.
   Vec2 operator+ (const Vec2& right);
 
-  ///Overload of mutiplication operator.
+  ///Overload of multiplication operator.
   Vec2 operator* (const Vec2& right);
 
   ///Overload of division operator.
@@ -53,7 +53,7 @@ public:
   Vec2& operator*=(const Vec2& right);
   ///Overload of *= operator for a scalar multiplier.
   Vec2& operator*=(const double right);
-  ///Overload of muliplication operator for a scalar on the right.
+
   Vec2 operator* (double scalar);
 
   ///Overload of comparator operator.
@@ -66,35 +66,29 @@ public:
 ///Overload of division operator
 RUNE_ENGINE Vec2 operator/ (double scalar, Vec2 vec);
 
-/**
- * @memberof rune::Vec2
- * @brief Dot product calculation of two vectors.
- */
 RUNE_ENGINE double dotProduct(rune::Vec2 vector1, rune::Vec2 vector2);
 
 /**
  * @memberof rune::Vec2
- * @brief Find the vector normal to a surface 
+ * @param axis The axis that is used to find the normal.
+ * @brief Find the left handed vector normal to a surface 
+ * @return The left handed vector that is normal to the provided surface.
  */
 RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 axis);
 
 /**
  * @memberof rune::Vec2
+ * @param vec The vector to be normalized.
  * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
+ * @return A vector in the same direction with magnitude of 1.
  */
-RUNE_ENGINE rune::Vec2 normalize(rune::Vec2);
+RUNE_ENGINE rune::Vec2 normalize(rune::Vec2 vec);
 
-/**
- * @memberof rune::Vec2
- * @brief Cross product of two vectors.
- */
-RUNE_ENGINE double crossProduct(rune::Vec2, rune::Vec2);
+RUNE_ENGINE double crossProduct(rune::Vec2 vec1, rune::Vec2 vec2);
 
-///Overload of muliplication operator for a scalar on the left.
+///Overload of multiplication operator for a scalar on the left.
 RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 mat);
 
-///Overload of stream operator for printing.
-/// @memberof rune::Vec2
 RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const rune::Vec2& vector);
 
 }

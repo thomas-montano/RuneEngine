@@ -116,6 +116,9 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
 }
 
+/**
+ * \param texture The file path to the texture that is to be loaded onto the sprite.
+ */
 void rune::Sprite::setTexture(std::string texture)
 {
 
@@ -123,6 +126,9 @@ void rune::Sprite::setTexture(std::string texture)
 
 }
 
+/**
+ * \param filePath The filepath to the GLSL code that should be compiled and set as the active shader.
+ */
 void rune::Sprite::changeShader(const std::string& filePath)
 {
 

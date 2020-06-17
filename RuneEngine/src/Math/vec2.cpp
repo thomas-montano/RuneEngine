@@ -11,7 +11,8 @@ rune::Vec2::Vec2(double newX, double newY)
   y = newY;
 }
 
-///@memberof Vec2
+///@memberof rune::Vec2
+///Stream operator overloading so that vectors can be printed to the console.
 std::ostream& rune::operator<<(std::ostream& os, const rune::Vec2& vector)
 {
 
@@ -23,7 +24,7 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Vec2& vector)
 
 /**
  * \param right The vector to be subtracter.
- * \return A memberwise subtraction.
+ * \return A member wise subtraction.
  */
 rune::Vec2 rune::Vec2::operator -(const rune::Vec2& right)
 {
@@ -32,6 +33,9 @@ rune::Vec2 rune::Vec2::operator -(const rune::Vec2& right)
 
 }
 
+/**
+ * \return The member wise negative of the vector.
+ */
 rune::Vec2 rune::Vec2::operator-()
 {
   return rune::Vec2(-1*this->x,-1*this->y);
@@ -39,7 +43,7 @@ rune::Vec2 rune::Vec2::operator-()
 
 /**
  * \param right The vector to be added.
- * \return A memberwise addition.
+ * \return A member wise addition.
  */
 rune::Vec2 rune::Vec2::operator +(const rune::Vec2& right)
 {
@@ -50,7 +54,7 @@ rune::Vec2 rune::Vec2::operator +(const rune::Vec2& right)
 
 /**
  * \param right The vector to multiply by.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec2 rune::Vec2::operator *(const rune::Vec2& right)
 {
@@ -61,7 +65,7 @@ rune::Vec2 rune::Vec2::operator *(const rune::Vec2& right)
 
 /**
  * \param right The vector to divide by.
- * \return A memberwise division.
+ * \return A member wise division.
  */
 rune::Vec2 rune::Vec2::operator /(const rune::Vec2& right)
 {
@@ -72,7 +76,7 @@ rune::Vec2 rune::Vec2::operator /(const rune::Vec2& right)
 
 /**
  * \param right The vector to be subtracted.
- * \return A memberwise subtraction.
+ * \return A member wise subtraction.
  */
 rune::Vec2& rune::Vec2::operator-=(const rune::Vec2& right)
 {
@@ -85,7 +89,7 @@ rune::Vec2& rune::Vec2::operator-=(const rune::Vec2& right)
 
 /**
  * \param right The vector to be added.
- * \return A memberwise addition.
+ * \return A member wise addition.
  */
 rune::Vec2& rune::Vec2::operator+=(const rune::Vec2& right)
 {
@@ -98,7 +102,7 @@ rune::Vec2& rune::Vec2::operator+=(const rune::Vec2& right)
 
 /**
  * \param right The vector to be multiplied by.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec2& rune::Vec2::operator*=(const rune::Vec2& right)
 {
@@ -110,7 +114,7 @@ rune::Vec2& rune::Vec2::operator*=(const rune::Vec2& right)
 
 /**
  * \param right The scalar to be multiplied by.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec2& rune::Vec2::operator*=(const double right)
 {
@@ -123,7 +127,7 @@ rune::Vec2& rune::Vec2::operator*=(const double right)
 
 /**
  * \param right The vector to be compared to.
- * \return Whether or not the two vectors are memberwise equivalent.
+ * \return Whether or not the two vectors are member wise equivalent.
  */
 bool rune::Vec2::operator==(const rune::Vec2& right)
 {
@@ -139,7 +143,7 @@ bool rune::Vec2::operator==(const rune::Vec2& right)
 
 /**
  * \param right The vector to be compared to.
- * \return Whether or not the two vectors are memberwise unequivalent.
+ * \return Whether or not the two vectors are member wise inequivalent.
  */
 bool rune::Vec2::operator!=(const rune::Vec2& right)
 {
@@ -158,7 +162,7 @@ bool rune::Vec2::operator!=(const rune::Vec2& right)
  * @memberof Vec2
  * \param scalar The scalar to be multiplied with.
  * \param vec The vector to be multiplied.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec2 rune::operator* (double scalar, rune::Vec2 vec)
 {
@@ -168,10 +172,9 @@ rune::Vec2 rune::operator* (double scalar, rune::Vec2 vec)
 }
 
 /**
- * @memberof Vec2
  * \param scalar The scalar to be multiplied with.
  * \param vec The vector to be multiplied.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec2 rune::Vec2::operator* (double scalar)
 {
@@ -183,6 +186,10 @@ rune::Vec2 rune::operator/ (double scalar, rune::Vec2 vec)
   return rune::Vec2(vec.x / scalar, vec.y / scalar);
 }
 
+/**
+ * \param scalar The scalar to be divided by.
+ * \return A member wise division by the scalar.
+ */
 rune::Vec2 rune::Vec2::operator/ (double scalar)
 {
   return rune::Vec2(this->x/scalar,this->y/scalar);
@@ -217,6 +224,7 @@ rune::Vec2 rune::findNormal(rune::Vec2 axis)
 }
 
 /**
+ * @memberof rune::Vec2
  * @param vector Vector that should be normalized.
  * @return Vector in the direction of vector but with magnitude of 1.
 */
@@ -227,12 +235,12 @@ rune::Vec2 rune::normalize(rune::Vec2 vector)
 }
 
 /**
- * 
- * @param vector1 The first vector. 
- * @param vector2 The second vector.
+ * @memberof rune::Vec2
+ * @param vec1 The first vector. 
+ * @param vec2 The second vector.
  * @return The result of the cross product.
  */
-double rune::crossProduct(rune::Vec2 vector1, rune::Vec2 vector2)
+double rune::crossProduct(rune::Vec2 vec1, rune::Vec2 vec2)
 {
-  return vector1.x * vector2.y - vector1.y * vector2.x;
+  return vec1.x * vec2.y - vec1.y * vec2.x;
 }

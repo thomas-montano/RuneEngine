@@ -6,7 +6,7 @@ double rune::GameApplication::deltaTime = 0.0;
 int rune::GameApplication::frameRate = 0;
 
 /**
- * @param 
+ * @param title The title for the window to be created.
  * @param updateRate How many times per second the game will run the main update loop.
  */
 rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title), m_currentScene(nullptr)

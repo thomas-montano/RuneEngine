@@ -27,8 +27,8 @@ public:
   ///The Opacity Component.
   unsigned char alpha;
 
-  Color(double, double, double, double alpha = 1);
-  Color();
+  ///Default constructor that sets the default color to be white.
+  Color(double red = 255, double green = 255, double blue = 255, double alpha = 255);
 
   ///Red predefined color.
   static Color Red;

@@ -1,6 +1,12 @@
 #include "animationController.h"
 
 
+rune::AnimationController::AnimationController()
+  : spriteParent(nullptr)
+{
+
+}
+
 void rune::AnimationController::start()
 {
 
@@ -24,11 +30,11 @@ void rune::AnimationController::playAnimation(std::string animationName)
 
     if(m_animations[animationName].isMirrored())
     {
-      //m_objectSprite.setTextureRect(IntRect((currentAnimation->getCurrentFrame() * currentAnimation->getFrameWidth()),0,currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y));
+      //m_objectSprite.setTextureRect((currentAnimation->getCurrentFrame() * currentAnimation->getFrameWidth()),0,currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y);
     }
     else
     {
-      //m_objectSprite.setTextureRect(IntRect(((currentAnimation->getCurrentFrame()+1) * currentAnimation->getFrameWidth()),0,-currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y));
+      //m_objectSprite.setTextureRect(((currentAnimation->getCurrentFrame()+1) * currentAnimation->getFrameWidth()),0,-currentAnimation->getFrameWidth(), m_objectRigidBody.getBoundingBox().max.y-m_objectRigidBody.getBoundingBox().min.y);
     }
 
     m_animations[animationName].incCurrentFrame();

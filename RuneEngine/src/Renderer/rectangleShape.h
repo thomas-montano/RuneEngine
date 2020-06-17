@@ -94,13 +94,16 @@ public:
 
   virtual void start() override;
   virtual void update() override;
-
+  ///The draw call for rendering the shape to the screen.
   virtual void draw(rune::RenderWindow&);
-  
-  RectangleShape(rune::Color newColor = rune::Color(255,255,255));
+  ///Default constructor that will create a white rectangle by default.
+  ///@param newColor The color that should be used to draw the rectangle.
+  RectangleShape(rune::Color newColor = rune::Color::White);
   ///Set the color used to fill the rectangle.
-  void setFillColor(rune::Color);
+  ///@param newFillColor the new color that should be used to draw the rectangle.
+  void setFillColor(rune::Color newFillColor);
   ///Change the active shader on the rune::RectangleShape to be something else.
+  ///@param filePath The shader code to be loaded onto the GPU.
   void changeShader(const std::string& filePath);
 
 };

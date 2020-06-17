@@ -8,6 +8,9 @@ rune::Shader::Shader() : m_shaderID(0)
 
 }
 
+/**
+ * \param source A rune::ShaderProgramSource that should be loaded onto the GPU and used as the active shader.
+ */
 rune::Shader::Shader(ShaderProgramSource source)
 {
 
@@ -25,6 +28,9 @@ rune::Shader::Shader(const std::string& filePath)
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 }
 
+/**
+ * \param filePath The file path to the GLSL code that should be loaded onto the GPU.
+ */
 void rune::Shader::makeNewShader(const std::string& filePath)
 {
   ShaderProgramSource source = ParseShader(filePath.c_str());
@@ -140,6 +146,7 @@ void rune::Shader::bind()
 }
 
 /**
+ * @param name The uniform to be accessed and modified.
  * @return The id for the OpenGL uniform specified.
 */
 int rune::Shader::getUniformLocation(const std::string& name)
@@ -169,6 +176,11 @@ void rune::Shader::setUniform1f(const std::string& name, float value)
   glUniform1f(getUniformLocation(name), value);
 }
 
+/**
+ * \param name The name of the vec2 to be modified.
+ * \param v0 The x coordinate of the vector.
+ * \param v1 The y coordinate of the vector.
+ */
 void rune::Shader::setUniform2f(const std::string& name, float v0, float v1)
 {
   glUniform2f(getUniformLocation(name), v0, v1);

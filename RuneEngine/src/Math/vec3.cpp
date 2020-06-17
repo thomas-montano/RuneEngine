@@ -2,12 +2,20 @@
 #include "vec2.h"
 #include <cmath>
 
+/**
+ * \param newX The new X coordinate for the vector.
+ * \param newY The new Y coordinate for the vector.
+ * \param newZ The new Z coordinate for the vector.
+ */
 rune::Vec3::Vec3(double newX, double newY, double newZ)
   : x(newX), y(newY), z(newZ)
 {
 
 }
 
+/**
+ * \param castedVector The vector to be converted to a rune::Vec2
+ */
 rune::Vec3::Vec3(rune::Vec2 castedVector)
   : x(castedVector.x), y(castedVector.y), z(0)
 {
@@ -16,7 +24,7 @@ rune::Vec3::Vec3(rune::Vec2 castedVector)
 
 /**
  * \param right The vector to be subtracted.
- * \return A memberwise subtraction.
+ * \return A member wise subtraction.
  */
 rune::Vec3 rune::Vec3::operator- (const Vec3& right)
 {
@@ -33,7 +41,7 @@ rune::Vec3 rune::Vec3::operator-()
 
 /**
  * \param right The vector to be added.
- * \return A memberwise addition.
+ * \return A member wise addition.
  */
 rune::Vec3 rune::Vec3::operator+ (const Vec3& right)
 {
@@ -42,7 +50,7 @@ rune::Vec3 rune::Vec3::operator+ (const Vec3& right)
 
 /**
  * \param right The vector to be multiplied by.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec3 rune::Vec3::operator* (const Vec3& right)
 {
@@ -51,7 +59,7 @@ rune::Vec3 rune::Vec3::operator* (const Vec3& right)
 
 /**
  * \param right The vector to be divided by.
- * \return A memberwise division.
+ * \return A member wise division.
  */
 rune::Vec3 rune::Vec3::operator/ (const Vec3& right)
 {
@@ -61,7 +69,7 @@ rune::Vec3 rune::Vec3::operator/ (const Vec3& right)
 
 /**
  * \param scalar The scalar to be divided by.
- * \return A memberwise division by a scalar.
+ * \return A member wise division by a scalar.
  */
 rune::Vec3 rune::Vec3::operator/ (double scalar)
 {
@@ -70,7 +78,7 @@ rune::Vec3 rune::Vec3::operator/ (double scalar)
 
 /**
  * \param right The vector to be subtracted by.
- * \return A memberwise subtraction.
+ * \return A member wise subtraction.
  */
 rune::Vec3& rune::Vec3::operator-=(const Vec3& right)
 {
@@ -83,7 +91,7 @@ rune::Vec3& rune::Vec3::operator-=(const Vec3& right)
 
 /**
  * \param right The vector to be added.
- * \return A memberwise addition.
+ * \return A member wise addition.
  */
 rune::Vec3& rune::Vec3::operator+=(const Vec3& right)
 {
@@ -96,7 +104,7 @@ rune::Vec3& rune::Vec3::operator+=(const Vec3& right)
 
 /**
  * \param right The vector to be multiplied by.
- * \return A memberwise multiplication.
+ * \return A member wise multiplication.
  */
 rune::Vec3& rune::Vec3::operator*=(const Vec3& right)
 {
@@ -109,7 +117,7 @@ rune::Vec3& rune::Vec3::operator*=(const Vec3& right)
 
 /**
  * \param right The scalar to be multiplied by.
- * \return A memberwise scalar multiplication.
+ * \return A member wise scalar multiplication.
  */
 rune::Vec3& rune::Vec3::operator*=(const double right)
 {
@@ -122,7 +130,7 @@ rune::Vec3& rune::Vec3::operator*=(const double right)
 
 /**
  * \param right The scalar to be multiplied by.
- * \return A memberwise scalar multiplication.
+ * \return A member wise scalar multiplication.
  */
 rune::Vec3 rune::Vec3::operator* (double scalar)
 {
@@ -131,7 +139,7 @@ rune::Vec3 rune::Vec3::operator* (double scalar)
 
 /**
  * \param right The vector to compare to.
- * \return Whether or not the vectors are memberwise equivalent.
+ * \return Whether or not the vectors are member wise equivalent.
  */
 bool rune::Vec3::operator==(const rune::Vec3& right)
 {
@@ -147,7 +155,7 @@ bool rune::Vec3::operator==(const rune::Vec3& right)
 
 /**
  * \param right The vector to compare to.
- * \return Whether or not the vectors are memberwise non equivalent.
+ * \return Whether or not the vectors are member wise non equivalent.
  */
 bool rune::Vec3::operator!=(const rune::Vec3& right)
 {
@@ -179,6 +187,8 @@ double rune::Vec3::magnitude(void)
 }
 
 /**
+ * @memberof rune::Vec3
+ * @brief Dot product calculation of two vectors.
  * \param vector1 The first vector of the dot product.
  * \param vector2 The second vector of the dot product.
  * \return The result of the dot product.
@@ -189,6 +199,8 @@ double rune::dotProduct(rune::Vec3 vector1, rune::Vec3 vector2)
 }
 
 /**
+ * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
+ * @memberof rune::Vec3
  * \param vector The vector to be normalized.
  * \return A vector in the same direction as vector but with magnitude 1.
  */
@@ -199,19 +211,23 @@ rune::Vec3 rune::normalize(rune::Vec3 vector)
 }
 
 /**
+ * @memberof rune::Vec3
+ * @brief Cross product calculation of two vectors.
  * \param vec1 The first vector to be used in the cross product.
  * \param vec2 The second vector to be used in the cross product.
  * \return The result of the cross product.
  */
+
 rune::Vec3 rune::crossProduct(rune::Vec3 vec1, rune::Vec3 vec2)
 {
   return rune::Vec3(vec1.y * vec2.z - vec1.z * vec2.y, vec1.z * vec2.x - vec1.x * vec2.z, vec1.x * vec2.y - vec1.y * vec2.x);
 }
 
 /**
- * \param scalar The scalar to be mutiplied by.
- * \param mat The matrix being mutiplied with.
- * \return A memberwise multiplication.
+ * @member of rune::Vec3
+ * \param scalar The scalar to be multiplied by.
+ * \param mat The matrix being multiplied with.
+ * \return A member wise multiplication.
  */
 rune::Vec3 rune::operator*(double scalar, rune::Vec3 mat)
 {

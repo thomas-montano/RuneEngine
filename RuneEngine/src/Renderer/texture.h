@@ -37,7 +37,7 @@ public:
 
   ///Default constructor to clean up a no longer needed texture.
   ~Texture(void);
-
+  ///Loads in a texture from a file and stores it in the current rune::Texture object.
   bool loadFromFile(const std::string& path, unsigned int filterMode = LINEAR_FILTER);
 
   ///Binds the texture to one of the texture slots on the GPU.

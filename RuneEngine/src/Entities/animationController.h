@@ -29,6 +29,8 @@ private:
   rune::Sprite* spriteParent;
 
 public:
+
+  AnimationController();
   void start() override;
   void update() override;
 

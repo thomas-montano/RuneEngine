@@ -111,6 +111,9 @@ void rune::RenderWindow::display(void)
 
 }
 
+/**
+ * \param clearColor The color that the screen should be cleared with.
+ */
 void rune::RenderWindow::clear(rune::Color clearColor)
 {
   const double MAXCOLOR = 255;
