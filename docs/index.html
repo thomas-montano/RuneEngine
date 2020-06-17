@@ -68,63 +68,34 @@ $(function() {
 <div class="title">Rune Engine Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In order to start a new project, all you have to do is load in your scenes, create a new <a class="el" href="de/dfb/classrune_1_1GameApplication.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">rune::GameApplication</a> object, pass the scenes in, and set the <a class="el" href="de/dfb/classrune_1_1GameApplication.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">rune::GameApplication</a> to run.</p>
-<p>The window will open with a default title of "Rune Engine", but you can change this by calling mainApplication-&gt;setWindowTitle("Your Title");</p>
-<h1><a class="anchor" id="Intro"></a>
-How to Start a New Project</h1>
-<p>Create your first GameScene:</p>
-<p>firstLevel.h: </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef FIRSTLEVEL_H_INCLUDED</span></div>
-<div class="line"><span class="preprocessor">#define FIRSTLEVEL_H_INCLUDED</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>FirstLevel : <span class="keyword">public</span> GameScene</div>
-<div class="line">{</div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line"> </div>
-<div class="line">};</div>
-</div><!-- fragment --><p>firstLevel.cpp:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;firstLevel.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> FirstLevel::doInit(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line"> </div>
-<div class="line">}</div>
-</div><!-- fragment --><p>Load that scene into the game application:</p>
-<div class="fragment"><div class="line"><span class="comment">//Add this pragma comment to disable the console if you haven&#39;t already done so.</span></div>
-<div class="line"><span class="preprocessor">#pragma comment(linker, &quot;/SUBSYSTEM:windows /ENTRY:mainCRTStartup&quot;)</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;firstLevel.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">//Initialize our game application at a 60 Hz clock</span></div>
-<div class="line">  GameApplication* mainApplication = <span class="keyword">new</span> GameApplication(60);</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">//Load the first level into the game application</span></div>
-<div class="line">  FirstLevel* firstLevel = <span class="keyword">new</span> FirstLevel();</div>
-<div class="line">  mainApplication-&gt;loadScene(firstLevel);</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">//Start the game</span></div>
-<div class="line">  mainApplication-&gt;run();</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">//Command line output</span></div>
-<div class="line">  std::cout &lt;&lt; <span class="stringliteral">&quot;Returned code: &quot;</span> &lt;&lt; mainApplication-&gt;m_errorCode &lt;&lt; std::endl;</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">//Once the game has ended, clean up</span></div>
-<div class="line">  <span class="keyword">delete</span> mainApplication;</div>
-<div class="line">  <span class="keyword">delete</span> firstLevel;</div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>April 27 2020 </dd></dl>
+<div class="textblock"><h1><a class="anchor" id="Welcome"></a>
+Welcome to the RuneEngine!</h1>
+<p>You can use the Rune Engine API to create 2D games. This is the manual that will show you how to do that.</p>
+<p>If it's your first time using Rune, you should check out the <a href="pages.html">Programming Guides.</a></p>
+<h2><a class="anchor" id="startup"></a>
+Getting Started</h2>
+<p>Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.</p>
+<p>You can clone the repository to a local destination using git:</p>
+<p><code>git clone <a href="https://github.com/ThomasMontanoGames/PrivateEye.git">https://github.com/ThomasMontanoGames/PrivateEye.git</a></code></p>
+<p>Then link the .lib file and move the DLL file into your game's working directory. You should also link the "Rune Engine Directory"/src folder in the C/C++ settings of visual studio. You will have to include <code>#include &lt;<a class="el" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</code> in the files using the engine.</p>
+<h2><a class="anchor" id="features"></a>
+Engine Features</h2>
+<ul>
+<li>Custom 2D renderer</li>
+<li>Custom Physics Engine</li>
+<li>Customizable Game Objects</li>
+<li>Particle System</li>
+<li>Lighting System</li>
+<li>Physically Accurate Collisions</li>
+<li>Animated Sprites</li>
+<li>Debug Interface with ImGUI</li>
+<li>Tile work flow and sprite work flow</li>
+</ul>
+<h2><a class="anchor" id="bugs"></a>
+Engine Issues</h2>
+<p>Found something that you think isn't working the way it's supposed to? Please submit a bug report on the github repository. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
-<div class="ttc" id="aRuneEngine_8h_html"><div class="ttname"><a href="db/d33/RuneEngine_8h.html">RuneEngine.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

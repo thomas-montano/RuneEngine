@@ -119,7 +119,7 @@ public:
  *  //This is also where you should add animations for your object.
  *  animController.addAnimation("idle",16,2,2,"Path to your sprite sheet");
  *  
- * }
+ * };
  * 
  * @endcode
  * 

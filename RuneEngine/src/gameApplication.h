@@ -1,14 +1,48 @@
 /*!
- * @mainpage
- * In order to start a new project, all you have to do is load in your scenes, create a new
- * rune::GameApplication object, pass the scenes in, and set the rune::GameApplication to run. 
+ * @page entryPoint How To Create Your First Rune Application
+ * In order to start a new project, you have to create an entry point for the game and then load in the scenes you want to use.
  * 
- * The window will open with a default title of "Rune Engine", but you can change this by calling mainApplication->setWindowTitle("Your Title");
+ * \section Intro Create Your Entry Point
  * 
- * \section Intro How to Start a New Project
+ * Once you have created your entry point, go ahead and create some GameScenes to load into the rune::GameApplication.
+ * 
+ * @code
+ *
+ * //Add this pragma comment to disable the console if you haven't already done so.
+ * #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+ *
+ * //You should include your scene headers and the RuneEngine header.
+ * #include <RuneEngine.h>
+ * #include "firstLevel.h"
+ * #include <iostream>
+ *
+ * int main(void)
+ * {
+ *   //Initialize our game application to have a really awesome title.
+ *   GameApplication* mainApplication = new GameApplication("My game");
+ *
+ *   //Load the first level into the game application
+ *   FirstLevel* firstLevel = new FirstLevel();
+ *   mainApplication->loadScene(firstLevel);
+ *
+ *   //Start the game
+ *   mainApplication->run();
+ *
+ *   //Command line output
+ *   std::cout << "Returned code: " << mainApplication->m_errorCode << std::endl;
+ *
+ *   //Once the game has ended, clean up
+ *   delete mainApplication;
+ *   delete firstLevel;
+ *   return 0;
+ * }
+ *
+ * @endcode
  * 
  * 
- * Create your first GameScene:
+ * @section GameScene Create your first GameScene:
+ * 
+ * By creating these GameScenes, you will have a scene to load into your rune::GameApplication.
  * 
  * firstLevel.h:
  * @code
@@ -19,9 +53,16 @@
  * 
  * #include <RuneEngine.h>
  * 
+ * //This is a rune::GameObject that is created in a later guide.
+ * #include "playerCharacter.h"
+ * 
  * class FirstLevel : public GameScene
  * {
  * private:
+ *  Player m_player;
+ * 
+ *  //If you want to have a non static camera, go ahead and create that here.
+ *  rune::Camera m_sceneCamera;
  * 
  * public:
  * 
@@ -38,46 +79,22 @@
  * void FirstLevel::doInit(void)
  * {
  * 
+ *  //Set up the background color for your scene.
+ *  clearColor = rune::Color::Blue; 
+ * 
+ *  //Set up your level layout here
+ *  addObjectToScene(m_player);
+ *  
+ *  //Make sure to set the zoom to something greater than zero.
+ *  m_sceneCamera.setZoom(4);
+ * 
  * }
  * 
  * @endcode
  * 
- * Load that scene into the game application:
- * 
- * @code 
- * 
- * //Add this pragma comment to disable the console if you haven't already done so.
- * #pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
- * 
- * #include <RuneEngine.h>
- * #include "firstLevel.h"
- * #include <iostream>
- * 
- * int main(void)
- * {
- *   //Initialize our game application at a 60 Hz clock
- *   GameApplication* mainApplication = new GameApplication(60);
- * 
- *   //Load the first level into the game application
- *   FirstLevel* firstLevel = new FirstLevel();
- *   mainApplication->loadScene(firstLevel);
- * 
- *   //Start the game
- *   mainApplication->run();
- * 
- *   //Command line output
- *   std::cout << "Returned code: " << mainApplication->m_errorCode << std::endl;
- * 
- *   //Once the game has ended, clean up
- *   delete mainApplication;
- *   delete firstLevel;
- *   return 0;
- * }
- * 
- * @endcode
  * 
  * @author Thomas Montano
- * @date April 27 2020 
+ * @date June 17 2020 
  * 
  */
 
@@ -153,3 +170,40 @@ public:
 }
 
 #endif
+
+/**
+ * @mainpage
+ * 
+ * @section Welcome Welcome to the RuneEngine!
+ * 
+ * You can use the Rune Engine API to create 2D games. This is the manual that will show you how to do that. 
+ * 
+ * If it's your first time using Rune, you should check out the [Programming Guides.](pages.html)
+ * 
+ * @subsection startup Getting Started
+ * 
+ * Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.
+ *
+ * You can clone the repository to a local destination using git:
+ *
+ * `git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
+ *
+ * Then link the .lib file and move the DLL file into your game's working directory. You should also link the "Rune Engine Directory"/src folder in the C/C++ settings of visual studio. You will have to include ```#include <RuneEngine.h>``` in the files using the engine.
+ *
+ * @subsection features Engine Features
+ * 
+ * - Custom 2D renderer
+ * - Custom Physics Engine
+ * - Customizable Game Objects
+ * - Particle System
+ * - Lighting System
+ * - Physically Accurate Collisions
+ * - Animated Sprites
+ * - Debug Interface with ImGUI
+ * - Tile work flow and sprite work flow
+ * 
+ * @subsection bugs Engine Issues
+ * 
+ * Found something that you think isn't working the way it's supposed to? Please submit a bug report on the github repository.
+ * 
+ */
