@@ -32,7 +32,7 @@ public:
   //~GameObject();
   ///Add a component to this game object.
   void addComponent(rune::Component&);
-  ///Gte the number of components present on this game object.
+  ///Get the number of components present on this game object.
   int getNumComponents(void);
   //Create a new dynamically allocated version of this game object.
   void instantiate(GameObject);

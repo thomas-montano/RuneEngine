@@ -14,10 +14,11 @@
 #include <Math\Vec2.h>
 #include <Entities\component.h>
 #include <Entities\gameObject.h>
+#include <Renderer\rectangleShape.h>
 
 namespace physics{
 
-//Forward declaration of rigidbody class
+//Forward declaration of rigid body class
 class RigidBody;
 
 ///Collision manifold used for reporting rigid body collisions.
@@ -85,14 +86,14 @@ private:
     std::vector<collision> involvedCollisions;
 
 public:
-    ///Default constructor to initialize an empty rigid body object.
-    RigidBody();
+    ///Initialize the physics::RigidBody to be approximately the same size as the rune::GameObject
+    virtual void start();
 
-    ///Set the parameters for the rigid body to establish a physical object in the scene.
-    RigidBody(int width, int height, double xPos, double yPos, double mass, rune::Vec2 gravity = rune::Vec2(0,0), bool rotation = true);
+    ///Constructor to set up mass data of the RigidBody
+    RigidBody(double mass = 0, rune::Vec2 gravity = rune::Vec2(0,0));
 
     ///Set up the object. Identical to the constructor but can be used to set up an object after it's been created.
-    void setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation);
+    void setUpObject(int width, int height, double mass, bool rotation);
 
     ///Recalculate the AABB based on the rigid body position.
     void updateAABB();
@@ -121,7 +122,7 @@ public:
     ///Update the position of the object based on collisions and velocities.
     void updatePosition(double dT);
 
-    ///Linearly interpolate the position of the rigidbody for editing to transform of the parent object.
+    ///Linearly interpolate the position of the rune::RigidBody for editing to transform of the parent object.
     void interpolatePosition(double alpha);
 
     ///Get the gravity vector of the object.
@@ -182,3 +183,54 @@ public:
 }
 
 #endif
+
+/**
+ * @page physics How To Add Physics To Your GameObject
+ * 
+ * Adding physical interactions is an important and fun part of making your game! In Rune, adding physics is as simple as attaching a physics::RigidBody component to
+ * your rune::GameObject.
+ * 
+ * In your GameObject constructor, you will be required to initialize the RigidBody in one of two ways. One way is by doing nothing, this will create a RigidBody component
+ * with infinite mass that isn't allowed to move, but other RigidBodies will collide with happily.
+ * 
+ * If you would like to have your object move, you will need to specify the mass of the RigidBody. You can do this like so:
+ * 
+ * @subsection Initialization Adding a RigidBody to your GameObject.
+ * 
+ * @code
+ * 
+ * #include <RuneEngine.h>
+ * 
+ * class Player : public rune::GameObject
+ * {
+ * public:
+ *  physics::RigidBody myBody;
+ * 
+ *  Player();
+ * 
+ * };
+ * 
+ * @endcode
+ * 
+ * @subsection massChange Giving your RigidBody movement.
+ * 
+ * After you have initialized a RigidBody in your GameObject header file, go ahead and apply it to the GameObject. Remember that both of the arguments in the RigidBody
+ * constructor are optional, and can be left out completely. Refer to the physics::RigidBody page for more information about these parameters.
+ * 
+ * @code
+ * 
+ * @include "player.h"
+ * 
+ * Player::Player()
+ *  : myBody(10,rune::Vec2(0,-10))
+ * {
+ * 
+ *  addComponent(myBody);
+ * 
+ * }
+ * 
+ * @endcode
+ * 
+ * Now your object will be subjected to gravity and collisions!
+ * 
+ */

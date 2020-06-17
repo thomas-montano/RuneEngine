@@ -1,5 +1,6 @@
 #include "camera.h"
 #include <gameApplication.h>
+#include <cassert>
 
 rune::Vec2 rune::Camera::centerPosition = rune::Vec2(0,0);
 double rune::Camera::zoomFactor = 1.0;

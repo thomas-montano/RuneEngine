@@ -2,73 +2,40 @@
 #include <math.h>
 
 /**
- * @param width Width of the rigid body in pixels, should be the same as the GameObject sprite.
- * @param height Height of the rigid body in pixels, should be the same as the GameObject sprite.
- * @param xPos Horizontal position of the RigidBody with respect to the center of the object.
- * @param yPos Vertical position of the RigidBody with respect to the center of the object.
- * @param mass Mass of the RigidBody to be used for physical simulations.
- * @param gravity Vertical gravity that the RigidBody should be subjected to.
- * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
-*/
-physics::RigidBody::RigidBody(int width, int height, double xPos, double yPos, double mass, rune::Vec2 gravity, bool rotation) 
+ * \param mass The mass in units that the RigidBody will have.
+ * \param gravity The gravity vector that this RigidBody will be subjected to.
+ */
+physics::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::Vec2(0,0)*/)
 {
-    
-    objectBody.restitution = 0.0;
-    objectBody.staticFriction = 0.4;
-    objectBody.dynamicFriction = 0.2;
 
-    objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
-    objectBody.vertexes[1] = rune::Vec2(0.5*width,0.5*height); //Top right
-    objectBody.vertexes[2] = rune::Vec2(0.5*width,-0.5*height); //Bottom right
-    objectBody.vertexes[3] = rune::Vec2(-0.5*width,-0.5*height); //Bottom left
-
-    objectBody.xPos = xPos;
-    objectBody.yPos = yPos;
-
-    if(mass == 0)
-    {
-        objectBody.invMass = 0;
-        objectBody.gravityFactor = 0;
-    }
-    else
-    {
-        objectBody.invMass = 1.0 / mass;
-        objectBody.gravityFactor = gravity;
-    }
-    
-    if(rotation == false)
-    {
-        objectBody.invInertia = 0;
-    }
-    else
-    {
-        objectBody.invInertia = 1.0 / (mass*(pow(height,2)+pow(width,2))/12);
-    }
-
-    objectBody.boundingBox.min = rune::Vec2(xPos-0.5*width,yPos-0.5*height);
-    objectBody.boundingBox.max = objectBody.vertexes[1] + objectBody.boundingBox.min;
-
-    objectBody.angleOfRotation = 0;
-    objectBody.angularVelocity = 0;
-    objectBody.velocity = rune::Vec2(0,0);
+  if (mass == 0)
+  {
+    objectBody.invMass = 0;
+    objectBody.gravityFactor = 0;
+  }
+  else
+  {
+    objectBody.invMass = 1.0 / mass;
+    objectBody.gravityFactor = gravity;
+  }
 
 }
 
-physics::RigidBody::RigidBody()
+void physics::RigidBody::start()
 {
+  rune::Vec3 dimensions = parentObject->transform.getScale();
 
+  setUpObject(dimensions.x,dimensions.y,10,false);
 }
+
 
 /**
  * @param width Width of the rigid body in pixels, should be the same as the GameObject sprite.
  * @param height Height of the rigid body in pixels, should be the same as the GameObject sprite.
- * @param xPos Horizontal position of the RigidBody with respect to the center of the object.
- * @param yPos Vertical position of the RigidBody with respect to the center of the object.
  * @param mass Mass of the RigidBody to be used for physical simulations.
- * @param gravity Vertical gravity that the RigidBody should be subjected to.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-void physics::RigidBody::setUpObject(int width, int height, double xPos, double yPos, double mass, double gravity, bool rotation)
+void physics::RigidBody::setUpObject(int width, int height, double mass, bool rotation)
 {
 
     objectBody.restitution = 0.0;
@@ -80,19 +47,8 @@ void physics::RigidBody::setUpObject(int width, int height, double xPos, double 
     objectBody.vertexes[2] = rune::Vec2(0.5*width,-0.5*height); //Bottom right
     objectBody.vertexes[3] = rune::Vec2(-0.5*width,-0.5*height); //Bottom left
 
-    objectBody.xPos = xPos;
-    objectBody.yPos = yPos;
-
-    if(mass == 0)
-    {
-        objectBody.invMass = 0;
-           objectBody.gravityFactor = 0;
-    }
-    else
-    {
-        objectBody.invMass = 1.0 / mass;
-        objectBody.gravityFactor = gravity;
-    }
+    objectBody.xPos = parentObject->transform.getPosition().x + 0.5 * width;
+    objectBody.yPos = parentObject->transform.getPosition().y + 0.5 * height;
     
     if(rotation == false)
     {
@@ -110,7 +66,7 @@ void physics::RigidBody::setUpObject(int width, int height, double xPos, double 
     objectBody.box.setOutlineThickness(-1);
     objectBody.box.setOutlineColor(sf::Color::White);*/
 
-    objectBody.boundingBox.min = rune::Vec2(xPos-0.5*width,yPos-0.5*height);
+    objectBody.boundingBox.min = rune::Vec2(objectBody.xPos-0.5*width,objectBody.yPos-0.5*height);
     objectBody.boundingBox.max = objectBody.vertexes[1] + objectBody.boundingBox.min;
 
     objectBody.angleOfRotation = 0;
@@ -159,45 +115,17 @@ void physics::RigidBody::interpolatePosition(double alpha)
 {
 
   rune::Vec2 oldPosition = objectBody.oldPosition;
-  rune::Vec2 currentPos = rune::Vec2(objectBody.xPos, objectBody.yPos);
+  rune::Vec2 currentPos = rune::Vec2(objectBody.xPos, objectBody.yPos) - rune::Vec2(objectBody.vertexes[1].x, objectBody.vertexes[1].y);
 
   rune::Vec2 newPos = rune::Vec2(oldPosition.x * alpha, oldPosition.y * alpha) + rune::Vec2(currentPos.x * (1.0 - alpha), currentPos.y * (1.0 - alpha));
 
   parentObject->transform.setPosition(rune::Vec3(newPos));
 
+  objectBody.angleOfRotation= parentObject->transform.getRotation().z;
+
   objectBody.oldPosition = currentPos;
 
 }
-
-/**
- * @return A drawable sprite object (DEPRECATED).
-*/
-/*sf::RectangleShape RigidBody::getDrawable(void)
-{
-    objectBody.box.setPosition(rune::Vec2(objectBody.xPos,objectBody.yPos));
-    objectBody.box.setRotation(objectBody.angleOfRotation);
-    
-    return objectBody.box;
-}*/
-
-/**
- * @return A drawable RectangleShape that represents the AABB (DEPRECATED).
-*/
-/*sf::RectangleShape RigidBody::drawAABB(void)
-{
-
-    sf::RectangleShape AABB;
-
-    AABB.setFillColor(sf::Color::Transparent);
-    AABB.setOutlineThickness(-.5);
-    AABB.setOutlineColor(sf::Color::Red);
-    AABB.setPosition(objectBody.boundingBox.min);
-
-    AABB.setSize(objectBody.boundingBox.max-objectBody.boundingBox.min);
-    
-    return AABB;
-
-}*/
 
 void physics::RigidBody::updateAABB(void)
 {

@@ -34,6 +34,8 @@ protected:
   int m_nextState;
   bool m_quitGame = false;
 
+  std::vector<physics::RigidBody*> physicsBodies;
+
   std::vector<rune::GameObject> sceneObjects;
   
   ///A clock that records the amount of time between variable update calls.

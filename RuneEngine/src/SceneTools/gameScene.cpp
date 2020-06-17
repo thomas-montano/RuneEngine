@@ -100,6 +100,13 @@ void rune::GameScene::addObjectToScene(rune::GameObject newObject)
 
   sceneObjects.push_back(newObject);
 
+
+  //If the new object has a physics component on it, add it to the physicsBody vector.
+  auto tempPtr = newObject.findComponent<physics::RigidBody>();
+
+  if(tempPtr)
+    physicsBodies.push_back(tempPtr);
+
 }
 
 void rune::GameScene::startComponents(void)
@@ -171,16 +178,9 @@ void rune::GameScene::updatePhysics(void)
   }
 
   //Deal with physics updates
-  /*while(accumulator > dT)
+  while(accumulator > dT)
   {
-
-    for(int i = 0; i < sceneLayers.size(); i++)
-    {
-
-      std::vector<physics::RigidBody*> rigidBodies = sceneLayers[i].getRigidBodies();
-      updatePhysics(rigidBodies,dT);
-    
-    }
+    physics::updatePhysics(physicsBodies, dT);
 
     accumulator -= dT;
   }
@@ -188,15 +188,12 @@ void rune::GameScene::updatePhysics(void)
   const double alpha = accumulator / dT;
 
   //Update position for every object in every layer
-  for(int i = 0; i < sceneLayers.size();i++)
-  {
-    std::vector<rune::GameObject*> sceneObjects = sceneLayers[i].getObjects();
 
-    for(int j = 0; j < sceneObjects.size(); j++)
+    for(int j = 0; j < physicsBodies.size(); j++)
     {
-      sceneObjects[j]->updatePosition(alpha);
+      physicsBodies[j]->interpolatePosition(alpha);
     }
-  }*/
+
 
 }
 
