@@ -28,11 +28,9 @@ struct collision
     RigidBody* objectOne;
     RigidBody* objectTwo;
     rune::Vec2 normalVector;
-    rune::Vec2 contactVectorBox1;
-    rune::Vec2 contactVectorBox2;
     double depth;
 
-    collision() : objectOne(nullptr), objectTwo(nullptr), normalVector(rune::Vec2(0,0)), contactVectorBox1(rune::Vec2(0,0)), contactVectorBox2(rune::Vec2(0,0)), depth(0)
+    collision() : objectOne(nullptr), objectTwo(nullptr), normalVector(rune::Vec2(0,0)), depth(0)
     {
     
     }

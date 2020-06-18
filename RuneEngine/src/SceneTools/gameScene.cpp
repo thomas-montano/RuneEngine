@@ -1,5 +1,6 @@
 #include "gameScene.h"
 #include <gameApplication.h>
+#include <Input/mouse.h>
 #include <imgui/imgui.h>
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
@@ -131,7 +132,10 @@ void rune::GameScene::updateComponents()
   {
     for(int j = 0; j < sceneObjects[i].getNumComponents();j++)
     {
-      sceneObjects[i].getComponent(j)->update();
+      if(sceneObjects[i].getComponent(j)->isComponentEnabled())
+      {
+        sceneObjects[i].getComponent(j)->update();
+      }
     }
   }
 
@@ -142,7 +146,7 @@ void rune::GameScene::updateComponents()
 
   ImGui::Begin("FPS");
 
-  ImGui::SetWindowSize(ImVec2(100, 50));
+  ImGui::SetWindowSize(ImVec2(150, 100));
   ImGui::SetWindowPos(ImVec2(0, 0));
 
   if (ImGui::IsItemHovered())
@@ -153,6 +157,9 @@ void rune::GameScene::updateComponents()
   }
 
   ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
+
+  ImGui::Text(std::to_string(rune::Mouse::getPosition().x).c_str());
+  ImGui::Text(std::to_string(rune::Mouse::getPosition().y).c_str());
 
   ImGui::End();
 

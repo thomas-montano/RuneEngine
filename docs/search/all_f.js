@@ -17,5 +17,5 @@ var searchData=
   ['pollevents_309',['pollEvents',['../d1/d58/classrune_1_1RenderWindow.html#acf0a5bddd5c861ca64170935f43088ef',1,'rune::RenderWindow']]],
   ['positionalcorrection_310',['positionalCorrection',['../d5/dd0/namespacephysics.html#ab20ff5b6dfb44fa1cd3c18cb17c5fb4f',1,'physics']]],
   ['print_5fscreen_311',['PRINT_SCREEN',['../d9/df4/classrune_1_1Keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a7f1b8d0a4f2a3b739dc9ce4ac8310221',1,'rune::Keyboard']]],
-  ['pythagoreansolve_312',['pythagoreanSolve',['../d5/dd0/namespacephysics.html#af3fc46f317430abca16fe9ea849f3936',1,'physics']]]
+  ['pythagoreansolve_312',['pythagoreanSolve',['../d5/dd0/namespacephysics.html#a8bfd5d23797894b6b6fa7dfe24251946',1,'physics']]]
 ];

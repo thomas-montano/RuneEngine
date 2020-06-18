@@ -77,7 +77,8 @@ Getting Started</h2>
 <p>Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.</p>
 <p>You can clone the repository to a local destination using git:</p>
 <p><code>git clone <a href="https://github.com/ThomasMontanoGames/PrivateEye.git">https://github.com/ThomasMontanoGames/PrivateEye.git</a></code></p>
-<p>Then link the .lib file and move the DLL file into your game's working directory. You should also link the "Rune Engine Directory"/src folder in the C/C++ settings of visual studio. You will have to include <code>#include &lt;<a class="el" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</code> in the files using the engine.</p>
+<p>Then link the .lib file and move the DLL file into your game's working directory. You should also link the "Rune Engine Directory"/include folder in the C/C++ settings of visual studio. You will have to include <code>#include &lt;<a class="el" href="db/d33/RuneEngine_8h.html">RuneEngine.h</a>&gt;</code> in the files using the engine.</p>
+<p>Make sure you declare <code>RUNE_PLATFORM_WINDOWS</code> in the preprocessor definitions of your solution.</p>
 <h2><a class="anchor" id="features"></a>
 Engine Features</h2>
 <ul>

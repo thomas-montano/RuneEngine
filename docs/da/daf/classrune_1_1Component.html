@@ -117,11 +117,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f80061e4b816e8f5a9f4810f93a63e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a4f80061e4b816e8f5a9f4810f93a63e1">setParent</a> (<a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *newParent)</td></tr>
 <tr class="memdesc:a4f80061e4b816e8f5a9f4810f93a63e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function to set the pointer to the parent <a class="el" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> for each component.  <a href="../../da/daf/classrune_1_1Component.html#a4f80061e4b816e8f5a9f4810f93a63e1">More...</a><br /></td></tr>
 <tr class="separator:a4f80061e4b816e8f5a9f4810f93a63e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbb2a8b9b8adc6b06a3820a472ad85b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#abbbb2a8b9b8adc6b06a3820a472ad85b">setEnable</a> (bool newEnable)</td></tr>
+<tr class="memdesc:abbbb2a8b9b8adc6b06a3820a472ad85b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the component.  <a href="../../da/daf/classrune_1_1Component.html#abbbb2a8b9b8adc6b06a3820a472ad85b">More...</a><br /></td></tr>
+<tr class="separator:abbbb2a8b9b8adc6b06a3820a472ad85b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b6a0b1c09a8eda00aadcb5e30b7949"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a40b6a0b1c09a8eda00aadcb5e30b7949">isComponentEnabled</a> (void)</td></tr>
+<tr class="memdesc:a40b6a0b1c09a8eda00aadcb5e30b7949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether or not the current component is enabled.  <a href="../../da/daf/classrune_1_1Component.html#a40b6a0b1c09a8eda00aadcb5e30b7949">More...</a><br /></td></tr>
+<tr class="separator:a40b6a0b1c09a8eda00aadcb5e30b7949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/df8/classrune_1_1GameObject.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a> = nullptr</td></tr>
 <tr class="separator:a3b61712b05daa87bd8de85d6bf12dd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6214c9cafd2ec5aefdf253644f8c33fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/daf/classrune_1_1Component.html#a6214c9cafd2ec5aefdf253644f8c33fd">isEnabled</a> = true</td></tr>
+<tr class="separator:a6214c9cafd2ec5aefdf253644f8c33fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A component of a <a class="el" href="../../d9/df8/classrune_1_1GameObject.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a>, this class is used to add functionality to a object in the game world. </p>
@@ -154,6 +162,52 @@ Protected Attributes</h2></td></tr>
 <p>A function for each component that is called once every physics update. </p>
 
 <p>Reimplemented in <a class="el" href="../../d1/d12/classrune_1_1Sprite.html#a0a4fe842ebe8bae31e70c7aba1eaed24">rune::Sprite</a>.</p>
+
+</div>
+</div>
+<a id="a40b6a0b1c09a8eda00aadcb5e30b7949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40b6a0b1c09a8eda00aadcb5e30b7949">&#9670;&nbsp;</a></span>isComponentEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rune::Component::isComponentEnabled </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets whether or not the current component is enabled. </p>
+
+</div>
+</div>
+<a id="abbbb2a8b9b8adc6b06a3820a472ad85b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbbb2a8b9b8adc6b06a3820a472ad85b">&#9670;&nbsp;</a></span>setEnable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rune::Component::setEnable </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>newEnable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enable or disable the component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">newEnable</td><td>This value will replace the current value of the isEnable variable; </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -241,6 +295,28 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a6214c9cafd2ec5aefdf253644f8c33fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6214c9cafd2ec5aefdf253644f8c33fd">&#9670;&nbsp;</a></span>isEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool rune::Component::isEnabled = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a3b61712b05daa87bd8de85d6bf12dd6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b61712b05daa87bd8de85d6bf12dd6e">&#9670;&nbsp;</a></span>parentObject</h2>
 

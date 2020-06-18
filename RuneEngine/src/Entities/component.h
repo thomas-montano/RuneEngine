@@ -21,6 +21,7 @@ class RUNE_ENGINE Component
 {
 protected:
   GameObject* parentObject = nullptr;
+  bool isEnabled = true;
 
 public:
   ///Default constructor to set up
@@ -32,6 +33,10 @@ public:
   virtual void fixedUpdate();
   ///A function to set the pointer to the parent rune::GameObject for each component.
   void setParent(GameObject* newParent);
+  ///Enable or disable the component.
+  void setEnable(bool newEnable);
+  ///Gets whether or not the current component is enabled.
+  bool isComponentEnabled(void);
   
 };
 }

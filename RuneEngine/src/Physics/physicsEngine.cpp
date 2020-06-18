@@ -265,7 +265,7 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
     //Check to see if the two objects are oriented similarly
     //If they are, its a face to face collision
     //Otherwise, its a vertex to face collision
-    if(std::abs(static_cast<int>(object1.getOrientation())%90 - static_cast<int>(object2.getOrientation())%90) < 1)
+    /*if(std::abs(static_cast<int>(object1.getOrientation())%90 - static_cast<int>(object2.getOrientation())%90) < 1)
     {
       currentCollision.contactVectorBox1 = rune::Vec2(-1*(object2.getPosition().x - object1.getPosition().x + (0.5*object1.getHeight()*currentCollision.normalVector.x)), object2.getPosition().y - object1.getPosition().y - (0.5*object1.getHeight()*currentCollision.normalVector.y));
       currentCollision.contactVectorBox2 = currentCollision.contactVectorBox1;
@@ -274,7 +274,7 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
     {
       currentCollision.contactVectorBox1 = currentCollision.contactVectorBox1;
       currentCollision.contactVectorBox2 = currentCollision.contactVectorBox1;
-    }
+    }*/
     
     //If there was an overlap, exit loop and resolve collision
       if(!axisSeperation[0] && 
