@@ -81,6 +81,8 @@ public:
   ///Place a new rune::GameObject into the scene.
   void addObjectToScene(rune::GameObject);
   std::vector<rune::GameObject> getSceneObjects(void);
+  ///Closes the application completely.
+  void quitGame();
 
 };
 }

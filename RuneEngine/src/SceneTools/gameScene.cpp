@@ -5,8 +5,6 @@
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
 
-#include "Editor\sceneContents.h"
-
 rune::GameScene::GameScene() 
   : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
 {
@@ -117,6 +115,11 @@ std::vector<rune::GameObject> rune::GameScene::getSceneObjects(void)
   return sceneObjects;
 }
 
+void rune::GameScene::quitGame()
+{
+  m_quitGame = true;
+}
+
 void rune::GameScene::startComponents(void)
 {
 
@@ -135,6 +138,11 @@ void rune::GameScene::updateComponents()
   
   rune::GameApplication::getWindow()->clear(clearColor);
 
+  //Prepare to render debug UI
+  ImGui_ImplOpenGL3_NewFrame();
+  ImGui_ImplGlfw_NewFrame();
+  ImGui::NewFrame();
+
   for(int i = 0; i < sceneObjects.size(); i++)
   {
     for(int j = 0; j < sceneObjects[i].getNumComponents();j++)
@@ -145,15 +153,6 @@ void rune::GameScene::updateComponents()
       }
     }
   }
-
-  //Prepare to render debug UI
-  ImGui_ImplOpenGL3_NewFrame();
-  ImGui_ImplGlfw_NewFrame();
-  ImGui::NewFrame();
-
-  SceneToolbar::showToolbar();
-
-  ImGui::ShowDemoWindow();
 
   //Draw the debug UI
   ImGui::Render();

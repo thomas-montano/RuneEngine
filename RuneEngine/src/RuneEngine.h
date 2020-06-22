@@ -36,3 +36,9 @@
 
 #include <Physics\collider2d.h>
 #include <physics\rigidBody.h>
+
+#define IMGUI_API __declspec( dllimport )
+#include <imgui/imgui.h>
+#include <imgui/imgui_impl_opengl3.h>
+#include <imgui/imgui_impl_glfw.h>
+#include <imgui/imconfig.h>

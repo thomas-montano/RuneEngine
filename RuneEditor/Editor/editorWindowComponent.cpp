@@ -1,14 +1,7 @@
-#include "sceneContents.h"
-#include "gameApplication.h"
-#include "SceneTools/sceneManager.h"
-#include <imgui/imgui.h>
-#include <imgui/imgui_impl_opengl3.h>
-#include <imgui/imgui_impl_glfw.h>
+#include "editorWindowComponent.h"
 
-void rune::SceneToolbar::showToolbar()
+void EditorWindowComponent::drawSceneContents()
 {
-
-  std::vector<rune::GameObject> currentSceneObjects = rune::SceneManager::getCurrentScene()->getSceneObjects();
 
   ImGui::Begin("FPS", NULL, ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove);
 
@@ -77,21 +70,21 @@ void rune::SceneToolbar::showToolbar()
   if (ImGui::CollapsingHeader("Current Scene", NULL, ImGuiTreeNodeFlags_DefaultOpen))
   {
 
-    for(int i = 0; i < currentSceneObjects.size(); i ++)
+    /*for (int i = 0; i < currentSceneObjects.size(); i++)
     {
       //ImGui::Text(std::to_string(i).c_str());
       ImGui::Selectable(("Game Object " + std::to_string(i)).c_str());
-      /*if ()
+      if ()
       {
 
         ImGui::TreePop();
 
-      }*/
+      }
 
-    }
+    }*/
 
   }
 
   ImGui::End();
-
 }
+

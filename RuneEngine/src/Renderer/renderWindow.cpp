@@ -1,5 +1,5 @@
 
-#define IMGUI_IMPL_OPENGL_LOADER_GLEW
+//#define IMGUI_IMPL_OPENGL_LOADER_GLEW
 
 #include "renderWindow.h"
 #include "drawable.h"
@@ -18,10 +18,11 @@
 */
 rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
 {
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
   
   glfwInit();
+
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
 
   windowOpen = true;
   width = newWidth;

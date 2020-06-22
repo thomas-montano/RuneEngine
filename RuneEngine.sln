@@ -7,6 +7,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrivateEye", "PrivateEye\Pr
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RuneEngine", "RuneEngine\RuneEngine.vcxproj", "{3FB42BF8-9308-45DD-BD70-45736CE06D64}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RuneEditor", "RuneEditor\RuneEditor.vcxproj", "{A2EF9DC4-CAC6-436D-ACBB-EE2609B0D5FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3FB42BF8-9308-45DD-BD70-45736CE06D64} = {3FB42BF8-9308-45DD-BD70-45736CE06D64}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +26,10 @@ Global
 		{3FB42BF8-9308-45DD-BD70-45736CE06D64}.Debug|x64.Build.0 = Debug|x64
 		{3FB42BF8-9308-45DD-BD70-45736CE06D64}.Release|x64.ActiveCfg = Release|x64
 		{3FB42BF8-9308-45DD-BD70-45736CE06D64}.Release|x64.Build.0 = Release|x64
+		{A2EF9DC4-CAC6-436D-ACBB-EE2609B0D5FC}.Debug|x64.ActiveCfg = Debug|x64
+		{A2EF9DC4-CAC6-436D-ACBB-EE2609B0D5FC}.Debug|x64.Build.0 = Debug|x64
+		{A2EF9DC4-CAC6-436D-ACBB-EE2609B0D5FC}.Release|x64.ActiveCfg = Release|x64
+		{A2EF9DC4-CAC6-436D-ACBB-EE2609B0D5FC}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

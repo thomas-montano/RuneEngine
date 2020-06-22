@@ -65,10 +65,11 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLEW\lib\Release\x64;$(SolutionDir)Dependencies\GLFW\lib-vc2019</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;User32.lib;Gdi32.lib;Shell32.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PrivateEye\"</Command>
+      <Command>xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PrivateEye\"
+xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\RuneEditor\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -88,14 +89,13 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLEW\lib\Release\x64;$(SolutionDir)Dependencies\GLFW\lib-vc2019</AdditionalLibraryDirectories>
-      <AdditionalDependencies>glew32s.lib;glfw3.lib;opengl32.lib;User32.lib;Gdi32.lib;Shell32.lib;</AdditionalDependencies>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;User32.lib;Gdi32.lib;Shell32.lib</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PrivateEye\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Editor\sceneContents.cpp" />
     <ClCompile Include="src\Entities\animationController.cpp" />
     <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
@@ -134,7 +134,6 @@
     <ClCompile Include="src\Entities\transform.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Editor\sceneContents.h" />
     <ClInclude Include="src\Entities\animationController.h" />
     <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />
