@@ -5,6 +5,8 @@
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
 
+#include "Editor\sceneContents.h"
+
 rune::GameScene::GameScene() 
   : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
 {
@@ -110,6 +112,11 @@ void rune::GameScene::addObjectToScene(rune::GameObject newObject)
 
 }
 
+std::vector<rune::GameObject> rune::GameScene::getSceneObjects(void)
+{
+  return sceneObjects;
+}
+
 void rune::GameScene::startComponents(void)
 {
 
@@ -144,24 +151,9 @@ void rune::GameScene::updateComponents()
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
 
-  ImGui::Begin("FPS");
+  SceneToolbar::showToolbar();
 
-  ImGui::SetWindowSize(ImVec2(150, 100));
-  ImGui::SetWindowPos(ImVec2(0, 0));
-
-  if (ImGui::IsItemHovered())
-  {
-    ImGui::BeginTooltip();
-    ImGui::Text("This is the debug UI!");
-    ImGui::EndTooltip();
-  }
-
-  ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
-
-  ImGui::Text(std::to_string(rune::Mouse::getPosition().x).c_str());
-  ImGui::Text(std::to_string(rune::Mouse::getPosition().y).c_str());
-
-  ImGui::End();
+  ImGui::ShowDemoWindow();
 
   //Draw the debug UI
   ImGui::Render();
@@ -196,10 +188,10 @@ void rune::GameScene::updatePhysics(void)
 
   //Update position for every object in every layer
 
-    for(int j = 0; j < physicsBodies.size(); j++)
-    {
-      physicsBodies[j]->interpolatePosition(alpha);
-    }
+  for (int j = 0; j < physicsBodies.size(); j++)
+  {
+    physicsBodies[j]->interpolatePosition(alpha);
+  }
 
 
 }

@@ -1,16 +1,6 @@
 #include "gameObject.h"
 #include <iostream>
 
-/*rune::GameObject::GameObject()
-{
-
-}
-
-rune::GameObject::~GameObject()
-{
-
-}*/
-
 /**
  * \param newScript The new component to be added to the game object.
  */

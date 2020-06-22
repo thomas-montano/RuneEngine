@@ -888,7 +888,7 @@ static void ShowDemoWindowWidgets()
         ImGui::TreePop();
     }
 
-    if (ImGui::TreeNode("Selectables"))
+    if (ImGui::TreeNode("selectable"))
     {
         // Selectable() has 2 overloads:
         // - The one taking "bool selected" as a read-only selection information. When Selectable() has been clicked is returns true and you can alter selection state accordingly.

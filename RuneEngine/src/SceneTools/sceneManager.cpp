@@ -1,6 +1,9 @@
 #include "sceneManager.h"
 #include "gameScene.h"
 
+std::vector<rune::GameScene*> rune::SceneManager::m_scenes;
+int rune::SceneManager::m_currentScene = 0;
+
 /**
  * @return A pointer to the currently active GameScene
 */

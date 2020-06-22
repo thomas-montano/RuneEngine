@@ -80,6 +80,7 @@ public:
   void changeState(int nextState);
   ///Place a new rune::GameObject into the scene.
   void addObjectToScene(rune::GameObject);
+  std::vector<rune::GameObject> getSceneObjects(void);
 
 };
 }

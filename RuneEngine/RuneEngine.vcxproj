@@ -95,6 +95,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Editor\sceneContents.cpp" />
     <ClCompile Include="src\Entities\animationController.cpp" />
     <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
@@ -133,6 +134,7 @@
     <ClCompile Include="src\Entities\transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Editor\sceneContents.h" />
     <ClInclude Include="src\Entities\animationController.h" />
     <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />

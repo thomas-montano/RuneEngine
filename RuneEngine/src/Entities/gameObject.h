@@ -9,6 +9,9 @@
 #ifndef GAMEOBJECT_INCLUDE_H
 #define GAMEOBJECT_INCLUDE_H
 
+#define VNAME(x) #x
+#define VDUMP(x) std::cout << #x << " " << x << std::endl
+
 #include "core.h"
 #include "transform.h"
 #include <typeinfo>
@@ -23,6 +26,7 @@ class RUNE_ENGINE GameObject
 {
 private:
   std::vector<rune::Component*> objectComponents;
+  std::string objectName;
 
 public:
   ///The location, scale, and rotation of the object in the world.

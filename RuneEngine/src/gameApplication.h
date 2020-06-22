@@ -188,9 +188,14 @@ public:
  *
  * `git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
  *
- * Then link the .lib file and move the DLL file into your game's working directory. You should also link the "Rune Engine Directory"/include folder in the C/C++ settings of visual studio. You will have to include ```#include <RuneEngine.h>``` in the files using the engine.
- *
- * Make sure you declare `RUNE_PLATFORM_WINDOWS` in the preprocessor definitions of your solution.
+ * @subsection setup Setting up a New Rune Project
+ * 
+ * 1. Link the LIB file in the linker settings of your project.
+ * 2. Move the DLL file into your game's working directory. 
+ * 3. Declare `RUNE_PLATFORM_WINDOWS` in the preprocessor definitions of your project.
+ * 4. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
+ * 5. Include ```#include <RuneEngine.h>``` in the files using the engine.
+ * 
  * 
  * @subsection features Engine Features
  * 
