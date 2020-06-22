@@ -1,15 +1,18 @@
 #pragma once
 
 #include <RuneEngine.h>
-#include "Editor/editorWindowObject.h"
+#include "EngineDataStructures/runeEngineProject.h"
+#include "SceneHierarchy/sceneHierarchyWindow.h"
 
 class EditorWindow : public rune::GameScene
 {
 
 private:
-  EditorWindowObject sceneContents;
+  SceneHierarchyWindow sceneContents;
 
 public:
+
+  static RuneEngineProject currentlyOpenProject;
   
   virtual void doInit(void);
 

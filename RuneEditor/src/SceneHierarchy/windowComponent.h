@@ -2,12 +2,15 @@
 
 #include <RuneEngine.h>
 
-class EditorWindowComponent : public rune::Component
+class windowComponent : public rune::Component
 {
 
 public:
   void update() override
   {
+
+    ImGuiStyle& style = ImGui::GetStyle();
+    style.WindowRounding = 0;
 
     drawSceneContents();
 

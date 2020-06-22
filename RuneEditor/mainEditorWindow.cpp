@@ -1,5 +1,7 @@
 #include "mainEditorWindow.h"
 
+RuneEngineProject EditorWindow::currentlyOpenProject;
+
 void EditorWindow::doInit()
 {
 

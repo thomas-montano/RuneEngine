@@ -2628,6 +2628,7 @@ static void ShowDemoWindowPopups()
             ImGui::SetItemDefaultFocus();
             ImGui::SameLine();
             if (ImGui::Button("Cancel", ImVec2(120, 0))) { ImGui::CloseCurrentPopup(); }
+
             ImGui::EndPopup();
         }
 

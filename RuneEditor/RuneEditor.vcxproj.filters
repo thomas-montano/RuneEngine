@@ -21,7 +21,19 @@
     <ClCompile Include="mainEditorWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Editor\editorWindowComponent.cpp">
+    <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneHierarchy\windowComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineDataStructures\createdcomponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineDataStructures\createdGameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineDataStructures\createdScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,10 +41,22 @@
     <ClInclude Include="mainEditorWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Editor\editorWindowComponent.h">
+    <ClInclude Include="src\SceneHierarchy\sceneHierarchyWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Editor\editorWindowObject.h">
+    <ClInclude Include="src\SceneHierarchy\windowComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineDataStructures\createdComponent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineDataStructures\createdGameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineDataStructures\createdScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineDataStructures\runeEngineProject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

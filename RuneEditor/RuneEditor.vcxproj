@@ -120,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src;$(ProjectDir)src;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)RuneEngine\src;$(SolutionDir)Dependencies\GLFW\include;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src;$(ProjectDir)src;$(ProjectDir)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -150,14 +150,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Editor\editorWindowComponent.cpp" />
+    <ClCompile Include="src\EngineDataStructures\createdGameObject.cpp" />
+    <ClCompile Include="src\EngineDataStructures\createdcomponent.cpp" />
+    <ClCompile Include="src\EngineDataStructures\createdScene.cpp" />
     <ClCompile Include="mainEditorWindow.cpp" />
     <ClCompile Include="RuneEditor.cpp" />
+    <ClCompile Include="src\SceneHierarchy\windowComponent.cpp" />
+    <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Editor\editorWindowObject.h" />
-    <ClInclude Include="Editor\editorWindowComponent.h" />
+    <ClInclude Include="src\EngineDataStructures\createdGameObject.h" />
+    <ClInclude Include="src\EngineDataStructures\createdComponent.h" />
+    <ClInclude Include="src\EngineDataStructures\createdScene.h" />
+    <ClInclude Include="src\EngineDataStructures\runeEngineProject.h" />
     <ClInclude Include="mainEditorWindow.h" />
+    <ClInclude Include="src\SceneHierarchy\windowComponent.h" />
+    <ClInclude Include="src\SceneHierarchy\sceneHierarchyWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RuneEngine\RuneEngine.vcxproj">
