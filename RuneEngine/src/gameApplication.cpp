@@ -36,7 +36,7 @@ int rune::GameApplication::run(void)
 
   m_mainWindow.enableVsync(false);
 
-  //If the icon file doesn't exist, dont add an icon
+  //If the icon file doesn't exist, don't add an icon
   /*#if __has_include("../icon.c")
     #include "../icon.c"
     m_mainWindow.setIcon(gimp_image.width,gimp_image.height,gimp_image.pixel_data);
@@ -135,7 +135,7 @@ void rune::GameApplication::gameLoop(void)
     //Handle UI that needs reference to window
     m_currentScene->handleUI(m_mainWindow);
 
-    //Update anything that doesnt depend on ticks such as physics
+    //Update anything that doesn't depend on ticks such as physics
     m_currentScene->updateVariable();
 
     m_currentScene->updateComponents();
@@ -189,4 +189,9 @@ double rune::GameApplication::getDeltaTime(void)
 int rune::GameApplication::getFrameRate(void)
 {
   return frameRate;
+}
+
+void rune::GameApplication::quitGame()
+{
+  SceneManager::getCurrentScene()->quitGame();
 }

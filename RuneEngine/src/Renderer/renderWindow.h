@@ -67,6 +67,12 @@ public:
   ///Return a pointer to the OpenGL window.
   GLFWwindow* GetGLWindow();
 
+  ///Returns the size of the current monitor in pixels
+  static rune::Vec2 getDesktopSize(void);
+
+  ///Maximize the currently open window
+  void maximizeWindow(void);
+
 };
 }
 

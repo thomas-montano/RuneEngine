@@ -5,10 +5,13 @@
 class RuneEngineProject
 {
 public:
+  std::string projectName;
   std::vector<CreatedScene> projectScenes;
+  std::string projectSaveLocation;
 
-  RuneEngineProject()
+  RuneEngineProject(std::string newName)
   {
+    projectName = newName;
     CreatedScene defaultScene("Sample Scene");
     projectScenes.push_back(defaultScene);
 

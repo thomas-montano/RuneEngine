@@ -82,6 +82,18 @@ GLFWwindow* rune::RenderWindow::GetGLWindow()
   return GLwindow;
 }
 
+rune::Vec2 rune::RenderWindow::getDesktopSize(void)
+{
+  const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+
+  return rune::Vec2(mode->width, mode->height);
+}
+
+void rune::RenderWindow::maximizeWindow(void)
+{
+  glfwMaximizeWindow(GLwindow);
+}
+
 /**
  * @param event the Event object for the events to be stored in.
 */

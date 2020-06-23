@@ -159,12 +159,15 @@ public:
   void loadScene(GameScene* newScene);
   ///Starts the main game loop
   int run(void);
+
   ///Returns the reference to the currently active render window.
   static RenderWindow* getWindow(void);
   ///Gets the change in time since the last frame in seconds.
   static double getDeltaTime(void);
   ///Gets the number of frames since the last game tick.
   static int getFrameRate(void);
+  ///Shuts down the game
+  static void quitGame();
 
 };
 }

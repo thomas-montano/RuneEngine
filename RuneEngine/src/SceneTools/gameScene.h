@@ -15,7 +15,6 @@
 #include <vector>
 #include <string>
 #include <Renderer\color.h>
-#include <SceneTools\console.h>
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
 #include <Entities\gameUI.h>
@@ -81,7 +80,7 @@ public:
   ///Place a new rune::GameObject into the scene.
   void addObjectToScene(rune::GameObject);
   std::vector<rune::GameObject> getSceneObjects(void);
-  ///Closes the application completely.
+  ///Closes the application
   void quitGame();
 
 };
