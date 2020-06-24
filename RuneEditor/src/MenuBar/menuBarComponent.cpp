@@ -1,5 +1,7 @@
 #include "menuBarComponent.h"
 #include "mainEditorWindow.h"
+#include <windows.h>
+#include <shlobj.h>
 
 void MenuBarComponent::update()
 {
@@ -51,8 +53,13 @@ void MenuBarComponent::update()
 
       }
 
-      ImGui::MenuItem("Open Project");
+      if(ImGui::MenuItem("Open Project"))
+      {
+        openProject();
+      }
+
       ImGui::MenuItem("Save Project");
+
       ImGui::Separator();
 
       if (ImGui::MenuItem("Build"))
@@ -90,6 +97,10 @@ void MenuBarComponent::update()
       if (ImGui::MenuItem("Create New Empty"))
       {
 
+        rune::GameObject newObject;
+
+        rune::SceneManager::getCurrentScene()->addObjectToScene(newObject);
+
         if (EditorWindow::currentlyOpenProject.projectScenes.size() > 0)
         {
           CreatedGameObject newObject("GameObject" + std::to_string(EditorWindow::currentlyOpenProject.projectScenes[0].m_sceneObjects.size()));
@@ -114,6 +125,7 @@ void MenuBarComponent::update()
     ImGui::EndMainMenuBar();
   }
 
+
   if (createNewProject)
   {
 
@@ -121,6 +133,8 @@ void MenuBarComponent::update()
     createNewProject = false;
 
   }
+
+
 
   if (ImGui::BeginPopupModal("ProjectWizard", NULL, ImGuiWindowFlags_AlwaysAutoResize))
   {
@@ -134,25 +148,186 @@ void MenuBarComponent::update()
     static char projectDirectory[256] = { 0 };
     ImGui::InputText("Project Name", projectName, 256);
     ImGui::InputText("Save Location", projectDirectory, 256);
+    ImGui::SameLine();
 
-    if (ImGui::Button("Create Project", ImVec2(120, 0)))
+    if(ImGui::Button("..."))
     {
-      if (projectName[0] != 0)
+    
+      strcpy_s(projectDirectory,openDirectoryBrowser().c_str());
+
+      
+    
+    }
+
+    ImGui::NewLine();
+
+    ImGui::SetItemDefaultFocus();
+    if (ImGui::Button("Cancel", ImVec2(120, 0))) { EditorWindow::currentlyOpenProject.setProjectName(""); ImGui::CloseCurrentPopup(); }
+
+    ImGui::SameLine();
+
+    if (projectName[0] != 0 && projectDirectory[0] != 0)
+    {
+      if (ImGui::Button("Create Project", ImVec2(120, 0)))
       {
         ImGui::CloseCurrentPopup();
-        EditorWindow::currentlyOpenProject.projectName = (std::string)projectName;
-        rune::GameApplication::getWindow()->setWindowTitle(EditorWindow::currentlyOpenProject.projectName + " - Rune Engine Editor Version 0.7.5-alpha");
+        EditorWindow::currentlyOpenProject.setProjectName((std::string)projectName);
+        EditorWindow::currentlyOpenProject.projectSaveLocation = projectDirectory;
       }
     }
 
-    ImGui::SetItemDefaultFocus();
-    ImGui::SameLine();
-    if (ImGui::Button("Cancel", ImVec2(120, 0))) { ImGui::CloseCurrentPopup(); }
+
+    
 
     ImGui::EndPopup();
   }
 
+  if (EditorWindow::currentlyOpenProject.getProjectName() == "")
+  {
 
+    ImGui::OpenPopup("StartupMenu");
+
+  }
+
+
+  if (ImGui::BeginPopupModal("StartupMenu", NULL, ImGuiWindowFlags_AlwaysAutoResize))
+  {
+
+    ImGui::Text("Welcome To The Rune Engine Editor!");
+
+    if (ImGui::Button("Create New Project"))
+    {
+      createNewProject = true;
+      ImGui::CloseCurrentPopup();
+
+      EditorWindow::currentlyOpenProject.setProjectName("New Project");
+
+    }
+
+    ImGui::SameLine();
+
+    if (ImGui::Button("Open Project"))
+    {
+
+      EditorWindow::currentlyOpenProject.setProjectName(openProject());
+
+      ImGui::CloseCurrentPopup();
+
+    }
+
+    ImGui::EndPopup();
+
+  }
+
+}
+
+std::string MenuBarComponent::openProject()
+{
+
+  const int BUFSIZE = 1024;
+  wchar_t buffer[BUFSIZE] = { 0 };
+  OPENFILENAME ofns = { 0 };
+
+  ofns.lpstrFilter = L"Rune Project (*.rproj)\0*.rproj\0\0";
+
+  ofns.lpstrInitialDir = L"Documents";
+
+  ofns.lStructSize = sizeof(ofns);
+  ofns.lpstrFile = buffer;
+  ofns.nMaxFile = BUFSIZE;
+  ofns.lpstrTitle = L"Open a Rune Engine Project";
+  GetOpenFileName(&ofns);
+
+  std::wstring myString(buffer);
+
+  std::string str(myString.begin(), myString.end());
+
+  return str;
+
+}
+
+std::string MenuBarComponent::openScene()
+{
+
+  const int BUFSIZE = 1024;
+  wchar_t buffer[BUFSIZE] = { 0 };
+  OPENFILENAME ofns = { 0 };
+
+  ofns.lpstrFilter = L"Rune Scenes (*.rsc)\0*.rsc\0\0";
+
+  ofns.lpstrInitialDir = L"C:";
+
+  ofns.lStructSize = sizeof(ofns);
+  ofns.lpstrFile = buffer;
+  ofns.nMaxFile = BUFSIZE;
+  ofns.lpstrTitle = L"Open a Rune Engine Scene";
+  GetOpenFileName(&ofns);
+
+  std::wstring myString(buffer);
+
+  std::string str(myString.begin(), myString.end());
+
+  return str;
+
+}
+
+std::string MenuBarComponent::openDirectoryBrowser()
+{
+
+  const int BUFSIZE = 1024;
+  wchar_t buffer[BUFSIZE] = { 0 };
+
+  BROWSEINFO bi = { 0 };
+  bi.lpszTitle = L"Select your project's directory...";
+  bi.ulFlags = BIF_RETURNONLYFSDIRS | BIF_USENEWUI;
+  //::OleInitialize(NULL);
+  //bi.lpfn = BrowseCallbackProc;
+  //bi.lParam = (LPARAM)"D:\\Documents\\MakefileTest\\ConsoleApplication1\\";
+
+  IFileOpenDialog* pfd;
+
+  LPITEMIDLIST pidl = SHBrowseForFolder(&bi);
+
+  ::SHGetPathFromIDList(pidl, buffer);
+
+  // free memory used
+  IMalloc* imalloc = 0;
+  if (SUCCEEDED(SHGetMalloc(&imalloc)))
+  {
+    imalloc->Free(pidl);
+    imalloc->Release();
+  }
+
+  std::wstring myString2(buffer);
+
+  std::string folderPath(myString2.begin(), myString2.end());
+
+  return folderPath;
+
+}
+
+std::string MenuBarComponent::saveFileBrowser()
+{
+
+  const int BUFSIZE = 1024;
+  wchar_t buffer[BUFSIZE] = { 0 };
+  OPENFILENAME ofns = { 0 };
+
+  ofns.lpstrFilter = L"Rune Scenes (*.rsc)\0*.rsc\0\0";
+
+  ofns.lpstrInitialDir = L"D:\\Documents\\MakefileTest\\ConsoleApplication1\\";
+
+  ofns.lStructSize = sizeof(ofns);
+  ofns.lpstrFile = buffer;
+  ofns.nMaxFile = BUFSIZE;
+  ofns.lpstrTitle = L"Open a Rune Engine Project";
+  GetSaveFileName(&ofns);
+
+  std::wstring myString(buffer);
+
+  std::string str(myString.begin(), myString.end());
+
+  return str;
 
 }
 

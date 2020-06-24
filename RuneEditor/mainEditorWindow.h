@@ -17,6 +17,8 @@ private:
   InspectorTab inspectorTab;
   ResourceTab resourceTab;
   SceneViewPort viewPort;
+  
+  void setUpStyle(void);
 
 public:
 
