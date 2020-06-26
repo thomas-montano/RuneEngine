@@ -9,7 +9,6 @@ rune::GameScene::GameScene()
   : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
 {
   variableClock.reset();
-
 }
 
 /**
@@ -120,6 +119,11 @@ void rune::GameScene::quitGame()
   m_quitGame = true;
 }
 
+void rune::GameScene::submitToRenderer(rune::Drawable* newDrawable)
+{
+  drawableObjects.push_back(newDrawable);
+}
+
 void rune::GameScene::startComponents(void)
 {
 
@@ -136,13 +140,6 @@ void rune::GameScene::startComponents(void)
 void rune::GameScene::updateComponents()
 {
   
-  rune::GameApplication::getWindow()->clear(clearColor);
-
-  //Prepare to render debug UI
-  ImGui_ImplOpenGL3_NewFrame();
-  ImGui_ImplGlfw_NewFrame();
-  ImGui::NewFrame();
-
   for(int i = 0; i < sceneObjects.size(); i++)
   {
     for(int j = 0; j < sceneObjects[i].getNumComponents();j++)
@@ -153,12 +150,6 @@ void rune::GameScene::updateComponents()
       }
     }
   }
-
-  //Draw the debug UI
-  ImGui::Render();
-  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-  rune::GameApplication::getWindow()->display();
 
 }
 
@@ -202,17 +193,25 @@ void rune::GameScene::updatePhysics(void)
  */
 void rune::GameScene::Draw(RenderWindow& window)
 {
+  window.clear(clearColor);
 
-  //window.clear(clearColor);
+  //Prepare to render debug UI
+  ImGui_ImplOpenGL3_NewFrame();
+  ImGui_ImplGlfw_NewFrame();
+  ImGui::NewFrame();
 
-  /*for(int i = 0; i < drawables.size();i++)
+  for(int i = 0; i < drawableObjects.size(); i++)
   {
   
-    window.draw(*drawables[i]);
-    
-  }*/
+    rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
+  
+  }
 
-  //window.display();
+  //Draw the debug UI
+  ImGui::Render();
+  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+  window.display();
 
 }
 

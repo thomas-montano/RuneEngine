@@ -45,14 +45,7 @@ void rune::RectangleShape::setUpBuffers()
 
 void rune::RectangleShape::start()
 {
-
-}
-
-void rune::RectangleShape::update()
-{
-
-  draw(*rune::GameApplication::getWindow());
-
+  rune::SceneManager::getCurrentScene()->submitToRenderer(this);
 }
 
 /**

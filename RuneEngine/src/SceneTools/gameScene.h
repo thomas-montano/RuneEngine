@@ -21,6 +21,7 @@
 #include <Events\clock.h>
 #include <Entities\particleEmitter.h>
 #include <Renderer\camera.h>
+#include <Renderer\frameBuffer.h>
 
 namespace rune{
 
@@ -36,6 +37,8 @@ protected:
   std::vector<physics::RigidBody*> physicsBodies;
 
   std::vector<rune::GameObject> sceneObjects;
+
+  std::vector<rune::Drawable*> drawableObjects;
   
   ///A clock that records the amount of time between variable update calls.
   rune::Clock variableClock;
@@ -47,8 +50,6 @@ protected:
   double frameStart;
   ///The color that the screen will be when cleared.
   rune::Color clearColor;
-  ///Ui to be included in the scene.
-  std::vector<GameUI*> m_stateUI;
 
 public:
   ///Default constructor to create a new rune::GameScene
@@ -82,6 +83,8 @@ public:
   std::vector<rune::GameObject> getSceneObjects(void);
   ///Closes the application
   void quitGame();
+
+  void submitToRenderer(rune::Drawable*);
 
 };
 }

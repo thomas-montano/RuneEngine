@@ -7,18 +7,18 @@ void EditorWindow::doInit()
 
   //static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
 
-  clearColor = rune::Color::White;
+  clearColor = rune::Color::Blue;
 
   //Create the red tint style for the editor
   setUpStyle();
 
   ImGuiIO& io = ImGui::GetIO();
 
-  addObjectToScene(menuBar);
-  addObjectToScene(sceneContents);
-  addObjectToScene(inspectorTab);
-  addObjectToScene(resourceTab);
-  addObjectToScene(viewPort);
+  //addObjectToScene(menuBar);
+  //addObjectToScene(sceneContents);
+  //addObjectToScene(inspectorTab);
+  //addObjectToScene(resourceTab);
+  //addObjectToScene(viewPort);
 
   static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
@@ -26,6 +26,47 @@ void EditorWindow::doInit()
   rune::GameApplication::getWindow()->setWindowTitle("Empty Project - Rune Engine Editor Version 0.7.5-alpha");
 
   rune::GameApplication::getWindow()->maximizeWindow();
+
+}
+
+void EditorWindow::Draw(rune::RenderWindow& window)
+{
+
+  window.clear(clearColor);
+
+  /*if (viewPortBuffer.getColorBuffer() != 0)
+  {
+    viewPortBuffer.bind();
+    window.clear(clearColor);
+  }*/
+
+  for (int i = 0; i < drawableObjects.size(); i++)
+  {
+
+    rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
+
+  }
+
+  /*if (viewPortBuffer.getColorBuffer() != 0)
+  {
+    viewPortBuffer.unbind();
+  }*/
+
+  //Prepare to render debug UI
+  ImGui_ImplOpenGL3_NewFrame();
+  ImGui_ImplGlfw_NewFrame();
+  ImGui::NewFrame();
+
+  //Draw all the panels
+  window.draw(menuBar);
+  window.draw(viewPort);
+  window.draw(inspectorTab);
+
+  //Draw the debug UI
+  ImGui::Render();
+  ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+  window.display();
 
 }
 
@@ -39,6 +80,7 @@ void EditorWindow::setUpStyle(void)
 {
   auto& style = ImGui::GetStyle();
   style.FrameRounding = 4.0f;
+  style.WindowPadding = ImVec2(4.0f,4.0f);
   style.WindowBorderSize = 0.0f;
   style.PopupBorderSize = 0.0f;
   style.GrabRounding = 4.0f;

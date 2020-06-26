@@ -45,7 +45,7 @@ void rune::Sprite::setUpBuffers()
   // color attribute
   glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(2 * sizeof(float)));
   glEnableVertexAttribArray(1);
-  // texture coord attribute
+  // texture coordinate attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
 
@@ -56,15 +56,7 @@ void rune::Sprite::setUpBuffers()
 
 void rune::Sprite::start()
 {
-
-}
-
-void rune::Sprite::update()
-{
-
-  //rune::GameApplication::getWindow()->draw(*this);
-  draw(*rune::GameApplication::getWindow());
-
+  rune::SceneManager::getCurrentScene()->submitToRenderer(this);
 }
 
 /**

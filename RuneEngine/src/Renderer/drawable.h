@@ -23,7 +23,7 @@ class RUNE_ENGINE Drawable
 public:
   
   ///Draw the object to a render window.
-  virtual inline void draw(rune::RenderWindow&) = 0;
+  virtual void draw(rune::RenderWindow&) = 0;
 
 };
 }

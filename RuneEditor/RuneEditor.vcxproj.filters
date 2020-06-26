@@ -33,10 +33,7 @@
     <ClCompile Include="src\EngineDataStructures\createdScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\MenuBar\menuBarComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\InspectorTab\inspector.cpp">
+    <ClCompile Include="src\MenuBar\menuBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,13 +62,7 @@
     <ClInclude Include="src\MenuBar\menuBar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\MenuBar\menuBarComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\InspectorTab\inspector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\InspectorTab\inspectorComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ResourcesTab\resourceTab.h">
@@ -81,9 +72,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SceneViewport\sceneViewport.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SceneViewport\viewportComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

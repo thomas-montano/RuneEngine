@@ -22,7 +22,7 @@ namespace rune{
 class GameApplication;
 class SceneManager;
 
-class RUNE_ENGINE RectangleShape : public rune::Component
+class RUNE_ENGINE RectangleShape : public rune::Drawable, public rune::Component
 {
 
 private:
@@ -93,7 +93,6 @@ private:
 public:
 
   virtual void start() override;
-  virtual void update() override;
   ///The draw call for rendering the shape to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Default constructor that will create a white rectangle by default.

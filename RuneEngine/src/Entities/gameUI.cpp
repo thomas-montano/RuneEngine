@@ -4,7 +4,7 @@
 #include <imgui/imgui_impl_glfw.h>
 #include <gameApplication.h>
 
-rune::GameUI::GameUI() : m_height(0), m_width(0), m_posX(0), m_posY(0)
+rune::GameUI::GameUI()
 {
 
 }
@@ -18,10 +18,7 @@ rune::GameUI::GameUI() : m_height(0), m_width(0), m_posX(0), m_posY(0)
 void rune::GameUI::createButton(double posX, double posY, double width, double height)
 {
 
-  m_posX = posX;
-  m_posY = posY;
-  m_height = height;
-  m_width = width;
+
 
 
   /*if(!m_objectTexture.loadFromFile("./Assets/Images/button-Sheet.png"))
@@ -137,7 +134,7 @@ bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
 
   /*if the user clicked down while over the button, and let
   go of the mouse click while over the button, return true*/
-  if(m_clickedUp == true && m_clickedDown == true)
+ /* if(m_clickedUp == true && m_clickedDown == true)
   {
     m_clickedDown = false;
     m_clickedUp = false;
@@ -146,13 +143,8 @@ bool rune::GameUI::isClicked(rune::Vec2 mouseLocation, rune::Event mouseEvent)
   else
   {
     return false;
-  }
+  }*/
+
+  return false;
   
-}
-
-void rune::GameUI::draw(RenderWindow& window)
-{
-
-  window.draw(m_uiObject);
-
 }

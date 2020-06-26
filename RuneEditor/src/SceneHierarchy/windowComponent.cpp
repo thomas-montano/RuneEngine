@@ -9,12 +9,6 @@ void windowComponent::drawSceneContents()
 
   ImGui::Begin("Scene Hierarchy", NULL, ImGuiWindowFlags_NoCollapse);
 
-
-  //ImGui::SetWindowSize(ImVec2(400, rune::GameApplication::getWindow()->getSize().y - ImGui::GetFrameHeight()-300));
-  //ImGui::SetWindowPos(ImVec2(0, ImGui::GetFrameHeight()));
-
-  double test = ImGui::GetFrameHeight();
-
   if (ImGui::IsItemHovered())
   {
     ImGui::BeginTooltip();
@@ -22,9 +16,6 @@ void windowComponent::drawSceneContents()
     ImGui::EndTooltip();
   }
 
-  //ImGui::Text(std::to_string(rune::GameApplication::getFrameRate()).c_str());
-
-  //ImGui::PushItemWidth(ImGui::GetWindowWidth() * 0.65f);
 
   if (ImGui::CollapsingHeader("Current Scene", NULL, ImGuiTreeNodeFlags_DefaultOpen))
   {

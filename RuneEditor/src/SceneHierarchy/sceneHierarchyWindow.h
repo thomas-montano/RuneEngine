@@ -14,7 +14,7 @@ public:
 
   SceneHierarchyWindow()
   {
-    addComponent(toolbar);
+    //addComponent(toolbar);
   }
 
 };

@@ -98,12 +98,6 @@ public:
   Sprite(std::string spriteLocation, unsigned int drawMode = LINEAR_FILTER);
   /// Virtual start method being overloaded
   virtual void start() override;
-  /// Virtual update method being overloaded
-  virtual void update() override;
-  virtual void fixedUpdate()
-  {
-    std::cout << "Cast worked!" << std::endl;
-  }
   ///Initialize opengl for the sprite.
   void setUpBuffers(void);
   ///Draw overload so that sprite can be displayed to the screen.

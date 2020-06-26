@@ -12,7 +12,7 @@ public:
   ResourceTab()
   {
   
-    addComponent(resourceTab);
+    //addComponent(resourceTab);
   
   }
   

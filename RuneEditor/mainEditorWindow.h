@@ -25,6 +25,7 @@ public:
   static RuneEngineProject currentlyOpenProject;
   
   virtual void doInit(void);
+  virtual void Draw(rune::RenderWindow&) override;
 
   virtual void updateVariable(void);
 };

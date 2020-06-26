@@ -22,14 +22,7 @@ namespace rune{
 class RUNE_ENGINE GameUI// : public Drawable
 {
 private:
-  Sprite m_uiObject;
-  Texture m_objectTexture;
-  bool m_clickedUp = false;
-  bool m_clickedDown = false;
-  double m_posX;
-  double m_posY;
-  double m_height;
-  double m_width;
+
 public:
   GameUI();
   ///Creates a UI level button.
@@ -38,7 +31,8 @@ public:
   ///Determines whether or not the UI element has been clicked on.
   bool isClicked(rune::Vec2, rune::Event mouseEvent);
 
-  void draw(RenderWindow&);
+  virtual inline void draw(RenderWindow&) = 0;
 };
-}
+
+}//namespace rune
 #endif

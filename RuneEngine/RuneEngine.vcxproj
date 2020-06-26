@@ -114,6 +114,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClCompile Include="src\Input\keyboard.cpp" />
     <ClCompile Include="src\Math\mat3.cpp" />
     <ClCompile Include="src\Renderer\color.cpp" />
+    <ClCompile Include="src\Renderer\frameBuffer.cpp" />
     <ClCompile Include="src\SceneTools\gameScene.cpp" />
     <ClCompile Include="src\Entities\gameUI.cpp" />
     <ClCompile Include="src\Entities\lightSource.cpp" />
@@ -154,6 +155,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClInclude Include="src\Input\keyboard.h" />
     <ClInclude Include="src\Math\mat3.h" />
     <ClInclude Include="src\Renderer\color.h" />
+    <ClInclude Include="src\Renderer\frameBuffer.h" />
     <ClInclude Include="src\RuneEngine.h" />
     <ClInclude Include="src\SceneTools\gameScene.h" />
     <ClInclude Include="src\Entities\gameUI.h" />

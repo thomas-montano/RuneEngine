@@ -1,20 +1,20 @@
 #pragma once
 
 #include <RuneEngine.h>
-#include "menuBarComponent.h"
 
-class MenuBar : public rune::GameObject
+class MenuBar : public rune::Drawable
 {
 
 public:
-  MenuBarComponent menuBar;
+  bool createNewProject;
+  bool initialMenu = true;
 
+  std::string openProject();
+  std::string openScene();
 
-  MenuBar()
-  {
-  
-    addComponent(menuBar);
+  std::string openDirectoryBrowser();
+  std::string saveFileBrowser();
 
-  }
+  virtual void draw(rune::RenderWindow&) override;
 
 };

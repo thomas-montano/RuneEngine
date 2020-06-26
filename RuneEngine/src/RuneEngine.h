@@ -32,6 +32,7 @@
 #include <Renderer\color.h>
 #include <Renderer\shader.h>
 #include <Renderer\texture.h>
+#include <Renderer\frameBuffer.h>
 
 #include <Physics\collider2d.h>
 #include <physics\rigidBody.h>

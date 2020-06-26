@@ -1,9 +1,9 @@
-#include "menuBarComponent.h"
+#include "menuBar.h"
 #include "mainEditorWindow.h"
 #include <windows.h>
 #include <shlobj.h>
 
-void MenuBarComponent::update()
+void MenuBar::draw(rune::RenderWindow& window)
 {
   
   //Set up the IMGUI dock space THIS MUST COME BEFORE EVERYTHING ELSE
@@ -221,7 +221,7 @@ void MenuBarComponent::update()
 
 }
 
-std::string MenuBarComponent::openProject()
+std::string MenuBar::openProject()
 {
 
   const int BUFSIZE = 1024;
@@ -246,7 +246,7 @@ std::string MenuBarComponent::openProject()
 
 }
 
-std::string MenuBarComponent::openScene()
+std::string MenuBar::openScene()
 {
 
   const int BUFSIZE = 1024;
@@ -271,7 +271,7 @@ std::string MenuBarComponent::openScene()
 
 }
 
-std::string MenuBarComponent::openDirectoryBrowser()
+std::string MenuBar::openDirectoryBrowser()
 {
 
   const int BUFSIZE = 1024;
@@ -306,7 +306,7 @@ std::string MenuBarComponent::openDirectoryBrowser()
 
 }
 
-std::string MenuBarComponent::saveFileBrowser()
+std::string MenuBar::saveFileBrowser()
 {
 
   const int BUFSIZE = 1024;

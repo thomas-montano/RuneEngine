@@ -155,8 +155,7 @@
     <ClCompile Include="src\EngineDataStructures\createdScene.cpp" />
     <ClCompile Include="mainEditorWindow.cpp" />
     <ClCompile Include="RuneEditor.cpp" />
-    <ClCompile Include="src\InspectorTab\inspector.cpp" />
-    <ClCompile Include="src\MenuBar\menuBarComponent.cpp" />
+    <ClCompile Include="src\MenuBar\menuBar.cpp" />
     <ClCompile Include="src\SceneHierarchy\windowComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -166,15 +165,12 @@
     <ClInclude Include="src\EngineDataStructures\runeEngineProject.h" />
     <ClInclude Include="mainEditorWindow.h" />
     <ClInclude Include="src\InspectorTab\inspector.h" />
-    <ClInclude Include="src\InspectorTab\inspectorComponent.h" />
     <ClInclude Include="src\MenuBar\menuBar.h" />
-    <ClInclude Include="src\MenuBar\menuBarComponent.h" />
     <ClInclude Include="src\ResourcesTab\resourceTab.h" />
     <ClInclude Include="src\ResourcesTab\resourceTabComponent.h" />
     <ClInclude Include="src\SceneHierarchy\windowComponent.h" />
     <ClInclude Include="src\SceneHierarchy\sceneHierarchyWindow.h" />
     <ClInclude Include="src\SceneViewport\sceneViewport.h" />
-    <ClInclude Include="src\SceneViewport\viewportComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RuneEngine\RuneEngine.vcxproj">
