@@ -21,9 +21,6 @@
     <ClCompile Include="mainEditorWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\SceneHierarchy\windowComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\EngineDataStructures\createdcomponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -36,15 +33,15 @@
     <ClCompile Include="src\MenuBar\menuBar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainEditorWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SceneHierarchy\sceneHierarchyWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SceneHierarchy\windowComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineDataStructures\createdComponent.h">
@@ -68,10 +65,10 @@
     <ClInclude Include="src\ResourcesTab\resourceTab.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ResourcesTab\resourceTabComponent.h">
+    <ClInclude Include="src\SceneViewport\sceneViewport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\SceneViewport\sceneViewport.h">
+    <ClInclude Include="src\player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

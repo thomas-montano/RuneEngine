@@ -22,6 +22,11 @@ void rune::FrameBuffer::setSize(rune::Vec2 newSize)
   invalidate();
 }
 
+rune::Vec2 rune::FrameBuffer::getSize(void)
+{
+  return rune::Vec2(width,height);
+}
+
 void rune::FrameBuffer::invalidate()
 {
   if (bufferID)
@@ -30,12 +35,13 @@ void rune::FrameBuffer::invalidate()
     glDeleteTextures(1, &colorAttachment);
   }
 
-  glGenFramebuffers(1, &bufferID);
+  glCreateFramebuffers(1, &bufferID);
   glBindFramebuffer(GL_FRAMEBUFFER, bufferID);
 
-  glGenTextures(1, &colorAttachment);
+  glCreateTextures(GL_TEXTURE_2D, 1, &colorAttachment);
   glBindTexture(GL_TEXTURE_2D, colorAttachment);
-  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, 800, 600, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
 
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
   glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -55,6 +61,7 @@ void rune::FrameBuffer::invalidate()
 void rune::FrameBuffer::bind()
 {
   glBindFramebuffer(GL_FRAMEBUFFER, bufferID);
+  glViewport(0, 0, width, height);
 }
 
 void rune::FrameBuffer::unbind()

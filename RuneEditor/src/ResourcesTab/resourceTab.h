@@ -1,19 +1,21 @@
 #pragma once
 
 #include <RuneEngine.h>
-#include "resourceTabComponent.h"
 
-class ResourceTab : public rune::GameObject
+class ResourceTab : public rune::Drawable
 {
 
 public:
-  ResourceTabComponent resourceTab;
-
-  ResourceTab()
+  void draw(rune::RenderWindow&) override
   {
-  
-    //addComponent(resourceTab);
-  
+
+    ImGui::Begin("Resources", NULL, ImGuiWindowFlags_NoCollapse);
+
+    //ImGui::SetWindowPos(ImVec2(0, rune::GameApplication::getWindow()->getSize().y-300));
+    //ImGui::SetWindowSize(ImVec2(rune::GameApplication::getWindow()->getSize().x-400,300));
+
+    ImGui::End();
+
   }
   
 

@@ -2,10 +2,12 @@
 #include "mainEditorWindow.h"
 #include <windows.h>
 #include <shlobj.h>
+//#include <imgui\imgui.cpp>
+//#include <imgui\imgui_internal.h>
 
 void MenuBar::draw(rune::RenderWindow& window)
 {
-  
+
   //Set up the IMGUI dock space THIS MUST COME BEFORE EVERYTHING ELSE
   ImGuiWindowFlags windowFlags = ImGuiWindowFlags_NoDocking;
 
@@ -32,6 +34,11 @@ void MenuBar::draw(rune::RenderWindow& window)
   ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f),dockspace_flags);
   
   ImGui::End();
+
+//   ImGui::DockBuilderRemoveNode(dockspace_id);
+//   ImGui::DockBuilderAddNode(dockspace_id, dockspace_flags); // Add empty node
+//   ImGui::DockBuilderSetNodeSize(dockspace_id, viewport->GetWorkSize());
+
 
   //Go ahead and render the menu bar.
   if (ImGui::BeginMainMenuBar())
@@ -218,6 +225,14 @@ void MenuBar::draw(rune::RenderWindow& window)
     ImGui::EndPopup();
 
   }
+
+}
+
+void MenuBar::setupDefaultLayout(void)
+{
+
+  ImGuiID dockspaceID = ImGui::GetID("Dock space");
+  
 
 }
 

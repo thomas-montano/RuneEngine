@@ -7,18 +7,14 @@ void EditorWindow::doInit()
 
   //static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
 
-  clearColor = rune::Color::Blue;
+  clearColor = rune::Color::White;
+
+  sceneCamera.setZoom(4);
 
   //Create the red tint style for the editor
   setUpStyle();
 
   ImGuiIO& io = ImGui::GetIO();
-
-  //addObjectToScene(menuBar);
-  //addObjectToScene(sceneContents);
-  //addObjectToScene(inspectorTab);
-  //addObjectToScene(resourceTab);
-  //addObjectToScene(viewPort);
 
   static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
@@ -27,6 +23,10 @@ void EditorWindow::doInit()
 
   rune::GameApplication::getWindow()->maximizeWindow();
 
+  viewPortBuffer = &viewPort.viewBuffer;
+
+  addObjectToScene(player);
+
 }
 
 void EditorWindow::Draw(rune::RenderWindow& window)
@@ -34,11 +34,8 @@ void EditorWindow::Draw(rune::RenderWindow& window)
 
   window.clear(clearColor);
 
-  /*if (viewPortBuffer.getColorBuffer() != 0)
-  {
-    viewPortBuffer.bind();
-    window.clear(clearColor);
-  }*/
+  viewPortBuffer->bind();
+  window.clear(clearColor);
 
   for (int i = 0; i < drawableObjects.size(); i++)
   {
@@ -47,10 +44,7 @@ void EditorWindow::Draw(rune::RenderWindow& window)
 
   }
 
-  /*if (viewPortBuffer.getColorBuffer() != 0)
-  {
-    viewPortBuffer.unbind();
-  }*/
+  viewPortBuffer->unbind();
 
   //Prepare to render debug UI
   ImGui_ImplOpenGL3_NewFrame();
@@ -59,9 +53,11 @@ void EditorWindow::Draw(rune::RenderWindow& window)
 
   //Draw all the panels
   window.draw(menuBar);
+  window.draw(sceneContents);
   window.draw(viewPort);
   window.draw(inspectorTab);
-
+  window.draw(resourceTab);
+  
   //Draw the debug UI
   ImGui::Render();
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
@@ -88,7 +84,7 @@ void EditorWindow::setUpStyle(void)
   ImVec4* colors = ImGui::GetStyle().Colors;
   colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);
   colors[ImGuiCol_TextDisabled] = ImVec4(0.73f, 0.75f, 0.74f, 1.00f);
-  colors[ImGuiCol_WindowBg] = ImVec4(0.09f, 0.09f, 0.09f, 0.94f);
+  colors[ImGuiCol_WindowBg] = ImVec4(0.09f, 0.09f, 0.09f, 1.f);
   colors[ImGuiCol_ChildBg] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
   colors[ImGuiCol_PopupBg] = ImVec4(0.08f, 0.08f, 0.08f, 0.94f);
   colors[ImGuiCol_Border] = ImVec4(0.20f, 0.20f, 0.20f, 0.50f);

@@ -5,20 +5,42 @@
 
 class SceneViewPort : public rune::Drawable
 {
-private:
-
 public:
-  bool added = false;
+  rune::FrameBuffer viewBuffer;
 
-  virtual void draw(rune::RenderWindow&) override
+  SceneViewPort()
+  {
+  
+    viewBuffer.setSize(rune::GameApplication::getWindow()->getSize());
+
+  }
+
+  virtual void draw(rune::RenderWindow& window) override
   { 
 
     ImGui::Begin("View Port", NULL, ImGuiWindowFlags_NoCollapse);
-    //viewportBuffer->setSize(rune::Vec2(ImGui::GetContentRegionAvail().x, ImGui::GetContentRegionAvail().y));
 
-    //uint32_t textureID = viewportBuffer->getColorBuffer();
+    rune::Vec2 windowSize = window.getSize();
 
-    //ImGui::Image((void*)textureID, ImGui::GetContentRegionAvail());
+    double scalingFactor;
+
+    //Adjust the size of the viewport image to make sure that no image stretching occurs
+    if(ImGui::GetContentRegionAvail().x / viewBuffer.getSize().x < ImGui::GetContentRegionAvail().y / viewBuffer.getSize().y)
+    {
+    
+      scalingFactor = ImGui::GetContentRegionAvail().x / viewBuffer.getSize().x;
+    
+    }
+    else
+    {
+    
+      scalingFactor = ImGui::GetContentRegionAvail().y / viewBuffer.getSize().y;
+    
+    }
+
+    uint32_t textureID = viewBuffer.getColorBuffer();
+
+    ImGui::Image((void*)textureID, ImVec2(scalingFactor * viewBuffer.getSize().x, scalingFactor * viewBuffer.getSize().y));
 
     ImGui::End();
 

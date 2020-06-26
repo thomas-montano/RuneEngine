@@ -1,20 +1,14 @@
 #pragma once
 
 #include <RuneEngine.h>
-#include "windowComponent.h"
 #include <vector>
 
-class SceneHierarchyWindow : public rune::GameObject
+class SceneHierarchyWindow : public rune::Drawable
 {
 private:
   
 public:
 
-  windowComponent toolbar;
-
-  SceneHierarchyWindow()
-  {
-    //addComponent(toolbar);
-  }
+  virtual void draw(rune::RenderWindow& window) override;
 
 };

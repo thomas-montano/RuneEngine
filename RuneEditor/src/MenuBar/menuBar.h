@@ -16,5 +16,6 @@ public:
   std::string saveFileBrowser();
 
   virtual void draw(rune::RenderWindow&) override;
+  void setupDefaultLayout(void);
 
 };

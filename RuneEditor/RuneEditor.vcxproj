@@ -156,7 +156,7 @@
     <ClCompile Include="mainEditorWindow.cpp" />
     <ClCompile Include="RuneEditor.cpp" />
     <ClCompile Include="src\MenuBar\menuBar.cpp" />
-    <ClCompile Include="src\SceneHierarchy\windowComponent.cpp" />
+    <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\EngineDataStructures\createdGameObject.h" />
@@ -166,9 +166,8 @@
     <ClInclude Include="mainEditorWindow.h" />
     <ClInclude Include="src\InspectorTab\inspector.h" />
     <ClInclude Include="src\MenuBar\menuBar.h" />
+    <ClInclude Include="src\player.h" />
     <ClInclude Include="src\ResourcesTab\resourceTab.h" />
-    <ClInclude Include="src\ResourcesTab\resourceTabComponent.h" />
-    <ClInclude Include="src\SceneHierarchy\windowComponent.h" />
     <ClInclude Include="src\SceneHierarchy\sceneHierarchyWindow.h" />
     <ClInclude Include="src\SceneViewport\sceneViewport.h" />
   </ItemGroup>

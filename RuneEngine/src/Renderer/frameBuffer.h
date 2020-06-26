@@ -28,6 +28,7 @@ public:
   ~FrameBuffer();
 
   void setSize(rune::Vec2 newSize);
+  rune::Vec2 getSize(void);
 
   void invalidate();
 
