@@ -155,10 +155,12 @@
     <ClCompile Include="src\EngineDataStructures\createdScene.cpp" />
     <ClCompile Include="mainEditorWindow.cpp" />
     <ClCompile Include="RuneEditor.cpp" />
+    <ClCompile Include="src\InspectorTab\inspector.cpp" />
     <ClCompile Include="src\MenuBar\menuBar.cpp" />
     <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\characterController.h" />
     <ClInclude Include="src\EngineDataStructures\createdGameObject.h" />
     <ClInclude Include="src\EngineDataStructures\createdComponent.h" />
     <ClInclude Include="src\EngineDataStructures\createdScene.h" />

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <RuneEngine.h>
-#include <mainEditorWindow.h>
+#include "mainEditorWindow.h"
 
 class SceneViewPort : public rune::Drawable
 {
@@ -19,8 +19,6 @@ public:
   { 
 
     ImGui::Begin("View Port", NULL, ImGuiWindowFlags_NoCollapse);
-
-    rune::Vec2 windowSize = window.getSize();
 
     double scalingFactor;
 
@@ -40,7 +38,9 @@ public:
 
     uint32_t textureID = viewBuffer.getColorBuffer();
 
-    ImGui::Image((void*)textureID, ImVec2(scalingFactor * viewBuffer.getSize().x, scalingFactor * viewBuffer.getSize().y));
+    ImGui::SetCursorPosY(0.5*(ImGui::GetWindowSize().y)-(0.5*scalingFactor *viewBuffer.getSize().y));
+
+    ImGui::Image((void*)textureID, ImVec2(scalingFactor * viewBuffer.getSize().x, scalingFactor * viewBuffer.getSize().y),ImVec2(0,1),ImVec2(1,0));
 
     ImGui::End();
 

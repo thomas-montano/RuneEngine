@@ -12,6 +12,7 @@ public:
   
   std::vector<CreatedScene> projectScenes;
   std::string projectSaveLocation;
+  CreatedScene* activeScene;
 
   void setProjectName(std::string newName)
   {
@@ -27,9 +28,9 @@ public:
   RuneEngineProject(std::string newName)
   {
     projectName = newName;
-    CreatedScene defaultScene("Sample Scene");
+    CreatedScene defaultScene("Default Scene");
     projectScenes.push_back(defaultScene);
-
+    activeScene = &projectScenes[0];
   }
 
   void buildProject(void)

@@ -1,9 +1,11 @@
 #pragma once
 
 #include <RuneEngine.h>
+#include "mainEditorWindow.h"
 
 class ResourceTab : public rune::Drawable
 {
+private:
 
 public:
   void draw(rune::RenderWindow&) override
@@ -11,8 +13,8 @@ public:
 
     ImGui::Begin("Resources", NULL, ImGuiWindowFlags_NoCollapse);
 
-    //ImGui::SetWindowPos(ImVec2(0, rune::GameApplication::getWindow()->getSize().y-300));
-    //ImGui::SetWindowSize(ImVec2(rune::GameApplication::getWindow()->getSize().x-400,300));
+    //std::cout << "Size: " << rune::Vec2(ImGui::GetWindowSize().x, ImGui::GetWindowSize().y) << std::endl;
+    //std::cout << "Position: " << rune::Vec2(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y) << std::endl;
 
     ImGui::End();
 

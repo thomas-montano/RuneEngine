@@ -2,12 +2,14 @@
 
 RuneEngineProject EditorWindow::currentlyOpenProject("");
 
+CreatedGameObject* EditorWindow::selectedObject = nullptr;
+
 void EditorWindow::doInit()
 {
 
   //static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
 
-  clearColor = rune::Color::White;
+  clearColor = rune::Color(30, 144, 255);
 
   sceneCamera.setZoom(4);
 
@@ -39,9 +41,7 @@ void EditorWindow::Draw(rune::RenderWindow& window)
 
   for (int i = 0; i < drawableObjects.size(); i++)
   {
-
     rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
-
   }
 
   viewPortBuffer->unbind();
@@ -50,7 +50,7 @@ void EditorWindow::Draw(rune::RenderWindow& window)
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
-
+  
   //Draw all the panels
   window.draw(menuBar);
   window.draw(sceneContents);

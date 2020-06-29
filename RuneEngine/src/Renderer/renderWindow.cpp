@@ -47,6 +47,7 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
   IMGUI_CHECKVERSION();
   ImGui::CreateContext();
   ImGuiIO& io = ImGui::GetIO(); (void)io;
+
   ImGui::StyleColorsDark();
 
   ImGui_ImplGlfw_InitForOpenGL(GLwindow, true);

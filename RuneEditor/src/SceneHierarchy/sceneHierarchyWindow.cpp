@@ -6,6 +6,7 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
 
   bool createNewProject = false;
 
+
   ImGui::Begin("Scene Hierarchy", NULL, ImGuiWindowFlags_NoCollapse);
 
   if (ImGui::IsItemHovered())
@@ -16,26 +17,25 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
   }
 
 
-  if (ImGui::CollapsingHeader("Current Scene", NULL, ImGuiTreeNodeFlags_DefaultOpen))
+  if (ImGui::CollapsingHeader(EditorWindow::currentlyOpenProject.activeScene->sceneName.c_str(), NULL, ImGuiTreeNodeFlags_DefaultOpen))
   {
 
-    for (int i = 0; i < EditorWindow::currentlyOpenProject.projectScenes.size(); i++)
+    for (int j = 0; j < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
     {
-      //ImGui::Text(std::to_string(i).c_str());
-      ImGui::SetNextItemOpen(true, ImGuiCond_Once);
-      if (ImGui::TreeNode(EditorWindow::currentlyOpenProject.projectScenes[i].sceneName.c_str()))
+      if (ImGui::Selectable(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j].objectName.c_str()))
+      {
+        //Show the game object in the inspector if its been clicked.
+        EditorWindow::selectedObject = &EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j];
+
+      }
+
+      if (rune::Mouse::isButtonPressed(rune::Mouse::Left) && !ImGui::IsItemActive() && ImGui::IsWindowHovered())
       {
 
-        for (int j = 0; j < EditorWindow::currentlyOpenProject.projectScenes[i].m_sceneObjects.size(); j++)
-        {
-          if (ImGui::Selectable(EditorWindow::currentlyOpenProject.projectScenes[i].m_sceneObjects[j].objectName.c_str()))
-          {
-            //Show the game object in the inspector if its been clicked.
-          }
-        }
+        EditorWindow::selectedObject = nullptr;
 
-        ImGui::TreePop();
       }
+
     }
 
   }

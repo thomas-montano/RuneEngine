@@ -2,8 +2,6 @@
 #include "mainEditorWindow.h"
 #include <windows.h>
 #include <shlobj.h>
-//#include <imgui\imgui.cpp>
-//#include <imgui\imgui_internal.h>
 
 void MenuBar::draw(rune::RenderWindow& window)
 {
@@ -32,13 +30,12 @@ void MenuBar::draw(rune::RenderWindow& window)
 
   ImGuiID dockspace_id = ImGui::GetID("Dock space");
   ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f),dockspace_flags);
-  
+
   ImGui::End();
 
 //   ImGui::DockBuilderRemoveNode(dockspace_id);
 //   ImGui::DockBuilderAddNode(dockspace_id, dockspace_flags); // Add empty node
 //   ImGui::DockBuilderSetNodeSize(dockspace_id, viewport->GetWorkSize());
-
 
   //Go ahead and render the menu bar.
   if (ImGui::BeginMainMenuBar())
@@ -49,6 +46,7 @@ void MenuBar::draw(rune::RenderWindow& window)
       {
         CreatedScene newScene("New Scene");
         EditorWindow::currentlyOpenProject.projectScenes.push_back(newScene);
+        EditorWindow::currentlyOpenProject.activeScene = &EditorWindow::currentlyOpenProject.projectScenes[EditorWindow::currentlyOpenProject.projectScenes.size()-1];
       }
 
       ImGui::MenuItem("Open Scene");
@@ -111,7 +109,7 @@ void MenuBar::draw(rune::RenderWindow& window)
         if (EditorWindow::currentlyOpenProject.projectScenes.size() > 0)
         {
           CreatedGameObject newObject("GameObject" + std::to_string(EditorWindow::currentlyOpenProject.projectScenes[0].m_sceneObjects.size()));
-          EditorWindow::currentlyOpenProject.projectScenes[0].m_sceneObjects.push_back(newObject);
+          EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.push_back(newObject);
         }
 
       }
@@ -120,12 +118,25 @@ void MenuBar::draw(rune::RenderWindow& window)
     }
     if (ImGui::BeginMenu("Component"))
     {
-      if (ImGui::BeginMenu("Sprite"))
-      {
-        ImGui::MenuItem("Test");
-        ImGui::EndMenu();
 
+      displayComponents();
+
+      ImGui::EndMenu();
+    }
+
+    if(ImGui::BeginMenu("View"))
+    {
+    
+      if(ImGui::MenuItem("Save Layout"))
+      {
+        ImGui::SaveIniSettingsToDisk("./RuneEngineLayout.ini");
       }
+
+      if(ImGui::MenuItem("Load Layout"))
+      {
+        ImGui::LoadIniSettingsFromDisk("./RuneEngineLayout.ini");
+      }
+
       ImGui::EndMenu();
     }
 
@@ -225,14 +236,6 @@ void MenuBar::draw(rune::RenderWindow& window)
     ImGui::EndPopup();
 
   }
-
-}
-
-void MenuBar::setupDefaultLayout(void)
-{
-
-  ImGuiID dockspaceID = ImGui::GetID("Dock space");
-  
 
 }
 
@@ -343,6 +346,61 @@ std::string MenuBar::saveFileBrowser()
   std::string str(myString.begin(), myString.end());
 
   return str;
+
+}
+
+void MenuBar::displayComponents()
+{
+
+  bool disabled = EditorWindow::selectedObject != nullptr;
+
+  if (ImGui::MenuItem("Sprite Renderer", NULL, false, disabled))
+  {
+
+    CreatedComponent newComponent(std::string(typeid(rune::Sprite).name()), "Sprite Renderer", "test");
+    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+  }
+
+  if (ImGui::MenuItem("Rectangle Renderer", NULL, false, disabled))
+  {
+
+    CreatedComponent newComponent(std::string(typeid(rune::RectangleShape).name()), "Rectangle Renderer", "test");
+    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+  }
+
+  if (ImGui::MenuItem("Rigid Body", NULL, false, disabled))
+  {
+
+    CreatedComponent newComponent(std::string(typeid(physics::RigidBody).name()), "Rigid Body", "test");
+    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+  }
+
+  if (ImGui::MenuItem("Particle Emitter", NULL, false, disabled))
+  {
+
+    CreatedComponent newComponent(std::string(typeid(rune::ParticleEmitter).name()), "Particle Emitter", "test");
+    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+  }
+
+  if (ImGui::MenuItem("Animator", NULL, false, disabled))
+  {
+
+    CreatedComponent newComponent(std::string(typeid(rune::AnimationController).name()), "Animator", "test");
+    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+  }
+
+  if (ImGui::MenuItem("Light Source", NULL, false, disabled))
+  {
+
+    CreatedComponent newComponent(std::string(typeid(rune::LightSource).name()), "Light Source", "test");
+    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+  }
 
 }
 

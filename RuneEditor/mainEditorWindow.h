@@ -21,6 +21,8 @@ private:
 
   Player player;
 
+  bool initialSetUp = false;
+
   rune::Camera sceneCamera;
   
   void setUpStyle(void);
@@ -30,7 +32,8 @@ public:
   rune::FrameBuffer* viewPortBuffer;
 
   static RuneEngineProject currentlyOpenProject;
-  
+  static CreatedGameObject* selectedObject;
+
   virtual void doInit(void);
   virtual void Draw(rune::RenderWindow&) override;
 

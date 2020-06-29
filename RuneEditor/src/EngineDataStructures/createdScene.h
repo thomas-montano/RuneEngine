@@ -1,5 +1,6 @@
 #pragma once
 
+#include <RuneEngine.h>
 #include "createdGameObject.h"
 
 class CreatedScene
@@ -7,6 +8,7 @@ class CreatedScene
 public:
   std::string sceneName;
   std::vector<CreatedGameObject> m_sceneObjects;
+  rune::GameScene scene;
 
   CreatedScene(std::string newSceneName)
   {

@@ -15,7 +15,8 @@ public:
   std::string openDirectoryBrowser();
   std::string saveFileBrowser();
 
+  void displayComponents();
+
   virtual void draw(rune::RenderWindow&) override;
-  void setupDefaultLayout(void);
 
 };
