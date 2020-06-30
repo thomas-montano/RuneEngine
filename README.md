@@ -10,9 +10,16 @@ You can clone the repository to a local destination using git:
 
 `git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
 
-Then link the library file, move the DLL file into your games working directory, and make sure to ```#include <RuneEngine.h>```
+## Setting up a Project
+
+1. Link the LIB file in the linker settings of your project.
+2. Move the DLL file into your game's working directory.
+3. Declare RUNE_PLATFORM_WINDOWS in the preprocessor definitions of your project.
+4. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
+5. #include <RuneEngine.h> in all files using the engine.
 
 ## Engine Features
+- Full In-Engine Visual Editor
 - Custom 2D renderer
 - Custom Physics Engine
 - Customizable Game Objects

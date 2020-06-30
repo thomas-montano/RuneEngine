@@ -15,6 +15,9 @@ rune::FrameBuffer::~FrameBuffer()
   glDeleteFramebuffers(1,&bufferID);
 }
 
+/**
+ * \param newSize The new size that should be used to create the frame buffer.
+ */
 void rune::FrameBuffer::setSize(rune::Vec2 newSize)
 {
   width = newSize.x;
@@ -22,6 +25,9 @@ void rune::FrameBuffer::setSize(rune::Vec2 newSize)
   invalidate();
 }
 
+/**
+ * \return The current size of the frame buffer in pixels.
+ */
 rune::Vec2 rune::FrameBuffer::getSize(void)
 {
   return rune::Vec2(width,height);
@@ -48,12 +54,12 @@ void rune::FrameBuffer::invalidate()
 
   glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAttachment, 0);
 
-  if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+  /*if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
   {
   
     std::cout << "Frame buffer error!" << std::endl;
   
-  }
+  }*/
 
   glBindFramebuffer(GL_FRAMEBUFFER,0);
 }
@@ -69,6 +75,9 @@ void rune::FrameBuffer::unbind()
   glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
+/**
+ * \return An unsigned integer handle that references the color buffer.
+ */
 unsigned int rune::FrameBuffer::getColorBuffer()
 {
   return colorAttachment;

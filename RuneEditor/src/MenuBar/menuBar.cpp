@@ -3,6 +3,10 @@
 #include <windows.h>
 #include <shlobj.h>
 
+#include <Components/SpriteComponent.h>
+#include <Components/transformComponent.h>
+#include <Components/rectangleComponent.h>
+
 void MenuBar::draw(rune::RenderWindow& window)
 {
 
@@ -44,9 +48,9 @@ void MenuBar::draw(rune::RenderWindow& window)
     {
       if (ImGui::MenuItem("New Scene"))
       {
-        CreatedScene newScene("New Scene");
+        CreatedScene* newScene = new CreatedScene("New Scene");
         EditorWindow::currentlyOpenProject.projectScenes.push_back(newScene);
-        EditorWindow::currentlyOpenProject.activeScene = &EditorWindow::currentlyOpenProject.projectScenes[EditorWindow::currentlyOpenProject.projectScenes.size()-1];
+        EditorWindow::currentlyOpenProject.activeScene = EditorWindow::currentlyOpenProject.projectScenes[EditorWindow::currentlyOpenProject.projectScenes.size()-1];
       }
 
       ImGui::MenuItem("Open Scene");
@@ -108,7 +112,7 @@ void MenuBar::draw(rune::RenderWindow& window)
 
         if (EditorWindow::currentlyOpenProject.projectScenes.size() > 0)
         {
-          CreatedGameObject newObject("GameObject" + std::to_string(EditorWindow::currentlyOpenProject.projectScenes[0].m_sceneObjects.size()));
+          CreatedGameObject* newObject = new CreatedGameObject("GameObject" + std::to_string(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size()));
           EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.push_back(newObject);
         }
 
@@ -357,7 +361,7 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Sprite Renderer", NULL, false, disabled))
   {
 
-    CreatedComponent newComponent(std::string(typeid(rune::Sprite).name()), "Sprite Renderer", "test");
+    SpriteComponent* newComponent = new SpriteComponent(std::string(typeid(rune::Sprite).name()), "Sprite Renderer", EditorWindow::selectedObject->gameObject,"test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
 
   }
@@ -365,40 +369,52 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Rectangle Renderer", NULL, false, disabled))
   {
 
-    CreatedComponent newComponent(std::string(typeid(rune::RectangleShape).name()), "Rectangle Renderer", "test");
+    RectangleComponent* newComponent = new RectangleComponent(std::string(typeid(rune::RectangleShape).name()), "Rectangle Renderer", EditorWindow::selectedObject->gameObject,"test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
 
   }
 
   if (ImGui::MenuItem("Rigid Body", NULL, false, disabled))
   {
 
-    CreatedComponent newComponent(std::string(typeid(physics::RigidBody).name()), "Rigid Body", "test");
+    /*CreatedComponent newComponent(std::string(typeid(physics::RigidBody).name()), "Rigid Body", "test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+    physics::RigidBody body;
+    EditorWindow::selectedObject->gameObject.addComponent(body);*/
 
   }
 
   if (ImGui::MenuItem("Particle Emitter", NULL, false, disabled))
   {
 
-    CreatedComponent newComponent(std::string(typeid(rune::ParticleEmitter).name()), "Particle Emitter", "test");
+    /*CreatedComponent newComponent(std::string(typeid(rune::ParticleEmitter).name()), "Particle Emitter", "test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+    //rune::ParticleEmitter emitter(rune::Vec2(0,0), rune::Vec2(0,0), rune::Color::White);
+    //EditorWindow::selectedObject->gameObject.addComponent(emitter);*/
 
   }
 
   if (ImGui::MenuItem("Animator", NULL, false, disabled))
   {
-
-    CreatedComponent newComponent(std::string(typeid(rune::AnimationController).name()), "Animator", "test");
+    /*CreatedComponent newComponent(std::string(typeid(rune::AnimationController).name()), "Animator", "test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+    rune::AnimationController animator;
+    EditorWindow::selectedObject->gameObject.addComponent(animator);*/
 
   }
 
   if (ImGui::MenuItem("Light Source", NULL, false, disabled))
   {
 
-    CreatedComponent newComponent(std::string(typeid(rune::LightSource).name()), "Light Source", "test");
+    /*CreatedComponent newComponent(std::string(typeid(rune::LightSource).name()), "Light Source", "test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+
+    //rune::LightSource lightSource;
+    //EditorWindow::selectedObject->gameObject.addComponent(lightSource);*/
 
   }
 

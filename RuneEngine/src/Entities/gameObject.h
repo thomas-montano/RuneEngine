@@ -23,7 +23,6 @@ class RUNE_ENGINE GameObject
 {
 private:
   std::vector<rune::Component*> objectComponents;
-  std::string objectName;
 
 public:
   ///The location, scale, and rotation of the object in the world.

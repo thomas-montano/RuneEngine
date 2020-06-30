@@ -7,12 +7,13 @@ class CreatedScene
 {
 public:
   std::string sceneName;
-  std::vector<CreatedGameObject> m_sceneObjects;
-  rune::GameScene scene;
+  std::vector<CreatedGameObject*> m_sceneObjects;
+  rune::GameScene* scene;
 
   CreatedScene(std::string newSceneName)
   {
     sceneName = newSceneName;
+    scene = new rune::GameScene;
   }
 
   void buildScene(void)
@@ -21,9 +22,14 @@ public:
     for(int i = 0; i < m_sceneObjects.size();i++)
     {
     
-      m_sceneObjects[i].buildObject();
+      m_sceneObjects[i]->buildObject();
     
     }
+  }
+
+  ~CreatedScene()
+  {
+    delete scene;
   }
 
 };

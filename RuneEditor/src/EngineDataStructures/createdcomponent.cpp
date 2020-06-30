@@ -13,7 +13,7 @@ void CreatedComponent::buildComponent(void)
   componentFile << "class " << componentName << " : public rune::Component\n";
   componentFile << "{\n";
 
-  componentFile << "private:\n\n";
+  componentFile << "public:\n\n";
 
   componentFile << "};";
 

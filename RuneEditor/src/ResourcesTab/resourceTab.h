@@ -16,6 +16,8 @@ public:
     //std::cout << "Size: " << rune::Vec2(ImGui::GetWindowSize().x, ImGui::GetWindowSize().y) << std::endl;
     //std::cout << "Position: " << rune::Vec2(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y) << std::endl;
 
+    //ImGui::ShowDemoWindow();
+
     ImGui::End();
 
   }

@@ -51,9 +51,6 @@ void rune::Sprite::setUpBuffers()
 
 }
 
-
-
-
 void rune::Sprite::start()
 {
   rune::SceneManager::getCurrentScene()->submitToRenderer(this);
@@ -111,10 +108,10 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 /**
  * \param texture The file path to the texture that is to be loaded onto the sprite.
  */
-void rune::Sprite::setTexture(std::string texture)
+void rune::Sprite::setTexture(std::string texture, unsigned int drawMode)
 {
 
-  spriteTexture.loadFromFile(texture.c_str());
+  spriteTexture.loadFromFile(texture.c_str(), drawMode);
 
 }
 

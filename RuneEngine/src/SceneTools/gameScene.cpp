@@ -153,6 +153,20 @@ void rune::GameScene::updateComponents()
 
 }
 
+void rune::GameScene::renderScene(RenderWindow& window)
+{
+
+  window.clear(clearColor);
+
+  for (int i = 0; i < drawableObjects.size(); i++)
+  {
+
+    rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
+
+  }
+
+}
+
 void rune::GameScene::updatePhysics(void)
 {
 

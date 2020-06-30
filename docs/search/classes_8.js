@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['mat2_470',['Mat2',['../df/db1/classrune_1_1Mat2.html',1,'rune']]],
-  ['mat3_471',['Mat3',['../d2/d17/classrune_1_1Mat3.html',1,'rune']]],
-  ['mouse_472',['Mouse',['../df/d83/classrune_1_1Mouse.html',1,'rune']]]
+  ['lightsource_478',['LightSource',['../d0/da8/classrune_1_1LightSource.html',1,'rune']]]
 ];

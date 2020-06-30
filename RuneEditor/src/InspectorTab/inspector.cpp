@@ -1,5 +1,6 @@
 #include "inspector.h"
 #include "mainEditorWindow.h"
+#include "EngineDataStructures/createdComponent.h"
 
 void InspectorTab::draw(rune::RenderWindow& window)
 {
@@ -9,11 +10,13 @@ void InspectorTab::draw(rune::RenderWindow& window)
   if (EditorWindow::selectedObject != nullptr)
   {
 
-    for (int i = 0; i < EditorWindow::selectedObject->objectComponents.size(); i++)
+    for(int i = 0; i < EditorWindow::selectedObject->objectComponents.size(); i++)
     {
 
-      ImGui::CollapsingHeader(EditorWindow::selectedObject->objectComponents[i].componentName.c_str(), ImGuiTreeNodeFlags_DefaultOpen);
-
+      if(ImGui::CollapsingHeader(EditorWindow::selectedObject->objectComponents[i]->componentName.c_str(), ImGuiTreeNodeFlags_DefaultOpen))
+      {
+        EditorWindow::selectedObject->objectComponents[i]->inspectComponent();
+      }
     }
 
   }

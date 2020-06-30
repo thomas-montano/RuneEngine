@@ -7,21 +7,17 @@ class CreatedGameObject
 {
 public:
   std::string objectName;
-  std::vector<CreatedComponent> objectComponents;
+  std::vector<CreatedComponent*> objectComponents;
+  rune::GameObject* gameObject;
 
-
-  CreatedGameObject(std::string newName)
-  {
-
-    objectName = newName;
-    
-    CreatedComponent defaultTransform("rune::Transform", "Transform", "Entities/transform.h");
-
-    objectComponents.push_back(defaultTransform);
-
-  }
+  CreatedGameObject(std::string newName);
 
   void buildObject(void);
+
+  ~CreatedGameObject()
+  {
+    delete gameObject;  
+  }
   
 
 };

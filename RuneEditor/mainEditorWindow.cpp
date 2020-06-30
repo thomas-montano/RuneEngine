@@ -27,8 +27,6 @@ void EditorWindow::doInit()
 
   viewPortBuffer = &viewPort.viewBuffer;
 
-  addObjectToScene(player);
-
 }
 
 void EditorWindow::Draw(rune::RenderWindow& window)
@@ -37,13 +35,7 @@ void EditorWindow::Draw(rune::RenderWindow& window)
   window.clear(clearColor);
 
   viewPortBuffer->bind();
-  window.clear(clearColor);
-
-  for (int i = 0; i < drawableObjects.size(); i++)
-  {
-    rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
-  }
-
+  currentlyOpenProject.activeScene->scene->renderScene(window);
   viewPortBuffer->unbind();
 
   //Prepare to render debug UI

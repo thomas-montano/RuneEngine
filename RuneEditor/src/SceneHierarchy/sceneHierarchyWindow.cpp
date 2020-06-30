@@ -22,14 +22,14 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
 
     for (int j = 0; j < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
     {
-      if (ImGui::Selectable(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j].objectName.c_str()))
+      if (ImGui::Selectable(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j]->objectName.c_str()))
       {
         //Show the game object in the inspector if its been clicked.
-        EditorWindow::selectedObject = &EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j];
+        EditorWindow::selectedObject = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j];
 
       }
 
-      if (rune::Mouse::isButtonPressed(rune::Mouse::Left) && !ImGui::IsItemActive() && ImGui::IsWindowHovered())
+      if (rune::Mouse::isButtonPressed(rune::Mouse::Left) && !ImGui::IsAnyItemHovered() && ImGui::IsWindowHovered())
       {
 
         EditorWindow::selectedObject = nullptr;

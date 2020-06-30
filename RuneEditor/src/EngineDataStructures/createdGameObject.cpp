@@ -1,5 +1,20 @@
 #include "createdGameObject.h"
+#include <Components/transformComponent.h>
+#include <mainEditorWindow.h>
 #include <fstream>
+
+CreatedGameObject::CreatedGameObject(std::string newName)
+{
+
+  objectName = newName;
+  gameObject = new rune::GameObject;
+
+  TransformComponent* defaultTransform = new TransformComponent("rune::Transform", "Transform", gameObject, "Entities/transform.h");
+
+  objectComponents.push_back(defaultTransform);
+  EditorWindow::currentlyOpenProject.activeScene->scene->addObjectToScene(*gameObject);
+
+}
 
 void CreatedGameObject::buildObject(void)
 {
@@ -14,7 +29,7 @@ void CreatedGameObject::buildObject(void)
   for(int i = 1; i < objectComponents.size();i++)
   {
   
-    objectFile << "#include \"" << objectComponents[i].componentName << "\"\n";
+    objectFile << "#include \"" << objectComponents[i]->componentName << "\"\n";
   
   }
 
@@ -26,7 +41,7 @@ void CreatedGameObject::buildObject(void)
   for(int i = 0; i < objectComponents.size();i++)
   {
   
-    objectFile << objectComponents[i].componentType << " " << objectComponents[i].componentName << ";\n";
+    objectFile << objectComponents[i]->componentType << " " << objectComponents[i]->componentName << ";\n";
   
   }
 

@@ -11,12 +11,13 @@
 #define PARTICLES_H_DEFINED
 
 #include "core.h"
+#include <Entities\component.h>
 #include <Renderer\rectangleShape.h>
 #include <Renderer\color.h>
 
 namespace rune{
 
-class RUNE_ENGINE ParticleEmitter// : public Drawable
+class RUNE_ENGINE ParticleEmitter : public Component
 {
 
 private:

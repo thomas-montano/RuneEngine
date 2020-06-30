@@ -72,6 +72,9 @@ public:
   void startComponents(void);
   void updateComponents(void);
 
+  ///This function should be used in between a frame buffer bind and unbind only.
+  void renderScene(RenderWindow& window);
+
   virtual bool getStateFlag();
   virtual int getNextState();
   virtual void setStateFlag(bool value);

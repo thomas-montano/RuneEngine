@@ -10,7 +10,5 @@ private:
 public:
 
   virtual void draw(rune::RenderWindow& window);
-  
-
 
 };

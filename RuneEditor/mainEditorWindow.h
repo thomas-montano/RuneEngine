@@ -7,7 +7,6 @@
 #include "InspectorTab/inspector.h"
 #include "ResourcesTab/resourceTab.h"
 #include "SceneViewport/sceneViewport.h"
-#include <src/player.h>
 
 class EditorWindow : public rune::GameScene
 {
@@ -18,8 +17,6 @@ private:
   InspectorTab inspectorTab;
   ResourceTab resourceTab;
   SceneViewPort viewPort;
-
-  Player player;
 
   bool initialSetUp = false;
 

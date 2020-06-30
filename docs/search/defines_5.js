@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['mat3_5fh_5fdefined_920',['MAT3_H_DEFINED',['../da/d09/mat3_8h.html#a392b6de0c2dc71d0ebee4779b9ecdd2a',1,'mat3.h']]],
-  ['mouse_5fh_5fdefined_921',['MOUSE_H_DEFINED',['../dc/ded/mouse_8h.html#a182f14cb4de2923ffb6d458e5bec5267',1,'mouse.h']]]
+  ['linear_5ffilter_938',['LINEAR_FILTER',['../df/dba/texture_8h.html#a9592f8132ab5c1a30df31c5b58405bb3',1,'texture.h']]]
 ];

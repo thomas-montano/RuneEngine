@@ -103,7 +103,7 @@ public:
   ///Draw overload so that sprite can be displayed to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.
-  void setTexture(std::string texture);
+  void setTexture(std::string texture, unsigned int drawMode = LINEAR_FILTER);
   ///Set a new texture as active for the sprite
   void changeShader(const std::string& filePath);
 

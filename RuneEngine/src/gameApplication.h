@@ -197,7 +197,7 @@ public:
  * 2. Move the DLL file into your game's working directory. 
  * 3. Declare `RUNE_PLATFORM_WINDOWS` in the preprocessor definitions of your project.
  * 4. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
- * 5. Include ```#include <RuneEngine.h>``` in the files using the engine.
+ * 5. ```#include <RuneEngine.h>``` in the files using the engine.
  * 
  * 
  * @subsection features Engine Features

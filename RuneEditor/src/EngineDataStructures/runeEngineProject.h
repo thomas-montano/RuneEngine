@@ -10,7 +10,7 @@ private:
 
 public:
   
-  std::vector<CreatedScene> projectScenes;
+  std::vector<CreatedScene*> projectScenes;
   std::string projectSaveLocation;
   CreatedScene* activeScene;
 
@@ -28,9 +28,9 @@ public:
   RuneEngineProject(std::string newName)
   {
     projectName = newName;
-    CreatedScene defaultScene("Default Scene");
+    CreatedScene* defaultScene = new CreatedScene("Default Scene");
     projectScenes.push_back(defaultScene);
-    activeScene = &projectScenes[0];
+    activeScene = projectScenes[0];
   }
 
   void buildProject(void)
@@ -45,7 +45,7 @@ public:
       writeFile << projectName << std::endl;
       writeFile << projectSaveLocation << std::endl;
 
-      projectScenes[i].buildScene();
+      projectScenes[i]->buildScene();
     
       writeFile.close();
 
