@@ -67,11 +67,14 @@ void EditorWindow::updateVariable(void)
 void EditorWindow::setUpStyle(void)
 {
   auto& style = ImGui::GetStyle();
-  style.FrameRounding = 4.0f;
-  style.WindowPadding = ImVec2(4.0f,4.0f);
+  style.FrameRounding = 1.0f;
+  style.WindowPadding = ImVec2(6.0f,6.0f);
+  style.FramePadding = ImVec2(4.0f, 6.0f);
+  style.ItemSpacing = ImVec2(6.0f, 6.0f);
   style.WindowBorderSize = 0.0f;
   style.PopupBorderSize = 0.0f;
   style.GrabRounding = 4.0f;
+
 
   ImVec4* colors = ImGui::GetStyle().Colors;
   colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);

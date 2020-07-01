@@ -120,7 +120,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;GLEW_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src;$(ProjectDir)src;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src;$(ProjectDir)src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +138,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src;$(ProjectDir)src;$(ProjectDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)RuneEngine\src;$(ProjectDir)src;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -153,8 +153,8 @@
     <ClCompile Include="src\EngineDataStructures\createdGameObject.cpp" />
     <ClCompile Include="src\EngineDataStructures\createdComponent.cpp" />
     <ClCompile Include="src\EngineDataStructures\createdScene.cpp" />
-    <ClCompile Include="mainEditorWindow.cpp" />
-    <ClCompile Include="RuneEditor.cpp" />
+    <ClCompile Include="src\mainEditorWindow.cpp" />
+    <ClCompile Include="src\RuneEditor.cpp" />
     <ClCompile Include="src\InspectorTab\inspector.cpp" />
     <ClCompile Include="src\MenuBar\menuBar.cpp" />
     <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp" />
@@ -167,7 +167,7 @@
     <ClInclude Include="src\EngineDataStructures\createdComponent.h" />
     <ClInclude Include="src\EngineDataStructures\createdScene.h" />
     <ClInclude Include="src\EngineDataStructures\runeEngineProject.h" />
-    <ClInclude Include="mainEditorWindow.h" />
+    <ClInclude Include="src\mainEditorWindow.h" />
     <ClInclude Include="src\InspectorTab\inspector.h" />
     <ClInclude Include="src\MenuBar\menuBar.h" />
     <ClInclude Include="src\ResourcesTab\resourceTab.h" />

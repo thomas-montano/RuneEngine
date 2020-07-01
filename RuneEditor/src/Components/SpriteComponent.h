@@ -24,17 +24,29 @@ public:
 
   virtual void inspectComponent()
   {
+    
+    bool reloadSprite = false;
 
-    ImGui::InputText("Texture Location", spriteFilePath, 256);
+    if(ImGui::InputText("Texture Location", spriteFilePath, 256))
+    {
+      reloadSprite = true;
+    }
+    
     ImGui::SameLine();
 
     if (ImGui::Button("..."))
     {
-      strcpy_s(spriteFilePath, openTexture().c_str());
-      sprite.setTexture(spriteFilePath);
+      std::string path = openTexture();
+
+      if(!path.empty())
+      {
+        strcpy_s(spriteFilePath, path.c_str());
+        reloadSprite = true;
+      }
+
     }
 
-    if (ImGui::BeginCombo("combo 1", FILTER_OPTIONS[index]))
+    if (ImGui::BeginCombo("Filter Mode", FILTER_OPTIONS[index]))
     {
       for (int n = 0; n < IM_ARRAYSIZE(FILTER_OPTIONS); n++)
       {
@@ -42,6 +54,7 @@ public:
         if (ImGui::Selectable(FILTER_OPTIONS[n], is_selected))
         {
           index = n;
+          reloadSprite = true;
         }
         // Set the initial focus when opening the combo (scrolling + keyboard navigation focus)
         if (is_selected)
@@ -50,10 +63,11 @@ public:
       ImGui::EndCombo();
     }
 
-    if(ImGui::Button("Reload Sprite"))
+    if(reloadSprite)
     {
       
-      sprite.setTexture(spriteFilePath,FILTER_MODES[index]);
+      sprite.setTexture(spriteFilePath, FILTER_MODES[index]);
+      
     }
   
   }

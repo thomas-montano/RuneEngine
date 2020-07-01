@@ -5,17 +5,10 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
 {
 
   bool createNewProject = false;
+  static int selectionIndex = 0;
 
 
   ImGui::Begin("Scene Hierarchy", NULL, ImGuiWindowFlags_NoCollapse);
-
-  if (ImGui::IsItemHovered())
-  {
-    ImGui::BeginTooltip();
-    ImGui::Text("This is the scene editor!");
-    ImGui::EndTooltip();
-  }
-
 
   if (ImGui::CollapsingHeader(EditorWindow::currentlyOpenProject.activeScene->sceneName.c_str(), NULL, ImGuiTreeNodeFlags_DefaultOpen))
   {
@@ -26,7 +19,11 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
       {
         //Show the game object in the inspector if its been clicked.
         EditorWindow::selectedObject = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j];
-
+      }
+      
+      if(ImGui::OpenPopupContextItem("GameObjectRightClick", 1))
+      {
+        selectionIndex = j;
       }
 
       if (rune::Mouse::isButtonPressed(rune::Mouse::Left) && !ImGui::IsAnyItemHovered() && ImGui::IsWindowHovered())
@@ -38,6 +35,15 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
 
     }
 
+  }
+
+  if (ImGui::BeginPopupContextItem("GameObjectRightClick"))
+  {
+    if (ImGui::Selectable("Delete Object"))
+    {
+      EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.erase(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.begin() + selectionIndex);
+    }
+    ImGui::EndPopup();
   }
 
   ImGui::End();

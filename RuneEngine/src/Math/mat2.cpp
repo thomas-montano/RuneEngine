@@ -228,7 +228,7 @@ rune::Vec2 rune::operator*(rune::Vec2 right, rune::Mat2 left)
 
 /**
  * \param right The scalar to multiply by.
- * \return A memberwise scalar division.
+ * \return A member wise scalar division.
  */
 rune::Mat2 rune::Mat2::operator/ (double scalar)
 {
@@ -239,11 +239,11 @@ rune::Mat2 rune::Mat2::operator/ (double scalar)
 
 /**
  * \param right The scalar to multiply by.
- * \return A memberwise scalar multiplication.
+ * \return A member wise scalar multiplication.
  */
 rune::Mat2 rune::operator* (double scalar, rune::Mat2 mat)
 {
-  return scalar*mat;
+  return mat*scalar;
 }
 
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)

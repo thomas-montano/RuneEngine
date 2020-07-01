@@ -19,13 +19,25 @@ public:
 
   virtual void inspectComponent()
   {
-  
+    
+    ImGui::Columns(2, "mycolumns2", true);  // 3-ways, no border
+    ImGui::AlignTextToFramePadding();
     ImGui::Text("Position:");
+    ImGui::NextColumn();
     ImGui::DragFloat3(" ", position, .1);
+
+    ImGui::NextColumn();  // 3-ways, no border
+    ImGui::AlignTextToFramePadding();
     ImGui::Text("Scale:");
-    ImGui::DragFloat3("", size, .1);
+    ImGui::NextColumn();
+    ImGui::DragFloat3("", size, .1, 0, FLT_MAX/INT_MAX);
+
+    ImGui::NextColumn();
+    ImGui::AlignTextToFramePadding();
     ImGui::Text("Rotation:");
+    ImGui::NextColumn();
     ImGui::DragFloat3("  ", rotation, .1);
+    ImGui::Columns(1);
 
     parentObject->transform.setPosition(rune::Vec3(static_cast<double>(position[0]), static_cast<double>(position[1]), static_cast<double>(position[2])));
     parentObject->transform.setScale(rune::Vec3(size[0], size[1], size[2]));

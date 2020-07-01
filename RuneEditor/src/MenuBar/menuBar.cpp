@@ -106,13 +106,36 @@ void MenuBar::draw(rune::RenderWindow& window)
       if (ImGui::MenuItem("Create New Empty"))
       {
 
-        rune::GameObject newObject;
+        
+        std::string objectName = "GameObject";
+        int smallestObjectNum = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size();
 
-        rune::SceneManager::getCurrentScene()->addObjectToScene(newObject);
+        //Disallow a new game object to be given the same name as another object
+        for(int i = 0; i <= EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); i++)
+        {
+          bool foundSmaller = false;
+          for(int j = 0; j < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
+          {
 
+            if (strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j]->objectName.c_str(), ("GameObject (" + std::to_string(i) + ")").c_str()) == 0)
+            {
+              foundSmaller = true;
+            }
+          }
+
+          if(!foundSmaller && i < smallestObjectNum)
+          {
+            smallestObjectNum = i;
+          }
+
+        }
+
+          objectName = "GameObject (" + std::to_string(smallestObjectNum) + ")";
+
+        //Create the new object in the scene
         if (EditorWindow::currentlyOpenProject.projectScenes.size() > 0)
         {
-          CreatedGameObject* newObject = new CreatedGameObject("GameObject" + std::to_string(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size()));
+          CreatedGameObject* newObject = new CreatedGameObject(objectName);
           EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.push_back(newObject);
         }
 
