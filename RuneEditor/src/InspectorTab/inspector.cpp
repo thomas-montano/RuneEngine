@@ -15,8 +15,8 @@ void InspectorTab::draw(rune::RenderWindow& window)
     //Store the address of the gameobject so that we can display it on the screen as a reference
     address << static_cast<void const*>(EditorWindow::selectedObject->gameObject);
 
-
-    if(ImGui::InputText((address.str()).c_str(), &objectName[0], 32, ImGuiInputTextFlags_EnterReturnsTrue))
+    
+    if(ImGui::InputText(" ", &objectName[0], 32, ImGuiInputTextFlags_EnterReturnsTrue))
     {
       
       bool validName = true;
@@ -45,6 +45,9 @@ void InspectorTab::draw(rune::RenderWindow& window)
         EditorWindow::selectedObject->objectName = objectName;
       }
     }
+
+    ImGui::SameLine();
+    ImGui::TextDisabled((address.str()).c_str());
 
     ImGui::Separator();
 
