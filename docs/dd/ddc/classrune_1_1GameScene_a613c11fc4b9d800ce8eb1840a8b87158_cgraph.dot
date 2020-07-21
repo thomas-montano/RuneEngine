@@ -1,0 +1,18 @@
+digraph "rune::GameScene::Draw"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rune::GameScene::Draw",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="rune::RenderWindow\l::clear",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d58/classrune_1_1RenderWindow.html#aeb8b42b5b6ecd7d005ca37b67b4afa1d",tooltip="Clear the entire screen with a single color."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="rune::RenderWindow\l::display",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d58/classrune_1_1RenderWindow.html#a3c90c45ad48b883b509fc43e61d04b8e",tooltip="Display on screen what has been rendered to the window so far."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="rune::RenderWindow\l::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d58/classrune_1_1RenderWindow.html#adfacd593b018add7c9d6c7d98f833c1a",tooltip="Renders a drawable to the screen."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="rune::Drawable::draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d29/classrune_1_1Drawable.html#a005d2711ac41f1c2224ef0b35a5471e4",tooltip="Draw the object to a render window."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="rune::GameApplication\l::getWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/dfb/classrune_1_1GameApplication.html#aff4e7b7333418f8d280689d1a6c6a2e5",tooltip="Returns the reference to the currently active render window."];
+}

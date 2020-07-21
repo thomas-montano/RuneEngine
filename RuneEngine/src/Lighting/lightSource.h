@@ -11,10 +11,11 @@
 
 #include "core.h"
 #include <Renderer\drawable.h>
+#include <Entities\component.h>
 
 namespace rune{
 
-class RUNE_ENGINE LightSource : public Drawable
+class RUNE_ENGINE LightSource : public Drawable, public Component
 {
 
 public:

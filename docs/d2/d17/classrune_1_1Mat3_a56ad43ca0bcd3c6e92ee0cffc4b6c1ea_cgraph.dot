@@ -1,0 +1,10 @@
+digraph "rune::Mat3::invert"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rune::Mat3::invert",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Inversion of the matrix."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="rune::Mat2::determinant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/db1/classrune_1_1Mat2.html#a6b9b16da683a6a107db76aad81cd5e17",tooltip="Determinant of the matrix."];
+}

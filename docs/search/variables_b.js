@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['red_789',['Red',['../d8/d25/classrune_1_1Color.html#a6ddf3aec445929c3605579c921886514',1,'rune::Color::Red()'],['../d8/d25/classrune_1_1Color.html#a736c8f165e05399846cd57318e2a309a',1,'rune::Color::red()']]],
-  ['restitution_790',['restitution',['../d0/d74/structphysics_1_1body.html#a77786add9ce4f9e0d3ace63eaef37a2a',1,'physics::body']]],
-  ['rotationalradius_791',['rotationalRadius',['../d0/d74/structphysics_1_1body.html#adebd1f87dcd4913736410bfebe4a0f70',1,'physics::body']]]
+  ['x_554',['x',['../dd/dca/classrune_1_1Vec2.html#ae0fbd4d0a9ed1d125fea740a3314db84',1,'rune::Vec2::x()'],['../d5/d19/classrune_1_1Vec3.html#a0901a5b5749e0d3fbdfb9bf598d0fbe4',1,'rune::Vec3::x()']]]
 ];

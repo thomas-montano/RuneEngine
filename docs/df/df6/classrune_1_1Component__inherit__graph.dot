@@ -10,9 +10,11 @@ digraph "rune::Component"
   Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node3 [label="rune::AnimationController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d42/classrune_1_1AnimationController.html",tooltip="This class is used to animate a rune::GameObject."];
   Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="rune::ParticleEmitter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d40/classrune_1_1ParticleEmitter.html",tooltip="Class responsible for creating particle emitters and managing the creation of particles."];
+  Node4 [label="rune::LightSource",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/da8/classrune_1_1LightSource.html",tooltip="A light source to be used in a scene. Casts light and shadows on objects."];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node5 [label="rune::RectangleShape",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d43/classrune_1_1RectangleShape.html",tooltip="A rectangle that can be drawn to the screen."];
+  Node5 [label="rune::ParticleEmitter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d40/classrune_1_1ParticleEmitter.html",tooltip="Class responsible for creating particle emitters and managing the creation of particles."];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="rune::Sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d12/classrune_1_1Sprite.html",tooltip="A sprite that can be given a texture and animated."];
+  Node6 [label="rune::RectangleShape",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d43/classrune_1_1RectangleShape.html",tooltip="A rectangle that can be drawn to the screen."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="rune::Sprite",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d12/classrune_1_1Sprite.html",tooltip="A sprite that can be given a texture and animated."];
 }

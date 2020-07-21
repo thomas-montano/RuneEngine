@@ -12,8 +12,8 @@
 #define ANIMATION_CONTROLLER_H_DEFINED
 
 #include "core.h"
-#include "gameObject.h"
-#include "component.h"
+#include <Entities/gameObject.h>
+#include <Entities/component.h>
 #include "objectAnimation.h"
 #include <Renderer\sprite.h>
 #include <unordered_map>

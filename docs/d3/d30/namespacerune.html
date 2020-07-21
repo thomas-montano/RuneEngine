@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.7.5-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.5-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -111,14 +111,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/ddc/classrune_1_1GameScene.html">GameScene</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class is responsible for serving as a parent class for each instance of the game. In order to create a new instance for the game, copy this class and add objects as needed.  <a href="../../dd/ddc/classrune_1_1GameScene.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d2a/classrune_1_1GameUI.html">GameUI</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class responsible for managing the user interface elements and baking text into other textures.  <a href="../../d0/d2a/classrune_1_1GameUI.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/df4/classrune_1_1Keyboard.html">Keyboard</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class allows for access to the keyboard.  <a href="../../d9/df4/classrune_1_1Keyboard.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/da8/classrune_1_1LightSource.html">LightSource</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A light source to be used in a scene. Casts light and shadows on objects.  <a href="../../d0/da8/classrune_1_1LightSource.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d2d/classrune_1_1List.html">List</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list that can be used to store data.  <a href="../../d9/d2d/classrune_1_1List.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/db1/classrune_1_1Mat2.html">Mat2</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">2 x 2 matrix to be used for math.  <a href="../../df/db1/classrune_1_1Mat2.html#details">More...</a><br /></td></tr>
@@ -165,27 +165,30 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d19/classrune_1_1Vec3.html">Vec3</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">1 x 3 vector to be used for math.  <a href="../../d5/d19/classrune_1_1Vec3.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d60/classrune_1_1World.html">World</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A physics world that contains all the information needed to run physics.  <a href="../../d3/d60/classrune_1_1World.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a1df9bd01e014c6f3e4122d8b92cccd28"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">EventType</a> { <br />
-&#160;&#160;<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a6adf97f83acf6453d4a6a4b1070f3754">EventType::None</a> = 0, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28ac984201d37197ab297a14d19efee4b07">EventType::WindowClose</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a9f8f27bff2915738c4fe1b970e12f89c">EventType::WindowResize</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a1c68d5453b28d52622bf5486a5fd95ca">EventType::WindowFocus</a>, 
+<tr class="memitem:a1df9bd01e014c6f3e4122d8b92cccd28"><td class="memItemLeft" align="right" valign="top"><a id="a1df9bd01e014c6f3e4122d8b92cccd28"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">EventType</a> { <br />
+&#160;&#160;<b>None</b> = 0, 
+<b>WindowClose</b>, 
+<b>WindowResize</b>, 
+<b>WindowFocus</b>, 
 <br />
-&#160;&#160;<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a1c2119b9d61e623975f13f1029f1d97c">EventType::WindowLostFocus</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28ab94473d9dfc85f8fdbf5cb3b1d992bda">EventType::WindowMoved</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28ac17e6984c1e5a887a49831beadee6bca">EventType::KeyPressed</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a4a77f07c8ad223b71ab4ce78a63841ab">EventType::KeyReleased</a>, 
+&#160;&#160;<b>WindowLostFocus</b>, 
+<b>WindowMoved</b>, 
+<b>KeyPressed</b>, 
+<b>KeyReleased</b>, 
 <br />
-&#160;&#160;<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a7349f643d689997b7c54bf93e4095f5c">EventType::MouseButtonPressed</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a7584c169de594c27f00084b93186fd7c">EventType::MouseButtonReleased</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28ac2770ad109c8063ce69a3608a9a16c08">EventType::MouseMoved</a>, 
-<a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28a50edb169910041bb3c06f6e8322d74c1">EventType::MouseScrolled</a>
+&#160;&#160;<b>MouseButtonPressed</b>, 
+<b>MouseButtonReleased</b>, 
+<b>MouseMoved</b>, 
+<b>MouseScrolled</b>
 <br />
  }</td></tr>
-<tr class="memdesc:a1df9bd01e014c6f3e4122d8b92cccd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible window level events that can be triggered.  <a href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">More...</a><br /></td></tr>
+<tr class="memdesc:a1df9bd01e014c6f3e4122d8b92cccd28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible window level events that can be triggered. <br /></td></tr>
 <tr class="separator:a1df9bd01e014c6f3e4122d8b92cccd28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -196,128 +199,41 @@ Functions</h2></td></tr>
 <tr class="memitem:ab11f9dbe7cab5cf75fe1f3b051371de6"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE <a class="el" href="../../df/db1/classrune_1_1Mat2.html">Mat2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#ab11f9dbe7cab5cf75fe1f3b051371de6">operator*</a> (double scalar, <a class="el" href="../../df/db1/classrune_1_1Mat2.html">rune::Mat2</a> mat)</td></tr>
 <tr class="memdesc:ab11f9dbe7cab5cf75fe1f3b051371de6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of muliplication operator for a scalar on the right.  <a href="../../d3/d30/namespacerune.html#ab11f9dbe7cab5cf75fe1f3b051371de6">More...</a><br /></td></tr>
 <tr class="separator:ab11f9dbe7cab5cf75fe1f3b051371de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae565f485d77c76da4db04c31af828264"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#ae565f485d77c76da4db04c31af828264">operator*</a> (double scalar, <a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat)</td></tr>
-<tr class="memdesc:ae565f485d77c76da4db04c31af828264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of muliplication operator for a scalar on the right.  <a href="../../d3/d30/namespacerune.html#ae565f485d77c76da4db04c31af828264">More...</a><br /></td></tr>
+<tr class="memitem:ae565f485d77c76da4db04c31af828264"><td class="memItemLeft" align="right" valign="top"><a id="ae565f485d77c76da4db04c31af828264"></a>
+<a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#ae565f485d77c76da4db04c31af828264">operator*</a> (double scalar, <a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> mat)</td></tr>
+<tr class="memdesc:ae565f485d77c76da4db04c31af828264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of muliplication operator for a scalar on the right. <br /></td></tr>
 <tr class="separator:ae565f485d77c76da4db04c31af828264"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94f73716402499e91db784334f918081"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">operator/</a> (double scalar, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">Vec2</a> vec)</td></tr>
-<tr class="memdesc:a94f73716402499e91db784334f918081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of division operator.  <a href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">More...</a><br /></td></tr>
+<tr class="memitem:a94f73716402499e91db784334f918081"><td class="memItemLeft" align="right" valign="top"><a id="a94f73716402499e91db784334f918081"></a>
+RUNE_ENGINE <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">operator/</a> (double scalar, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">Vec2</a> vec)</td></tr>
+<tr class="memdesc:a94f73716402499e91db784334f918081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of division operator. <br /></td></tr>
 <tr class="separator:a94f73716402499e91db784334f918081"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4460768a7007f663b1dfc0c8304361c"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#ab4460768a7007f663b1dfc0c8304361c">dotProduct</a> (<a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vector1, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vector2)</td></tr>
 <tr class="separator:ab4460768a7007f663b1dfc0c8304361c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e528c70ebb78feea20024d774359802"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a4e528c70ebb78feea20024d774359802">crossProduct</a> (<a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec1, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec2)</td></tr>
+<tr class="memitem:a4e528c70ebb78feea20024d774359802"><td class="memItemLeft" align="right" valign="top"><a id="a4e528c70ebb78feea20024d774359802"></a>
+RUNE_ENGINE double&#160;</td><td class="memItemRight" valign="bottom"><b>crossProduct</b> (<a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec1, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec2)</td></tr>
 <tr class="separator:a4e528c70ebb78feea20024d774359802"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e473b06f5c55406fd3580f2c7f34e3d"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a2e473b06f5c55406fd3580f2c7f34e3d">operator*</a> (double scalar, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> mat)</td></tr>
-<tr class="memdesc:a2e473b06f5c55406fd3580f2c7f34e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of multiplication operator for a scalar on the left.  <a href="../../d3/d30/namespacerune.html#a2e473b06f5c55406fd3580f2c7f34e3d">More...</a><br /></td></tr>
+<tr class="memitem:a2e473b06f5c55406fd3580f2c7f34e3d"><td class="memItemLeft" align="right" valign="top"><a id="a2e473b06f5c55406fd3580f2c7f34e3d"></a>
+RUNE_ENGINE <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a2e473b06f5c55406fd3580f2c7f34e3d">operator*</a> (double scalar, <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> mat)</td></tr>
+<tr class="memdesc:a2e473b06f5c55406fd3580f2c7f34e3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of multiplication operator for a scalar on the left. <br /></td></tr>
 <tr class="separator:a2e473b06f5c55406fd3580f2c7f34e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3274b2c2500dda0e3fc59809e7c7f29a"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a3274b2c2500dda0e3fc59809e7c7f29a">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> &amp;vector)</td></tr>
+<tr class="memitem:a3274b2c2500dda0e3fc59809e7c7f29a"><td class="memItemLeft" align="right" valign="top"><a id="a3274b2c2500dda0e3fc59809e7c7f29a"></a>
+RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;&lt;</b> (std::ostream &amp;os, const <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> &amp;vector)</td></tr>
 <tr class="separator:a3274b2c2500dda0e3fc59809e7c7f29a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa22fa77340a3d7eafa6f8c3b6b2e99a5"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#aa22fa77340a3d7eafa6f8c3b6b2e99a5">dotProduct</a> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> vector1, <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> vector2)</td></tr>
+<tr class="memitem:aa22fa77340a3d7eafa6f8c3b6b2e99a5"><td class="memItemLeft" align="right" valign="top"><a id="aa22fa77340a3d7eafa6f8c3b6b2e99a5"></a>
+RUNE_ENGINE double&#160;</td><td class="memItemRight" valign="bottom"><b>dotProduct</b> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> vector1, <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> vector2)</td></tr>
 <tr class="separator:aa22fa77340a3d7eafa6f8c3b6b2e99a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b0709b7245c8b5c42ebfeec508e05ec"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#a0b0709b7245c8b5c42ebfeec508e05ec">normalize</a> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> vector)</td></tr>
+<tr class="memitem:a0b0709b7245c8b5c42ebfeec508e05ec"><td class="memItemLeft" align="right" valign="top"><a id="a0b0709b7245c8b5c42ebfeec508e05ec"></a>
+RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>normalize</b> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> vector)</td></tr>
 <tr class="separator:a0b0709b7245c8b5c42ebfeec508e05ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b699ccf39d830c03a5106d1df7bd37"><td class="memItemLeft" align="right" valign="top">RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/namespacerune.html#ad5b699ccf39d830c03a5106d1df7bd37">crossProduct</a> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>, <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>)</td></tr>
+<tr class="memitem:ad5b699ccf39d830c03a5106d1df7bd37"><td class="memItemLeft" align="right" valign="top"><a id="ad5b699ccf39d830c03a5106d1df7bd37"></a>
+RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crossProduct</b> (<a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>, <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>)</td></tr>
 <tr class="separator:ad5b699ccf39d830c03a5106d1df7bd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The main namespace to be used for interfacing with the engine. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a1df9bd01e014c6f3e4122d8b92cccd28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1df9bd01e014c6f3e4122d8b92cccd28">&#9670;&nbsp;</a></span>EventType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="../../d3/d30/namespacerune.html#a1df9bd01e014c6f3e4122d8b92cccd28">rune::EventType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Possible window level events that can be triggered. </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a6adf97f83acf6453d4a6a4b1070f3754"></a>None&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28ac984201d37197ab297a14d19efee4b07"></a>WindowClose&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a9f8f27bff2915738c4fe1b970e12f89c"></a>WindowResize&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a1c68d5453b28d52622bf5486a5fd95ca"></a>WindowFocus&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a1c2119b9d61e623975f13f1029f1d97c"></a>WindowLostFocus&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28ab94473d9dfc85f8fdbf5cb3b1d992bda"></a>WindowMoved&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28ac17e6984c1e5a887a49831beadee6bca"></a>KeyPressed&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a4a77f07c8ad223b71ab4ce78a63841ab"></a>KeyReleased&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a7349f643d689997b7c54bf93e4095f5c"></a>MouseButtonPressed&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a7584c169de594c27f00084b93186fd7c"></a>MouseButtonReleased&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28ac2770ad109c8063ce69a3608a9a16c08"></a>MouseMoved&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a1df9bd01e014c6f3e4122d8b92cccd28a50edb169910041bb3c06f6e8322d74c1"></a>MouseScrolled&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a4e528c70ebb78feea20024d774359802"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e528c70ebb78feea20024d774359802">&#9670;&nbsp;</a></span>crossProduct() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RUNE_ENGINE double rune::crossProduct </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
-          <td class="paramname"><em>vec1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
-          <td class="paramname"><em>vec2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad5b699ccf39d830c03a5106d1df7bd37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5b699ccf39d830c03a5106d1df7bd37">&#9670;&nbsp;</a></span>crossProduct() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> rune::crossProduct </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td>
-          <td class="paramname">, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ab4460768a7007f663b1dfc0c8304361c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4460768a7007f663b1dfc0c8304361c">&#9670;&nbsp;</a></span>dotProduct() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4460768a7007f663b1dfc0c8304361c">&#9670;&nbsp;</a></span>dotProduct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,54 +268,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa22fa77340a3d7eafa6f8c3b6b2e99a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa22fa77340a3d7eafa6f8c3b6b2e99a5">&#9670;&nbsp;</a></span>dotProduct() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RUNE_ENGINE double rune::dotProduct </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td>
-          <td class="paramname"><em>vector1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td>
-          <td class="paramname"><em>vector2</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0b0709b7245c8b5c42ebfeec508e05ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b0709b7245c8b5c42ebfeec508e05ec">&#9670;&nbsp;</a></span>normalize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RUNE_ENGINE <a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a> rune::normalize </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d19/classrune_1_1Vec3.html">rune::Vec3</a>&#160;</td>
-          <td class="paramname"><em>vector</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ab11f9dbe7cab5cf75fe1f3b051371de6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab11f9dbe7cab5cf75fe1f3b051371de6">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11f9dbe7cab5cf75fe1f3b051371de6">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -431,72 +301,12 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A memberwise scalar multiplication. </dd></dl>
-
-</div>
-</div>
-<a id="ae565f485d77c76da4db04c31af828264"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae565f485d77c76da4db04c31af828264">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a> RUNE_ENGINE rune::operator* </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d2/d17/classrune_1_1Mat3.html">rune::Mat3</a>&#160;</td>
-          <td class="paramname"><em>mat</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Overload of muliplication operator for a scalar on the right. </p>
-
-</div>
-</div>
-<a id="a2e473b06f5c55406fd3580f2c7f34e3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e473b06f5c55406fd3580f2c7f34e3d">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RUNE_ENGINE <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> rune::operator* </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
-          <td class="paramname"><em>mat</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Overload of multiplication operator for a scalar on the left. </p>
+<dl class="section return"><dt>Returns</dt><dd>A member wise scalar multiplication. </dd></dl>
 
 </div>
 </div>
 <a id="a7d92b23b6af2b93e77da83c0205605d6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d92b23b6af2b93e77da83c0205605d6">&#9670;&nbsp;</a></span>operator*() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d92b23b6af2b93e77da83c0205605d6">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -530,64 +340,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the multiplication. </dd></dl>
-
-</div>
-</div>
-<a id="a94f73716402499e91db784334f918081"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94f73716402499e91db784334f918081">&#9670;&nbsp;</a></span>operator/()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> rune::operator/ </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>scalar</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&#160;</td>
-          <td class="paramname"><em>vec</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Overload of division operator. </p>
-
-</div>
-</div>
-<a id="a3274b2c2500dda0e3fc59809e7c7f29a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3274b2c2500dda0e3fc59809e7c7f29a">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">RUNE_ENGINE std::ostream&amp; rune::operator&lt;&lt; </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> &amp;&#160;</td>
-          <td class="paramname"><em>vector</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>

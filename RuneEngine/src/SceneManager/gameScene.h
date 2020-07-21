@@ -17,9 +17,7 @@
 #include <Renderer\color.h>
 #include <Physics\physicsEngine.h>
 #include <Entities\gameObject.h>
-#include <Entities\gameUI.h>
 #include <Events\clock.h>
-#include <Entities\particleEmitter.h>
 #include <Renderer\camera.h>
 #include <Renderer\frameBuffer.h>
 

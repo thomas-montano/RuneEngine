@@ -1,0 +1,11 @@
+digraph "Lighting" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7c293338c1b03e9273a7bae543bf144e {
+    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_7c293338c1b03e9273a7bae543bf144e.html"]
+  dir_43c18e87844e1a46743ef413e012b3e9 [shape=box, label="Lighting", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_43c18e87844e1a46743ef413e012b3e9.html"];
+  }
+  dir_f66403bd27d89288bd08c1170a853a4e [shape=box label="Renderer" URL="dir_f66403bd27d89288bd08c1170a853a4e.html"];
+  dir_43c18e87844e1a46743ef413e012b3e9->dir_f66403bd27d89288bd08c1170a853a4e [headlabel="1", labeldistance=1.5 headhref="dir_000009_000003.html"];
+}

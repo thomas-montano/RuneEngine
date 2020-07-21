@@ -113,7 +113,7 @@
 
 #include "core.h"
 #define IMGUI_IMPL_OPENGL_LOADER_CUSTOM
-#include <SceneTools\sceneManager.h>
+#include <SceneManager\sceneManager.h>
 #include <Renderer\RenderWindow.h>
 #include <Events\clock.h>
 #include <Events\event.h>

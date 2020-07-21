@@ -17,6 +17,7 @@ public:
     //std::cout << "Position: " << rune::Vec2(ImGui::GetWindowPos().x, ImGui::GetWindowPos().y) << std::endl;
 
     //ImGui::ShowDemoWindow();
+    ImGui::ShowStyleEditor();
 
     ImGui::End();
 

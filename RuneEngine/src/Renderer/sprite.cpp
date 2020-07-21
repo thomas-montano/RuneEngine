@@ -120,7 +120,7 @@ void rune::Sprite::setTexture(std::string texture, unsigned int drawMode)
  */
 void rune::Sprite::changeShader(const std::string& filePath)
 {
-
+  objectShader.~Shader();
   objectShader.makeNewShader(filePath);
 
 }

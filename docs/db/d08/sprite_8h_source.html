@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.7.5-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.5-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -72,17 +72,17 @@ $(function() {
 <div class="title">sprite.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../db/d08/sprite_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef SPRITE_H_DEFINED</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define SPRITE_H_DEFINED</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d6/dcf/component_8h.html">Entities\component.h</a>&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/da0/renderWindow_8h.html">renderWindow.h</a>&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/dba/texture_8h.html">texture.h</a>&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dea/drawable_8h.html">drawable.h</a>&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/df4/shader_8h.html">shader.h</a>&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="../../d3/dbe/vec2_8h.html">Math\vec2.h</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;core.h&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;Entities\component.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;renderWindow.h&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;texture.h&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;drawable.h&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;shader.h&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;Math\vec2.h&gt;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
@@ -159,11 +159,11 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>(std::string spriteLocation, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = <a class="code" href="../../df/dba/texture_8h.html#a9592f8132ab5c1a30df31c5b58405bb3">LINEAR_FILTER</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <a class="code" href="../../d1/d12/classrune_1_1Sprite.html">Sprite</a>(std::string spriteLocation, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = LINEAR_FILTER);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> start() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordtype">void</span> setUpBuffers(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(<a class="code" href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a>&amp;);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> setTexture(std::string texture, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = <a class="code" href="../../df/dba/texture_8h.html#a9592f8132ab5c1a30df31c5b58405bb3">LINEAR_FILTER</a>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  <span class="keywordtype">void</span> setTexture(std::string texture, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = LINEAR_FILTER);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keywordtype">void</span> changeShader(<span class="keyword">const</span> std::string&amp; filePath);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
@@ -172,20 +172,12 @@ $(function() {
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="atexture_8h_html_a9592f8132ab5c1a30df31c5b58405bb3"><div class="ttname"><a href="../../df/dba/texture_8h.html#a9592f8132ab5c1a30df31c5b58405bb3">LINEAR_FILTER</a></div><div class="ttdeci">#define LINEAR_FILTER</div><div class="ttdoc">Tells the texture to use the GL_LINEAR filter for generating mipmaps.</div><div class="ttdef"><b>Definition:</b> texture.h:13</div></div>
 <div class="ttc" id="aclassrune_1_1Component_html"><div class="ttname"><a href="../../da/daf/classrune_1_1Component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:21</div></div>
 <div class="ttc" id="aclassrune_1_1Texture_html"><div class="ttname"><a href="../../d6/df4/classrune_1_1Texture.html">rune::Texture</a></div><div class="ttdoc">A texture that can be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> texture.h:24</div></div>
-<div class="ttc" id="acomponent_8h_html"><div class="ttname"><a href="../../d6/dcf/component_8h.html">component.h</a></div></div>
-<div class="ttc" id="arenderWindow_8h_html"><div class="ttname"><a href="../../d5/da0/renderWindow_8h.html">renderWindow.h</a></div></div>
-<div class="ttc" id="avec2_8h_html"><div class="ttname"><a href="../../d3/dbe/vec2_8h.html">vec2.h</a></div></div>
 <div class="ttc" id="aclassrune_1_1Drawable_html"><div class="ttname"><a href="../../d1/d29/classrune_1_1Drawable.html">rune::Drawable</a></div><div class="ttdoc">Interface class for creating something that can be drawn to the screen.</div><div class="ttdef"><b>Definition:</b> drawable.h:21</div></div>
 <div class="ttc" id="aclassrune_1_1RenderWindow_html"><div class="ttname"><a href="../../d1/d58/classrune_1_1RenderWindow.html">rune::RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:26</div></div>
 <div class="ttc" id="astructrune_1_1ShaderProgramSource_html"><div class="ttname"><a href="../../df/dc8/structrune_1_1ShaderProgramSource.html">rune::ShaderProgramSource</a></div><div class="ttdoc">Compilable GLSL code generated by the shader file.</div><div class="ttdef"><b>Definition:</b> shader.h:24</div></div>
 <div class="ttc" id="aclassrune_1_1Shader_html"><div class="ttname"><a href="../../d4/df0/classrune_1_1Shader.html">rune::Shader</a></div><div class="ttdoc">A shader that can be used to render objects to the screen.</div><div class="ttdef"><b>Definition:</b> shader.h:41</div></div>
-<div class="ttc" id="adrawable_8h_html"><div class="ttname"><a href="../../d5/dea/drawable_8h.html">drawable.h</a></div></div>
-<div class="ttc" id="atexture_8h_html"><div class="ttname"><a href="../../df/dba/texture_8h.html">texture.h</a></div></div>
-<div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
-<div class="ttc" id="ashader_8h_html"><div class="ttname"><a href="../../d1/df4/shader_8h.html">shader.h</a></div></div>
 <div class="ttc" id="aclassrune_1_1Sprite_html"><div class="ttname"><a href="../../d1/d12/classrune_1_1Sprite.html">rune::Sprite</a></div><div class="ttdoc">A sprite that can be given a texture and animated.</div><div class="ttdef"><b>Definition:</b> sprite.h:24</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:21</div></div>
 <!-- start footer part -->

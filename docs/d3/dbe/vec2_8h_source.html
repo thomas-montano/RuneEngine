@@ -23,7 +23,7 @@
   <td id="projectlogo"><img alt="Logo" src="../../logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.7.5-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.5-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -72,13 +72,13 @@ $(function() {
 <div class="title">vec2.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="../../d3/dbe/vec2_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#ifndef VEC2_H_DEFINED</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define VEC2_H_DEFINED</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d3/dbe/vec2_8h.html#a466ce4ec9fb9462e84569594bf53d27a">   13</a></span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/dc4/core_8h.html">core.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;core.h&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
@@ -122,11 +122,11 @@ $(function() {
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../dd/dca/classrune_1_1Vec2.html#a7887e91f28bab5d54a4f0269b965d0d8">   85</a></span>&#160;RUNE_ENGINE <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> <a class="code" href="../../dd/dca/classrune_1_1Vec2.html#a7887e91f28bab5d54a4f0269b965d0d8">normalize</a>(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html#a4e528c70ebb78feea20024d774359802">   87</a></span>&#160;RUNE_ENGINE <span class="keywordtype">double</span> <a class="code" href="../../d3/d30/namespacerune.html#a4e528c70ebb78feea20024d774359802">crossProduct</a>(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec1, <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec2);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;RUNE_ENGINE <span class="keywordtype">double</span> crossProduct(<a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec1, <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> vec2);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html#a2e473b06f5c55406fd3580f2c7f34e3d">   90</a></span>&#160;RUNE_ENGINE <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> <a class="code" href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">operator*</a>(<span class="keywordtype">double</span> scalar, <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a> mat);</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="../../d3/d30/namespacerune.html#a3274b2c2500dda0e3fc59809e7c7f29a">   92</a></span>&#160;RUNE_ENGINE std::ostream&amp; <a class="code" href="../../d3/d30/namespacerune.html#a3274b2c2500dda0e3fc59809e7c7f29a">operator&lt;&lt;</a>(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&amp; vector);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;RUNE_ENGINE std::ostream&amp; operator&lt;&lt;(std::ostream&amp; os, <span class="keyword">const</span> <a class="code" href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a>&amp; vector);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
@@ -134,13 +134,10 @@ $(function() {
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1Vec2_html_a7887e91f28bab5d54a4f0269b965d0d8"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html#a7887e91f28bab5d54a4f0269b965d0d8">rune::Vec2::normalize</a></div><div class="ttdeci">RUNE_ENGINE rune::Vec2 normalize(rune::Vec2 vec)</div><div class="ttdoc">Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.</div></div>
 <div class="ttc" id="aclassrune_1_1Vec2_html"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html">rune::Vec2</a></div><div class="ttdoc">1 x 2 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:20</div></div>
-<div class="ttc" id="anamespacerune_html_a3274b2c2500dda0e3fc59809e7c7f29a"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a3274b2c2500dda0e3fc59809e7c7f29a">rune::operator&lt;&lt;</a></div><div class="ttdeci">RUNE_ENGINE std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const rune::Vec2 &amp;vector)</div></div>
 <div class="ttc" id="anamespacerune_html_a94f73716402499e91db784334f918081"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a94f73716402499e91db784334f918081">rune::operator/</a></div><div class="ttdeci">RUNE_ENGINE Vec2 operator/(double scalar, Vec2 vec)</div><div class="ttdoc">Overload of division operator.</div><div class="ttdef"><b>Definition:</b> vec2.cpp:184</div></div>
 <div class="ttc" id="aclassrune_1_1Vec2_html_a5883d8281c9009944fa5dc44db48debf"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html#a5883d8281c9009944fa5dc44db48debf">rune::Vec2::findNormal</a></div><div class="ttdeci">RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 axis)</div><div class="ttdoc">Find the left handed vector normal to a surface.</div></div>
-<div class="ttc" id="acore_8h_html"><div class="ttname"><a href="../../d5/dc4/core_8h.html">core.h</a></div></div>
 <div class="ttc" id="aclassrune_1_1Vec2_html_ae0fbd4d0a9ed1d125fea740a3314db84"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html#ae0fbd4d0a9ed1d125fea740a3314db84">rune::Vec2::x</a></div><div class="ttdeci">double x</div><div class="ttdoc">X coordinate of the vector.</div><div class="ttdef"><b>Definition:</b> vec2.h:23</div></div>
 <div class="ttc" id="anamespacerune_html_a7d92b23b6af2b93e77da83c0205605d6"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a7d92b23b6af2b93e77da83c0205605d6">rune::operator*</a></div><div class="ttdeci">RUNE_ENGINE rune::Vec2 operator*(rune::Vec2, rune::Mat2)</div><div class="ttdoc">Overload of multiplication operator for a rune::Mat2.</div><div class="ttdef"><b>Definition:</b> mat2.cpp:224</div></div>
-<div class="ttc" id="anamespacerune_html_a4e528c70ebb78feea20024d774359802"><div class="ttname"><a href="../../d3/d30/namespacerune.html#a4e528c70ebb78feea20024d774359802">rune::crossProduct</a></div><div class="ttdeci">RUNE_ENGINE double crossProduct(rune::Vec2 vec1, rune::Vec2 vec2)</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:21</div></div>
 <div class="ttc" id="anamespacerune_html_ab4460768a7007f663b1dfc0c8304361c"><div class="ttname"><a href="../../d3/d30/namespacerune.html#ab4460768a7007f663b1dfc0c8304361c">rune::dotProduct</a></div><div class="ttdeci">RUNE_ENGINE double dotProduct(rune::Vec2 vector1, rune::Vec2 vector2)</div><div class="ttdef"><b>Definition:</b> vec2.cpp:203</div></div>
 <div class="ttc" id="aclassrune_1_1Vec2_html_abd211d88a8b6ebcba1b2068f59b0cc5a"><div class="ttname"><a href="../../dd/dca/classrune_1_1Vec2.html#abd211d88a8b6ebcba1b2068f59b0cc5a">rune::Vec2::y</a></div><div class="ttdeci">double y</div><div class="ttdoc">Y coordinate of the vector.</div><div class="ttdef"><b>Definition:</b> vec2.h:25</div></div>

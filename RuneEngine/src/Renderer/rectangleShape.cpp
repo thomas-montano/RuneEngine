@@ -7,7 +7,7 @@
 #include <GLFW\glfw3.h>
 #include <iostream>
 #include <gameApplication.h>
-#include <SceneTools\sceneManager.h>
+#include <SceneManager\sceneManager.h>
 
 rune::RectangleShape::RectangleShape(rune::Color newColor) 
 : rectangleShader(defaultShader), origin(rune::Vec2(0,0))

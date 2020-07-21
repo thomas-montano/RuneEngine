@@ -9,14 +9,15 @@ void InspectorTab::draw(rune::RenderWindow& window)
 
   if (EditorWindow::selectedObject != nullptr)
   {
-    std::string objectName = EditorWindow::selectedObject->objectName;
+    char objectName[32]= {0};
+    strcpy_s(objectName, EditorWindow::selectedObject->objectName.c_str());
     std::stringstream address;
 
-    //Store the address of the gameobject so that we can display it on the screen as a reference
+    //Store the address of the game object so that we can display it on the screen as a reference
     address << static_cast<void const*>(EditorWindow::selectedObject->gameObject);
 
     
-    if(ImGui::InputText(" ", &objectName[0], 32, ImGuiInputTextFlags_EnterReturnsTrue))
+    if(ImGui::InputText(" ", objectName, 32, ImGuiInputTextFlags_EnterReturnsTrue))
     {
       
       bool validName = true;
@@ -25,13 +26,13 @@ void InspectorTab::draw(rune::RenderWindow& window)
       for(int i = 0; i < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size();i++)
       {
       
-        bool test1 = strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(),objectName.c_str()) == 0;
+        bool test1 = strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(),objectName) == 0;
         bool test2 = EditorWindow::selectedObject != EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i];
 
         bool test3 = 1;
 
-        if(strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(), objectName.c_str()) == 0
-          && EditorWindow::selectedObject != EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i])
+        if(strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(), objectName) == 0
+          && EditorWindow::selectedObject != EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]   )
         {
         
           validName = false;

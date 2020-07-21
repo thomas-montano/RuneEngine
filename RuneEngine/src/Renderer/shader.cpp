@@ -23,9 +23,7 @@ rune::Shader::Shader(ShaderProgramSource source)
 */
 rune::Shader::Shader(const std::string& filePath)
 {
-  ShaderProgramSource source = ParseShader(filePath.c_str());
-
-  m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
+  makeNewShader(filePath);
 }
 
 /**

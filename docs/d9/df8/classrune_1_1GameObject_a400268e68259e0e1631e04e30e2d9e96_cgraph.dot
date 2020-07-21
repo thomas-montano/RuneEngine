@@ -1,0 +1,10 @@
+digraph "rune::GameObject::addComponent"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rune::GameObject::addComponent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Add a component to this game object."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="rune::Component::setParent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/daf/classrune_1_1Component.html#a4f80061e4b816e8f5a9f4810f93a63e1",tooltip="A function to set the pointer to the parent rune::GameObject for each component."];
+}

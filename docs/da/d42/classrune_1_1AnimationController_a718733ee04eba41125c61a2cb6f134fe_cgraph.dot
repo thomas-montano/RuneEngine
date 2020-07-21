@@ -1,0 +1,24 @@
+digraph "rune::AnimationController::addAnimation"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="rune::AnimationController\l::addAnimation",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Add an animation to the controller."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="rune::Texture::getHeight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/df4/classrune_1_1Texture.html#a39e84da0f584c03d472765b85a390a07",tooltip="Get the height of the texture."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="rune::ObjectAnimation\l::getSheet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#aafed8f78aafa521e2a6eec43c2f6e4e5",tooltip="Get the sprite sheet of the animation."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="rune::ObjectAnimation\l::setCurrentFame",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#ac124bf55be4682ffdbdc39a28c7244b0",tooltip="Set the frame that the animation is currently on."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="rune::ObjectAnimation\l::setFrameHeight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#a00f56b8daade94a5fa7f56c8960b6fa9",tooltip="Set the height in pixels of each frame on the sprite sheet."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="rune::ObjectAnimation\l::setFrameRate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#aca51570a22babdbbf83b515f7fa5bfc5",tooltip="Set the frame rate for the animation."];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="rune::ObjectAnimation\l::setFrameWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#a6570ffa22eb0a13fccc11a7cf2406b4e",tooltip="Set the width in pixels of each frame on the sprite sheet."];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="rune::ObjectAnimation\l::setNumFrames",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#a230aa8f22843f5de74fc4b2190026973",tooltip="Set the number of frames the animation contains."];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="rune::ObjectAnimation\l::setSheet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/db6/classrune_1_1ObjectAnimation.html#a60b56c240b994027cbcae208c346e3ef",tooltip="Set the sprite sheet of the animation from a texture object."];
+}

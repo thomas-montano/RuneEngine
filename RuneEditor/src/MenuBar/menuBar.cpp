@@ -109,45 +109,36 @@ void MenuBar::draw(rune::RenderWindow& window)
         std::string objectName = "GameObject";
         int smallestObjectNum = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size();
 
-        bool hasObjectAlready = false;
-
+        //Disallow a new game object to be given the same name as another object
         for(int i = 0; i < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); i ++)
         {
         
-          int length1 = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.length();
-          int comparison = strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(), "GameObject");
-
           if(strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(),"GameObject") == 0)
           {
-            hasObjectAlready = true;
-          }
-        
-        }
-
-        if(hasObjectAlready)
-        {
-          //Disallow a new game object to be given the same name as another object
-          for (int i = 1; i < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); i++)
-          {
-            bool foundSmaller = false;
-            for (int j = 0; j < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
+            
+            for (int i = 1; i < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); i++)
             {
-
-              if (strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j]->objectName.c_str(), ("GameObject (" + std::to_string(i) + ")").c_str()) == 0)
+              bool foundSmaller = false;
+              for (int j = 0; j < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
               {
-                foundSmaller = true;
+
+                if (strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j]->objectName.c_str(), ("GameObject (" + std::to_string(i) + ")").c_str()) == 0)
+                {
+                  foundSmaller = true;
+                }
+
+              }
+
+              if (!foundSmaller && i < smallestObjectNum)
+              {
+                smallestObjectNum = i;
               }
 
             }
 
-            if (!foundSmaller && i < smallestObjectNum)
-            {
-              smallestObjectNum = i;
-            }
-
+            objectName = "GameObject (" + std::to_string(smallestObjectNum) + ")";
           }
         
-        objectName = "GameObject (" + std::to_string(smallestObjectNum) + ")";
         }
         
         //Create the new object in the scene
