@@ -13,12 +13,12 @@
 
 #include <Particles/particleEmitter.h>
 
-#include <Animation/animationController.h>
+#include <Animation/animator.h>
 
 #include <Lighting/lightSource.h>
 
 #include <SceneManager/gameScene.h>
-#include <SceneManager/sceneManager.h>
+#include <SceneManager/sceneManager.h> //Should eventually only be internal to the engine
 
 #include <Events/clock.h>
 
@@ -30,7 +30,7 @@
 #include <Math/mat2.h>
 #include <Math/mat3.h>
 
-#include <EngineDataStructures/list.h>
+#include <DataStructures/list.h>
 
 #include <Renderer/camera.h>
 #include <Renderer/sprite.h>
@@ -38,10 +38,7 @@
 #include <Renderer/color.h>
 #include <Renderer/shader.h>
 #include <Renderer/texture.h>
-#include <Renderer/frameBuffer.h>
 #include <Renderer/drawable.h>
-
-#include <Physics/world.h>
 #include <Physics/collider2d.h>
 #include <physics/rigidBody.h>
 

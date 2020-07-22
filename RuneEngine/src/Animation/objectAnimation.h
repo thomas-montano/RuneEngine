@@ -37,45 +37,34 @@ public:
   ObjectAnimation();
   ///Set the frame rate for the animation.
   void setFrameRate(int frameRate);
-
   ///Get the frame rate for the animation.
   int getFrameRate(void);
-
   ///Get whether or not the animation should be mirrored.
   bool isMirrored(void);
-
   ///Set the width in pixels of each frame on the sprite sheet.
   void setFrameWidth(int frameWidth);
-
   ///Get the width in pixels of each frame on the sprite sheet.
   int getFrameWidth(void);
-  
   ///Set the height in pixels of each frame on the sprite sheet.
   void setFrameHeight(int frameHeight);
-
   ///Get the height in pixels of each frame on the sprite sheet.
   int getFrameHeight(void);
-
   ///Set the number of frames the animation contains.
   void setNumFrames(int numFrames);
-
   ///Get the number of frames the animation contains.
   int getNumFrames(void);
-
   ///Set the sprite sheet of the animation from a texture object.
-  void setSheet(std::string filePath);
-
+  void setSheet(std::string filePath, unsigned int drawMode);
   ///Get the sprite sheet of the animation.
   Texture* getSheet(void);
-
   ///Get the frame that the animation is currently on.
   int getCurrentFrame(void);
-
   ///Set the frame that the animation is currently on.
   void setCurrentFame(int);
-
-  ///Tell the animation to go to the next frame
+  ///Tell the animation to go to the next frame.
   void incCurrentFrame(void);
+  ///Set whether or not the sprite should be mirrored across the vertical axis.
+  void setMirror(bool);
 
 };
 }

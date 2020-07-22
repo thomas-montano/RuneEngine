@@ -7,7 +7,7 @@
 #include <Math\mat2.h>
 
 rune::Sprite::Sprite() 
-  : objectShader(defaultShader)
+  : objectShader(defaultShader), textureSpace(0,0,0,0), spriteDrawMode(LINEAR_FILTER)
 {
   setUpBuffers();
 }
@@ -18,7 +18,7 @@ rune::Sprite::Sprite()
  * @param spriteLocation A filepath for the sprite png file to be drawn.
 */
 rune::Sprite::Sprite(std::string spriteLocation, unsigned int drawMode) 
-  : spriteTexture(spriteLocation.c_str(), drawMode), objectShader(defaultShader)
+  : spriteTexture(spriteLocation.c_str(), drawMode), objectShader(defaultShader), textureSpace(0, 0, 0, 0), spriteDrawMode(drawMode)
 {
   setUpBuffers();
 }
@@ -48,6 +48,8 @@ void rune::Sprite::setUpBuffers()
   // texture coordinate attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
+
+  textureSpace = IntRect(0,0,spriteTexture.getWidth(),spriteTexture.getHeight());
 
 }
 
@@ -85,13 +87,15 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),
                         (position.x) / (0.5*windowSize.x),            (position.y) / (0.5*windowSize.y));
 
+  Vec2 textureDimension = Vec2(spriteTexture.getWidth(), spriteTexture.getHeight());
+
   const float drawVertices[32] = 
   {
     // positions                              // colors and alpha         // texture coordinates
-    drawMatrix[0][0],   drawMatrix[0][1],     1.0f, 1.0f, 1.0f, 1.0f,     1.0f, 1.0f, // top right
-    drawMatrix[0][0],   drawMatrix[1][1],     1.0f, 1.0f, 1.0f, 1.0f,     1.0f, 0.0f, // bottom right
-    drawMatrix[1][0],   drawMatrix[1][1],     1.0f, 1.0f, 1.0f, 1.0f,     0.0f, 0.0f, // bottom left
-    drawMatrix[1][0],   drawMatrix[0][1],     1.0f, 1.0f, 1.0f, 1.0f,     0.0f, 1.0f  // top left
+    drawMatrix[0][0],   drawMatrix[0][1],     1.0f, 1.0f, 1.0f, 1.0f,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.height / textureDimension.y, // top right
+    drawMatrix[0][0],   drawMatrix[1][1],     1.0f, 1.0f, 1.0f, 1.0f,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.top / textureDimension.y, // bottom right
+    drawMatrix[1][0],   drawMatrix[1][1],     1.0f, 1.0f, 1.0f, 1.0f,     textureSpace.left /textureDimension.x,   textureSpace.top / textureDimension.y, // bottom left
+    drawMatrix[1][0],   drawMatrix[0][1],     1.0f, 1.0f, 1.0f, 1.0f,     textureSpace.left / textureDimension.x,  textureSpace.height / textureDimension.y  // top left
   };
 
   glBindVertexArray(VAO);
@@ -115,12 +119,32 @@ void rune::Sprite::setTexture(std::string texture, unsigned int drawMode)
 
 }
 
+void rune::Sprite::setTexture(Texture* texture)
+{
+  spriteTexture = *texture;
+}
+
 /**
  * \param filePath The filepath to the GLSL code that should be compiled and set as the active shader.
  */
 void rune::Sprite::changeShader(const std::string& filePath)
 {
-  objectShader.~Shader();
   objectShader.makeNewShader(filePath);
+}
 
+void rune::Sprite::setTextureRect(int xPos, int yPos, int width, int height)
+{
+
+  textureSpace = IntRect(xPos,yPos,width,height);
+
+}
+
+rune::IntRect rune::Sprite::getTextureRect(void)
+{
+  return textureSpace;
+}
+
+unsigned int rune::Sprite::getDrawMode()
+{
+  return spriteDrawMode;
 }

@@ -31,6 +31,8 @@ rune::Shader::Shader(const std::string& filePath)
  */
 void rune::Shader::makeNewShader(const std::string& filePath)
 {
+  m_UniformLocationCache.clear();
+
   ShaderProgramSource source = ParseShader(filePath.c_str());
 
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
@@ -107,7 +109,6 @@ unsigned int rune::Shader::CompileShader(unsigned int type, const std::string& s
     glGetShaderInfoLog(id, length, &length, message);
     std::cout << "Shader failed to compile" << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << std::endl;
     std::cout << message << std::endl;
-    glDeleteProgram(id);
     return 0;
   }
 

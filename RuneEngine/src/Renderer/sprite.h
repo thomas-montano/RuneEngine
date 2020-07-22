@@ -17,6 +17,7 @@
 #include "shader.h"
 #include <Math\vec2.h>
 #include <string>
+#include "rect.h"
 
 namespace rune{
 
@@ -90,6 +91,11 @@ private:
 
   Shader objectShader;
 
+  //Texture rectangle
+  IntRect textureSpace;
+
+  unsigned int spriteDrawMode;
+
 public:
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
@@ -104,8 +110,16 @@ public:
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.
   void setTexture(std::string texture, unsigned int drawMode = LINEAR_FILTER);
-  ///Set a new texture as active for the sprite
+  ///Set the texture based off another already loaded texture.
+  void setTexture(Texture* texture);
+  ///Set a new texture as active for the sprite.
   void changeShader(const std::string& filePath);
+  ///Set the area of the texture to be rendered.
+  void setTextureRect(int xPos, int yPos, int width, int height);
+  ///Return the rectangle.
+  IntRect getTextureRect(void);
+  ///Returns the filtering mode of the sprite.
+  unsigned int getDrawMode();
 
 };
 

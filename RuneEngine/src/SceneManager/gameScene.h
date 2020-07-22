@@ -20,6 +20,7 @@
 #include <Events\clock.h>
 #include <Renderer\camera.h>
 #include <Renderer\frameBuffer.h>
+#include <DataStructures\list.h>
 
 namespace rune{
 
@@ -34,7 +35,7 @@ protected:
 
   std::vector<physics::RigidBody*> physicsBodies;
 
-  std::vector<rune::GameObject> sceneObjects;
+  List<rune::GameObject> sceneObjects;
 
   std::vector<rune::Drawable*> drawableObjects;
   
@@ -81,7 +82,7 @@ public:
   void changeState(int nextState);
   ///Place a new rune::GameObject into the scene.
   void addObjectToScene(rune::GameObject);
-  std::vector<rune::GameObject> getSceneObjects(void);
+  List<rune::GameObject> getSceneObjects(void);
   ///Closes the application
   void quitGame();
 

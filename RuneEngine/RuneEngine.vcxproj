@@ -96,7 +96,9 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Animation\animationController.cpp" />
+    <ClCompile Include="src\ResourceManager\resource.cpp" />
+    <ClCompile Include="src\ResourceManager\resourceManager.cpp" />
+    <ClCompile Include="src\Animation\animator.cpp" />
     <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
     <ClCompile Include="src\Math\vec3.cpp" />
@@ -131,10 +133,15 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClCompile Include="src\Entities\transform.cpp" />
     <ClCompile Include="src\SceneManager\gameScene.cpp" />
     <ClCompile Include="src\SceneManager\sceneManager.cpp" />
+    <ClCompile Include="src\Physics\world.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Animation\animationController.h" />
-    <ClInclude Include="src\EngineDataStructures\list.h" />
+    <ClInclude Include="src\DataStructures\stack.h" />
+    <ClInclude Include="src\Renderer\rect.h" />
+    <ClInclude Include="src\ResourceManager\resource.h" />
+    <ClInclude Include="src\ResourceManager\resourceManager.h" />
+    <ClInclude Include="src\Animation\animator.h" />
+    <ClInclude Include="src\DataStructures\list.h" />
     <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />
     <ClInclude Include="src\Math\vec3.h" />
@@ -175,6 +182,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClInclude Include="src\Entities\transform.h" />
     <ClInclude Include="src\SceneManager\gameScene.h" />
     <ClInclude Include="src\SceneManager\sceneManager.h" />
+    <ClInclude Include="src\Physics\world.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Shaders\rectangle.shader" />

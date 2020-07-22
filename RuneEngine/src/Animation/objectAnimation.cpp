@@ -25,6 +25,7 @@ int rune::ObjectAnimation::getFrameRate(void)
 
 }
 
+/// @return Whether or not the sprite is currently being mirrored.
 bool rune::ObjectAnimation::isMirrored(void)
 {
   return m_mirror;
@@ -91,9 +92,9 @@ int rune::ObjectAnimation::getNumFrames(void)
 /**
  * @param animationSheet The texture to be used as the sprite sheet.
 */
-void rune::ObjectAnimation::setSheet(std::string filePath)
+void rune::ObjectAnimation::setSheet(std::string filePath, unsigned int drawMode)
 {
-  m_animationSheet.loadFromFile(filePath);
+  m_animationSheet.loadFromFile(filePath, drawMode);
 }
 
 /**
@@ -132,4 +133,10 @@ void rune::ObjectAnimation::incCurrentFrame()
         m_currentFrame = (m_currentFrame) % (m_numFrames);
     }
 
+}
+
+/// @param mirrored A boolean represeting whether or not the sprite should be mirrored.
+void rune::ObjectAnimation::setMirror(bool mirrored)
+{
+  m_mirror = mirrored;
 }

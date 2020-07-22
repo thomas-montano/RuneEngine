@@ -98,7 +98,7 @@ void rune::GameScene::updateVariable(void)
 void rune::GameScene::addObjectToScene(rune::GameObject newObject)
 {
 
-  sceneObjects.push_back(newObject);
+  sceneObjects.add(newObject);
 
 
   //If the new object has a physics component on it, add it to the physicsBody vector.
@@ -109,9 +109,11 @@ void rune::GameScene::addObjectToScene(rune::GameObject newObject)
 
 }
 
-std::vector<rune::GameObject> rune::GameScene::getSceneObjects(void)
+rune::List<rune::GameObject> rune::GameScene::getSceneObjects(void)
 {
+
   return sceneObjects;
+
 }
 
 void rune::GameScene::quitGame()
