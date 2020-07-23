@@ -108,11 +108,16 @@ unsigned int rune::Shader::CompileShader(unsigned int type, const std::string& s
   if(result == GL_FALSE)
   {
     int length;
+
     glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
     char* message= (char*)alloca(length * sizeof(char));
     glGetShaderInfoLog(id, length, &length, message);
+
     std::cout << "Shader failed to compile" << (type == GL_VERTEX_SHADER ? "vertex" : "fragment") << std::endl;
     std::cout << message << std::endl;
+
+    glDeleteShader(id);
+
     return 0;
   }
 

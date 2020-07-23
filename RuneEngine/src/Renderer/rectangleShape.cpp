@@ -5,7 +5,6 @@
 #include <GL\glew.h>
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
-#include <iostream>
 #include <gameApplication.h>
 #include <SceneManager\sceneManager.h>
 

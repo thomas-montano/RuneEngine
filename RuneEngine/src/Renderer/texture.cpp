@@ -1,4 +1,5 @@
 #include "texture.h"
+#include "renderWindow.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #include <GL\glew.h>
@@ -30,6 +31,7 @@ m_width(0), m_height(0), m_BPP(0)
  * \param path The file path of the texture to be loaded in.
  * \param filterMode The filter mode to be used for drawing. Set this to NEAREST_FILTER if using pixel art.
  * \return Whether or not the file was able to be successfully loaded.
+ * @warning This function is expecting you to load a .png file. If you load anything else it will load incorrectly.
  */
 bool rune::Texture::loadFromFile(const std::string& path, unsigned int filterMode)
 {
@@ -124,4 +126,9 @@ unsigned int rune::Texture::getHeight(void)
 unsigned int rune::Texture::getWidth(void)
 {
   return m_width;
+}
+
+unsigned char* rune::Texture::getTextureData(void)
+{
+  return m_localBuffer;
 }

@@ -117,7 +117,6 @@
 #include <Renderer\RenderWindow.h>
 #include <Events\clock.h>
 #include <Events\event.h>
-#include <iostream>
 
 namespace rune{
 
@@ -159,7 +158,6 @@ public:
   void loadScene(GameScene* newScene);
   ///Starts the main game loop
   int run(void);
-
   ///Returns the reference to the currently active render window.
   static RenderWindow* getWindow(void);
   ///Gets the change in time since the last frame in seconds.

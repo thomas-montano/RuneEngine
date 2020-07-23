@@ -16,7 +16,6 @@
 
 #include "core.h"
 #include <string>
-#include "renderWindow.h"
 
 namespace rune{
 
@@ -54,6 +53,9 @@ public:
 
   //Get the width of the texture.
   unsigned int getWidth(void);
+
+  unsigned char* getTextureData(void);
+
 };
 }
 

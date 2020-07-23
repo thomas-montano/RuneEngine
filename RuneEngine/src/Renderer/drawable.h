@@ -11,7 +11,6 @@
 
 #include "core.h"
 #include "shader.h"
-#include <iostream>
 #include <Math\vec2.h>
 #include <Renderer\RenderWindow.h>
 

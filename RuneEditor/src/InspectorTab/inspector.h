@@ -1,7 +1,6 @@
 #pragma once
 
 #include <RuneEngine.h>
-#include <iostream>
 
 class InspectorTab : public rune::Drawable
 {

@@ -1,5 +1,4 @@
 #include "gameObject.h"
-#include <iostream>
 
 /**
  * \param newScript The new component to be added to the game object.

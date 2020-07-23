@@ -38,9 +38,9 @@ public:
   ///Overload of addition operator.
   Mat2 operator+ (const Mat2& right);
 
-  ///Overload of mutiplication operator.
+  ///Overload of multiplication operator.
   Mat2 operator* (const Mat2& right);
-  ///Overload of muliplication operator for a scalar on the left.
+  ///Overload of multiplication operator for a scalar on the left.
   Mat2 operator* (double scalar);
   ///Overload of multiplication operator for a rune::Mat2
   Vec2 operator*(const Vec2& right);

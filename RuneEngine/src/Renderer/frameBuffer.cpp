@@ -1,6 +1,5 @@
 #include "frameBuffer.h"
 #include <gameApplication.h>
-#include <iostream>
 #include <GL\glew.h>
 #include <gl\GLU.h>
 

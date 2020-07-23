@@ -73,6 +73,8 @@ public:
   ///Maximize the currently open window
   void maximizeWindow(void);
 
+  void setIcon(const std::string& filePath);
+
 };
 }
 
