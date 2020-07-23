@@ -96,6 +96,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Animation\animationController.cpp" />
     <ClCompile Include="src\ResourceManager\resource.cpp" />
     <ClCompile Include="src\ResourceManager\resourceManager.cpp" />
     <ClCompile Include="src\Animation\animator.cpp" />
@@ -136,6 +137,9 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClCompile Include="src\Physics\world.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Animation\animationController.h" />
+    <ClInclude Include="src\Animation\animationState.h" />
+    <ClInclude Include="src\Animation\animationTransition.h" />
     <ClInclude Include="src\DataStructures\stack.h" />
     <ClInclude Include="src\Renderer\rect.h" />
     <ClInclude Include="src\ResourceManager\resource.h" />

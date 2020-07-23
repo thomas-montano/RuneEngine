@@ -13,7 +13,7 @@ rune::Shader::Shader() : m_shaderID(0)
  */
 rune::Shader::Shader(ShaderProgramSource source)
 {
-
+  
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 
 }
@@ -23,7 +23,9 @@ rune::Shader::Shader(ShaderProgramSource source)
 */
 rune::Shader::Shader(const std::string& filePath)
 {
-  makeNewShader(filePath);
+  ShaderProgramSource source = ParseShader(filePath.c_str());
+
+  m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 }
 
 /**
@@ -32,6 +34,8 @@ rune::Shader::Shader(const std::string& filePath)
 void rune::Shader::makeNewShader(const std::string& filePath)
 {
   m_UniformLocationCache.clear();
+
+  glDeleteProgram(m_shaderID);
 
   ShaderProgramSource source = ParseShader(filePath.c_str());
 
@@ -132,8 +136,8 @@ unsigned int rune::Shader::CreateShader(const std::string& vertexShader, const s
   glLinkProgram(program);
   glValidateProgram(program);
 
-  glDeleteProgram(vs);
-  glDeleteProgram(fs);
+  glDeleteShader(vs);
+  glDeleteShader(fs);
 
   return program;
 

@@ -129,6 +129,9 @@
     <ClCompile Include="src\Animation\animator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Animation\animationController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameApplication.h">
@@ -270,6 +273,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Animation\animator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation\animationController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation\animationTransition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Animation\animationState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

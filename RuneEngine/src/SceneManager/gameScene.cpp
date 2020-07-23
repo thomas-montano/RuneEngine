@@ -129,11 +129,11 @@ void rune::GameScene::submitToRenderer(rune::Drawable* newDrawable)
 void rune::GameScene::startComponents(void)
 {
 
-  for (int i = 0; i < sceneObjects.size(); i++)
+  for (GameObject* currentObject = sceneObjects.getList(); sceneObjects.currentIndex() < sceneObjects.size() - 1; currentObject = sceneObjects.getNext())
   {
-    for (int j = 0; j < sceneObjects[i].getNumComponents(); j++)
+    for (int i = 0; i < currentObject->getNumComponents(); i++)
     {
-      sceneObjects[i].getComponent(j)->start();
+      currentObject->getComponent(i)->start();
     }
   }
 
@@ -141,16 +141,18 @@ void rune::GameScene::startComponents(void)
 
 void rune::GameScene::updateComponents()
 {
-  
-  for(int i = 0; i < sceneObjects.size(); i++)
+
+  for (GameObject* currentObject = sceneObjects.getList(); sceneObjects.currentIndex() < sceneObjects.size() - 1; currentObject = sceneObjects.getNext())
   {
-    for(int j = 0; j < sceneObjects[i].getNumComponents();j++)
+    
+    for (int i = 0; i < currentObject->getNumComponents(); i++)
     {
-      if(sceneObjects[i].getComponent(j)->isComponentEnabled())
+      if(currentObject->getComponent(i)->isComponentEnabled())
       {
-        sceneObjects[i].getComponent(j)->update();
+        currentObject->getComponent(i)->update();
       }
     }
+
   }
 
 }

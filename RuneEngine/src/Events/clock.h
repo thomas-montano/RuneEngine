@@ -19,8 +19,8 @@ class RUNE_ENGINE Clock
 {
 private:
   struct timespec ts;
-  long startTime;
-  long lastNanos;
+  long long startTime;
+  long long lastNanos;
 
 public:
   ///Default constructor to create a clock and have the start time be equal to the time it was created.

@@ -33,7 +33,7 @@ void rune::GameObject::instantiate(rune::GameObject newObject)
  */
 rune::Component* rune::GameObject::getComponent(int index)
 {
-  if(index < objectComponents.size())
+  if (index < objectComponents.size())
     return objectComponents[index];
 
   return nullptr;

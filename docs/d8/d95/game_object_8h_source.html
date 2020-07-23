@@ -102,37 +102,37 @@ $(function() {
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordtype">void</span> instantiate(<a class="code" href="../../db/d07/classrune_1_1_game_object.html">GameObject</a>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../dd/d70/classrune_1_1_component.html">rune::Component</a>* getComponent(<span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keyword">class</span>Variable&gt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../db/d07/classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">   45</a></span>&#160;  classVariable* <a class="code" href="../../db/d07/classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">findComponent</a>()</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp; objectComponent : objectComponents)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">if</span> (std::string(<span class="keyword">typeid</span>(*objectComponent).name()) == std::string(<span class="keyword">typeid</span>(classVariable).name()))</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>classVariable*<span class="keyword">&gt;</span>(objectComponent);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keyword">class</span>Variable&gt;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../db/d07/classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">   46</a></span>&#160;  classVariable* <a class="code" href="../../db/d07/classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">findComponent</a>()</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp; objectComponent : objectComponents)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;      <span class="keywordflow">if</span> (std::string(<span class="keyword">typeid</span>(*objectComponent).name()) == std::string(<span class="keyword">typeid</span>(classVariable).name()))</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>classVariable*<span class="keyword">&gt;</span>(objectComponent);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1_game_object_html_a4d7c7387a288b5112dae9ea62585fe79"><div class="ttname"><a href="../../db/d07/classrune_1_1_game_object.html#a4d7c7387a288b5112dae9ea62585fe79">rune::GameObject::transform</a></div><div class="ttdeci">rune::Transform transform</div><div class="ttdoc">The location, scale, and rotation of the object in the world.</div><div class="ttdef"><b>Definition:</b> gameObject.h:29</div></div>
 <div class="ttc" id="aclassrune_1_1_component_html"><div class="ttname"><a href="../../dd/d70/classrune_1_1_component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:20</div></div>
 <div class="ttc" id="aclassrune_1_1_transform_html"><div class="ttname"><a href="../../d7/d7f/classrune_1_1_transform.html">rune::Transform</a></div><div class="ttdoc">A data structure that contains position, size, and rotation.</div><div class="ttdef"><b>Definition:</b> transform.h:21</div></div>
-<div class="ttc" id="aclassrune_1_1_game_object_html_a0e702455dbf97ae799af69a23c0d9795"><div class="ttname"><a href="../../db/d07/classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">rune::GameObject::findComponent</a></div><div class="ttdeci">classVariable * findComponent()</div><div class="ttdef"><b>Definition:</b> gameObject.h:45</div></div>
-<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animator.h:21</div></div>
+<div class="ttc" id="aclassrune_1_1_game_object_html_a0e702455dbf97ae799af69a23c0d9795"><div class="ttname"><a href="../../db/d07/classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">rune::GameObject::findComponent</a></div><div class="ttdeci">classVariable * findComponent()</div><div class="ttdef"><b>Definition:</b> gameObject.h:46</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:5</div></div>
 <div class="ttc" id="aclassrune_1_1_game_object_html"><div class="ttname"><a href="../../db/d07/classrune_1_1_game_object.html">rune::GameObject</a></div><div class="ttdoc">Entity control system main object used for all objects in the scene.</div><div class="ttdef"><b>Definition:</b> gameObject.h:22</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

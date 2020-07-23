@@ -1,7 +1,21 @@
 /**
  * @class rune::List
  * @brief A list that can be used to store data.
+ * 
+ * The methodology for iterating through a list is very similar to a range based loop syntax.
+ * To iterate through a list without copying or having to redo iterations, you should create a for loop like this:
+ * 
+ * @code
+ * for (TYPE* currentObject = myList.getList(); myList.currentIndex() < myList.size() - 1; currentItem = myList.getNext())
+ * {
+ * 
+ *   //Do stuff
+ *   currentObject.myFunction();
+ * 
+ * }
  *
+ * @endcode
+ * 
  * @author Thomas Montano
  * @date July 21 2020
 */
@@ -33,18 +47,42 @@ namespace rune {
 
   private:
     listItem<T>* listHead;
-    int listSize = 0;
+    listItem<T>* currentlyAccessedItem;
+
+    int currentIndexPos;
+    int listSize;
 
   public:
 
     List()
+      : listHead(nullptr), listSize(0), currentlyAccessedItem(nullptr), currentIndexPos(0)
     {
-      listHead = NULL;
     }
 
     ~List()
     {
       clear();
+    }
+
+    T* getList()
+    {
+      currentlyAccessedItem = listHead;
+      currentIndexPos = 0;
+      return &listHead->storedItem;
+    }
+    
+    T* getNext()
+    {
+      currentIndexPos++;
+      currentlyAccessedItem = currentlyAccessedItem->nextItem;
+
+      return &currentlyAccessedItem->storedItem;
+    
+    }
+
+    int currentIndex()
+    {
+      return currentIndexPos;
     }
 
     ///Gets the number of elements in the list.
@@ -164,6 +202,7 @@ namespace rune {
     /// List access operator
     /// @param index The zero based index of the element to be accessed.
     /// @returns The accessed element.
+    /// @warning This should not be used to iterate through a list. Only use this function if you are looking for single elements.
     T operator[](int index)
     {
 

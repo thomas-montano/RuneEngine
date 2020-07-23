@@ -41,6 +41,7 @@ public:
 
   ///Locate components of the object based on data type
   ///Call the function like this: findComponent<rune::Sprite>();
+  /// @warning Do not call this in a rune::GameObject constructor. Call it in either start() or update()
   template<class classVariable>
   classVariable* findComponent()
   {

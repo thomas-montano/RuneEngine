@@ -83,6 +83,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3857eda0c063ff1edfb99dba5bc57c50"><td class="memItemLeft" align="right" valign="top"><a id="a3857eda0c063ff1edfb99dba5bc57c50"></a>
+T *&#160;</td><td class="memItemRight" valign="bottom"><b>getList</b> ()</td></tr>
+<tr class="separator:a3857eda0c063ff1edfb99dba5bc57c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa322b03b1cf266195433006f2b9e2cf3"><td class="memItemLeft" align="right" valign="top"><a id="aa322b03b1cf266195433006f2b9e2cf3"></a>
+T *&#160;</td><td class="memItemRight" valign="bottom"><b>getNext</b> ()</td></tr>
+<tr class="separator:aa322b03b1cf266195433006f2b9e2cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60e9e38f40c7b64ccc6433113b9c7cf1"><td class="memItemLeft" align="right" valign="top"><a id="a60e9e38f40c7b64ccc6433113b9c7cf1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>currentIndex</b> ()</td></tr>
+<tr class="separator:a60e9e38f40c7b64ccc6433113b9c7cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8d0c63a422bf45180307cfe360dc800"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/classrune_1_1_list.html#ad8d0c63a422bf45180307cfe360dc800">size</a> ()</td></tr>
 <tr class="separator:ad8d0c63a422bf45180307cfe360dc800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe6d5a33d587ecf802d7616c2a5bf82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/classrune_1_1_list.html#afbe6d5a33d587ecf802d7616c2a5bf82">add</a> (T newData)</td></tr>
@@ -103,7 +112,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 class rune::List&lt; T &gt;</h3>
 
 <p>A list that can be used to store data. </p>
-<dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
+<p>The methodology for iterating through a list is very similar to a range based loop syntax. To iterate through a list without copying or having to redo iterations, you should create a for loop like this:</p>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (TYPE* currentObject = myList.getList(); myList.currentIndex() &lt; myList.size() - 1; currentItem = myList.getNext())</div>
+<div class="line">{</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">//Do stuff</span></div>
+<div class="line">  currentObject.myFunction();</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>July 21 2020 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afbe6d5a33d587ecf802d7616c2a5bf82"></a>
@@ -217,6 +234,7 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The accessed element. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This should not be used to iterate through a list. Only use this function if you are looking for single elements. </dd></dl>
 
 </div>
 </div>
