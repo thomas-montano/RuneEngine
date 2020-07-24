@@ -4,7 +4,7 @@
 
 bool rune::Mouse::isButtonPressed(Button button)
 {
-    if(GLFW_PRESS == glfwGetMouseButton(rune::GameApplication::getWindow()->GetGLWindow(), button))
+    if(GLFW_PRESS == glfwGetMouseButton(getGameInstance()->getWindow()->GetGLWindow(), button))
     {
       return true;
     }
@@ -16,7 +16,7 @@ rune::Vec2 rune::Mouse::getPosition(void)
 {
   double xpos, ypos;
   
-  glfwGetCursorPos(rune::GameApplication::getWindow()->GetGLWindow(), &xpos, &ypos);
+  glfwGetCursorPos(getGameInstance()->getWindow()->GetGLWindow(), &xpos, &ypos);
 
-  return rune::Vec2(xpos,-1 * (ypos - rune::GameApplication::getWindow()->getSize().y));
+  return rune::Vec2(xpos,-1 * (ypos - getGameInstance()->getWindow()->getSize().y));
 }

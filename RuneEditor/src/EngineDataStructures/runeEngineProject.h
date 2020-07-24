@@ -17,7 +17,7 @@ public:
   void setProjectName(std::string newName)
   {
     projectName = newName;
-    rune::GameApplication::getWindow()->setWindowTitle(projectName + " - Rune Engine Editor Version 0.7.5-alpha");
+    getGameInstance()->getWindow()->setWindowTitle(projectName + " - Rune Engine Editor Version 0.7.5-alpha");
   }
 
   std::string getProjectName(void)

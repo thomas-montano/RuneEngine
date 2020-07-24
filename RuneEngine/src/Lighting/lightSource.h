@@ -12,15 +12,22 @@
 #include "core.h"
 #include <Renderer\drawable.h>
 #include <Entities\component.h>
+#include <Renderer\shader.h>
 
 namespace rune{
 
 class RUNE_ENGINE LightSource : public Drawable, public Component
 {
 
+private:
+
+  Shader lightShader;
+
+
 public:
 
-private:
+  void start() override;
+  void update() override;
 
 };
 }

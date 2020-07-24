@@ -13,6 +13,8 @@
 
 #include "core.h"
 #include <vector>
+#include <unordered_map>
+#include <string>
 #include "gameScene.h"
 
 namespace rune{
@@ -20,23 +22,17 @@ namespace rune{
 class RUNE_ENGINE SceneManager
 {
 private:
-  static int m_currentScene; //Index for the current state
-
+  //Name of the currently active scene.
+  std::string m_currentScene;
   //Array to hold all of the object pointers for the virtual functions
-  static std::vector<rune::GameScene*> m_scenes;
+  std::unordered_map<std::string, GameScene*> m_scenes;
 public:
-  ///Check to see if the current state has thrown any flags. This lets us know whether or not GameApplication needs to do anything
-  void checkFlags(void);
-  
   ///Adds a GameScene into the SceneManager scene buffer.
-  void addScene(rune::GameScene* newScene);
-
+  void addScene(std::string sceneName, GameScene* newScene);
   ///Get the currently active GameScene.
-  static rune::GameScene* getCurrentScene(void);
-
+  rune::GameScene* getCurrentScene(void);
   ///Set the currently active GameScene.
-  void setScene(int newState);
-
+  void setScene(std::string newState);
   ///Get the total number of scenes currently stored in the SceneManger scene buffer.
   int getNumScenes(void);
 };

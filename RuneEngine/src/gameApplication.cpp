@@ -1,31 +1,20 @@
 #include "gameApplication.h"
 
-//Initialize Static variables
-rune::RenderWindow* rune::GameApplication::winPtr = nullptr;
-double rune::GameApplication::deltaTime = 0.0;
-int rune::GameApplication::frameRate = 0;
+//Initialize singleton instance
+rune::GameApplication* rune::GameApplication::currentApplication = nullptr;
 
 /**
  * @param title The title for the window to be created.
  * @param updateRate How many times per second the game will run the main update loop.
  */
-rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title), m_currentScene(nullptr)
+rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title), frameRate(0), m_currentScene("")
 {
-  winPtr = &m_mainWindow;
   m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
   m_gameRunning = true;
   deltaTime = (1.0 / m_updateRate);
   m_mainWindow.enableVsync(true);
 
-}
-
-/**
- * \param newTitle The title that should be displayed on the window.
- */
-void rune::GameApplication::setWindowTitle(std::string newTitle)
-{
-  m_mainWindow.setWindowTitle(newTitle);
 }
 
 /**
@@ -36,17 +25,10 @@ int rune::GameApplication::run(void)
 
   m_mainWindow.enableVsync(false);
 
-  //If the icon file doesn't exist, don't add an icon
-  /*#if __has_include("../icon.c")
-    #include "../icon.c"
-    m_mainWindow.setIcon(gimp_image.width,gimp_image.height,gimp_image.pixel_data);
-  #endif*/
-
   //Default the game to the first available state
   if(m_sceneManager.getNumScenes() > 0)
   {
-    
-    m_sceneManager.setScene(0);
+    m_sceneManager.setScene(m_currentScene);
   }
   else
   {
@@ -54,14 +36,6 @@ int rune::GameApplication::run(void)
   }
 
   //Go ahead and start the game loop
-  gameLoop();
-
-  return m_errorCode;
-}
-
-void rune::GameApplication::gameLoop(void)
-{
-  
   //Clock object for getting the time
   Clock tickClock;
   tickClock.reset(); //Set the time in milliseconds to 0
@@ -79,47 +53,33 @@ void rune::GameApplication::gameLoop(void)
   int frames = 0;
 
   //While window is open, run an infinite loop
-  while(m_mainWindow.isOpen() && m_errorCode == 0)
+  while (m_mainWindow.isOpen() && m_errorCode == 0)
   {
 
     //Reset the amount of updates that have happened
     updates = 0;
 
-    //Check for events
-    processInput();
-
-    //Check to see if the state manager has thrown any flags
-    m_sceneManager.checkFlags();
-
     //Set the currentState pointer to be equal to the current state
-    m_currentScene = m_sceneManager.getCurrentScene();
-
-    //If the state threw a quit flag, close game
-    if(m_currentScene->getQuitFlag())
-    {
-
-      m_mainWindow.close();
-
-    }
+    GameScene* activeScene = m_sceneManager.getCurrentScene();
 
     //Update current time clock
     currentTime = tickClock.getElapsedTimeAsMilliseconds();
 
     //Every tick run fixed updates and then keep track of how many ticks
     //have happened
-    while((currentTime - nextTick) >= (1000.0/m_updateRate) && updates++ < m_updateRate)
+    while ((currentTime - nextTick) >= (1000.0 / m_updateRate) && updates++ < m_updateRate)
     {
       //Current Game state updates here
-      m_currentScene->updateFixed();
+      activeScene->updateFixed();
 
-      deltaTime = (currentTime - nextTick)/1000.0;
+      deltaTime = (currentTime - nextTick) / 1000.0;
 
       //Set the next tick to 1/updateRate in milliseconds from now on
-      nextTick += (1000.0/m_updateRate);
+      nextTick += (1000.0 / m_updateRate);
     }
 
     //This is an FPS clock that runs once per second and keeps track of frames
-    if((currentTime - framerateClock) >= 1000)
+    if ((currentTime - framerateClock) >= 1000)
     {
       framerateClock = tickClock.getElapsedTimeAsMilliseconds();
       frameRate = frames;
@@ -127,56 +87,48 @@ void rune::GameApplication::gameLoop(void)
     }
 
     //Make sure that each layer gets their collisions updated
-    m_currentScene->updatePhysics();
-
-    //This is to handle state level events
-    m_currentScene->handleEvents(m_windowEvent);
+    activeScene->updatePhysics();
 
     //Handle UI that needs reference to window
-    m_currentScene->handleUI(m_mainWindow);
+    activeScene->handleUI(m_mainWindow);
 
     //Update anything that doesn't depend on ticks such as physics
-    m_currentScene->updateVariable();
+    activeScene->updateVariable();
 
-    m_currentScene->updateComponents();
+    activeScene->updateComponents();
 
     //Draw the current window
-    m_currentScene->Draw(m_mainWindow);
+    activeScene->Draw(m_mainWindow);
 
     //Update the amount of frames that have been rendered
     frames++;
 
   }
 
-}
-
-void rune::GameApplication::processInput(void)
-{
-
-  //Loop to poll events and updates the m_windowEvent object
-  m_mainWindow.pollEvents(m_windowEvent);
-
-  if(m_windowEvent.type == EventType::WindowClose)
-  {
-    m_mainWindow.close();
-  }
-
+  return m_errorCode;
 }
 
 /**
  * @param newScene A pointer to a GameScene object that should be loaded into the scene buffer.
 */
-void rune::GameApplication::loadScene(GameScene* newScene)
+void rune::GameApplication::loadScene(std::string sceneName, GameScene* newScene)
 {
 
-  m_sceneManager.addScene(newScene);
+  if(m_currentScene == "")
+  {
+  
+    m_currentScene = sceneName;
+
+  }
+
+  m_sceneManager.addScene(sceneName,newScene);
 
 }
 
 ///@returns the reference to the currently active render window.
 rune::RenderWindow* rune::GameApplication::getWindow(void)
 {
-  return winPtr;
+  return &m_mainWindow;
 }
 
 ///@returns The time in seconds since the last game tick.
@@ -191,7 +143,19 @@ int rune::GameApplication::getFrameRate(void)
   return frameRate;
 }
 
-void rune::GameApplication::quitGame()
+void rune::GameApplication::quitApplication()
 {
-  SceneManager::getCurrentScene()->quitGame();
+  m_mainWindow.close();
+}
+
+///@param newScene The scene that should be made active.
+void rune::GameApplication::changeScene(std::string newScene)
+{
+  m_sceneManager.setScene(newScene);
+}
+
+///@return A pointer to the currently active scene.
+rune::GameScene* rune::GameApplication::getCurrentScene(void)
+{
+  return m_sceneManager.getCurrentScene();
 }

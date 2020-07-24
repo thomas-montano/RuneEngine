@@ -83,11 +83,13 @@ Create Your Entry Point</h1>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">//Initialize our game application to have a really awesome title.</span></div>
-<div class="line">  GameApplication* mainApplication = <span class="keyword">new</span> GameApplication(<span class="stringliteral">&quot;My game&quot;</span>);</div>
+<div class="line">  GameApplication* mainApplication = mainApplication-&gt;getApplication();</div>
+<div class="line">   </div>
+<div class="line">  getGameInstance()-&gt;getWindow()-&gt;setWindowTitle(<span class="stringliteral">&quot;My Game Title&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//Load the first level into the game application</span></div>
 <div class="line">  FirstLevel* firstLevel = <span class="keyword">new</span> FirstLevel();</div>
-<div class="line">  mainApplication-&gt;loadScene(firstLevel);</div>
+<div class="line">  mainApplication-&gt;loadScene(<span class="stringliteral">&quot;First Level&quot;</span>, firstLevel);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//Start the game</span></div>
 <div class="line">  mainApplication-&gt;run();</div>

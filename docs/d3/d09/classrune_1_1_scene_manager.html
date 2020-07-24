@@ -70,7 +70,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="../../d0/d4c/classrune_1_1_scene_manager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rune::SceneManager Class Reference</div>  </div>
@@ -84,33 +83,26 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a53cc8e1c396a387d35622417d25b55dd"><td class="memItemLeft" align="right" valign="top"><a id="a53cc8e1c396a387d35622417d25b55dd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#a53cc8e1c396a387d35622417d25b55dd">checkFlags</a> (void)</td></tr>
-<tr class="memdesc:a53cc8e1c396a387d35622417d25b55dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check to see if the current state has thrown any flags. This lets us know whether or not <a class="el" href="../../d1/da1/classrune_1_1_game_application.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">GameApplication</a> needs to do anything. <br /></td></tr>
-<tr class="separator:a53cc8e1c396a387d35622417d25b55dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4dac7b8157618f69f30a098e4655d4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#ac4dac7b8157618f69f30a098e4655d4b">addScene</a> (<a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a> *newScene)</td></tr>
-<tr class="memdesc:ac4dac7b8157618f69f30a098e4655d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a> into the <a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html" title="The scene manager is responsible for handling the transfer of the current state pointer that refers t...">SceneManager</a> scene buffer.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#ac4dac7b8157618f69f30a098e4655d4b">More...</a><br /></td></tr>
-<tr class="separator:ac4dac7b8157618f69f30a098e4655d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8edebb6bcf417e5f11473eec09f4089"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#ac8edebb6bcf417e5f11473eec09f4089">setScene</a> (int newState)</td></tr>
-<tr class="memdesc:ac8edebb6bcf417e5f11473eec09f4089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the currently active <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a>.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#ac8edebb6bcf417e5f11473eec09f4089">More...</a><br /></td></tr>
-<tr class="separator:ac8edebb6bcf417e5f11473eec09f4089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151cc3e35349a2d5687a6eb1b0b7e488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#a151cc3e35349a2d5687a6eb1b0b7e488">addScene</a> (std::string sceneName, <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a> *newScene)</td></tr>
+<tr class="memdesc:a151cc3e35349a2d5687a6eb1b0b7e488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a> into the <a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html" title="The scene manager is responsible for handling the transfer of the current state pointer that refers t...">SceneManager</a> scene buffer.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#a151cc3e35349a2d5687a6eb1b0b7e488">More...</a><br /></td></tr>
+<tr class="separator:a151cc3e35349a2d5687a6eb1b0b7e488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcbed36e4f998d062a650d09bfce476"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#aabcbed36e4f998d062a650d09bfce476">getCurrentScene</a> (void)</td></tr>
+<tr class="memdesc:aabcbed36e4f998d062a650d09bfce476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently active <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a>.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#aabcbed36e4f998d062a650d09bfce476">More...</a><br /></td></tr>
+<tr class="separator:aabcbed36e4f998d062a650d09bfce476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c4579268db8f71627dc3dcfee12a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#a43c4579268db8f71627dc3dcfee12a0c">setScene</a> (std::string newState)</td></tr>
+<tr class="memdesc:a43c4579268db8f71627dc3dcfee12a0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the currently active <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a>.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#a43c4579268db8f71627dc3dcfee12a0c">More...</a><br /></td></tr>
+<tr class="separator:a43c4579268db8f71627dc3dcfee12a0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac635b66af210f56869aa2b463d78666a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#ac635b66af210f56869aa2b463d78666a">getNumScenes</a> (void)</td></tr>
 <tr class="memdesc:ac635b66af210f56869aa2b463d78666a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of scenes currently stored in the SceneManger scene buffer.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#ac635b66af210f56869aa2b463d78666a">More...</a><br /></td></tr>
 <tr class="separator:ac635b66af210f56869aa2b463d78666a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aabcbed36e4f998d062a650d09bfce476"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d09/classrune_1_1_scene_manager.html#aabcbed36e4f998d062a650d09bfce476">getCurrentScene</a> (void)</td></tr>
-<tr class="memdesc:aabcbed36e4f998d062a650d09bfce476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently active <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a>.  <a href="../../d3/d09/classrune_1_1_scene_manager.html#aabcbed36e4f998d062a650d09bfce476">More...</a><br /></td></tr>
-<tr class="separator:aabcbed36e4f998d062a650d09bfce476"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The scene manager is responsible for handling the transfer of the current state pointer that refers to the overwritten state class for each instance of the game. </p>
 <dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>March 2 2020 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac4dac7b8157618f69f30a098e4655d4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4dac7b8157618f69f30a098e4655d4b">&#9670;&nbsp;</a></span>addScene()</h2>
+<a id="a151cc3e35349a2d5687a6eb1b0b7e488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151cc3e35349a2d5687a6eb1b0b7e488">&#9670;&nbsp;</a></span>addScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,9 +110,19 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void rune::SceneManager::addScene </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a> *&#160;</td>
-          <td class="paramname"><em>newScene</em></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>sceneName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a> *&#160;</td>
+          <td class="paramname"><em>newScene</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -140,9 +142,6 @@ Static Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a> * rune::SceneManager::getCurrentScene </td>
@@ -152,11 +151,6 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Get the currently active <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a>. </p>
@@ -185,8 +179,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac8edebb6bcf417e5f11473eec09f4089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac8edebb6bcf417e5f11473eec09f4089">&#9670;&nbsp;</a></span>setScene()</h2>
+<a id="a43c4579268db8f71627dc3dcfee12a0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c4579268db8f71627dc3dcfee12a0c">&#9670;&nbsp;</a></span>setScene()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +188,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void rune::SceneManager::setScene </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
+          <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>newScene</em></td><td>)</td>
           <td></td>
         </tr>

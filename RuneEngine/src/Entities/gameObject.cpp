@@ -1,4 +1,6 @@
 #include "gameObject.h"
+#include <gameApplication.h>
+#include <SceneManager/gameScene.h>
 
 /**
  * \param newScript The new component to be added to the game object.
@@ -23,6 +25,15 @@ int rune::GameObject::getNumComponents(void)
 void rune::GameObject::instantiate(rune::GameObject newObject)
 {
 
+  rune::GameScene* currentScene = getGameInstance()->getCurrentScene();
+
+  GameObject* newObjectPtr = new GameObject();
+  *newObjectPtr = newObject;
+
+  for (int i = 0; i < newObjectPtr->getNumComponents(); i++)
+  {
+    newObjectPtr->getComponent(i)->start();
+  }
 
 }
 

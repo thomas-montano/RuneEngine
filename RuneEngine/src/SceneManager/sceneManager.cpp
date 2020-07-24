@@ -1,9 +1,6 @@
 #include "sceneManager.h"
 #include "gameScene.h"
 
-std::vector<rune::GameScene*> rune::SceneManager::m_scenes;
-int rune::SceneManager::m_currentScene = 0;
-
 /**
  * @return A pointer to the currently active GameScene
 */
@@ -15,10 +12,10 @@ rune::GameScene* rune::SceneManager::getCurrentScene(void)
 /**
  * @param newScene Index in the scene buffer that determines what scene should be set as 
 */
-void rune::SceneManager::setScene(int newScene)
+void rune::SceneManager::setScene(std::string newScene)
 {
 
-  if(!m_scenes.empty())
+  if(m_currentScene != "")
   {
     if(m_scenes[m_currentScene]->isActive())
     {
@@ -46,23 +43,6 @@ void rune::SceneManager::setScene(int newScene)
 
 }
 
-void rune::SceneManager::checkFlags(void)
-{
-
-  //If the current state is asking to change the state
-  if(m_scenes[m_currentScene]->getStateFlag() == true)
-  {
-
-    //Reset the state flag
-    m_scenes[m_currentScene]->setStateFlag(false);
-
-    //Tell the state manager to get the next state
-    this->setScene(m_scenes[m_currentScene]->getNextState());
-
-  }
-
-}
-
 /**
  * @return The total number of scenes currently stored in the SceneManager scene buffer.
 */
@@ -76,9 +56,7 @@ int rune::SceneManager::getNumScenes(void)
 /**
  * @param newScene New GameScene to be added into the SceneManager scene buffer. 
 */
-void rune::SceneManager::addScene(rune::GameScene* newScene)
+void rune::SceneManager::addScene(std::string sceneName, GameScene* newScene)
 {
-
-  m_scenes.push_back(newScene);
-
+  m_scenes[sceneName] = newScene;
 }

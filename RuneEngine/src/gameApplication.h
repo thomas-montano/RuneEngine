@@ -19,11 +19,13 @@
  * int main(void)
  * {
  *   //Initialize our game application to have a really awesome title.
- *   GameApplication* mainApplication = new GameApplication("My game");
- *
+ *   GameApplication* mainApplication = mainApplication->getApplication();
+ *    
+ *   getGameInstance()->getWindow()->setWindowTitle("My Game Title");
+ * 
  *   //Load the first level into the game application
  *   FirstLevel* firstLevel = new FirstLevel();
- *   mainApplication->loadScene(firstLevel);
+ *   mainApplication->loadScene("First Level", firstLevel);
  *
  *   //Start the game
  *   mainApplication->run();
@@ -100,7 +102,10 @@
 
 /**
  * @class rune::GameApplication
- * @brief Entry point for all programs using the engine, must instantiate a game application for every new game
+ * @brief Entry point for all programs using the engine, must instantiate a game application for every new game. Use the macro getGameInstance() to get a pointer to the current game instance.
+ * 
+ * @warning This class is a singleton, all functions called operate on the same object.
+ * 
  * @author Thomas Montano
  * 
  * @date March 2 2020
@@ -116,7 +121,8 @@
 #include <SceneManager\sceneManager.h>
 #include <Renderer\RenderWindow.h>
 #include <Events\clock.h>
-#include <Events\event.h>
+
+#define getGameInstance() rune::GameApplication::getApplication()
 
 namespace rune{
 
@@ -124,24 +130,22 @@ class RUNE_ENGINE GameApplication
 {
 private:
 
+  static GameApplication* currentApplication;
+
   RenderWindow m_mainWindow;
 
-  static RenderWindow* winPtr;
-  static double deltaTime;
-  static int frameRate;
+  double deltaTime;
+  int frameRate;
   
   bool m_gameRunning;
-  Event m_windowEvent;
   int m_updateRate;
 
   SceneManager m_sceneManager;
-  GameScene* m_currentScene;
 
-  ///Main game loop used to keep the game running and updating.
-  void gameLoop(void);
+  std::string m_currentScene;
 
-  ///Window level input handling.
-  void processInput(void);
+  ///Default constructor for setting up a new game.
+  GameApplication(std::string title = "Rune Engine", int updateRate = 60);
 
 public:
   /** 
@@ -150,22 +154,39 @@ public:
    * 1 = A rune::GameScene had not been loaded into the application at run time.
    */
   int m_errorCode;
-  ///Default constructor for setting up a new game.
-  GameApplication(std::string title = "Rune Engine", int updateRate = 60);
-  ///Set the title of the window
-  void setWindowTitle(std::string);
+
+  //Delete the copy constructor
+  ///@cond
+  GameApplication(const GameApplication&) = delete;
+  ///@endcond
+  
+  ///@return A pointer to the currently open rune::GameApplication.
+  static GameApplication* getApplication()
+  {
+    if(!currentApplication)
+    {
+      currentApplication = new GameApplication;
+    }
+
+    return currentApplication;
+  }
+
   ///Loads in a scene file and stores it in the game application.
-  void loadScene(GameScene* newScene);
+  void loadScene(std::string sceneName, GameScene* newScene);
   ///Starts the main game loop
   int run(void);
   ///Returns the reference to the currently active render window.
-  static RenderWindow* getWindow(void);
+  RenderWindow* getWindow(void);
   ///Gets the change in time since the last frame in seconds.
-  static double getDeltaTime(void);
+  double getDeltaTime(void);
   ///Gets the number of frames since the last game tick.
-  static int getFrameRate(void);
-  ///Shuts down the game
-  static void quitGame();
+  int getFrameRate(void);
+  ///Shut down the game.
+  void quitApplication();
+  ///Change the currently active scene.
+  void changeScene(std::string newScene);
+  ///Get a pointer to the currently active scene.
+  GameScene* getCurrentScene(void);
 
 };
 }

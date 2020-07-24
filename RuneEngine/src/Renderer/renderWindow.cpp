@@ -94,30 +94,6 @@ void rune::RenderWindow::maximizeWindow(void)
   glfwMaximizeWindow(GLwindow);
 }
 
-/**
- * @param event the Event object for the events to be stored in.
-*/
-void rune::RenderWindow::pollEvents(rune::Event& event)
-{
-
-  glfwPollEvents();
-
-  if(glfwWindowShouldClose(GLwindow))
-  {
-    event.type = rune::EventType::WindowClose;
-    windowOpen = false;
-  }
-  
-  //Handling window resizing, make this better
-
-  glfwGetWindowSize(GLwindow,&width,&height);
-
-  glViewport(0, 0, width, height);
-
-
-
-}
-
 void rune::RenderWindow::display(void)
 {
 
@@ -141,6 +117,20 @@ void rune::RenderWindow::clear(rune::Color clearColor)
 */
 bool rune::RenderWindow::isOpen()
 {
+
+  glfwPollEvents();
+
+  if (glfwWindowShouldClose(GLwindow))
+  {
+    windowOpen = false;
+  }
+
+  //Handling window resizing, make this better
+
+  glfwGetWindowSize(GLwindow, &width, &height);
+
+  glViewport(0, 0, width, height);
+
   if(!windowOpen)
   {
     glfwTerminate();

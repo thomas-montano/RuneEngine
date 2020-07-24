@@ -44,7 +44,7 @@ void rune::RectangleShape::setUpBuffers()
 
 void rune::RectangleShape::start()
 {
-  rune::SceneManager::getCurrentScene()->submitToRenderer(this);
+  getGameInstance()->getCurrentScene()->submitToRenderer(this);
 }
 
 /**
@@ -69,7 +69,7 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
 
   //Set up rotation information
   rectangleShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
-  rectangleShader.setUniform1f("aspectRatio", rune::GameApplication::getWindow()->getSize().x / rune::GameApplication::getWindow()->getSize().y);
+  rectangleShader.setUniform1f("aspectRatio", getGameInstance()->getWindow()->getSize().x / getGameInstance()->getWindow()->getSize().y);
   rectangleShader.setUniform2f("origin", (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
 
   rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),

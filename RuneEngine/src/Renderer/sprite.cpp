@@ -55,7 +55,7 @@ void rune::Sprite::setUpBuffers()
 
 void rune::Sprite::start()
 {
-  rune::SceneManager::getCurrentScene()->submitToRenderer(this);
+  getGameInstance()->getCurrentScene()->submitToRenderer(this);
 }
 
 /**
@@ -81,7 +81,7 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
   //Add in rotation information so that things rotate correctly
   objectShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
-  objectShader.setUniform1f("aspectRatio", rune::GameApplication::getWindow()->getSize().x/ rune::GameApplication::getWindow()->getSize().y);
+  objectShader.setUniform1f("aspectRatio", getGameInstance()->getWindow()->getSize().x / getGameInstance()->getWindow()->getSize().y);
   objectShader.setUniform2f("origin", (position.x+(0.5 * size.x))/(0.5*windowSize.x), (position.y + (0.5 * size.y)) / (0.5*windowSize.y));
 
   rune::Mat2 drawMatrix((position.x + size.x) / (0.5*windowSize.x), (position.y + size.y) / (0.5*windowSize.y),

@@ -82,7 +82,7 @@ void MenuBar::draw(rune::RenderWindow& window)
       
       if(ImGui::MenuItem("Exit"))
       {
-        rune::GameApplication::quitGame();
+        getGameInstance()->quitApplication();
       }
       
       ImGui::EndMenu();

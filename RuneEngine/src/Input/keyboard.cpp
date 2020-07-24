@@ -6,7 +6,7 @@
 bool rune::Keyboard::isKeyPressed(Key key)
 {
 
-  if (glfwGetKey(rune::GameApplication::getWindow()->GetGLWindow(), key) == GLFW_PRESS)
+  if (glfwGetKey(getGameInstance()->getWindow()->GetGLWindow(), key) == GLFW_PRESS)
   {
     return true;
   }

@@ -6,7 +6,7 @@
  * To iterate through a list without copying or having to redo iterations, you should create a for loop like this:
  * 
  * @code
- * for (TYPE* currentObject = myList.getList(); myList.currentIndex() < myList.size() - 1; currentItem = myList.getNext())
+ * for (TYPE* currentObject = myList.getList(); currentObject != nullptr; currentItem = myList.getNext())
  * {
  * 
  *   //Do stuff
@@ -49,13 +49,12 @@ namespace rune {
     listItem<T>* listHead;
     listItem<T>* currentlyAccessedItem;
 
-    int currentIndexPos;
     int listSize;
 
   public:
 
     List()
-      : listHead(nullptr), listSize(0), currentlyAccessedItem(nullptr), currentIndexPos(0)
+      : listHead(nullptr), listSize(0), currentlyAccessedItem(nullptr)
     {
     }
 
@@ -64,25 +63,28 @@ namespace rune {
       clear();
     }
 
+    ///Gets the current head of the list for purposes of iteration.
+    /// @returns A pointer to the head of the list.
     T* getList()
     {
       currentlyAccessedItem = listHead;
-      currentIndexPos = 0;
       return &listHead->storedItem;
     }
     
+    ///Gets the next element of the list.
+    /// @return A pointer to the next element
+    /// @warning Will return nullptr if the end of the list has been reached.
     T* getNext()
     {
-      currentIndexPos++;
       currentlyAccessedItem = currentlyAccessedItem->nextItem;
+
+      if(currentlyAccessedItem == nullptr)
+      {
+        return nullptr;
+      }
 
       return &currentlyAccessedItem->storedItem;
     
-    }
-
-    int currentIndex()
-    {
-      return currentIndexPos;
     }
 
     ///Gets the number of elements in the list.

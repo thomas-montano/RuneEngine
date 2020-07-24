@@ -5,7 +5,7 @@
 rune::Vec2 rune::Camera::centerPosition = rune::Vec2(0,0);
 double rune::Camera::zoomFactor = 1.0;
 
-rune::Camera::Camera() : cameraSize(rune::GameApplication::getWindow()->getSize())
+rune::Camera::Camera() : cameraSize(getGameInstance()->getWindow()->getSize())
 {
   centerPosition = rune::Vec2(0,0);
 }
@@ -47,5 +47,5 @@ double rune::Camera::getZoom(void)
  */
 void rune::Camera::move(rune::Vec2 speed)
 {
-  centerPosition += speed * rune::GameApplication::getDeltaTime();
+  centerPosition += speed * getGameInstance()->getDeltaTime();
 }

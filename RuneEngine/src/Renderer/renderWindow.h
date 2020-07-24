@@ -12,7 +12,6 @@
 #include "core.h"
 #include "color.h"
 #include <vector>
-#include <Events\event.h>
 #include "Math\vec2.h"
 #include <string>
 
@@ -27,7 +26,6 @@ class RUNE_ENGINE RenderWindow
 private:
   bool windowOpen;
   int width, height;
-  rune::Event windowEvents;
   GLFWwindow* GLwindow;
 
 public:
@@ -39,9 +37,6 @@ public:
 
   ///Renders a drawable to the screen.
   void draw(Drawable&);
-
-  ///Determines if any window level events have happened.
-  void pollEvents(rune::Event& event);
 
   ///Set the window title.
   void setWindowTitle(std::string);
@@ -72,8 +67,6 @@ public:
 
   ///Maximize the currently open window
   void maximizeWindow(void);
-
-  void setIcon(const std::string& filePath);
 
 };
 }

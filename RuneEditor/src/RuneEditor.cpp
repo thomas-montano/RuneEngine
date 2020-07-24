@@ -4,10 +4,12 @@
 int main()
 {
     
-    rune::GameApplication* runeEditor = new rune::GameApplication("Rune Engine");
+    rune::GameApplication* runeEditor = getGameInstance();
+
+    getGameInstance()->getWindow()->setWindowTitle("Rune Editor");
 
     EditorWindow* mainEditorWindow = new EditorWindow();
-    runeEditor->loadScene(mainEditorWindow);
+    runeEditor->loadScene("Editor Window", mainEditorWindow);
 
     runeEditor->run();
 

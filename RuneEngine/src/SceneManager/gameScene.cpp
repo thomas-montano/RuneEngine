@@ -6,7 +6,7 @@
 #include <imgui/imgui_impl_glfw.h>
 
 rune::GameScene::GameScene() 
-  : accumulator(0), dT(rune::GameApplication::getDeltaTime()), m_nextState(0), frameStart(0)
+  : accumulator(0), dT(getGameInstance()->getDeltaTime()), frameStart(0)
 {
   variableClock.reset();
 }
@@ -58,16 +58,6 @@ void rune::GameScene::resume(void)
 }
 
 /**
- * HandleEvents is responsible for handling input events for this
- * State when it is the active State.
- * @param theEvent to process from the App class Loop method
- */
-void rune::GameScene::handleEvents(rune::Event theEvent)
-{
-
-}
-
-/**
  * Handle scene level UI that needs to be run independent of the update rate.
  * @param window Render window that should be used for mouse positions
  * @param theEvent Event object used for mouse position at the moment of click 
@@ -109,18 +99,7 @@ void rune::GameScene::addObjectToScene(rune::GameObject newObject)
 
 }
 
-rune::List<rune::GameObject> rune::GameScene::getSceneObjects(void)
-{
-
-  return sceneObjects;
-
-}
-
-void rune::GameScene::quitGame()
-{
-  m_quitGame = true;
-}
-
+///@param newDrawable a pointer to an object that needs to be drawn to the screen.
 void rune::GameScene::submitToRenderer(rune::Drawable* newDrawable)
 {
   drawableObjects.push_back(newDrawable);
@@ -129,7 +108,7 @@ void rune::GameScene::submitToRenderer(rune::Drawable* newDrawable)
 void rune::GameScene::startComponents(void)
 {
 
-  for (GameObject* currentObject = sceneObjects.getList(); sceneObjects.currentIndex() < sceneObjects.size() - 1; currentObject = sceneObjects.getNext())
+  for (GameObject* currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
   {
     for (int i = 0; i < currentObject->getNumComponents(); i++)
     {
@@ -142,7 +121,7 @@ void rune::GameScene::startComponents(void)
 void rune::GameScene::updateComponents()
 {
 
-  for (GameObject* currentObject = sceneObjects.getList(); sceneObjects.currentIndex() < sceneObjects.size() - 1; currentObject = sceneObjects.getNext())
+  for (GameObject* currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
   {
     
     for (int i = 0; i < currentObject->getNumComponents(); i++)
@@ -157,6 +136,7 @@ void rune::GameScene::updateComponents()
 
 }
 
+///@param window A handle to the rune::RenderWindow that is being drawn to.
 void rune::GameScene::renderScene(RenderWindow& window)
 {
 
@@ -165,7 +145,7 @@ void rune::GameScene::renderScene(RenderWindow& window)
   for (int i = 0; i < drawableObjects.size(); i++)
   {
 
-    rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
+    getGameInstance()->getWindow()->draw(*drawableObjects[i]);
 
   }
 
@@ -221,7 +201,7 @@ void rune::GameScene::Draw(RenderWindow& window)
   for(int i = 0; i < drawableObjects.size(); i++)
   {
   
-    rune::GameApplication::getWindow()->draw(*drawableObjects[i]);
+    getGameInstance()->getWindow()->draw(*drawableObjects[i]);
   
   }
 
@@ -242,51 +222,6 @@ void rune::GameScene::handleCleanup(void)
 
 }
 
-/** 
- * Determines whether or not the current state is
- * asking to change to a different state.
- * @return Whether or not the state manager is being asked to change the scene.
- */
-bool rune::GameScene::getStateFlag()
-{
-
-  return m_changeStateFlag;
-
-}
-
-/**
- * Tells the state manager what state should be switched to next.
- * @return The state that the state manager should switch to.
- */
-int rune::GameScene::getNextState()
-{
-
-  return m_nextState;
-
-}
-
-/**
- * Set a flag that says the current scene wants to change to a different scene
- * @param value Set the flag that controls whether or not the state is going to be changed.
-*/
-void rune::GameScene::setStateFlag(bool value)
-{
-
-  m_changeStateFlag = value;
-
-}
-
-/**
- * Determines whether or not the current scene is asking for the game to be shut down. Used for things like quit buttons.
- * @return Whether or not the state flag has been thrown.
-*/
-bool rune::GameScene::getQuitFlag()
-{
-
-  return m_quitGame;
-
-}
-
 /**
  * Determines whether or not the state is currently active.
  * @return Whether or not the current scene is flagged as active.
@@ -294,14 +229,4 @@ bool rune::GameScene::getQuitFlag()
 bool rune::GameScene::isActive()
 {
   return isStateActive;
-}
-
-/**
- * Change the currently active state. Scene index must be handled by the user.
- * @param nextState The index in the GameApplication GameScene buffer.
- */
-void rune::GameScene::changeState(int nextState)
-{
-    m_changeStateFlag = true;
-    m_nextState = nextState;
 }

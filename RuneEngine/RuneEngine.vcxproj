@@ -123,7 +123,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClCompile Include="src\Particles\particleEmitter.cpp" />
     <ClCompile Include="src\Physics\physicsEngine.cpp" />
     <ClCompile Include="src\Events\clock.cpp" />
-    <ClCompile Include="src\Events\event.cpp" />
+    <ClCompile Include="src\Events\signal.cpp" />
     <ClCompile Include="src\Renderer\rectangleShape.cpp" />
     <ClCompile Include="src\Renderer\renderWindow.cpp" />
     <ClCompile Include="src\Renderer\shader.cpp" />
@@ -174,7 +174,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClInclude Include="src\Physics\physicsEngine.h" />
     <ClInclude Include="src\Events\clock.h" />
     <ClInclude Include="src\Renderer\drawable.h" />
-    <ClInclude Include="src\Events\event.h" />
+    <ClInclude Include="src\Events\signal.h" />
     <ClInclude Include="src\Renderer\rectangleShape.h" />
     <ClInclude Include="src\Renderer\renderWindow.h" />
     <ClInclude Include="src\Renderer\shader.h" />

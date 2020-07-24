@@ -83,15 +83,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3857eda0c063ff1edfb99dba5bc57c50"><td class="memItemLeft" align="right" valign="top"><a id="a3857eda0c063ff1edfb99dba5bc57c50"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>getList</b> ()</td></tr>
+<tr class="memitem:a3857eda0c063ff1edfb99dba5bc57c50"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/classrune_1_1_list.html#a3857eda0c063ff1edfb99dba5bc57c50">getList</a> ()</td></tr>
 <tr class="separator:a3857eda0c063ff1edfb99dba5bc57c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa322b03b1cf266195433006f2b9e2cf3"><td class="memItemLeft" align="right" valign="top"><a id="aa322b03b1cf266195433006f2b9e2cf3"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>getNext</b> ()</td></tr>
+<tr class="memitem:aa322b03b1cf266195433006f2b9e2cf3"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/classrune_1_1_list.html#aa322b03b1cf266195433006f2b9e2cf3">getNext</a> ()</td></tr>
 <tr class="separator:aa322b03b1cf266195433006f2b9e2cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60e9e38f40c7b64ccc6433113b9c7cf1"><td class="memItemLeft" align="right" valign="top"><a id="a60e9e38f40c7b64ccc6433113b9c7cf1"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>currentIndex</b> ()</td></tr>
-<tr class="separator:a60e9e38f40c7b64ccc6433113b9c7cf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8d0c63a422bf45180307cfe360dc800"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/classrune_1_1_list.html#ad8d0c63a422bf45180307cfe360dc800">size</a> ()</td></tr>
 <tr class="separator:ad8d0c63a422bf45180307cfe360dc800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe6d5a33d587ecf802d7616c2a5bf82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d76/classrune_1_1_list.html#afbe6d5a33d587ecf802d7616c2a5bf82">add</a> (T newData)</td></tr>
@@ -113,7 +108,7 @@ class rune::List&lt; T &gt;</h3>
 
 <p>A list that can be used to store data. </p>
 <p>The methodology for iterating through a list is very similar to a range based loop syntax. To iterate through a list without copying or having to redo iterations, you should create a for loop like this:</p>
-<div class="fragment"><div class="line"><span class="keywordflow">for</span> (TYPE* currentObject = myList.getList(); myList.currentIndex() &lt; myList.size() - 1; currentItem = myList.getNext())</div>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (TYPE* currentObject = myList.getList(); currentObject != <span class="keyword">nullptr</span>; currentItem = myList.getNext())</div>
 <div class="line">{</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">//Do stuff</span></div>
@@ -154,6 +149,63 @@ template&lt;class T &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a3857eda0c063ff1edfb99dba5bc57c50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3857eda0c063ff1edfb99dba5bc57c50">&#9670;&nbsp;</a></span>getList()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="../../d0/d76/classrune_1_1_list.html">rune::List</a>&lt; T &gt;::getList </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the current head of the list for purposes of iteration. </p><dl class="section return"><dt>Returns</dt><dd>A pointer to the head of the list. </dd></dl>
+
+</div>
+</div>
+<a id="aa322b03b1cf266195433006f2b9e2cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa322b03b1cf266195433006f2b9e2cf3">&#9670;&nbsp;</a></span>getNext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="../../d0/d76/classrune_1_1_list.html">rune::List</a>&lt; T &gt;::getNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Gets the next element of the list. </p><dl class="section return"><dt>Returns</dt><dd>A pointer to the next element </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Will return nullptr if the end of the list has been reached. </dd></dl>
 
 </div>
 </div>

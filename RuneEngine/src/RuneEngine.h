@@ -18,7 +18,6 @@
 #include <Lighting/lightSource.h>
 
 #include <SceneManager/gameScene.h>
-#include <SceneManager/sceneManager.h> //Should eventually only be internal to the engine
 
 #include <Events/clock.h>
 

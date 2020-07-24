@@ -21,9 +21,9 @@ void EditorWindow::doInit()
   static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-  rune::GameApplication::getWindow()->setWindowTitle("Empty Project - Rune Engine Editor Version 0.7.5-alpha");
+  getGameInstance()->getWindow()->setWindowTitle("Empty Project - Rune Engine Editor Version 0.7.5-alpha");
 
-  rune::GameApplication::getWindow()->maximizeWindow();
+  getGameInstance()->getWindow()->maximizeWindow();
 
   viewPortBuffer = &viewPort.viewBuffer;
 

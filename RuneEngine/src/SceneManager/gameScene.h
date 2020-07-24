@@ -29,9 +29,6 @@ class RUNE_ENGINE GameScene
 protected:
   //Flags that are used to communicate with the state manager.
   bool isStateActive = false;
-  bool m_changeStateFlag = false;
-  int m_nextState;
-  bool m_quitGame = false;
 
   std::vector<physics::RigidBody*> physicsBodies;
 
@@ -60,32 +57,23 @@ public:
   void deInit(void);
   virtual void pause(void);
   virtual void resume(void);
-  virtual void handleEvents(rune::Event theEvent);
   virtual void updateFixed(void);
   virtual void updateVariable(void);
   virtual void Draw(RenderWindow& window);
   virtual void updatePhysics(void);
   virtual void handleCleanup(void);
   virtual void handleUI(RenderWindow& window);
-
+  ///Call the start function for all the components on all the objects in the scene.
   void startComponents(void);
+  ///Call the update function for all the components on all the objects in the scene.
   void updateComponents(void);
-
   ///This function should be used in between a frame buffer bind and unbind only.
   void renderScene(RenderWindow& window);
-
-  virtual bool getStateFlag();
-  virtual int getNextState();
-  virtual void setStateFlag(bool value);
-  virtual bool getQuitFlag(void);
+  ///Determines whether or not the scene is currently active.
   bool isActive(void);
-  void changeState(int nextState);
   ///Place a new rune::GameObject into the scene.
   void addObjectToScene(rune::GameObject);
-  List<rune::GameObject> getSceneObjects(void);
-  ///Closes the application
-  void quitGame();
-
+  ///Submits a drawable object into the rendering stack to be drawn to the screen each frame.
   void submitToRenderer(rune::Drawable*);
 
 };

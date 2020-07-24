@@ -11,7 +11,7 @@ public:
   SceneViewPort()
   {
   
-    viewBuffer.setSize(rune::GameApplication::getWindow()->getSize());
+    viewBuffer.setSize(getGameInstance()->getWindow()->getSize());
 
   }
 
