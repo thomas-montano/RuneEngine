@@ -9,14 +9,14 @@
 #include "imgui/imgui.h"
 #include "imgui/imgui_impl_opengl3.h"
 #include "imgui/imgui_impl_glfw.h"
-#include <Input\keyboard.h>
+#include <Input/keyboard.h>
 
 /**
  * @param newWidth The width of the window in pixels to be created.
  * @param newHeight The height of the window in pixels to be created.
  * @param title The title of the window to be displayed at the top.
 */
-rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string title)
+rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const& title)
 {
   
   glfwInit();
@@ -69,7 +69,7 @@ rune::RenderWindow::~RenderWindow(void)
 /**
  * \param newTitle The title that should be displayed on the window.
  */
-void rune::RenderWindow::setWindowTitle(std::string newTitle)
+void rune::RenderWindow::setWindowTitle(std::string const& newTitle)
 {
   glfwSetWindowTitle(GLwindow,newTitle.c_str());
 }

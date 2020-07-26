@@ -98,7 +98,7 @@ void rune::RectangleShape::setFillColor(rune::Color newColor)
   m_fillColor = newColor;
 }
 
-void rune::RectangleShape::changeShader(const std::string& filePath)
+void rune::RectangleShape::changeShader(std::string const& filePath)
 {
 
   rectangleShader.makeNewShader(filePath);

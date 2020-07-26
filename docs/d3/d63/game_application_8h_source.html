@@ -102,46 +102,44 @@ $(function() {
 <div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <a class="code" href="../../d3/d09/classrune_1_1_scene_manager.html">SceneManager</a> m_sceneManager;</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;  std::string m_currentScene;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>(std::string title = <span class="stringliteral">&quot;Rune Engine&quot;</span>, <span class="keywordtype">int</span> updateRate = 60);</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../d1/da1/classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f">  156</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f">m_errorCode</a>;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">//Delete the copy constructor</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="comment"></span>  <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>(<span class="keyword">const</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  </div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="../../d1/da1/classrune_1_1_game_application.html#aa687237b6fc8f920e02b861acc5912ac">  164</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>* <a class="code" href="../../d1/da1/classrune_1_1_game_application.html#aa687237b6fc8f920e02b861acc5912ac">getApplication</a>()</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">if</span>(!currentApplication)</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      currentApplication = <span class="keyword">new</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> currentApplication;</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">void</span> loadScene(std::string sceneName, <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a>* newScene);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="keywordtype">int</span> run(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <a class="code" href="../../db/ddf/classrune_1_1_render_window.html">RenderWindow</a>* getWindow(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordtype">double</span> getDeltaTime(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordtype">int</span> getFrameRate(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">void</span> quitApplication();</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <span class="keywordtype">void</span> changeScene(std::string newScene);</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a>* getCurrentScene(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;};</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;}</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>(std::string <span class="keyword">const</span>&amp; title = <span class="stringliteral">&quot;Rune Engine&quot;</span>, <span class="keywordtype">int</span> updateRate = 60);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="../../d1/da1/classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f">  154</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f">m_errorCode</a>;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">//Delete the copy constructor</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="comment"></span>  <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>(<span class="keyword">const</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="../../d1/da1/classrune_1_1_game_application.html#aa687237b6fc8f920e02b861acc5912ac">  162</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>* <a class="code" href="../../d1/da1/classrune_1_1_game_application.html#aa687237b6fc8f920e02b861acc5912ac">getApplication</a>()</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  {</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">if</span>(!currentApplication)</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;      currentApplication = <span class="keyword">new</span> <a class="code" href="../../d1/da1/classrune_1_1_game_application.html">GameApplication</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> currentApplication;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="keywordtype">void</span> loadScene(std::string <span class="keyword">const</span>&amp; sceneName, <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a>* newScene);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordtype">int</span> run(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <a class="code" href="../../db/ddf/classrune_1_1_render_window.html">RenderWindow</a>* getWindow(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  <span class="keywordtype">double</span> getDeltaTime(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;  <span class="keywordtype">int</span> getFrameRate(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordtype">void</span> quitApplication();</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">void</span> changeScene(std::string <span class="keyword">const</span>&amp; newScene);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a>* getCurrentScene(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;};</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1_game_application_html"><div class="ttname"><a href="../../d1/da1/classrune_1_1_game_application.html">rune::GameApplication</a></div><div class="ttdoc">Entry point for all programs using the engine, must instantiate a game application for every new game...</div><div class="ttdef"><b>Definition:</b> gameApplication.h:129</div></div>
-<div class="ttc" id="aclassrune_1_1_game_application_html_ab0f4df68afaaa7d8a44445b785170a1f"><div class="ttname"><a href="../../d1/da1/classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f">rune::GameApplication::m_errorCode</a></div><div class="ttdeci">int m_errorCode</div><div class="ttdef"><b>Definition:</b> gameApplication.h:156</div></div>
+<div class="ttc" id="aclassrune_1_1_game_application_html_ab0f4df68afaaa7d8a44445b785170a1f"><div class="ttname"><a href="../../d1/da1/classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f">rune::GameApplication::m_errorCode</a></div><div class="ttdeci">int m_errorCode</div><div class="ttdef"><b>Definition:</b> gameApplication.h:154</div></div>
 <div class="ttc" id="aclassrune_1_1_game_scene_html"><div class="ttname"><a href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a></div><div class="ttdoc">This class is responsible for serving as a parent class for each instance of the game....</div><div class="ttdef"><b>Definition:</b> gameScene.h:27</div></div>
 <div class="ttc" id="aclassrune_1_1_scene_manager_html"><div class="ttname"><a href="../../d3/d09/classrune_1_1_scene_manager.html">rune::SceneManager</a></div><div class="ttdoc">The scene manager is responsible for handling the transfer of the current state pointer that refers t...</div><div class="ttdef"><b>Definition:</b> sceneManager.h:22</div></div>
-<div class="ttc" id="aclassrune_1_1_game_application_html_aa687237b6fc8f920e02b861acc5912ac"><div class="ttname"><a href="../../d1/da1/classrune_1_1_game_application.html#aa687237b6fc8f920e02b861acc5912ac">rune::GameApplication::getApplication</a></div><div class="ttdeci">static GameApplication * getApplication()</div><div class="ttdef"><b>Definition:</b> gameApplication.h:164</div></div>
+<div class="ttc" id="aclassrune_1_1_game_application_html_aa687237b6fc8f920e02b861acc5912ac"><div class="ttname"><a href="../../d1/da1/classrune_1_1_game_application.html#aa687237b6fc8f920e02b861acc5912ac">rune::GameApplication::getApplication</a></div><div class="ttdeci">static GameApplication * getApplication()</div><div class="ttdef"><b>Definition:</b> gameApplication.h:162</div></div>
 <div class="ttc" id="aclassrune_1_1_render_window_html"><div class="ttname"><a href="../../db/ddf/classrune_1_1_render_window.html">rune::RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:24</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:5</div></div>
 <!-- start footer part -->

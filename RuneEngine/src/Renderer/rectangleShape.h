@@ -103,7 +103,7 @@ public:
   void setFillColor(rune::Color newFillColor);
   ///Change the active shader on the rune::RectangleShape to be something else.
   ///@param filePath The shader code to be loaded onto the GPU.
-  void changeShader(const std::string& filePath);
+  void changeShader(std::string const& filePath);
 
 };
 }

@@ -92,7 +92,7 @@ int rune::ObjectAnimation::getNumFrames(void)
 /**
  * @param animationSheet The texture to be used as the sprite sheet.
 */
-void rune::ObjectAnimation::setSheet(std::string filePath, unsigned int drawMode)
+void rune::ObjectAnimation::setSheet(std::string const& filePath, unsigned int drawMode)
 {
   m_animationSheet.loadFromFile(filePath, drawMode);
 }

@@ -30,7 +30,7 @@ private:
 
 public:
   ///Default constructor to give an openGL context and window.
-  RenderWindow(int newWidth, int newHeight, std::string title);
+  RenderWindow(int newWidth, int newHeight, std::string const& title);
 
   ///Destructor to handle window clean up.
   ~RenderWindow(void);
@@ -39,7 +39,7 @@ public:
   void draw(Drawable&);
 
   ///Set the window title.
-  void setWindowTitle(std::string);
+  void setWindowTitle(std::string const&);
 
   ///Display on screen what has been rendered to the window so far.
   void display(void);

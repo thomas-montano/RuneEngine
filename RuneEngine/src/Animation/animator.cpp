@@ -16,7 +16,7 @@ void rune::Animator::start()
  * \param animationName The name of the animation to play.
  * @warning Do not call this in an rune::GameObject constructor. The spriteParent pointer must be resolved first.
  */
-void rune::Animator::playAnimation(std::string animationName)
+void rune::Animator::playAnimation(std::string const& animationName)
 {
 
   ObjectAnimation* currentAnimation =  m_animations[animationName];
@@ -49,7 +49,7 @@ void rune::Animator::playAnimation(std::string animationName)
  * \param fileName The name of the file containing the sprite sheet.
  * @warning Do not call this in an rune::GameObject constructor. The spriteParent pointer must be resolved first.
  */
-void rune::Animator::addAnimation(std::string animationName, int frameWidth, int numFrames, int frameRate, std::string fileName)
+void rune::Animator::addAnimation(std::string const& animationName, int frameWidth, int numFrames, int frameRate, std::string const& fileName)
 {
 
   ObjectAnimation* newAnimation = new ObjectAnimation();
@@ -69,7 +69,7 @@ void rune::Animator::addAnimation(std::string animationName, int frameWidth, int
 
 /// @param name The name of the animation to be returned.
 /// @return A pointer to the animation that was requested.
-rune::ObjectAnimation* rune::Animator::getAnimation(std::string name)
+rune::ObjectAnimation* rune::Animator::getAnimation(std::string const& name)
 {
   if (m_animations.find(name) != m_animations.end())
   {

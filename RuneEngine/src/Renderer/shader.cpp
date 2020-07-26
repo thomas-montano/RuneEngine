@@ -21,7 +21,7 @@ rune::Shader::Shader(ShaderProgramSource source)
 /**
  * @param filePath The file path for the shader code to be compiled.
 */
-rune::Shader::Shader(const std::string& filePath)
+rune::Shader::Shader(std::string const& filePath)
 {
   ShaderProgramSource source = ParseShader(filePath.c_str());
 
@@ -31,7 +31,7 @@ rune::Shader::Shader(const std::string& filePath)
 /**
  * \param filePath The file path to the GLSL code that should be loaded onto the GPU.
  */
-void rune::Shader::makeNewShader(const std::string& filePath)
+void rune::Shader::makeNewShader(std::string const& filePath)
 {
   m_UniformLocationCache.clear();
 
@@ -46,7 +46,7 @@ void rune::Shader::makeNewShader(const std::string& filePath)
  * @param filePath The file path of the texture code to be loaded.
  * @return A ShaderProgramSource containing the raw shader text for a fragment and vertex shader.
 */
-rune::ShaderProgramSource rune::Shader::ParseShader(const std::string& filePath)
+rune::ShaderProgramSource rune::Shader::ParseShader(std::string const& filePath)
 {
 
   std::ifstream stream(filePath.c_str());
@@ -94,7 +94,7 @@ rune::ShaderProgramSource rune::Shader::ParseShader(const std::string& filePath)
  * @param source The file source of the shader code.
  * @return The OpenGL shader ID pointing to the compiled shader.
 */
-unsigned int rune::Shader::CompileShader(unsigned int type, const std::string& source)
+unsigned int rune::Shader::CompileShader(unsigned int type, std::string const& source)
 {
   unsigned int id = glCreateShader(type);
   const char* src = source.c_str();
@@ -129,7 +129,7 @@ unsigned int rune::Shader::CompileShader(unsigned int type, const std::string& s
  * @param fragmentShader The raw shader code for the fragment shader.
  * @return The OpenGL shader ID pointing to the created shader program.
 */
-unsigned int rune::Shader::CreateShader(const std::string& vertexShader, const std::string& fragmentShader)
+unsigned int rune::Shader::CreateShader(const std::string& vertexShader, std::string const& fragmentShader)
 {
 
   unsigned int program = glCreateProgram();
@@ -157,7 +157,7 @@ void rune::Shader::bind()
  * @param name The uniform to be accessed and modified.
  * @return The id for the OpenGL uniform specified.
 */
-int rune::Shader::getUniformLocation(const std::string& name)
+int rune::Shader::getUniformLocation(std::string const& name)
 {
   if(m_UniformLocationCache.find(name) != m_UniformLocationCache.end())
   {
@@ -179,7 +179,7 @@ int rune::Shader::getUniformLocation(const std::string& name)
  * @param name The exact name of the uniform that is being created.
  * @param value The value being passed to the uniform.
 */
-void rune::Shader::setUniform1f(const std::string& name, float value)
+void rune::Shader::setUniform1f(std::string const& name, float value)
 {
   glUniform1f(getUniformLocation(name), value);
 }
@@ -189,7 +189,7 @@ void rune::Shader::setUniform1f(const std::string& name, float value)
  * \param v0 The x coordinate of the vector.
  * \param v1 The y coordinate of the vector.
  */
-void rune::Shader::setUniform2f(const std::string& name, float v0, float v1)
+void rune::Shader::setUniform2f(std::string const& name, float v0, float v1)
 {
   glUniform2f(getUniformLocation(name), v0, v1);
 }
@@ -201,7 +201,7 @@ void rune::Shader::setUniform2f(const std::string& name, float v0, float v1)
  * @param v2 The value being passed to the uniform.
  * @param v3 The value being passed to the uniform.
 */
-void rune::Shader::setUniform4f(const std::string&name, float v0, float v1, float v2, float v3)
+void rune::Shader::setUniform4f(std::string const& name, float v0, float v1, float v2, float v3)
 {
   glUniform4f(getUniformLocation(name), v0, v1, v2, v3);
 }
@@ -210,7 +210,7 @@ void rune::Shader::setUniform4f(const std::string&name, float v0, float v1, floa
  * @param name The exact name of the uniform that is being created.
  * @param value The value being passed to the uniform.
 */
-void rune::Shader::setUniform1i(const std::string& name, int value)
+void rune::Shader::setUniform1i(std::string const& name, int value)
 {
   glUniform1i(getUniformLocation(name), value);
 }

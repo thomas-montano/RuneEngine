@@ -142,10 +142,8 @@ private:
 
   SceneManager m_sceneManager;
 
-  std::string m_currentScene;
-
   ///Default constructor for setting up a new game.
-  GameApplication(std::string title = "Rune Engine", int updateRate = 60);
+  GameApplication(std::string const& title = "Rune Engine", int updateRate = 60);
 
 public:
   /** 
@@ -172,7 +170,7 @@ public:
   }
 
   ///Loads in a scene file and stores it in the game application.
-  void loadScene(std::string sceneName, GameScene* newScene);
+  void loadScene(std::string const& sceneName, GameScene* newScene);
   ///Starts the main game loop
   int run(void);
   ///Returns the reference to the currently active render window.
@@ -184,7 +182,7 @@ public:
   ///Shut down the game.
   void quitApplication();
   ///Change the currently active scene.
-  void changeScene(std::string newScene);
+  void changeScene(std::string const& newScene);
   ///Get a pointer to the currently active scene.
   GameScene* getCurrentScene(void);
 

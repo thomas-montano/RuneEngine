@@ -29,7 +29,7 @@ private:
 
 public:
   ///Default constructor to generate a texture that can be bound and drawn.
-  Texture(const std::string& path, unsigned int filerMode = LINEAR_FILTER);
+  Texture(std::string const& path, unsigned int filerMode = LINEAR_FILTER);
 
   ///Default empty constructor that sets all members to 0.
   Texture();
@@ -37,7 +37,7 @@ public:
   ///Default constructor to clean up a no longer needed texture.
   ~Texture(void);
   ///Loads in a texture from a file and stores it in the current rune::Texture object.
-  bool loadFromFile(const std::string& path, unsigned int filterMode = LINEAR_FILTER);
+  bool loadFromFile(std::string const& path, unsigned int filterMode = LINEAR_FILTER);
 
   ///Binds the texture to one of the texture slots on the GPU.
   void bind(unsigned int slot = 0);

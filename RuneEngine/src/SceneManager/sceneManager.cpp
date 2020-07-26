@@ -12,7 +12,7 @@ rune::GameScene* rune::SceneManager::getCurrentScene(void)
 /**
  * @param newScene Index in the scene buffer that determines what scene should be set as 
 */
-void rune::SceneManager::setScene(std::string newScene)
+void rune::SceneManager::setScene(std::string const& newScene)
 {
 
   if(m_currentScene != "")
@@ -56,7 +56,7 @@ int rune::SceneManager::getNumScenes(void)
 /**
  * @param newScene New GameScene to be added into the SceneManager scene buffer. 
 */
-void rune::SceneManager::addScene(std::string sceneName, GameScene* newScene)
+void rune::SceneManager::addScene(std::string const& sceneName, GameScene* newScene)
 {
   m_scenes[sceneName] = newScene;
 }

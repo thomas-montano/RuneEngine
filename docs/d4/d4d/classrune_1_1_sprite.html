@@ -70,6 +70,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="../../d1/d4f/classrune_1_1_sprite-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rune::Sprite Class Reference</div>  </div>
@@ -95,11 +96,12 @@ Collaboration diagram for rune::Sprite:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d6e/classrune_1_1_sprite__coll__graph.png" border="0" usemap="#rune_1_1_sprite_coll__map" alt="Collaboration graph"/></div>
 <map name="rune_1_1_sprite_coll__map" id="rune_1_1_sprite_coll__map">
-<area shape="rect" title="A sprite that can be given a texture and animated." alt="" coords="63,260,160,287"/>
-<area shape="rect" href="../../d9/d60/classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,184,127,211"/>
-<area shape="rect" href="../../dd/d70/classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="151,184,285,211"/>
+<area shape="rect" title="A sprite that can be given a texture and animated." alt="" coords="169,379,267,405"/>
+<area shape="rect" href="../../d9/d60/classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,237,127,263"/>
+<area shape="rect" href="../../dd/d70/classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="151,237,285,263"/>
 <area shape="rect" href="../../db/d07/classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="148,95,288,121"/>
 <area shape="rect" href="../../d7/d7f/classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="156,5,280,32"/>
+<area shape="rect" href="../../df/d5a/classrune_1_1_color.html" title="A color object to be applied to drawable objects." alt="" coords="310,237,403,263"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -109,8 +111,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#a774b68f781e74d64d0c900b3ae08d69e">Sprite</a> ()</td></tr>
 <tr class="memdesc:a774b68f781e74d64d0c900b3ae08d69e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default empty constructor for generating a sprite, uses default shader. <br /></td></tr>
 <tr class="separator:a774b68f781e74d64d0c900b3ae08d69e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d89c428e71fdcabafbd75be576959ea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#a8d89c428e71fdcabafbd75be576959ea">Sprite</a> (std::string spriteLocation, unsigned int drawMode=LINEAR_FILTER)</td></tr>
-<tr class="separator:a8d89c428e71fdcabafbd75be576959ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abede5448aeb62dd19888fe6ebc64efed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#abede5448aeb62dd19888fe6ebc64efed">Sprite</a> (std::string const &amp;spriteLocation, unsigned int drawMode=LINEAR_FILTER)</td></tr>
+<tr class="separator:abede5448aeb62dd19888fe6ebc64efed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3e1db8e6544708e4291b9b161c62736"><td class="memItemLeft" align="right" valign="top"><a id="af3e1db8e6544708e4291b9b161c62736"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#af3e1db8e6544708e4291b9b161c62736">start</a> () override</td></tr>
 <tr class="memdesc:af3e1db8e6544708e4291b9b161c62736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual start method being overloaded. <br /></td></tr>
@@ -122,16 +124,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memitem:abfc36c0067b7ba56d91dab5c4d4e7a31"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#abfc36c0067b7ba56d91dab5c4d4e7a31">draw</a> (<a class="el" href="../../db/ddf/classrune_1_1_render_window.html">rune::RenderWindow</a> &amp;)</td></tr>
 <tr class="memdesc:abfc36c0067b7ba56d91dab5c4d4e7a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw overload so that sprite can be displayed to the screen.  <a href="../../d4/d4d/classrune_1_1_sprite.html#abfc36c0067b7ba56d91dab5c4d4e7a31">More...</a><br /></td></tr>
 <tr class="separator:abfc36c0067b7ba56d91dab5c4d4e7a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8d51cd25440ec039b4caa5c6193a37a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#ad8d51cd25440ec039b4caa5c6193a37a">setTexture</a> (std::string texture, unsigned int drawMode=LINEAR_FILTER)</td></tr>
-<tr class="memdesc:ad8d51cd25440ec039b4caa5c6193a37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the texture of the sprite.  <a href="../../d4/d4d/classrune_1_1_sprite.html#ad8d51cd25440ec039b4caa5c6193a37a">More...</a><br /></td></tr>
-<tr class="separator:ad8d51cd25440ec039b4caa5c6193a37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7049848f753aa7caa0a2240f418d47f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#ab7049848f753aa7caa0a2240f418d47f">setTexture</a> (std::string const &amp;texture, unsigned int drawMode=LINEAR_FILTER)</td></tr>
+<tr class="memdesc:ab7049848f753aa7caa0a2240f418d47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the texture of the sprite.  <a href="../../d4/d4d/classrune_1_1_sprite.html#ab7049848f753aa7caa0a2240f418d47f">More...</a><br /></td></tr>
+<tr class="separator:ab7049848f753aa7caa0a2240f418d47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8f93faaa8c1f6777266f22097ecbf8f"><td class="memItemLeft" align="right" valign="top"><a id="ad8f93faaa8c1f6777266f22097ecbf8f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#ad8f93faaa8c1f6777266f22097ecbf8f">setTexture</a> (<a class="el" href="../../d3/dd3/classrune_1_1_texture.html">Texture</a> *texture)</td></tr>
 <tr class="memdesc:ad8f93faaa8c1f6777266f22097ecbf8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the texture based off another already loaded texture. <br /></td></tr>
 <tr class="separator:ad8f93faaa8c1f6777266f22097ecbf8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac796d59d9c6d5e1c29471f18b7efe549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#ac796d59d9c6d5e1c29471f18b7efe549">changeShader</a> (const std::string &amp;filePath)</td></tr>
-<tr class="memdesc:ac796d59d9c6d5e1c29471f18b7efe549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new texture as active for the sprite.  <a href="../../d4/d4d/classrune_1_1_sprite.html#ac796d59d9c6d5e1c29471f18b7efe549">More...</a><br /></td></tr>
-<tr class="separator:ac796d59d9c6d5e1c29471f18b7efe549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8728b867f641fb3d97fceebd1597c3e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#a8728b867f641fb3d97fceebd1597c3e9">changeShader</a> (std::string const &amp;filePath)</td></tr>
+<tr class="memdesc:a8728b867f641fb3d97fceebd1597c3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a new texture as active for the sprite.  <a href="../../d4/d4d/classrune_1_1_sprite.html#a8728b867f641fb3d97fceebd1597c3e9">More...</a><br /></td></tr>
+<tr class="separator:a8728b867f641fb3d97fceebd1597c3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a870d8539d607a28ab8f0d2f3907e382e"><td class="memItemLeft" align="right" valign="top"><a id="a870d8539d607a28ab8f0d2f3907e382e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#a870d8539d607a28ab8f0d2f3907e382e">setTextureRect</a> (int xPos, int yPos, int width, int height)</td></tr>
 <tr class="memdesc:a870d8539d607a28ab8f0d2f3907e382e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the area of the texture to be rendered. <br /></td></tr>
@@ -164,6 +166,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../.
 <tr class="memdesc:a40b6a0b1c09a8eda00aadcb5e30b7949 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether or not the current component is enabled. <br /></td></tr>
 <tr class="separator:a40b6a0b1c09a8eda00aadcb5e30b7949 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a994170f4f563557123548f6202489c37"><td class="memItemLeft" align="right" valign="top"><a id="a994170f4f563557123548f6202489c37"></a>
+<a class="el" href="../../df/d5a/classrune_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">spriteColor</a></td></tr>
+<tr class="memdesc:a994170f4f563557123548f6202489c37"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../df/d5a/classrune_1_1_color.html" title="A color object to be applied to drawable objects.">Color</a> of the sprite for drawing purposes. <br /></td></tr>
+<tr class="separator:a994170f4f563557123548f6202489c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classrune_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrune_1_1_component')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../dd/d70/classrune_1_1_component.html">rune::Component</a></td></tr>
@@ -179,8 +188,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 <dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>April 27 2020 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8d89c428e71fdcabafbd75be576959ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d89c428e71fdcabafbd75be576959ea">&#9670;&nbsp;</a></span>Sprite()</h2>
+<a id="abede5448aeb62dd19888fe6ebc64efed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abede5448aeb62dd19888fe6ebc64efed">&#9670;&nbsp;</a></span>Sprite()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +197,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
         <tr>
           <td class="memname">rune::Sprite::Sprite </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>spriteLocation</em>, </td>
         </tr>
         <tr>
@@ -217,8 +226,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac796d59d9c6d5e1c29471f18b7efe549"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac796d59d9c6d5e1c29471f18b7efe549">&#9670;&nbsp;</a></span>changeShader()</h2>
+<a id="a8728b867f641fb3d97fceebd1597c3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8728b867f641fb3d97fceebd1597c3e9">&#9670;&nbsp;</a></span>changeShader()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +235,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
         <tr>
           <td class="memname">void rune::Sprite::changeShader </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>filePath</em></td><td>)</td>
           <td></td>
         </tr>
@@ -279,8 +288,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 
 </div>
 </div>
-<a id="ad8d51cd25440ec039b4caa5c6193a37a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8d51cd25440ec039b4caa5c6193a37a">&#9670;&nbsp;</a></span>setTexture()</h2>
+<a id="ab7049848f753aa7caa0a2240f418d47f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7049848f753aa7caa0a2240f418d47f">&#9670;&nbsp;</a></span>setTexture()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -288,7 +297,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
         <tr>
           <td class="memname">void rune::Sprite::setTexture </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
           <td class="paramname"><em>texture</em>, </td>
         </tr>
         <tr>

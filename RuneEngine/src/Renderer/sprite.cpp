@@ -17,7 +17,7 @@ rune::Sprite::Sprite()
  * @param position A rune::Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite png file to be drawn.
 */
-rune::Sprite::Sprite(std::string spriteLocation, unsigned int drawMode) 
+rune::Sprite::Sprite(std::string const& spriteLocation, unsigned int drawMode) 
   : spriteTexture(spriteLocation.c_str(), drawMode), objectShader(defaultShader), textureSpace(0, 0, 0, 0), spriteDrawMode(drawMode)
 {
   setUpBuffers();
@@ -92,10 +92,10 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   const float drawVertices[32] = 
   {
     // positions                              // colors and alpha         // texture coordinates
-    drawMatrix[0][0],   drawMatrix[0][1],     1.0f, 1.0f, 1.0f, 1.0f,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.height / textureDimension.y, // top right
-    drawMatrix[0][0],   drawMatrix[1][1],     1.0f, 1.0f, 1.0f, 1.0f,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.top / textureDimension.y, // bottom right
-    drawMatrix[1][0],   drawMatrix[1][1],     1.0f, 1.0f, 1.0f, 1.0f,     textureSpace.left /textureDimension.x,   textureSpace.top / textureDimension.y, // bottom left
-    drawMatrix[1][0],   drawMatrix[0][1],     1.0f, 1.0f, 1.0f, 1.0f,     textureSpace.left / textureDimension.x,  textureSpace.height / textureDimension.y  // top left
+    drawMatrix[0][0],   drawMatrix[0][1],     spriteColor.red/255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.height / textureDimension.y, // top right
+    drawMatrix[0][0],   drawMatrix[1][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.top / textureDimension.y, // bottom right
+    drawMatrix[1][0],   drawMatrix[1][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     textureSpace.left /textureDimension.x,   textureSpace.top / textureDimension.y, // bottom left
+    drawMatrix[1][0],   drawMatrix[0][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     textureSpace.left / textureDimension.x,  textureSpace.height / textureDimension.y  // top left
   };
 
   glBindVertexArray(VAO);
@@ -112,7 +112,7 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 /**
  * \param texture The file path to the texture that is to be loaded onto the sprite.
  */
-void rune::Sprite::setTexture(std::string texture, unsigned int drawMode)
+void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
 {
 
   spriteTexture.loadFromFile(texture.c_str(), drawMode);
@@ -127,7 +127,7 @@ void rune::Sprite::setTexture(Texture* texture)
 /**
  * \param filePath The filepath to the GLSL code that should be compiled and set as the active shader.
  */
-void rune::Sprite::changeShader(const std::string& filePath)
+void rune::Sprite::changeShader(std::string const& filePath)
 {
   objectShader.makeNewShader(filePath);
 }

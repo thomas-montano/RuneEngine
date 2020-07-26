@@ -54,7 +54,7 @@ public:
   ///Get the number of frames the animation contains.
   int getNumFrames(void);
   ///Set the sprite sheet of the animation from a texture object.
-  void setSheet(std::string filePath, unsigned int drawMode);
+  void setSheet(std::string const& filePath, unsigned int drawMode);
   ///Get the sprite sheet of the animation.
   Texture* getSheet(void);
   ///Get the frame that the animation is currently on.

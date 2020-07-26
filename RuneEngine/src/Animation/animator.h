@@ -34,11 +34,11 @@ public:
   ///Function override for component startup.
   void start() override;
   ///Play an animation stored in the controller.
-  void playAnimation(std::string animationName);
+  void playAnimation(std::string const& animationName);
   ///Add an animation to the controller.
-  void addAnimation(std::string animationName, int frameWidth, int numFrames, int frameRate, std::string fileName);
+  void addAnimation(std::string const& animationName, int frameWidth, int numFrames, int frameRate, std::string const&  fileName);
   ///Get a pointer to the specified animation.
-  ObjectAnimation* getAnimation(std::string name);
+  ObjectAnimation* getAnimation(std::string const& name);
 
 
 

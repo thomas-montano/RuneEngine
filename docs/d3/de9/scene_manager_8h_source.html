@@ -92,9 +92,9 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="comment">//Array to hold all of the object pointers for the virtual functions</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  std::unordered_map&lt;std::string, GameScene*&gt; m_scenes;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> addScene(std::string sceneName, <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a>* newScene);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> addScene(std::string <span class="keyword">const</span>&amp; sceneName, <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">GameScene</a>* newScene);</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d5/d91/classrune_1_1_game_scene.html">rune::GameScene</a>* getCurrentScene(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> setScene(std::string newState);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keywordtype">void</span> setScene(std::string <span class="keyword">const</span>&amp; newState);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordtype">int</span> getNumScenes(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>

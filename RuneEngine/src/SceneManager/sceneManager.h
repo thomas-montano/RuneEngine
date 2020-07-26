@@ -28,11 +28,11 @@ private:
   std::unordered_map<std::string, GameScene*> m_scenes;
 public:
   ///Adds a GameScene into the SceneManager scene buffer.
-  void addScene(std::string sceneName, GameScene* newScene);
+  void addScene(std::string const& sceneName, GameScene* newScene);
   ///Get the currently active GameScene.
   rune::GameScene* getCurrentScene(void);
   ///Set the currently active GameScene.
-  void setScene(std::string newState);
+  void setScene(std::string const& newState);
   ///Get the total number of scenes currently stored in the SceneManger scene buffer.
   int getNumScenes(void);
 };

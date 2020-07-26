@@ -101,7 +101,7 @@ public:
   Sprite();
   ///Default constructor for generating a sprite from a PNG file, uses default shader.
   /// Use NEAREST_FILTER for pixel art sprites. LINEAR_FILTER is used by default.
-  Sprite(std::string spriteLocation, unsigned int drawMode = LINEAR_FILTER);
+  Sprite(std::string const& spriteLocation, unsigned int drawMode = LINEAR_FILTER);
   /// Virtual start method being overloaded
   virtual void start() override;
   ///Initialize opengl for the sprite.
@@ -109,17 +109,20 @@ public:
   ///Draw overload so that sprite can be displayed to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Set the texture of the sprite.
-  void setTexture(std::string texture, unsigned int drawMode = LINEAR_FILTER);
+  void setTexture(std::string const& texture, unsigned int drawMode = LINEAR_FILTER);
   ///Set the texture based off another already loaded texture.
   void setTexture(Texture* texture);
   ///Set a new texture as active for the sprite.
-  void changeShader(const std::string& filePath);
+  void changeShader(std::string const& filePath);
   ///Set the area of the texture to be rendered.
   void setTextureRect(int xPos, int yPos, int width, int height);
   ///Return the rectangle.
   IntRect getTextureRect(void);
   ///Returns the filtering mode of the sprite.
   unsigned int getDrawMode();
+
+  ///Color of the sprite for drawing purposes
+  Color spriteColor;
 
 };
 

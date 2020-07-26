@@ -7,7 +7,7 @@ rune::GameApplication* rune::GameApplication::currentApplication = nullptr;
  * @param title The title for the window to be created.
  * @param updateRate How many times per second the game will run the main update loop.
  */
-rune::GameApplication::GameApplication(std::string title, int updateRate) : m_mainWindow(1440, 720, title), frameRate(0), m_currentScene("")
+rune::GameApplication::GameApplication(std::string const& title, int updateRate) : m_mainWindow(1440, 720, title), frameRate(0)
 {
   m_updateRate = updateRate; //Update ticks per second
   m_errorCode = 0; //Debugging code
@@ -26,11 +26,7 @@ int rune::GameApplication::run(void)
   m_mainWindow.enableVsync(false);
 
   //Default the game to the first available state
-  if(m_sceneManager.getNumScenes() > 0)
-  {
-    m_sceneManager.setScene(m_currentScene);
-  }
-  else
+  if(m_sceneManager.getNumScenes() == 0)
   {
     m_errorCode = 1;
   }
@@ -111,17 +107,17 @@ int rune::GameApplication::run(void)
 /**
  * @param newScene A pointer to a GameScene object that should be loaded into the scene buffer.
 */
-void rune::GameApplication::loadScene(std::string sceneName, GameScene* newScene)
+void rune::GameApplication::loadScene(std::string const& sceneName, GameScene* newScene)
 {
 
-  if(m_currentScene == "")
+  m_sceneManager.addScene(sceneName,newScene);
+
+  if (m_sceneManager.getNumScenes() == 1)
   {
-  
-    m_currentScene = sceneName;
+
+    m_sceneManager.setScene(sceneName);
 
   }
-
-  m_sceneManager.addScene(sceneName,newScene);
 
 }
 
@@ -149,7 +145,7 @@ void rune::GameApplication::quitApplication()
 }
 
 ///@param newScene The scene that should be made active.
-void rune::GameApplication::changeScene(std::string newScene)
+void rune::GameApplication::changeScene(std::string const& newScene)
 {
   m_sceneManager.setScene(newScene);
 }

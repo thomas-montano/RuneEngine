@@ -30,7 +30,7 @@ struct RUNE_ENGINE ShaderProgramSource
    * \param vertex The code to be used for the vertex shader.
    * \param frag The code to be used for the fragment shader.
    */
-  ShaderProgramSource(std::string vertex, std::string frag) : VertexSource(vertex), FragmentSource(frag)
+  ShaderProgramSource(std::string const& vertex, std::string const& frag) : VertexSource(vertex), FragmentSource(frag)
   {
   }
 
@@ -41,13 +41,13 @@ class RUNE_ENGINE Shader
 
 private:
   unsigned int m_shaderID;
-  unsigned int CreateShader(const std::string& vertexShader, const std::string& fragmentShader);
+  unsigned int CreateShader(std::string const& vertexShader, std::string const& fragmentShader);
   unsigned int CompileShader(unsigned int type, const std::string& source);
-  ShaderProgramSource ParseShader(const std::string& filePath);
+  ShaderProgramSource ParseShader(std::string const& filePath);
   std::unordered_map<std::string, int> m_UniformLocationCache;
 
   ///Retrieve the location of the uniform in the GPU
-  int getUniformLocation(const std::string& name);
+  int getUniformLocation(std::string const&  name);
 
 public:
   ///Default empty constructor.
@@ -59,19 +59,19 @@ public:
   ///Create a shader from a rune::ShaderProgramSource
   Shader(ShaderProgramSource);
 
-  void makeNewShader(const std::string& filePath);
+  void makeNewShader(std::string const& filePath);
 
   ///Configure the shader to be active on the GPU, must be done before drawing something.
   void bind(void);
 
   ///Set a float shader uniform.
-  void setUniform1f(const std::string& name, float value);
+  void setUniform1f(std::string const& name, float value);
   //Set a vec2 shader uniform
-  void setUniform2f(const std::string& name, float v0, float v1);
+  void setUniform2f(std::string const& name, float v0, float v1);
   ///Set a vec4 shader uniform.
-  void setUniform4f(const std::string&name, float v0, float v1, float v2, float v3);
+  void setUniform4f(std::string const& name, float v0, float v1, float v2, float v3);
   ///Set an integer shader uniform.
-  void setUniform1i(const std::string& name, int value);
+  void setUniform1i(std::string const& name, int value);
   
 };
 }

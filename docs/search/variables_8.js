@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['transform_578',['transform',['../db/d07/classrune_1_1_game_object.html#a4d7c7387a288b5112dae9ea62585fe79',1,'rune::GameObject']]],
-  ['transparent_579',['Transparent',['../df/d5a/classrune_1_1_color.html#a1500844ced499985cff0caa8c3794ec7',1,'rune::Color']]]
+  ['spritecolor_582',['spriteColor',['../d4/d4d/classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37',1,'rune::Sprite']]]
 ];

@@ -11,7 +11,7 @@
  * @param path The file path for the texture that you would like to load relative to the main executable.
  * @param filterMode The interpolation mode to be used for drawing the sprite.
 */
-rune::Texture::Texture(const std::string& path, unsigned int filterMode)
+rune::Texture::Texture(std::string const& path, unsigned int filterMode)
   : m_textureID(0), m_filePath(path), m_localBuffer(0),
   m_width(0), m_height(0), m_BPP(0)
 { 
@@ -33,7 +33,7 @@ m_width(0), m_height(0), m_BPP(0)
  * \return Whether or not the file was able to be successfully loaded.
  * @warning This function is expecting you to load a .png file. If you load anything else it will load incorrectly.
  */
-bool rune::Texture::loadFromFile(const std::string& path, unsigned int filterMode)
+bool rune::Texture::loadFromFile(std::string const& path, unsigned int filterMode)
 {
 
   if(m_textureID)
