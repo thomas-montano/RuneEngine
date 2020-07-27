@@ -35,7 +35,10 @@ void rune::Shader::makeNewShader(std::string const& filePath)
 {
   m_UniformLocationCache.clear();
 
-  glDeleteProgram(m_shaderID);
+  if(m_shaderID != 0)
+  {
+    glDeleteProgram(m_shaderID);
+  }
 
   ShaderProgramSource source = ParseShader(filePath.c_str());
 
@@ -153,6 +156,16 @@ void rune::Shader::bind()
   glUseProgram(m_shaderID);
 }
 
+int rune::Shader::getShaderID()
+{
+  return m_shaderID;
+}
+
+void rune::Shader::setShader(int shaderID)
+{
+  m_shaderID = shaderID;
+} 
+
 /**
  * @param name The uniform to be accessed and modified.
  * @return The id for the OpenGL uniform specified.
@@ -192,6 +205,11 @@ void rune::Shader::setUniform1f(std::string const& name, float value)
 void rune::Shader::setUniform2f(std::string const& name, float v0, float v1)
 {
   glUniform2f(getUniformLocation(name), v0, v1);
+}
+
+void rune::Shader::setUniform3f(std::string const& name, float v0, float v1, float v2)
+{
+  glUniform3f(getUniformLocation(name), v0, v1,v2);
 }
 
 /**

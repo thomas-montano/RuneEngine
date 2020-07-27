@@ -25,6 +25,8 @@ protected:
 
 public:
   ///Default constructor to set up
+  Component() = default;
+  Component(const Component& component);
   ///A function for each component that is called once at the beginning of the components lifetime.
   virtual void start();
   ///A function for each component that is called every frame.

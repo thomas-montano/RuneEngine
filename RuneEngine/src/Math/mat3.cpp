@@ -359,17 +359,6 @@ rune::Vec3 rune::Mat3::operator*(const rune::Vec3& vec)
   return rune::Vec3(newX,newY,newZ);
 }
 
-/**
- * @memberof rune::Mat3
- * 
- * \param scalar The scalar value to scale the matrix by.
- * \param mat The rune::Mat3 to be scaled.
- * \return An element wise scaling.
- */
-rune::Mat3 rune::operator*(double scalar, rune::Mat3 mat)
-{
-  return mat*scalar;
-}
 
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat3& mat)
 {
@@ -379,6 +368,11 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Mat3& mat)
   os << mat.row3[0] << "," << mat.row3[1] << "," << mat.row3[2] << std::endl;
 
   return os;
+}
+
+rune::Mat3 rune::operator*(double scalar, Mat3& mat)
+{
+  return mat*scalar;
 }
 
 /**

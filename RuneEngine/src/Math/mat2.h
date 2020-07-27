@@ -66,7 +66,7 @@ public:
   ///Overload of != operator.
   bool operator!=(const Mat2& right);
 
-  ///Overload of divison operator for a scalar.
+  ///Overload of division operator for a scalar.
   rune::Mat2 operator/ (double scalar);
 
   ///Inversion of the matrix.
@@ -81,9 +81,9 @@ public:
 };
 
 ///Overload of multiplication operator for a rune::Mat2
-RUNE_ENGINE rune::Vec2 operator*(rune::Vec2, rune::Mat2);
+RUNE_ENGINE rune::Vec2 operator*(rune::Vec2 const& vec, rune::Mat2& mat);
 
-///Overload of muliplication operator for a scalar on the right.
-RUNE_ENGINE Mat2 operator* (double scalar, rune::Mat2 mat);
+///Overload of multiplication operator for a scalar on the right.
+RUNE_ENGINE Mat2 operator* (double scalar, rune::Mat2& mat);
 
 }

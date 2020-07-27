@@ -32,6 +32,7 @@ protected:
 
   std::vector<physics::RigidBody*> physicsBodies;
 
+  //This list can be non-pointers because it is a list.
   List<rune::GameObject> sceneObjects;
 
   std::vector<rune::Drawable*> drawableObjects;
@@ -72,9 +73,9 @@ public:
   ///Determines whether or not the scene is currently active.
   bool isActive(void);
   ///Place a new rune::GameObject into the scene.
-  void addObjectToScene(rune::GameObject);
+  void addObjectToScene(rune::GameObject&);
   ///Submits a drawable object into the rendering stack to be drawn to the screen each frame.
-  void submitToRenderer(rune::Drawable*);
+  void submitToRenderer(rune::Drawable&);
 
 };
 }

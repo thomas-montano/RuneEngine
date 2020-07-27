@@ -193,7 +193,7 @@ double rune::Vec3::magnitude(void)
  * \param vector2 The second vector of the dot product.
  * \return The result of the dot product.
  */
-double rune::dotProduct(rune::Vec3 vector1, rune::Vec3 vector2)
+double rune::dotProduct(const rune::Vec3& vector1, const rune::Vec3& vector2)
 {
   return (vector1.x*vector2.x + vector1.y * vector2.y + vector1.z * vector2.z);
 }
@@ -204,7 +204,7 @@ double rune::dotProduct(rune::Vec3 vector1, rune::Vec3 vector2)
  * \param vector The vector to be normalized.
  * \return A vector in the same direction as vector but with magnitude 1.
  */
-rune::Vec3 rune::normalize(rune::Vec3 vector)
+rune::Vec3 rune::normalize(const rune::Vec3& vector)
 {
   double magnitude = sqrt(pow(vector.x,2) + pow(vector.y, 2) + pow(vector.z, 2));
   return rune::Vec3(magnitude != 0 ? vector.x / magnitude : 0, magnitude != 0 ? vector.y / magnitude : 0, magnitude != 0 ? vector.z / magnitude : 0);
@@ -218,7 +218,7 @@ rune::Vec3 rune::normalize(rune::Vec3 vector)
  * \return The result of the cross product.
  */
 
-rune::Vec3 rune::crossProduct(rune::Vec3 vec1, rune::Vec3 vec2)
+rune::Vec3 rune::crossProduct(const rune::Vec3& vec1, const rune::Vec3& vec2)
 {
   return rune::Vec3(vec1.y * vec2.z - vec1.z * vec2.y, vec1.z * vec2.x - vec1.x * vec2.z, vec1.x * vec2.y - vec1.y * vec2.x);
 }
@@ -229,7 +229,7 @@ rune::Vec3 rune::crossProduct(rune::Vec3 vec1, rune::Vec3 vec2)
  * \param mat The matrix being multiplied with.
  * \return A member wise multiplication.
  */
-rune::Vec3 rune::operator*(double scalar, rune::Vec3 mat)
+rune::Vec3 rune::operator*(double scalar, const rune::Vec3& mat)
 {
   return rune::Vec3(scalar*mat.x, scalar * mat.y, scalar * mat.z);
 }

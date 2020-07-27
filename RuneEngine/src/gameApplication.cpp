@@ -1,5 +1,22 @@
 #include "gameApplication.h"
 
+/*void* operator new(size_t size)
+{
+
+  std::cout << "Allocating " << size << " bytes" << std::endl;
+
+  return malloc(size);
+}
+
+void operator delete(void* memory, size_t size)
+{
+
+  std::cout << "Freeing " << size << " bytes" << std::endl;
+
+  free(memory);
+
+}*/
+
 //Initialize singleton instance
 rune::GameApplication* rune::GameApplication::currentApplication = nullptr;
 

@@ -2,13 +2,22 @@
 #include <gameApplication.h>
 #include <SceneManager/gameScene.h>
 
+rune::GameObject::GameObject(const GameObject& gameObject)
+  : transform(gameObject.transform), objectComponents(gameObject.objectComponents)
+{
+
+
+  std::cout << "A GameObject is being copied!" << std::endl;
+
+}
+
 /**
  * \param newScript The new component to be added to the game object.
  */
 void rune::GameObject::addComponent(rune::Component& newScript)
 {
-  objectComponents.push_back(&newScript);
   newScript.setParent(this);
+  objectComponents.push_back(&newScript);
 }
 
 /**
@@ -22,7 +31,7 @@ int rune::GameObject::getNumComponents(void)
 /**
  * \param newObject The object that should be instantiated and copied.
  */
-void rune::GameObject::instantiate(rune::GameObject newObject)
+void rune::GameObject::instantiate(rune::GameObject& newObject)
 {
 
   rune::GameScene* currentScene = getGameInstance()->getCurrentScene();
@@ -30,22 +39,22 @@ void rune::GameObject::instantiate(rune::GameObject newObject)
   GameObject* newObjectPtr = new GameObject();
   *newObjectPtr = newObject;
 
-  for (int i = 0; i < newObjectPtr->getNumComponents(); i++)
-  {
-    newObjectPtr->getComponent(i)->start();
-  }
+  /*std::vector<Component*>
 
+  for (int i = 0; i < )
+  {
+    currentComponent->start();
+  }*/
+  
 }
 
 /**
  * \param index The position in the components vector to be accessed.
  * \return A pointer to the component requested.
  */
-rune::Component* rune::GameObject::getComponent(int index)
+std::vector<rune::Component*>& rune::GameObject::getComponentList()
 {
-  if (index < objectComponents.size())
-    return objectComponents[index];
-
-  return nullptr;
-
+  return objectComponents;
 }
+
+

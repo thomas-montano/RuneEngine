@@ -64,10 +64,14 @@ public:
   ///Configure the shader to be active on the GPU, must be done before drawing something.
   void bind(void);
 
+  int getShaderID();
+  void setShader(int shaderID);
+  
   ///Set a float shader uniform.
   void setUniform1f(std::string const& name, float value);
   //Set a vec2 shader uniform
   void setUniform2f(std::string const& name, float v0, float v1);
+  void setUniform3f(std::string const& name, float v0, float v1, float v2);
   ///Set a vec4 shader uniform.
   void setUniform4f(std::string const& name, float v0, float v1, float v2, float v3);
   ///Set an integer shader uniform.

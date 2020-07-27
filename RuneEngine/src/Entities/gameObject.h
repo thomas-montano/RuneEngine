@@ -12,32 +12,34 @@
 #include "core.h"
 #include "transform.h"
 #include <typeinfo>
-#include <vector>
 #include <Entities\component.h>
 #include <Renderer\renderWindow.h>
-
+#include <vector>
 
 namespace rune{
 
 class RUNE_ENGINE GameObject
 {
 private:
+  //This must be a vector of pointers because of the fact that they can't be stored in a List.
+  //They can't be stored in a list because during iteration of components, findComponent would
+  //reset the list index and enter into an infinite loop.
   std::vector<rune::Component*> objectComponents;
 
 public:
   ///The location, scale, and rotation of the object in the world.
   rune::Transform transform;
 
-  //GameObject();
-  //~GameObject();
+  GameObject() = default;
+  GameObject(const GameObject& gameObject);
   ///Add a component to this game object.
   void addComponent(rune::Component&);
   ///Get the number of components present on this game object.
   int getNumComponents(void);
   //Create a new dynamically allocated version of this game object.
-  void instantiate(GameObject);
+  void instantiate(GameObject&);
   ///Return a pointer to a component based off of index. Used for iterating through all components.
-  rune::Component* getComponent(int index);
+  std::vector<Component*>& getComponentList();
 
   ///Locate components of the object based on data type
   ///Call the function like this: findComponent<rune::Sprite>();
@@ -46,13 +48,13 @@ public:
   classVariable* findComponent()
   {
 
-    for(auto & objectComponent : objectComponents)
+    for(int i = 0; i < objectComponents.size(); i++)
     {
 
-      if (std::string(typeid(*objectComponent).name()) == std::string(typeid(classVariable).name()))
+      if (std::string(typeid(*objectComponents[i]).name()) == std::string(typeid(classVariable).name()))
       {
 
-        return dynamic_cast<classVariable*>(objectComponent);
+        return dynamic_cast<classVariable*>(objectComponents[i]);
 
       }
 

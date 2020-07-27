@@ -66,7 +66,7 @@ public:
 ///Overload of division operator
 RUNE_ENGINE Vec2 operator/ (double scalar, Vec2 vec);
 
-RUNE_ENGINE double dotProduct(rune::Vec2 vector1, rune::Vec2 vector2);
+RUNE_ENGINE double dotProduct(rune::Vec2 const& vector1, rune::Vec2 const& vector2);
 
 /**
  * @memberof rune::Vec2
@@ -74,7 +74,7 @@ RUNE_ENGINE double dotProduct(rune::Vec2 vector1, rune::Vec2 vector2);
  * @brief Find the left handed vector normal to a surface 
  * @return The left handed vector that is normal to the provided surface.
  */
-RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 axis);
+RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 const& axis);
 
 /**
  * @memberof rune::Vec2
@@ -82,12 +82,12 @@ RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 axis);
  * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
  * @return A vector in the same direction with magnitude of 1.
  */
-RUNE_ENGINE rune::Vec2 normalize(rune::Vec2 vec);
+RUNE_ENGINE rune::Vec2 normalize(rune::Vec2 const& vec);
 
-RUNE_ENGINE double crossProduct(rune::Vec2 vec1, rune::Vec2 vec2);
+RUNE_ENGINE double crossProduct(rune::Vec2 const& vec1, rune::Vec2 const& vec2);
 
 ///Overload of multiplication operator for a scalar on the left.
-RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 mat);
+RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 const& mat);
 
 RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const rune::Vec2& vector);
 

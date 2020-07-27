@@ -75,17 +75,17 @@ public:
 /// @memberof rune::Vec3
 RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec3& vector);
 
-RUNE_ENGINE double dotProduct(rune::Vec3 vector1, rune::Vec3 vector2);
+RUNE_ENGINE double dotProduct(const rune::Vec3& vector1, const rune::Vec3& vector2);
 
-RUNE_ENGINE rune::Vec3 normalize(rune::Vec3 vector);
+RUNE_ENGINE rune::Vec3 normalize(const rune::Vec3& vector);
 
-RUNE_ENGINE rune::Vec3 crossProduct(rune::Vec3, rune::Vec3);
+RUNE_ENGINE rune::Vec3 crossProduct(const rune::Vec3&, const rune::Vec3&);
 
 /// Overload of multiplication operator for a scalar on the left.
 /// @param scalar Scalar value to be multiplied by.
 /// @param vec The vector to be multiplied with.
 /// @memberof rune::Vec3
-RUNE_ENGINE rune::Vec3 operator*(double scalar, rune::Vec3 vec);
+RUNE_ENGINE rune::Vec3 operator*(double scalar, const rune::Vec3& vec);
 
 }
 #endif

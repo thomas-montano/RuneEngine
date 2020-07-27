@@ -164,7 +164,7 @@ bool rune::Vec2::operator!=(const rune::Vec2& right)
  * \param vec The vector to be multiplied.
  * \return A member wise multiplication.
  */
-rune::Vec2 rune::operator* (double scalar, rune::Vec2 vec)
+rune::Vec2 rune::operator* (double scalar, rune::Vec2 const& vec)
 {
 
   return rune::Vec2(vec.x*scalar,vec.y*scalar);
@@ -200,7 +200,7 @@ rune::Vec2 rune::Vec2::operator/ (double scalar)
  * @param v2 Seconds vector to be used in the dot product.
  * @return The result of the dot product calculation.
 */
-double rune::dotProduct(rune::Vec2 v1, rune::Vec2 v2)
+double rune::dotProduct(rune::Vec2 const& v1, rune::Vec2 const& v2)
 {
 
   double dotProduct = v1.x * v2.x + v1.y * v2.y;
@@ -213,7 +213,7 @@ double rune::dotProduct(rune::Vec2 v1, rune::Vec2 v2)
  * @param axis Vector to use to calculate the surface normal.
  * @return Left hand normal of the surface.
 */
-rune::Vec2 rune::findNormal(rune::Vec2 axis)
+rune::Vec2 rune::findNormal(rune::Vec2 const& axis)
 {
 
   rune::Vec2 normal = rune::Vec2(-axis.y, axis.x);
@@ -228,7 +228,7 @@ rune::Vec2 rune::findNormal(rune::Vec2 axis)
  * @param vector Vector that should be normalized.
  * @return Vector in the direction of vector but with magnitude of 1.
 */
-rune::Vec2 rune::normalize(rune::Vec2 vector)
+rune::Vec2 rune::normalize(rune::Vec2 const& vector)
 {
   double magnitude = sqrt(pow(vector.x, 2) + pow(vector.y, 2));
   return rune::Vec2(magnitude != 0 ? vector.x / magnitude : 0, magnitude != 0 ? vector.y / magnitude : 0);
@@ -240,7 +240,7 @@ rune::Vec2 rune::normalize(rune::Vec2 vector)
  * @param vec2 The second vector.
  * @return The result of the cross product.
  */
-double rune::crossProduct(rune::Vec2 vec1, rune::Vec2 vec2)
+double rune::crossProduct(rune::Vec2 const& vec1, rune::Vec2 const& vec2)
 {
   return vec1.x * vec2.y - vec1.y * vec2.x;
 }

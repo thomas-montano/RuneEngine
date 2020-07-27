@@ -89,14 +89,13 @@ private:
   unsigned int EBO;
   unsigned int VAO;
 
-  Shader objectShader;
-
   //Texture rectangle
   IntRect textureSpace;
 
   unsigned int spriteDrawMode;
 
 public:
+  Shader objectShader;
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
   ///Default constructor for generating a sprite from a PNG file, uses default shader.

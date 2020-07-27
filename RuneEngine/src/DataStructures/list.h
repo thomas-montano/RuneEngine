@@ -30,7 +30,7 @@ namespace rune {
   struct listItem
   {
 
-    T storedItem;
+    T* storedItem;
     listItem* nextItem;
 
     listItem()
@@ -65,10 +65,11 @@ namespace rune {
 
     ///Gets the current head of the list for purposes of iteration.
     /// @returns A pointer to the head of the list.
+    /// @warning Do not call this function from inside a list iteration. If you are already looking through this list it will cause an infinite loop.
     T* getList()
     {
       currentlyAccessedItem = listHead;
-      return &listHead->storedItem;
+      return (listHead->storedItem);
     }
     
     ///Gets the next element of the list.
@@ -83,7 +84,7 @@ namespace rune {
         return nullptr;
       }
 
-      return &currentlyAccessedItem->storedItem;
+      return (currentlyAccessedItem->storedItem);
     
     }
 
@@ -96,12 +97,12 @@ namespace rune {
 
     ///Adds an element to the end of the list.
     ///@param newData The data point to be added to the list.
-    void add(T newData)
+    void add(T& newData)
     {
 
       listSize++;
       listItem<T>* newItem = new listItem<T>;
-      newItem->storedItem = newData;
+      newItem->storedItem = &newData;
 
       listItem<T>* currentItem = listHead;
 
@@ -177,14 +178,14 @@ namespace rune {
     /// Insert an element at the specified index.
     /// @param newData The element to be inserted.
     /// @param index The zero based index of the location.
-    void insert(T newData, int index)
+    void insert(T& newData, int index)
     {
 
       listSize++;
       listItem<T>* currentItem = listHead;
 
       listItem<T>* newItem = new listItem<T>;
-      newItem->storedItem = newData;
+      newItem->storedItem = &newData;
 
       //Access the element just before the space to be inserted.
       for (int i = 0; i < index - 1; i++)
@@ -205,7 +206,7 @@ namespace rune {
     /// @param index The zero based index of the element to be accessed.
     /// @returns The accessed element.
     /// @warning This should not be used to iterate through a list. Only use this function if you are looking for single elements.
-    T operator[](int index)
+    T& operator[](int index)
     {
 
       listItem<T>* currentItem = listHead;
@@ -217,7 +218,7 @@ namespace rune {
 
       }
 
-      return currentItem->storedItem;
+      return *(currentItem->storedItem);
 
     }
 

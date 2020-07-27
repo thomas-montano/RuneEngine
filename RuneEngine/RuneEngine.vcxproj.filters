@@ -298,8 +298,8 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Shaders\sprite.shader" />
-    <None Include="src\Shaders\rectangle.shader" />
+    <None Include="src\Shaders\rectangle.glsl" />
+    <None Include="src\Shaders\sprite.glsl" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Renderer\knoxIdleSheet.png">

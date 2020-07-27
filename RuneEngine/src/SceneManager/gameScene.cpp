@@ -85,11 +85,10 @@ void rune::GameScene::updateVariable(void)
 
 }
 
-void rune::GameScene::addObjectToScene(rune::GameObject newObject)
+void rune::GameScene::addObjectToScene(rune::GameObject& newObject)
 {
 
   sceneObjects.add(newObject);
-
 
   //If the new object has a physics component on it, add it to the physicsBody vector.
   auto tempPtr = newObject.findComponent<physics::RigidBody>();
@@ -100,9 +99,9 @@ void rune::GameScene::addObjectToScene(rune::GameObject newObject)
 }
 
 ///@param newDrawable a pointer to an object that needs to be drawn to the screen.
-void rune::GameScene::submitToRenderer(rune::Drawable* newDrawable)
+void rune::GameScene::submitToRenderer(rune::Drawable& newDrawable)
 {
-  drawableObjects.push_back(newDrawable);
+  drawableObjects.push_back(&newDrawable);
 }
 
 void rune::GameScene::startComponents(void)
@@ -110,9 +109,12 @@ void rune::GameScene::startComponents(void)
 
   for (GameObject* currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
   {
-    for (int i = 0; i < currentObject->getNumComponents(); i++)
+    
+    std::vector<Component*>& componentList = currentObject->getComponentList();
+    
+    for (int i = 0; i < componentList.size(); i ++)
     {
-      currentObject->getComponent(i)->start();
+      componentList[i]->start();
     }
   }
 
@@ -124,11 +126,13 @@ void rune::GameScene::updateComponents()
   for (GameObject* currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
   {
     
-    for (int i = 0; i < currentObject->getNumComponents(); i++)
+    std::vector<Component*>& componentList = currentObject->getComponentList();
+
+    for (int i = 0; i < componentList.size(); i++)
     {
-      if(currentObject->getComponent(i)->isComponentEnabled())
+      if(componentList[i]->isComponentEnabled())
       {
-        currentObject->getComponent(i)->update();
+        componentList[i]->update();
       }
     }
 

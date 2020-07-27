@@ -180,8 +180,8 @@ std::vector<physics::collision> physics::narrowPhaseCollisions(std::vector<colli
     rune::Vec2 normals[4];
     double penetrations[4] = {0.0};
 
-    RigidBody object1 = *possibleCollision.objectOne;
-    RigidBody object2 = *possibleCollision.objectTwo;
+    RigidBody& object1 = *possibleCollision.objectOne;
+    RigidBody& object2 = *possibleCollision.objectTwo;
     
     //Min and max projections of the boxes
     double minProjBox1;

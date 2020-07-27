@@ -43,9 +43,9 @@ public:
   ///Overload of addition operator.
   Mat3 operator+ (const Mat3& right);
 
-  ///Overload of mutiplication operator.
+  ///Overload of multiplication operator.
   Mat3 operator* (const rune::Mat3& right);
-  ///Overload of muliplication operator for a scalar on the left.
+  ///Overload of multiplication operator for a scalar on the left.
   Mat3 operator* (double scalar);
   ///Overload of multiplication operator for a rune::Mat3
   rune::Vec3 operator*(const rune::Vec3& right);
@@ -93,10 +93,8 @@ public:
 
 };
 
-///Overload of muliplication operator for a scalar on the right.
-rune::Mat3 RUNE_ENGINE operator*(double scalar, rune::Mat3 mat);
-
-
+///Overload of multiplication operator for a scalar on the right.
+RUNE_ENGINE rune::Mat3 operator*(double scalar, rune::Mat3& mat);
 
 }
 

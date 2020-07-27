@@ -44,7 +44,7 @@ void rune::RectangleShape::setUpBuffers()
 
 void rune::RectangleShape::start()
 {
-  getGameInstance()->getCurrentScene()->submitToRenderer(this);
+  getGameInstance()->getCurrentScene()->submitToRenderer(*this);
 }
 
 /**

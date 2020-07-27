@@ -55,7 +55,7 @@ void rune::Sprite::setUpBuffers()
 
 void rune::Sprite::start()
 {
-  getGameInstance()->getCurrentScene()->submitToRenderer(this);
+  getGameInstance()->getCurrentScene()->submitToRenderer(*this);
 }
 
 /**

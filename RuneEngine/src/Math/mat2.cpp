@@ -18,7 +18,7 @@ rune::Mat2::Mat2(double a11, double a12, double a21, double a22) : row1 { a11, a
 
 /**
  * \param right The matrix to be subtracted.
- * \return A memberwise subtraction.
+ * \return A member wise subtraction.
  */
 rune::Mat2 rune::Mat2::operator- (const rune::Mat2& right)
 {
@@ -37,7 +37,7 @@ rune::Mat2 rune::Mat2::operator-()
 
 /**
  * \param right The matrix to be added.
- * \return The memberwise addition.
+ * \return The member wise addition.
  */
 rune::Mat2 rune::Mat2::operator+ (const rune::Mat2& right)
 {
@@ -82,7 +82,7 @@ rune::Mat2 rune::Mat2::operator/ (const rune::Mat2& right)
 
 /**
  * \param right The matrix to be subtracted.
- * \return The memberwise subtraction.
+ * \return The member wise subtraction.
  */
 rune::Mat2& rune::Mat2::operator-=(const rune::Mat2& right)
 {
@@ -94,7 +94,7 @@ rune::Mat2& rune::Mat2::operator-=(const rune::Mat2& right)
 
 /**
  * \param right The matrix to be added.
- * \return The memberwise addition.
+ * \return The member wise addition.
  */
 rune::Mat2& rune::Mat2::operator+=(const rune::Mat2& right)
 {
@@ -107,7 +107,7 @@ rune::Mat2& rune::Mat2::operator+=(const rune::Mat2& right)
 
 /**
  * \param scalar The scalar to be added.
- * \return A memberwise addition.
+ * \return A member wise addition.
  */
 rune::Mat2& rune::Mat2::operator+=(const double scalar)
 {
@@ -144,7 +144,7 @@ rune::Mat2& rune::Mat2::operator*=(const rune::Mat2& right)
 
 /**
  * \param right The scalar to multiply by.
- * \return A memberwise scalar multiplication.
+ * \return A member wise scalar multiplication.
  */
 rune::Mat2& rune::Mat2::operator*=(const double right)
 {
@@ -157,7 +157,7 @@ rune::Mat2& rune::Mat2::operator*=(const double right)
 
 /**
  * \param right The matrix to compare with.
- * \return The result of a memberwise comparison.
+ * \return The result of a member wise comparison.
  */
 bool rune::Mat2::operator==(const Mat2& right)
 {
@@ -175,7 +175,7 @@ bool rune::Mat2::operator==(const Mat2& right)
 
 /**
  * \param right THe matrix to compare with.
- * \return The result of a memberwise comparison.
+ * \return The result of a member wise comparison.
  */
 bool rune::Mat2::operator!=(const rune::Mat2& right)
 {
@@ -193,7 +193,7 @@ bool rune::Mat2::operator!=(const rune::Mat2& right)
 
 /**
  * \param right The scalar to multiply by.
- * \return A memberwise scalar multiplication.
+ * \return A member wise scalar multiplication.
  */
 rune::Mat2 rune::Mat2::operator* (double scalar)
 {
@@ -217,16 +217,6 @@ rune::Vec2 rune::Mat2::operator*(const rune::Vec2& right)
 }
 
 /**
- * \param right The left operand rune::Vec2.
- * \param left The right operand rune::Mat2.
- * \return The result of the multiplication.
- */
-rune::Vec2 rune::operator*(rune::Vec2 right, rune::Mat2 left)
-{
-  return left * right;
-}
-
-/**
  * \param right The scalar to multiply by.
  * \return A member wise scalar division.
  */
@@ -237,21 +227,22 @@ rune::Mat2 rune::Mat2::operator/ (double scalar)
 
 }
 
-/**
- * \param right The scalar to multiply by.
- * \return A member wise scalar multiplication.
- */
-rune::Mat2 rune::operator* (double scalar, rune::Mat2 mat)
-{
-  return mat*scalar;
-}
-
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)
 {
   os << matrix.row1[0] << "," << matrix.row1[1] << std::endl;
   os << matrix.row2[0] << "," << matrix.row2[1] << std::endl;
 
   return os;
+}
+
+rune::Vec2 rune::operator*(Vec2 const& vec, Mat2& mat)
+{
+  return mat*vec;
+}
+
+rune::Mat2 rune::operator*(double scalar, Mat2& mat)
+{
+  return mat*scalar;
 }
 
 /**
@@ -268,7 +259,7 @@ rune::Mat2 rune::Mat2::invert()
     return Mat2(this->row2[1] / determinant, -1 * this->row1[1] / determinant, -1 * this->row2[0] / determinant, this->row1[0] / determinant);
   }
 
-  std::cout << "Matrix is not invertable" << std::endl;
+  std::cout << "Matrix is not invertible" << std::endl;
 
   return Mat2();
 }
