@@ -298,10 +298,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Shaders\rectangle.glsl" />
-    <None Include="src\Shaders\sprite.glsl" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="src\Renderer\knoxIdleSheet.png">
       <Filter>Resource Files</Filter>
     </Image>
@@ -311,5 +307,10 @@
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="src\imgui\imgui.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Shaders\spriteLit.glsl" />
+    <None Include="src\Shaders\defaultSprite.glsl" />
+    <None Include="src\Shaders\defaultRectangle.glsl" />
   </ItemGroup>
 </Project>

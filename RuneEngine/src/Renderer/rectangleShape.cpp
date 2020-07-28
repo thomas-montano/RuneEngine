@@ -6,10 +6,11 @@
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
 #include <gameApplication.h>
+#include <Shaders\defaultRectangle.glsl>
 #include <SceneManager\sceneManager.h>
 
 rune::RectangleShape::RectangleShape(rune::Color newColor) 
-: rectangleShader(defaultShader), origin(rune::Vec2(0,0))
+: rectangleShader(defaultRectangle), origin(rune::Vec2(0,0))
 {
   m_fillColor = newColor;
 

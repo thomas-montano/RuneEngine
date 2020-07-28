@@ -24,55 +24,7 @@ class SceneManager;
 
 class RUNE_ENGINE RectangleShape : public rune::Drawable, public rune::Component
 {
-
 private:
-  rune::ShaderProgramSource defaultShader =
-  rune::ShaderProgramSource(
-  "#version 330 core\n"
-
-  "layout(location = 0) in vec2 aPos;\n"
-  "layout(location = 1) in vec4 aColor;\n"
-  "layout(location = 2) in vec2 aTexCoord;\n"
-
-  "uniform vec2 cameraPos = vec2(0, 0);\n"
-  "uniform float cameraZoom = 1;\n"
-  "uniform float rotation = 0;\n"
-  "uniform vec2 origin = vec2(0,0);\n"
-  "uniform float aspectRatio = 1;\n"
-
-  "out vec4 ourColor;\n"
-
-  "void main()\n"
-  "{\n"
-
-    "vec2 vertices = cameraZoom*aPos - cameraPos;\n"
-
-    "if(rotation != 0)\n"
-    "{\n"
-      "float angle = radians(rotation);\n"
-      "mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));\n"
-
-      "vertices = vertices - (cameraZoom*origin - cameraPos);\n"
-      "vertices = rotationMatrix * vertices;\n"
-      "vertices = vertices + (cameraZoom*origin - cameraPos);\n"
-    "}\n" 
-
-    "ourColor = aColor;\n"
-    "gl_Position = vec4(vertices,0,1);\n"
-
-  "};\n"
-  ,
-  "#version 330 core\n"
-
-  "out vec4 FragColor;\n"
-
-  "in vec4 ourColor;\n"
-
-  "void main()\n"
-  "{\n"
-    "FragColor = ourColor;\n"
-  "};\n"
-  );
 
   rune::Color m_fillColor;
   Shader rectangleShader;

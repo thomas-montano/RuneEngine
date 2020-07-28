@@ -105,7 +105,9 @@ Collaboration diagram for rune::LightSource:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a69bb8b8ec6ca013aa2e0d2dd4dcf1575"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d42/classrune_1_1_light_source.html#a69bb8b8ec6ca013aa2e0d2dd4dcf1575">start</a> () override</td></tr>
+<tr class="memitem:a69bb8b8ec6ca013aa2e0d2dd4dcf1575"><td class="memItemLeft" align="right" valign="top"><a id="a69bb8b8ec6ca013aa2e0d2dd4dcf1575"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d42/classrune_1_1_light_source.html#a69bb8b8ec6ca013aa2e0d2dd4dcf1575">start</a> () override</td></tr>
+<tr class="memdesc:a69bb8b8ec6ca013aa2e0d2dd4dcf1575"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for each component that is called once at the beginning of the components lifetime. <br /></td></tr>
 <tr class="separator:a69bb8b8ec6ca013aa2e0d2dd4dcf1575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af107cc81435c5d499fbc5ae8f5581faf"><td class="memItemLeft" align="right" valign="top"><a id="af107cc81435c5d499fbc5ae8f5581faf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d42/classrune_1_1_light_source.html#af107cc81435c5d499fbc5ae8f5581faf">update</a> () override</td></tr>
@@ -117,6 +119,13 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:a005d2711ac41f1c2224ef0b35a5471e4 inherit pub_methods_classrune_1_1_drawable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw the object to a render window. <br /></td></tr>
 <tr class="separator:a005d2711ac41f1c2224ef0b35a5471e4 inherit pub_methods_classrune_1_1_drawable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrune_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrune_1_1_component')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../dd/d70/classrune_1_1_component.html">rune::Component</a></td></tr>
+<tr class="memitem:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a45c7fae6f7fe55eb22932c4a1304cfcb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d70/classrune_1_1_component.html#a45c7fae6f7fe55eb22932c4a1304cfcb">Component</a> ()=default</td></tr>
+<tr class="memdesc:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to set up. <br /></td></tr>
+<tr class="separator:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="acabb2c4d23bc88f2e0ed3f7de60309b6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Component</b> (const <a class="el" href="../../dd/d70/classrune_1_1_component.html">Component</a> &amp;component)</td></tr>
+<tr class="separator:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ac24759c39a2067026fb8f17487398c0c"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d70/classrune_1_1_component.html#ac24759c39a2067026fb8f17487398c0c">fixedUpdate</a> ()</td></tr>
 <tr class="memdesc:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for each component that is called once every physics update. <br /></td></tr>
@@ -146,36 +155,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 <div class="textblock"><p>A light source to be used in a scene. Casts light and shadows on objects. </p>
 <dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>April 22 2020 </dd></dl>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a69bb8b8ec6ca013aa2e0d2dd4dcf1575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a69bb8b8ec6ca013aa2e0d2dd4dcf1575">&#9670;&nbsp;</a></span>start()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void rune::LightSource::start </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Default constructor to set up A function for each component that is called once at the beginning of the components lifetime. </p>
-
-<p>Reimplemented from <a class="el" href="../../dd/d70/classrune_1_1_component.html#aae254f125303912b629182af34fad58a">rune::Component</a>.</p>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+</div><hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../de/d9d/light_source_8h_source.html">lightSource.h</a></li>
 <li>lightSource.cpp</li>
 </ul>

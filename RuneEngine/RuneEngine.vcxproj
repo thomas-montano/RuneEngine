@@ -193,8 +193,19 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClInclude Include="src\Physics\world.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\Shaders\rectangle.glsl" />
-    <None Include="src\Shaders\sprite.glsl" />
+    <None Include="src\Shaders\defaultRectangle.glsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="src\Shaders\spriteLit.glsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="src\Shaders\defaultSprite.glsl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </DeploymentContent>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\Renderer\knoxIdleSheet.png" />

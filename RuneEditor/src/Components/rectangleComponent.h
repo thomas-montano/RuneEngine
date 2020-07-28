@@ -16,7 +16,7 @@ public:
   {
 
     parent->addComponent(rectangle);
-    EditorWindow::currentlyOpenProject.activeScene->scene->submitToRenderer(&rectangle);
+    EditorWindow::currentlyOpenProject.activeScene->scene->submitToRenderer(rectangle);
 
   }
 

@@ -24,58 +24,6 @@ namespace rune{
 class RUNE_ENGINE Sprite : public Drawable, public Component
 {
 private:
-  rune::ShaderProgramSource defaultShader =
-  rune::ShaderProgramSource(
-    "#version 330 core\n"
-
-    "layout(location = 0) in vec2 aPos;\n"
-    "layout(location = 1) in vec4 aColor;\n"
-    "layout(location = 2) in vec2 aTexCoord;\n"
-
-    "uniform vec2 cameraPos = vec2(0, 0);\n"
-    "uniform float cameraZoom = 1;\n"
-    "uniform float rotation = 0;\n"
-    "uniform vec2 origin = vec2(0,0);\n"
-    "uniform float aspectRatio = 1;\n"
-
-    "out vec4 ourColor;\n"
-    "out vec2 TexCoord;\n"
-
-    "void main()\n"
-    "{\n"
-
-      "vec2 vertices = cameraZoom*aPos - cameraPos;\n"
-
-      "if(rotation != 0)\n"
-      "{\n"
-        "float angle = radians(rotation);\n"
-        "mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));\n"
-        
-        "vertices = vertices - (cameraZoom*origin - cameraPos);\n"
-        "vertices = rotationMatrix * vertices;\n"
-        "vertices = vertices + (cameraZoom*origin - cameraPos);\n" 
-      "}\n"
-
-      "ourColor = aColor;\n"
-      "gl_Position = vec4(vertices,0,1);\n"
-
-      "TexCoord = aTexCoord;\n"
-
-    "}\n"
-    ,
-    "#version 330 core\n"
-
-    "out vec4 FragColor;\n"
-
-    "in vec4 ourColor;\n"
-    "in vec2 TexCoord;\n"
-
-    "uniform sampler2D ourTexture;\n"
-
-    "void main()\n"
-    "{\n"
-      "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
-    "}\n");
 
   Texture spriteTexture;
 
@@ -111,8 +59,6 @@ public:
   void setTexture(std::string const& texture, unsigned int drawMode = LINEAR_FILTER);
   ///Set the texture based off another already loaded texture.
   void setTexture(Texture* texture);
-  ///Set a new texture as active for the sprite.
-  void changeShader(std::string const& filePath);
   ///Set the area of the texture to be rendered.
   void setTextureRect(int xPos, int yPos, int width, int height);
   ///Return the rectangle.

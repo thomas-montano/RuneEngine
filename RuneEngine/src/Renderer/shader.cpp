@@ -3,7 +3,8 @@
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
 
-rune::Shader::Shader() : m_shaderID(0)
+rune::Shader::Shader() 
+  : m_shaderID(0)
 {
 
 }
@@ -23,7 +24,18 @@ rune::Shader::Shader(ShaderProgramSource source)
 */
 rune::Shader::Shader(std::string const& filePath)
 {
-  ShaderProgramSource source = ParseShader(filePath.c_str());
+  //ShaderProgramSource source = ParseShader(filePath.c_str());
+
+  //m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
+
+  makeNewShader(filePath);
+}
+
+///Create a new shader off of a string literal
+/// @param sourceCode a const char * to the code you would like to use. There are several included in the Rune Engine.
+rune::Shader::Shader(const char * sourceCode)
+{
+  ShaderProgramSource source = ParseShader(sourceCode);
 
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 }
@@ -40,19 +52,27 @@ void rune::Shader::makeNewShader(std::string const& filePath)
     glDeleteProgram(m_shaderID);
   }
 
-  ShaderProgramSource source = ParseShader(filePath.c_str());
+  std::ifstream stream(filePath.c_str());
+
+  std::string line;
+  std::stringstream sourceCode;
+
+  while(std::getline(stream,line))
+  {
+    sourceCode << line << '\n';
+  }
+
+  ShaderProgramSource source = ParseShader(sourceCode.str());
 
   m_shaderID = CreateShader(source.VertexSource, source.FragmentSource);
 }
 
 /**
- * @param filePath The file path of the texture code to be loaded.
+ * @param sourceCode A raw string containing the source code that needs to be separated into a vertex and fragment shader.
  * @return A ShaderProgramSource containing the raw shader text for a fragment and vertex shader.
 */
-rune::ShaderProgramSource rune::Shader::ParseShader(std::string const& filePath)
+rune::ShaderProgramSource rune::Shader::ParseShader(std::string const& sourceCode)
 {
-
-  std::ifstream stream(filePath.c_str());
 
   enum class ShaderType
   {
@@ -60,10 +80,11 @@ rune::ShaderProgramSource rune::Shader::ParseShader(std::string const& filePath)
   };
 
   std::string line;
-  std::stringstream ss[2];
+  std::stringstream source(sourceCode);
+  std::stringstream result[2];
   ShaderType type = ShaderType::NONE;
 
-  while(getline(stream,line))
+  while(std::getline(source,line))
   {
 
     if(line.find("#shader") != std::string::npos)
@@ -81,14 +102,13 @@ rune::ShaderProgramSource rune::Shader::ParseShader(std::string const& filePath)
     }
     else
     {
-      ss[(int)type] << line << '\n';
+      result[(int)type] << line << '\n';
     }
     
   }
 
-  stream.close();
-
-  return {ss[0].str(), ss[1].str()};
+  //return {ss[0].str(), ss[1].str()};
+  return {result[0].str(), result[1].str()};
 
 }
 

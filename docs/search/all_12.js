@@ -35,7 +35,7 @@ var searchData=
   ['setvelocity_290',['setVelocity',['../d1/d17/classphysics_1_1_rigid_body.html#a2b98dd01f5a0ed63e409f58956b31cf3',1,'physics::RigidBody']]],
   ['setwindowtitle_291',['setWindowTitle',['../db/ddf/classrune_1_1_render_window.html#a40cca7e8a37f882f80ce9f86cc70601b',1,'rune::RenderWindow']]],
   ['setzoom_292',['setZoom',['../d2/d0f/classrune_1_1_camera.html#ac99c39db773c08b397375e55cfabfb6b',1,'rune::Camera']]],
-  ['shader_293',['Shader',['../dc/d85/classrune_1_1_shader.html',1,'rune::Shader'],['../dc/d85/classrune_1_1_shader.html#ab7232be6ccb3d44d048bb628cacb865c',1,'rune::Shader::Shader()'],['../dc/d85/classrune_1_1_shader.html#aefd00d1d5827ccec10ce631db908a3aa',1,'rune::Shader::Shader(const std::string &amp;filePath)'],['../dc/d85/classrune_1_1_shader.html#a6b6e549f5388bb22d94a417989ea12bb',1,'rune::Shader::Shader(ShaderProgramSource)']]],
+  ['shader_293',['Shader',['../dc/d85/classrune_1_1_shader.html',1,'rune::Shader'],['../dc/d85/classrune_1_1_shader.html#ab7232be6ccb3d44d048bb628cacb865c',1,'rune::Shader::Shader()'],['../dc/d85/classrune_1_1_shader.html#aefd00d1d5827ccec10ce631db908a3aa',1,'rune::Shader::Shader(const std::string &amp;filePath)'],['../dc/d85/classrune_1_1_shader.html#a6d0d95be5861d954e0a2e426029d914d',1,'rune::Shader::Shader(const char *sourceCode)'],['../dc/d85/classrune_1_1_shader.html#a6b6e549f5388bb22d94a417989ea12bb',1,'rune::Shader::Shader(ShaderProgramSource)']]],
   ['shaderprogramsource_294',['ShaderProgramSource',['../d3/df9/structrune_1_1_shader_program_source.html',1,'rune::ShaderProgramSource'],['../d3/df9/structrune_1_1_shader_program_source.html#acc36690a433411d423b82a01a8a6d01d',1,'rune::ShaderProgramSource::ShaderProgramSource()']]],
   ['signal_295',['Signal',['../d1/d1a/classrune_1_1_signal.html',1,'rune']]],
   ['size_296',['size',['../d0/d76/classrune_1_1_list.html#ad8d0c63a422bf45180307cfe360dc800',1,'rune::List']]],
@@ -47,5 +47,5 @@ var searchData=
   ['start_302',['start',['../d9/de3/classrune_1_1_animator.html#a927f4240c691bc0f5548f73b7989ae74',1,'rune::Animator::start()'],['../dd/d70/classrune_1_1_component.html#aae254f125303912b629182af34fad58a',1,'rune::Component::start()'],['../d7/d42/classrune_1_1_light_source.html#a69bb8b8ec6ca013aa2e0d2dd4dcf1575',1,'rune::LightSource::start()'],['../d1/d17/classphysics_1_1_rigid_body.html#af30aa637e3aa3032db2881b1df19eb82',1,'physics::RigidBody::start()'],['../d0/d25/classrune_1_1_rectangle_shape.html#a8487714247b0392019852fe36d3fd4b5',1,'rune::RectangleShape::start()'],['../d4/d4d/classrune_1_1_sprite.html#af3e1db8e6544708e4291b9b161c62736',1,'rune::Sprite::start()']]],
   ['startcomponents_303',['startComponents',['../d5/d91/classrune_1_1_game_scene.html#a2a7148f857192b0adbf4166a9804451f',1,'rune::GameScene']]],
   ['subject_304',['Subject',['../dd/df2/class_subject.html',1,'']]],
-  ['submittorenderer_305',['submitToRenderer',['../d5/d91/classrune_1_1_game_scene.html#a6d6d42dfb4b8c87561c81ea839c19658',1,'rune::GameScene']]]
+  ['submittorenderer_305',['submitToRenderer',['../d5/d91/classrune_1_1_game_scene.html#a8b2da9c8db9f49c00ed24f2c661bfd83',1,'rune::GameScene']]]
 ];

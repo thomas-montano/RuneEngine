@@ -40,10 +40,15 @@ class RUNE_ENGINE Shader
 {
 
 private:
+  //Shader id to be used for binding the shader during rendering
   unsigned int m_shaderID;
+  //Compile and set the shader up given string literals.
   unsigned int CreateShader(std::string const& vertexShader, std::string const& fragmentShader);
+  //Create the shader into a compiled shader id for opengl
   unsigned int CompileShader(unsigned int type, const std::string& source);
-  ShaderProgramSource ParseShader(std::string const& filePath);
+  //Parse a raw string containing glsl source code and turn it into a ShaderProgramSource
+  ShaderProgramSource ParseShader(std::string const& sourceCode);
+
   std::unordered_map<std::string, int> m_UniformLocationCache;
 
   ///Retrieve the location of the uniform in the GPU
@@ -55,10 +60,11 @@ public:
 
   ///Default constructor to create and load a shader.
   Shader(const std::string& filePath);
-
+  ///Constructor that will compile a character array into a shader.
+  Shader(const char* sourceCode);
   ///Create a shader from a rune::ShaderProgramSource
   Shader(ShaderProgramSource);
-
+  ///This is the base function that the different constructors call.
   void makeNewShader(std::string const& filePath);
 
   ///Configure the shader to be active on the GPU, must be done before drawing something.

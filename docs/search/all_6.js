@@ -10,7 +10,7 @@ var searchData=
   ['getcenter_90',['getCenter',['../d2/d0f/classrune_1_1_camera.html#ac69fb078daf4126c6d8a6ad0d54bbaa8',1,'rune::Camera']]],
   ['getcollisions_91',['getCollisions',['../d1/d17/classphysics_1_1_rigid_body.html#ad54a0ef1c2a0e4da6bb5e3711e87a0be',1,'physics::RigidBody']]],
   ['getcolorbuffer_92',['getColorBuffer',['../d5/d57/classrune_1_1_frame_buffer.html#aebb9a9d722210e55b8e0ef43fe357139',1,'rune::FrameBuffer']]],
-  ['getcomponent_93',['getComponent',['../db/d07/classrune_1_1_game_object.html#a1cdf1cc531f54970c5463ddcc78ad688',1,'rune::GameObject']]],
+  ['getcomponentlist_93',['getComponentList',['../db/d07/classrune_1_1_game_object.html#a33767608b48f8a7d96b0323ea058b427',1,'rune::GameObject']]],
   ['getcurrentframe_94',['getCurrentFrame',['../d9/d53/classrune_1_1_object_animation.html#a537dc336a5c26fad5cadd56aef8fa071',1,'rune::ObjectAnimation']]],
   ['getcurrentscene_95',['getCurrentScene',['../d1/da1/classrune_1_1_game_application.html#ac9ead35e504afe426e37dc2c0ac92d72',1,'rune::GameApplication::getCurrentScene()'],['../d3/d09/classrune_1_1_scene_manager.html#aabcbed36e4f998d062a650d09bfce476',1,'rune::SceneManager::getCurrentScene()']]],
   ['getdeltatime_96',['getDeltaTime',['../d1/da1/classrune_1_1_game_application.html#ae3f5b6de95a9b8acdb77a4399fcdb114',1,'rune::GameApplication']]],

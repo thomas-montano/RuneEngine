@@ -5,9 +5,10 @@
 #include <gameApplication.h>
 #include <Renderer\camera.h>
 #include <Math\mat2.h>
+#include <Shaders/defaultSprite.glsl>
 
 rune::Sprite::Sprite() 
-  : objectShader(defaultShader), textureSpace(0,0,0,0), spriteDrawMode(LINEAR_FILTER)
+  : objectShader(defaultSprite), textureSpace(0,0,0,0), spriteDrawMode(LINEAR_FILTER)
 {
   setUpBuffers();
 }
@@ -18,7 +19,7 @@ rune::Sprite::Sprite()
  * @param spriteLocation A filepath for the sprite png file to be drawn.
 */
 rune::Sprite::Sprite(std::string const& spriteLocation, unsigned int drawMode) 
-  : spriteTexture(spriteLocation.c_str(), drawMode), objectShader(defaultShader), textureSpace(0, 0, 0, 0), spriteDrawMode(drawMode)
+  : spriteTexture(spriteLocation.c_str(), drawMode), objectShader(defaultSprite), textureSpace(0, 0, 0, 0), spriteDrawMode(drawMode)
 {
   setUpBuffers();
 }
@@ -122,14 +123,6 @@ void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
 void rune::Sprite::setTexture(Texture* texture)
 {
   spriteTexture = *texture;
-}
-
-/**
- * \param filePath The filepath to the GLSL code that should be compiled and set as the active shader.
- */
-void rune::Sprite::changeShader(std::string const& filePath)
-{
-  objectShader.makeNewShader(filePath);
 }
 
 void rune::Sprite::setTextureRect(int xPos, int yPos, int width, int height)
