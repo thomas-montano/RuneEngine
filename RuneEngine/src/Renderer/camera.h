@@ -14,28 +14,33 @@
 #include "core.h"
 #include <Math\vec2.h>
 #include <Math\mat2.h>
+#include "rect.h"
 
 namespace rune{
 
 class RUNE_ENGINE Camera
 {
 private:
-  static Vec2 centerPosition;
+  Vec2 centerPosition;
   Vec2 cameraSize;
-  static double zoomFactor;
+  double zoomFactor;
 public:
   ///Default constructor to create a Camera object.
   Camera(void);
   ///Set the zoom factor of the camera.
   void setZoom(double);
+  ///Set the viewport size of a camera.
+  void setViewPort(FloatRect);
   ///Set the center position of the camera.
   void setCenter(rune::Vec2);
   ///Get the current camera position
-  static Vec2 getCenter(void);
+  Vec2 getCenter(void);
   ///Get the current zoom level
-  static double getZoom(void);
+  double getZoom(void);
   ///Move the camera in a certain direction
   void move(rune::Vec2);
+  ///Set the size of the camera viewport.
+  void setViewport(FloatRect viewPortSize);
 };
 }
 

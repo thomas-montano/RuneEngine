@@ -80,7 +80,7 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d3/d30/namespacerune.html">rune</a>{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d4/d94/classrune_1_1_rect.html">   17</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect</a></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
@@ -102,10 +102,15 @@ $(function() {
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;int&gt;</a> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">IntRect</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">typedef</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;float&gt;</a> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">FloatRect</a>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}<span class="comment">//namespace rune</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">template</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;float&gt;::Rect&lt;float&gt;</a>(<span class="keywordtype">float</span>,<span class="keywordtype">float</span>,<span class="keywordtype">float</span>,<span class="keywordtype">float</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">template</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;int&gt;::Rect&lt;int&gt;</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">template</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;double&gt;::Rect&lt;double&gt;</a>(<span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>, <span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">IntRect</a> = <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;int&gt;</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">FloatRect</a> = <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;float&gt;</a>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">using</span> <a class="code" href="../../d4/d94/classrune_1_1_rect.html">DoubleRect</a> = <a class="code" href="../../d4/d94/classrune_1_1_rect.html">Rect&lt;double&gt;</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}<span class="comment">//namespace rune</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassrune_1_1_rect_html"><div class="ttname"><a href="../../d4/d94/classrune_1_1_rect.html">rune::Rect</a></div><div class="ttdoc">A rectangle that can be used for specifying a dimension.</div><div class="ttdef"><b>Definition:</b> rect.h:17</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:5</div></div>

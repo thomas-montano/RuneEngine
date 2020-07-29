@@ -9,14 +9,24 @@
 #ifndef EVENT_H_DEFINED
 #define EVENT_H_DEFINED
 
+#include <core.h>
+
 namespace rune{
 
-class Signal
-{
+  class Subject;
 
-public:
+  class RUNE_ENGINE Signal
+  {
+  public:
+    ///Who the signal originated from.
+    Subject* signalCreator;
+    ///What was the type of signal sent.
+    unsigned int signalValue;
+    ///Default constructor to create a signal.
+    Signal(Subject* creator, unsigned int val);
 
-};
+  };
+
 }
 
 #endif

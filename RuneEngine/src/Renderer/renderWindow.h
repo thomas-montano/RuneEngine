@@ -13,6 +13,7 @@
 #include "color.h"
 #include <vector>
 #include "Math\vec2.h"
+#include <Renderer\camera.h>
 #include <string>
 
 struct GLFWwindow;
@@ -28,7 +29,14 @@ private:
   int width, height;
   GLFWwindow* GLwindow;
 
+  Camera* windowCamera;
+
 public:
+
+  Camera getCamera(void);
+
+  void setCamera(Camera&);  
+
   ///Default constructor to give an openGL context and window.
   RenderWindow(int newWidth, int newHeight, std::string const& title);
 

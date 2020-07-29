@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; objectComponents.size(); i++)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">if</span> (std::string(<span class="keyword">typeid</span>(*objectComponents[i]).name()) == std::string(<span class="keyword">typeid</span>(classVariable).name()))</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <span class="keywordflow">if</span> (<span class="keyword">typeid</span>(*objectComponents[i]) == <span class="keyword">typeid</span>(classVariable))</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span>classVariable*<span class="keyword">&gt;</span>(objectComponents[i]);</div>

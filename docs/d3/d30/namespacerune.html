@@ -136,6 +136,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d53/classrune_1_1_object_animation.html">ObjectAnimation</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class responsible for managing sprite animations and updating which frame of the animation is to be shown.  <a href="../../d9/d53/classrune_1_1_object_animation.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/df1/classrune_1_1_observer.html">Observer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An interface that allows objects to watch a subject for signals, and perform some action when notified.  <a href="../../d4/df1/classrune_1_1_observer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/de3/classrune_1_1_particle_emitter.html">ParticleEmitter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class responsible for creating particle emitters and managing the creation of particles.  <a href="../../da/de3/classrune_1_1_particle_emitter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,8 +170,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d4d/classrune_1_1_sprite.html">Sprite</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sprite that can be given a texture and animated.  <a href="../../d4/d4d/classrune_1_1_sprite.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d23/classrune_1_1_stack.html">Stack</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A data structure that is limited to first in last out access.  <a href="../../d8/d23/classrune_1_1_stack.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d64/classrune_1_1_subject.html">Subject</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A subject that can be watched for signals by observers.  <a href="../../de/d64/classrune_1_1_subject.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dd3/classrune_1_1_texture.html">Texture</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A texture that can be applied to drawable objects.  <a href="../../d3/dd3/classrune_1_1_texture.html#details">More...</a><br /></td></tr>
@@ -188,12 +191,15 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ac7b653cb64dd1e4ccbe9fe5a21d76654"><td class="memItemLeft" align="right" valign="top"><a id="ac7b653cb64dd1e4ccbe9fe5a21d76654"></a>
-typedef <a class="el" href="../../d4/d94/classrune_1_1_rect.html">Rect</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>IntRect</b></td></tr>
-<tr class="separator:ac7b653cb64dd1e4ccbe9fe5a21d76654"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a017c3c139b51bf9199fe410ac749fd76"><td class="memItemLeft" align="right" valign="top"><a id="a017c3c139b51bf9199fe410ac749fd76"></a>
-typedef <a class="el" href="../../d4/d94/classrune_1_1_rect.html">Rect</a>&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>FloatRect</b></td></tr>
-<tr class="separator:a017c3c139b51bf9199fe410ac749fd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b40aeeab663204053f747de4028858d"><td class="memItemLeft" align="right" valign="top"><a id="a8b40aeeab663204053f747de4028858d"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>IntRect</b> = <a class="el" href="../../d4/d94/classrune_1_1_rect.html">Rect</a>&lt; int &gt;</td></tr>
+<tr class="separator:a8b40aeeab663204053f747de4028858d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d85d02381af668e8d461841c212a9e1"><td class="memItemLeft" align="right" valign="top"><a id="a2d85d02381af668e8d461841c212a9e1"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>FloatRect</b> = <a class="el" href="../../d4/d94/classrune_1_1_rect.html">Rect</a>&lt; float &gt;</td></tr>
+<tr class="separator:a2d85d02381af668e8d461841c212a9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ff38cb072f38bdf45a3b6224fddd1e"><td class="memItemLeft" align="right" valign="top"><a id="a49ff38cb072f38bdf45a3b6224fddd1e"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>DoubleRect</b> = <a class="el" href="../../d4/d94/classrune_1_1_rect.html">Rect</a>&lt; double &gt;</td></tr>
+<tr class="separator:a49ff38cb072f38bdf45a3b6224fddd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

@@ -11,6 +11,16 @@
 #include "imgui/imgui_impl_glfw.h"
 #include <Input/keyboard.h>
 
+rune::Camera rune::RenderWindow::getCamera(void)
+{
+  return *windowCamera;
+}
+
+void rune::RenderWindow::setCamera(Camera& newCamera)
+{
+  windowCamera = &newCamera;
+}
+
 /**
  * @param newWidth The width of the window in pixels to be created.
  * @param newHeight The height of the window in pixels to be created.
@@ -124,12 +134,6 @@ bool rune::RenderWindow::isOpen()
   {
     windowOpen = false;
   }
-
-  //Handling window resizing, make this better
-
-  glfwGetWindowSize(GLwindow, &width, &height);
-
-  glViewport(0, 0, width, height);
 
   if(!windowOpen)
   {

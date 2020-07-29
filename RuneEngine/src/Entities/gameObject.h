@@ -51,7 +51,7 @@ public:
     for(int i = 0; i < objectComponents.size(); i++)
     {
 
-      if (std::string(typeid(*objectComponents[i]).name()) == std::string(typeid(classVariable).name()))
+      if (typeid(*objectComponents[i]) == typeid(classVariable))
       {
 
         return dynamic_cast<classVariable*>(objectComponents[i]);

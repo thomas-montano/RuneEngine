@@ -61,8 +61,8 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   rune::Vec3 size = parentObject->transform.getScale();
 
   rune::Vec2 windowSize = window.getSize();
-  rune::Vec2 cameraPos = rune::Camera::getCenter();
-  double zoomLevel = rune::Camera::getZoom();
+  rune::Vec2 cameraPos = window.getCamera().getCenter();
+  double zoomLevel = window.getCamera().getZoom();
 
   //Set up camera data for shader
   rectangleShader.setUniform2f("cameraPos", zoomLevel * cameraPos.x / (0.5*windowSize.x), zoomLevel * cameraPos.y / (0.5*windowSize.y));

@@ -32,12 +32,14 @@
 #include <DataStructures/list.h>
 
 #include <Renderer/camera.h>
+#include <Renderer/rect.h>
 #include <Renderer/sprite.h>
 #include <Renderer/rectangleShape.h>
 #include <Renderer/color.h>
 #include <Renderer/shader.h>
 #include <Renderer/texture.h>
 #include <Renderer/drawable.h>
+
 #include <Physics/collider2d.h>
 #include <physics/rigidBody.h>
 

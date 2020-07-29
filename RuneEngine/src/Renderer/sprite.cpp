@@ -70,8 +70,8 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   objectShader.bind();
   
   rune::Vec2 windowSize = window.getSize();
-  rune::Vec2 cameraPos = rune::Camera::getCenter();
-  double zoomLevel = rune::Camera::getZoom();
+  rune::Vec2 cameraPos = window.getCamera().getCenter();
+  double zoomLevel = window.getCamera().getZoom();
 
   rune::Vec3 position = parentObject->transform.getPosition();
   rune::Vec3 size = parentObject->transform.getScale();

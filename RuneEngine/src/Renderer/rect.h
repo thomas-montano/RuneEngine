@@ -13,7 +13,7 @@
 
 namespace rune{
 
-template <class T>
+template <typename T>
 class RUNE_ENGINE Rect
 {
 public:
@@ -35,7 +35,12 @@ public:
 
 };
 
-typedef Rect<int> IntRect;
-typedef Rect<float> FloatRect;
+template Rect<float>::Rect<float>(float,float,float,float);
+template Rect<int>::Rect<int>(int, int, int, int);
+template Rect<double>::Rect<double>(double, double, double, double);
+
+using IntRect = Rect<int>;
+using FloatRect = Rect<float>;
+using DoubleRect = Rect<double>;
 
 }//namespace rune

@@ -269,9 +269,6 @@
     <ClInclude Include="src\DataStructures\list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\DataStructures\stack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Renderer\rect.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -89,7 +89,7 @@ void main()
 
   if(dist > lightSize)
   {
-    diffuse = vec3(0.0);
+    //diffuse = vec3(0.0);
   }
 
   vec3 lightResult = (ambient + diffuse) * ourColor.xyz;

@@ -1,13 +1,12 @@
 #include "camera.h"
 #include <gameApplication.h>
-#include <cassert>
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
 
-rune::Vec2 rune::Camera::centerPosition = rune::Vec2(0,0);
-double rune::Camera::zoomFactor = 1.0;
-
-rune::Camera::Camera() : cameraSize(getGameInstance()->getWindow()->getSize())
+rune::Camera::Camera() 
+  : cameraSize(Vec2(0,0)), centerPosition(Vec2(0,0)), zoomFactor(1.0)
 {
-  centerPosition = rune::Vec2(0,0);
 }
 
 /**
@@ -16,6 +15,11 @@ rune::Camera::Camera() : cameraSize(getGameInstance()->getWindow()->getSize())
 void rune::Camera::setZoom(double newZoom)
 {
   zoomFactor = newZoom;
+}
+
+void rune::Camera::setViewPort(FloatRect view)
+{
+  glViewport(view.left,view.top,view.width,view.height);
 }
 
 /**
@@ -48,4 +52,9 @@ double rune::Camera::getZoom(void)
 void rune::Camera::move(rune::Vec2 speed)
 {
   centerPosition += speed * getGameInstance()->getDeltaTime();
+}
+
+void rune::Camera::setViewport(FloatRect viewPortSize)
+{
+  //Resize the viewport based on a ratio of the screen i.e. viewPortSize = FloatRect(0.25f,0.25f,0.5f,0.5f);
 }
