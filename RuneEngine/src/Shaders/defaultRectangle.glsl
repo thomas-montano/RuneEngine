@@ -46,7 +46,9 @@ in vec4 ourColor;
 
 void main()
 {
+
   FragColor = ourColor;
+
 };
 
 )";

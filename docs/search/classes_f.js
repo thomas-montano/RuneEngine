@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['world_391',['World',['../df/db5/classphysics_1_1_world.html',1,'physics::World'],['../d3/dbd/classrune_1_1_world.html',1,'World']]]
+  ['vec2_395',['Vec2',['../d1/d81/classrune_1_1_vec2.html',1,'rune']]],
+  ['vec3_396',['Vec3',['../da/d72/classrune_1_1_vec3.html',1,'rune']]]
 ];

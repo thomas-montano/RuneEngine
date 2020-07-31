@@ -98,15 +98,19 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Renderer\quad.cpp" />
     <ClCompile Include="src\Events\subject.cpp" />
     <ClCompile Include="src\Animation\animationController.cpp" />
+    <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
+    <ClCompile Include="src\Physics\Colliders\circleCollider.cpp" />
+    <ClCompile Include="src\Physics\world.cpp" />
     <ClCompile Include="src\ResourceManager\resource.cpp" />
     <ClCompile Include="src\ResourceManager\resourceManager.cpp" />
     <ClCompile Include="src\Animation\animator.cpp" />
     <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
     <ClCompile Include="src\Math\vec3.cpp" />
-    <ClCompile Include="src\Physics\collider2d.cpp" />
+    <ClCompile Include="src\Physics\Colliders\collider.cpp" />
     <ClCompile Include="src\Renderer\camera.cpp" />
     <ClCompile Include="src\imgui\imgui.cpp" />
     <ClCompile Include="src\imgui\imgui_demo.cpp" />
@@ -137,14 +141,18 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClCompile Include="src\Entities\transform.cpp" />
     <ClCompile Include="src\SceneManager\gameScene.cpp" />
     <ClCompile Include="src\SceneManager\sceneManager.cpp" />
-    <ClCompile Include="src\Physics\world.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Renderer\quad.h" />
     <ClInclude Include="src\Events\observer.h" />
     <ClInclude Include="src\Events\subject.h" />
     <ClInclude Include="src\Animation\animationController.h" />
     <ClInclude Include="src\Animation\animationState.h" />
     <ClInclude Include="src\Animation\animationTransition.h" />
+    <ClInclude Include="src\Physics\AABB.h" />
+    <ClInclude Include="src\Physics\Colliders\boxCollider.h" />
+    <ClInclude Include="src\Physics\Colliders\circleCollider.h" />
+    <ClInclude Include="src\Physics\collision.h" />
     <ClInclude Include="src\Renderer\rect.h" />
     <ClInclude Include="src\ResourceManager\resource.h" />
     <ClInclude Include="src\ResourceManager\resourceManager.h" />
@@ -153,7 +161,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />
     <ClInclude Include="src\Math\vec3.h" />
-    <ClInclude Include="src\Physics\collider2d.h" />
+    <ClInclude Include="src\Physics\Colliders\collider.h" />
     <ClInclude Include="src\Renderer\camera.h" />
     <ClInclude Include="src\imgui\imconfig.h" />
     <ClInclude Include="src\imgui\imgui.h" />
@@ -196,6 +204,7 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <None Include="src\Shaders\defaultRectangle.glsl">
       <FileType>Document</FileType>
     </None>
+    <None Include="src\Shaders\rectangleBorder.glsl" />
     <None Include="src\Shaders\spriteLit.glsl">
       <FileType>Document</FileType>
     </None>

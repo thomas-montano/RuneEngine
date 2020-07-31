@@ -40,7 +40,6 @@
 #include <Renderer/texture.h>
 #include <Renderer/drawable.h>
 
-#include <Physics/collider2d.h>
 #include <physics/rigidBody.h>
 
 

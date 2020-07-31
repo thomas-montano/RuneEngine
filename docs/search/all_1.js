@@ -8,6 +8,7 @@ var searchData=
   ['blue_23',['blue',['../df/d5a/classrune_1_1_color.html#aefcd834a26d00dd7d489a0b0be7a1364',1,'rune::Color::blue()'],['../df/d5a/classrune_1_1_color.html#a5958b48f6e41cfabb99105e1b3dbab97',1,'rune::Color::Blue()']]],
   ['body_24',['body',['../d0/d74/structphysics_1_1body.html',1,'physics']]],
   ['boundingbox_25',['boundingBox',['../d0/d74/structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7',1,'physics::body']]],
-  ['broadphasecollisions_26',['broadPhaseCollisions',['../df/db5/classphysics_1_1_world.html#a377da1bd2391d88b16dffeab0b37b57a',1,'physics::World::broadPhaseCollisions()'],['../d5/dd0/namespacephysics.html#ae18dc7abe0a52e30a85488286b5412a9',1,'physics::broadPhaseCollisions()']]],
-  ['button_27',['Button',['../d4/d4b/classrune_1_1_mouse.html#a7bd4654291a89f5c7b18e0ed8d2bb879',1,'rune::Mouse']]]
+  ['boxcollider_26',['BoxCollider',['../d0/db4/classphysics_1_1_box_collider.html',1,'physics']]],
+  ['broadphasecollisions_27',['broadPhaseCollisions',['../df/db5/classphysics_1_1_world.html#a377da1bd2391d88b16dffeab0b37b57a',1,'physics::World::broadPhaseCollisions()'],['../d5/dd0/namespacephysics.html#ae18dc7abe0a52e30a85488286b5412a9',1,'physics::broadPhaseCollisions()']]],
+  ['button_28',['Button',['../d4/d4b/classrune_1_1_mouse.html#a7bd4654291a89f5c7b18e0ed8d2bb879',1,'rune::Mouse']]]
 ];

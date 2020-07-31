@@ -16,6 +16,7 @@
 #include <Entities\component.h>
 #include "drawable.h"
 #include <Math\vec2.h>
+#include "quad.h"
 
 namespace rune{
 
@@ -27,7 +28,6 @@ class RUNE_ENGINE RectangleShape : public rune::Drawable, public rune::Component
 private:
 
   rune::Color m_fillColor;
-  Shader rectangleShader;
   rune::Vec2 origin;
 
   unsigned int indices[6] =
@@ -43,6 +43,8 @@ private:
   void setUpBuffers(void);
 
 public:
+
+  Shader rectangleShader;
 
   virtual void start() override;
   ///The draw call for rendering the shape to the screen.

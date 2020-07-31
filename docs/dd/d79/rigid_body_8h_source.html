@@ -88,28 +88,28 @@ $(function() {
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">//Forward declaration of rigid body class</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">class </span>RigidBody;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d1/d91/structphysics_1_1collision.html">   25</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d1/d91/structphysics_1_1collision.html">collision</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">struct </span>collision</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d1/d17/classphysics_1_1_rigid_body.html">RigidBody</a>* objectOne;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../d1/d17/classphysics_1_1_rigid_body.html">RigidBody</a>* objectTwo;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    RigidBody* objectOne;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    RigidBody* objectTwo;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a> normalVector;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">double</span> depth;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../d1/d91/structphysics_1_1collision.html">collision</a>() : objectOne(<span class="keyword">nullptr</span>), objectTwo(<span class="keyword">nullptr</span>), normalVector(<a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a>(0,0)), depth(0)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    collision() : objectOne(nullptr), objectTwo(nullptr), normalVector(<a class="code" href="../../d3/d30/namespacerune.html">rune</a>::Vec2(0,0)), depth(0)</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../da/dd3/structphysics_1_1_a_a_b_b.html">   41</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../da/dd3/structphysics_1_1_a_a_b_b.html">AABB</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">struct </span>AABB</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a> min;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a> max;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../da/dd3/structphysics_1_1_a_a_b_b.html">AABB</a>() : min(<a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a>(0,0)), max(<a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a>(0,0))</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  AABB() : min(<a class="code" href="../../d3/d30/namespacerune.html">rune</a>::Vec2(0,0)), max(<a class="code" href="../../d3/d30/namespacerune.html">rune</a>::Vec2(0,0))</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a> vertexes[4]; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d0/d74/structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">   59</a></span>&#160;  <a class="code" href="../../da/dd3/structphysics_1_1_a_a_b_b.html">AABB</a> <a class="code" href="../../d0/d74/structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">boundingBox</a>; <span class="comment">//Broad phase Minimum bounding box</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d0/d74/structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">   59</a></span>&#160;  <a class="code" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html">AABB</a> <a class="code" href="../../d0/d74/structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">boundingBox</a>; <span class="comment">//Broad phase Minimum bounding box</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">double</span> xPos; <span class="comment">//X position in world coordinates</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">double</span> yPos; <span class="comment">//Y Position in world coordinates</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a> oldPosition; <span class="comment">//Previous position in world coordinates</span></div>
@@ -156,7 +156,7 @@ $(function() {
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> updateAABB();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../da/dd3/structphysics_1_1_a_a_b_b.html">AABB</a> getBoundingBox(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html">AABB</a> getBoundingBox(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> addAngularVelocity(<span class="keywordtype">double</span> angularVel);</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
@@ -208,7 +208,7 @@ $(function() {
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> clearCollisions(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> addCollision(<a class="code" href="../../d1/d91/structphysics_1_1collision.html">collision</a>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> addCollision(<a class="code" href="../../dd/d03/classphysics_1_1collision.html">collision</a>);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    std::vector&lt;collision&gt; getCollisions(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
@@ -218,14 +218,15 @@ $(function() {
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="anamespacephysics_html"><div class="ttname"><a href="../../d5/dd0/namespacephysics.html">physics</a></div><div class="ttdoc">The physics module responsible for handling and resolving collisions between physics::Collider2D.</div><div class="ttdef"><b>Definition:</b> collider2d.h:16</div></div>
-<div class="ttc" id="astructphysics_1_1_a_a_b_b_html"><div class="ttname"><a href="../../da/dd3/structphysics_1_1_a_a_b_b.html">physics::AABB</a></div><div class="ttdoc">Axis aligned bounding box for each object.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:41</div></div>
+<div class="ttc" id="anamespacephysics_html"><div class="ttname"><a href="../../d5/dd0/namespacephysics.html">physics</a></div><div class="ttdoc">The physics module responsible for handling and resolving collisions between physics::Collider2D.</div><div class="ttdef"><b>Definition:</b> AABB.h:6</div></div>
 <div class="ttc" id="aclassphysics_1_1_rigid_body_html"><div class="ttname"><a href="../../d1/d17/classphysics_1_1_rigid_body.html">physics::RigidBody</a></div><div class="ttdoc">Game object component that allows a game object to have collisions with other objects.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:79</div></div>
 <div class="ttc" id="aclassrune_1_1_component_html"><div class="ttname"><a href="../../dd/d70/classrune_1_1_component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:20</div></div>
-<div class="ttc" id="astructphysics_1_1collision_html"><div class="ttname"><a href="../../d1/d91/structphysics_1_1collision.html">physics::collision</a></div><div class="ttdoc">Collision manifold used for reporting rigid body collisions.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:25</div></div>
+<div class="ttc" id="aclassphysics_1_1collision_html"><div class="ttname"><a href="../../dd/d03/classphysics_1_1collision.html">physics::collision</a></div><div class="ttdoc">Collision manifold used for reporting rigid body collisions.</div><div class="ttdef"><b>Definition:</b> collision.h:7</div></div>
 <div class="ttc" id="astructphysics_1_1body_html_a76f4d9fa127e61d2e8aae7a5c728ceb7"><div class="ttname"><a href="../../d0/d74/structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">physics::body::boundingBox</a></div><div class="ttdeci">AABB boundingBox</div><div class="ttdoc">Specific Vertexes.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:59</div></div>
 <div class="ttc" id="aclassrune_1_1_vec2_html"><div class="ttname"><a href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a></div><div class="ttdoc">1 x 2 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:19</div></div>
 <div class="ttc" id="astructphysics_1_1body_html"><div class="ttname"><a href="../../d0/d74/structphysics_1_1body.html">physics::body</a></div><div class="ttdoc">Rigid body struct containing all the information for a physically realistic response.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:55</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="../../d3/d30/namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:5</div></div>
+<div class="ttc" id="aclassphysics_1_1_a_a_b_b_html"><div class="ttname"><a href="../../d5/d6e/classphysics_1_1_a_a_b_b.html">physics::AABB</a></div><div class="ttdoc">Axis aligned bounding box for each object.</div><div class="ttdef"><b>Definition:</b> AABB.h:9</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
