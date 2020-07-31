@@ -21,6 +21,7 @@
 #include <Renderer\camera.h>
 #include <Renderer\frameBuffer.h>
 #include <DataStructures\list.h>
+//#include <Physics\world.h>
 
 namespace rune{
 
@@ -33,7 +34,7 @@ protected:
   std::vector<physics::RigidBody*> physicsBodies;
 
   //This list can be non-pointers because it is a list.
-  List<rune::GameObject> sceneObjects;
+  List<rune::GameObject*> sceneObjects;
 
   std::vector<rune::Drawable*> drawableObjects;
   

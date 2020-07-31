@@ -8,7 +8,8 @@ var searchData=
   ['left_5fshift_161',['LEFT_SHIFT',['../d1/da2/classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab44f21c5c0bee399c0d10dbf6d24c3fd',1,'rune::Keyboard']]],
   ['lightsource_162',['LightSource',['../d7/d42/classrune_1_1_light_source.html',1,'rune']]],
   ['list_163',['List',['../d0/d76/classrune_1_1_list.html',1,'rune']]],
-  ['list_3c_20rune_3a_3agameobject_20_3e_164',['List&lt; rune::GameObject &gt;',['../d0/d76/classrune_1_1_list.html',1,'rune']]],
-  ['loadfromfile_165',['loadFromFile',['../d3/dd3/classrune_1_1_texture.html#ab8d55bab98fa2d6ab5ea4355b339c15b',1,'rune::Texture']]],
-  ['loadscene_166',['loadScene',['../d1/da1/classrune_1_1_game_application.html#a746b3c51679da39f6518e9123891f3ff',1,'rune::GameApplication']]]
+  ['list_3c_20physics_3a_3arigidbody_20_2a_20_3e_164',['List&lt; physics::RigidBody * &gt;',['../d0/d76/classrune_1_1_list.html',1,'rune']]],
+  ['list_3c_20rune_3a_3agameobject_20_2a_20_3e_165',['List&lt; rune::GameObject * &gt;',['../d0/d76/classrune_1_1_list.html',1,'rune']]],
+  ['loadfromfile_166',['loadFromFile',['../d3/dd3/classrune_1_1_texture.html#ab8d55bab98fa2d6ab5ea4355b339c15b',1,'rune::Texture']]],
+  ['loadscene_167',['loadScene',['../d1/da1/classrune_1_1_game_application.html#a746b3c51679da39f6518e9123891f3ff',1,'rune::GameApplication']]]
 ];

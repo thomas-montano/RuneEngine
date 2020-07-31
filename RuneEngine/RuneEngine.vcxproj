@@ -98,7 +98,6 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Events\observer.cpp" />
     <ClCompile Include="src\Events\subject.cpp" />
     <ClCompile Include="src\Animation\animationController.cpp" />
     <ClCompile Include="src\ResourceManager\resource.cpp" />

@@ -132,9 +132,6 @@
     <ClCompile Include="src\Events\signal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Events\observer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Events\subject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

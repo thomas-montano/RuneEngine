@@ -1,27 +1,26 @@
 /**
  * @class rune::List
  * @brief A list that can be used to store data.
- * 
+ *
  * The methodology for iterating through a list is very similar to a range based loop syntax.
  * To iterate through a list without copying or having to redo iterations, you should create a for loop like this:
- * 
+ *
  * @code
  * for (TYPE* currentObject = myList.getList(); currentObject != nullptr; currentItem = myList.getNext())
  * {
- * 
+ *
  *   //Do stuff
  *   currentObject.myFunction();
- * 
+ *
  * }
  *
  * @endcode
- * 
+ *
  * @author Thomas Montano
  * @date July 21 2020
 */
 
 #pragma once
-#include <core.h>
 
 namespace rune {
 
@@ -30,7 +29,7 @@ namespace rune {
   struct listItem
   {
 
-    T* storedItem;
+    T storedItem;
     listItem* nextItem;
 
     listItem()
@@ -42,7 +41,7 @@ namespace rune {
   ///@endcond
 
   template <class T>
-  class RUNE_ENGINE List
+  class List
   {
 
   private:
@@ -67,25 +66,26 @@ namespace rune {
     /// @returns A pointer to the head of the list.
     /// @warning Do not call this function from inside a list iteration. If you are already looking through this list it will cause an infinite loop.
     T* getList()
-    {
+    { 
       currentlyAccessedItem = listHead;
-      return (listHead->storedItem);
+      return &(listHead->storedItem);
     }
-    
+
     ///Gets the next element of the list.
     /// @return A pointer to the next element
     /// @warning Will return nullptr if the end of the list has been reached.
     T* getNext()
     {
-      currentlyAccessedItem = currentlyAccessedItem->nextItem;
 
-      if(currentlyAccessedItem == nullptr)
+      if (currentlyAccessedItem == nullptr)
       {
         return nullptr;
       }
 
-      return (currentlyAccessedItem->storedItem);
-    
+      currentlyAccessedItem = currentlyAccessedItem->nextItem;
+
+      return &(currentlyAccessedItem->storedItem);
+
     }
 
     ///Gets the number of elements in the list.
@@ -97,12 +97,12 @@ namespace rune {
 
     ///Adds an element to the end of the list.
     ///@param newData The data point to be added to the list.
-    void add(T& newData)
+    void add(T const& newData)
     {
 
       listSize++;
       listItem<T>* newItem = new listItem<T>;
-      newItem->storedItem = &newData;
+      newItem->storedItem = newData;
 
       listItem<T>* currentItem = listHead;
 
@@ -164,13 +164,13 @@ namespace rune {
     ///Clears the list
     void clear()
     {
-    
+
       while (listSize != 0)
       {
-      
+
         //Go through and delete each element of the list
         remove(0);
-      
+
       }
 
     }
@@ -178,14 +178,14 @@ namespace rune {
     /// Insert an element at the specified index.
     /// @param newData The element to be inserted.
     /// @param index The zero based index of the location.
-    void insert(T& newData, int index)
+    void insert(T const& newData, int index)
     {
 
       listSize++;
       listItem<T>* currentItem = listHead;
 
       listItem<T>* newItem = new listItem<T>;
-      newItem->storedItem = &newData;
+      newItem->storedItem = newData;
 
       //Access the element just before the space to be inserted.
       for (int i = 0; i < index - 1; i++)
@@ -218,7 +218,7 @@ namespace rune {
 
       }
 
-      return *(currentItem->storedItem);
+      return (currentItem->storedItem);
 
     }
 

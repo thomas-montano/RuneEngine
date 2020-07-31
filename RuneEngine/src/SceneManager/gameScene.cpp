@@ -88,7 +88,7 @@ void rune::GameScene::updateVariable(void)
 void rune::GameScene::addObjectToScene(rune::GameObject& newObject)
 {
 
-  sceneObjects.add(newObject);
+  sceneObjects.add(&newObject);
 
   //If the new object has a physics component on it, add it to the physicsBody vector.
   auto tempPtr = newObject.findComponent<physics::RigidBody>();
@@ -107,10 +107,10 @@ void rune::GameScene::submitToRenderer(rune::Drawable& newDrawable)
 void rune::GameScene::startComponents(void)
 {
 
-  for (GameObject* currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
+  for (GameObject** currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
   {
     
-    std::vector<Component*>& componentList = currentObject->getComponentList();
+    std::vector<Component*>& componentList = (*currentObject)->getComponentList();
     
     for (int i = 0; i < componentList.size(); i ++)
     {
@@ -123,10 +123,10 @@ void rune::GameScene::startComponents(void)
 void rune::GameScene::updateComponents()
 {
 
-  for (GameObject* currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
+  for (GameObject** currentObject = sceneObjects.getList(); currentObject != nullptr; currentObject = sceneObjects.getNext())
   {
     
-    std::vector<Component*>& componentList = currentObject->getComponentList();
+    std::vector<Component*>& componentList = (*currentObject)->getComponentList();
 
     for (int i = 0; i < componentList.size(); i++)
     {
