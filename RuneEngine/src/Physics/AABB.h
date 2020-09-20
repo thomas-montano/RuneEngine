@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Renderer/drawable.h>
-#include <Renderer/quad.h>
+
 
 namespace physics
 {
@@ -22,9 +22,9 @@ namespace physics
     void draw(rune::RenderWindow& window) override
     {
     
-      rune::Quad boundingQuad(rune::Vec2(min), rune::Vec2(max.x - min.x, max.y - min.y));
+      //rune::Quad boundingQuad(rune::Vec2(min), rune::Vec2(max.x - min.x, max.y - min.y));
 
-      boundingQuad.drawQuad(window);
+      //boundingQuad.drawQuad(window);
     
     }
 

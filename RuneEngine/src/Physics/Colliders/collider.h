@@ -13,13 +13,14 @@
 #include <Math/vec2.h>
 #include <Physics/AABB.h>
 #include <Renderer/rectangleShape.h>
+#include <Events/subject.h>
 
 #ifndef COLLIDER_H_DEFINED
 #define COLLIDER_H_DEFINED
 
 namespace physics{
 
-class RUNE_ENGINE Collider
+class RUNE_ENGINE Collider : public rune::Subject
 {
 protected:
   AABB boundingBox;

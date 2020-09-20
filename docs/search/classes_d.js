@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['scenemanager_387',['SceneManager',['../d3/d09/classrune_1_1_scene_manager.html',1,'rune']]],
-  ['shader_388',['Shader',['../dc/d85/classrune_1_1_shader.html',1,'rune']]],
-  ['shaderprogramsource_389',['ShaderProgramSource',['../d3/df9/structrune_1_1_shader_program_source.html',1,'rune']]],
-  ['signal_390',['Signal',['../d1/d1a/classrune_1_1_signal.html',1,'rune']]],
-  ['sprite_391',['Sprite',['../d4/d4d/classrune_1_1_sprite.html',1,'rune']]],
-  ['subject_392',['Subject',['../de/d64/classrune_1_1_subject.html',1,'rune']]]
+  ['texture_391',['Texture',['../d3/dd3/classrune_1_1_texture.html',1,'rune']]],
+  ['transform_392',['Transform',['../d7/d7f/classrune_1_1_transform.html',1,'rune']]]
 ];

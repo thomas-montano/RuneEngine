@@ -80,9 +80,10 @@ Inheritance diagram for physics::CircleCollider:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d8/d52/classphysics_1_1_circle_collider__inherit__graph.png" border="0" usemap="#physics_1_1_circle_collider_inherit__map" alt="Inheritance graph"/></div>
 <map name="physics_1_1_circle_collider_inherit__map" id="physics_1_1_circle_collider_inherit__map">
-<area shape="rect" title=" " alt="" coords="64,80,231,107"/>
-<area shape="rect" href="../../d0/dc1/classphysics_1_1_collider.html" title="A collider that is to be used for registering collisions between objects in the scene." alt="" coords="5,5,135,32"/>
-<area shape="rect" href="../../dd/d70/classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="159,5,293,32"/>
+<area shape="rect" title=" " alt="" coords="64,155,231,181"/>
+<area shape="rect" href="../../d0/dc1/classphysics_1_1_collider.html" title="A collider that is to be used for registering collisions between objects in the scene." alt="" coords="5,80,135,107"/>
+<area shape="rect" href="../../de/d64/classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="17,5,123,32"/>
+<area shape="rect" href="../../dd/d70/classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="159,80,293,107"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -90,14 +91,15 @@ Collaboration diagram for physics::CircleCollider:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/d35/classphysics_1_1_circle_collider__coll__graph.png" border="0" usemap="#physics_1_1_circle_collider_coll__map" alt="Collaboration graph"/></div>
 <map name="physics_1_1_circle_collider_coll__map" id="physics_1_1_circle_collider_coll__map">
-<area shape="rect" title=" " alt="" coords="166,275,333,301"/>
-<area shape="rect" href="../../d0/dc1/classphysics_1_1_collider.html" title="A collider that is to be used for registering collisions between objects in the scene." alt="" coords="107,199,237,225"/>
-<area shape="rect" href="../../d1/d81/classrune_1_1_vec2.html" title="1 x 2 vector to be used for math." alt="" coords="5,5,96,32"/>
-<area shape="rect" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object." alt="" coords="116,109,231,136"/>
-<area shape="rect" href="../../d9/d60/classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="121,5,242,32"/>
-<area shape="rect" href="../../dd/d70/classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="261,199,395,225"/>
-<area shape="rect" href="../../db/d07/classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="258,109,398,136"/>
-<area shape="rect" href="../../d7/d7f/classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="266,5,390,32"/>
+<area shape="rect" title=" " alt="" coords="195,275,362,301"/>
+<area shape="rect" href="../../d0/dc1/classphysics_1_1_collider.html" title="A collider that is to be used for registering collisions between objects in the scene." alt="" coords="137,199,266,225"/>
+<area shape="rect" href="../../de/d64/classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="5,109,112,136"/>
+<area shape="rect" href="../../d1/d81/classrune_1_1_vec2.html" title="1 x 2 vector to be used for math." alt="" coords="113,5,204,32"/>
+<area shape="rect" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object." alt="" coords="225,109,340,136"/>
+<area shape="rect" href="../../d9/d60/classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="229,5,350,32"/>
+<area shape="rect" href="../../dd/d70/classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="311,199,446,225"/>
+<area shape="rect" href="../../db/d07/classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="366,109,506,136"/>
+<area shape="rect" href="../../d7/d7f/classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="374,5,498,32"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -106,9 +108,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4b5d81ad636a791604819b6b883745aa"><td class="memItemLeft" align="right" valign="top"><a id="a4b5d81ad636a791604819b6b883745aa"></a>
 <a class="el" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html">AABB</a>&#160;</td><td class="memItemRight" valign="bottom"><b>computeAABB</b> () override</td></tr>
 <tr class="separator:a4b5d81ad636a791604819b6b883745aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrune_1_1_subject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrune_1_1_subject')"><img src="../../closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="../../de/d64/classrune_1_1_subject.html">rune::Subject</a></td></tr>
+<tr class="memitem:a785a5b6fd7a9e3345178360a40aa7334 inherit pub_methods_classrune_1_1_subject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d64/classrune_1_1_subject.html#a785a5b6fd7a9e3345178360a40aa7334">subscribe</a> (<a class="el" href="../../d4/df1/classrune_1_1_observer.html">Observer</a> &amp;newObserver)</td></tr>
+<tr class="memdesc:a785a5b6fd7a9e3345178360a40aa7334 inherit pub_methods_classrune_1_1_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the subject that an observer would like to be notified of signals.  <a href="../../de/d64/classrune_1_1_subject.html#a785a5b6fd7a9e3345178360a40aa7334">More...</a><br /></td></tr>
+<tr class="separator:a785a5b6fd7a9e3345178360a40aa7334 inherit pub_methods_classrune_1_1_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a491a1fe227604d70b69cd1d1d411c6b2 inherit pub_methods_classrune_1_1_subject"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d64/classrune_1_1_subject.html#a491a1fe227604d70b69cd1d1d411c6b2">unsubscribe</a> (<a class="el" href="../../d4/df1/classrune_1_1_observer.html">Observer</a> &amp;newObserver)</td></tr>
+<tr class="memdesc:a491a1fe227604d70b69cd1d1d411c6b2 inherit pub_methods_classrune_1_1_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the subject that an observer would no longer like to be notified of signals.  <a href="../../de/d64/classrune_1_1_subject.html#a491a1fe227604d70b69cd1d1d411c6b2">More...</a><br /></td></tr>
+<tr class="separator:a491a1fe227604d70b69cd1d1d411c6b2 inherit pub_methods_classrune_1_1_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classrune_1_1_subject"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classrune_1_1_subject')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../de/d64/classrune_1_1_subject.html">rune::Subject</a></td></tr>
+<tr class="memitem:a044800eb61bd601925b1d29451ac518a inherit pro_methods_classrune_1_1_subject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d64/classrune_1_1_subject.html#a044800eb61bd601925b1d29451ac518a">notify</a> (unsigned int signalValue)</td></tr>
+<tr class="separator:a044800eb61bd601925b1d29451ac518a inherit pro_methods_classrune_1_1_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classphysics_1_1_collider"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classphysics_1_1_collider')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../d0/dc1/classphysics_1_1_collider.html">physics::Collider</a></td></tr>
 <tr class="memitem:a1cbd7a62037213aed3eb30f1a23d4c25 inherit pro_attribs_classphysics_1_1_collider"><td class="memItemLeft" align="right" valign="top"><a id="a1cbd7a62037213aed3eb30f1a23d4c25"></a>
 <a class="el" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html">AABB</a>&#160;</td><td class="memItemRight" valign="bottom"><b>boundingBox</b></td></tr>
@@ -116,6 +128,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a677c59d64d1d76db9022b2793fda23b9 inherit pro_attribs_classphysics_1_1_collider"><td class="memItemLeft" align="right" valign="top"><a id="a677c59d64d1d76db9022b2793fda23b9"></a>
 <a class="el" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>offset</b></td></tr>
 <tr class="separator:a677c59d64d1d76db9022b2793fda23b9 inherit pro_attribs_classphysics_1_1_collider"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classrune_1_1_subject"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrune_1_1_subject')"><img src="../../closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="../../de/d64/classrune_1_1_subject.html">rune::Subject</a></td></tr>
+<tr class="memitem:a0ad1ce5da93e0f7553dc0bb8148031e2 inherit pro_attribs_classrune_1_1_subject"><td class="memItemLeft" align="right" valign="top"><a id="a0ad1ce5da93e0f7553dc0bb8148031e2"></a>
+std::vector&lt; <a class="el" href="../../d4/df1/classrune_1_1_observer.html">Observer</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>observers</b></td></tr>
+<tr class="separator:a0ad1ce5da93e0f7553dc0bb8148031e2 inherit pro_attribs_classrune_1_1_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a43cdc8bd7f9af9db84dddc0ac715b5 inherit pro_attribs_classrune_1_1_subject"><td class="memItemLeft" align="right" valign="top"><a id="a7a43cdc8bd7f9af9db84dddc0ac715b5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>numObservers</b></td></tr>
+<tr class="separator:a7a43cdc8bd7f9af9db84dddc0ac715b5 inherit pro_attribs_classrune_1_1_subject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="../../d4/d9c/circle_collider_8h_source.html">circleCollider.h</a></li>

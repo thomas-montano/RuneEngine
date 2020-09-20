@@ -16,7 +16,6 @@
 #include <Entities\component.h>
 #include "drawable.h"
 #include <Math\vec2.h>
-#include "quad.h"
 
 namespace rune{
 

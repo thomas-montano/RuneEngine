@@ -75,7 +75,7 @@ $(function() {
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;Renderer/drawable.h&gt;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;Renderer/quad.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d5/dd0/namespacephysics.html">    6</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../d5/dd0/namespacephysics.html">physics</a></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
@@ -96,9 +96,9 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html#ad3fb8f38948b941bb892b5b09378f68d">   22</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d5/d6e/classphysics_1_1_a_a_b_b.html#ad3fb8f38948b941bb892b5b09378f68d">draw</a>(<a class="code" href="../../db/ddf/classrune_1_1_render_window.html">rune::RenderWindow</a>&amp; window)<span class="keyword"> override</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <a class="code" href="../../d3/d2c/classrune_1_1_quad.html">rune::Quad</a> boundingQuad(<a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a>(min), <a class="code" href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a>(max.<a class="code" href="../../d1/d81/classrune_1_1_vec2.html#ae0fbd4d0a9ed1d125fea740a3314db84">x</a> - min.<a class="code" href="../../d1/d81/classrune_1_1_vec2.html#ae0fbd4d0a9ed1d125fea740a3314db84">x</a>, max.<a class="code" href="../../d1/d81/classrune_1_1_vec2.html#abd211d88a8b6ebcba1b2068f59b0cc5a">y</a> - min.<a class="code" href="../../d1/d81/classrune_1_1_vec2.html#abd211d88a8b6ebcba1b2068f59b0cc5a">y</a>));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="comment">//rune::Quad boundingQuad(rune::Vec2(min), rune::Vec2(max.x - min.x, max.y - min.y));</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      boundingQuad.drawQuad(window);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="comment">//boundingQuad.drawQuad(window);</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    </div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
@@ -108,12 +108,9 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}<span class="comment">//namespace physics</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassrune_1_1_vec2_html_ae0fbd4d0a9ed1d125fea740a3314db84"><div class="ttname"><a href="../../d1/d81/classrune_1_1_vec2.html#ae0fbd4d0a9ed1d125fea740a3314db84">rune::Vec2::x</a></div><div class="ttdeci">double x</div><div class="ttdoc">X coordinate of the vector.</div><div class="ttdef"><b>Definition:</b> vec2.h:23</div></div>
 <div class="ttc" id="anamespacephysics_html"><div class="ttname"><a href="../../d5/dd0/namespacephysics.html">physics</a></div><div class="ttdoc">The physics module responsible for handling and resolving collisions between physics::Collider2D.</div><div class="ttdef"><b>Definition:</b> AABB.h:6</div></div>
-<div class="ttc" id="aclassrune_1_1_vec2_html_abd211d88a8b6ebcba1b2068f59b0cc5a"><div class="ttname"><a href="../../d1/d81/classrune_1_1_vec2.html#abd211d88a8b6ebcba1b2068f59b0cc5a">rune::Vec2::y</a></div><div class="ttdeci">double y</div><div class="ttdoc">Y coordinate of the vector.</div><div class="ttdef"><b>Definition:</b> vec2.h:25</div></div>
 <div class="ttc" id="aclassphysics_1_1_a_a_b_b_html_ad3fb8f38948b941bb892b5b09378f68d"><div class="ttname"><a href="../../d5/d6e/classphysics_1_1_a_a_b_b.html#ad3fb8f38948b941bb892b5b09378f68d">physics::AABB::draw</a></div><div class="ttdeci">void draw(rune::RenderWindow &amp;window) override</div><div class="ttdoc">Draw the object to a render window.</div><div class="ttdef"><b>Definition:</b> AABB.h:22</div></div>
 <div class="ttc" id="aclassrune_1_1_drawable_html"><div class="ttname"><a href="../../d9/d60/classrune_1_1_drawable.html">rune::Drawable</a></div><div class="ttdoc">Interface class for creating something that can be drawn to the screen.</div><div class="ttdef"><b>Definition:</b> drawable.h:19</div></div>
-<div class="ttc" id="aclassrune_1_1_quad_html"><div class="ttname"><a href="../../d3/d2c/classrune_1_1_quad.html">rune::Quad</a></div><div class="ttdef"><b>Definition:</b> quad.h:10</div></div>
 <div class="ttc" id="aclassrune_1_1_render_window_html"><div class="ttname"><a href="../../db/ddf/classrune_1_1_render_window.html">rune::RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:25</div></div>
 <div class="ttc" id="aclassrune_1_1_vec2_html"><div class="ttname"><a href="../../d1/d81/classrune_1_1_vec2.html">rune::Vec2</a></div><div class="ttdoc">1 x 2 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:19</div></div>
 <div class="ttc" id="aclassphysics_1_1_a_a_b_b_html"><div class="ttname"><a href="../../d5/d6e/classphysics_1_1_a_a_b_b.html">physics::AABB</a></div><div class="ttdoc">Axis aligned bounding box for each object.</div><div class="ttdef"><b>Definition:</b> AABB.h:9</div></div>

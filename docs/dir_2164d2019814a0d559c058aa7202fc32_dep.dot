@@ -1,9 +1,0 @@
-digraph "EngineDataStructures" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  subgraph clusterdir_7c293338c1b03e9273a7bae543bf144e {
-    graph [ bgcolor="#ddddee", pencolor="black", label="src" fontname="Helvetica", fontsize="10", URL="dir_7c293338c1b03e9273a7bae543bf144e.html"]
-  dir_2164d2019814a0d559c058aa7202fc32 [shape=box, label="EngineDataStructures", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2164d2019814a0d559c058aa7202fc32.html"];
-  }
-}

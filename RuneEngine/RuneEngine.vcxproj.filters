@@ -141,9 +141,6 @@
     <ClCompile Include="src\Physics\Colliders\circleCollider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Renderer\quad.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameApplication.h">
@@ -309,9 +306,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Physics\Colliders\collider.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Renderer\quad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

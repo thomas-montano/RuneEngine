@@ -98,7 +98,6 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Renderer\quad.cpp" />
     <ClCompile Include="src\Events\subject.cpp" />
     <ClCompile Include="src\Animation\animationController.cpp" />
     <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
@@ -143,7 +142,6 @@ xcopy /y "$(OutDir)RuneEngine.dll" "$(SolutionDir)bin\$(Configuration)-$(Platfor
     <ClCompile Include="src\SceneManager\sceneManager.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Renderer\quad.h" />
     <ClInclude Include="src\Events\observer.h" />
     <ClInclude Include="src\Events\subject.h" />
     <ClInclude Include="src\Animation\animationController.h" />
