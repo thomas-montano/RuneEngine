@@ -95,7 +95,7 @@ public:
  * 
  * @endcode
  * 
- * After you have created your new rune::GameObject, go ahead and create a cpp file so that we can set up all these components we've just declared. For any of the components that have constructors you want to use, go ahead
+ * After you have created your new rune::GameObject, go ahead and create a .cpp file (or just do this all in the header file) so that we can set up all these components we've just declared. For any of the components that have constructors you want to use, go ahead
  * and declare these in the initialization line.
  * 
  * @code 

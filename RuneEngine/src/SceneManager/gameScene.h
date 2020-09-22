@@ -82,3 +82,81 @@ public:
 }
 
 #endif
+
+/**
+ * @page GameScenes How to Make Your Own rune::GameScene
+ * 
+ * Start off by declaring the header file and including all the objects you'll need for this scene.
+ * 
+ * @code
+ * 
+ * #include <RuneEngine.h>
+#include "..\Objects\player.h"
+#include "..\Objects\ball.h"
+#include "..\Objects\boxObject.h"
+#include "..\Objects\boxMarker.h"
+#include "..\Objects\floorTile.h"
+#include "..\Scripts\frameCounter.h"
+#include "..\Objects\cloud.h"
+#include "..\Scripts\lightController.h"
+
+class FirstLevel : public rune::GameScene
+{
+
+private:
+
+  //Add a player object
+  Player playerObject;
+
+  //Create the scene floor
+  FloorTile groundTile1;
+  FloorTile groundTile2;
+
+  rune::Camera sceneCamera;
+
+
+};
+ * 
+ * @endcode
+ * 
+ * After you have all of these objects added in the header, go ahead and instantiate the objects in the scene by creating a `doInit(void)` function.
+ * 
+ * @code
+ *public: 
+ *  virtual void doInit(void) override;
+ *  
+ * @endcode
+ * 
+ * Then in this function you can add objects to scene, set up cameras, change positions of objects, and any other call you code make to a rune::GameObject.
+ * 
+ * @code
+ * 
+ * void FirstLevel::doInit(void)
+{
+  //Change the color that the screen will be cleared with.
+  clearColor = rune::Color(49,77,121);
+
+  //Add player object
+  addObjectToScene(playerObject)
+
+  //Add the floor to the scene
+  addObjectToScene(groundTile1);
+  addObjectToScene(groundTile2);
+
+  //Change the position of each object independently.
+  m_groundTile1.transform.setPosition(rune::Vec3(0,0));
+  m_groundTile2.transform.setPosition(rune::Vec3(128, 0));
+
+  //Set up the camera
+  SceneCamera.setZoom(2.5);
+  SceneCamera.setCenter(rune::Vec2(m_player.transform.getPosition().x+180, m_player.transform.getPosition().y+30));
+  getGameInstance()->getWindow()->setCamera(SceneCamera);
+
+ * 
+ * @endcode
+ * 
+ * And now you should have your first rune::GameScene up and running! All that's left to do is add it to your rune::GameApplication in your main function.
+ * 
+ * See how to [create a new rune::GameApplication](d3/d93/entry_point.html)
+ * 
+ */

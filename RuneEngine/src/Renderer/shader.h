@@ -104,6 +104,8 @@ public:
  * 
  * @endcode
  *
+ * @section vertex Create a Vertex Shader
+ * 
  * This will set up a new vertex and fragment shader to be used by the sprite object.
  * 
  * @code
@@ -148,7 +150,7 @@ public:
     
     @endcode
 
-    Declare a fragment shader:
+    @section fragment Create a Fragment Shader:
 
     @code
 

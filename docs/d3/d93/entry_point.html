@@ -69,8 +69,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>In order to start a new project, you have to create an entry point for the game and then load in the scenes you want to use.</p>
-<h1><a class="anchor" id="Intro"></a>
-Create Your Entry Point</h1>
 <p>Once you have created your entry point, go ahead and create some GameScenes to load into the <a class="el" href="../../d1/da1/classrune_1_1_game_application.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">rune::GameApplication</a>.</p>
 <div class="fragment"><div class="line"><span class="comment">//Add this pragma comment to disable the console if you haven&#39;t already done so.</span></div>
 <div class="line"><span class="preprocessor">#pragma comment(linker, &quot;/SUBSYSTEM:windows /ENTRY:mainCRTStartup&quot;)</span></div>
@@ -102,50 +100,11 @@ Create Your Entry Point</h1>
 <div class="line">  <span class="keyword">delete</span> firstLevel;</div>
 <div class="line">  <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1><a class="anchor" id="GameScene"></a>
-Create your first GameScene:</h1>
-<p>By creating these GameScenes, you will have a scene to load into your <a class="el" href="../../d1/da1/classrune_1_1_game_application.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">rune::GameApplication</a>.</p>
-<p>firstLevel.h: </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef FIRSTLEVEL_H_INCLUDED</span></div>
-<div class="line"><span class="preprocessor">#define FIRSTLEVEL_H_INCLUDED</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;RuneEngine.h&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="comment">//This is a rune::GameObject that is created in a later guide.</span></div>
-<div class="line"><span class="preprocessor">#include &quot;playerCharacter.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>FirstLevel : <span class="keyword">public</span> GameScene</div>
-<div class="line">{</div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line"> Player m_player;</div>
-<div class="line"> </div>
-<div class="line"> <span class="comment">//If you want to have a non static camera, go ahead and create that here.</span></div>
-<div class="line"> <a class="code" href="../../d2/d0f/classrune_1_1_camera.html">rune::Camera</a> m_sceneCamera;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line"> </div>
-<div class="line">};</div>
-</div><!-- fragment --><p>firstLevel.cpp:</p>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;firstLevel.h&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> FirstLevel::doInit(<span class="keywordtype">void</span>)</div>
-<div class="line">{</div>
-<div class="line"> </div>
-<div class="line"> <span class="comment">//Set up the background color for your scene.</span></div>
-<div class="line"> clearColor = <a class="code" href="../../df/d5a/classrune_1_1_color.html#a5958b48f6e41cfabb99105e1b3dbab97">rune::Color::Blue</a>; </div>
-<div class="line"> </div>
-<div class="line"> <span class="comment">//Set up your level layout here</span></div>
-<div class="line"> addObjectToScene(m_player);</div>
-<div class="line"> </div>
-<div class="line"> <span class="comment">//Make sure to set the zoom to something greater than zero.</span></div>
-<div class="line"> m_sceneCamera.setZoom(4);</div>
-<div class="line"> </div>
-<div class="line">}</div>
-</div><!-- fragment --><dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
+</div><!-- fragment --><p>To see how to create your own <a class="el" href="../../d5/d91/classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">rune::GameScene</a>, <a href="../../d0/dbc/_game_scenes.html">check out that programming guide.</a></p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>June 17 2020 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
-<div class="ttc" id="aclassrune_1_1_color_html_a5958b48f6e41cfabb99105e1b3dbab97"><div class="ttname"><a href="../../df/d5a/classrune_1_1_color.html#a5958b48f6e41cfabb99105e1b3dbab97">rune::Color::Blue</a></div><div class="ttdeci">static Color Blue</div><div class="ttdoc">Blue predefined color.</div><div class="ttdef"><b>Definition:</b> color.h:38</div></div>
-<div class="ttc" id="aclassrune_1_1_camera_html"><div class="ttname"><a href="../../d2/d0f/classrune_1_1_camera.html">rune::Camera</a></div><div class="ttdoc">This class is used to control the viewport of the scene.</div><div class="ttdef"><b>Definition:</b> camera.h:22</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

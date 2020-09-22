@@ -199,7 +199,7 @@ public:
  * 
  * If you would like to have your object move, you will need to specify the mass of the RigidBody. You can do this like so:
  * 
- * @subsection Initialization Adding a RigidBody to your GameObject.
+ * @subsection Initialization Adding a static (non-moving) RigidBody to your GameObject.
  * 
  * @code
  * 

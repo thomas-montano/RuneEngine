@@ -2,8 +2,6 @@
  * @page entryPoint How To Create Your First Rune Application
  * In order to start a new project, you have to create an entry point for the game and then load in the scenes you want to use.
  * 
- * \section Intro Create Your Entry Point
- * 
  * Once you have created your entry point, go ahead and create some GameScenes to load into the rune::GameApplication.
  * 
  * @code
@@ -41,59 +39,7 @@
  *
  * @endcode
  * 
- * 
- * @section GameScene Create your first GameScene:
- * 
- * By creating these GameScenes, you will have a scene to load into your rune::GameApplication.
- * 
- * firstLevel.h:
- * @code
- * 
- * 
- * #ifndef FIRSTLEVEL_H_INCLUDED
- * #define FIRSTLEVEL_H_INCLUDED
- * 
- * #include <RuneEngine.h>
- * 
- * //This is a rune::GameObject that is created in a later guide.
- * #include "playerCharacter.h"
- * 
- * class FirstLevel : public GameScene
- * {
- * private:
- *  Player m_player;
- * 
- *  //If you want to have a non static camera, go ahead and create that here.
- *  rune::Camera m_sceneCamera;
- * 
- * public:
- * 
- * };
- * 
- * @endcode
- * 
- * firstLevel.cpp:
- * 
- * @code
- * 
- * #include "firstLevel.h"
- * 
- * void FirstLevel::doInit(void)
- * {
- * 
- *  //Set up the background color for your scene.
- *  clearColor = rune::Color::Blue; 
- * 
- *  //Set up your level layout here
- *  addObjectToScene(m_player);
- *  
- *  //Make sure to set the zoom to something greater than zero.
- *  m_sceneCamera.setZoom(4);
- * 
- * }
- * 
- * @endcode
- * 
+ * To see how to create your own rune::GameScene, [check out that programming guide.](d0/dbc/_game_scenes.html)
  * 
  * @author Thomas Montano
  * @date June 17 2020 

@@ -48,7 +48,7 @@ public:
 /**
  * @page Components How To Make Your Own Custom Components
  * 
- * Starting to add new functionality to a rune::GameObject is one of the most important parts of making a game. This is accomplised in Rune through the addition of a rune::Component to your rune::GameObject.
+ * Starting to add new functionality to a rune::GameObject is one of the most important parts of making a game. This is accomplished in Rune through the addition of a rune::Component to your rune::GameObject.
  * You can add a new component created by you the same as any other predefined component. This is how you would go about making your own component.
  * 
  * @code 
