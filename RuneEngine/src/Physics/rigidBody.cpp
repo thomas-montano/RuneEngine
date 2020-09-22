@@ -19,13 +19,21 @@ physics::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::
     objectBody.gravityFactor = gravity;
   }
 
+  objectBody.restitution = 0.0;
+  objectBody.staticFriction = 0.4;
+  objectBody.dynamicFriction = 0.2;
+
+  objectBody.angleOfRotation = 0;
+  objectBody.angularVelocity = 0;
+  objectBody.velocity = rune::Vec2(0, 0);
+
 }
 
 void physics::RigidBody::start()
 {
   rune::Vec3 dimensions = parentObject->transform.getScale();
 
-  setUpObject(dimensions.x,dimensions.y,10,false);
+  setUpObject(dimensions.x,dimensions.y,1.0/objectBody.invMass,false);
 }
 
 
@@ -38,10 +46,6 @@ void physics::RigidBody::start()
 void physics::RigidBody::setUpObject(int width, int height, double mass, bool rotation)
 {
 
-    objectBody.restitution = 0.0;
-    objectBody.staticFriction = 0.4;
-    objectBody.dynamicFriction = 0.2;
-
     objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
     objectBody.vertexes[1] = rune::Vec2(0.5*width,0.5*height); //Top right
     objectBody.vertexes[2] = rune::Vec2(0.5*width,-0.5*height); //Bottom right
@@ -50,28 +54,17 @@ void physics::RigidBody::setUpObject(int width, int height, double mass, bool ro
     objectBody.xPos = parentObject->transform.getPosition().x + 0.5 * width;
     objectBody.yPos = parentObject->transform.getPosition().y + 0.5 * height;
     
-    if(rotation == false)
+    if (rotation == false)
     {
-        objectBody.invInertia = 0;
+      objectBody.invInertia = 0;
     }
     else
     {
-        objectBody.invInertia = 1.0 / (mass*(pow(height,2)+pow(width,2))/12);
+      objectBody.invInertia = 1.0 / (mass * (pow(height, 2) + pow(width, 2)) / 12);
     }
-
-    /*objectBody.box.setPosition(rune::Vec2(xPos,yPos));
-    objectBody.box.setSize(rune::Vec2(width,height));
-    objectBody.box.setOrigin(0.5*width,0.5*height);
-    objectBody.box.setFillColor(sf::Color(255,102,178,128));
-    objectBody.box.setOutlineThickness(-1);
-    objectBody.box.setOutlineColor(sf::Color::White);*/
 
     objectBody.boundingBox.min = rune::Vec2(objectBody.xPos-0.5*width,objectBody.yPos-0.5*height);
     objectBody.boundingBox.max = objectBody.vertexes[1] + objectBody.boundingBox.min;
-
-    objectBody.angleOfRotation = 0;
-    objectBody.angularVelocity = 0;
-    objectBody.velocity = rune::Vec2(0,0);
 
 }
 
@@ -273,12 +266,22 @@ double physics::RigidBody::getStaticFriction(void)
     return objectBody.staticFriction;
 }
 
+void physics::RigidBody::setStaticFriction(float friction)
+{
+  objectBody.staticFriction = friction;
+}
+
 /**
  * @return The coefficient of dynamic friction for the RigidBody.
 */
 double physics::RigidBody::getDynamicFriction(void)
 {
     return objectBody.dynamicFriction;
+}
+
+void physics::RigidBody::setDynamicFriction(float friction)
+{
+  objectBody.dynamicFriction = friction;
 }
 
 /**

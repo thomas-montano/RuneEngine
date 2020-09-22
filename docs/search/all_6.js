@@ -46,5 +46,5 @@ var searchData=
   ['getwindow_128',['getWindow',['../d1/da1/classrune_1_1_game_application.html#aff4e7b7333418f8d280689d1a6c6a2e5',1,'rune::GameApplication']]],
   ['getzoom_129',['getZoom',['../d2/d0f/classrune_1_1_camera.html#abf901f3ca5764879a77375a99285c7b6',1,'rune::Camera']]],
   ['grave_5faccent_130',['GRAVE_ACCENT',['../d1/da2/classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a26f1587e83ce6e19fd6801596ed7d871',1,'rune::Keyboard']]],
-  ['green_131',['green',['../df/d5a/classrune_1_1_color.html#a24a400837cedc1f2eb74d53cf58acf7d',1,'rune::Color::green()'],['../df/d5a/classrune_1_1_color.html#adfab573ad0705c46386b28c0713d4322',1,'rune::Color::Green()']]]
+  ['green_131',['Green',['../df/d5a/classrune_1_1_color.html#adfab573ad0705c46386b28c0713d4322',1,'rune::Color::Green()'],['../df/d5a/classrune_1_1_color.html#a24a400837cedc1f2eb74d53cf58acf7d',1,'rune::Color::green()']]]
 ];

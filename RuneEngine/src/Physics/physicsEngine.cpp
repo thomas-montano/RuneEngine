@@ -322,7 +322,7 @@ void physics::resolveCollisions(std::vector<physics::collision> collisions)
       //Move the objects out of each other
       positionalCorrection(object1,object2,collision.depth, collision.normalVector);
 
-      double e = std::min(object1->getRestitution(),object2->getRestitution()); // Restitution factor
+      double e = std::max(object1->getRestitution(),object2->getRestitution()); // Restitution factor
 
       double j = -(1 + e) * velAlongNormal;
       double jt = -1* rune::dotProduct(relativeV,tangent);

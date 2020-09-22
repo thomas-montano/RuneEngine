@@ -150,8 +150,14 @@ public:
     ///Get the coefficient of static friction.
     double getStaticFriction(void);
 
-    //Get the coefficient of dynamic friction.
+    ///Set the coefficient of static friction.
+    void setStaticFriction(float friction);
+
+    ///Get the coefficient of dynamic friction.
     double getDynamicFriction(void);
+
+    ///Set the coefficient of dynamic friction.
+    void setDynamicFriction(float friction);
 
     ///Get the current orientation of the rigid body.
     double getOrientation(void);
