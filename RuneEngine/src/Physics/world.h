@@ -1,5 +1,5 @@
 /**
- * @class rune::World
+ * @class physics::World
  * @brief A physics world that contains all the information needed to run physics
  *
  * @author Thomas Montano

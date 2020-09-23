@@ -141,6 +141,7 @@ void rune::GameScene::updateComponents()
 }
 
 ///@param window A handle to the rune::RenderWindow that is being drawn to.
+/// @warning This function is only meant to be used in between a frame buffer bind and unbind only.
 void rune::GameScene::renderScene(RenderWindow& window)
 {
 
@@ -227,7 +228,6 @@ void rune::GameScene::handleCleanup(void)
 }
 
 /**
- * Determines whether or not the state is currently active.
  * @return Whether or not the current scene is flagged as active.
  */
 bool rune::GameScene::isActive()

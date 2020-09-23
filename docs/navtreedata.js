@@ -31,16 +31,17 @@ var NAVTREE =
       [ "Engine Features", "index.html#features", null ],
       [ "Engine Issues", "index.html#bugs", null ]
     ] ],
-    [ "GameObjects", "_game_objects.html", [
+    [ "Game Objects", "_game_objects.html", [
       [ "Creating an Object", "_game_objects.html#objects", null ],
       [ "Scripting", "_game_objects.html#Scripts", null ]
     ] ],
     [ "Entry Point", "entry_point.html", null ],
     [ "Physics", "physics.html", null ],
     [ "Shaders", "shaders.html", [
-      [ "Create a Fragment Shader:", "shaders.html#fragment", null ]
+      [ "Vertex Shader", "shaders.html#vertex", null ],
+      [ "Fragment Shader", "shaders.html#fragment", null ]
     ] ],
-    [ "GameScenes", "scenes.html", null ],
+    [ "Game Scenes", "scenes.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

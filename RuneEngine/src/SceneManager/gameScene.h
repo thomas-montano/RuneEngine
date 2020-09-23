@@ -69,7 +69,7 @@ public:
   void startComponents(void);
   ///Call the update function for all the components on all the objects in the scene.
   void updateComponents(void);
-  ///This function should be used in between a frame buffer bind and unbind only.
+  ///Makes all of the draw calls for the scene.
   void renderScene(RenderWindow& window);
   ///Determines whether or not the scene is currently active.
   bool isActive(void);
@@ -84,7 +84,7 @@ public:
 #endif
 
 /**
- * @page scenes GameScenes
+ * @page scenes Game Scenes
  * 
  * Start off by declaring the header file and including all the objects you'll need for this scene.
  * 

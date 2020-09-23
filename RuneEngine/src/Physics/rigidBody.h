@@ -54,25 +54,40 @@ struct AABB
 ///Rigid body struct containing all the information for a physically realistic response.
 struct body
 {
+  ///Vertices of the body
+  rune::Vec2 vertexes[4]; 
+  ///Broad phase Minimum bounding box
+  AABB boundingBox; 
+  ///X position in world coordinates
+  double xPos;
+  ///Y Position in world coordinates
+  double yPos; 
+  ///Previous position in world coordinates
+  rune::Vec2 oldPosition; 
+  ///Velocity
+  rune::Vec2 velocity; 
+  /// 1/mass of the object
+  double invMass; 
+  ///How much gravity does this object have
+  rune::Vec2 gravityFactor; 
 
-  rune::Vec2 vertexes[4]; ///Specific Vertexes
-  AABB boundingBox; //Broad phase Minimum bounding box
-  double xPos; //X position in world coordinates
-  double yPos; //Y Position in world coordinates
-  rune::Vec2 oldPosition; //Previous position in world coordinates
-  rune::Vec2 velocity; //Velocity
-  double invMass; // 1/mass of the object
-  rune::Vec2 gravityFactor; //How much gravity does this object have
-  double restitution; //How bouncy, between 0 and 1
-
-  double staticFriction; //Coefficient of static friction
-  double dynamicFriction; //Coefficient of dynamic friction
-
-  double angleOfRotation; //Current angle of rotation
-  double angularVelocity; //Rate of change of rotation
-  double torque; //Rotational torque on the object
-  double invInertia;
-  double rotationalRadius;
+  ///How bouncy, between 0 and 1
+  double restitution; 
+  ///Coefficient of static friction
+  double staticFriction; 
+  ///Coefficient of dynamic friction
+  double dynamicFriction; 
+  
+  ///Coefficient of dynamic friction
+  double angleOfRotation; 
+  ///Rate of change of rotation
+  double angularVelocity; 
+  ///Rotational torque on the object
+  double torque; 
+  ///Inverse inertia of the body
+  double invInertia; 
+  ///Largest radius that can have a moment applied to it
+  double rotationalRadius; 
 
 };
 
@@ -111,7 +126,7 @@ public:
     ///Add some vector to the current position.
     void addPosition(rune::Vec2 newPos);
 
-    //Get the current rigid body position
+    ///Get the current rigid body position
     rune::Vec2 getPosition(void);
     
     ///Add to the objects current velocity vector.
@@ -223,7 +238,7 @@ public:
  * 
  * @code
  * 
- * @include "player.h"
+ * #include "player.h"
  * 
  * Player::Player()
  *  : myBody(10,rune::Vec2(0,-10))

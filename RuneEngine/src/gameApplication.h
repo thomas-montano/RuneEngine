@@ -41,8 +41,6 @@
  * 
  * To see how to create your own rune::GameScene, [check out that programming guide.](_game_scenes.html)
  * 
- * @author Thomas Montano
- * @date June 17 2020 
  * 
  */
 

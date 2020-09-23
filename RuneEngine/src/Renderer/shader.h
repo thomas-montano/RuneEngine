@@ -4,6 +4,7 @@
  * 
  * @author Thomas Montano
  * @date April 25 2020
+ * 
  */
 
 #ifndef SHADER_H_DEFINED
@@ -105,7 +106,7 @@ public:
  * 
  * @endcode
  *
- * @subsection vertex Create a Vertex Shader
+ * @section vertex Vertex Shader
  * 
  * This will set up a new vertex and fragment shader to be used by the sprite object.
  * 
@@ -134,7 +135,7 @@ public:
 
     if(rotation != 0)
     {
-      float angle = radians(rotation);\n"
+      float angle = radians(rotation);
       mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));
 
       vertices = vertices - (cameraZoom*origin - cameraPos);
@@ -151,24 +152,24 @@ public:
     
     @endcode
 
-    @section fragment Create a Fragment Shader:
+    @section fragment Fragment Shader
 
     @code
 
     #shader fragment
     #version 330 core
 
-    "out vec4 FragColor;\n"
+    out vec4 FragColor;
 
-    "in vec4 ourColor;\n"
-    "in vec2 TexCoord;\n"
+    in vec4 ourColor;
+    in vec2 TexCoord;
 
-    "uniform sampler2D ourTexture;\n"
+    uniform sampler2D ourTexture;
 
-    "void main()\n"
-    "{\n"
-      "FragColor = texture(ourTexture, TexCoord) * ourColor;\n"
-    "}\n");
+    void main()
+    {
+      FragColor = texture(ourTexture, TexCoord) * ourColor;
+    }
  * 
  * @endcode
  * 

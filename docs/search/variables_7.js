@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['red_605',['Red',['../classrune_1_1_color.html#a6ddf3aec445929c3605579c921886514',1,'rune::Color::Red()'],['../classrune_1_1_color.html#a736c8f165e05399846cd57318e2a309a',1,'rune::Color::red()']]]
+  ['m_5ferrorcode_624',['m_errorCode',['../classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f',1,'rune::GameApplication']]],
+  ['magenta_625',['Magenta',['../classrune_1_1_color.html#a62e0ea9ef7f2fb4887e4ca6f2f3bccb7',1,'rune::Color']]]
 ];

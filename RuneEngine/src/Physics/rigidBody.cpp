@@ -175,7 +175,7 @@ double physics::RigidBody::getRestitution(void)
 */
 void physics::RigidBody::setRestitution(double newRest)
 {
-    objectBody.restitution = newRest;
+    objectBody.restitution = newRest > 1.0 ? 1.0:newRest;
 }
 
 /**

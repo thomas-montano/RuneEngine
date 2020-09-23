@@ -94,8 +94,8 @@ $(document).ready(function(){initNavTree('shaders.html',''); initResizable(); })
 <div class="fragment"><div class="line"><a class="code" href="classrune_1_1_shader.html">rune::Shader</a> mySprite;</div>
 <div class="line"> </div>
 <div class="line">mySprite.changeShader(<span class="stringliteral">&quot;path to your shader&quot;</span>);</div>
-</div><!-- fragment --><h2><a class="anchor" id="vertex"></a>
-Create a Vertex Shader</h2>
+</div><!-- fragment --><h1><a class="anchor" id="vertex"></a>
+Vertex Shader</h1>
 <p>This will set up a new vertex and fragment shader to be used by the sprite object.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#shader vertex</span></div>
 <div class="line"><span class="preprocessor">#version 330 core</span></div>
@@ -120,45 +120,45 @@ Create a Vertex Shader</h2>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span>(rotation != 0)</div>
 <div class="line">  {</div>
-<div class="line">    <span class="keywordtype">float</span> angle = radians(rotation);\n<span class="stringliteral">&quot;</span></div>
-<div class="line"><span class="stringliteral">    mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">    vertices = vertices - (cameraZoom*origin - cameraPos);</span></div>
-<div class="line"><span class="stringliteral">    vertices = rotationMatrix * vertices;</span></div>
-<div class="line"><span class="stringliteral">    vertices = vertices + (cameraZoom*origin - cameraPos);</span></div>
-<div class="line"><span class="stringliteral">  }</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">  ourColor = aColor;</span></div>
-<div class="line"><span class="stringliteral">  gl_Position = vec4(vertices,0,1);</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">  TexCoord = aTexCoord;</span></div>
-<div class="line"><span class="stringliteral"></span> </div>
-<div class="line"><span class="stringliteral">}</span></div>
+<div class="line">    <span class="keywordtype">float</span> angle = radians(rotation);</div>
+<div class="line">    mat2 rotationMatrix = mat2(cos(angle), aspectRatio*sin(angle), -sin(angle)/aspectRatio, cos(angle));</div>
+<div class="line"> </div>
+<div class="line">    vertices = vertices - (cameraZoom*origin - cameraPos);</div>
+<div class="line">    vertices = rotationMatrix * vertices;</div>
+<div class="line">    vertices = vertices + (cameraZoom*origin - cameraPos);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  ourColor = aColor;</div>
+<div class="line">  gl_Position = vec4(vertices,0,1);</div>
+<div class="line"> </div>
+<div class="line">  TexCoord = aTexCoord;</div>
+<div class="line"> </div>
+<div class="line">}</div>
 </div><!-- fragment --><h1><a class="anchor" id="fragment"></a>
-Create a Fragment Shader:</h1>
+Fragment Shader</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#shader fragment</span></div>
 <div class="line"><span class="preprocessor">#version 330 core</span></div>
 <div class="line"> </div>
-<div class="line"><span class="stringliteral">&quot;out vec4 FragColor;\n&quot;</span></div>
+<div class="line">out vec4 FragColor;</div>
 <div class="line"> </div>
-<div class="line"><span class="stringliteral">&quot;in vec4 ourColor;\n&quot;</span></div>
-<div class="line"><span class="stringliteral">&quot;in vec2 TexCoord;\n&quot;</span></div>
+<div class="line">in vec4 ourColor;</div>
+<div class="line">in vec2 TexCoord;</div>
 <div class="line"> </div>
-<div class="line"><span class="stringliteral">&quot;uniform sampler2D ourTexture;\n&quot;</span></div>
+<div class="line">uniform sampler2D ourTexture;</div>
 <div class="line"> </div>
-<div class="line"><span class="stringliteral">&quot;void main()\n&quot;</span></div>
-<div class="line"><span class="stringliteral">&quot;{\n&quot;</span></div>
-<div class="line">  <span class="stringliteral">&quot;FragColor = texture(ourTexture, TexCoord) * ourColor;\n&quot;</span></div>
-<div class="line"><span class="stringliteral">&quot;}\n&quot;</span>);</div>
+<div class="line"><span class="keywordtype">void</span> main()</div>
+<div class="line">{</div>
+<div class="line">  FragColor = texture(ourTexture, TexCoord) * ourColor;</div>
+<div class="line">}</div>
 </div><!-- fragment --> </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassrune_1_1_shader_html"><div class="ttname"><a href="classrune_1_1_shader.html">rune::Shader</a></div><div class="ttdoc">A shader that can be used to render objects to the screen.</div><div class="ttdef"><b>Definition:</b> shader.h:40</div></div>
+<div class="ttc" id="aclassrune_1_1_shader_html"><div class="ttname"><a href="classrune_1_1_shader.html">rune::Shader</a></div><div class="ttdoc">A shader that can be used to render objects to the screen.</div><div class="ttdef"><b>Definition:</b> shader.h:41</div></div>
 <!-- start footer part -->
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="footer">
-					Generated on Wed Sep 23 2020 09:55:37 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Sep 23 2020 10:22:02 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.
 				</li>

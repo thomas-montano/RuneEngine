@@ -13,9 +13,11 @@ var searchData=
   ['addscene_10',['addScene',['../classrune_1_1_scene_manager.html#afb03e7cfc12e9e0b0a9efb695da73e42',1,'rune::SceneManager']]],
   ['addvelocity_11',['addVelocity',['../classphysics_1_1_rigid_body.html#a10e2318ca354c4b862c68c48d012c086',1,'physics::RigidBody']]],
   ['alpha_12',['alpha',['../classrune_1_1_color.html#a7fccc60da03f2555c28d66f46a29b844',1,'rune::Color']]],
-  ['animationcontroller_13',['AnimationController',['../classrune_1_1_animation_controller.html',1,'rune']]],
-  ['animationstate_14',['AnimationState',['../classrune_1_1_animation_state.html',1,'rune']]],
-  ['animationtransition_15',['AnimationTransition',['../classrune_1_1_animation_transition.html',1,'rune']]],
-  ['animator_16',['Animator',['../classrune_1_1_animator.html',1,'rune::Animator'],['../classrune_1_1_animator.html#a18d68ce7a4b1ac02521d40162197add8',1,'rune::Animator::Animator()']]],
-  ['apostrophe_17',['APOSTROPHE',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]]
+  ['angleofrotation_13',['angleOfRotation',['../structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2',1,'physics::body']]],
+  ['angularvelocity_14',['angularVelocity',['../structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9',1,'physics::body']]],
+  ['animationcontroller_15',['AnimationController',['../classrune_1_1_animation_controller.html',1,'rune']]],
+  ['animationstate_16',['AnimationState',['../classrune_1_1_animation_state.html',1,'rune']]],
+  ['animationtransition_17',['AnimationTransition',['../classrune_1_1_animation_transition.html',1,'rune']]],
+  ['animator_18',['Animator',['../classrune_1_1_animator.html',1,'rune::Animator'],['../classrune_1_1_animator.html#a18d68ce7a4b1ac02521d40162197add8',1,'rune::Animator::Animator()']]],
+  ['apostrophe_19',['APOSTROPHE',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]]
 ];

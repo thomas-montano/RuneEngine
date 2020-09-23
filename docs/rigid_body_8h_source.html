@@ -135,117 +135,130 @@ $(document).ready(function(){initNavTree('rigid_body_8h_source.html',''); initRe
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html">   55</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structphysics_1_1body.html">body</a></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> vertexes[4]; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">   59</a></span>&#160;  <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> <a class="code" href="structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">boundingBox</a>; <span class="comment">//Broad phase Minimum bounding box</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">double</span> xPos; <span class="comment">//X position in world coordinates</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">double</span> yPos; <span class="comment">//Y Position in world coordinates</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> oldPosition; <span class="comment">//Previous position in world coordinates</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> velocity; <span class="comment">//Velocity</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">double</span> invMass; <span class="comment">// 1/mass of the object</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> gravityFactor; <span class="comment">//How much gravity does this object have</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">double</span> restitution; <span class="comment">//How bouncy, between 0 and 1</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">double</span> staticFriction; <span class="comment">//Coefficient of static friction</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">double</span> dynamicFriction; <span class="comment">//Coefficient of dynamic friction</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">double</span> angleOfRotation; <span class="comment">//Current angle of rotation</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">double</span> angularVelocity; <span class="comment">//Rate of change of rotation</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">double</span> torque; <span class="comment">//Rotational torque on the object</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">double</span> invInertia;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">double</span> rotationalRadius;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="classphysics_1_1_rigid_body.html">   79</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="classphysics_1_1_rigid_body.html">RigidBody</a> : <span class="keyword">public</span> <a class="code" href="classrune_1_1_component.html">rune::Component</a></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="structphysics_1_1body.html">body</a> objectBody;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::vector&lt;collision&gt; involvedCollisions;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> start();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="classphysics_1_1_rigid_body.html">RigidBody</a>(<span class="keywordtype">double</span> mass = 0, <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> gravity = <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>(0,0));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> setUpObject(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">double</span> mass, <span class="keywordtype">bool</span> rotation);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> updateAABB();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> getBoundingBox(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> addAngularVelocity(<span class="keywordtype">double</span> angularVel);</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#add469c9cb08375ead4b68d45899a5583">   58</a></span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="structphysics_1_1body.html#add469c9cb08375ead4b68d45899a5583">vertexes</a>[4]; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">   60</a></span>&#160;  <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> <a class="code" href="structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">boundingBox</a>; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a634988dd784c0ba4fde3321655bb8979">   62</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#a634988dd784c0ba4fde3321655bb8979">xPos</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a895f7dd02a006e2932632717cb362317">   64</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#a895f7dd02a006e2932632717cb362317">yPos</a>; </div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#acd622a61bb98bd1708b9d5a09002d341">   66</a></span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="structphysics_1_1body.html#acd622a61bb98bd1708b9d5a09002d341">oldPosition</a>; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a59bbe8c7e1708dec38faa46ed5950541">   68</a></span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="structphysics_1_1body.html#a59bbe8c7e1708dec38faa46ed5950541">velocity</a>; </div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07">   70</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07">invMass</a>; </div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#ae5dff5ec1ea25e6e276eaeb3c8428cd8">   72</a></span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="structphysics_1_1body.html#ae5dff5ec1ea25e6e276eaeb3c8428cd8">gravityFactor</a>; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a77786add9ce4f9e0d3ace63eaef37a2a">   75</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#a77786add9ce4f9e0d3ace63eaef37a2a">restitution</a>; </div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#afefbc158f8d05cd17c4ea27b3a2caeef">   77</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#afefbc158f8d05cd17c4ea27b3a2caeef">staticFriction</a>; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#aa9295e93e61333f7c40e62ed15cf9c34">   79</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#aa9295e93e61333f7c40e62ed15cf9c34">dynamicFriction</a>; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  </div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2">   82</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2">angleOfRotation</a>; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9">   84</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9">angularVelocity</a>; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#adc41cc481c03597c1bf605be50d0a5ac">   86</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#adc41cc481c03597c1bf605be50d0a5ac">torque</a>; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555">   88</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555">invInertia</a>; </div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="structphysics_1_1body.html#adebd1f87dcd4913736410bfebe4a0f70">   90</a></span>&#160;  <span class="keywordtype">double</span> <a class="code" href="structphysics_1_1body.html#adebd1f87dcd4913736410bfebe4a0f70">rotationalRadius</a>; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classphysics_1_1_rigid_body.html">   94</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="classphysics_1_1_rigid_body.html">RigidBody</a> : <span class="keyword">public</span> <a class="code" href="classrune_1_1_component.html">rune::Component</a></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="structphysics_1_1body.html">body</a> objectBody;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::vector&lt;collision&gt; involvedCollisions;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> start();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> setRotation(<span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="classphysics_1_1_rigid_body.html">RigidBody</a>(<span class="keywordtype">double</span> mass = 0, <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> gravity = <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>(0,0));</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> setPosition(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> setUpObject(<span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">double</span> mass, <span class="keywordtype">bool</span> rotation);</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> addPosition(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> newPos);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> updateAABB();</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">//Get the current rigid body position</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getPosition(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> addVelocity(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> getBoundingBox(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> addAngularVelocity(<span class="keywordtype">double</span> angularVel);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">double</span> dT);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> setRotation(<span class="keywordtype">double</span> angle);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> interpolatePosition(<span class="keywordtype">double</span> alpha);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordtype">void</span> setPosition(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getGravity(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> addPosition(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> newPos);</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getVelocity(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> setVelocity(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getPosition(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    </div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> addVelocity(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getVertex(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> updatePosition(<span class="keywordtype">double</span> dT);</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">double</span> getInvMass(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> interpolatePosition(<span class="keywordtype">double</span> alpha);</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">double</span> getInvIntertia(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getGravity(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">double</span> getRestitution(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getVelocity(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> setRestitution(<span class="keywordtype">double</span>);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">void</span> setVelocity(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">double</span> getStaticFriction(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getVertex(<span class="keywordtype">int</span>);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">void</span> setStaticFriction(<span class="keywordtype">float</span> friction);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">double</span> getInvMass(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">double</span> getDynamicFriction(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">double</span> getInvIntertia(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">void</span> setDynamicFriction(<span class="keywordtype">float</span> friction);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">double</span> getRestitution(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">double</span> getOrientation(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> setRestitution(<span class="keywordtype">double</span>);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">double</span> getWidth(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">double</span> getStaticFriction(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">double</span> getHeight(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span> setStaticFriction(<span class="keywordtype">float</span> friction);</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getPreviousPosition(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">double</span> getDynamicFriction(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> setPreviousPosition(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> setDynamicFriction(<span class="keywordtype">float</span> friction);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> clearCollisions(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">double</span> getOrientation(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> addCollision(<a class="code" href="classphysics_1_1collision.html">collision</a>);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">double</span> getWidth(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::vector&lt;collision&gt; getCollisions(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">double</span> getHeight(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;};</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;}</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> getPreviousPosition(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">void</span> setPreviousPosition(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="keywordtype">void</span> clearCollisions(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> addCollision(<a class="code" href="classphysics_1_1collision.html">collision</a>);</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    std::vector&lt;collision&gt; getCollisions(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;};</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespacephysics_html"><div class="ttname"><a href="namespacephysics.html">physics</a></div><div class="ttdoc">The physics module responsible for handling and resolving collisions between physics::Collider2D.</div><div class="ttdef"><b>Definition:</b> AABB.h:7</div></div>
-<div class="ttc" id="aclassphysics_1_1_rigid_body_html"><div class="ttname"><a href="classphysics_1_1_rigid_body.html">physics::RigidBody</a></div><div class="ttdoc">Game object component that allows a game object to have collisions with other objects.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:80</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_add469c9cb08375ead4b68d45899a5583"><div class="ttname"><a href="structphysics_1_1body.html#add469c9cb08375ead4b68d45899a5583">physics::body::vertexes</a></div><div class="ttdeci">rune::Vec2 vertexes[4]</div><div class="ttdoc">Vertices of the body.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:58</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a810b0aaf5973b556f48132dbc58b4b07"><div class="ttname"><a href="structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07">physics::body::invMass</a></div><div class="ttdeci">double invMass</div><div class="ttdoc">1/mass of the object</div><div class="ttdef"><b>Definition:</b> rigidBody.h:70</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a77786add9ce4f9e0d3ace63eaef37a2a"><div class="ttname"><a href="structphysics_1_1body.html#a77786add9ce4f9e0d3ace63eaef37a2a">physics::body::restitution</a></div><div class="ttdeci">double restitution</div><div class="ttdoc">How bouncy, between 0 and 1.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:75</div></div>
+<div class="ttc" id="aclassphysics_1_1_rigid_body_html"><div class="ttname"><a href="classphysics_1_1_rigid_body.html">physics::RigidBody</a></div><div class="ttdoc">Game object component that allows a game object to have collisions with other objects.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:95</div></div>
 <div class="ttc" id="aclassrune_1_1_component_html"><div class="ttname"><a href="classrune_1_1_component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:23</div></div>
 <div class="ttc" id="aclassphysics_1_1collision_html"><div class="ttname"><a href="classphysics_1_1collision.html">physics::collision</a></div><div class="ttdoc">Collision manifold used for reporting rigid body collisions.</div><div class="ttdef"><b>Definition:</b> collision.h:8</div></div>
-<div class="ttc" id="astructphysics_1_1body_html_a76f4d9fa127e61d2e8aae7a5c728ceb7"><div class="ttname"><a href="structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">physics::body::boundingBox</a></div><div class="ttdeci">AABB boundingBox</div><div class="ttdoc">Specific Vertexes.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:59</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_acd622a61bb98bd1708b9d5a09002d341"><div class="ttname"><a href="structphysics_1_1body.html#acd622a61bb98bd1708b9d5a09002d341">physics::body::oldPosition</a></div><div class="ttdeci">rune::Vec2 oldPosition</div><div class="ttdoc">Previous position in world coordinates.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:66</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a28d6f6ed66b834f11db147af3be77fa2"><div class="ttname"><a href="structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2">physics::body::angleOfRotation</a></div><div class="ttdeci">double angleOfRotation</div><div class="ttdoc">Coefficient of dynamic friction.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:82</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_ae5dff5ec1ea25e6e276eaeb3c8428cd8"><div class="ttname"><a href="structphysics_1_1body.html#ae5dff5ec1ea25e6e276eaeb3c8428cd8">physics::body::gravityFactor</a></div><div class="ttdeci">rune::Vec2 gravityFactor</div><div class="ttdoc">How much gravity does this object have.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:72</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a76f4d9fa127e61d2e8aae7a5c728ceb7"><div class="ttname"><a href="structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7">physics::body::boundingBox</a></div><div class="ttdeci">AABB boundingBox</div><div class="ttdoc">Broad phase Minimum bounding box.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:60</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a634988dd784c0ba4fde3321655bb8979"><div class="ttname"><a href="structphysics_1_1body.html#a634988dd784c0ba4fde3321655bb8979">physics::body::xPos</a></div><div class="ttdeci">double xPos</div><div class="ttdoc">X position in world coordinates.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:62</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_adc41cc481c03597c1bf605be50d0a5ac"><div class="ttname"><a href="structphysics_1_1body.html#adc41cc481c03597c1bf605be50d0a5ac">physics::body::torque</a></div><div class="ttdeci">double torque</div><div class="ttdoc">Rotational torque on the object.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:86</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_afefbc158f8d05cd17c4ea27b3a2caeef"><div class="ttname"><a href="structphysics_1_1body.html#afefbc158f8d05cd17c4ea27b3a2caeef">physics::body::staticFriction</a></div><div class="ttdeci">double staticFriction</div><div class="ttdoc">Coefficient of static friction.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:77</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a297cd20edf2cb504cef19920bb7488f9"><div class="ttname"><a href="structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9">physics::body::angularVelocity</a></div><div class="ttdeci">double angularVelocity</div><div class="ttdoc">Rate of change of rotation.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:84</div></div>
 <div class="ttc" id="aclassrune_1_1_vec2_html"><div class="ttname"><a href="classrune_1_1_vec2.html">rune::Vec2</a></div><div class="ttdoc">1 x 2 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:20</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a895f7dd02a006e2932632717cb362317"><div class="ttname"><a href="structphysics_1_1body.html#a895f7dd02a006e2932632717cb362317">physics::body::yPos</a></div><div class="ttdeci">double yPos</div><div class="ttdoc">Y Position in world coordinates.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:64</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_ad181aec10ba252fb22aacbaa56874555"><div class="ttname"><a href="structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555">physics::body::invInertia</a></div><div class="ttdeci">double invInertia</div><div class="ttdoc">Inverse inertia of the body.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:88</div></div>
 <div class="ttc" id="astructphysics_1_1body_html"><div class="ttname"><a href="structphysics_1_1body.html">physics::body</a></div><div class="ttdoc">Rigid body struct containing all the information for a physically realistic response.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:56</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_aa9295e93e61333f7c40e62ed15cf9c34"><div class="ttname"><a href="structphysics_1_1body.html#aa9295e93e61333f7c40e62ed15cf9c34">physics::body::dynamicFriction</a></div><div class="ttdeci">double dynamicFriction</div><div class="ttdoc">Coefficient of dynamic friction.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:79</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_a59bbe8c7e1708dec38faa46ed5950541"><div class="ttname"><a href="structphysics_1_1body.html#a59bbe8c7e1708dec38faa46ed5950541">physics::body::velocity</a></div><div class="ttdeci">rune::Vec2 velocity</div><div class="ttdoc">Velocity.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:68</div></div>
+<div class="ttc" id="astructphysics_1_1body_html_adebd1f87dcd4913736410bfebe4a0f70"><div class="ttname"><a href="structphysics_1_1body.html#adebd1f87dcd4913736410bfebe4a0f70">physics::body::rotationalRadius</a></div><div class="ttdeci">double rotationalRadius</div><div class="ttdoc">Largest radius that can have a moment applied to it.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:90</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:5</div></div>
 <div class="ttc" id="aclassphysics_1_1_a_a_b_b_html"><div class="ttname"><a href="classphysics_1_1_a_a_b_b.html">physics::AABB</a></div><div class="ttdoc">Axis aligned bounding box for each object.</div><div class="ttdef"><b>Definition:</b> AABB.h:10</div></div>
 <!-- start footer part -->
@@ -253,7 +266,7 @@ $(document).ready(function(){initNavTree('rigid_body_8h_source.html',''); initRe
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_daeb7f425f971aed3e42bc1ac877a486.html">Physics</a></li><li class="navelem"><b>rigidBody.h</b></li>
 				<li class="footer">
-					Generated on Wed Sep 23 2020 09:55:37 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Sep 23 2020 10:22:02 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.
 				</li>
