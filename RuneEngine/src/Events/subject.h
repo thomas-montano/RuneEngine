@@ -15,18 +15,21 @@
 namespace rune{
 
   class Observer;
+  class Signal;
 
   class RUNE_ENGINE Subject
   {
   protected:
-    void notify(unsigned int signalValue);
+    void sendSignal(Signal);
 
     std::vector<Observer*> observers;
 
-    int numObservers;
+    ///Get the number of observers subscribed to this subject.
+    int getNumObservers(void);
+
   public:
     ///Tell the subject that an observer would like to be notified of signals.
-    bool subscribe(Observer& newObserver);
+    void subscribe(Observer& newObserver);
     ///Tell the subject that an observer would no longer like to be notified of signals.
     bool unsubscribe(Observer& newObserver);
 

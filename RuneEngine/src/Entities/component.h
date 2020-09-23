@@ -9,6 +9,8 @@
 #pragma once
 
 #include <core.h>
+#include <Events/Observer.h>
+#include <Events/signal.h>
 
 #ifndef BEHAVIOR_H_INCLUDED
 #define BEHAVIOR_H_INCLUDED
@@ -17,7 +19,7 @@ namespace rune{
 
 class GameObject;
 
-class RUNE_ENGINE Component
+class RUNE_ENGINE Component : public Observer
 {
 protected:
   GameObject* parentObject = nullptr;
@@ -39,43 +41,11 @@ public:
   void setEnable(bool newEnable);
   ///Gets whether or not the current component is enabled.
   bool isComponentEnabled(void);
+
+  void onNotify(Signal const& signal) override{}
+
   
 };
 }
 
 #endif
-
-/**
- * @page Components How To Make Your Own Custom Components
- * 
- * Starting to add new functionality to a rune::GameObject is one of the most important parts of making a game. This is accomplished in Rune through the addition of a rune::Component to your rune::GameObject.
- * You can add a new component created by you the same as any other predefined component. This is how you would go about making your own component.
- * 
- * @code 
- * 
- * #include <RuneEngine.h>
- * 
- * class CharacterController : public rune::Component
- * {
- * 
- * private:
- *  //Declare data members to be used by the component here
- *  //Pointers to components of other GameObject's are also useful to have here.
- * public:
- *  void start()
- *  {
- *    //Things to do when the component is first initialized.
- *  }
- * 
- *  void update()
- *  {
- *    //Things to do every frame.
- *  }
- * 
- * 
- * };
- * 
- * @endcode
- * 
- * 
- */

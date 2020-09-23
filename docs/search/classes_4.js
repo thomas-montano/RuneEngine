@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['framebuffer_366',['FrameBuffer',['../d5/d57/classrune_1_1_frame_buffer.html',1,'rune']]]
+  ['framebuffer_365',['FrameBuffer',['../classrune_1_1_frame_buffer.html',1,'rune']]]
 ];

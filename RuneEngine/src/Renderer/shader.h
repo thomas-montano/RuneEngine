@@ -89,7 +89,8 @@ public:
 #endif
 
 /**
- * @page Shaders How To Make Your Own Shaders
+ * 
+ * @page shaders Shaders
  * 
  * Make sure your vertex and fragment shaders are declared in the same file. The function will separate them for you.
  * Write up a vertex and fragment shader with the header #shader vertex or #shader fragment. The example code below details how this should be done.
@@ -104,7 +105,7 @@ public:
  * 
  * @endcode
  *
- * @section vertex Create a Vertex Shader
+ * @subsection vertex Create a Vertex Shader
  * 
  * This will set up a new vertex and fragment shader to be used by the sprite object.
  * 

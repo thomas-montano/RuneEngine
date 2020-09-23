@@ -2,33 +2,50 @@
 #include "observer.h"
 #include "signal.h"
 
-///@param signalValue The type of signal
-void rune::Subject::notify(unsigned int signalValue)
+///@param signalToSend The signal to be sent out to all the observers.
+void rune::Subject::sendSignal(Signal signalToSend)
 {
-
-  Signal signal = Signal(this, signalValue);
 
   for (int i = 0; i < observers.size(); i++)
   {
 
-    observers[i]->onNotify(signal);
+    observers[i]->onNotify(signalToSend);
 
   }
 
 }
 
+///@return The number of observers currently subscribed to this subject.
+int rune::Subject::getNumObservers(void)
+{
+  return observers.size();
+}
+
 ///@param newObserver The observer that would like to be notified of signals.
 /// @return Whether or not the observer was successfully subscribed.
-bool rune::Subject::subscribe(Observer& newObserver)
+void rune::Subject::subscribe(Observer& newObserver)
 {
   observers.push_back(&newObserver);
-  return true;
 }
 
 ///@param newObserver The observer that would no longer like to be notified of signals.
 /// @return Whether or not the observer was successfully subscribed.
-bool rune::Subject::unsubscribe(Observer& newObserver)
+bool rune::Subject::unsubscribe(Observer& observer)
 {
 
-  return true;
+  for(int i = 0; i < observers.size(); i++)
+  {
+  
+    if(observers[i] == &observer)
+    {
+    
+      observers.erase(observers.begin() + i);
+    
+      return true;
+
+    }
+  
+  }
+
+  return false;
 }

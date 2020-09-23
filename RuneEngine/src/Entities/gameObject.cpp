@@ -18,6 +18,7 @@ void rune::GameObject::addComponent(rune::Component& newScript)
 {
   newScript.setParent(this);
   objectComponents.push_back(&newScript);
+
 }
 
 /**

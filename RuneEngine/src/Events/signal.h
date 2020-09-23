@@ -21,12 +21,21 @@ namespace rune{
     ///Who the signal originated from.
     Subject* signalCreator;
     ///What was the type of signal sent.
-    unsigned int signalValue;
+    void (*functionPtr);
     ///Default constructor to create a signal.
-    Signal(Subject* creator, unsigned int val);
+    Signal(Subject* creator, void* callback);
 
   };
 
 }
 
 #endif
+
+/**
+ * page Signals Signals
+ * 
+ * Objects in Rune communicate with each other through the concept of signals. For instance, when a rune::RigidBody collides with another rune::RigidBody a signal is sent to the parent rune::GameObject that a collision has happened.
+ * This subsequently calls the `onCollisionEnter(physics::collision)` function on each component of that rune::GameObject.
+ * 
+ * 
+ */

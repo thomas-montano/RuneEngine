@@ -14,11 +14,12 @@
 #include <typeinfo>
 #include <Entities\component.h>
 #include <Renderer\renderWindow.h>
+#include <Events\subject.h>
 #include <vector>
 
 namespace rune{
 
-class RUNE_ENGINE GameObject
+class RUNE_ENGINE GameObject : public Subject
 {
 private:
   //This must be a vector of pointers because of the fact that they can't be stored in a List.
@@ -71,7 +72,9 @@ public:
 
 /**
  * 
- * @page GameObjects How To Make Your Own Custom GameObjects
+ * @page GameObjects GameObjects
+ * 
+ * @section objects Creating an Object
  * 
  * Start off by declaring your header file and including your components. You'll also want to declare a constructor so that these components can be added onto the rune::GameObject.
  * 
@@ -127,5 +130,38 @@ public:
  * @endcode
  * 
  * And that's all you need! Go ahead and add it to your rune::GameScene and hit play!
+ * 
+ *
+ * @section Scripts Scripting
+ * 
+ * Starting to add new functionality to a rune::GameObject is one of the most important parts of making a game. This is accomplished in Rune through the addition of a rune::Component to your rune::GameObject.
+ * You can add a new component created by you the same as any other predefined component. This is how you would go about making your own component.
+ * 
+ * @code 
+ * 
+ * #include <RuneEngine.h>
+ * 
+ * class CharacterController : public rune::Component
+ * {
+ * 
+ * private:
+ *  //Declare data members to be used by the component here
+ *  //Pointers to components of other GameObject's are also useful to have here.
+ * public:
+ *  void start()
+ *  {
+ *    //Things to do when the component is first initialized.
+ *  }
+ * 
+ *  void update()
+ *  {
+ *    //Things to do every frame.
+ *  }
+ * 
+ * 
+ * };
+ * 
+ * @endcode
+ * 
  * 
  */

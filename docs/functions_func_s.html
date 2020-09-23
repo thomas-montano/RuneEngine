@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -49,6 +54,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_func_s.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,151 +88,160 @@ $(function() {
 &#160;
 
 <h3><a id="index_s"></a>- s -</h3><ul>
+<li>sendSignal()
+: <a class="el" href="classrune_1_1_subject.html#a581b359f37ea21c0c391475384378eb1">rune::Subject</a>
+</li>
 <li>setCanvasSize()
-: <a class="el" href="da/de3/classrune_1_1_particle_emitter.html#a39d5f71284daeb09c9d7e0b9439c2aa6">rune::ParticleEmitter</a>
+: <a class="el" href="classrune_1_1_particle_emitter.html#a39d5f71284daeb09c9d7e0b9439c2aa6">rune::ParticleEmitter</a>
 </li>
 <li>setCenter()
-: <a class="el" href="d2/d0f/classrune_1_1_camera.html#afc0803f83f55a42c7eea9947a50256ff">rune::Camera</a>
+: <a class="el" href="classrune_1_1_camera.html#afc0803f83f55a42c7eea9947a50256ff">rune::Camera</a>
 </li>
 <li>setCurrentFame()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#ac124bf55be4682ffdbdc39a28c7244b0">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#ac124bf55be4682ffdbdc39a28c7244b0">rune::ObjectAnimation</a>
 </li>
 <li>setDissolutionRate()
-: <a class="el" href="da/de3/classrune_1_1_particle_emitter.html#aae19b89bc72b5addc7f9bea6b485f44c">rune::ParticleEmitter</a>
+: <a class="el" href="classrune_1_1_particle_emitter.html#aae19b89bc72b5addc7f9bea6b485f44c">rune::ParticleEmitter</a>
 </li>
 <li>setDynamicFriction()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a23bf8688088579d61a4faff77f84e134">physics::RigidBody</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a23bf8688088579d61a4faff77f84e134">physics::RigidBody</a>
 </li>
 <li>setEnable()
-: <a class="el" href="dd/d70/classrune_1_1_component.html#abbbb2a8b9b8adc6b06a3820a472ad85b">rune::Component</a>
+: <a class="el" href="classrune_1_1_component.html#abbbb2a8b9b8adc6b06a3820a472ad85b">rune::Component</a>
 </li>
 <li>setFillColor()
-: <a class="el" href="d0/d25/classrune_1_1_rectangle_shape.html#a7c049363eda3b0f547f18788579ae0d5">rune::RectangleShape</a>
+: <a class="el" href="classrune_1_1_rectangle_shape.html#a7c049363eda3b0f547f18788579ae0d5">rune::RectangleShape</a>
 </li>
 <li>setFrameHeight()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#a00f56b8daade94a5fa7f56c8960b6fa9">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#a00f56b8daade94a5fa7f56c8960b6fa9">rune::ObjectAnimation</a>
 </li>
 <li>setFrameRate()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#aca51570a22babdbbf83b515f7fa5bfc5">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#aca51570a22babdbbf83b515f7fa5bfc5">rune::ObjectAnimation</a>
 </li>
 <li>setFrameWidth()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#a6570ffa22eb0a13fccc11a7cf2406b4e">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#a6570ffa22eb0a13fccc11a7cf2406b4e">rune::ObjectAnimation</a>
 </li>
 <li>setGravity()
-: <a class="el" href="da/de3/classrune_1_1_particle_emitter.html#ae3859b097982e1190b10ac84050e60b0">rune::ParticleEmitter</a>
+: <a class="el" href="classrune_1_1_particle_emitter.html#ae3859b097982e1190b10ac84050e60b0">rune::ParticleEmitter</a>
 </li>
 <li>setMirror()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#a6393ede1f0f8683014d19ec620f895e7">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#a6393ede1f0f8683014d19ec620f895e7">rune::ObjectAnimation</a>
 </li>
 <li>setNumFrames()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#a230aa8f22843f5de74fc4b2190026973">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#a230aa8f22843f5de74fc4b2190026973">rune::ObjectAnimation</a>
 </li>
 <li>setParent()
-: <a class="el" href="dd/d70/classrune_1_1_component.html#a4f80061e4b816e8f5a9f4810f93a63e1">rune::Component</a>
+: <a class="el" href="classrune_1_1_component.html#a4f80061e4b816e8f5a9f4810f93a63e1">rune::Component</a>
 </li>
 <li>setPosition()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a7a465bee355241a1772e4352168f4d61">physics::RigidBody</a>
-, <a class="el" href="da/de3/classrune_1_1_particle_emitter.html#a8e1858af81f7013b784411da12a4e9c6">rune::ParticleEmitter</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a7a465bee355241a1772e4352168f4d61">physics::RigidBody</a>
+, <a class="el" href="classrune_1_1_particle_emitter.html#a8e1858af81f7013b784411da12a4e9c6">rune::ParticleEmitter</a>
 </li>
 <li>setPreviousPosition()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a36c75b4b70764efbb44c67849ae94cc3">physics::RigidBody</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a36c75b4b70764efbb44c67849ae94cc3">physics::RigidBody</a>
 </li>
 <li>setRestitution()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#ae47207daa74c232221b1b7ff663f9ca4">physics::RigidBody</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#ae47207daa74c232221b1b7ff663f9ca4">physics::RigidBody</a>
 </li>
 <li>setRotation()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a8406ee74e9d39535c2f1b6c1487d9ca8">physics::RigidBody</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a8406ee74e9d39535c2f1b6c1487d9ca8">physics::RigidBody</a>
 </li>
 <li>setScene()
-: <a class="el" href="d3/d09/classrune_1_1_scene_manager.html#a948cd2d5a0560ed6d88120055c998434">rune::SceneManager</a>
+: <a class="el" href="classrune_1_1_scene_manager.html#a948cd2d5a0560ed6d88120055c998434">rune::SceneManager</a>
 </li>
 <li>setSheet()
-: <a class="el" href="d9/d53/classrune_1_1_object_animation.html#a53a242213c2697e8ce5ef81d9e589e1d">rune::ObjectAnimation</a>
+: <a class="el" href="classrune_1_1_object_animation.html#a53a242213c2697e8ce5ef81d9e589e1d">rune::ObjectAnimation</a>
 </li>
 <li>setSize()
-: <a class="el" href="d5/d57/classrune_1_1_frame_buffer.html#a9d159446f3ce8ab2d0837e50f99b504c">rune::FrameBuffer</a>
+: <a class="el" href="classrune_1_1_frame_buffer.html#a9d159446f3ce8ab2d0837e50f99b504c">rune::FrameBuffer</a>
 </li>
 <li>setStaticFriction()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a26647103abb2c8be7460ff198b4b8e25">physics::RigidBody</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a26647103abb2c8be7460ff198b4b8e25">physics::RigidBody</a>
 </li>
 <li>setTexture()
-: <a class="el" href="d4/d4d/classrune_1_1_sprite.html#ab7049848f753aa7caa0a2240f418d47f">rune::Sprite</a>
+: <a class="el" href="classrune_1_1_sprite.html#ab7049848f753aa7caa0a2240f418d47f">rune::Sprite</a>
 </li>
 <li>setTextureRect()
-: <a class="el" href="d4/d4d/classrune_1_1_sprite.html#a870d8539d607a28ab8f0d2f3907e382e">rune::Sprite</a>
+: <a class="el" href="classrune_1_1_sprite.html#a870d8539d607a28ab8f0d2f3907e382e">rune::Sprite</a>
 </li>
 <li>setUniform1f()
-: <a class="el" href="dc/d85/classrune_1_1_shader.html#ac5ce4c85383a13b29a719d5a58a495f8">rune::Shader</a>
+: <a class="el" href="classrune_1_1_shader.html#ac5ce4c85383a13b29a719d5a58a495f8">rune::Shader</a>
 </li>
 <li>setUniform1i()
-: <a class="el" href="dc/d85/classrune_1_1_shader.html#ae097de14c9df972679088db5727229e9">rune::Shader</a>
+: <a class="el" href="classrune_1_1_shader.html#ae097de14c9df972679088db5727229e9">rune::Shader</a>
 </li>
 <li>setUniform2f()
-: <a class="el" href="dc/d85/classrune_1_1_shader.html#a515428d18b19cf2e23349d567d5cfc33">rune::Shader</a>
+: <a class="el" href="classrune_1_1_shader.html#a515428d18b19cf2e23349d567d5cfc33">rune::Shader</a>
 </li>
 <li>setUniform4f()
-: <a class="el" href="dc/d85/classrune_1_1_shader.html#af285eeb31e30a21e0c4c0d780e7e81e7">rune::Shader</a>
+: <a class="el" href="classrune_1_1_shader.html#af285eeb31e30a21e0c4c0d780e7e81e7">rune::Shader</a>
 </li>
 <li>setUpBuffers()
-: <a class="el" href="d4/d4d/classrune_1_1_sprite.html#a2f682396f750adc1b99bf77dbf92c9e0">rune::Sprite</a>
+: <a class="el" href="classrune_1_1_sprite.html#a2f682396f750adc1b99bf77dbf92c9e0">rune::Sprite</a>
 </li>
 <li>setUpObject()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a939b663fceb88282d15cd4f904b3d231">physics::RigidBody</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a939b663fceb88282d15cd4f904b3d231">physics::RigidBody</a>
 </li>
 <li>setVelocity()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#a2b98dd01f5a0ed63e409f58956b31cf3">physics::RigidBody</a>
-</li>
-<li>setViewPort()
-: <a class="el" href="d2/d0f/classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18">rune::Camera</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#a2b98dd01f5a0ed63e409f58956b31cf3">physics::RigidBody</a>
 </li>
 <li>setViewport()
-: <a class="el" href="d2/d0f/classrune_1_1_camera.html#ad4d925c0db6c8ddece932f5d835820f5">rune::Camera</a>
+: <a class="el" href="classrune_1_1_camera.html#ad4d925c0db6c8ddece932f5d835820f5">rune::Camera</a>
+</li>
+<li>setViewPort()
+: <a class="el" href="classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18">rune::Camera</a>
 </li>
 <li>setWindowTitle()
-: <a class="el" href="db/ddf/classrune_1_1_render_window.html#a40cca7e8a37f882f80ce9f86cc70601b">rune::RenderWindow</a>
+: <a class="el" href="classrune_1_1_render_window.html#a40cca7e8a37f882f80ce9f86cc70601b">rune::RenderWindow</a>
 </li>
 <li>setZoom()
-: <a class="el" href="d2/d0f/classrune_1_1_camera.html#ac99c39db773c08b397375e55cfabfb6b">rune::Camera</a>
+: <a class="el" href="classrune_1_1_camera.html#ac99c39db773c08b397375e55cfabfb6b">rune::Camera</a>
 </li>
 <li>Shader()
-: <a class="el" href="dc/d85/classrune_1_1_shader.html#aefd00d1d5827ccec10ce631db908a3aa">rune::Shader</a>
+: <a class="el" href="classrune_1_1_shader.html#a6b6e549f5388bb22d94a417989ea12bb">rune::Shader</a>
 </li>
 <li>ShaderProgramSource()
-: <a class="el" href="d3/df9/structrune_1_1_shader_program_source.html#acc36690a433411d423b82a01a8a6d01d">rune::ShaderProgramSource</a>
+: <a class="el" href="structrune_1_1_shader_program_source.html#acc36690a433411d423b82a01a8a6d01d">rune::ShaderProgramSource</a>
 </li>
 <li>Signal()
-: <a class="el" href="d1/d1a/classrune_1_1_signal.html#aa2f43d7eef479b397e0e00cc0ea8ebbf">rune::Signal</a>
+: <a class="el" href="classrune_1_1_signal.html#a5c240d0abe1d57274874036aad1087ef">rune::Signal</a>
 </li>
 <li>size()
-: <a class="el" href="d0/d76/classrune_1_1_list.html#ad8d0c63a422bf45180307cfe360dc800">rune::List&lt; T &gt;</a>
+: <a class="el" href="classrune_1_1_list.html#ad8d0c63a422bf45180307cfe360dc800">rune::List&lt; T &gt;</a>
 </li>
 <li>Sprite()
-: <a class="el" href="d4/d4d/classrune_1_1_sprite.html#a774b68f781e74d64d0c900b3ae08d69e">rune::Sprite</a>
+: <a class="el" href="classrune_1_1_sprite.html#abede5448aeb62dd19888fe6ebc64efed">rune::Sprite</a>
 </li>
 <li>start()
-: <a class="el" href="d1/d17/classphysics_1_1_rigid_body.html#af30aa637e3aa3032db2881b1df19eb82">physics::RigidBody</a>
-, <a class="el" href="d9/de3/classrune_1_1_animator.html#a927f4240c691bc0f5548f73b7989ae74">rune::Animator</a>
-, <a class="el" href="dd/d70/classrune_1_1_component.html#aae254f125303912b629182af34fad58a">rune::Component</a>
-, <a class="el" href="d7/d42/classrune_1_1_light_source.html#a69bb8b8ec6ca013aa2e0d2dd4dcf1575">rune::LightSource</a>
-, <a class="el" href="d0/d25/classrune_1_1_rectangle_shape.html#a8487714247b0392019852fe36d3fd4b5">rune::RectangleShape</a>
-, <a class="el" href="d4/d4d/classrune_1_1_sprite.html#af3e1db8e6544708e4291b9b161c62736">rune::Sprite</a>
+: <a class="el" href="classphysics_1_1_rigid_body.html#af30aa637e3aa3032db2881b1df19eb82">physics::RigidBody</a>
+, <a class="el" href="classrune_1_1_animator.html#a927f4240c691bc0f5548f73b7989ae74">rune::Animator</a>
+, <a class="el" href="classrune_1_1_component.html#aae254f125303912b629182af34fad58a">rune::Component</a>
+, <a class="el" href="classrune_1_1_light_source.html#a69bb8b8ec6ca013aa2e0d2dd4dcf1575">rune::LightSource</a>
+, <a class="el" href="classrune_1_1_rectangle_shape.html#a8487714247b0392019852fe36d3fd4b5">rune::RectangleShape</a>
+, <a class="el" href="classrune_1_1_sprite.html#af3e1db8e6544708e4291b9b161c62736">rune::Sprite</a>
 </li>
 <li>startComponents()
-: <a class="el" href="d5/d91/classrune_1_1_game_scene.html#a2a7148f857192b0adbf4166a9804451f">rune::GameScene</a>
+: <a class="el" href="classrune_1_1_game_scene.html#a2a7148f857192b0adbf4166a9804451f">rune::GameScene</a>
 </li>
 <li>submitToRenderer()
-: <a class="el" href="d5/d91/classrune_1_1_game_scene.html#a8b2da9c8db9f49c00ed24f2c661bfd83">rune::GameScene</a>
+: <a class="el" href="classrune_1_1_game_scene.html#a8b2da9c8db9f49c00ed24f2c661bfd83">rune::GameScene</a>
 </li>
 <li>subscribe()
-: <a class="el" href="de/d64/classrune_1_1_subject.html#a785a5b6fd7a9e3345178360a40aa7334">rune::Subject</a>
+: <a class="el" href="classrune_1_1_subject.html#a032bb18b633b96c17872e9ae512f003f">rune::Subject</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
-</body>
+		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+			<ul>
+				<li class="footer">
+					Generated on Wed Sep 23 2020 09:55:39 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
+					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.
+				</li>
+			</ul>
+		</div>
+		<script src="custom.js"></script>
+	</body>
 </html>

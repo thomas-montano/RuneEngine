@@ -1,4 +1,5 @@
 #include "component.h"
+#include "gameObject.h"
 #include <iostream>
 
 rune::Component::Component(const Component& component)
@@ -31,6 +32,8 @@ void rune::Component::fixedUpdate()
 void rune::Component::setParent(GameObject* newParent)
 {
   parentObject = newParent;
+
+  parentObject->subscribe(*this);
 }
 
 /**

@@ -2,9 +2,8 @@
 #include "subject.h"
 
 ///@param creator A pointer to the person who pushed out the signal.
-/// @param val The type of signal pushed.
-rune::Signal::Signal(Subject* creator, unsigned int val)
-
-  : signalCreator(creator), signalValue(val)
+/// @param callback The function to call when this signal is sent.
+rune::Signal::Signal(Subject* creator, void* callback)
+  : signalCreator(creator), functionPtr(callback)
 {}
 

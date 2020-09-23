@@ -189,7 +189,7 @@ public:
 #endif
 
 /**
- * @page physics How To Add Physics To Your GameObject
+ * @page physics Physics
  * 
  * Adding physical interactions is an important and fun part of making your game! In Rune, adding physics is as simple as attaching a physics::RigidBody component to
  * your rune::GameObject.

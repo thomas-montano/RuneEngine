@@ -1,5 +1,5 @@
 /*!
- * @page entryPoint How To Create Your First Rune Application
+ * @page entryPoint Entry Point
  * In order to start a new project, you have to create an entry point for the game and then load in the scenes you want to use.
  * 
  * Once you have created your entry point, go ahead and create some GameScenes to load into the rune::GameApplication.
@@ -39,7 +39,7 @@
  *
  * @endcode
  * 
- * To see how to create your own rune::GameScene, [check out that programming guide.](d0/dbc/_game_scenes.html)
+ * To see how to create your own rune::GameScene, [check out that programming guide.](_game_scenes.html)
  * 
  * @author Thomas Montano
  * @date June 17 2020 

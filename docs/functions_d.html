@@ -9,10 +9,15 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="custom_dark_theme.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -49,6 +54,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_d.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,55 +89,61 @@ $(function() {
 
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>D
-: <a class="el" href="d1/da2/classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a106d2b5d727daa550db2d744eb85758f">rune::Keyboard</a>
+: <a class="el" href="classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a106d2b5d727daa550db2d744eb85758f">rune::Keyboard</a>
 </li>
 <li>DASH
-: <a class="el" href="d1/da2/classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a514130d4e0cf7df40cf281f08d998066">rune::Keyboard</a>
+: <a class="el" href="classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a514130d4e0cf7df40cf281f08d998066">rune::Keyboard</a>
 </li>
 <li>deInit()
-: <a class="el" href="d5/d91/classrune_1_1_game_scene.html#a3ddab49b7e0abb5a1162104e3787860e">rune::GameScene</a>
+: <a class="el" href="classrune_1_1_game_scene.html#a3ddab49b7e0abb5a1162104e3787860e">rune::GameScene</a>
 </li>
 <li>DELETE
-: <a class="el" href="d1/da2/classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a597a030d2bccadcb1961d9259721255a">rune::Keyboard</a>
+: <a class="el" href="classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a597a030d2bccadcb1961d9259721255a">rune::Keyboard</a>
 </li>
 <li>determinant()
-: <a class="el" href="de/deb/classrune_1_1_mat2.html#a6b9b16da683a6a107db76aad81cd5e17">rune::Mat2</a>
-, <a class="el" href="dc/d3d/classrune_1_1_mat3.html#a40b5e92e927ece94316ec6834900c8e5">rune::Mat3</a>
+: <a class="el" href="classrune_1_1_mat2.html#a6b9b16da683a6a107db76aad81cd5e17">rune::Mat2</a>
+, <a class="el" href="classrune_1_1_mat3.html#a40b5e92e927ece94316ec6834900c8e5">rune::Mat3</a>
 </li>
 <li>display()
-: <a class="el" href="db/ddf/classrune_1_1_render_window.html#a3c90c45ad48b883b509fc43e61d04b8e">rune::RenderWindow</a>
+: <a class="el" href="classrune_1_1_render_window.html#a3c90c45ad48b883b509fc43e61d04b8e">rune::RenderWindow</a>
 </li>
 <li>doInit()
-: <a class="el" href="d5/d91/classrune_1_1_game_scene.html#a97362f5c75fafb9eb2fce36a474e5f4e">rune::GameScene</a>
+: <a class="el" href="classrune_1_1_game_scene.html#a97362f5c75fafb9eb2fce36a474e5f4e">rune::GameScene</a>
 </li>
 <li>dotProduct()
-: <a class="el" href="da/d72/classrune_1_1_vec3.html#ac04a52a948db3770f672e622dfb179a1">rune::Vec3</a>
+: <a class="el" href="classrune_1_1_vec3.html#ac04a52a948db3770f672e622dfb179a1">rune::Vec3</a>
 </li>
 <li>DOWN
-: <a class="el" href="d1/da2/classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a149598aba77694787b1953dbc9297e80">rune::Keyboard</a>
+: <a class="el" href="classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a149598aba77694787b1953dbc9297e80">rune::Keyboard</a>
 </li>
 <li>draw()
-: <a class="el" href="d5/d6e/classphysics_1_1_a_a_b_b.html#ad3fb8f38948b941bb892b5b09378f68d">physics::AABB</a>
-, <a class="el" href="d9/d60/classrune_1_1_drawable.html#a005d2711ac41f1c2224ef0b35a5471e4">rune::Drawable</a>
+: <a class="el" href="classphysics_1_1_a_a_b_b.html#ad3fb8f38948b941bb892b5b09378f68d">physics::AABB</a>
+, <a class="el" href="classrune_1_1_drawable.html#a005d2711ac41f1c2224ef0b35a5471e4">rune::Drawable</a>
 </li>
 <li>Draw()
-: <a class="el" href="d5/d91/classrune_1_1_game_scene.html#a613c11fc4b9d800ce8eb1840a8b87158">rune::GameScene</a>
+: <a class="el" href="classrune_1_1_game_scene.html#a613c11fc4b9d800ce8eb1840a8b87158">rune::GameScene</a>
 </li>
 <li>draw()
-: <a class="el" href="d0/d25/classrune_1_1_rectangle_shape.html#a6b50b1427ebb04d7a5963862813dd94e">rune::RectangleShape</a>
-, <a class="el" href="db/ddf/classrune_1_1_render_window.html#adfacd593b018add7c9d6c7d98f833c1a">rune::RenderWindow</a>
-, <a class="el" href="d4/d4d/classrune_1_1_sprite.html#abfc36c0067b7ba56d91dab5c4d4e7a31">rune::Sprite</a>
+: <a class="el" href="classrune_1_1_rectangle_shape.html#a6b50b1427ebb04d7a5963862813dd94e">rune::RectangleShape</a>
+, <a class="el" href="classrune_1_1_render_window.html#adfacd593b018add7c9d6c7d98f833c1a">rune::RenderWindow</a>
+, <a class="el" href="classrune_1_1_sprite.html#abfc36c0067b7ba56d91dab5c4d4e7a31">rune::Sprite</a>
 </li>
 <li>dT
-: <a class="el" href="d5/d91/classrune_1_1_game_scene.html#a2e2c4527471c1737af4458c1e3907e36">rune::GameScene</a>
+: <a class="el" href="classrune_1_1_game_scene.html#a2e2c4527471c1737af4458c1e3907e36">rune::GameScene</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
-</body>
+		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+			<ul>
+				<li class="footer">
+					Generated on Wed Sep 23 2020 09:55:39 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
+					Dark theme by <a href="http://majerle.eu" target="_new">Tilen Majerle</a>. All rights reserved.
+				</li>
+			</ul>
+		</div>
+		<script src="custom.js"></script>
+	</body>
 </html>

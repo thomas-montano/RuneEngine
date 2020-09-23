@@ -8,7 +8,7 @@ var indexSectionsWithContent =
   5: "bk",
   6: "abcdefghijklmnopqrstuvwxyz",
   7: "o",
-  8: "h"
+  8: "egps"
 };
 
 var indexSectionNames =
