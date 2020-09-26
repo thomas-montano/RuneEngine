@@ -148,9 +148,9 @@ public:
  * 
  * Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.
  *
- * You can clone the repository to a local destination using git:
+ * You can check out the latest release of the engine here:
  *
- * `git clone https://github.com/ThomasMontanoGames/RuneEngine/releases`
+ * https://github.com/ThomasMontanoGames/RuneEngine/releases
  *
  * @subsection setup Setting up a New Rune Project
  * 
