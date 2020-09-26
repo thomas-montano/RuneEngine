@@ -39,7 +39,7 @@
  *
  * @endcode
  * 
- * To see how to create your own rune::GameScene, [check out that programming guide.](_game_scenes.html)
+ * To see how to create your own rune::GameScene, [check out that programming guide.](scenes.html)
  * 
  * 
  */
@@ -150,7 +150,7 @@ public:
  *
  * You can clone the repository to a local destination using git:
  *
- * `git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
+ * `git clone https://github.com/ThomasMontanoGames/RuneEngine`
  *
  * @subsection setup Setting up a New Rune Project
  * 

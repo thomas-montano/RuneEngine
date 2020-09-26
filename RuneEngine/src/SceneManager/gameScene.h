@@ -121,7 +121,7 @@ public:
  *  
  * @endcode
  * 
- * Then in this function you can add objects to scene, set up cameras, change positions of objects, and any other call you code make to a rune::GameObject.
+ * Then in this function you can add objects to scene, set up cameras, change positions of objects, and anything else you could normally do with a rune::GameObject.
  * 
  * @code
  * 
