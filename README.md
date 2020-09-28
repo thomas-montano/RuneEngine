@@ -6,9 +6,9 @@ This is the GitHub for developing the Rune Engine being used by the game Private
 
 Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.
 
-You can clone the repository to a local destination using git:
+You can check out the latest release of the engine here:
 
-`git clone https://github.com/ThomasMontanoGames/PrivateEye.git`
+https://github.com/ThomasMontanoGames/RuneEngine/releases
 
 ## Setting up a Project
 
