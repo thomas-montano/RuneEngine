@@ -1,8 +1,5 @@
-#pragma once
-
-const char * defaultRectangle = 
-
-R"(#shader vertex
+R"(
+#shader vertex
 #version 330 core
 
 layout(location = 0) in vec2 aPos;
@@ -51,4 +48,4 @@ void main()
 
 };
 
-)";
+)"

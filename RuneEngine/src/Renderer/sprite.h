@@ -42,6 +42,11 @@ private:
 
   unsigned int spriteDrawMode;
 
+  const char* defaultSprite = 
+  {
+  #include <Shaders/defaultSprite.glsl>
+  };
+
 public:
   Shader objectShader;
   ///Default empty constructor for generating a sprite, uses default shader.

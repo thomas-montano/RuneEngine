@@ -15,7 +15,7 @@ public:
     : CreatedComponent(newType, newName, parent, newFilePath)
   {
 
-    parent->addComponent(rectangle);
+    //parent->addComponent(rectangle);
     EditorWindow::currentlyOpenProject.activeScene->scene->submitToRenderer(rectangle);
 
   }

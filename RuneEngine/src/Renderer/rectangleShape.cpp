@@ -6,11 +6,10 @@
 #include <GL\glu.h>
 #include <GLFW\glfw3.h>
 #include <gameApplication.h>
-#include <Shaders\defaultRectangle.glsl>
 #include <SceneManager\sceneManager.h>
 
 rune::RectangleShape::RectangleShape(rune::Color newColor) 
-: rectangleShader(defaultRectangle), origin(rune::Vec2(0,0))
+: rectangleShader(defaultRectangle), origin(rune::Vec2(0,0)), size(Vec2(0,0)), position(Vec2(0,0))
 {
   m_fillColor = newColor;
 
@@ -43,10 +42,10 @@ void rune::RectangleShape::setUpBuffers()
 
 }
 
-void rune::RectangleShape::start()
+/*void rune::RectangleShape::start()
 {
   getGameInstance()->getCurrentScene()->submitToRenderer(*this);
-}
+}*/
 
 /**
  * @param windowSize The size of the window that the RectangleShape is being drawn on.
@@ -57,9 +56,6 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   //Bind the vertex array object
   rectangleShader.bind();
 
-  rune::Vec3 position = parentObject->transform.getPosition();
-  rune::Vec3 size = parentObject->transform.getScale();
-
   rune::Vec2 windowSize = window.getSize();
   rune::Vec2 cameraPos = window.getCamera().getCenter();
   double zoomLevel = window.getCamera().getZoom();
@@ -69,7 +65,7 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   rectangleShader.setUniform1f("cameraZoom",zoomLevel);
 
   //Set up rotation information
-  rectangleShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
+  rectangleShader.setUniform1f("rotation", rotation);
   rectangleShader.setUniform1f("aspectRatio", getGameInstance()->getWindow()->getSize().x / getGameInstance()->getWindow()->getSize().y);
   rectangleShader.setUniform2f("origin", (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
 

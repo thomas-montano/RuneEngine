@@ -1,8 +1,5 @@
-#pragma once
-
-const char * spriteLit = 
-
-R"(#shader vertex
+R"(
+#shader vertex
 #version 330 core
 
 layout(location = 0) in vec2 aPos;
@@ -65,7 +62,7 @@ uniform float constantLight = 1.0;
 uniform float linearLight = 1.0;
 uniform float quadLight = 1.0;
 uniform float diffuseIntensity = 1.0;
-uniform float lightSize = 1.0;
+//uniform float lightSize = 1.0;
 
 void main()
 {
@@ -84,18 +81,17 @@ void main()
 
   vec3 ambient = vec3(ambientIntensity);
 
-  //ambient *= attenuation;
+  ambient *= attenuation;
   diffuse *= attenuation*diffuseIntensity;
 
-  if(dist > lightSize)
-  {
-    //diffuse = vec3(0.0);
-  }
+  //if(dist > lightSize)
+  //{
+   // diffuse = diffuse;
+  //}
 
   vec3 lightResult = (ambient + diffuse) * ourColor.xyz;
 
   FragColor = texture(ourTexture, TexCoord) * vec4(lightResult,1.0);
 
 }
-
-)";
+)"

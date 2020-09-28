@@ -100,7 +100,7 @@ rune::ShaderProgramSource rune::Shader::ParseShader(std::string const& sourceCod
         type = ShaderType::FRAGMENT;
       }
     }
-    else
+    else if(line != "")
     {
       result[(int)type] << line << '\n';
     }

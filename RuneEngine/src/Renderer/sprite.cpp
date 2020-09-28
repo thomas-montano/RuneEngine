@@ -5,7 +5,6 @@
 #include <gameApplication.h>
 #include <Renderer\camera.h>
 #include <Math\mat2.h>
-#include <Shaders/defaultSprite.glsl>
 
 rune::Sprite::Sprite() 
   : objectShader(defaultSprite), textureSpace(0,0,0,0), spriteDrawMode(LINEAR_FILTER)

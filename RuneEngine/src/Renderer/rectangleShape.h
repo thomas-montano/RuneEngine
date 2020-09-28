@@ -22,7 +22,7 @@ namespace rune{
 class GameApplication;
 class SceneManager;
 
-class RUNE_ENGINE RectangleShape : public rune::Drawable, public rune::Component
+class RUNE_ENGINE RectangleShape : public rune::Drawable
 {
 private:
 
@@ -41,11 +41,19 @@ private:
 
   void setUpBuffers(void);
 
+  Vec2 size;
+  Vec2 position;
+  double rotation;
+
+  const char* defaultRectangle =
+  {
+  #include <Shaders\defaultRectangle.glsl>
+  };
+
 public:
 
   Shader rectangleShader;
 
-  virtual void start() override;
   ///The draw call for rendering the shape to the screen.
   virtual void draw(rune::RenderWindow&);
   ///Default constructor that will create a white rectangle by default.
