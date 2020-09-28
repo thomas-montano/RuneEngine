@@ -58,5 +58,6 @@ int rune::SceneManager::getNumScenes(void)
 */
 void rune::SceneManager::addScene(std::string const& sceneName, GameScene* newScene)
 {
-  m_scenes[sceneName] = newScene;
+  //m_scenes[sceneName] = newScene;
+  m_scenes.insert({sceneName,newScene});
 }

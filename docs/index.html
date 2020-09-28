@@ -101,12 +101,14 @@ Getting Started</h2>
 <h2><a class="anchor" id="setup"></a>
 Setting up a New Rune Project</h2>
 <ol type="1">
-<li>Link the LIB file in the linker settings of your project.</li>
-<li>Move the DLL file into your game's working directory.</li>
-<li>Declare <code>RUNE_PLATFORM_WINDOWS</code> in the preprocessor definitions of your project.</li>
 <li>Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.</li>
+<li>Add the path "Rune Engine Directory"/lib in the linker settings of your project</li>
+<li>Link the LIB files in the linker settings of your project. Use RuneEngine-d.lib and RuneEngine-d.dll for debug builds.</li>
+<li>Move the DLL files into your game's working directory.</li>
+<li>Declare <code>RUNE_PLATFORM_WINDOWS</code> in the preprocessor definitions of your project.</li>
 <li><code>#include &lt;<a class="el" href="_rune_engine_8h_source.html">RuneEngine.h</a>&gt;</code> in the files using the engine.</li>
 </ol>
+<dl class="section warning"><dt>Warning</dt><dd>Make sure you are building in 64-bit, RUNE does not support 32 bit.</dd></dl>
 <h2><a class="anchor" id="features"></a>
 Engine Features</h2>
 <ul>
@@ -130,7 +132,7 @@ Engine Issues</h2>
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="footer">
-					Generated on Fri Sep 25 2020 22:51:58 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Mon Sep 28 2020 10:24:28 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>
