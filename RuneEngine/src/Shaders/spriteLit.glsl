@@ -40,7 +40,7 @@ void main()
 
   rotationAngle = rotation;
 
-  FragPos = vec3(vertices.x*aspectRatio,vertices.y,1.0);
+  FragPos = vec3(vertices.x*(aspectRatio),vertices.y,1.0);
 
 }
 
@@ -54,42 +54,61 @@ in vec2 TexCoord;
 in vec3 FragPos;
 in float rotationAngle;
 
+uniform float numLights = 0;
+uniform vec2 lights[1];
+
 uniform sampler2D ourTexture;
-uniform vec3 lightPosition = vec3(0,0,0);
 uniform float ambientIntensity = 1.0;
 
 uniform float constantLight = 1.0;
 uniform float linearLight = 1.0;
 uniform float quadLight = 1.0;
 uniform float diffuseIntensity = 1.0;
-//uniform float lightSize = 1.0;
+uniform float lightSize = 1.0;
+uniform float blur = 1.0;
 
 void main()
 {
   vec3 lightColor = vec3(1,1,1);
+  vec3 lightResult = vec3(0);
 
   vec3 norm = normalize(-FragPos);
-  vec3 lightDir = normalize(lightPosition - FragPos);
 
-  float diff = max(dot(norm, lightDir),0.0);
+  for(int i = 0; i < lights.length(); i++)
+  {
 
-  vec3 diffuse = diff * lightColor;
+    vec3 lightDir = normalize(vec3(lights[i].x,lights[i].y,0) - FragPos);
 
-  float dist = length(lightPosition - FragPos);
+    float diff = max(dot(norm, lightDir),0.0);
 
-  float attenuation = 1.0 / (constantLight + linearLight * dist + quadLight * (dist * dist));
+    vec3 diffuse = diff * lightColor;
 
-  vec3 ambient = vec3(ambientIntensity);
+    float dist = length(vec3(lights[i].x,lights[i].y,0) - FragPos);
 
-  ambient *= attenuation;
-  diffuse *= attenuation*diffuseIntensity;
+    float attenuation = 1.0 / (constantLight + linearLight * dist + quadLight * (dist * dist));
 
-  //if(dist > lightSize)
-  //{
-   // diffuse = diffuse;
-  //}
+    vec3 ambient = vec3(ambientIntensity);
 
-  vec3 lightResult = (ambient + diffuse) * ourColor.xyz;
+    //ambient *= attenuation;
+    diffuse *= attenuation*diffuseIntensity;
+
+    if(dist > lightSize)
+    {
+      diffuse += vec3(-(1.0/blur)*(dist-lightSize)*(dist-lightSize));
+
+      if(diffuse.x <0)
+        diffuse.x = 0;
+
+      if(diffuse.y <0)
+        diffuse.y = 0;
+
+      if(diffuse.z <0)
+        diffuse.z = 0;
+
+    }
+
+    lightResult += (ambient + diffuse) * ourColor.xyz;
+  }
 
   FragColor = texture(ourTexture, TexCoord) * vec4(lightResult,1.0);
 

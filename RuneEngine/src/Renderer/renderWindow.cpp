@@ -62,6 +62,8 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const&
   ImGui_ImplGlfw_InitForOpenGL(GLwindow, true);
   ImGui_ImplOpenGL3_Init((char*)glGetString(GL_NUM_SHADING_LANGUAGE_VERSIONS));
 
+  glfwSetFramebufferSizeCallback(GLwindow, onWindowResize);
+
 }
 
 rune::RenderWindow::~RenderWindow(void)
@@ -102,6 +104,11 @@ rune::Vec2 rune::RenderWindow::getDesktopSize(void)
 void rune::RenderWindow::maximizeWindow(void)
 {
   glfwMaximizeWindow(GLwindow);
+}
+
+void rune::RenderWindow::onWindowResize(GLFWwindow* window, int width, int height)
+{
+  glViewport(0, 0, width, height);
 }
 
 void rune::RenderWindow::display(void)
