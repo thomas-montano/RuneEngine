@@ -1,8 +1,5 @@
 var namespacerune =
 [
-    [ "AnimationController", "classrune_1_1_animation_controller.html", null ],
-    [ "AnimationState", "classrune_1_1_animation_state.html", null ],
-    [ "AnimationTransition", "classrune_1_1_animation_transition.html", "classrune_1_1_animation_transition" ],
     [ "Animator", "classrune_1_1_animator.html", "classrune_1_1_animator" ],
     [ "Camera", "classrune_1_1_camera.html", "classrune_1_1_camera" ],
     [ "Clock", "classrune_1_1_clock.html", "classrune_1_1_clock" ],

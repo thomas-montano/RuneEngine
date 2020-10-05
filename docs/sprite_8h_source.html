@@ -126,44 +126,49 @@ $(document).ready(function(){initNavTree('sprite_8h_source.html',''); initResiza
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> spriteDrawMode;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classrune_1_1_shader.html">Shader</a> objectShader;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="classrune_1_1_sprite.html">Sprite</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classrune_1_1_sprite.html">Sprite</a>(std::string <span class="keyword">const</span>&amp; spriteLocation, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = LINEAR_FILTER);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> start() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordtype">void</span> setUpBuffers(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(<a class="code" href="classrune_1_1_render_window.html">rune::RenderWindow</a>&amp;);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">void</span> setTexture(std::string <span class="keyword">const</span>&amp; texture, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = LINEAR_FILTER);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> setTexture(<a class="code" href="classrune_1_1_texture.html">Texture</a>* texture);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keywordtype">void</span> setTextureRect(<span class="keywordtype">int</span> xPos, <span class="keywordtype">int</span> yPos, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="classrune_1_1_rect.html">IntRect</a> getTextureRect(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getDrawMode();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">   70</a></span>&#160;  <a class="code" href="classrune_1_1_color.html">Color</a> <a class="code" href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">spriteColor</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* defaultSprite = </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">  #include &lt;Shaders/defaultSprite.glsl&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  };</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classrune_1_1_shader.html">Shader</a> objectShader;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classrune_1_1_sprite.html">Sprite</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="classrune_1_1_sprite.html">Sprite</a>(std::string <span class="keyword">const</span>&amp; spriteLocation, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = LINEAR_FILTER);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> start() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> setUpBuffers(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> <span class="keywordtype">void</span> draw(<a class="code" href="classrune_1_1_render_window.html">rune::RenderWindow</a>&amp;);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> setTexture(std::string <span class="keyword">const</span>&amp; texture, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> drawMode = LINEAR_FILTER);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> setTexture(<a class="code" href="classrune_1_1_texture.html">Texture</a>* texture);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> setTextureRect(<span class="keywordtype">int</span> xPos, <span class="keywordtype">int</span> yPos, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classrune_1_1_rect.html">IntRect</a> getTextureRect(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getDrawMode();</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">   75</a></span>&#160;  <a class="code" href="classrune_1_1_color.html">Color</a> <a class="code" href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">spriteColor</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassrune_1_1_component_html"><div class="ttname"><a href="classrune_1_1_component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:23</div></div>
 <div class="ttc" id="aclassrune_1_1_shader_html"><div class="ttname"><a href="classrune_1_1_shader.html">rune::Shader</a></div><div class="ttdoc">A shader that can be used to render objects to the screen.</div><div class="ttdef"><b>Definition:</b> shader.h:41</div></div>
 <div class="ttc" id="aclassrune_1_1_drawable_html"><div class="ttname"><a href="classrune_1_1_drawable.html">rune::Drawable</a></div><div class="ttdoc">Interface class for creating something that can be drawn to the screen.</div><div class="ttdef"><b>Definition:</b> drawable.h:20</div></div>
 <div class="ttc" id="aclassrune_1_1_rect_html"><div class="ttname"><a href="classrune_1_1_rect.html">rune::Rect&lt; int &gt;</a></div></div>
-<div class="ttc" id="aclassrune_1_1_sprite_html_a994170f4f563557123548f6202489c37"><div class="ttname"><a href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">rune::Sprite::spriteColor</a></div><div class="ttdeci">Color spriteColor</div><div class="ttdoc">Color of the sprite for drawing purposes.</div><div class="ttdef"><b>Definition:</b> sprite.h:70</div></div>
+<div class="ttc" id="aclassrune_1_1_sprite_html_a994170f4f563557123548f6202489c37"><div class="ttname"><a href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">rune::Sprite::spriteColor</a></div><div class="ttdeci">Color spriteColor</div><div class="ttdoc">Color of the sprite for drawing purposes.</div><div class="ttdef"><b>Definition:</b> sprite.h:75</div></div>
 <div class="ttc" id="aclassrune_1_1_render_window_html"><div class="ttname"><a href="classrune_1_1_render_window.html">rune::RenderWindow</a></div><div class="ttdoc">A window that the game can be drawn to.</div><div class="ttdef"><b>Definition:</b> renderWindow.h:26</div></div>
 <div class="ttc" id="aclassrune_1_1_sprite_html"><div class="ttname"><a href="classrune_1_1_sprite.html">rune::Sprite</a></div><div class="ttdoc">A sprite that can be given a texture and animated.</div><div class="ttdef"><b>Definition:</b> sprite.h:25</div></div>
 <div class="ttc" id="aclassrune_1_1_color_html"><div class="ttname"><a href="classrune_1_1_color.html">rune::Color</a></div><div class="ttdoc">A color object to be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> color.h:19</div></div>
-<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animationController.h:5</div></div>
+<div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animator.h:21</div></div>
 <div class="ttc" id="aclassrune_1_1_texture_html"><div class="ttname"><a href="classrune_1_1_texture.html">rune::Texture</a></div><div class="ttdoc">A texture that can be applied to drawable objects.</div><div class="ttdef"><b>Definition:</b> texture.h:23</div></div>
 <!-- start footer part -->
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_f66403bd27d89288bd08c1170a853a4e.html">Renderer</a></li><li class="navelem"><b>sprite.h</b></li>
 				<li class="footer">
-					Generated on Mon Sep 28 2020 12:22:09 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Mon Oct 5 2020 10:37:52 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

@@ -1,9 +1,6 @@
 var files_dup =
 [
     [ "AABB.h", "_a_a_b_b_8h_source.html", null ],
-    [ "animationController.h", "animation_controller_8h_source.html", null ],
-    [ "animationState.h", "animation_state_8h_source.html", null ],
-    [ "animationTransition.h", "animation_transition_8h_source.html", null ],
     [ "animator.h", "animator_8h_source.html", null ],
     [ "boxCollider.h", "box_collider_8h_source.html", null ],
     [ "camera.h", "camera_8h_source.html", null ],

@@ -65,6 +65,8 @@ public:
   void incCurrentFrame(void);
   ///Set whether or not the sprite should be mirrored across the vertical axis.
   void setMirror(bool);
+  ///Get the amount of time in seconds that the animation lasts
+  float getAnimationDuration(void);
 
 };
 }

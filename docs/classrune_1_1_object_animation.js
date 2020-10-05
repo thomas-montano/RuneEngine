@@ -1,6 +1,7 @@
 var classrune_1_1_object_animation =
 [
     [ "ObjectAnimation", "classrune_1_1_object_animation.html#ac14d6a7c1f412f3c676552023f2939e5", null ],
+    [ "getAnimationDuration", "classrune_1_1_object_animation.html#ab9be93cddabafe370897d5253ee14ebc", null ],
     [ "getCurrentFrame", "classrune_1_1_object_animation.html#a537dc336a5c26fad5cadd56aef8fa071", null ],
     [ "getFrameHeight", "classrune_1_1_object_animation.html#aa6e468d7cdc0cf86c63068ac2a7dfc44", null ],
     [ "getFrameRate", "classrune_1_1_object_animation.html#a7248bc0c13048a23832fb092f0c530b4", null ],

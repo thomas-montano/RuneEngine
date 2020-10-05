@@ -135,8 +135,13 @@ void rune::ObjectAnimation::incCurrentFrame()
 
 }
 
-/// @param mirrored A boolean represeting whether or not the sprite should be mirrored.
+/// @param mirrored A boolean representing whether or not the sprite should be mirrored.
 void rune::ObjectAnimation::setMirror(bool mirrored)
 {
   m_mirror = mirrored;
+}
+
+float rune::ObjectAnimation::getAnimationDuration(void)
+{
+  return (m_numFrames)*(1.0 / m_frameRate);
 }

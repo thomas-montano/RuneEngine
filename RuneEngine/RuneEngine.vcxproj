@@ -100,7 +100,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Events\subject.cpp" />
-    <ClCompile Include="src\Animation\animationController.cpp" />
     <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
     <ClCompile Include="src\Physics\Colliders\circleCollider.cpp" />
     <ClCompile Include="src\Physics\world.cpp" />
@@ -145,9 +144,6 @@
   <ItemGroup>
     <ClInclude Include="src\Events\observer.h" />
     <ClInclude Include="src\Events\subject.h" />
-    <ClInclude Include="src\Animation\animationController.h" />
-    <ClInclude Include="src\Animation\animationState.h" />
-    <ClInclude Include="src\Animation\animationTransition.h" />
     <ClInclude Include="src\Physics\AABB.h" />
     <ClInclude Include="src\Physics\Colliders\boxCollider.h" />
     <ClInclude Include="src\Physics\Colliders\circleCollider.h" />

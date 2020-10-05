@@ -40,7 +40,7 @@ void main()
 
   rotationAngle = rotation;
 
-  FragPos = vec3(vertices.x*(aspectRatio),vertices.y,1.0);
+  FragPos = vec3(vertices.x,vertices.y/(aspectRatio),1.0);
 
 }
 

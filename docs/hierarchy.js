@@ -1,8 +1,5 @@
 var hierarchy =
 [
-    [ "rune::AnimationController", "classrune_1_1_animation_controller.html", null ],
-    [ "rune::AnimationState", "classrune_1_1_animation_state.html", null ],
-    [ "rune::AnimationTransition", "classrune_1_1_animation_transition.html", null ],
     [ "physics::body", "structphysics_1_1body.html", null ],
     [ "rune::Camera", "classrune_1_1_camera.html", null ],
     [ "rune::Clock", "classrune_1_1_clock.html", null ],
@@ -33,7 +30,6 @@ var hierarchy =
         [ "rune::Animator", "classrune_1_1_animator.html", null ],
         [ "rune::LightSource", "classrune_1_1_light_source.html", null ],
         [ "rune::ParticleEmitter", "classrune_1_1_particle_emitter.html", null ],
-        [ "rune::RectangleShape", "classrune_1_1_rectangle_shape.html", null ],
         [ "rune::Sprite", "classrune_1_1_sprite.html", null ]
       ] ]
     ] ],

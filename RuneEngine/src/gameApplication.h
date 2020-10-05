@@ -162,6 +162,7 @@ public:
  * 
  * @warning Make sure you are building in 64-bit, Rune does not support 32-bit.
  * 
+ * 
  * @subsection features Engine Features
  * 
  * - Custom 2D renderer
@@ -173,6 +174,8 @@ public:
  * - Animated Sprites
  * - Debug Interface with ImGUI
  * - Tile work flow and sprite work flow
+ * 
+ * \image html EnginePic.png In-Engine Dynamic Lighting width=350
  * 
  * @subsection bugs Engine Issues
  * 
