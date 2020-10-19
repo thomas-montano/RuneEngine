@@ -12,11 +12,15 @@ https://github.com/ThomasMontanoGames/RuneEngine/releases
 
 ## Setting up a Project
 
-1. Link the LIB file in the linker settings of your project.
-2. Move the DLL file into your game's working directory.
-3. Declare RUNE_PLATFORM_WINDOWS in the preprocessor definitions of your project.
-4. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
-5. #include <RuneEngine.h> in all files using the engine.
+1. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
+2. Add the path "Rune Engine Directory"/lib in the linker settings of your project.
+3. Link the LIB files in the linker settings of your project. Use RuneEngine-d.lib and RuneEngine-d.dll for debug builds.
+4. Move the DLL files into your game's working directory.
+5. Declare RUNE_PLATFORM_WINDOWS in the preprocessor definitions of your project.
+6. #include <RuneEngine.h> in the files using the engine.
+
+### Warning
+Make sure you are building in 64-bit, Rune does not currently cupport 32-bit.
 
 ## Engine Features
 - Full In-Engine Visual Editor
