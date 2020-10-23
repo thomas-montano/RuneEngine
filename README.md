@@ -1,6 +1,6 @@
 ![Private Eye Logo](https://github.com/ThomasMontanoGames/PrivateEye/blob/master/Logo.png)
 # Rune Engine
-This is the GitHub for developing the Rune Engine being used by the game Private Eye. The game and engine are being developed by Thomas Montano, a Senior at Missouri University of Science and Technology.
+This is the GitHub for developing the Rune Engine. The engine is being developed by Thomas Montano, a Senior at Missouri University of Science and Technology.
 
 ## Getting Started
 
