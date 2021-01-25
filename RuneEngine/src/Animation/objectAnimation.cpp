@@ -1,6 +1,13 @@
 #include "objectAnimation.h"
 
-rune::ObjectAnimation::ObjectAnimation() : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0)
+rune::ObjectAnimation::ObjectAnimation() 
+  : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0), m_startFrame(0)
+{
+
+}
+
+rune::ObjectAnimation::ObjectAnimation(int frameWidth, int startFrame, int numFrames, int frameRate)
+  : m_numFrames(numFrames), m_mirror(false), m_frameHeight(0), m_frameWidth(frameWidth), m_frameRate(frameRate), m_currentFrame(startFrame), m_startFrame(startFrame)
 {
 
 }
@@ -130,7 +137,7 @@ void rune::ObjectAnimation::incCurrentFrame()
     {
         m_animationClock.reset();
         m_currentFrame++;
-        m_currentFrame = (m_currentFrame) % (m_numFrames);
+        m_currentFrame = ((m_currentFrame) % (m_numFrames)) + m_startFrame;
     }
 
 }
@@ -144,4 +151,14 @@ void rune::ObjectAnimation::setMirror(bool mirrored)
 float rune::ObjectAnimation::getAnimationDuration(void)
 {
   return (m_numFrames)*(1.0 / m_frameRate);
+}
+
+int rune::ObjectAnimation::getStartFrame()
+{
+  return m_startFrame;
+}
+
+void rune::ObjectAnimation::setStartFrame(int startFrame)
+{
+  m_startFrame = startFrame;
 }

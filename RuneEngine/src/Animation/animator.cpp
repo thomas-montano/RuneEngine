@@ -44,20 +44,16 @@ void rune::Animator::playAnimation(std::string const& animationName)
 /**
  * \param animationName The name of the animation to be referred to later when playing.
  * \param frameWidth The width of each frame of animation.
+ * \param startFame The frame that the animation should start on.
  * \param numFrames The total number of frames in the sprite sheet.
  * \param frameRate The rate that the frames should be displayed (in frames per second)
  * \param fileName The name of the file containing the sprite sheet.
  * @warning Do not call this in an rune::GameObject constructor. The spriteParent pointer must be resolved first.
  */
-void rune::Animator::addAnimation(std::string const& animationName, int frameWidth, int numFrames, int frameRate, std::string const& fileName)
+void rune::Animator::addAnimation(std::string const& animationName, int frameWidth, int startFrame, int numFrames, int frameRate, std::string const& fileName)
 {
 
-  ObjectAnimation* newAnimation = new ObjectAnimation();
-
-  newAnimation->setCurrentFame(0);
-  newAnimation->setFrameWidth(frameWidth);
-  newAnimation->setNumFrames(numFrames);
-  newAnimation->setFrameRate(frameRate);
+  ObjectAnimation* newAnimation = new ObjectAnimation(frameWidth, startFrame, numFrames, frameRate);
 
   newAnimation->setSheet(fileName,spriteParent->getDrawMode());
 
@@ -65,6 +61,19 @@ void rune::Animator::addAnimation(std::string const& animationName, int frameWid
 
   m_animations[animationName] = newAnimation;
 
+}
+
+/**
+ * \param animationName The name of the animation to be referred to later when playing.
+ * \param frameWidth The width of each frame of animation.
+ * \param numFrames The total number of frames in the sprite sheet.
+ * \param frameRate The rate that the frames should be displayed (in frames per second)
+ * \param fileName The name of the file containing the sprite sheet.
+ * @warning Do not call this in an rune::GameObject constructor. The spriteParent pointer must be resolved first.
+ */
+void rune::Animator::addAnimation(std::string const& animationName, int frameWidth, int numFrames, int frameRate, std::string const& fileName)
+{
+  addAnimation(animationName, frameWidth, 0, numFrames,frameRate, fileName);
 }
 
 /// @param name The name of the animation to be returned.

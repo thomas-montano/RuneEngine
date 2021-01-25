@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enablevsync_438',['enableVsync',['../classrune_1_1_render_window.html#a3f02d458c769723f713ae666b7813c16',1,'rune::RenderWindow']]]
+  ['enablevsync_440',['enableVsync',['../classrune_1_1_render_window.html#a3f02d458c769723f713ae666b7813c16',1,'rune::RenderWindow']]]
 ];

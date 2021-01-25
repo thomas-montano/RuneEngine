@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_349',['W',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ac41264bc8a228629e71b645f8c052501',1,'rune::Keyboard']]],
-  ['white_350',['White',['../classrune_1_1_color.html#af6b662716f2a1a423791acb3a9f609e8',1,'rune::Color']]],
-  ['world_351',['World',['../classphysics_1_1_world.html',1,'physics']]]
+  ['w_351',['W',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ac41264bc8a228629e71b645f8c052501',1,'rune::Keyboard']]],
+  ['white_352',['White',['../classrune_1_1_color.html#af6b662716f2a1a423791acb3a9f609e8',1,'rune::Color']]],
+  ['world_353',['World',['../classphysics_1_1_world.html',1,'physics']]]
 ];

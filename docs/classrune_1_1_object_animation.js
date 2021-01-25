@@ -1,6 +1,7 @@
 var classrune_1_1_object_animation =
 [
     [ "ObjectAnimation", "classrune_1_1_object_animation.html#ac14d6a7c1f412f3c676552023f2939e5", null ],
+    [ "ObjectAnimation", "classrune_1_1_object_animation.html#afe22ab3efe6216af3558acf64f41da33", null ],
     [ "getAnimationDuration", "classrune_1_1_object_animation.html#ab9be93cddabafe370897d5253ee14ebc", null ],
     [ "getCurrentFrame", "classrune_1_1_object_animation.html#a537dc336a5c26fad5cadd56aef8fa071", null ],
     [ "getFrameHeight", "classrune_1_1_object_animation.html#aa6e468d7cdc0cf86c63068ac2a7dfc44", null ],
@@ -8,6 +9,7 @@ var classrune_1_1_object_animation =
     [ "getFrameWidth", "classrune_1_1_object_animation.html#aaada7a6acbc1bd78a6a743c34ad701aa", null ],
     [ "getNumFrames", "classrune_1_1_object_animation.html#accc6a15dda45a5b13ed19b7f7ebf3131", null ],
     [ "getSheet", "classrune_1_1_object_animation.html#aafed8f78aafa521e2a6eec43c2f6e4e5", null ],
+    [ "getStartFrame", "classrune_1_1_object_animation.html#a976e26e7dad3bf30eeecdc38ae28a920", null ],
     [ "incCurrentFrame", "classrune_1_1_object_animation.html#ade733b41b8f967a5a16b40cd04aa8105", null ],
     [ "isMirrored", "classrune_1_1_object_animation.html#aa80ad5aceea694fdab101639cff8d067", null ],
     [ "setCurrentFame", "classrune_1_1_object_animation.html#ac124bf55be4682ffdbdc39a28c7244b0", null ],
@@ -16,5 +18,6 @@ var classrune_1_1_object_animation =
     [ "setFrameWidth", "classrune_1_1_object_animation.html#a6570ffa22eb0a13fccc11a7cf2406b4e", null ],
     [ "setMirror", "classrune_1_1_object_animation.html#a6393ede1f0f8683014d19ec620f895e7", null ],
     [ "setNumFrames", "classrune_1_1_object_animation.html#a230aa8f22843f5de74fc4b2190026973", null ],
-    [ "setSheet", "classrune_1_1_object_animation.html#a53a242213c2697e8ce5ef81d9e589e1d", null ]
+    [ "setSheet", "classrune_1_1_object_animation.html#a53a242213c2697e8ce5ef81d9e589e1d", null ],
+    [ "setStartFrame", "classrune_1_1_object_animation.html#a4620ba13d52081d203013122a653f0db", null ]
 ];

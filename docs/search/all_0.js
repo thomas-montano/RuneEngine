@@ -5,7 +5,7 @@ var searchData=
   ['accumulator_2',['accumulator',['../classrune_1_1_game_scene.html#a18e55f349455be06c70c85d940cc64a4',1,'rune::GameScene']]],
   ['add_3',['add',['../classrune_1_1_list.html#a475d7bf93ccaa2fd7274c9881cb97d5c',1,'rune::List']]],
   ['addangularvelocity_4',['addAngularVelocity',['../classphysics_1_1_rigid_body.html#a3c8bac31b07c9bc1633529db8eb648a8',1,'physics::RigidBody']]],
-  ['addanimation_5',['addAnimation',['../classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75',1,'rune::Animator']]],
+  ['addanimation_5',['addAnimation',['../classrune_1_1_animator.html#a118dc8ad30e00eb5e127719f23c01aa1',1,'rune::Animator::addAnimation(std::string const &amp;animationName, int frameWidth, int startFrame, int numFrames, int frameRate, std::string const &amp;fileName)'],['../classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75',1,'rune::Animator::addAnimation(std::string const &amp;animationName, int frameWidth, int numFrames, int frameRate, std::string const &amp;fileName)']]],
   ['addcollision_6',['addCollision',['../classphysics_1_1_rigid_body.html#a87f0c0522089807e3e5be6cccb9c9e91',1,'physics::RigidBody']]],
   ['addcomponent_7',['addComponent',['../classrune_1_1_game_object.html#a400268e68259e0e1631e04e30e2d9e96',1,'rune::GameObject']]],
   ['addobjecttoscene_8',['addObjectToScene',['../classrune_1_1_game_scene.html#a1e982c62723951c5abe8f824b38b503e',1,'rune::GameScene']]],

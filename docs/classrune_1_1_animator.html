@@ -134,8 +134,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a41bed797680f37782697280517f6a3ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_animator.html#a41bed797680f37782697280517f6a3ad">playAnimation</a> (std::string const &amp;animationName)</td></tr>
 <tr class="memdesc:a41bed797680f37782697280517f6a3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play an animation stored in the controller.  <a href="classrune_1_1_animator.html#a41bed797680f37782697280517f6a3ad">More...</a><br /></td></tr>
 <tr class="separator:a41bed797680f37782697280517f6a3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a118dc8ad30e00eb5e127719f23c01aa1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_animator.html#a118dc8ad30e00eb5e127719f23c01aa1">addAnimation</a> (std::string const &amp;animationName, int frameWidth, int startFrame, int numFrames, int frameRate, std::string const &amp;fileName)</td></tr>
+<tr class="memdesc:a118dc8ad30e00eb5e127719f23c01aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an animation to the controller.  <a href="classrune_1_1_animator.html#a118dc8ad30e00eb5e127719f23c01aa1">More...</a><br /></td></tr>
+<tr class="separator:a118dc8ad30e00eb5e127719f23c01aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa865769ca586af379a93d9ef8af7cc75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75">addAnimation</a> (std::string const &amp;animationName, int frameWidth, int numFrames, int frameRate, std::string const &amp;fileName)</td></tr>
-<tr class="memdesc:aa865769ca586af379a93d9ef8af7cc75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an animation to the controller.  <a href="classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75">More...</a><br /></td></tr>
+<tr class="memdesc:aa865769ca586af379a93d9ef8af7cc75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an animation to the controller that defaults to zero being the first frame.  <a href="classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75">More...</a><br /></td></tr>
 <tr class="separator:aa865769ca586af379a93d9ef8af7cc75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fe363648f5eebf5d4d7069766c5abb7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrune_1_1_object_animation.html">ObjectAnimation</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_animator.html#a7fe363648f5eebf5d4d7069766c5abb7">getAnimation</a> (std::string const &amp;name)</td></tr>
 <tr class="memdesc:a7fe363648f5eebf5d4d7069766c5abb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to the specified animation.  <a href="classrune_1_1_animator.html#a7fe363648f5eebf5d4d7069766c5abb7">More...</a><br /></td></tr>
@@ -187,7 +190,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 <dl class="section date"><dt>Date</dt><dd>July 22 2020 </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa865769ca586af379a93d9ef8af7cc75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa865769ca586af379a93d9ef8af7cc75">&#9670;&nbsp;</a></span>addAnimation()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa865769ca586af379a93d9ef8af7cc75">&#9670;&nbsp;</a></span>addAnimation() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,11 +233,77 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
       </table>
 </div><div class="memdoc">
 
+<p>Add an animation to the controller that defaults to zero being the first frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">animationName</td><td>The name of the animation to be referred to later when playing. </td></tr>
+    <tr><td class="paramname">frameWidth</td><td>The width of each frame of animation. </td></tr>
+    <tr><td class="paramname">numFrames</td><td>The total number of frames in the sprite sheet. </td></tr>
+    <tr><td class="paramname">frameRate</td><td>The rate that the frames should be displayed (in frames per second) </td></tr>
+    <tr><td class="paramname">fileName</td><td>The name of the file containing the sprite sheet. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>Do not call this in an <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> constructor. The spriteParent pointer must be resolved first. </dd></dl>
+
+</div>
+</div>
+<a id="a118dc8ad30e00eb5e127719f23c01aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118dc8ad30e00eb5e127719f23c01aa1">&#9670;&nbsp;</a></span>addAnimation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rune::Animator::addAnimation </td>
+          <td>(</td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>animationName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>frameWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startFrame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>numFrames</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>frameRate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string const &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 <p>Add an animation to the controller. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">animationName</td><td>The name of the animation to be referred to later when playing. </td></tr>
     <tr><td class="paramname">frameWidth</td><td>The width of each frame of animation. </td></tr>
+    <tr><td class="paramname">startFame</td><td>The frame that the animation should start on. </td></tr>
     <tr><td class="paramname">numFrames</td><td>The total number of frames in the sprite sheet. </td></tr>
     <tr><td class="paramname">frameRate</td><td>The rate that the frames should be displayed (in frames per second) </td></tr>
     <tr><td class="paramname">fileName</td><td>The name of the file containing the sprite sheet. </td></tr>
@@ -310,7 +379,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_animator.html">Animator</a></li>
 				<li class="footer">
-					Generated on Mon Oct 5 2020 10:37:52 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

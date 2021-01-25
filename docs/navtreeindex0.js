@@ -73,10 +73,11 @@ var NAVTREEINDEX0 =
 "classphysics_1_1collision.html":[6,0,2,5],
 "classphysics_1_1collision.html#ac38e2791f2cd46b76b048adf2509f591":[6,0,2,5,0],
 "classrune_1_1_animator.html":[6,0,3,0],
+"classrune_1_1_animator.html#a118dc8ad30e00eb5e127719f23c01aa1":[6,0,3,0,2],
 "classrune_1_1_animator.html#a18d68ce7a4b1ac02521d40162197add8":[6,0,3,0,0],
-"classrune_1_1_animator.html#a41bed797680f37782697280517f6a3ad":[6,0,3,0,3],
-"classrune_1_1_animator.html#a7fe363648f5eebf5d4d7069766c5abb7":[6,0,3,0,2],
-"classrune_1_1_animator.html#a927f4240c691bc0f5548f73b7989ae74":[6,0,3,0,4],
+"classrune_1_1_animator.html#a41bed797680f37782697280517f6a3ad":[6,0,3,0,4],
+"classrune_1_1_animator.html#a7fe363648f5eebf5d4d7069766c5abb7":[6,0,3,0,3],
+"classrune_1_1_animator.html#a927f4240c691bc0f5548f73b7989ae74":[6,0,3,0,5],
 "classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75":[6,0,3,0,1],
 "classrune_1_1_camera.html":[6,0,3,1],
 "classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18":[6,0,3,1,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8aad7db0deb1e69ddc33e3bc699eb451e8":[6,0,3,10,0,82],
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8aae978dce2cde811f90938bbfc8e9ca66":[6,0,3,10,0,30],
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab11b41f73deabcc9fe1fdf45b15064de":[6,0,3,10,0,64],
-"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab1820650f527b53af8201ff43ade93a0":[6,0,3,10,0,8],
-"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab44f21c5c0bee399c0d10dbf6d24c3fd":[6,0,3,10,0,95]
+"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab1820650f527b53af8201ff43ade93a0":[6,0,3,10,0,8]
 };
