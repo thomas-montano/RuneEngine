@@ -1,5 +1,4 @@
 #include "objectAnimation.h"
-#include <iostream>
 
 rune::ObjectAnimation::ObjectAnimation() 
   : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0), m_startFrame(0)
@@ -139,10 +138,7 @@ void rune::ObjectAnimation::incCurrentFrame()
         m_animationClock.reset();
         m_currentFrame++;
         m_currentFrame = ((m_currentFrame-m_startFrame) % (m_numFrames)) + m_startFrame;
-
-        std::cout << m_currentFrame << std::endl;
     }
-
 }
 
 /// @param mirrored A boolean representing whether or not the sprite should be mirrored.
