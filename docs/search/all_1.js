@@ -7,7 +7,7 @@ var searchData=
   ['black_21',['Black',['../classrune_1_1_color.html#a9d4913e26118788d122e4b7018250bb7',1,'rune::Color']]],
   ['blue_22',['Blue',['../classrune_1_1_color.html#a5958b48f6e41cfabb99105e1b3dbab97',1,'rune::Color::Blue()'],['../classrune_1_1_color.html#aefcd834a26d00dd7d489a0b0be7a1364',1,'rune::Color::blue()']]],
   ['body_23',['body',['../structphysics_1_1body.html',1,'physics']]],
-  ['boundingbox_24',['boundingBox',['../structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7',1,'physics::body']]],
+  ['boundingbox_24',['boundingBox',['../classphysics_1_1_collider.html#a1cbd7a62037213aed3eb30f1a23d4c25',1,'physics::Collider::boundingBox()'],['../structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7',1,'physics::body::boundingBox()']]],
   ['boxcollider_25',['BoxCollider',['../classphysics_1_1_box_collider.html',1,'physics']]],
   ['broadphasecollisions_26',['broadPhaseCollisions',['../classphysics_1_1_world.html#a377da1bd2391d88b16dffeab0b37b57a',1,'physics::World::broadPhaseCollisions()'],['../namespacephysics.html#ae18dc7abe0a52e30a85488286b5412a9',1,'physics::broadPhaseCollisions()']]],
   ['button_27',['Button',['../classrune_1_1_mouse.html#a7bd4654291a89f5c7b18e0ed8d2bb879',1,'rune::Mouse']]]

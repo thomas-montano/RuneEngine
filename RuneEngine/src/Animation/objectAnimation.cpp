@@ -1,13 +1,13 @@
 #include "objectAnimation.h"
 
 rune::ObjectAnimation::ObjectAnimation() 
-  : m_numFrames(0), m_mirror(false), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0), m_startFrame(0)
+  : m_numFrames(0), m_frameHeight(0), m_frameWidth(0), m_frameRate(0), m_currentFrame(0), m_startFrame(0)
 {
 
 }
 
 rune::ObjectAnimation::ObjectAnimation(int frameWidth, int startFrame, int numFrames, int frameRate)
-  : m_numFrames(numFrames), m_mirror(false), m_frameHeight(0), m_frameWidth(frameWidth), m_frameRate(frameRate), m_currentFrame(startFrame), m_startFrame(startFrame)
+  : m_numFrames(numFrames), m_frameHeight(0), m_frameWidth(frameWidth), m_frameRate(frameRate), m_currentFrame(startFrame), m_startFrame(startFrame)
 {
 
 }
@@ -27,15 +27,7 @@ void rune::ObjectAnimation::setFrameRate(int frameRate)
 */
 int rune::ObjectAnimation::getFrameRate(void)
 {
-
     return m_frameRate;
-
-}
-
-/// @return Whether or not the sprite is currently being mirrored.
-bool rune::ObjectAnimation::isMirrored(void)
-{
-  return m_mirror;
 }
 
 /**
@@ -140,12 +132,6 @@ void rune::ObjectAnimation::incCurrentFrame()
         m_currentFrame++;
         m_currentFrame = ((m_currentFrame-m_startFrame) % (m_numFrames)) + m_startFrame;
     }
-}
-
-/// @param mirrored A boolean representing whether or not the sprite should be mirrored.
-void rune::ObjectAnimation::setMirror(bool mirrored)
-{
-  m_mirror = mirrored;
 }
 
 float rune::ObjectAnimation::getAnimationDuration(void)

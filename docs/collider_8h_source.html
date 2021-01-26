@@ -107,26 +107,28 @@ $(document).ready(function(){initNavTree('collider_8h_source.html',''); initResi
 <div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classphysics_1_1_collider.html">   23</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="classphysics_1_1_collider.html">Collider</a> : <span class="keyword">public</span> <a class="code" href="classrune_1_1_subject.html">rune::Subject</a></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> boundingBox;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> offset;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>: </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="classphysics_1_1_collider.html">Collider</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> computeAABB(<span class="keywordtype">void</span>) = 0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classphysics_1_1_collider.html#a1cbd7a62037213aed3eb30f1a23d4c25">   27</a></span>&#160;  <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> <a class="code" href="classphysics_1_1_collider.html#a1cbd7a62037213aed3eb30f1a23d4c25">boundingBox</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classphysics_1_1_collider.html#a677c59d64d1d76db9022b2793fda23b9">   29</a></span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="classphysics_1_1_collider.html#a677c59d64d1d76db9022b2793fda23b9">offset</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>: </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="classphysics_1_1_collider.html">Collider</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classphysics_1_1_collider.html#a6d216d1ba7cc6af26e3eb551729f2b0d">   35</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classphysics_1_1_a_a_b_b.html">AABB</a> <a class="code" href="classphysics_1_1_collider.html#a6d216d1ba7cc6af26e3eb551729f2b0d">computeAABB</a>(<span class="keywordtype">void</span>) = 0;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassphysics_1_1_collider_html"><div class="ttname"><a href="classphysics_1_1_collider.html">physics::Collider</a></div><div class="ttdoc">A collider that is to be used for registering collisions between objects in the scene.</div><div class="ttdef"><b>Definition:</b> collider.h:24</div></div>
 <div class="ttc" id="anamespacephysics_html"><div class="ttname"><a href="namespacephysics.html">physics</a></div><div class="ttdoc">The physics module responsible for handling and resolving collisions between physics::Collider2D.</div><div class="ttdef"><b>Definition:</b> AABB.h:7</div></div>
+<div class="ttc" id="aclassphysics_1_1_collider_html_a6d216d1ba7cc6af26e3eb551729f2b0d"><div class="ttname"><a href="classphysics_1_1_collider.html#a6d216d1ba7cc6af26e3eb551729f2b0d">physics::Collider::computeAABB</a></div><div class="ttdeci">virtual AABB computeAABB(void)=0</div><div class="ttdoc">Computes the appropriate physics::AABB that should be given to the collider.</div></div>
 <div class="ttc" id="aclassrune_1_1_subject_html"><div class="ttname"><a href="classrune_1_1_subject.html">rune::Subject</a></div><div class="ttdoc">A subject that can be watched for signals by observers.</div><div class="ttdef"><b>Definition:</b> subject.h:21</div></div>
+<div class="ttc" id="aclassphysics_1_1_collider_html_a677c59d64d1d76db9022b2793fda23b9"><div class="ttname"><a href="classphysics_1_1_collider.html#a677c59d64d1d76db9022b2793fda23b9">physics::Collider::offset</a></div><div class="ttdeci">rune::Vec2 offset</div><div class="ttdoc">The amount of offset from the center of the AABB that should be applied.</div><div class="ttdef"><b>Definition:</b> collider.h:29</div></div>
+<div class="ttc" id="aclassphysics_1_1_collider_html_a1cbd7a62037213aed3eb30f1a23d4c25"><div class="ttname"><a href="classphysics_1_1_collider.html#a1cbd7a62037213aed3eb30f1a23d4c25">physics::Collider::boundingBox</a></div><div class="ttdeci">AABB boundingBox</div><div class="ttdoc">The axis aligned bounding box that surrounds the collider.</div><div class="ttdef"><b>Definition:</b> collider.h:27</div></div>
 <div class="ttc" id="aclassrune_1_1_vec2_html"><div class="ttname"><a href="classrune_1_1_vec2.html">rune::Vec2</a></div><div class="ttdoc">1 x 2 vector to be used for math.</div><div class="ttdef"><b>Definition:</b> vec2.h:20</div></div>
 <div class="ttc" id="aclassphysics_1_1_a_a_b_b_html"><div class="ttname"><a href="classphysics_1_1_a_a_b_b.html">physics::AABB</a></div><div class="ttdoc">Axis aligned bounding box for each object.</div><div class="ttdef"><b>Definition:</b> AABB.h:10</div></div>
 <!-- start footer part -->
@@ -134,7 +136,7 @@ $(document).ready(function(){initNavTree('collider_8h_source.html',''); initResi
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_daeb7f425f971aed3e42bc1ac877a486.html">Physics</a></li><li class="navelem"><a class="el" href="dir_5d20822071fc6880f215f4b8f5ed439b.html">Colliders</a></li><li class="navelem"><b>collider.h</b></li>
 				<li class="footer">
-					Generated on Tue Jan 26 2021 12:03:31 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 15:14:17 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

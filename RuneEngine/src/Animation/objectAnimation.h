@@ -27,8 +27,6 @@ private:
   int m_currentFrame;
   int m_startFrame;
 
-  bool m_mirror;
-
   rune::Clock m_animationClock;
 
   Texture m_animationSheet;
@@ -42,8 +40,6 @@ public:
   void setFrameRate(int frameRate);
   ///Get the frame rate for the animation.
   int getFrameRate(void);
-  ///Get whether or not the animation should be mirrored.
-  bool isMirrored(void);
   ///Set the width in pixels of each frame on the sprite sheet.
   void setFrameWidth(int frameWidth);
   ///Get the width in pixels of each frame on the sprite sheet.
@@ -66,8 +62,6 @@ public:
   void setCurrentFame(int);
   ///Tell the animation to go to the next frame.
   void incCurrentFrame(void);
-  ///Set whether or not the sprite should be mirrored across the vertical axis.
-  void setMirror(bool);
   ///Get the amount of time in seconds that the animation lasts.
   float getAnimationDuration(void);
   ///Get the frame that the animation starts on.

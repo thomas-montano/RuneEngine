@@ -23,12 +23,15 @@ namespace physics{
 class RUNE_ENGINE Collider : public rune::Subject
 {
 protected:
+  ///The axis aligned bounding box that surrounds the collider.
   AABB boundingBox;
+  ///The amount of offset from the center of the AABB that should be applied.
   rune::Vec2 offset;
 
 public: 
+  ///Default empty constructor to make a new collider.
   Collider();
-
+  ///Computes the appropriate physics::AABB that should be given to the collider.
   virtual AABB computeAABB(void) = 0;
 
 

@@ -155,3 +155,16 @@ unsigned int rune::Sprite::getDrawMode()
 {
   return spriteDrawMode;
 }
+
+void rune::Sprite::setMirror(bool mirror)
+{
+  isMirrored = mirror;
+}
+
+/**
+ * \return Whether or not the sprite is currently being mirrored.
+ */
+bool rune::Sprite::getMirror(void)
+{
+  return isMirrored;
+}

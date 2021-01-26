@@ -27,7 +27,7 @@ void rune::Animator::playAnimation(std::string const& animationName)
   if (m_animations.find(animationName) != m_animations.end())
   {
 
-    if(!m_animations[animationName]->isMirrored())
+    if(!spriteParent->getMirror())
     {
       spriteParent->setTextureRect((currentAnimation->getCurrentFrame() * currentAnimation->getFrameWidth()), 0, currentAnimation->getFrameWidth(), textureDimensions.height);
     }

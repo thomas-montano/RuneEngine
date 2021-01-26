@@ -45,9 +45,9 @@ public:
 
 };
 
-template Rect<float>::Rect<float>(float,float,float,float);
-template Rect<int>::Rect<int>(int, int, int, int);
-template Rect<double>::Rect<double>(double, double, double, double);
+rune::Rect<float>::Rect(float,float,float,float);
+rune::Rect<int>::Rect(int, int, int, int);
+rune::Rect<double>::Rect(double, double, double, double);
 
 ///A Rect that uses integers.
 using IntRect = Rect<int>;

@@ -40,6 +40,8 @@ private:
   //Texture rectangle
   IntRect textureSpace;
 
+  bool isMirrored;
+
   unsigned int spriteDrawMode;
 
   const char* defaultSprite = 
@@ -70,7 +72,10 @@ public:
   IntRect getTextureRect(void);
   ///Returns the filtering mode of the sprite.
   unsigned int getDrawMode();
-
+  ///Sets whether or not the sprite should be drawn in reverse.
+  void setMirror(bool mirror);
+  ///Gets whether or not the sprite should be drawn in reverse.
+  bool getMirror(void);
   ///Color of the sprite for drawing purposes
   Color spriteColor;
 
