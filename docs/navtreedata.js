@@ -31,9 +31,9 @@ var NAVTREE =
       [ "Engine Features", "index.html#features", null ],
       [ "Engine Issues", "index.html#bugs", null ]
     ] ],
-    [ "Game Objects", "_game_objects.html", [
-      [ "Creating an Object", "_game_objects.html#objects", null ],
-      [ "Scripting", "_game_objects.html#Scripts", null ]
+    [ "Game Objects", "game_objects.html", [
+      [ "Creating an Object", "game_objects.html#objects", null ],
+      [ "Scripting", "game_objects.html#Scripts", null ]
     ] ],
     [ "Entry Point", "entry_point.html", null ],
     [ "Physics", "physics.html", [
@@ -67,8 +67,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_a_b_b_8h_source.html",
-"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab44f21c5c0bee399c0d10dbf6d24c3fd",
-"classrune_1_1_vec3.html#a0b87d257646106f61902b9a77f6822d2"
+"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ac439630fc145c5842370d0ebb35128b9",
+"classrune_1_1_vec3.html#a16e156fc2b133b1cdabc7ed846564678"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

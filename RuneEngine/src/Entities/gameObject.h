@@ -73,7 +73,7 @@ public:
 
 /**
  * 
- * @page GameObjects Game Objects
+ * @page gameObjects Game Objects
  * 
  * @section objects Creating an Object
  * 

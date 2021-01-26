@@ -1,8 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classrune_1_1_vec3.html#a0b87d257646106f61902b9a77f6822d2":[6,0,1,33,1],
-"classrune_1_1_vec3.html#a0f8ee16ec14c750de0b03532ecd5a03b":[6,0,1,33,18],
-"classrune_1_1_vec3.html#a10552d50ec7ee07e8610f1f3e74686c2":[6,0,1,33,12],
 "classrune_1_1_vec3.html#a16e156fc2b133b1cdabc7ed846564678":[6,0,1,33,7],
 "classrune_1_1_vec3.html#a250cd3dcc800695558e902d944a91e92":[6,0,1,33,20],
 "classrune_1_1_vec3.html#a4ec02990b878a705c015b0aebc0c5b28":[6,0,1,33,15],
@@ -32,8 +29,8 @@ var NAVTREEINDEX2 =
 "entry_point.html":[2],
 "files.html":[7,0],
 "frame_buffer_8h_source.html":[7,0,12],
-"functions.html":[6,3,0,0],
 "functions.html":[6,3,0],
+"functions.html":[6,3,0,0],
 "functions_b.html":[6,3,0,1],
 "functions_c.html":[6,3,0,2],
 "functions_d.html":[6,3,0,3],
@@ -89,6 +86,9 @@ var NAVTREEINDEX2 =
 "functions_~.html":[6,3,0,26],
 "game_application_8h_source.html":[7,0,13],
 "game_object_8h_source.html":[7,0,14],
+"game_objects.html":[1],
+"game_objects.html#Scripts":[1,1],
+"game_objects.html#objects":[1,0],
 "game_scene_8h_source.html":[7,0,15],
 "hierarchy.html":[6,2],
 "index.html":[],

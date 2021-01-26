@@ -3,7 +3,7 @@ var searchData=
   ['g_89',['G',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a7f0723e653ab30f2c260b56bf7be1b49',1,'rune::Keyboard']]],
   ['gameapplication_90',['GameApplication',['../classrune_1_1_game_application.html',1,'rune']]],
   ['gameobject_91',['GameObject',['../classrune_1_1_game_object.html',1,'rune::GameObject'],['../classrune_1_1_game_object.html#a94750f9c351bec76165d7f0960dba9fb',1,'rune::GameObject::GameObject()=default'],['../classrune_1_1_game_object.html#af1b124a43aded8e2bc7cf7d59a6ccab0',1,'rune::GameObject::GameObject(const GameObject &amp;gameObject)']]],
-  ['game_20objects_92',['Game Objects',['../_game_objects.html',1,'']]],
+  ['game_20objects_92',['Game Objects',['../game_objects.html',1,'']]],
   ['gamescene_93',['GameScene',['../classrune_1_1_game_scene.html',1,'rune::GameScene'],['../classrune_1_1_game_scene.html#a6333862919b9eb3357dd1ea5c800f7b2',1,'rune::GameScene::GameScene()']]],
   ['getanimation_94',['getAnimation',['../classrune_1_1_animator.html#a7fe363648f5eebf5d4d7069766c5abb7',1,'rune::Animator']]],
   ['getanimationduration_95',['getAnimationDuration',['../classrune_1_1_object_animation.html#ab9be93cddabafe370897d5253ee14ebc',1,'rune::ObjectAnimation']]],
