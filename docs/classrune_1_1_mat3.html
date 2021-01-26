@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -169,6 +169,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6fb7ca031ab88ba3e85a386a50934b75"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_mat3.html#a6fb7ca031ab88ba3e85a386a50934b75">operator[]</a> (int index)</td></tr>
 <tr class="memdesc:a6fb7ca031ab88ba3e85a386a50934b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array like accessing of elements.  <a href="classrune_1_1_mat3.html#a6fb7ca031ab88ba3e85a386a50934b75">More...</a><br /></td></tr>
 <tr class="separator:a6fb7ca031ab88ba3e85a386a50934b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18d97345fcf7ed0466185e07c0622869"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_mat3.html#a18d97345fcf7ed0466185e07c0622869">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classrune_1_1_mat3.html">rune::Mat3</a> &amp;mat)</td></tr>
+<tr class="separator:a18d97345fcf7ed0466185e07c0622869"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -295,8 +297,7 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 <p>Overload of multiplication operator for a <a class="el" href="classrune_1_1_mat3.html" title="3 x 3 matrix to be used for math.">rune::Mat3</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">vector</td><td>The vector to be multiplied with. </td></tr>
-    <tr><td class="paramname">mat</td><td>The <a class="el" href="classrune_1_1_mat3.html" title="3 x 3 matrix to be used for math.">rune::Mat3</a> to be multiplied by. </td></tr>
+    <tr><td class="paramname">vec</td><td>The vector to be multiplied with. </td></tr>
   </table>
   </dd>
 </dl>
@@ -648,6 +649,42 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 
 </div>
 </div>
+<a id="a18d97345fcf7ed0466185e07c0622869"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18d97345fcf7ed0466185e07c0622869">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classrune_1_1_mat3.html">rune::Mat3</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream that the vector should be printed to. </td></tr>
+    <tr><td class="paramname">mat</td><td>mat to be printed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Stream to be printed to the console. </dd></dl>
+
+</div>
+</div>
 <a id="a0826e6a8f93416282309e929dbf77362"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0826e6a8f93416282309e929dbf77362">&#9670;&nbsp;</a></span>operator==()</h2>
 
@@ -713,7 +750,7 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_mat3.html">Mat3</a></li>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

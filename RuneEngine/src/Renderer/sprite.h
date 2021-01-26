@@ -48,11 +48,11 @@ private:
   };
 
 public:
+  ///The shader that should be used to draw the sprite.
   Shader objectShader;
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
   ///Default constructor for generating a sprite from a PNG file, uses default shader.
-  /// Use NEAREST_FILTER for pixel art sprites. LINEAR_FILTER is used by default.
   Sprite(std::string const& spriteLocation, unsigned int drawMode = LINEAR_FILTER);
   /// Virtual start method being overloaded
   virtual void start() override;

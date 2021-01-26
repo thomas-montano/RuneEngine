@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -123,10 +123,10 @@ $(document).ready(function(){initNavTree('rigid_body_8h_source.html',''); initRe
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">struct </span>AABB</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> min;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> max;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="classphysics_1_1_a_a_b_b.html#a9194bb672b7e36b6d693c5d873d55504">min</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a> <a class="code" href="classphysics_1_1_a_a_b_b.html#ae66bae5d98db468d9fad0e46a47d54f7">max</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  AABB() : min(<a class="code" href="namespacerune.html">rune</a>::Vec2(0,0)), max(<a class="code" href="namespacerune.html">rune</a>::Vec2(0,0))</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  AABB() : <a class="code" href="classphysics_1_1_a_a_b_b.html#a9194bb672b7e36b6d693c5d873d55504">min</a>(<a class="code" href="namespacerune.html">rune</a>::Vec2(0,0)), <a class="code" href="classphysics_1_1_a_a_b_b.html#ae66bae5d98db468d9fad0e46a47d54f7">max</a>(<a class="code" href="namespacerune.html">rune</a>::Vec2(0,0))</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  </div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
@@ -244,6 +244,8 @@ $(document).ready(function(){initNavTree('rigid_body_8h_source.html',''); initRe
 <div class="ttc" id="aclassphysics_1_1_rigid_body_html"><div class="ttname"><a href="classphysics_1_1_rigid_body.html">physics::RigidBody</a></div><div class="ttdoc">Game object component that allows a game object to have collisions with other objects.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:95</div></div>
 <div class="ttc" id="aclassrune_1_1_component_html"><div class="ttname"><a href="classrune_1_1_component.html">rune::Component</a></div><div class="ttdoc">A component of a rune::GameObject, this class is used to add functionality to a object in the game wo...</div><div class="ttdef"><b>Definition:</b> component.h:23</div></div>
 <div class="ttc" id="aclassphysics_1_1collision_html"><div class="ttname"><a href="classphysics_1_1collision.html">physics::collision</a></div><div class="ttdoc">Collision manifold used for reporting rigid body collisions.</div><div class="ttdef"><b>Definition:</b> collision.h:8</div></div>
+<div class="ttc" id="aclassphysics_1_1_a_a_b_b_html_ae66bae5d98db468d9fad0e46a47d54f7"><div class="ttname"><a href="classphysics_1_1_a_a_b_b.html#ae66bae5d98db468d9fad0e46a47d54f7">physics::AABB::max</a></div><div class="ttdeci">rune::Vec2 max</div><div class="ttdoc">Top right corner of the AABB.</div><div class="ttdef"><b>Definition:</b> AABB.h:16</div></div>
+<div class="ttc" id="aclassphysics_1_1_a_a_b_b_html_a9194bb672b7e36b6d693c5d873d55504"><div class="ttname"><a href="classphysics_1_1_a_a_b_b.html#a9194bb672b7e36b6d693c5d873d55504">physics::AABB::min</a></div><div class="ttdeci">rune::Vec2 min</div><div class="ttdoc">Bottom left corner of the AABB.</div><div class="ttdef"><b>Definition:</b> AABB.h:14</div></div>
 <div class="ttc" id="astructphysics_1_1body_html_acd622a61bb98bd1708b9d5a09002d341"><div class="ttname"><a href="structphysics_1_1body.html#acd622a61bb98bd1708b9d5a09002d341">physics::body::oldPosition</a></div><div class="ttdeci">rune::Vec2 oldPosition</div><div class="ttdoc">Previous position in world coordinates.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:66</div></div>
 <div class="ttc" id="astructphysics_1_1body_html_a28d6f6ed66b834f11db147af3be77fa2"><div class="ttname"><a href="structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2">physics::body::angleOfRotation</a></div><div class="ttdeci">double angleOfRotation</div><div class="ttdoc">Coefficient of dynamic friction.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:82</div></div>
 <div class="ttc" id="astructphysics_1_1body_html_ae5dff5ec1ea25e6e276eaeb3c8428cd8"><div class="ttname"><a href="structphysics_1_1body.html#ae5dff5ec1ea25e6e276eaeb3c8428cd8">physics::body::gravityFactor</a></div><div class="ttdeci">rune::Vec2 gravityFactor</div><div class="ttdoc">How much gravity does this object have.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:72</div></div>
@@ -266,7 +268,7 @@ $(document).ready(function(){initNavTree('rigid_body_8h_source.html',''); initRe
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_daeb7f425f971aed3e42bc1ac877a486.html">Physics</a></li><li class="navelem"><b>rigidBody.h</b></li>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

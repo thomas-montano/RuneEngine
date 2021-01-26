@@ -30,8 +30,9 @@ private:
 public:
   ///The location, scale, and rotation of the object in the world.
   rune::Transform transform;
-
+  ///Default empty constructor.
   GameObject() = default;
+  ///Constructor to be used for copying another rune::GameObject.
   GameObject(const GameObject& gameObject);
   ///Add a component to this game object.
   void addComponent(rune::Component&);

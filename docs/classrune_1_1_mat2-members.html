@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -100,6 +100,8 @@ $(document).ready(function(){initNavTree('classrune_1_1_mat2.html',''); initResi
   <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a8970760931cdcc85cf47dd0bdb45338d">operator*</a>(const Mat2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a1a9d894d857657c6af8e9354151c6bc6">operator*</a>(double scalar)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a527b8b5b9e113623e6c1345e6be52501">operator*</a>(const Vec2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a4f2ca339f4920493702c960940dae047">operator*</a>(Vec2 const &amp;vec, Mat2 &amp;mat)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a6702db0d91a42b817a26719c3cc83d81">operator*</a>(double scalar, Mat2 &amp;mat)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a30ed60a881acc560b7628a7701b7e325">operator*=</a>(const Mat2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a0e84849e475b93bf496532ea1a66afc0">operator*=</a>(const double right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a455f3120bd75399951d103643c2eaada">operator+</a>(const Mat2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
@@ -111,15 +113,16 @@ $(document).ready(function(){initNavTree('classrune_1_1_mat2.html',''); initResi
   <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#add80e84b701be7a8353787047f3517bb">operator/</a>(const Mat2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#af4f209b7a320c379b4d64e40bad8b104">operator/</a>(double scalar)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a5e32c81fce1e96f0102dd37b50aa86a9">operator&lt;&lt;</a>(std::ostream &amp;os, const Mat2 &amp;vector)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"><span class="mlabel">friend</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a4d62a08258e8c1c1664cfca54e8e17df">operator==</a>(const Mat2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a4705d18e1daa5932121ea526b839d291">operator[]</a>(int index)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a282964f6219a5a041f69e6b3c7b12eec">operator&lt;&lt;</a>(std::ostream &amp;os, const rune::Mat2 &amp;matrix)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a4d62a08258e8c1c1664cfca54e8e17df">operator==</a>(const Mat2 &amp;right)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classrune_1_1_mat2.html#a4705d18e1daa5932121ea526b839d291">operator[]</a>(int index)</td><td class="entry"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

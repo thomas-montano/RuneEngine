@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -124,16 +124,24 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6c68aadd5b73811e583a4e0ec728517a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#a6c68aadd5b73811e583a4e0ec728517a">updatePhysics</a> (std::vector&lt; <a class="el" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a> * &gt; objects, double dT)</td></tr>
+<tr class="memdesc:a6c68aadd5b73811e583a4e0ec728517a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function call made by the game scene to have objects get updated.  <a href="namespacephysics.html#a6c68aadd5b73811e583a4e0ec728517a">More...</a><br /></td></tr>
 <tr class="separator:a6c68aadd5b73811e583a4e0ec728517a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae18dc7abe0a52e30a85488286b5412a9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#ae18dc7abe0a52e30a85488286b5412a9">broadPhaseCollisions</a> (std::vector&lt; <a class="el" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a> * &gt; boundingBoxes)</td></tr>
+<tr class="memitem:ae18dc7abe0a52e30a85488286b5412a9"><td class="memItemLeft" align="right" valign="top"><a id="ae18dc7abe0a52e30a85488286b5412a9"></a>
+std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#ae18dc7abe0a52e30a85488286b5412a9">broadPhaseCollisions</a> (std::vector&lt; <a class="el" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a> * &gt; boundingBoxes)</td></tr>
+<tr class="memdesc:ae18dc7abe0a52e30a85488286b5412a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broad phase collision responsible for determining collisions based off of <a class="el" href="classphysics_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">AABB</a>'s only. <br /></td></tr>
 <tr class="separator:ae18dc7abe0a52e30a85488286b5412a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b1b83d2840feb07189de521fe1775e4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#a3b1b83d2840feb07189de521fe1775e4">narrowPhaseCollisions</a> (std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt; boundingBoxes)</td></tr>
-<tr class="separator:a3b1b83d2840feb07189de521fe1775e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab234b16dc49aea4f8e7f053bfb0d272"><td class="memItemLeft" align="right" valign="top"><a id="aab234b16dc49aea4f8e7f053bfb0d272"></a>
+std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#aab234b16dc49aea4f8e7f053bfb0d272">narrowPhaseCollisions</a> (std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt; possibleCollisions)</td></tr>
+<tr class="memdesc:aab234b16dc49aea4f8e7f053bfb0d272"><td class="mdescLeft">&#160;</td><td class="mdescRight">Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into account. <br /></td></tr>
+<tr class="separator:aab234b16dc49aea4f8e7f053bfb0d272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ab049c836fd7c3ff6351713b4448ccb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#a8ab049c836fd7c3ff6351713b4448ccb">resolveCollisions</a> (std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt; currentCollision)</td></tr>
+<tr class="memdesc:a8ab049c836fd7c3ff6351713b4448ccb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the definite collisions in a physically realistic way.  <a href="namespacephysics.html#a8ab049c836fd7c3ff6351713b4448ccb">More...</a><br /></td></tr>
 <tr class="separator:a8ab049c836fd7c3ff6351713b4448ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab20ff5b6dfb44fa1cd3c18cb17c5fb4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#ab20ff5b6dfb44fa1cd3c18cb17c5fb4f">positionalCorrection</a> (<a class="el" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a> *object1, <a class="el" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a> *object2, double penetration, <a class="el" href="classrune_1_1_vec2.html">rune::Vec2</a> normal)</td></tr>
+<tr class="memdesc:ab20ff5b6dfb44fa1cd3c18cb17c5fb4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Correct the position of the object each frame so that it doesn't look like two objects are overlapping.  <a href="namespacephysics.html#ab20ff5b6dfb44fa1cd3c18cb17c5fb4f">More...</a><br /></td></tr>
 <tr class="separator:ab20ff5b6dfb44fa1cd3c18cb17c5fb4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8bfd5d23797894b6b6fa7dfe24251946"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacephysics.html#a8bfd5d23797894b6b6fa7dfe24251946">pythagoreanSolve</a> (double a, double b)</td></tr>
+<tr class="memdesc:a8bfd5d23797894b6b6fa7dfe24251946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solve for the hypotenuse given the two sides of a triangle.  <a href="namespacephysics.html#a8bfd5d23797894b6b6fa7dfe24251946">More...</a><br /></td></tr>
 <tr class="separator:a8bfd5d23797894b6b6fa7dfe24251946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -141,54 +149,6 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>March 2 2020 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ae18dc7abe0a52e30a85488286b5412a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae18dc7abe0a52e30a85488286b5412a9">&#9670;&nbsp;</a></span>broadPhaseCollisions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classphysics_1_1collision.html">physics::collision</a>&gt; physics::broadPhaseCollisions </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a> * &gt;&#160;</td>
-          <td class="paramname"><em>boundingBoxes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Broad phase collision responsible for determining collisions based off of <a class="el" href="classphysics_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">AABB</a>'s only. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boundingBoxes</td><td>The <a class="el" href="classphysics_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">physics::AABB</a> list to be sorted through for possible collisions </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3b1b83d2840feb07189de521fe1775e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b1b83d2840feb07189de521fe1775e4">&#9670;&nbsp;</a></span>narrowPhaseCollisions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classphysics_1_1collision.html">physics::collision</a>&gt; physics::narrowPhaseCollisions </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classphysics_1_1collision.html">physics::collision</a> &gt;&#160;</td>
-          <td class="paramname"><em>boundingBoxes</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into account. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">boundingBoxes</td><td>The collision manifolds that have a possible collisions. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="ab20ff5b6dfb44fa1cd3c18cb17c5fb4f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab20ff5b6dfb44fa1cd3c18cb17c5fb4f">&#9670;&nbsp;</a></span>positionalCorrection()</h2>
 
@@ -226,14 +186,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Correct the position of the object each frame so that it doesn't look like two objects are overlapping. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Correct the position of the object each frame so that it doesn't look like two objects are overlapping. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">object1</td><td>The first object involved in the collision. </td></tr>
-    <tr><td class="paramname">object2</td><td>The second object involved in the collision. </td></tr>
-    <tr><td class="paramname">penetration</td><td>The penetration depth in world coordinates. </td></tr>
-    <tr><td class="paramname">normal</td><td>The vector normal to the collision.</td></tr>
     <tr><td class="paramname">object1</td><td>The first object in the collision. </td></tr>
     <tr><td class="paramname">object2</td><td>The seconds object in the collision. </td></tr>
+    <tr><td class="paramname">depth</td><td>The penetration depth in world coordinates. </td></tr>
     <tr><td class="paramname">normal</td><td>The normal vector for the collision. </td></tr>
   </table>
   </dd>
@@ -266,10 +225,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Solve for the hypotenuse given the two sides of a triangle. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Solve for the hypotenuse given the two sides of a triangle. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first side of the triangle. </td></tr>
-    <tr><td class="paramname">b</td><td>The second side of the triangle.</td></tr>
     <tr><td class="paramname">a</td><td>First side of the triangle. </td></tr>
     <tr><td class="paramname">b</td><td>Seconds side of the triangle. </td></tr>
   </table>
@@ -294,9 +253,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Resolve the definite collisions in a physically realistic way </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Resolve the definite collisions in a physically realistic way. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">currentCollision</td><td>The collision that is currently waiting to be resolved.</td></tr>
     <tr><td class="paramname">collisions</td><td>Collision manifolds for OBB's that were found to be definitely colliding. </td></tr>
   </table>
   </dd>
@@ -329,10 +289,10 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Function call made by the game scene to have objects get updated </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Function call made by the game scene to have objects get updated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">objects</td><td>The RigidBodies to be simulated. </td></tr>
-    <tr><td class="paramname">dT</td><td>The amount of time in seconds since the last physics call.</td></tr>
     <tr><td class="paramname">objects</td><td>An array of pointers to rigid bodies that should be considered for collision </td></tr>
     <tr><td class="paramname">dT</td><td>The amount of time that the physics frame occupies </td></tr>
   </table>
@@ -348,7 +308,7 @@ Functions</h2></td></tr>
 			<ul>
 				<li class="navelem"><a class="el" href="namespacephysics.html">physics</a></li>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

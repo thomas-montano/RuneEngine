@@ -17,6 +17,7 @@ class RUNE_ENGINE Keyboard
 
 public: 
 
+///A keyboard key that can be used to get input.
 enum Key
 {
   ///Unhandled key.

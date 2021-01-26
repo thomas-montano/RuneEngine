@@ -120,7 +120,7 @@ void rune::ParticleEmitter::update(double dT)
 }
 
 /**
- * @param window Overloaded draw function for rendering the particles to the screen.
+ * param window Overloaded draw function for rendering the particles to the screen.
 */
 /*void ParticleEmitter::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {

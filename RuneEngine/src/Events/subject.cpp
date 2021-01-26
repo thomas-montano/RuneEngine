@@ -28,7 +28,7 @@ void rune::Subject::subscribe(Observer& newObserver)
   observers.push_back(&newObserver);
 }
 
-///@param newObserver The observer that would no longer like to be notified of signals.
+///@param observer The observer that would no longer like to be notified of signals.
 /// @return Whether or not the observer was successfully subscribed.
 bool rune::Subject::unsubscribe(Observer& observer)
 {

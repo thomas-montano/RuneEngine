@@ -97,7 +97,8 @@ int rune::ObjectAnimation::getNumFrames(void)
 }
 
 /**
- * @param animationSheet The texture to be used as the sprite sheet.
+ * @param filePath The file path of the texture to be used as the sprite sheet.
+ * @param drawMode The filtering mode of the sprite.
 */
 void rune::ObjectAnimation::setSheet(std::string const& filePath, unsigned int drawMode)
 {

@@ -122,6 +122,7 @@ int rune::GameApplication::run(void)
 }
 
 /**
+ * @param sceneName A string that is used to refer back to the scene.
  * @param newScene A pointer to a GameScene object that should be loaded into the scene buffer.
 */
 void rune::GameApplication::loadScene(std::string const& sceneName, GameScene* newScene)

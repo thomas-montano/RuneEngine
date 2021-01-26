@@ -20,6 +20,7 @@ var classrune_1_1_mat3 =
     [ "operator/", "classrune_1_1_mat3.html#afc6752b030d571e71d7e539bed74e203", null ],
     [ "operator/=", "classrune_1_1_mat3.html#a3ccad4dc60ba199df505dad27fc90e1e", null ],
     [ "operator/=", "classrune_1_1_mat3.html#a6c13cc8d3e4326117eca9d239ac3898d", null ],
+    [ "operator<<", "classrune_1_1_mat3.html#a18d97345fcf7ed0466185e07c0622869", null ],
     [ "operator==", "classrune_1_1_mat3.html#a0826e6a8f93416282309e929dbf77362", null ],
     [ "operator[]", "classrune_1_1_mat3.html#a6fb7ca031ab88ba3e85a386a50934b75", null ],
     [ "operator<<", "classrune_1_1_mat3.html#a7f033b6bebe42b2d08281615644e6771", null ]

@@ -192,7 +192,7 @@ bool rune::Mat2::operator!=(const rune::Mat2& right)
 }
 
 /**
- * \param right The scalar to multiply by.
+ * \param scalar The scalar to multiply by.
  * \return A member wise scalar multiplication.
  */
 rune::Mat2 rune::Mat2::operator* (double scalar)
@@ -217,7 +217,7 @@ rune::Vec2 rune::Mat2::operator*(const rune::Vec2& right)
 }
 
 /**
- * \param right The scalar to multiply by.
+ * \param scalar The scalar to multiply by.
  * \return A member wise scalar division.
  */
 rune::Mat2 rune::Mat2::operator/ (double scalar)
@@ -227,6 +227,12 @@ rune::Mat2 rune::Mat2::operator/ (double scalar)
 
 }
 
+/**
+ * \memberof rune::Mat2
+ * \param os Output stream that the vector should be printed to.
+ * \param matrix Vector to be printed.
+ * \return Stream to be printed to the console.
+ */
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)
 {
   os << matrix.row1[0] << "," << matrix.row1[1] << std::endl;
@@ -235,11 +241,25 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Mat2& matrix)
   return os;
 }
 
+/**
+ * \memberof rune::Mat2
+ * 
+ * \param vec
+ * \param mat
+ * \return 
+ */
 rune::Vec2 rune::operator*(Vec2 const& vec, Mat2& mat)
 {
   return mat*vec;
 }
 
+/**
+ * \memberof rune::Mat2
+ * 
+ * \param scalar
+ * \param mat
+ * \return 
+ */
 rune::Mat2 rune::operator*(double scalar, Mat2& mat)
 {
   return mat*scalar;

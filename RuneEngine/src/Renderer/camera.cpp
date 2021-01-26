@@ -47,7 +47,7 @@ double rune::Camera::getZoom(void)
 }
 
 /**
- * \param direction The vector to be added to the current camera position.
+ * \param speed A vector that will be added to the camera's current velocity vector.
  */
 void rune::Camera::move(rune::Vec2 speed)
 {

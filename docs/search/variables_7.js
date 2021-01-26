@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['m_5ferrorcode_624',['m_errorCode',['../classrune_1_1_game_application.html#ab0f4df68afaaa7d8a44445b785170a1f',1,'rune::GameApplication']]],
-  ['magenta_625',['Magenta',['../classrune_1_1_color.html#a62e0ea9ef7f2fb4887e4ca6f2f3bccb7',1,'rune::Color']]]
+  ['invinertia_656',['invInertia',['../structphysics_1_1body.html#ad181aec10ba252fb22aacbaa56874555',1,'physics::body']]],
+  ['invmass_657',['invMass',['../structphysics_1_1body.html#a810b0aaf5973b556f48132dbc58b4b07',1,'physics::body']]],
+  ['isenabled_658',['isEnabled',['../classrune_1_1_component.html#a6214c9cafd2ec5aefdf253644f8c33fd',1,'rune::Component']]],
+  ['isstateactive_659',['isStateActive',['../classrune_1_1_game_scene.html#a2af958c563fe965ac285558547a30e04',1,'rune::GameScene']]]
 ];

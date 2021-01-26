@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -92,8 +92,8 @@ $(document).ready(function(){initNavTree('physics.html',''); initResizable(); })
 <div class="textblock"><p>Adding physical interactions is an important and fun part of making your game! In Rune, adding physics is as simple as attaching a <a class="el" href="classphysics_1_1_rigid_body.html" title="Game object component that allows a game object to have collisions with other objects.">physics::RigidBody</a> component to your <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a>.</p>
 <p>In your GameObject constructor, you will be required to initialize the RigidBody in one of two ways. One way is by doing nothing, this will create a RigidBody component with infinite mass that isn't allowed to move, but other RigidBodies will collide with happily.</p>
 <p>If you would like to have your object move, you will need to specify the mass of the RigidBody. You can do this like so:</p>
-<h2><a class="anchor" id="Initialization"></a>
-Adding a static (non-moving) RigidBody to your GameObject.</h2>
+<h1><a class="anchor" id="Initialization"></a>
+Adding a static (non-moving) RigidBody to your GameObject.</h1>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;RuneEngine.h&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>Player : <span class="keyword">public</span> <a class="code" href="classrune_1_1_game_object.html">rune::GameObject</a></div>
@@ -104,8 +104,8 @@ Adding a static (non-moving) RigidBody to your GameObject.</h2>
 <div class="line"> Player();</div>
 <div class="line"> </div>
 <div class="line">};</div>
-</div><!-- fragment --><h2><a class="anchor" id="massChange"></a>
-Giving your RigidBody movement.</h2>
+</div><!-- fragment --><h1><a class="anchor" id="massChange"></a>
+Giving your RigidBody movement.</h1>
 <p>After you have initialized a RigidBody in your GameObject header file, go ahead and apply it to the GameObject. Remember that both of the arguments in the RigidBody constructor are optional, and can be left out completely. Refer to the <a class="el" href="classphysics_1_1_rigid_body.html" title="Game object component that allows a game object to have collisions with other objects.">physics::RigidBody</a> page for more information about these parameters.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;player.h&quot;</span></div>
 <div class="line"> </div>
@@ -127,7 +127,7 @@ Giving your RigidBody movement.</h2>
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

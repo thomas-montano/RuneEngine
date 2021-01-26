@@ -8,6 +8,8 @@ var classrune_1_1_mat2 =
     [ "operator*", "classrune_1_1_mat2.html#a8970760931cdcc85cf47dd0bdb45338d", null ],
     [ "operator*", "classrune_1_1_mat2.html#a527b8b5b9e113623e6c1345e6be52501", null ],
     [ "operator*", "classrune_1_1_mat2.html#a1a9d894d857657c6af8e9354151c6bc6", null ],
+    [ "operator*", "classrune_1_1_mat2.html#a6702db0d91a42b817a26719c3cc83d81", null ],
+    [ "operator*", "classrune_1_1_mat2.html#a4f2ca339f4920493702c960940dae047", null ],
     [ "operator*=", "classrune_1_1_mat2.html#a0e84849e475b93bf496532ea1a66afc0", null ],
     [ "operator*=", "classrune_1_1_mat2.html#a30ed60a881acc560b7628a7701b7e325", null ],
     [ "operator+", "classrune_1_1_mat2.html#a455f3120bd75399951d103643c2eaada", null ],
@@ -18,6 +20,7 @@ var classrune_1_1_mat2 =
     [ "operator-=", "classrune_1_1_mat2.html#a1344edc985ec9a3a34a1035a68817001", null ],
     [ "operator/", "classrune_1_1_mat2.html#add80e84b701be7a8353787047f3517bb", null ],
     [ "operator/", "classrune_1_1_mat2.html#af4f209b7a320c379b4d64e40bad8b104", null ],
+    [ "operator<<", "classrune_1_1_mat2.html#a282964f6219a5a041f69e6b3c7b12eec", null ],
     [ "operator==", "classrune_1_1_mat2.html#a4d62a08258e8c1c1664cfca54e8e17df", null ],
     [ "operator[]", "classrune_1_1_mat2.html#a4705d18e1daa5932121ea526b839d291", null ],
     [ "operator<<", "classrune_1_1_mat2.html#a5e32c81fce1e96f0102dd37b50aa86a9", null ]

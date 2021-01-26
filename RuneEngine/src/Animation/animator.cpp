@@ -44,7 +44,7 @@ void rune::Animator::playAnimation(std::string const& animationName)
 /**
  * \param animationName The name of the animation to be referred to later when playing.
  * \param frameWidth The width of each frame of animation.
- * \param startFame The frame that the animation should start on.
+ * \param startFrame The frame that the animation should start on.
  * \param numFrames The total number of frames in the sprite sheet.
  * \param frameRate The rate that the frames should be displayed (in frames per second)
  * \param fileName The name of the file containing the sprite sheet.

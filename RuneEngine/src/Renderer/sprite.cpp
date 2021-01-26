@@ -13,9 +13,9 @@ rune::Sprite::Sprite()
 }
 
 /**
- * @param dimensions A rune::Vec2 specifying the size of the sprite.
- * @param position A rune::Vec2 specifying the location of the sprite with respect to the bottom left corner.
  * @param spriteLocation A filepath for the sprite png file to be drawn.
+ * @param drawMode How would you like the sprite to be filtered when drawn.
+ * @warning Use NEAREST_FILTER for pixel art sprites. LINEAR_FILTER is used by default.
 */
 rune::Sprite::Sprite(std::string const& spriteLocation, unsigned int drawMode) 
   : spriteTexture(spriteLocation.c_str(), drawMode), objectShader(defaultSprite), textureSpace(0, 0, 0, 0), spriteDrawMode(drawMode)
@@ -59,7 +59,7 @@ void rune::Sprite::start()
 }
 
 /**
- * @param windowSize The window that the sprite is being drawn to.
+ * @param window The window that the sprite is being drawn to.
 */
 void rune::Sprite::draw(rune::RenderWindow& window)
 {
@@ -111,6 +111,7 @@ void rune::Sprite::draw(rune::RenderWindow& window)
 
 /**
  * \param texture The file path to the texture that is to be loaded onto the sprite.
+ * \param drawMode How would you like the sprite to be filtered when drawn.
  */
 void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
 {
@@ -118,12 +119,20 @@ void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
   spriteTexture.loadFromFile(texture.c_str(), drawMode);
 
 }
-
+/**
+ * \param texture The texture that should be given to this sprite for drawing.
+ */
 void rune::Sprite::setTexture(Texture* texture)
 {
   spriteTexture = *texture;
 }
 
+/**
+ * \param xPos The left most x position of the texture to be used.
+ * \param yPos The top most y position of the texture to be used.
+ * \param width The width of the texture.
+ * \param height The height of the texture.
+ */
 void rune::Sprite::setTextureRect(int xPos, int yPos, int width, int height)
 {
 
@@ -131,11 +140,17 @@ void rune::Sprite::setTextureRect(int xPos, int yPos, int width, int height)
 
 }
 
+/**
+ * \return The rune::IntRect currently applied to this sprite.
+ */
 rune::IntRect rune::Sprite::getTextureRect(void)
 {
   return textureSpace;
 }
 
+/**
+ * \return The draw mode currently being used to render this sprite.
+ */
 unsigned int rune::Sprite::getDrawMode()
 {
   return spriteDrawMode;

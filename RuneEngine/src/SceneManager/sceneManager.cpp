@@ -54,6 +54,7 @@ int rune::SceneManager::getNumScenes(void)
 }
 
 /**
+ * @param sceneName A string that is used to refer back to the scene.
  * @param newScene New GameScene to be added into the SceneManager scene buffer. 
 */
 void rune::SceneManager::addScene(std::string const& sceneName, GameScene* newScene)

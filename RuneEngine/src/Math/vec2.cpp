@@ -11,8 +11,12 @@ rune::Vec2::Vec2(double newX, double newY)
   y = newY;
 }
 
-///@memberof rune::Vec2
-///Stream operator overloading so that vectors can be printed to the console.
+/**
+ * \memberof rune::Vec2
+ * \param os Output stream that the vector should be printed to.
+ * \param vector Vector to be printed.
+ * \return Stream to be printed to the console.
+ */
 std::ostream& rune::operator<<(std::ostream& os, const rune::Vec2& vector)
 {
 
@@ -26,7 +30,7 @@ std::ostream& rune::operator<<(std::ostream& os, const rune::Vec2& vector)
  * \param right The vector to be subtracter.
  * \return A member wise subtraction.
  */
-rune::Vec2 rune::Vec2::operator -(const rune::Vec2& right)
+rune::Vec2 rune::Vec2::operator-(const rune::Vec2& right)
 {
 
   return rune::Vec2(this->x - right.x, this->y - right.y);
@@ -45,7 +49,7 @@ rune::Vec2 rune::Vec2::operator-()
  * \param right The vector to be added.
  * \return A member wise addition.
  */
-rune::Vec2 rune::Vec2::operator +(const rune::Vec2& right)
+rune::Vec2 rune::Vec2::operator+(const rune::Vec2& right)
 {
 
   return rune::Vec2(this->x + right.x,this->y + right.y);
@@ -172,8 +176,8 @@ rune::Vec2 rune::operator* (double scalar, rune::Vec2 const& vec)
 }
 
 /**
+ * \brief Overload of * operator for a scalar multiplier.
  * \param scalar The scalar to be multiplied with.
- * \param vec The vector to be multiplied.
  * \return A member wise multiplication.
  */
 rune::Vec2 rune::Vec2::operator* (double scalar)
@@ -181,14 +185,22 @@ rune::Vec2 rune::Vec2::operator* (double scalar)
   return rune::Vec2(this->x * scalar, this->y * scalar);
 }
 
+/**
+ * \memberof rune::Vec2
+ * \param scalar The scalar to be used as a divisor.
+ * \param vec The vector to be element wise divided by.
+ * \return A member wise multiplication.
+ */
 rune::Vec2 rune::operator/ (double scalar, rune::Vec2 vec)
 {
   return rune::Vec2(vec.x / scalar, vec.y / scalar);
 }
 
 /**
- * \param scalar The scalar to be divided by.
- * \return A member wise division by the scalar.
+ * @memberof rune::Vec2
+ * @brief Overload of / operator for a scalar.
+ * @param scalar The scalar to be divided by.
+ * @return A member wise division by the scalar.
  */
 rune::Vec2 rune::Vec2::operator/ (double scalar)
 {
@@ -196,6 +208,7 @@ rune::Vec2 rune::Vec2::operator/ (double scalar)
 }
 
 /**
+ * @memberof rune::Vec2
  * @param v1 First vector to be used in the dot product.
  * @param v2 Seconds vector to be used in the dot product.
  * @return The result of the dot product calculation.
@@ -210,9 +223,11 @@ double rune::dotProduct(rune::Vec2 const& v1, rune::Vec2 const& v2)
 }
 
 /**
- * @param axis Vector to use to calculate the surface normal.
- * @return Left hand normal of the surface.
-*/
+ * @memberof rune::Vec2
+ * @param axis The axis that is used to find the normal.
+ * @brief Find the left handed vector normal to a surface
+ * @return The left handed vector that is normal to the provided surface.
+ */
 rune::Vec2 rune::findNormal(rune::Vec2 const& axis)
 {
 

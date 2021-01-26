@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_646',['z',['../classrune_1_1_vec3.html#a6384f5425fa43b40d3190eb8f25465b0',1,'rune::Vec3']]]
+  ['white_686',['White',['../classrune_1_1_color.html#af6b662716f2a1a423791acb3a9f609e8',1,'rune::Color']]],
+  ['width_687',['width',['../classrune_1_1_rect.html#a52874419095d119bf4089970da98fccc',1,'rune::Rect']]]
 ];

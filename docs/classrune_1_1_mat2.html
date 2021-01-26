@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -163,6 +163,12 @@ Public Member Functions</h2></td></tr>
 double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_mat2.html#a4705d18e1daa5932121ea526b839d291">operator[]</a> (int index)</td></tr>
 <tr class="memdesc:a4705d18e1daa5932121ea526b839d291"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array like accessing of elements. <br /></td></tr>
 <tr class="separator:a4705d18e1daa5932121ea526b839d291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282964f6219a5a041f69e6b3c7b12eec"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_mat2.html#a282964f6219a5a041f69e6b3c7b12eec">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a> &amp;matrix)</td></tr>
+<tr class="separator:a282964f6219a5a041f69e6b3c7b12eec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f2ca339f4920493702c960940dae047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrune_1_1_vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_mat2.html#a4f2ca339f4920493702c960940dae047">operator*</a> (<a class="el" href="classrune_1_1_vec2.html">Vec2</a> const &amp;vec, <a class="el" href="classrune_1_1_mat2.html">Mat2</a> &amp;mat)</td></tr>
+<tr class="separator:a4f2ca339f4920493702c960940dae047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6702db0d91a42b817a26719c3cc83d81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_mat2.html#a6702db0d91a42b817a26719c3cc83d81">operator*</a> (double scalar, <a class="el" href="classrune_1_1_mat2.html">Mat2</a> &amp;mat)</td></tr>
+<tr class="separator:a6702db0d91a42b817a26719c3cc83d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -303,7 +309,7 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 </div>
 </div>
 <a id="a8970760931cdcc85cf47dd0bdb45338d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8970760931cdcc85cf47dd0bdb45338d">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8970760931cdcc85cf47dd0bdb45338d">&#9670;&nbsp;</a></span>operator*() <span class="overload">[1/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +336,7 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 </div>
 </div>
 <a id="a527b8b5b9e113623e6c1345e6be52501"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a527b8b5b9e113623e6c1345e6be52501">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a527b8b5b9e113623e6c1345e6be52501">&#9670;&nbsp;</a></span>operator*() <span class="overload">[2/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -357,7 +363,7 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 </div>
 </div>
 <a id="a1a9d894d857657c6af8e9354151c6bc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a9d894d857657c6af8e9354151c6bc6">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a9d894d857657c6af8e9354151c6bc6">&#9670;&nbsp;</a></span>operator*() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -375,11 +381,83 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 <p>Overload of multiplication operator for a scalar on the left. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">right</td><td>The scalar to multiply by. </td></tr>
+    <tr><td class="paramname">scalar</td><td>The scalar to multiply by. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A member wise scalar multiplication. </dd></dl>
+
+</div>
+</div>
+<a id="a6702db0d91a42b817a26719c3cc83d81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6702db0d91a42b817a26719c3cc83d81">&#9670;&nbsp;</a></span>operator*() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>scalar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrune_1_1_mat2.html">Mat2</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scalar</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a4f2ca339f4920493702c960940dae047"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f2ca339f4920493702c960940dae047">&#9670;&nbsp;</a></span>operator*() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrune_1_1_vec2.html">rune::Vec2</a> operator* </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classrune_1_1_vec2.html">Vec2</a> const &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrune_1_1_mat2.html">Mat2</a> &amp;&#160;</td>
+          <td class="paramname"><em>mat</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td></td></tr>
+    <tr><td class="paramname">mat</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -638,11 +716,47 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 <p>Overload of division operator for a scalar. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">right</td><td>The scalar to multiply by. </td></tr>
+    <tr><td class="paramname">scalar</td><td>The scalar to multiply by. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A member wise scalar division. </dd></dl>
+
+</div>
+</div>
+<a id="a282964f6219a5a041f69e6b3c7b12eec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a282964f6219a5a041f69e6b3c7b12eec">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classrune_1_1_mat2.html">rune::Mat2</a> &amp;&#160;</td>
+          <td class="paramname"><em>matrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Output stream that the vector should be printed to. </td></tr>
+    <tr><td class="paramname">matrix</td><td>Vector to be printed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Stream to be printed to the console. </dd></dl>
 
 </div>
 </div>
@@ -684,7 +798,7 @@ RUNE_ENGINE std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_mat2.html">Mat2</a></li>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

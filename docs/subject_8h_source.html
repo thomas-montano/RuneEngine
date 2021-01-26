@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -104,10 +104,8 @@ $(document).ready(function(){initNavTree('subject_8h_source.html',''); initResiz
 <div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classrune_1_1_subject.html">   20</a></span>&#160;  <span class="keyword">class </span>RUNE_ENGINE <a class="code" href="classrune_1_1_subject.html">Subject</a></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  {</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> sendSignal(<a class="code" href="classrune_1_1_signal.html">Signal</a>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;Observer*&gt; observers;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> sendSignal(<a class="code" href="classrune_1_1_signal.html">Signal</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classrune_1_1_subject.html#a0ad1ce5da93e0f7553dc0bb8148031e2">   26</a></span>&#160;    std::vector&lt;Observer*&gt; <a class="code" href="classrune_1_1_subject.html#a0ad1ce5da93e0f7553dc0bb8148031e2">observers</a>;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">int</span> getNumObservers(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
@@ -123,13 +121,14 @@ $(document).ready(function(){initNavTree('subject_8h_source.html',''); initResiz
 <div class="ttc" id="aclassrune_1_1_signal_html"><div class="ttname"><a href="classrune_1_1_signal.html">rune::Signal</a></div><div class="ttdoc">Object that is used as a signal to notify observers of action.</div><div class="ttdef"><b>Definition:</b> signal.h:19</div></div>
 <div class="ttc" id="aclassrune_1_1_observer_html"><div class="ttname"><a href="classrune_1_1_observer.html">rune::Observer</a></div><div class="ttdoc">An interface that allows objects to watch a subject for signals, and perform some action when notifie...</div><div class="ttdef"><b>Definition:</b> observer.h:18</div></div>
 <div class="ttc" id="aclassrune_1_1_subject_html"><div class="ttname"><a href="classrune_1_1_subject.html">rune::Subject</a></div><div class="ttdoc">A subject that can be watched for signals by observers.</div><div class="ttdef"><b>Definition:</b> subject.h:21</div></div>
+<div class="ttc" id="aclassrune_1_1_subject_html_a0ad1ce5da93e0f7553dc0bb8148031e2"><div class="ttname"><a href="classrune_1_1_subject.html#a0ad1ce5da93e0f7553dc0bb8148031e2">rune::Subject::observers</a></div><div class="ttdeci">std::vector&lt; Observer * &gt; observers</div><div class="ttdoc">List of observers currently subscribed to this object.</div><div class="ttdef"><b>Definition:</b> subject.h:26</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animator.h:21</div></div>
 <!-- start footer part -->
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_aca97e77b28113db9b59dabc11ddfffe.html">Events</a></li><li class="navelem"><b>subject.h</b></li>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:35 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

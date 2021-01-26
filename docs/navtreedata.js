@@ -36,7 +36,10 @@ var NAVTREE =
       [ "Scripting", "_game_objects.html#Scripts", null ]
     ] ],
     [ "Entry Point", "entry_point.html", null ],
-    [ "Physics", "physics.html", null ],
+    [ "Physics", "physics.html", [
+      [ "Adding a static (non-moving) RigidBody to your GameObject.", "physics.html#Initialization", null ],
+      [ "Giving your RigidBody movement.", "physics.html#massChange", null ]
+    ] ],
     [ "Shaders", "shaders.html", [
       [ "Vertex Shader", "shaders.html#vertex", null ],
       [ "Fragment Shader", "shaders.html#fragment", null ]
@@ -65,7 +68,7 @@ var NAVTREEINDEX =
 [
 "_a_a_b_b_8h_source.html",
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab44f21c5c0bee399c0d10dbf6d24c3fd",
-"classrune_1_1_vec3.html#a250cd3dcc800695558e902d944a91e92"
+"classrune_1_1_vec3.html#a0b87d257646106f61902b9a77f6822d2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -8,6 +8,7 @@
 #include <gameApplication.h>
 #include <SceneManager\sceneManager.h>
 
+///@param newColor The color that should be used to draw the rectangle.
 rune::RectangleShape::RectangleShape(rune::Color newColor) 
 : rectangleShader(defaultRectangle), origin(rune::Vec2(0,0)), size(Vec2(0,0)), position(Vec2(0,0))
 {
@@ -48,7 +49,7 @@ void rune::RectangleShape::setUpBuffers()
 }*/
 
 /**
- * @param windowSize The size of the window that the RectangleShape is being drawn on.
+ * @param window The size of the window that the RectangleShape is being drawn on.
 */
 void rune::RectangleShape::draw(rune::RenderWindow& window)
 {
@@ -90,14 +91,8 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
 
 }
 
+///@param newColor the new color that should be used to draw the rectangle.
 void rune::RectangleShape::setFillColor(rune::Color newColor)
 {
   m_fillColor = newColor;
-}
-
-void rune::RectangleShape::changeShader(std::string const& filePath)
-{
-
-  rectangleShader.makeNewShader(filePath);
-
 }

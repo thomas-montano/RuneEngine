@@ -10,7 +10,9 @@ namespace physics
   {
   
   public:
+    ///Bottom left corner of the AABB.
     rune::Vec2 min;
+    ///Top right corner of the AABB.
     rune::Vec2 max;
 
     AABB() 

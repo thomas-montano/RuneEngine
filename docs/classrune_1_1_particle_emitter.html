@@ -28,7 +28,7 @@
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Rune Engine
-   &#160;<span id="projectnumber">Version 0.2.6-alpha</span>
+   &#160;<span id="projectnumber">Version 0.2.7-alpha</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -149,7 +149,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to set up. <br /></td></tr>
 <tr class="separator:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="acabb2c4d23bc88f2e0ed3f7de60309b6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Component</b> (const <a class="el" href="classrune_1_1_component.html">Component</a> &amp;component)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#acabb2c4d23bc88f2e0ed3f7de60309b6">Component</a> (const <a class="el" href="classrune_1_1_component.html">Component</a> &amp;component)</td></tr>
+<tr class="memdesc:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to set up a component when given another component to use as a copy. <br /></td></tr>
 <tr class="separator:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae254f125303912b629182af34fad58a inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="aae254f125303912b629182af34fad58a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#aae254f125303912b629182af34fad58a">start</a> ()</td></tr>
@@ -182,10 +183,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classrune_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrune_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classrune_1_1_component.html">rune::Component</a></td></tr>
 <tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a3b61712b05daa87bd8de85d6bf12dd6e"></a>
-<a class="el" href="classrune_1_1_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>parentObject</b> = nullptr</td></tr>
+<a class="el" href="classrune_1_1_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a> = nullptr</td></tr>
+<tr class="memdesc:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> that this component is attached to. If not attached to a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> this will equal nullptr. <br /></td></tr>
 <tr class="separator:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6214c9cafd2ec5aefdf253644f8c33fd inherit pro_attribs_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a6214c9cafd2ec5aefdf253644f8c33fd"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true</td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a6214c9cafd2ec5aefdf253644f8c33fd">isEnabled</a> = true</td></tr>
+<tr class="memdesc:a6214c9cafd2ec5aefdf253644f8c33fd inherit pro_attribs_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the component is currently enabled. If not enabled, update function will not be called. <br /></td></tr>
 <tr class="separator:a6214c9cafd2ec5aefdf253644f8c33fd inherit pro_attribs_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -320,9 +323,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 </div><div class="memdoc">
 
 <p>The amount of time in seconds that a particle will exist before it gets destroyed. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>param window Overloaded draw function for rendering the particles to the screen. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">window</td><td>Overloaded draw function for rendering the particles to the screen. </td></tr>
     <tr><td class="paramname">rate</td><td>The amount of time in seconds that a particle should exist before being deleted. </td></tr>
   </table>
   </dd>
@@ -417,7 +419,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> = true<
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_particle_emitter.html">ParticleEmitter</a></li>
 				<li class="footer">
-					Generated on Mon Jan 25 2021 16:07:08 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Jan 26 2021 11:50:36 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

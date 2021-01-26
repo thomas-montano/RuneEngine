@@ -370,6 +370,7 @@ void physics::resolveCollisions(std::vector<physics::collision> collisions)
 /**
  * @param object1 The first object in the collision.
  * @param object2 The seconds object in the collision.
+ * @param depth The penetration depth in world coordinates.
  * @param normal The normal vector for the collision. 
 */
 void physics::positionalCorrection(RigidBody* object1, RigidBody* object2, double depth, rune::Vec2 normal)

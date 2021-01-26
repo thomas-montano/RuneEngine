@@ -35,9 +35,9 @@ private:
   static void onWindowResize(GLFWwindow* window, int width, int height);
 
 public:
-
+  ///Get the camera currently being used by the scene.
   Camera getCamera(void);
-
+  ///Set a camera to be used by the scene.
   void setCamera(Camera&);  
   ///Default constructor to give an openGL context and window.
   RenderWindow(int newWidth, int newHeight, std::string const& title);

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['torque_633',['torque',['../structphysics_1_1body.html#adc41cc481c03597c1bf605be50d0a5ac',1,'physics::body']]],
-  ['transform_634',['transform',['../classrune_1_1_game_object.html#a4d7c7387a288b5112dae9ea62585fe79',1,'rune::GameObject']]],
-  ['transparent_635',['Transparent',['../classrune_1_1_color.html#a1500844ced499985cff0caa8c3794ec7',1,'rune::Color']]]
+  ['parentobject_668',['parentObject',['../classrune_1_1_component.html#a3b61712b05daa87bd8de85d6bf12dd6e',1,'rune::Component']]],
+  ['physicsbodies_669',['physicsBodies',['../classrune_1_1_game_scene.html#a090b9a4df823e95c078c2db72bf5064e',1,'rune::GameScene']]]
 ];

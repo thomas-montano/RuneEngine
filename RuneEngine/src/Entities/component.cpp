@@ -5,10 +5,7 @@
 rune::Component::Component(const Component& component)
   :parentObject(component.parentObject), isEnabled(true)
 {
-  
   std::cout << "A component is being copied!" << std::endl;
-
-
 }
 
 void rune::Component::start()

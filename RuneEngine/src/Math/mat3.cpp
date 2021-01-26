@@ -342,8 +342,7 @@ rune::Mat3 rune::Mat3::operator* (double scalar)
 }
 
 /**
- * \param vector The vector to be multiplied with.
- * \param mat The rune::Mat3 to be multiplied by.
+ * \param vec The vector to be multiplied with.
  * \return The result of the multiplication.
  */
 rune::Vec3 rune::Mat3::operator*(const rune::Vec3& vec)
@@ -359,7 +358,12 @@ rune::Vec3 rune::Mat3::operator*(const rune::Vec3& vec)
   return rune::Vec3(newX,newY,newZ);
 }
 
-
+/**
+ * \memberof rune::Mat3
+ * \param os Output stream that the vector should be printed to.
+ * \param mat mat to be printed.
+ * \return Stream to be printed to the console.
+ */
 std::ostream& rune::operator<<(std::ostream& os, const rune::Mat3& mat)
 {
   

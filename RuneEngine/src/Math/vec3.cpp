@@ -129,7 +129,7 @@ rune::Vec3& rune::Vec3::operator*=(const double right)
 }
 
 /**
- * \param right The scalar to be multiplied by.
+ * \param scalar The scalar to be multiplied by.
  * \return A member wise scalar multiplication.
  */
 rune::Vec3 rune::Vec3::operator* (double scalar)
@@ -169,6 +169,12 @@ bool rune::Vec3::operator!=(const rune::Vec3& right)
 
 }
 
+/**
+ * \memberof rune::Vec3
+ * \param os Output stream that the vector should be printed to.
+ * \param vector Vector to be printed.
+ * \return Stream to be printed to the console.
+ */
 std::ostream& rune::operator<<(std::ostream& os, const rune::Vec3& vector)
 {
 
@@ -188,7 +194,6 @@ double rune::Vec3::magnitude(void)
 
 /**
  * @memberof rune::Vec3
- * @brief Dot product calculation of two vectors.
  * \param vector1 The first vector of the dot product.
  * \param vector2 The second vector of the dot product.
  * \return The result of the dot product.
@@ -199,7 +204,6 @@ double rune::dotProduct(const rune::Vec3& vector1, const rune::Vec3& vector2)
 }
 
 /**
- * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
  * @memberof rune::Vec3
  * \param vector The vector to be normalized.
  * \return A vector in the same direction as vector but with magnitude 1.
@@ -212,7 +216,6 @@ rune::Vec3 rune::normalize(const rune::Vec3& vector)
 
 /**
  * @memberof rune::Vec3
- * @brief Cross product calculation of two vectors.
  * \param vec1 The first vector to be used in the cross product.
  * \param vec2 The second vector to be used in the cross product.
  * \return The result of the cross product.
@@ -224,12 +227,12 @@ rune::Vec3 rune::crossProduct(const rune::Vec3& vec1, const rune::Vec3& vec2)
 }
 
 /**
- * @member of rune::Vec3
+ * @memberof rune::Vec3
  * \param scalar The scalar to be multiplied by.
- * \param mat The matrix being multiplied with.
+ * \param vec The matrix being multiplied with.
  * \return A member wise multiplication.
  */
-rune::Vec3 rune::operator*(double scalar, const rune::Vec3& mat)
+rune::Vec3 rune::operator*(double scalar, const rune::Vec3& vec)
 {
-  return rune::Vec3(scalar*mat.x, scalar * mat.y, scalar * mat.z);
+  return rune::Vec3(scalar*vec.x, scalar * vec.y, scalar * vec.z);
 }

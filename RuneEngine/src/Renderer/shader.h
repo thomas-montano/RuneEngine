@@ -41,43 +41,42 @@ class RUNE_ENGINE Shader
 {
 
 private:
-  //Shader id to be used for binding the shader during rendering
+  //Shader id to be used for binding the shader during rendering.
   unsigned int m_shaderID;
   //Compile and set the shader up given string literals.
   unsigned int CreateShader(std::string const& vertexShader, std::string const& fragmentShader);
-  //Create the shader into a compiled shader id for opengl
+  //Create the shader into a compiled shader id for opengl.
   unsigned int CompileShader(unsigned int type, const std::string& source);
-  //Parse a raw string containing glsl source code and turn it into a ShaderProgramSource
+  //Parse a raw string containing glsl source code and turn it into a ShaderProgramSource.
   ShaderProgramSource ParseShader(std::string const& sourceCode);
 
   std::unordered_map<std::string, int> m_UniformLocationCache;
 
-  ///Retrieve the location of the uniform in the GPU
+  ///Retrieve the location of the uniform in the GPU.
   int getUniformLocation(std::string const&  name);
 
 public:
   ///Default empty constructor.
   Shader();
-
   ///Default constructor to create and load a shader.
   Shader(const std::string& filePath);
   ///Constructor that will compile a character array into a shader.
   Shader(const char* sourceCode);
-  ///Create a shader from a rune::ShaderProgramSource
+  ///Create a shader from a rune::ShaderProgramSource.
   Shader(ShaderProgramSource);
   ///This is the base function that the different constructors call.
   void makeNewShader(std::string const& filePath);
-
   ///Configure the shader to be active on the GPU, must be done before drawing something.
   void bind(void);
-
+  ///Get the ID of the shader used by the GPU.
   int getShaderID();
+  ///Set which ID the shader should use to communicate with the GPU.
   void setShader(int shaderID);
-  
   ///Set a float shader uniform.
   void setUniform1f(std::string const& name, float value);
-  //Set a vec2 shader uniform
+  ///Set a vec2 shader uniform.
   void setUniform2f(std::string const& name, float v0, float v1);
+  ///Set a vec3 shader uniform.
   void setUniform3f(std::string const& name, float v0, float v1, float v2);
   ///Set a vec4 shader uniform.
   void setUniform4f(std::string const& name, float v0, float v1, float v2, float v3);
@@ -94,7 +93,7 @@ public:
  * @page shaders Shaders
  * 
  * Make sure your vertex and fragment shaders are declared in the same file. The function will separate them for you.
- * Write up a vertex and fragment shader with the header #shader vertex or #shader fragment. The example code below details how this should be done.
+ * Write up a vertex and fragment shader with the header ```#shader vertex``` or ```#shader fragment```. The example code below details how this should be done.
  * 
  * You should then load this into a drawable component by first declaring a shader and then setting your GLSL code as active.
  * 

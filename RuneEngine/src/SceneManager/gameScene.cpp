@@ -60,7 +60,6 @@ void rune::GameScene::resume(void)
 /**
  * Handle scene level UI that needs to be run independent of the update rate.
  * @param window Render window that should be used for mouse positions
- * @param theEvent Event object used for mouse position at the moment of click 
  */
 void rune::GameScene::handleUI(RenderWindow& window)
 {
@@ -156,6 +155,10 @@ void rune::GameScene::renderScene(RenderWindow& window)
 
 }
 
+/**
+ * Update the RigidBodies in the scene.
+ * 
+ */
 void rune::GameScene::updatePhysics(void)
 {
 
