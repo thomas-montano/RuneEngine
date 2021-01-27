@@ -8,6 +8,7 @@
 #include "ResourcesTab/resourceTab.h"
 #include "SceneViewport/sceneViewport.h"
 
+
 class EditorWindow : public rune::GameScene
 {
 
@@ -17,7 +18,6 @@ private:
   InspectorTab inspectorTab;
   ResourceTab resourceTab;
   SceneViewPort viewPort;
-
   bool initialSetUp = false;
 
   rune::Camera sceneCamera;
@@ -25,7 +25,7 @@ private:
   void setUpStyle(void);
 
 public:
-  
+
   rune::FrameBuffer* viewPortBuffer;
 
   static RuneEngineProject currentlyOpenProject;

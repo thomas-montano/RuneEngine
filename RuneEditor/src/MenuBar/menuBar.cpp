@@ -9,6 +9,8 @@
 #include <Components/transformComponent.h>
 #include <Components/rectangleComponent.h>
 
+#include <EngineDataStructures/runeEngineProject.h>
+
 void MenuBar::draw(rune::RenderWindow& window)
 {
 
@@ -66,7 +68,7 @@ void MenuBar::draw(rune::RenderWindow& window)
 
       if(ImGui::MenuItem("Open Project"))
       {
-
+        EditorWindow::currentlyOpenProject = openProject();
       }
 
       if(ImGui::MenuItem("Save Project"))
@@ -106,6 +108,8 @@ void MenuBar::draw(rune::RenderWindow& window)
       ImGui::MenuItem("Delete");
       ImGui::EndMenu();
     }
+    
+    //The game object menu is responsible for creating new game objects
     if (ImGui::BeginMenu("GameObject"))
     {
       if (ImGui::MenuItem("Create New Empty"))
@@ -157,6 +161,8 @@ void MenuBar::draw(rune::RenderWindow& window)
 
       ImGui::EndMenu();
     }
+
+    //The component menu is responsible for adding components to the currently selected game object.
     if (ImGui::BeginMenu("Component"))
     {
 
@@ -165,6 +171,7 @@ void MenuBar::draw(rune::RenderWindow& window)
       ImGui::EndMenu();
     }
 
+    //The view menu is responsible for opening other editor windows such as animation and code windows.
     if(ImGui::BeginMenu("View"))
     {
     
@@ -194,7 +201,7 @@ void MenuBar::draw(rune::RenderWindow& window)
   }
 
 
-
+  //Popup wizard for creating a new project or opening an old one. This will be displayed at the start of opening the editor.
   if (ImGui::BeginPopupModal("ProjectWizard", NULL, ImGuiWindowFlags_AlwaysAutoResize))
   {
     ImGui::Text("Create a new Rune Engine Project! \n\n");
@@ -268,7 +275,7 @@ void MenuBar::draw(rune::RenderWindow& window)
     if (ImGui::Button("Open Project"))
     {
 
-      EditorWindow::currentlyOpenProject.setProjectName(openProject());
+      EditorWindow::currentlyOpenProject = openProject();
 
       ImGui::CloseCurrentPopup();
 
@@ -280,7 +287,7 @@ void MenuBar::draw(rune::RenderWindow& window)
 
 }
 
-std::string MenuBar::openProject()
+RuneEngineProject MenuBar::openProject()
 {
 
   const int BUFSIZE = 1024;
@@ -301,7 +308,22 @@ std::string MenuBar::openProject()
 
   std::string str(myString.begin(), myString.end());
 
-  return str;
+  //length of .rproj = 6
+  str = str.substr(0,str.length()-6);
+
+  int i = str.length()-1;
+  while(str[i] != '\\' && i >= 0)
+  {
+    i--;
+  }
+
+  RuneEngineProject newProject(str.substr(i + 1, str.length() - i));
+
+  newProject.projectSaveLocation = str.substr(0,i+1);
+
+  EditorWindow::currentlyOpenProject.setProjectName(newProject.getProjectName());
+
+  return newProject;
 
 }
 
@@ -374,7 +396,7 @@ std::string MenuBar::saveFileBrowser()
 
   ofns.lpstrFilter = L"Rune Scenes (*.rsc)\0*.rsc\0\0";
 
-  ofns.lpstrInitialDir = L"D:\\Documents\\MakefileTest\\ConsoleApplication1\\";
+  ofns.lpstrInitialDir = L"C:\\";
 
   ofns.lStructSize = sizeof(ofns);
   ofns.lpstrFile = buffer;

@@ -2,6 +2,8 @@
 
 #include <RuneEngine.h>
 
+class RuneEngineProject;
+
 class MenuBar : public rune::Drawable
 {
 
@@ -9,7 +11,7 @@ public:
   bool createNewProject;
   bool initialMenu = true;
 
-  std::string openProject();
+  RuneEngineProject openProject();
   std::string openScene();
 
   std::string openDirectoryBrowser();

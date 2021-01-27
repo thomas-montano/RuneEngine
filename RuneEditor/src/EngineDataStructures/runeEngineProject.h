@@ -9,7 +9,9 @@ private:
   std::string projectName;
 
 public:
-  
+
+  std::string windowTag = " - Rune Engine Editor Version 0.2.7 - alpha";
+
   std::vector<CreatedScene*> projectScenes;
   std::string projectSaveLocation;
   CreatedScene* activeScene;
@@ -17,7 +19,7 @@ public:
   void setProjectName(std::string newName)
   {
     projectName = newName;
-    getGameInstance()->getWindow()->setWindowTitle(projectName + " - Rune Engine Editor Version 0.2.7-alpha");
+    getGameInstance()->getWindow()->setWindowTitle(projectName + windowTag);
   }
 
   std::string getProjectName(void)

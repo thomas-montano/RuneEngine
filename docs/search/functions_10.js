@@ -48,7 +48,7 @@ var searchData=
   ['setupbuffers_644',['setUpBuffers',['../classrune_1_1_sprite.html#a2f682396f750adc1b99bf77dbf92c9e0',1,'rune::Sprite']]],
   ['setupobject_645',['setUpObject',['../classphysics_1_1_rigid_body.html#a939b663fceb88282d15cd4f904b3d231',1,'physics::RigidBody']]],
   ['setvelocity_646',['setVelocity',['../classphysics_1_1_rigid_body.html#a2b98dd01f5a0ed63e409f58956b31cf3',1,'physics::RigidBody']]],
-  ['setviewport_647',['setViewPort',['../classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18',1,'rune::Camera::setViewPort(FloatRect)'],['../classrune_1_1_camera.html#ad4d925c0db6c8ddece932f5d835820f5',1,'rune::Camera::setViewport(FloatRect viewPortSize)']]],
+  ['setviewport_647',['setViewPort',['../classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18',1,'rune::Camera']]],
   ['setwindowtitle_648',['setWindowTitle',['../classrune_1_1_render_window.html#a40cca7e8a37f882f80ce9f86cc70601b',1,'rune::RenderWindow']]],
   ['setzoom_649',['setZoom',['../classrune_1_1_camera.html#ac99c39db773c08b397375e55cfabfb6b',1,'rune::Camera']]],
   ['shader_650',['Shader',['../classrune_1_1_shader.html#ab7232be6ccb3d44d048bb628cacb865c',1,'rune::Shader::Shader()'],['../classrune_1_1_shader.html#aefd00d1d5827ccec10ce631db908a3aa',1,'rune::Shader::Shader(const std::string &amp;filePath)'],['../classrune_1_1_shader.html#a6d0d95be5861d954e0a2e426029d914d',1,'rune::Shader::Shader(const char *sourceCode)'],['../classrune_1_1_shader.html#a6b6e549f5388bb22d94a417989ea12bb',1,'rune::Shader::Shader(ShaderProgramSource)']]],

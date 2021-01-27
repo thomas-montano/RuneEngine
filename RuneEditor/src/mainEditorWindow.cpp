@@ -21,7 +21,7 @@ void EditorWindow::doInit()
   static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
   io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 
-  getGameInstance()->getWindow()->setWindowTitle("Empty Project");
+  getGameInstance()->getWindow()->setWindowTitle("Empty Project" + currentlyOpenProject.windowTag);
 
   getGameInstance()->getWindow()->maximizeWindow();
 

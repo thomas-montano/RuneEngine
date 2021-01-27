@@ -77,13 +77,12 @@ var NAVTREEINDEX0 =
 "classrune_1_1_animator.html#a927f4240c691bc0f5548f73b7989ae74":[6,0,1,0,5],
 "classrune_1_1_animator.html#aa865769ca586af379a93d9ef8af7cc75":[6,0,1,0,1],
 "classrune_1_1_camera.html":[6,0,1,1],
-"classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18":[6,0,1,1,6],
+"classrune_1_1_camera.html#a372e710a7a0c8c5258844619f34b4d18":[6,0,1,1,5],
 "classrune_1_1_camera.html#a77c8baf49f82ab5beb128f8fe17aea32":[6,0,1,1,0],
 "classrune_1_1_camera.html#a8dffda7773217f7e4b46387491466315":[6,0,1,1,3],
 "classrune_1_1_camera.html#abf901f3ca5764879a77375a99285c7b6":[6,0,1,1,2],
 "classrune_1_1_camera.html#ac69fb078daf4126c6d8a6ad0d54bbaa8":[6,0,1,1,1],
-"classrune_1_1_camera.html#ac99c39db773c08b397375e55cfabfb6b":[6,0,1,1,7],
-"classrune_1_1_camera.html#ad4d925c0db6c8ddece932f5d835820f5":[6,0,1,1,5],
+"classrune_1_1_camera.html#ac99c39db773c08b397375e55cfabfb6b":[6,0,1,1,6],
 "classrune_1_1_camera.html#afc0803f83f55a42c7eea9947a50256ff":[6,0,1,1,4],
 "classrune_1_1_clock.html":[6,0,1,2],
 "classrune_1_1_clock.html#aa74c525e4be018d19c92b4cf8b3308d4":[6,0,1,2,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX0 =
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab11b41f73deabcc9fe1fdf45b15064de":[6,0,1,10,0,64],
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab1820650f527b53af8201ff43ade93a0":[6,0,1,10,0,8],
 "classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab44f21c5c0bee399c0d10dbf6d24c3fd":[6,0,1,10,0,95],
-"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8abab7ac1dfd8679d8c693a92af1726510":[6,0,1,10,0,73]
+"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8abab7ac1dfd8679d8c693a92af1726510":[6,0,1,10,0,73],
+"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ac41264bc8a228629e71b645f8c052501":[6,0,1,10,0,41]
 };
