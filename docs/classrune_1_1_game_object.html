@@ -112,18 +112,20 @@ Collaboration diagram for rune::GameObject:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrune_1_1_game_object__coll__graph.png" border="0" usemap="#rune_1_1_game_object_coll__map" alt="Collaboration graph"/></div>
 <map name="rune_1_1_game_object_coll__map" id="rune_1_1_game_object_coll__map">
-<area shape="rect" title="Entity control system main object used for all objects in the scene." alt="" coords="58,95,198,121"/>
-<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="5,5,112,32"/>
-<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="137,5,261,32"/>
+<area shape="rect" title="Entity control system main object used for all objects in the scene." alt="" coords="136,81,264,108"/>
+<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="31,171,153,197"/>
+<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="151,5,249,32"/>
+<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="91,247,203,273"/>
+<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="5,81,112,108"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a94750f9c351bec76165d7f0960dba9fb"><td class="memItemLeft" align="right" valign="top"><a id="a94750f9c351bec76165d7f0960dba9fb"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_game_object.html#a94750f9c351bec76165d7f0960dba9fb">GameObject</a> ()=default</td></tr>
-<tr class="memdesc:a94750f9c351bec76165d7f0960dba9fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default empty constructor. <br /></td></tr>
-<tr class="separator:a94750f9c351bec76165d7f0960dba9fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada3eaa70fd6bd718cd0027a428549a53"><td class="memItemLeft" align="right" valign="top"><a id="ada3eaa70fd6bd718cd0027a428549a53"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_game_object.html#ada3eaa70fd6bd718cd0027a428549a53">GameObject</a> ()</td></tr>
+<tr class="memdesc:ada3eaa70fd6bd718cd0027a428549a53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default empty constructor. <br /></td></tr>
+<tr class="separator:ada3eaa70fd6bd718cd0027a428549a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1b124a43aded8e2bc7cf7d59a6ccab0"><td class="memItemLeft" align="right" valign="top"><a id="af1b124a43aded8e2bc7cf7d59a6ccab0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_game_object.html#af1b124a43aded8e2bc7cf7d59a6ccab0">GameObject</a> (const <a class="el" href="classrune_1_1_game_object.html">GameObject</a> &amp;gameObject)</td></tr>
 <tr class="memdesc:af1b124a43aded8e2bc7cf7d59a6ccab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor to be used for copying another <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a>. <br /></td></tr>
@@ -139,9 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a33767608b48f8a7d96b0323ea058b427"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classrune_1_1_component.html">Component</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_game_object.html#a33767608b48f8a7d96b0323ea058b427">getComponentList</a> ()</td></tr>
 <tr class="memdesc:a33767608b48f8a7d96b0323ea058b427"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a pointer to a component based off of index. Used for iterating through all components.  <a href="classrune_1_1_game_object.html#a33767608b48f8a7d96b0323ea058b427">More...</a><br /></td></tr>
 <tr class="separator:a33767608b48f8a7d96b0323ea058b427"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e702455dbf97ae799af69a23c0d9795"><td class="memTemplParams" colspan="2">template&lt;class classVariable &gt; </td></tr>
-<tr class="memitem:a0e702455dbf97ae799af69a23c0d9795"><td class="memTemplItemLeft" align="right" valign="top">classVariable *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">findComponent</a> ()</td></tr>
-<tr class="separator:a0e702455dbf97ae799af69a23c0d9795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae48b11454e52b2514386d62e08f4fe31"><td class="memTemplParams" colspan="2">template&lt;class classVariable &gt; </td></tr>
+<tr class="memitem:ae48b11454e52b2514386d62e08f4fe31"><td class="memTemplItemLeft" align="right" valign="top">classVariable *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classrune_1_1_game_object.html#ae48b11454e52b2514386d62e08f4fe31">getComponent</a> ()</td></tr>
+<tr class="separator:ae48b11454e52b2514386d62e08f4fe31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrune_1_1_subject"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrune_1_1_subject')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrune_1_1_subject.html">rune::Subject</a></td></tr>
 <tr class="memitem:a032bb18b633b96c17872e9ae512f003f inherit pub_methods_classrune_1_1_subject"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_subject.html#a032bb18b633b96c17872e9ae512f003f">subscribe</a> (<a class="el" href="classrune_1_1_observer.html">Observer</a> &amp;newObserver)</td></tr>
 <tr class="memdesc:a032bb18b633b96c17872e9ae512f003f inherit pub_methods_classrune_1_1_subject"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the subject that an observer would like to be notified of signals.  <a href="classrune_1_1_subject.html#a032bb18b633b96c17872e9ae512f003f">More...</a><br /></td></tr>
@@ -203,8 +205,8 @@ std::vector&lt; <a class="el" href="classrune_1_1_observer.html">Observer</a> * 
 
 </div>
 </div>
-<a id="a0e702455dbf97ae799af69a23c0d9795"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e702455dbf97ae799af69a23c0d9795">&#9670;&nbsp;</a></span>findComponent()</h2>
+<a id="ae48b11454e52b2514386d62e08f4fe31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae48b11454e52b2514386d62e08f4fe31">&#9670;&nbsp;</a></span>getComponent()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +217,7 @@ template&lt;class classVariable &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">classVariable* rune::GameObject::findComponent </td>
+          <td class="memname">classVariable* rune::GameObject::getComponent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -227,7 +229,7 @@ template&lt;class classVariable &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Locate components of the object based on data type Call the function like this: <a class="el" href="classrune_1_1_game_object.html#a0e702455dbf97ae799af69a23c0d9795">findComponent&lt;rune::Sprite&gt;()</a>; </p><dl class="section warning"><dt>Warning</dt><dd>Do not call this in a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> constructor. Call it in either start() or update() </dd></dl>
+<p>Locate components of the object based on data type Call the function like this: <a class="el" href="classrune_1_1_game_object.html#ae48b11454e52b2514386d62e08f4fe31">getComponent&lt;rune::Sprite&gt;()</a>; </p><dl class="section warning"><dt>Warning</dt><dd>Do not call this in a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> constructor. Call it in either start() or update() </dd></dl>
 
 </div>
 </div>
@@ -313,7 +315,7 @@ template&lt;class classVariable &gt; </div>
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_game_object.html">GameObject</a></li>
 				<li class="footer">
-					Generated on Tue Jan 26 2021 15:14:18 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Jan 27 2021 11:09:00 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

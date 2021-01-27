@@ -1,5 +1,13 @@
 var NAVTREEINDEX2 =
 {
+"classrune_1_1_vec2.html#af767656b1cffa7f02cea735823862363":[6,0,1,32,9],
+"classrune_1_1_vec2.html#afecaf3e4a0c6c81e1aa4e8aa0b01fbac":[6,0,1,32,5],
+"classrune_1_1_vec3.html":[6,0,1,33],
+"classrune_1_1_vec3.html#a074857a04f3d504f1f9891e6e917cd08":[6,0,1,33,17],
+"classrune_1_1_vec3.html#a0901a5b5749e0d3fbdfb9bf598d0fbe4":[6,0,1,33,21],
+"classrune_1_1_vec3.html#a0b87d257646106f61902b9a77f6822d2":[6,0,1,33,1],
+"classrune_1_1_vec3.html#a0f8ee16ec14c750de0b03532ecd5a03b":[6,0,1,33,18],
+"classrune_1_1_vec3.html#a10552d50ec7ee07e8610f1f3e74686c2":[6,0,1,33,12],
 "classrune_1_1_vec3.html#a16e156fc2b133b1cdabc7ed846564678":[6,0,1,33,7],
 "classrune_1_1_vec3.html#a250cd3dcc800695558e902d944a91e92":[6,0,1,33,20],
 "classrune_1_1_vec3.html#a4ec02990b878a705c015b0aebc0c5b28":[6,0,1,33,15],

@@ -91,8 +91,8 @@ $(document).ready(function(){initNavTree('scenes.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><p>Start off by declaring the header file and including all the objects you'll need for this scene.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;RuneEngine.h&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;..\Objects\player.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;..\Objects\floorTile.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;player.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;floorTile.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>FirstLevel : <span class="keyword">public</span> <a class="code" href="classrune_1_1_game_scene.html">rune::GameScene</a></div>
 <div class="line">{</div>
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('scenes.html',''); initResizable(); });
 <div class="line">  <span class="comment">//Set up the camera</span></div>
 <div class="line">  SceneCamera.setZoom(2.5);</div>
 <div class="line">  SceneCamera.setCenter(<a class="code" href="classrune_1_1_vec2.html">rune::Vec2</a>(m_player.transform.getPosition().x+180, m_player.transform.getPosition().y+30));</div>
-<div class="line">  getGameInstance()-&gt;getWindow()-&gt;setCamera(SceneCamera);</div>
+<div class="line">  getGameInstance()-&gt;getWindow()-&gt;setCamera(sceneCamera);</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>And now you should have your first <a class="el" href="classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">rune::GameScene</a> up and running! All that's left to do is add it to your <a class="el" href="classrune_1_1_game_application.html" title="Entry point for all programs using the engine, must instantiate a game application for every new game...">rune::GameApplication</a> in your main function.</p>
 <p>See how to <a href="entry_point.html">create a new rune::GameApplication</a> </p>
@@ -149,7 +149,7 @@ $(document).ready(function(){initNavTree('scenes.html',''); initResizable(); });
 		<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
 			<ul>
 				<li class="footer">
-					Generated on Tue Jan 26 2021 15:14:18 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Jan 27 2021 11:09:00 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

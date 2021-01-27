@@ -30,7 +30,8 @@ var hierarchy =
         [ "rune::Animator", "classrune_1_1_animator.html", null ],
         [ "rune::LightSource", "classrune_1_1_light_source.html", null ],
         [ "rune::ParticleEmitter", "classrune_1_1_particle_emitter.html", null ],
-        [ "rune::Sprite", "classrune_1_1_sprite.html", null ]
+        [ "rune::Sprite", "classrune_1_1_sprite.html", null ],
+        [ "rune::Transform", "classrune_1_1_transform.html", null ]
       ] ]
     ] ],
     [ "rune::Rect< T >", "classrune_1_1_rect.html", null ],
@@ -50,7 +51,6 @@ var hierarchy =
       [ "rune::GameObject", "classrune_1_1_game_object.html", null ]
     ] ],
     [ "rune::Texture", "classrune_1_1_texture.html", null ],
-    [ "rune::Transform", "classrune_1_1_transform.html", null ],
     [ "rune::Vec2", "classrune_1_1_vec2.html", null ],
     [ "rune::Vec3", "classrune_1_1_vec3.html", null ],
     [ "physics::World", "classphysics_1_1_world.html", null ]

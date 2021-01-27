@@ -1,9 +1,13 @@
 var classrune_1_1_transform =
 [
     [ "Transform", "classrune_1_1_transform.html#a90e4854d126f090fe8edb1ab1bbb1911", null ],
+    [ "getBounds", "classrune_1_1_transform.html#a5fdcee506fcdf408d177fad8e2aae6ad", null ],
+    [ "getLocalPosition", "classrune_1_1_transform.html#a5c2fe5012c6a31c0831eb747fffe484f", null ],
     [ "getPosition", "classrune_1_1_transform.html#a8d2909487906657ae9e5ee241e565e7b", null ],
     [ "getRotation", "classrune_1_1_transform.html#a0c12e01efcec7fe70ddfe4d6bad2a285", null ],
     [ "getScale", "classrune_1_1_transform.html#af6ec6d67f684cb76fabdeb69d3105d47", null ],
+    [ "setBounds", "classrune_1_1_transform.html#a49879ca5acd0e44751d6cde4dc8d1251", null ],
+    [ "setLocalPosition", "classrune_1_1_transform.html#a495de455ffe1602707fae5a6052dbbbd", null ],
     [ "setPosition", "classrune_1_1_transform.html#a3afd8b9073390a288dbc0cfdb184dfd4", null ],
     [ "setPositionX", "classrune_1_1_transform.html#a6b741aa96902f5711523f2f2b6a6961d", null ],
     [ "setPositionY", "classrune_1_1_transform.html#a2a50182988b9675cde81a029f2387706", null ],
@@ -15,5 +19,7 @@ var classrune_1_1_transform =
     [ "setScale", "classrune_1_1_transform.html#a3066ee5afadf674ab37570fd9d16dab8", null ],
     [ "setScaleX", "classrune_1_1_transform.html#a27168f9acd7d0562697c03e8a0bc4c62", null ],
     [ "setScaleY", "classrune_1_1_transform.html#a22de22db4de16ee19cd640acfe64b55a", null ],
-    [ "setScaleZ", "classrune_1_1_transform.html#a3366cb88d5dca6444cad0f764c8f411a", null ]
+    [ "setScaleZ", "classrune_1_1_transform.html#a3366cb88d5dca6444cad0f764c8f411a", null ],
+    [ "update", "classrune_1_1_transform.html#ae7c6b21e6d5477b3a3345da36c6c0864", null ],
+    [ "parentTransform", "classrune_1_1_transform.html#ae8203471431d42245752a38d124765de", null ]
 ];

@@ -50,12 +50,14 @@ private:
   };
 
 public:
-  ///The shader that should be used to draw the sprite.
+  ///The Shader that should be used to draw the sprite.
   Shader objectShader;
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
   ///Default constructor for generating a sprite from a PNG file, uses default shader.
   Sprite(std::string const& spriteLocation, unsigned int drawMode = LINEAR_FILTER);
+  ///Virtual awake method being overloaded.
+  virtual void awake() override;
   /// Virtual start method being overloaded
   virtual void start() override;
   ///Initialize opengl for the sprite.
@@ -76,7 +78,7 @@ public:
   void setMirror(bool mirror);
   ///Gets whether or not the sprite should be drawn in reverse.
   bool getMirror(void);
-  ///Color of the sprite for drawing purposes
+  ///The Color of the sprite for drawing purposes
   Color spriteColor;
 
 };

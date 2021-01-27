@@ -6,9 +6,14 @@ rune::GameObject::GameObject(const GameObject& gameObject)
   : transform(gameObject.transform), objectComponents(gameObject.objectComponents)
 {
 
-
+  addComponent(transform);
   std::cout << "A GameObject is being copied!" << std::endl;
 
+}
+
+rune::GameObject::GameObject()
+{
+  addComponent(transform);
 }
 
 /**
@@ -18,6 +23,7 @@ void rune::GameObject::addComponent(rune::Component& newScript)
 {
   newScript.setParent(this);
   objectComponents.push_back(&newScript);
+  newScript.awake();
 
 }
 

@@ -16,5 +16,6 @@ var searchData=
   ['angleofrotation_13',['angleOfRotation',['../structphysics_1_1body.html#a28d6f6ed66b834f11db147af3be77fa2',1,'physics::body']]],
   ['angularvelocity_14',['angularVelocity',['../structphysics_1_1body.html#a297cd20edf2cb504cef19920bb7488f9',1,'physics::body']]],
   ['animator_15',['Animator',['../classrune_1_1_animator.html',1,'rune::Animator'],['../classrune_1_1_animator.html#a18d68ce7a4b1ac02521d40162197add8',1,'rune::Animator::Animator()']]],
-  ['apostrophe_16',['APOSTROPHE',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]]
+  ['apostrophe_16',['APOSTROPHE',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2879764069affffa42550479d29f1756',1,'rune::Keyboard']]],
+  ['awake_17',['awake',['../classrune_1_1_component.html#ab613ce1ef98d5480f11680238e900a61',1,'rune::Component::awake()'],['../classrune_1_1_sprite.html#a62a90cbe5494c931b3f165f076aa41bb',1,'rune::Sprite::awake()']]]
 ];

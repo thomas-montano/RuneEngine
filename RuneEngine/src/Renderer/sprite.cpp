@@ -12,6 +12,11 @@ rune::Sprite::Sprite()
   setUpBuffers();
 }
 
+void rune::Sprite::awake()
+{
+  parentObject->transform.setBounds(rune::Vec2(spriteTexture.getWidth(), spriteTexture.getHeight()));
+}
+
 /**
  * @param spriteLocation A filepath for the sprite png file to be drawn.
  * @param drawMode How would you like the sprite to be filtered when drawn.
@@ -50,7 +55,6 @@ void rune::Sprite::setUpBuffers()
   glEnableVertexAttribArray(2);
 
   textureSpace = IntRect(0,0,spriteTexture.getWidth(),spriteTexture.getHeight());
-
 }
 
 void rune::Sprite::start()
@@ -73,7 +77,7 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   double zoomLevel = window.getCamera().getZoom();
 
   rune::Vec3 position = parentObject->transform.getPosition();
-  rune::Vec3 size = parentObject->transform.getScale();
+  rune::Vec3 size = rune::Vec2(parentObject->transform.getBounds().x, parentObject->transform.getBounds().y);//parentObject->transform.getScale();
 
   //Set up camera data for shader
   objectShader.setUniform2f("cameraPos", zoomLevel * (cameraPos.x / (0.5 * windowSize.x)), zoomLevel * (cameraPos.y / (0.5 * windowSize.y)));
@@ -168,3 +172,5 @@ bool rune::Sprite::getMirror(void)
 {
   return isMirrored;
 }
+
+

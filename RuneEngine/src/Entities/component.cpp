@@ -8,6 +8,11 @@ rune::Component::Component(const Component& component)
   std::cout << "A component is being copied!" << std::endl;
 }
 
+void rune::Component::awake()
+{
+
+}
+
 void rune::Component::start()
 {
 

@@ -1,4 +1,5 @@
 #include "rigidBody.h"
+#include <Renderer/sprite.h>
 #include <math.h>
 
 /**
@@ -31,7 +32,8 @@ physics::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::
 
 void physics::RigidBody::start()
 {
-  rune::Vec3 dimensions = parentObject->transform.getScale();
+  //This is very temporary and needs to be handled better eventually!
+  rune::Vec3 dimensions = rune::Vec3(parentObject->transform.getBounds());//parentObject->transform.getScale();
 
   setUpObject(dimensions.x,dimensions.y,1.0/objectBody.invMass,false);
 }

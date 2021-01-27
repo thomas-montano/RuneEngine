@@ -89,8 +89,8 @@ public:
  * @code
  * 
  * #include <RuneEngine.h>
- * #include "..\Objects\player.h"
- * #include "..\Objects\floorTile.h"
+ * #include "player.h"
+ * #include "floorTile.h"
  *
  * class FirstLevel : public rune::GameScene
  * {
@@ -142,7 +142,7 @@ void FirstLevel::doInit(void)
   //Set up the camera
   SceneCamera.setZoom(2.5);
   SceneCamera.setCenter(rune::Vec2(m_player.transform.getPosition().x+180, m_player.transform.getPosition().y+30));
-  getGameInstance()->getWindow()->setCamera(SceneCamera);
+  getGameInstance()->getWindow()->setCamera(sceneCamera);
 }
 
  * 

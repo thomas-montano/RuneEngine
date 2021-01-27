@@ -114,15 +114,15 @@ Collaboration diagram for rune::Sprite:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrune_1_1_sprite__coll__graph.png" border="0" usemap="#rune_1_1_sprite_coll__map" alt="Collaboration graph"/></div>
 <map name="rune_1_1_sprite_coll__map" id="rune_1_1_sprite_coll__map">
-<area shape="rect" title="A sprite that can be given a texture and animated." alt="" coords="237,379,335,405"/>
-<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,237,127,263"/>
-<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="151,237,285,263"/>
-<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="109,95,228,121"/>
-<area shape="rect" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="252,95,392,121"/>
-<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="198,5,305,32"/>
-<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="329,5,453,32"/>
-<area shape="rect" href="classrune_1_1_color.html" title="A color object to be applied to drawable objects." alt="" coords="310,237,403,263"/>
-<area shape="rect" href="classrune_1_1_shader.html" title="A shader that can be used to render objects to the screen." alt="" coords="533,237,637,263"/>
+<area shape="rect" title="A sprite that can be given a texture and animated." alt="" coords="197,276,287,303"/>
+<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,134,113,161"/>
+<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="467,134,588,161"/>
+<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="458,276,570,303"/>
+<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="474,5,581,32"/>
+<area shape="rect" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="450,365,578,392"/>
+<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="335,276,434,303"/>
+<area shape="rect" href="classrune_1_1_color.html" title="A color object to be applied to drawable objects." alt="" coords="138,134,223,161"/>
+<area shape="rect" href="classrune_1_1_shader.html" title="A shader that can be used to render objects to the screen." alt="" coords="345,134,441,161"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -135,6 +135,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abede5448aeb62dd19888fe6ebc64efed"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_sprite.html#abede5448aeb62dd19888fe6ebc64efed">Sprite</a> (std::string const &amp;spriteLocation, unsigned int drawMode=LINEAR_FILTER)</td></tr>
 <tr class="memdesc:abede5448aeb62dd19888fe6ebc64efed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for generating a sprite from a PNG file, uses default shader.  <a href="classrune_1_1_sprite.html#abede5448aeb62dd19888fe6ebc64efed">More...</a><br /></td></tr>
 <tr class="separator:abede5448aeb62dd19888fe6ebc64efed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62a90cbe5494c931b3f165f076aa41bb"><td class="memItemLeft" align="right" valign="top"><a id="a62a90cbe5494c931b3f165f076aa41bb"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_sprite.html#a62a90cbe5494c931b3f165f076aa41bb">awake</a> () override</td></tr>
+<tr class="memdesc:a62a90cbe5494c931b3f165f076aa41bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual awake method being overloaded. <br /></td></tr>
+<tr class="separator:a62a90cbe5494c931b3f165f076aa41bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3e1db8e6544708e4291b9b161c62736"><td class="memItemLeft" align="right" valign="top"><a id="af3e1db8e6544708e4291b9b161c62736"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_sprite.html#af3e1db8e6544708e4291b9b161c62736">start</a> () override</td></tr>
 <tr class="memdesc:af3e1db8e6544708e4291b9b161c62736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual start method being overloaded. <br /></td></tr>
@@ -204,11 +208,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 Public Attributes</h2></td></tr>
 <tr class="memitem:a29382cbad2803f5852c2160e82a451d2"><td class="memItemLeft" align="right" valign="top"><a id="a29382cbad2803f5852c2160e82a451d2"></a>
 <a class="el" href="classrune_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_sprite.html#a29382cbad2803f5852c2160e82a451d2">objectShader</a></td></tr>
-<tr class="memdesc:a29382cbad2803f5852c2160e82a451d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shader that should be used to draw the sprite. <br /></td></tr>
+<tr class="memdesc:a29382cbad2803f5852c2160e82a451d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classrune_1_1_shader.html" title="A shader that can be used to render objects to the screen.">Shader</a> that should be used to draw the sprite. <br /></td></tr>
 <tr class="separator:a29382cbad2803f5852c2160e82a451d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a994170f4f563557123548f6202489c37"><td class="memItemLeft" align="right" valign="top"><a id="a994170f4f563557123548f6202489c37"></a>
 <a class="el" href="classrune_1_1_color.html">Color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_sprite.html#a994170f4f563557123548f6202489c37">spriteColor</a></td></tr>
-<tr class="memdesc:a994170f4f563557123548f6202489c37"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classrune_1_1_color.html" title="A color object to be applied to drawable objects.">Color</a> of the sprite for drawing purposes. <br /></td></tr>
+<tr class="memdesc:a994170f4f563557123548f6202489c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classrune_1_1_color.html" title="A color object to be applied to drawable objects.">Color</a> of the sprite for drawing purposes. <br /></td></tr>
 <tr class="separator:a994170f4f563557123548f6202489c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
@@ -490,7 +494,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_sprite.html">Sprite</a></li>
 				<li class="footer">
-					Generated on Tue Jan 26 2021 15:14:19 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Jan 27 2021 11:09:01 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

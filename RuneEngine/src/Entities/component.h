@@ -32,6 +32,8 @@ public:
   Component() = default;
   ///Default constructor to set up a component when given another component to use as a copy.
   Component(const Component& component);
+  ///A function that will be called before all other start functions but after the component has been assigned to a GameObject.
+  virtual void awake();
   ///A function for each component that is called once at the beginning of the components lifetime.
   virtual void start();
   ///A function for each component that is called every frame.

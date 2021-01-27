@@ -8,7 +8,7 @@ rune::Animator::Animator()
 void rune::Animator::start()
 {
 
-  spriteParent = parentObject->findComponent<rune::Sprite>();
+  spriteParent = parentObject->getComponent<rune::Sprite>();
 
 }
 

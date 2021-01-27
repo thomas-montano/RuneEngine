@@ -90,7 +90,7 @@ void rune::GameScene::addObjectToScene(rune::GameObject& newObject)
   sceneObjects.add(&newObject);
 
   //If the new object has a physics component on it, add it to the physicsBody vector.
-  auto tempPtr = newObject.findComponent<physics::RigidBody>();
+  auto tempPtr = newObject.getComponent<physics::RigidBody>();
 
   if(tempPtr)
     physicsBodies.push_back(tempPtr);

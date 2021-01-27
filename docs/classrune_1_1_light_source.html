@@ -113,13 +113,13 @@ Collaboration diagram for rune::LightSource:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrune_1_1_light_source__coll__graph.png" border="0" usemap="#rune_1_1_light_source_coll__map" alt="Collaboration graph"/></div>
 <map name="rune_1_1_light_source_coll__map" id="rune_1_1_light_source_coll__map">
-<area shape="rect" title="A light source to be used in a scene. Casts light and shadows on objects." alt="" coords="15,260,149,287"/>
-<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,184,127,211"/>
-<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="151,184,285,211"/>
-<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="109,95,228,121"/>
-<area shape="rect" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="252,95,392,121"/>
-<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="198,5,305,32"/>
-<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="329,5,453,32"/>
+<area shape="rect" title="A light source to be used in a scene. Casts light and shadows on objects." alt="" coords="5,157,129,184"/>
+<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="13,81,121,108"/>
+<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="272,81,393,108"/>
+<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="277,157,389,184"/>
+<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="279,5,386,32"/>
+<area shape="rect" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="269,247,397,273"/>
+<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="154,157,253,184"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -147,6 +147,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#acabb2c4d23bc88f2e0ed3f7de60309b6">Component</a> (const <a class="el" href="classrune_1_1_component.html">Component</a> &amp;component)</td></tr>
 <tr class="memdesc:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to set up a component when given another component to use as a copy. <br /></td></tr>
 <tr class="separator:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab613ce1ef98d5480f11680238e900a61 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ab613ce1ef98d5480f11680238e900a61"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#ab613ce1ef98d5480f11680238e900a61">awake</a> ()</td></tr>
+<tr class="memdesc:ab613ce1ef98d5480f11680238e900a61 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that will be called before all other start functions but after the component has been assigned to a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">GameObject</a>. <br /></td></tr>
+<tr class="separator:ab613ce1ef98d5480f11680238e900a61 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ac24759c39a2067026fb8f17487398c0c"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#ac24759c39a2067026fb8f17487398c0c">fixedUpdate</a> ()</td></tr>
 <tr class="memdesc:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for each component that is called once every physics update. <br /></td></tr>
@@ -193,7 +197,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_light_source.html">LightSource</a></li>
 				<li class="footer">
-					Generated on Tue Jan 26 2021 15:14:18 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Wed Jan 27 2021 11:09:00 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

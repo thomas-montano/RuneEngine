@@ -2,6 +2,7 @@ var classrune_1_1_sprite =
 [
     [ "Sprite", "classrune_1_1_sprite.html#a774b68f781e74d64d0c900b3ae08d69e", null ],
     [ "Sprite", "classrune_1_1_sprite.html#abede5448aeb62dd19888fe6ebc64efed", null ],
+    [ "awake", "classrune_1_1_sprite.html#a62a90cbe5494c931b3f165f076aa41bb", null ],
     [ "draw", "classrune_1_1_sprite.html#abfc36c0067b7ba56d91dab5c4d4e7a31", null ],
     [ "getDrawMode", "classrune_1_1_sprite.html#af2dd0b559cde3f8ec22d26b4a5747abc", null ],
     [ "getMirror", "classrune_1_1_sprite.html#a9bbf35ff4ea48c67d1de5ec37baa9e9b", null ],
