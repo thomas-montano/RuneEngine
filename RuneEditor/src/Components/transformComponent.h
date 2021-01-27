@@ -14,7 +14,7 @@ public:
   }
 
   float position[3] = {0};
-  float size[3] = { 0 };
+  float size[3] = { 1,1,1 };
   float rotation[3] = { 0 };
 
   virtual void inspectComponent()
@@ -26,7 +26,7 @@ public:
     {
       ImGui::BeginTooltip();
       ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
-      ImGui::TextUnformatted("Hold shift to move the value faster.");
+      ImGui::TextUnformatted("The position, scale, and rotation of the game object. Hold shift to move the value faster.");
       ImGui::PopTextWrapPos();
       ImGui::EndTooltip();
     }

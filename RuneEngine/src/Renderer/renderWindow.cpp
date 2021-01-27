@@ -27,6 +27,7 @@ void rune::RenderWindow::setCamera(Camera& newCamera)
  * @param title The title of the window to be displayed at the top.
 */
 rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const& title)
+  : windowCamera()
 {
   
   glfwInit();
@@ -63,6 +64,10 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const&
   ImGui_ImplOpenGL3_Init((char*)glGetString(GL_NUM_SHADING_LANGUAGE_VERSIONS));
 
   glfwSetFramebufferSizeCallback(GLwindow, onWindowResize);
+
+  //Set up a default camera with a viewport equal to the screen size.
+  windowCamera = new Camera();
+  windowCamera->setViewPort(rune::FloatRect(0,0,width, height));
 
 }
 

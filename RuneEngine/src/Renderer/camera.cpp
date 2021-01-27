@@ -53,8 +53,3 @@ void rune::Camera::move(rune::Vec2 speed)
 {
   centerPosition += speed * getGameInstance()->getDeltaTime();
 }
-
-void rune::Camera::setViewport(FloatRect viewPortSize)
-{
-  //Resize the viewport based on a ratio of the screen i.e. viewPortSize = FloatRect(0.25f,0.25f,0.5f,0.5f);
-}

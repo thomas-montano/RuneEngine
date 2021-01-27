@@ -25,7 +25,7 @@ private:
   void setUpStyle(void);
 
 public:
-
+  
   rune::FrameBuffer* viewPortBuffer;
 
   static RuneEngineProject currentlyOpenProject;

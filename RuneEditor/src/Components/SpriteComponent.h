@@ -67,7 +67,6 @@ public:
     {
       
       sprite.setTexture(spriteFilePath, FILTER_MODES[index]);
-      
     }
   
   }

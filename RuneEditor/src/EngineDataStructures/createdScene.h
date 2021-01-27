@@ -14,6 +14,7 @@ public:
   {
     sceneName = newSceneName;
     scene = new rune::GameScene;
+
   }
 
   void buildScene(void)

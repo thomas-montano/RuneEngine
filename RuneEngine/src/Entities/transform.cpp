@@ -1,5 +1,4 @@
 #include "transform.h"
-#include <Entities/gameObject.h>
 
 /**
  * \param newPosition The position of the Transform.

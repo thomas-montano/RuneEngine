@@ -77,8 +77,7 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   double zoomLevel = window.getCamera().getZoom();
 
   rune::Vec3 position = parentObject->transform.getPosition();
-  rune::Vec3 size = rune::Vec2(parentObject->transform.getBounds().x, parentObject->transform.getBounds().y);//parentObject->transform.getScale();
-
+  rune::Vec3 size = rune::Vec2(parentObject->transform.getBounds().x, parentObject->transform.getBounds().y);
   //Set up camera data for shader
   objectShader.setUniform2f("cameraPos", zoomLevel * (cameraPos.x / (0.5 * windowSize.x)), zoomLevel * (cameraPos.y / (0.5 * windowSize.y)));
   objectShader.setUniform1f("cameraZoom",zoomLevel);
@@ -96,7 +95,7 @@ void rune::Sprite::draw(rune::RenderWindow& window)
   const float drawVertices[32] = 
   {
     // positions                              // colors and alpha         // texture coordinates
-    drawMatrix[0][0],   drawMatrix[0][1],     spriteColor.red/255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.height / textureDimension.y, // top right
+    drawMatrix[0][0],   drawMatrix[0][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.height / textureDimension.y, // top right
     drawMatrix[0][0],   drawMatrix[1][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     (textureSpace.width + textureSpace.left) / textureDimension.x, textureSpace.top / textureDimension.y, // bottom right
     drawMatrix[1][0],   drawMatrix[1][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     textureSpace.left /textureDimension.x,   textureSpace.top / textureDimension.y, // bottom left
     drawMatrix[1][0],   drawMatrix[0][1],     spriteColor.red / 255.0, spriteColor.green / 255.0, spriteColor.blue / 255.0, spriteColor.alpha / 255.0,     textureSpace.left / textureDimension.x,  textureSpace.height / textureDimension.y  // top left
@@ -119,9 +118,11 @@ void rune::Sprite::draw(rune::RenderWindow& window)
  */
 void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
 {
-
   spriteTexture.loadFromFile(texture.c_str(), drawMode);
+  parentObject->transform.setBounds(rune::Vec2(spriteTexture.getWidth(),spriteTexture.getHeight()));
 
+  textureSpace.width = spriteTexture.getWidth();
+  textureSpace.height = spriteTexture.getHeight();
 }
 /**
  * \param texture The texture that should be given to this sprite for drawing.
@@ -129,6 +130,10 @@ void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
 void rune::Sprite::setTexture(Texture* texture)
 {
   spriteTexture = *texture;
+  parentObject->transform.setBounds(rune::Vec2(texture->getWidth(), texture->getHeight()));
+
+  textureSpace.width = spriteTexture.getWidth();
+  textureSpace.height = spriteTexture.getHeight();
 }
 
 /**
@@ -139,9 +144,7 @@ void rune::Sprite::setTexture(Texture* texture)
  */
 void rune::Sprite::setTextureRect(int xPos, int yPos, int width, int height)
 {
-
   textureSpace = IntRect(xPos,yPos,width,height);
-
 }
 
 /**

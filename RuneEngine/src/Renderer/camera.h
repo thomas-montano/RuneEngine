@@ -21,9 +21,9 @@ namespace rune{
 class RUNE_ENGINE Camera
 {
 private:
-  Vec2 centerPosition;
-  Vec2 cameraSize;
-  double zoomFactor;
+  Vec2 centerPosition = Vec2(0,0);
+  Vec2 cameraSize = Vec2(1,1);
+  double zoomFactor = 1;
 public:
   ///Default constructor to create a Camera object.
   Camera(void);
@@ -39,8 +39,6 @@ public:
   double getZoom(void);
   ///Move the camera in a certain direction
   void move(rune::Vec2);
-  ///Set the size of the camera viewport.
-  void setViewport(FloatRect viewPortSize);
 };
 }
 
