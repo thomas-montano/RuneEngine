@@ -40,15 +40,24 @@ private:
   //Texture rectangle
   IntRect textureSpace;
 
+  bool isMirrored;
+
   unsigned int spriteDrawMode;
 
+  const char* defaultSprite = 
+  {
+  #include <Shaders/defaultSprite.glsl>
+  };
+
 public:
+  ///The Shader that should be used to draw the sprite.
   Shader objectShader;
   ///Default empty constructor for generating a sprite, uses default shader.
   Sprite();
   ///Default constructor for generating a sprite from a PNG file, uses default shader.
-  /// Use NEAREST_FILTER for pixel art sprites. LINEAR_FILTER is used by default.
   Sprite(std::string const& spriteLocation, unsigned int drawMode = LINEAR_FILTER);
+  ///Virtual awake method being overloaded.
+  virtual void awake() override;
   /// Virtual start method being overloaded
   virtual void start() override;
   ///Initialize opengl for the sprite.
@@ -65,8 +74,11 @@ public:
   IntRect getTextureRect(void);
   ///Returns the filtering mode of the sprite.
   unsigned int getDrawMode();
-
-  ///Color of the sprite for drawing purposes
+  ///Sets whether or not the sprite should be drawn in reverse.
+  void setMirror(bool mirror);
+  ///Gets whether or not the sprite should be drawn in reverse.
+  bool getMirror(void);
+  ///The Color of the sprite for drawing purposes
   Color spriteColor;
 
 };

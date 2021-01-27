@@ -17,30 +17,43 @@ template <typename T>
 class RUNE_ENGINE Rect
 {
 public:
+  ///Default empty constructor for a Rect.
   Rect()
     : left(0), top(0), width(0), height(0)
   {
   }
 
+  /// Default constructor for a new Rect.
+  /// @param rectLeft Left most position of the rectangle.
+  /// @param rectTop Top most position of the rectangle.
+  /// @param rectWidth Width of the rectangle.
+  /// @param rectHeight Height of the rectangle.
   Rect(T rectLeft, T rectTop, T rectWidth, T rectHeight)
     : left(rectLeft), top(rectTop), width(rectWidth), height(rectHeight)
   {
   }
 
   //Member data
+  ///Left most position of the rectangle.
   T left;
+  ///Top most position of the rectangle.
   T top;
+  ///Width of the rectangle.
   T width;
+  ///Height of the rectangle.
   T height;
 
 };
 
-template Rect<float>::Rect<float>(float,float,float,float);
-template Rect<int>::Rect<int>(int, int, int, int);
-template Rect<double>::Rect<double>(double, double, double, double);
+rune::Rect<float>::Rect(float,float,float,float);
+rune::Rect<int>::Rect(int, int, int, int);
+rune::Rect<double>::Rect(double, double, double, double);
 
+///A Rect that uses integers.
 using IntRect = Rect<int>;
+///A Rect that uses floats.
 using FloatRect = Rect<float>;
+///A Rect that uses doubles.
 using DoubleRect = Rect<double>;
 
 }//namespace rune

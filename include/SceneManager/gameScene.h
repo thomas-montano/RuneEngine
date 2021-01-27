@@ -28,19 +28,17 @@ namespace rune{
 class RUNE_ENGINE GameScene
 {
 protected:
-  //Flags that are used to communicate with the state manager.
+  ///Whether or not the scene is currently active.
   bool isStateActive = false;
-
+  ///The physics bodies in the scene to be simulated.
   std::vector<physics::RigidBody*> physicsBodies;
-
-  //This list can be non-pointers because it is a list.
+  ///Objects in the scene that need to have their components updated every frame.
   List<rune::GameObject*> sceneObjects;
-
+  ///The drawable objects contained in the scene that should be rendered to the screen.
   std::vector<rune::Drawable*> drawableObjects;
-  
   ///A clock that records the amount of time between variable update calls.
   rune::Clock variableClock;
-  ///Time between variable update calls
+  ///Time between variable update calls.
   double dT;
   ///Clamping value for physics simulator.
   double accumulator;
@@ -50,11 +48,11 @@ protected:
   rune::Color clearColor;
 
 public:
-  ///Default constructor to create a new rune::GameScene
+  ///Default constructor to create a new rune::GameScene.
   GameScene();
-  ///Initializes the state
+  ///Initializes the state.
   virtual void doInit(void);
-  ///Reset the scene without unloading game objects
+  ///Reset the scene without unloading game objects.
   virtual void reInit(void);
   void deInit(void);
   virtual void pause(void);
@@ -91,8 +89,8 @@ public:
  * @code
  * 
  * #include <RuneEngine.h>
- * #include "..\Objects\player.h"
- * #include "..\Objects\floorTile.h"
+ * #include "player.h"
+ * #include "floorTile.h"
  *
  * class FirstLevel : public rune::GameScene
  * {
@@ -144,7 +142,7 @@ void FirstLevel::doInit(void)
   //Set up the camera
   SceneCamera.setZoom(2.5);
   SceneCamera.setCenter(rune::Vec2(m_player.transform.getPosition().x+180, m_player.transform.getPosition().y+30));
-  getGameInstance()->getWindow()->setCamera(SceneCamera);
+  getGameInstance()->getWindow()->setCamera(sceneCamera);
 }
 
  * 

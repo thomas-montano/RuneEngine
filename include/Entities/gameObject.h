@@ -23,15 +23,16 @@ class RUNE_ENGINE GameObject : public Subject
 {
 private:
   //This must be a vector of pointers because of the fact that they can't be stored in a List.
-  //They can't be stored in a list because during iteration of components, findComponent would
+  //They can't be stored in a list because during iteration of components, getComponent would
   //reset the list index and enter into an infinite loop.
   std::vector<rune::Component*> objectComponents;
 
 public:
   ///The location, scale, and rotation of the object in the world.
   rune::Transform transform;
-
-  GameObject() = default;
+  ///Default empty constructor.
+  GameObject();
+  ///Constructor to be used for copying another rune::GameObject.
   GameObject(const GameObject& gameObject);
   ///Add a component to this game object.
   void addComponent(rune::Component&);
@@ -41,12 +42,11 @@ public:
   void instantiate(GameObject&);
   ///Return a pointer to a component based off of index. Used for iterating through all components.
   std::vector<Component*>& getComponentList();
-
   ///Locate components of the object based on data type
-  ///Call the function like this: findComponent<rune::Sprite>();
+  ///Call the function like this: getComponent<rune::Sprite>();
   /// @warning Do not call this in a rune::GameObject constructor. Call it in either start() or update()
   template<class classVariable>
-  classVariable* findComponent()
+  classVariable* getComponent()
   {
 
     for(int i = 0; i < objectComponents.size(); i++)
@@ -72,7 +72,7 @@ public:
 
 /**
  * 
- * @page GameObjects Game Objects
+ * @page gameObjects Game Objects
  * 
  * @section objects Creating an Object
  * 

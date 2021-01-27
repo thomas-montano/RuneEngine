@@ -20,6 +20,7 @@ namespace rune{
 class RUNE_ENGINE Mouse
 {
 public:
+  ///A button on the mouse that can be polled for input status.
   enum Button {
     ///The left mouse button.
     Left = 0,

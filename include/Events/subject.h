@@ -20,10 +20,10 @@ namespace rune{
   class RUNE_ENGINE Subject
   {
   protected:
+    ///Send a signal to all observers
     void sendSignal(Signal);
-
+    ///List of observers currently subscribed to this object.
     std::vector<Observer*> observers;
-
     ///Get the number of observers subscribed to this subject.
     int getNumObservers(void);
 

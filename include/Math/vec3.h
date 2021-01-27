@@ -36,55 +36,41 @@ public:
   Vec3 operator- (const Vec3& right);
   ///Overload of negation operator.
   Vec3 operator-();
-
   ///Overload of addition operator.
   Vec3 operator+ (const Vec3& right);
-
   ///Overload of multiplication operator.
   Vec3 operator* (const Vec3& right);
-
   ///Overload of division operator.
   Vec3 operator/ (const Vec3& right);
   ///Overload of division operator for a scalar on the right.
   Vec3 operator/ (double scalar);
-
   ///Overload of -= operator.
   Vec3& operator-=(const Vec3& right);
-
   ///Overload of += operator.
   Vec3& operator+=(const Vec3& right);
-
   ///Overload of *= operator.
   Vec3& operator*=(const Vec3& right);
   ///Overload of *= operator for a scalar multiplier.
   Vec3& operator*=(const double right);
   ///Overload of multiplication operator for a scalar on the right.
   Vec3 operator* (double scalar);
-
   ///Overload of comparator operator.
   bool operator==(const Vec3& right);
   ///Overload of != operator.
   bool operator!=(const Vec3& right);
-
   ///Determine the magnitude of the vector.
   double magnitude(void);
 
 };
-
-///Overload of stream operator for printing.
-/// @memberof rune::Vec3
+///Stream operator overloading so that vectors can be printed to the console.
 RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const Vec3& vector);
-
+///Dot product calculation of two vectors.
 RUNE_ENGINE double dotProduct(const rune::Vec3& vector1, const rune::Vec3& vector2);
-
+///Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
 RUNE_ENGINE rune::Vec3 normalize(const rune::Vec3& vector);
-
+///Cross product calculation of two vectors.
 RUNE_ENGINE rune::Vec3 crossProduct(const rune::Vec3&, const rune::Vec3&);
-
-/// Overload of multiplication operator for a scalar on the left.
-/// @param scalar Scalar value to be multiplied by.
-/// @param vec The vector to be multiplied with.
-/// @memberof rune::Vec3
+///Overload of multiplication operator for a scalar on the left. 
 RUNE_ENGINE rune::Vec3 operator*(double scalar, const rune::Vec3& vec);
 
 }

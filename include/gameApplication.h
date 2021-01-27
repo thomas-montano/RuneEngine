@@ -149,19 +149,18 @@ public:
  * Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.
  *
  * You can check out the latest release of the engine here:
- *
- * https://github.com/ThomasMontanoGames/RuneEngine/releases
+ * [Engine Downloads](https://github.com/ThomasMontanoGames/RuneEngine/releases)
  *
  * @subsection setup Setting up a New Rune Project
  * 
  * 1. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
- * 2. Add the path "Rune Engine Directory"/lib in the linker settings of your project
- * 3. Link the LIB file in the linker settings of your project.
- * 4. Move the DLL file into your game's working directory. 
+ * 2. Add the path "Rune Engine Directory"/lib in the linker settings of your project.
+ * 3. Link the LIB files in the linker settings of your project. Use RuneEngine-d.lib and RuneEngine-d.dll for debug builds.
+ * 4. Move the DLL files into your game's working directory. 
  * 5. Declare `RUNE_PLATFORM_WINDOWS` in the preprocessor definitions of your project.
  * 6. ```#include <RuneEngine.h>``` in the files using the engine.
  * 
- * @warning Make sure you are building in 64-bit, RUNE does not support 32 bit.
+ * @warning Make sure you are building in 64-bit, Rune does not support 32-bit.
  * 
  * 
  * @subsection features Engine Features
@@ -176,8 +175,11 @@ public:
  * - Debug Interface with ImGUI
  * - Tile work flow and sprite work flow
  * 
+ * \image html EnginePic.png In-Engine Dynamic Lighting width=350
+ * 
  * @subsection bugs Engine Issues
  * 
- * Found something that you think isn't working the way it's supposed to? Please submit a bug report on the github repository.
+ * Found something that you think isn't working the way it's supposed to? Please submit a bug report on the github repository:
+ * [Report an Issue](https://github.com/ThomasMontanoGames/RuneEngine/issues/new/choose)
  * 
  */

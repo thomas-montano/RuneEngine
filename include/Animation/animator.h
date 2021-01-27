@@ -36,7 +36,9 @@ public:
   ///Play an animation stored in the controller.
   void playAnimation(std::string const& animationName);
   ///Add an animation to the controller.
-  void addAnimation(std::string const& animationName, int frameWidth, int numFrames, int frameRate, std::string const&  fileName);
+  void addAnimation(std::string const& animationName, int frameWidth, int startFrame, int numFrames, int frameRate, std::string const&  fileName);
+  ///Add an animation to the controller that defaults to zero being the first frame.
+  void addAnimation(std::string const& animationName, int frameWidth, int numFrames, int frameRate, std::string const& fileName);
   ///Get a pointer to the specified animation.
   ObjectAnimation* getAnimation(std::string const& name);
 

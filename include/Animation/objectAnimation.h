@@ -25,22 +25,21 @@ private:
   int m_numFrames;
   int m_frameRate;
   int m_currentFrame;
-
-  bool m_mirror;
+  int m_startFrame;
 
   rune::Clock m_animationClock;
 
   Texture m_animationSheet;
 
 public:
-  ///Default constructor to create a new animation for a rune::GameObject.
+  ///Default constructor to create a new empty animation for a rune::GameObject.
   ObjectAnimation();
+  ///Default constructor to create a new non empty animation for a rune::GameObject.
+  ObjectAnimation(int frameWidth, int startFrame, int numFrames, int frameRate);
   ///Set the frame rate for the animation.
   void setFrameRate(int frameRate);
   ///Get the frame rate for the animation.
   int getFrameRate(void);
-  ///Get whether or not the animation should be mirrored.
-  bool isMirrored(void);
   ///Set the width in pixels of each frame on the sprite sheet.
   void setFrameWidth(int frameWidth);
   ///Get the width in pixels of each frame on the sprite sheet.
@@ -63,8 +62,12 @@ public:
   void setCurrentFame(int);
   ///Tell the animation to go to the next frame.
   void incCurrentFrame(void);
-  ///Set whether or not the sprite should be mirrored across the vertical axis.
-  void setMirror(bool);
+  ///Get the amount of time in seconds that the animation lasts.
+  float getAnimationDuration(void);
+  ///Get the frame that the animation starts on.
+  int getStartFrame();
+  ///Set the frame that the animation starts on.
+  void setStartFrame(int startFrame);
 
 };
 }

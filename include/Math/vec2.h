@@ -23,72 +23,49 @@ public:
   double x;
   ///Y coordinate of the vector.
   double y;
-
   ///Constructor that sets up a new vector.
   Vec2(double newX = 0, double newY = 0);
-
   ///Overload of subtraction operator.
   Vec2 operator- (const Vec2& right);
   ///Overload of negation operator.
   Vec2 operator-();
-
   ///Overload of addition operator.
   Vec2 operator+ (const Vec2& right);
-
   ///Overload of multiplication operator.
   Vec2 operator* (const Vec2& right);
-
   ///Overload of division operator.
   Vec2 operator/ (const Vec2& right);
   ///Overload of division operator for a scalar on the right.
   Vec2 operator/ (double scalar);
-
   ///Overload of -= operator.
   Vec2& operator-=(const Vec2& right);
-
   ///Overload of += operator.
   Vec2& operator+=(const Vec2& right);
-
   ///Overload of *= operator.
   Vec2& operator*=(const Vec2& right);
   ///Overload of *= operator for a scalar multiplier.
   Vec2& operator*=(const double right);
-
+  ///Overload of * operator for a scalar multiplier.
   Vec2 operator* (double scalar);
-
   ///Overload of comparator operator.
   bool operator==(const Vec2& right);
   ///Overload of != operator.
   bool operator!=(const Vec2& right);
 
 };
-
-///Overload of division operator
+///Overload of / operator for a scalar.
 RUNE_ENGINE Vec2 operator/ (double scalar, Vec2 vec);
-
+///Dot product calculation of two vectors.
 RUNE_ENGINE double dotProduct(rune::Vec2 const& vector1, rune::Vec2 const& vector2);
-
-/**
- * @memberof rune::Vec2
- * @param axis The axis that is used to find the normal.
- * @brief Find the left handed vector normal to a surface 
- * @return The left handed vector that is normal to the provided surface.
- */
+///Find a vector that is left handed normal to vector used to describe a surface.
 RUNE_ENGINE rune::Vec2 findNormal(rune::Vec2 const& axis);
-
-/**
- * @memberof rune::Vec2
- * @param vec The vector to be normalized.
- * @brief Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
- * @return A vector in the same direction with magnitude of 1.
- */
+///Divides each component of a vector by the vector magnitude to make the vector magnitude equal to 1.
 RUNE_ENGINE rune::Vec2 normalize(rune::Vec2 const& vec);
-
+///Cross product calculation of two vectors.
 RUNE_ENGINE double crossProduct(rune::Vec2 const& vec1, rune::Vec2 const& vec2);
-
-///Overload of multiplication operator for a scalar on the left.
-RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 const& mat);
-
+///Overload of * operator for a scalar.
+RUNE_ENGINE rune::Vec2 operator*(double scalar, rune::Vec2 const& vec);
+///Stream operator overloading so that vectors can be printed to the console.
 RUNE_ENGINE std::ostream& operator<<(std::ostream& os, const rune::Vec2& vector);
 
 }
