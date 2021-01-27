@@ -20,6 +20,13 @@ public:
 
     ImGui::Begin("View Port", NULL, ImGuiWindowFlags_NoCollapse);
 
+    ImGui::SetCursorPosX((ImGui::GetContentRegionAvail().x - 67.5) / 2);
+    ImGui::Button("Play");
+    ImGui::SameLine();
+    ImGui::Button("Stop");
+
+    ImGui::SetCursorPosY(ImGui::GetCursorPosY()+50);
+
     double scalingFactor;
 
     //Adjust the size of the viewport image to make sure that no image stretching occurs

@@ -1,5 +1,7 @@
 #include "menuBar.h"
 #include "mainEditorWindow.h"
+#include <iostream>
+#include <fstream>
 #include <windows.h>
 #include <shlobj.h>
 
@@ -64,10 +66,13 @@ void MenuBar::draw(rune::RenderWindow& window)
 
       if(ImGui::MenuItem("Open Project"))
       {
-        openProject();
+
       }
 
-      ImGui::MenuItem("Save Project");
+      if(ImGui::MenuItem("Save Project"))
+      {
+
+      }
 
       ImGui::Separator();
 
@@ -393,7 +398,7 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Sprite Renderer", NULL, false, disabled))
   {
 
-    SpriteComponent* newComponent = new SpriteComponent(std::string(typeid(rune::Sprite).name()), "Sprite Renderer", EditorWindow::selectedObject->gameObject,"test");
+    SpriteComponent* newComponent = new SpriteComponent("rune::Sprite", "Sprite Renderer", EditorWindow::selectedObject->gameObject,"test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
 
   }
@@ -401,7 +406,7 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Rectangle Renderer", NULL, false, disabled))
   {
 
-    RectangleComponent* newComponent = new RectangleComponent(std::string(typeid(rune::RectangleShape).name()), "Rectangle Renderer", EditorWindow::selectedObject->gameObject,"test");
+    RectangleComponent* newComponent = new RectangleComponent("rune::RectangleShape", "Rectangle Renderer", EditorWindow::selectedObject->gameObject,"test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
 
 

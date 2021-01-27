@@ -21,17 +21,17 @@ void CreatedGameObject::buildObject(void)
 
   std::ofstream objectFile;
 
-  objectFile.open(objectName + ".h");
+  objectFile.open(objectName + ".h", std::ifstream::trunc);
 
   objectFile << "#pragma once\n\n";
   objectFile << "#include <RuneEngine.h>\n\n";
 
-  for(int i = 1; i < objectComponents.size();i++)
+  /*for(int i = 1; i < objectComponents.size();i++)
   {
   
     objectFile << "#include \"" << objectComponents[i]->componentName << "\"\n";
   
-  }
+  }*/
 
   objectFile << "class " << objectName << " : public rune::GameObject\n";
   objectFile << "{\n";
@@ -41,7 +41,21 @@ void CreatedGameObject::buildObject(void)
   for(int i = 0; i < objectComponents.size();i++)
   {
   
-    objectFile << objectComponents[i]->componentType << " " << objectComponents[i]->componentName << ";\n";
+    std::string componentName = objectComponents[i]->componentName;
+    std::string output;
+
+    int j = 0, k = 0;
+    while (componentName[j])
+    {
+      if (componentName[j] != ' ')
+        componentName[k++] = componentName[j];
+      j++;
+    }
+    componentName[k] = 0;
+
+    std::cout << componentName << std::endl;
+
+    objectFile << objectComponents[i]->componentType << " " << componentName << ";\n";
   
   }
 
