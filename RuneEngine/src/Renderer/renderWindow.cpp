@@ -35,10 +35,10 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const&
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
   windowOpen = true;
-  width = newWidth;
-  height = newHeight;
+  m_width = newWidth;
+  m_height = newHeight;
 
-  GLwindow = glfwCreateWindow(width, height, title.c_str(), NULL,NULL);
+  GLwindow = glfwCreateWindow(m_width, m_height, title.c_str(), NULL,NULL);
 
   if(!GLwindow)
   {
@@ -67,7 +67,7 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const&
 
   //Set up a default camera with a viewport equal to the screen size.
   windowCamera = new Camera();
-  windowCamera->setViewPort(rune::FloatRect(0,0,width, height));
+  windowCamera->setViewPort(rune::FloatRect(0,0,m_width, m_height));
 
 }
 
@@ -114,6 +114,14 @@ void rune::RenderWindow::maximizeWindow(void)
 void rune::RenderWindow::onWindowResize(GLFWwindow* window, int width, int height)
 {
   glViewport(0, 0, width, height);
+
+  getGameInstance()->getWindow()->updateWindowSize(width,height);
+}
+
+void rune::RenderWindow::updateWindowSize(int width, int height)
+{
+  m_width = width;
+  m_height = height;
 }
 
 void rune::RenderWindow::display(void)
@@ -173,7 +181,7 @@ void rune::RenderWindow::draw(Drawable& drawObject)
 */
 rune::Vec2 rune::RenderWindow::getSize()
 {
-  return rune::Vec2(width,height);
+  return rune::Vec2(m_width,m_height);
 }
 
 /**

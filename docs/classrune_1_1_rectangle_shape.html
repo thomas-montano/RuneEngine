@@ -103,8 +103,10 @@ Inheritance diagram for rune::RectangleShape:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrune_1_1_rectangle_shape__inherit__graph.png" border="0" usemap="#rune_1_1_rectangle_shape_inherit__map" alt="Inheritance graph"/></div>
 <map name="rune_1_1_rectangle_shape_inherit__map" id="rune_1_1_rectangle_shape_inherit__map">
-<area shape="rect" title="A rectangle that can be drawn to the screen." alt="" coords="5,80,169,107"/>
-<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="27,5,148,32"/>
+<area shape="rect" title="A rectangle that can be drawn to the screen." alt="" coords="53,155,204,181"/>
+<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,80,113,107"/>
+<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="137,80,259,107"/>
+<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="145,5,251,32"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -112,23 +114,67 @@ Collaboration diagram for rune::RectangleShape:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrune_1_1_rectangle_shape__coll__graph.png" border="0" usemap="#rune_1_1_rectangle_shape_coll__map" alt="Collaboration graph"/></div>
 <map name="rune_1_1_rectangle_shape_coll__map" id="rune_1_1_rectangle_shape_coll__map">
-<area shape="rect" title="A rectangle that can be drawn to the screen." alt="" coords="52,95,216,121"/>
-<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,5,127,32"/>
-<area shape="rect" href="classrune_1_1_shader.html" title="A shader that can be used to render objects to the screen." alt="" coords="151,5,255,32"/>
+<area shape="rect" title="A rectangle that can be drawn to the screen." alt="" coords="87,171,237,197"/>
+<area shape="rect" href="classrune_1_1_drawable.html" title="Interface class for creating something that can be drawn to the screen." alt="" coords="5,81,113,108"/>
+<area shape="rect" href="classrune_1_1_component.html" title="A component of a rune::GameObject, this class is used to add functionality to a object in the game wo..." alt="" coords="348,81,469,108"/>
+<area shape="rect" href="classrune_1_1_transform.html" title="A data structure that contains position, size, and rotation." alt="" coords="511,171,623,197"/>
+<area shape="rect" href="classrune_1_1_observer.html" title="An interface that allows objects to watch a subject for signals, and perform some action when notifie..." alt="" coords="355,5,462,32"/>
+<area shape="rect" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene." alt="" coords="345,260,473,287"/>
+<area shape="rect" href="classrune_1_1_subject.html" title="A subject that can be watched for signals by observers." alt="" coords="262,171,361,197"/>
+<area shape="rect" href="classrune_1_1_shader.html" title="A shader that can be used to render objects to the screen." alt="" coords="138,81,234,108"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d240353b5d9c138bde0bfd3cb55e1fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_rectangle_shape.html#a2d240353b5d9c138bde0bfd3cb55e1fe">draw</a> (<a class="el" href="classrune_1_1_render_window.html">rune::RenderWindow</a> &amp;window)</td></tr>
-<tr class="memdesc:a2d240353b5d9c138bde0bfd3cb55e1fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">The draw call for rendering the shape to the screen.  <a href="classrune_1_1_rectangle_shape.html#a2d240353b5d9c138bde0bfd3cb55e1fe">More...</a><br /></td></tr>
-<tr class="separator:a2d240353b5d9c138bde0bfd3cb55e1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a7026f17ce4977fc3b90cbe52cc8d25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_rectangle_shape.html#a0a7026f17ce4977fc3b90cbe52cc8d25">draw</a> (<a class="el" href="classrune_1_1_render_window.html">rune::RenderWindow</a> &amp;window) override</td></tr>
+<tr class="memdesc:a0a7026f17ce4977fc3b90cbe52cc8d25"><td class="mdescLeft">&#160;</td><td class="mdescRight">The draw call for rendering the shape to the screen.  <a href="classrune_1_1_rectangle_shape.html#a0a7026f17ce4977fc3b90cbe52cc8d25">More...</a><br /></td></tr>
+<tr class="separator:a0a7026f17ce4977fc3b90cbe52cc8d25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8487714247b0392019852fe36d3fd4b5"><td class="memItemLeft" align="right" valign="top"><a id="a8487714247b0392019852fe36d3fd4b5"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_rectangle_shape.html#a8487714247b0392019852fe36d3fd4b5">start</a> () override</td></tr>
+<tr class="memdesc:a8487714247b0392019852fe36d3fd4b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of the start method for a rectangle. <br /></td></tr>
+<tr class="separator:a8487714247b0392019852fe36d3fd4b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa15299d3e67e7b91c7358e1a0fadab0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_rectangle_shape.html#aaa15299d3e67e7b91c7358e1a0fadab0">RectangleShape</a> (<a class="el" href="classrune_1_1_color.html">rune::Color</a> newColor=<a class="el" href="classrune_1_1_color.html#af6b662716f2a1a423791acb3a9f609e8">rune::Color::White</a>)</td></tr>
 <tr class="memdesc:aaa15299d3e67e7b91c7358e1a0fadab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor that will create a white rectangle by default.  <a href="classrune_1_1_rectangle_shape.html#aaa15299d3e67e7b91c7358e1a0fadab0">More...</a><br /></td></tr>
 <tr class="separator:aaa15299d3e67e7b91c7358e1a0fadab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c049363eda3b0f547f18788579ae0d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_rectangle_shape.html#a7c049363eda3b0f547f18788579ae0d5">setFillColor</a> (<a class="el" href="classrune_1_1_color.html">rune::Color</a> newFillColor)</td></tr>
 <tr class="memdesc:a7c049363eda3b0f547f18788579ae0d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color used to fill the rectangle.  <a href="classrune_1_1_rectangle_shape.html#a7c049363eda3b0f547f18788579ae0d5">More...</a><br /></td></tr>
 <tr class="separator:a7c049363eda3b0f547f18788579ae0d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classrune_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrune_1_1_component')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrune_1_1_component.html">rune::Component</a></td></tr>
+<tr class="memitem:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a45c7fae6f7fe55eb22932c4a1304cfcb"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a45c7fae6f7fe55eb22932c4a1304cfcb">Component</a> ()=default</td></tr>
+<tr class="memdesc:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to set up. <br /></td></tr>
+<tr class="separator:a45c7fae6f7fe55eb22932c4a1304cfcb inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="acabb2c4d23bc88f2e0ed3f7de60309b6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#acabb2c4d23bc88f2e0ed3f7de60309b6">Component</a> (const <a class="el" href="classrune_1_1_component.html">Component</a> &amp;component)</td></tr>
+<tr class="memdesc:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to set up a component when given another component to use as a copy. <br /></td></tr>
+<tr class="separator:acabb2c4d23bc88f2e0ed3f7de60309b6 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab613ce1ef98d5480f11680238e900a61 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ab613ce1ef98d5480f11680238e900a61"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#ab613ce1ef98d5480f11680238e900a61">awake</a> ()</td></tr>
+<tr class="memdesc:ab613ce1ef98d5480f11680238e900a61 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function that will be called before all other start functions but after the component has been assigned to a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">GameObject</a>. <br /></td></tr>
+<tr class="separator:ab613ce1ef98d5480f11680238e900a61 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bbf867f970e9e276e454096d99cb375 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a4bbf867f970e9e276e454096d99cb375"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a4bbf867f970e9e276e454096d99cb375">update</a> ()</td></tr>
+<tr class="memdesc:a4bbf867f970e9e276e454096d99cb375 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for each component that is called every frame. <br /></td></tr>
+<tr class="separator:a4bbf867f970e9e276e454096d99cb375 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="ac24759c39a2067026fb8f17487398c0c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#ac24759c39a2067026fb8f17487398c0c">fixedUpdate</a> ()</td></tr>
+<tr class="memdesc:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function for each component that is called once every physics update. <br /></td></tr>
+<tr class="separator:ac24759c39a2067026fb8f17487398c0c inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f80061e4b816e8f5a9f4810f93a63e1 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a4f80061e4b816e8f5a9f4810f93a63e1">setParent</a> (<a class="el" href="classrune_1_1_game_object.html">GameObject</a> *newParent)</td></tr>
+<tr class="memdesc:a4f80061e4b816e8f5a9f4810f93a63e1 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function to set the pointer to the parent <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> for each component.  <a href="classrune_1_1_component.html#a4f80061e4b816e8f5a9f4810f93a63e1">More...</a><br /></td></tr>
+<tr class="separator:a4f80061e4b816e8f5a9f4810f93a63e1 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbbb2a8b9b8adc6b06a3820a472ad85b inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#abbbb2a8b9b8adc6b06a3820a472ad85b">setEnable</a> (bool newEnable)</td></tr>
+<tr class="memdesc:abbbb2a8b9b8adc6b06a3820a472ad85b inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the component.  <a href="classrune_1_1_component.html#abbbb2a8b9b8adc6b06a3820a472ad85b">More...</a><br /></td></tr>
+<tr class="separator:abbbb2a8b9b8adc6b06a3820a472ad85b inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b6a0b1c09a8eda00aadcb5e30b7949 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a40b6a0b1c09a8eda00aadcb5e30b7949"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a40b6a0b1c09a8eda00aadcb5e30b7949">isComponentEnabled</a> (void)</td></tr>
+<tr class="memdesc:a40b6a0b1c09a8eda00aadcb5e30b7949 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets whether or not the current component is enabled. <br /></td></tr>
+<tr class="separator:a40b6a0b1c09a8eda00aadcb5e30b7949 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5be8bf1b39920835d81762ea062b5858 inherit pub_methods_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a5be8bf1b39920835d81762ea062b5858"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a5be8bf1b39920835d81762ea062b5858">onNotify</a> (<a class="el" href="classrune_1_1_signal.html">Signal</a> const &amp;signal) override</td></tr>
+<tr class="memdesc:a5be8bf1b39920835d81762ea062b5858 inherit pub_methods_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">A virtual method to be overridden by a concrete implementation of the observer class. <br /></td></tr>
+<tr class="separator:a5be8bf1b39920835d81762ea062b5858 inherit pub_methods_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -136,6 +182,18 @@ Public Attributes</h2></td></tr>
 <a class="el" href="classrune_1_1_shader.html">Shader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_rectangle_shape.html#acb968148b8f311167dee3154e8f19a70">rectangleShader</a></td></tr>
 <tr class="memdesc:acb968148b8f311167dee3154e8f19a70"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shader that should be used to draw this rectangle. <br /></td></tr>
 <tr class="separator:acb968148b8f311167dee3154e8f19a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classrune_1_1_component"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrune_1_1_component')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classrune_1_1_component.html">rune::Component</a></td></tr>
+<tr class="memitem:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a3b61712b05daa87bd8de85d6bf12dd6e"></a>
+<a class="el" href="classrune_1_1_game_object.html">GameObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a3b61712b05daa87bd8de85d6bf12dd6e">parentObject</a> = nullptr</td></tr>
+<tr class="memdesc:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> that this component is attached to. If not attached to a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">rune::GameObject</a> this will equal nullptr. <br /></td></tr>
+<tr class="separator:a3b61712b05daa87bd8de85d6bf12dd6e inherit pro_attribs_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6214c9cafd2ec5aefdf253644f8c33fd inherit pro_attribs_classrune_1_1_component"><td class="memItemLeft" align="right" valign="top"><a id="a6214c9cafd2ec5aefdf253644f8c33fd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_component.html#a6214c9cafd2ec5aefdf253644f8c33fd">isEnabled</a> = true</td></tr>
+<tr class="memdesc:a6214c9cafd2ec5aefdf253644f8c33fd inherit pro_attribs_classrune_1_1_component"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether or not the component is currently enabled. If not enabled, update function will not be called. <br /></td></tr>
+<tr class="separator:a6214c9cafd2ec5aefdf253644f8c33fd inherit pro_attribs_classrune_1_1_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A rectangle that can be drawn to the screen. </p>
@@ -169,8 +227,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2d240353b5d9c138bde0bfd3cb55e1fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d240353b5d9c138bde0bfd3cb55e1fe">&#9670;&nbsp;</a></span>draw()</h2>
+<a id="a0a7026f17ce4977fc3b90cbe52cc8d25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a7026f17ce4977fc3b90cbe52cc8d25">&#9670;&nbsp;</a></span>draw()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,7 +246,7 @@ Public Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -242,7 +300,7 @@ Public Attributes</h2></td></tr>
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_rectangle_shape.html">RectangleShape</a></li>
 				<li class="footer">
-					Generated on Wed Jan 27 2021 17:43:26 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Thu Jan 28 2021 15:18:59 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

@@ -20,3 +20,8 @@ rune::Vec2 rune::Mouse::getPosition(void)
 
   return rune::Vec2(xpos,-1 * (ypos - getGameInstance()->getWindow()->getSize().y));
 }
+
+void rune::Mouse::setPosition(rune::Vec2 newPosition)
+{
+  glfwSetCursorPos(getGameInstance()->getWindow()->GetGLWindow(), newPosition.x, getGameInstance()->getWindow()->getSize().y - newPosition.y);
+}

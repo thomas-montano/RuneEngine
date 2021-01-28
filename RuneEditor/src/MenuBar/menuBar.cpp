@@ -8,6 +8,8 @@
 #include <Components/SpriteComponent.h>
 #include <Components/transformComponent.h>
 #include <Components/rectangleComponent.h>
+#include <Components/rigidBodyComponent.h>
+#include <Components/animatorComponent.h>
 
 #include <EngineDataStructures/runeEngineProject.h>
 
@@ -437,11 +439,8 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Rigid Body", NULL, false, disabled))
   {
 
-    /*CreatedComponent newComponent(std::string(typeid(physics::RigidBody).name()), "Rigid Body", "test");
+    RigidBodyComponent* newComponent = new RigidBodyComponent("physics::RigidBody", "RigidBody", EditorWindow::selectedObject->gameObject, "test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
-
-    physics::RigidBody body;
-    EditorWindow::selectedObject->gameObject.addComponent(body);*/
 
   }
 
@@ -458,12 +457,8 @@ void MenuBar::displayComponents()
 
   if (ImGui::MenuItem("Animator", NULL, false, disabled))
   {
-    /*CreatedComponent newComponent(std::string(typeid(rune::AnimationController).name()), "Animator", "test");
+    AnimatorComponent* newComponent = new AnimatorComponent("rune::Animator", "Animator", EditorWindow::selectedObject->gameObject, "test");
     EditorWindow::selectedObject->objectComponents.push_back(newComponent);
-
-    rune::AnimationController animator;
-    EditorWindow::selectedObject->gameObject.addComponent(animator);*/
-
   }
 
   if (ImGui::MenuItem("Light Source", NULL, false, disabled))

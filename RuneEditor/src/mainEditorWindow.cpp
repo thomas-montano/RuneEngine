@@ -61,6 +61,21 @@ void EditorWindow::Draw(rune::RenderWindow& window)
 void EditorWindow::updateVariable(void)
 {
 
+  ImGuiIO& io = ImGui::GetIO();
+
+  std::cout << rune::Mouse::getPosition() << std::endl;
+
+  if(rune::Mouse::getPosition().x <= 1 && ImGui::IsMouseDragging(0))
+  {
+    rune::Mouse::setPosition(rune::Vec2(getGameInstance()->getWindow()->getSize().x - 2,rune::Mouse::getPosition().y));
+    io.MousePosPrev.x += getGameInstance()->getWindow()->getSize().x - 2;
+  }
+  else if(rune::Mouse::getPosition().x >= getGameInstance()->getWindow()->getSize().x - 1 && ImGui::IsMouseDragging(0))
+  {
+    rune::Mouse::setPosition(rune::Vec2(2, rune::Mouse::getPosition().y));
+    io.MousePosPrev.x -= getGameInstance()->getWindow()->getSize().x;
+  }
+
 }
 
 

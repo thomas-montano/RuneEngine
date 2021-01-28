@@ -40,6 +40,8 @@ public:
   ///Returns the position of the mouse in screen coordinates. Bottom left of screen is (0,0).
   ///@return The location of the mouse cursor in screen coordinates.
   static rune::Vec2 getPosition(void);
+  ///Set the position of the cursor
+  static void setPosition(rune::Vec2 newPosition);
 
 };
 }

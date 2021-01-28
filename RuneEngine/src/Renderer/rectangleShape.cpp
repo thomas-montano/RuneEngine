@@ -10,7 +10,7 @@
 
 ///@param newColor The color that should be used to draw the rectangle.
 rune::RectangleShape::RectangleShape(rune::Color newColor) 
-: rectangleShader(defaultRectangle), origin(rune::Vec2(0,0)), size(Vec2(0,0)), position(Vec2(0,0))
+: rectangleShader(defaultRectangle), origin(rune::Vec2(0,0))
 {
   m_fillColor = newColor;
 
@@ -43,10 +43,10 @@ void rune::RectangleShape::setUpBuffers()
 
 }
 
-/*void rune::RectangleShape::start()
+void rune::RectangleShape::start()
 {
   getGameInstance()->getCurrentScene()->submitToRenderer(*this);
-}*/
+}
 
 /**
  * @param window The size of the window that the RectangleShape is being drawn on.
@@ -61,12 +61,15 @@ void rune::RectangleShape::draw(rune::RenderWindow& window)
   rune::Vec2 cameraPos = window.getCamera().getCenter();
   double zoomLevel = window.getCamera().getZoom();
 
+  rune::Vec2 size = rune::Vec2(parentObject->transform.getBounds().x, parentObject->transform.getBounds().y);
+  rune::Vec3 position = parentObject->transform.getPosition();
+
   //Set up camera data for shader
   rectangleShader.setUniform2f("cameraPos", zoomLevel * cameraPos.x / (0.5*windowSize.x), zoomLevel * cameraPos.y / (0.5*windowSize.y));
   rectangleShader.setUniform1f("cameraZoom",zoomLevel);
 
   //Set up rotation information
-  rectangleShader.setUniform1f("rotation", rotation);
+  rectangleShader.setUniform1f("rotation", parentObject->transform.getRotation().z);
   rectangleShader.setUniform1f("aspectRatio", getGameInstance()->getWindow()->getSize().x / getGameInstance()->getWindow()->getSize().y);
   rectangleShader.setUniform2f("origin", (position.x + (0.5 * size.x)) / (0.5 * windowSize.x), (position.y + (0.5 * size.y)) / (0.5 * windowSize.y));
 

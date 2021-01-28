@@ -30,6 +30,7 @@ var hierarchy =
         [ "rune::Animator", "classrune_1_1_animator.html", null ],
         [ "rune::LightSource", "classrune_1_1_light_source.html", null ],
         [ "rune::ParticleEmitter", "classrune_1_1_particle_emitter.html", null ],
+        [ "rune::RectangleShape", "classrune_1_1_rectangle_shape.html", null ],
         [ "rune::Sprite", "classrune_1_1_sprite.html", null ],
         [ "rune::Transform", "classrune_1_1_transform.html", null ]
       ] ]

@@ -15,6 +15,7 @@ rune::Sprite::Sprite()
 void rune::Sprite::awake()
 {
   parentObject->transform.setBounds(rune::Vec2(spriteTexture.getWidth(), spriteTexture.getHeight()));
+  textureSpace = IntRect(0, 0, parentObject->transform.getBounds().x / parentObject->transform.getScale().x, parentObject->transform.getBounds().y / parentObject->transform.getScale().y);
 }
 
 /**
@@ -53,8 +54,6 @@ void rune::Sprite::setUpBuffers()
   // texture coordinate attribute
   glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
   glEnableVertexAttribArray(2);
-
-  textureSpace = IntRect(0,0,spriteTexture.getWidth(),spriteTexture.getHeight());
 }
 
 void rune::Sprite::start()

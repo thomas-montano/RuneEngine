@@ -25,6 +25,8 @@ public:
   virtual void inspectComponent()
   {
     
+    toolTip("A sprite that can be rendered to the screen.");
+
     bool reloadSprite = false;
 
     if(ImGui::InputText("Texture Location", spriteFilePath, 256))

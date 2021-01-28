@@ -20,3 +20,20 @@ void CreatedComponent::buildComponent(void)
   componentFile.close();
 
 }
+
+void toolTip(std::string tooltip)
+{
+
+  ImGui::SameLine();
+  ImGui::TextDisabled("(?)");
+
+  if (ImGui::IsItemHovered())
+  {
+    ImGui::BeginTooltip();
+    ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
+    ImGui::TextUnformatted(tooltip.c_str());
+    ImGui::PopTextWrapPos();
+    ImGui::EndTooltip();
+  }
+
+}

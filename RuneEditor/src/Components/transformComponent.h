@@ -19,17 +19,7 @@ public:
 
   virtual void inspectComponent()
   {
-    ImGui::SameLine();
-    ImGui::TextDisabled("(?)");
-    
-    if (ImGui::IsItemHovered())
-    {
-      ImGui::BeginTooltip();
-      ImGui::PushTextWrapPos(ImGui::GetFontSize() * 35.0f);
-      ImGui::TextUnformatted("The position, scale, and rotation of the game object. Hold shift to move the value faster.");
-      ImGui::PopTextWrapPos();
-      ImGui::EndTooltip();
-    }
+    toolTip("The position, scale, and rotation of the game object. Hold shift to move the value faster.");
 
     ImGui::Columns(2, "mycolumns2", true);  // 3-ways, no border
     ImGui::AlignTextToFramePadding();

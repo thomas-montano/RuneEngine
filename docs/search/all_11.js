@@ -16,7 +16,7 @@ var searchData=
   ['resourcemanager_282',['ResourceManager',['../classrune_1_1_resource_manager.html',1,'rune']]],
   ['restitution_283',['restitution',['../structphysics_1_1body.html#a77786add9ce4f9e0d3ace63eaef37a2a',1,'physics::body']]],
   ['resume_284',['resume',['../classrune_1_1_game_scene.html#a8662c86414ee6f27d1b3349df86bbe4c',1,'rune::GameScene']]],
-  ['right_285',['Right',['../classrune_1_1_mouse.html#a7bd4654291a89f5c7b18e0ed8d2bb879a06b9ea468f1fdb687e80338edbd1928c',1,'rune::Mouse::Right()'],['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8aaa440382fea669f1c927979c868e5e34',1,'rune::Keyboard::RIGHT()']]],
+  ['right_285',['RIGHT',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8aaa440382fea669f1c927979c868e5e34',1,'rune::Keyboard::RIGHT()'],['../classrune_1_1_mouse.html#a7bd4654291a89f5c7b18e0ed8d2bb879a06b9ea468f1fdb687e80338edbd1928c',1,'rune::Mouse::Right()']]],
   ['right_5falt_286',['RIGHT_ALT',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a2e961445e4df5df285e1958575b6fd83',1,'rune::Keyboard']]],
   ['right_5fbracket_287',['RIGHT_BRACKET',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a0c1a92391ff9b3de689b31742f48b1ae',1,'rune::Keyboard']]],
   ['right_5fcontrol_288',['RIGHT_CONTROL',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a43d274ef07990cff85e2bce80d4a10b0',1,'rune::Keyboard']]],

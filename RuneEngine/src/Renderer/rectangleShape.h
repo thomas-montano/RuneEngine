@@ -22,11 +22,11 @@ namespace rune{
 class GameApplication;
 class SceneManager;
 
-class RUNE_ENGINE RectangleShape : public rune::Drawable
+class RUNE_ENGINE RectangleShape : public rune::Drawable, public rune::Component
 {
 private:
 
-  rune::Color m_fillColor;
+  rune::Color m_fillColor = rune::Color::Black;
   rune::Vec2 origin;
 
   unsigned int indices[6] =
@@ -41,10 +41,6 @@ private:
 
   void setUpBuffers(void);
 
-  Vec2 size;
-  Vec2 position;
-  double rotation;
-
   const char* defaultRectangle =
   {
   #include <Shaders\defaultRectangle.glsl>
@@ -54,7 +50,9 @@ public:
   ///The shader that should be used to draw this rectangle.
   Shader rectangleShader;
   ///The draw call for rendering the shape to the screen.
-  virtual void draw(rune::RenderWindow& window);
+  virtual void draw(rune::RenderWindow& window) override;
+  ///Overload of the start method for a rectangle.
+  virtual void start() override;
   ///Default constructor that will create a white rectangle by default.
   RectangleShape(rune::Color newColor = rune::Color::White);
   ///Set the color used to fill the rectangle.

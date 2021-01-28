@@ -26,13 +26,15 @@ class RUNE_ENGINE RenderWindow
 {
 private:
   bool windowOpen;
-  int width, height;
+  int m_width, m_height;
   GLFWwindow* GLwindow;
 
   Camera* windowCamera;
 
   ///Resize the drawing area if the window is resized
   static void onWindowResize(GLFWwindow* window, int width, int height);
+
+  void updateWindowSize(int width, int height);
 
 public:
   ///Get the camera currently being used by the scene.

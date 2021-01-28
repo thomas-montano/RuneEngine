@@ -37,3 +37,5 @@ public:
 
 };
 
+void toolTip(std::string tooltip);
+

@@ -160,7 +160,9 @@
     <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Components\animatorComponent.h" />
     <ClInclude Include="src\Components\rectangleComponent.h" />
+    <ClInclude Include="src\Components\rigidBodyComponent.h" />
     <ClInclude Include="src\Components\SpriteComponent.h" />
     <ClInclude Include="src\Components\transformComponent.h" />
     <ClInclude Include="src\EngineDataStructures\createdGameObject.h" />
