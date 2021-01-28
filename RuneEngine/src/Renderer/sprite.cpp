@@ -120,6 +120,9 @@ void rune::Sprite::setTexture(std::string const& texture, unsigned int drawMode)
 {
   spriteTexture.loadFromFile(texture.c_str(), drawMode);
   parentObject->transform.setBounds(rune::Vec2(spriteTexture.getWidth(),spriteTexture.getHeight()));
+
+  textureSpace.width = spriteTexture.getWidth();
+  textureSpace.height = spriteTexture.getHeight();
 }
 /**
  * \param texture The texture that should be given to this sprite for drawing.
