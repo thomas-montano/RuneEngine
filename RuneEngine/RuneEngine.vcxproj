@@ -102,6 +102,7 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Events\subject.cpp" />
+    <ClCompile Include="src\imgui\imgui_tables.cpp" />
     <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
     <ClCompile Include="src\Physics\Colliders\circleCollider.cpp" />
     <ClCompile Include="src\Physics\world.cpp" />

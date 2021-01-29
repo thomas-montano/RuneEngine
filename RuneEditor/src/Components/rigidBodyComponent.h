@@ -10,7 +10,7 @@ class RigidBodyComponent : public CreatedComponent
 public:
   physics::RigidBody body;
   float gravity[2];
-  float mass;
+  float mass = 0.0f;
   
   RigidBodyComponent(std::string newType, std::string newName, rune::GameObject* parent, std::string newFilePath = "")
     : CreatedComponent(newType, newName, parent, newFilePath)
@@ -28,7 +28,7 @@ public:
   {
     toolTip("A rigid body that allows this game object to respond to physics.");
 
-    if(ImGui::InputFloat("Object Mass",&mass,1,5,1))
+    if(ImGui::InputFloat("Object Mass",&mass,1.f,5.f,"%.2f"))
     {
       body.getBodyStruct()->invMass = (1.0/mass);
     }

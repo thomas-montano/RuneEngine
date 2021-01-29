@@ -39,6 +39,9 @@
     <ClCompile Include="src\RuneEditor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SceneViewport\sceneViewport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SceneHierarchy\sceneHierarchyWindow.h">

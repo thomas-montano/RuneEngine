@@ -158,6 +158,7 @@
     <ClCompile Include="src\InspectorTab\inspector.cpp" />
     <ClCompile Include="src\MenuBar\menuBar.cpp" />
     <ClCompile Include="src\SceneHierarchy\sceneHierarchyWindow.cpp" />
+    <ClCompile Include="src\SceneViewport\sceneViewport.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Components\animatorComponent.h" />

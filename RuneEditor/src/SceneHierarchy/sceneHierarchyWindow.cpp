@@ -20,11 +20,11 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
         //Show the game object in the inspector if its been clicked.
         EditorWindow::selectedObject = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j];
       }
-      
-      if(ImGui::OpenPopupContextItem("GameObjectRightClick", 1))
+      //ImGui::IsWindowAppearing("GameObjectRightClick")
+      /*if(ImGui::OpenPopupContextItem("GameObjectRightClick", 1))
       {
         selectionIndex = j;
-      }
+      }*/
 
       if (rune::Mouse::isButtonPressed(rune::Mouse::Left) && !ImGui::IsAnyItemHovered() && ImGui::IsWindowHovered())
       {

@@ -4,6 +4,8 @@ RuneEngineProject EditorWindow::currentlyOpenProject("");
 
 CreatedGameObject* EditorWindow::selectedObject = nullptr;
 
+EditorWindow* EditorWindow::editorWindow = nullptr;
+
 void EditorWindow::doInit()
 {
 
@@ -77,13 +79,25 @@ void EditorWindow::updateVariable(void)
   }
 
   //If the user has decided to run the scene, then run the scene
-  if(viewPort.isSceneRunning)
+  if(EditorWindow::getWindow()->isSceneRunning)
   {
     currentlyOpenProject.activeScene->scene->updatePhysics();
   }
 
 }
 
+
+void EditorWindow::startScene()
+{
+  std::cout << "Scene started!" << std::endl;
+  isSceneRunning = true;
+}
+
+void EditorWindow::stopScene()
+{
+  std::cout << "Scene stopped!" << std::endl;
+  isSceneRunning = false;
+}
 
 void EditorWindow::setUpStyle(void)
 {

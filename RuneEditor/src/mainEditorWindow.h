@@ -25,7 +25,23 @@ private:
 
   void setUpStyle(void);
 
+  //EditorWindow();
+
 public:
+
+  static EditorWindow* getWindow()
+  {
+    if (!editorWindow)
+    {
+      editorWindow = new EditorWindow;
+    }
+
+    return editorWindow;
+  }
+
+  //EditorWindow(const EditorWindow&) = delete;
+
+  bool isSceneRunning = false;
 
   rune::FrameBuffer* viewPortBuffer;
 
@@ -36,4 +52,7 @@ public:
   virtual void Draw(rune::RenderWindow&) override;
 
   virtual void updateVariable(void);
+
+  void startScene();
+  void stopScene();
 };
