@@ -42,8 +42,10 @@ public:
 
     if(ImGui::Button("Reset Velocity"))
     {
+      //Reset the rigidbody to the original state.
       body.setVelocity(rune::Vec2(0,0));
-      body.setPreviousPosition(rune::Vec2(parentObject->transform.getPosition().x, parentObject->transform.getPosition().y));
+      body.setPosition(rune::Vec2(parentObject->transform.getPosition().x + body.getBodyStruct()->vertexes[1].x, parentObject->transform.getPosition().y + body.getBodyStruct()->vertexes[1].y));
+      body.setPreviousPosition(rune::Vec2(parentObject->transform.getPosition().x, parentObject->transform.getPosition().y) );
     }
 
   }
