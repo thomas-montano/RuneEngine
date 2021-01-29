@@ -35,11 +35,18 @@ public:
     ImGui::AlignTextToFramePadding();
     ImGui::Text("Rectangle Dimensions:");
     ImGui::NextColumn();
-    ImGui::DragFloat2(" ", size, .1);
+    
+    if(ImGui::DragFloat2(" ", size, .1))
+    {
+      parentObject->transform.setBounds(rune::Vec2(size[0], size[1]));
+    }
+    else
+    {
+      size[0] = parentObject->transform.getBounds().x;
+      size[1] = parentObject->transform.getBounds().y;
+    }
 
     ImGui::Columns(1);
-
-    parentObject->transform.setBounds(rune::Vec2(size[0],size[1]));
 
     if(ImGui::ColorPicker3("Color", colors))
     {

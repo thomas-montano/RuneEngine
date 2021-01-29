@@ -11,10 +11,13 @@ public:
   physics::RigidBody body;
   float gravity[2];
   float mass = 0.0f;
+  float bounds[2];
   
   RigidBodyComponent(std::string newType, std::string newName, rune::GameObject* parent, std::string newFilePath = "")
     : CreatedComponent(newType, newName, parent, newFilePath)
   {
+    bounds[0] = parentObject->transform.getBounds().x;
+    bounds[1] = parentObject->transform.getBounds().y;
 
     parent->addComponent(body);
 
@@ -38,6 +41,18 @@ public:
       body.getBodyStruct()->gravityFactor = rune::Vec2(gravity[0],gravity[1]);
     }
 
+    if(ImGui::DragFloat2("Collider Bounds", bounds))
+    {
+      //parentObject->transform.setBounds(rune::Vec2(bounds[0],bounds[1]));
+      body.setUpObject(bounds[0], bounds[1], 1.0 / body.getBodyStruct()->invMass, false);
+      body.setUpObject(bounds[0],bounds[1],mass,false);
+    }
+    else
+    {
+      bounds[0] = body.getWidth();//parentObject->transform.getBounds().x;
+      bounds[1] = body.getHeight();//parentObject->transform.getBounds().y;
+    }
+
     if(ImGui::Button("Reset Velocity"))
     {
       //Reset the rigid body to the original state.
@@ -47,7 +62,7 @@ public:
 
       rune::Vec3 dimensions = rune::Vec3(parentObject->transform.getBounds());//parentObject->transform.getScale();
 
-      body.setUpObject(dimensions.x, dimensions.y, 1.0 / body.getBodyStruct()->invMass, false);
+      body.setUpObject(bounds[0], bounds[1], 1.0 / body.getBodyStruct()->invMass, false);
     }
 
   }

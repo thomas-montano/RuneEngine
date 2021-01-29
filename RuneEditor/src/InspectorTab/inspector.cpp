@@ -29,8 +29,6 @@ void InspectorTab::draw(rune::RenderWindow& window)
         bool test1 = strcmp(EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(),objectName) == 0;
         bool test2 = EditorWindow::getWindow()->selectedObject != EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects[i];
 
-        bool test3 = 1;
-
         if(strcmp(EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(), objectName) == 0
           && EditorWindow::getWindow()->selectedObject != EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects[i]   )
         {
@@ -57,8 +55,26 @@ void InspectorTab::draw(rune::RenderWindow& window)
       
       if(ImGui::TreeNodeEx(EditorWindow::getWindow()->selectedObject->objectComponents[i]->componentName.c_str(),ImGuiTreeNodeFlags_DefaultOpen))
       {
-        EditorWindow::getWindow()->selectedObject->objectComponents[i]->inspectComponent();
-      
+        ImGui::OpenPopupOnItemClick("ComponentRightClick", 1);
+
+        if (ImGui::BeginPopupContextItem())
+        {
+
+          if (ImGui::Selectable("Delete Component"))
+          {
+            CreatedComponent* ptr = EditorWindow::getWindow()->selectedObject->objectComponents[i];
+            EditorWindow::getWindow()->selectedObject->objectComponents.erase(EditorWindow::getWindow()->selectedObject->objectComponents.begin() + i);
+            //delete ptr;
+          }
+
+          ImGui::EndPopup();
+        }
+        
+        if(EditorWindow::getWindow()->selectedObject->objectComponents.size() > i)
+        {
+          EditorWindow::getWindow()->selectedObject->objectComponents[i]->inspectComponent();
+        }
+
         ImGui::TreePop();
       }
 

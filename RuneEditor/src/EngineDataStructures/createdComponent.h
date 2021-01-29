@@ -28,12 +28,12 @@ public:
   
   }
 
-  ~CreatedComponent()
+  /*~CreatedComponent()
   {
   
-    delete parentObject;
+    //delete component;
   
-  }
+  }*/
 
 };
 
