@@ -139,17 +139,19 @@ $(document).ready(function(){initNavTree('game_scene_8h_source.html',''); initRe
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> isActive(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordtype">void</span> addObjectToScene(<a class="code" href="classrune_1_1_game_object.html">rune::GameObject</a>&amp;);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> submitToRenderer(<a class="code" href="classrune_1_1_drawable.html">rune::Drawable</a>&amp;);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  <span class="keywordtype">void</span> addPhysicsObject(<a class="code" href="classphysics_1_1_rigid_body.html">physics::RigidBody</a>&amp; body);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassrune_1_1_list_html"><div class="ttname"><a href="classrune_1_1_list.html">rune::List&lt; rune::GameObject * &gt;</a></div></div>
 <div class="ttc" id="aclassrune_1_1_game_scene_html_a390d0aa2ffd2f40645fab4db98537f24"><div class="ttname"><a href="classrune_1_1_game_scene.html#a390d0aa2ffd2f40645fab4db98537f24">rune::GameScene::drawableObjects</a></div><div class="ttdeci">std::vector&lt; rune::Drawable * &gt; drawableObjects</div><div class="ttdoc">The drawable objects contained in the scene that should be rendered to the screen.</div><div class="ttdef"><b>Definition:</b> gameScene.h:38</div></div>
 <div class="ttc" id="aclassrune_1_1_game_scene_html_a205199274c6823ec05c1c828e2b6b527"><div class="ttname"><a href="classrune_1_1_game_scene.html#a205199274c6823ec05c1c828e2b6b527">rune::GameScene::sceneObjects</a></div><div class="ttdeci">List&lt; rune::GameObject * &gt; sceneObjects</div><div class="ttdoc">Objects in the scene that need to have their components updated every frame.</div><div class="ttdef"><b>Definition:</b> gameScene.h:36</div></div>
+<div class="ttc" id="aclassphysics_1_1_rigid_body_html"><div class="ttname"><a href="classphysics_1_1_rigid_body.html">physics::RigidBody</a></div><div class="ttdoc">Game object component that allows a game object to have collisions with other objects.</div><div class="ttdef"><b>Definition:</b> rigidBody.h:95</div></div>
 <div class="ttc" id="aclassrune_1_1_game_scene_html"><div class="ttname"><a href="classrune_1_1_game_scene.html">rune::GameScene</a></div><div class="ttdoc">This class is responsible for serving as a parent class for each instance of the game....</div><div class="ttdef"><b>Definition:</b> gameScene.h:29</div></div>
 <div class="ttc" id="aclassrune_1_1_game_scene_html_a2e2c4527471c1737af4458c1e3907e36"><div class="ttname"><a href="classrune_1_1_game_scene.html#a2e2c4527471c1737af4458c1e3907e36">rune::GameScene::dT</a></div><div class="ttdeci">double dT</div><div class="ttdoc">Time between variable update calls.</div><div class="ttdef"><b>Definition:</b> gameScene.h:42</div></div>
 <div class="ttc" id="aclassrune_1_1_game_scene_html_a6b30e7f9d439fa10897cd302ccfdb18f"><div class="ttname"><a href="classrune_1_1_game_scene.html#a6b30e7f9d439fa10897cd302ccfdb18f">rune::GameScene::variableClock</a></div><div class="ttdeci">rune::Clock variableClock</div><div class="ttdoc">A clock that records the amount of time between variable update calls.</div><div class="ttdef"><b>Definition:</b> gameScene.h:40</div></div>
@@ -168,7 +170,7 @@ $(document).ready(function(){initNavTree('game_scene_8h_source.html',''); initRe
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_47a24ebbab17269d1d8cc602f5106f45.html">SceneManager</a></li><li class="navelem"><b>gameScene.h</b></li>
 				<li class="footer">
-					Generated on Thu Jan 28 2021 15:18:58 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Thu Jan 28 2021 18:50:36 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

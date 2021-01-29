@@ -2,6 +2,7 @@ var classrune_1_1_game_scene =
 [
     [ "GameScene", "classrune_1_1_game_scene.html#a6333862919b9eb3357dd1ea5c800f7b2", null ],
     [ "addObjectToScene", "classrune_1_1_game_scene.html#a1e982c62723951c5abe8f824b38b503e", null ],
+    [ "addPhysicsObject", "classrune_1_1_game_scene.html#ac2e6c1113b318a9084c97b461f35c335", null ],
     [ "deInit", "classrune_1_1_game_scene.html#a3ddab49b7e0abb5a1162104e3787860e", null ],
     [ "doInit", "classrune_1_1_game_scene.html#a97362f5c75fafb9eb2fce36a474e5f4e", null ],
     [ "Draw", "classrune_1_1_game_scene.html#a613c11fc4b9d800ce8eb1840a8b87158", null ],

@@ -16,14 +16,35 @@ public:
 
     parent->addComponent(body);
 
+    body.start();
+
+    EditorWindow::currentlyOpenProject.activeScene->scene->addPhysicsObject(body);
+
   }
 
   virtual void inspectComponent()
   {
     toolTip("A rigid body that allows this game object to respond to physics.");
 
-    static float buf;
-    ImGui::InputFloat("Object Mass",&buf,1,5,1);
+    static float mass;
+    if(ImGui::InputFloat("Object Mass",&mass,1,5,1))
+    {
+      body.getBodyStruct()->invMass = (1.0/mass);
+    }
+
+
+
+    static float gravity[2];
+    if(ImGui::DragFloat2("Gravity Vector",gravity))
+    {
+      body.getBodyStruct()->gravityFactor = rune::Vec2(gravity[0],gravity[1]);
+    }
+
+    if(ImGui::Button("Reset Velocity"))
+    {
+      body.setVelocity(rune::Vec2(0,0));
+      body.setPreviousPosition(rune::Vec2(parentObject->transform.getPosition().x, parentObject->transform.getPosition().y));
+    }
 
   }
 

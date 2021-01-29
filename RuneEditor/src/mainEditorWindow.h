@@ -8,11 +8,12 @@
 #include "ResourcesTab/resourceTab.h"
 #include "SceneViewport/sceneViewport.h"
 
-
 class EditorWindow : public rune::GameScene
 {
 
 private:
+  static EditorWindow* editorWindow;
+
   SceneHierarchyWindow sceneContents;
   MenuBar menuBar;
   InspectorTab inspectorTab;
@@ -21,7 +22,7 @@ private:
   bool initialSetUp = false;
 
   rune::Camera sceneCamera;
-  
+
   void setUpStyle(void);
 
 public:

@@ -18,6 +18,5 @@ public:
     //ImGui::ShowDemoWindow();
 
   }
-  
 
 };

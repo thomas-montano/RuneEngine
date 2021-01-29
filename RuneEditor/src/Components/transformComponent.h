@@ -25,24 +25,36 @@ public:
     ImGui::AlignTextToFramePadding();
     ImGui::Text("Position:");
     ImGui::NextColumn();
-    ImGui::DragFloat3(" ", position, .1);
+    if(ImGui::DragFloat3(" ", position, .1))
+    {
+      parentObject->transform.setPosition(rune::Vec3(static_cast<double>(position[0]), static_cast<double>(position[1]), static_cast<double>(position[2])));
+    }
+    else
+    {
+      rune::Vec3 pos = parentObject->transform.getPosition();
+      position[0] = pos.x;
+      position[1] = pos.y;
+      position[2] = pos.z;
+    }
 
     ImGui::NextColumn();  // 3-ways, no border
     ImGui::AlignTextToFramePadding();
     ImGui::Text("Scale:");
     ImGui::NextColumn();
-    ImGui::DragFloat3("", size, .1, 0, FLT_MAX/INT_MAX);
+    if(ImGui::DragFloat3("", size, .1, 0, FLT_MAX/INT_MAX))
+    {
+      parentObject->transform.setScale(rune::Vec3(size[0], size[1], size[2]));
+    }
 
     ImGui::NextColumn();
     ImGui::AlignTextToFramePadding();
     ImGui::Text("Rotation:");
     ImGui::NextColumn();
-    ImGui::DragFloat3("  ", rotation, .1);
+    if(ImGui::DragFloat3("  ", rotation, .1))
+    {
+      parentObject->transform.setRotation(rune::Vec3(rotation[0], rotation[1], rotation[2]));
+    }
     ImGui::Columns(1);
-
-    parentObject->transform.setPosition(rune::Vec3(static_cast<double>(position[0]), static_cast<double>(position[1]), static_cast<double>(position[2])));
-    parentObject->transform.setScale(rune::Vec3(size[0], size[1], size[2]));
-    parentObject->transform.setRotation(rune::Vec3(rotation[0], rotation[1], rotation[2]));
 
   }
 

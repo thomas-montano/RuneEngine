@@ -355,3 +355,11 @@ std::vector<physics::collision> physics::RigidBody::getCollisions(void)
 {
   return involvedCollisions;
 }
+
+/**
+ * \return A pointer to the RigidBody data struct.
+ */
+physics::body* physics::RigidBody::getBodyStruct(void)
+{
+  return &objectBody;
+}

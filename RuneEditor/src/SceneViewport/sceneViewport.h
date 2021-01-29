@@ -7,6 +7,7 @@ class SceneViewPort : public rune::Drawable
 {
 public:
   rune::FrameBuffer viewBuffer;
+  bool isSceneRunning = false;
 
   SceneViewPort()
   {
@@ -21,9 +22,18 @@ public:
     ImGui::Begin("View Port", NULL, ImGuiWindowFlags_NoCollapse);
 
     ImGui::SetCursorPosX((ImGui::GetContentRegionAvail().x - 67.5) / 2);
-    ImGui::Button("Play");
+
+    if(ImGui::Button("Play"))
+    {
+      isSceneRunning = true;
+    }
+
     ImGui::SameLine();
-    ImGui::Button("Stop");
+
+    if(ImGui::Button("Stop"))
+    {
+      isSceneRunning = false;
+    }
 
     ImGui::SetCursorPosY(ImGui::GetCursorPosY()+50);
 

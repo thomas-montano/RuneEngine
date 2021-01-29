@@ -60,20 +60,26 @@ void EditorWindow::Draw(rune::RenderWindow& window)
 
 void EditorWindow::updateVariable(void)
 {
-
-  ImGuiIO& io = ImGui::GetIO();
-
-  std::cout << rune::Mouse::getPosition() << std::endl;
-
+  ///Make the mouse loop around the screen if the user is dragging an object
   if(rune::Mouse::getPosition().x <= 1 && ImGui::IsMouseDragging(0))
   {
     rune::Mouse::setPosition(rune::Vec2(getGameInstance()->getWindow()->getSize().x - 2,rune::Mouse::getPosition().y));
+    
+    ImGuiIO& io = ImGui::GetIO();
     io.MousePosPrev.x += getGameInstance()->getWindow()->getSize().x - 2;
   }
   else if(rune::Mouse::getPosition().x >= getGameInstance()->getWindow()->getSize().x - 1 && ImGui::IsMouseDragging(0))
   {
     rune::Mouse::setPosition(rune::Vec2(2, rune::Mouse::getPosition().y));
+    
+    ImGuiIO& io = ImGui::GetIO();
     io.MousePosPrev.x -= getGameInstance()->getWindow()->getSize().x;
+  }
+
+  //If the user has decided to run the scene, then run the scene
+  if(viewPort.isSceneRunning)
+  {
+    currentlyOpenProject.activeScene->scene->updatePhysics();
   }
 
 }
@@ -89,7 +95,6 @@ void EditorWindow::setUpStyle(void)
   style.WindowBorderSize = 0.0f;
   style.PopupBorderSize = 0.0f;
   style.GrabRounding = 4.0f;
-
 
   ImVec4* colors = ImGui::GetStyle().Colors;
   colors[ImGuiCol_Text] = ImVec4(1.00f, 1.00f, 1.00f, 1.00f);

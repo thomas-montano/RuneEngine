@@ -103,6 +103,11 @@ void rune::GameScene::submitToRenderer(rune::Drawable& newDrawable)
   drawableObjects.push_back(&newDrawable);
 }
 
+void rune::GameScene::addPhysicsObject(physics::RigidBody& body)
+{
+  physicsBodies.push_back(&body);
+}
+
 void rune::GameScene::startComponents(void)
 {
 

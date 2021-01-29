@@ -6,6 +6,7 @@ var classphysics_1_1_rigid_body =
     [ "addPosition", "classphysics_1_1_rigid_body.html#a388548ea590211e728242beda511bbca", null ],
     [ "addVelocity", "classphysics_1_1_rigid_body.html#a10e2318ca354c4b862c68c48d012c086", null ],
     [ "clearCollisions", "classphysics_1_1_rigid_body.html#a7b78ddb9a08fb38165dd23e246ea7bde", null ],
+    [ "getBodyStruct", "classphysics_1_1_rigid_body.html#abf780e32cf27c9d7f9914171bc6e7e47", null ],
     [ "getBoundingBox", "classphysics_1_1_rigid_body.html#aba3becba26cc7d240855deed5c2c4d4a", null ],
     [ "getCollisions", "classphysics_1_1_rigid_body.html#ad54a0ef1c2a0e4da6bb5e3711e87a0be", null ],
     [ "getDynamicFriction", "classphysics_1_1_rigid_body.html#acbdec0fbc41c317101d3a80a15f4189f", null ],

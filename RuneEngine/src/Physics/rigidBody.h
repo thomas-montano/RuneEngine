@@ -165,6 +165,9 @@ public:
     void addCollision(collision);
     ///Get the list of collisions the rigid body was involved in.
     std::vector<collision> getCollisions(void);
+    ///Get the rigidBody struct for modification
+    body* getBodyStruct(void);
+
 };
 }
 

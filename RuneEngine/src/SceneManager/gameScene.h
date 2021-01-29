@@ -75,6 +75,8 @@ public:
   void addObjectToScene(rune::GameObject&);
   ///Submits a drawable object into the rendering stack to be drawn to the screen each frame.
   void submitToRenderer(rune::Drawable&);
+  ///Add a physics object to the scene.
+  void addPhysicsObject(physics::RigidBody& body);
 
 };
 }
