@@ -1,6 +1,7 @@
 #include "rigidBody.h"
 #include <Renderer/sprite.h>
 #include <math.h>
+#include "gameApplication.h"
 
 /**
  * \param mass The mass in units that the RigidBody will have.
@@ -36,6 +37,8 @@ void physics::RigidBody::start()
   rune::Vec3 dimensions = rune::Vec3(parentObject->transform.getBounds());//parentObject->transform.getScale();
 
   setUpObject(dimensions.x,dimensions.y,1.0/objectBody.invMass,false);
+
+  //getGameInstance()->getCurrentScene()->addPhysicsObject(*this);
 }
 
 

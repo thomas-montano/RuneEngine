@@ -41,7 +41,10 @@ void SceneHierarchyWindow::draw(rune::RenderWindow& window)
   {
     if (ImGui::Selectable("Delete Object"))
     {
+      CreatedGameObject* deleteObject = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[selectionIndex];
       EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.erase(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.begin() + selectionIndex);
+      delete deleteObject;
+      EditorWindow::selectedObject = NULL;
     }
     ImGui::EndPopup();
   }

@@ -157,6 +157,7 @@ void MenuBar::draw(rune::RenderWindow& window)
         {
           CreatedGameObject* newObject = new CreatedGameObject(objectName);
           EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.push_back(newObject);
+          EditorWindow::selectedObject = newObject;
         }
 
       }
