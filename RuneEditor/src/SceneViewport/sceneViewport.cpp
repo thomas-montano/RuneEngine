@@ -8,17 +8,41 @@ void SceneViewPort::draw(rune::RenderWindow& window)
 
   ImGui::SetCursorPosX((ImGui::GetContentRegionAvail().x - 67.5) / 2);
 
+  bool highlightStartButton = false;
+  if(EditorWindow::getWindow()->isSceneRunning)
+  {
+    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.2f);
+    highlightStartButton = true;
+  }
+
   if (ImGui::Button("Play"))
   {
     EditorWindow::getWindow()->startScene();
-    //ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.6f);
+  }
+
+  if (highlightStartButton)
+  {
+    ImGui::PopStyleVar();
   }
 
   ImGui::SameLine();
 
+  bool highlightStopButton = false;
+
+  if (!EditorWindow::getWindow()->isSceneRunning)
+  {
+    ImGui::PushStyleVar(ImGuiStyleVar_Alpha, 0.2f);
+    highlightStopButton = true;
+  }
+
   if (ImGui::Button("Stop"))
   {
     EditorWindow::getWindow()->stopScene();
+  }
+
+  if (highlightStopButton)
+  {
+    ImGui::PopStyleVar();
   }
 
   ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 50);

@@ -1,9 +1,5 @@
 #include "mainEditorWindow.h"
 
-RuneEngineProject EditorWindow::currentlyOpenProject("");
-
-CreatedGameObject* EditorWindow::selectedObject = nullptr;
-
 EditorWindow* EditorWindow::editorWindow = nullptr;
 
 void EditorWindow::doInit()
@@ -79,7 +75,7 @@ void EditorWindow::updateVariable(void)
   }
 
   //If the user has decided to run the scene, then run the scene
-  if(EditorWindow::getWindow()->isSceneRunning)
+  if(EditorWindow::getWindow()->getWindow()->isSceneRunning)
   {
     currentlyOpenProject.activeScene->scene->updatePhysics();
   }

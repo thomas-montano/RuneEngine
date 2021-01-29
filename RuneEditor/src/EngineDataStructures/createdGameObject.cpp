@@ -12,7 +12,7 @@ CreatedGameObject::CreatedGameObject(std::string newName)
   TransformComponent* defaultTransform = new TransformComponent("rune::Transform", "Transform", gameObject, "Entities/transform.h");
 
   objectComponents.push_back(defaultTransform);
-  EditorWindow::currentlyOpenProject.activeScene->scene->addObjectToScene(*gameObject);
+  EditorWindow::getWindow()->getWindow()->currentlyOpenProject.activeScene->scene->addObjectToScene(*gameObject);
 
 }
 

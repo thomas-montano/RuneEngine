@@ -18,7 +18,7 @@ public:
   {
 
     parent->addComponent(sprite);
-    EditorWindow::currentlyOpenProject.activeScene->scene->submitToRenderer(sprite);
+    EditorWindow::getWindow()->getWindow()->currentlyOpenProject.activeScene->scene->submitToRenderer(sprite);
 
   }
 

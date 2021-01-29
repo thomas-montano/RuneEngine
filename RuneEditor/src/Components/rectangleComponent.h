@@ -16,7 +16,7 @@ public:
   {
 
     parent->addComponent(rectangle);
-    EditorWindow::currentlyOpenProject.activeScene->scene->submitToRenderer(rectangle);
+    EditorWindow::getWindow()->currentlyOpenProject.activeScene->scene->submitToRenderer(rectangle);
 
     rectangle.setFillColor(rune::Color(255 * colors[0], 255 * colors[1], 255 * colors[2]));
 

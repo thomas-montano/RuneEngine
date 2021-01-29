@@ -8,7 +8,7 @@ int main()
 
     getGameInstance()->getWindow()->setWindowTitle("Rune Editor");
 
-    EditorWindow* mainEditorWindow = new EditorWindow();
+    EditorWindow* mainEditorWindow = EditorWindow::getWindow()->getWindow();
     runeEditor->loadScene("Editor Window", mainEditorWindow);
 
     runeEditor->run();

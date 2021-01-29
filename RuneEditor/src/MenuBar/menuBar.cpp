@@ -55,8 +55,8 @@ void MenuBar::draw(rune::RenderWindow& window)
       if (ImGui::MenuItem("New Scene"))
       {
         CreatedScene* newScene = new CreatedScene("New Scene");
-        EditorWindow::currentlyOpenProject.projectScenes.push_back(newScene);
-        EditorWindow::currentlyOpenProject.activeScene = EditorWindow::currentlyOpenProject.projectScenes[EditorWindow::currentlyOpenProject.projectScenes.size()-1];
+        EditorWindow::getWindow()->currentlyOpenProject.projectScenes.push_back(newScene);
+        EditorWindow::getWindow()->currentlyOpenProject.activeScene = EditorWindow::getWindow()->currentlyOpenProject.projectScenes[EditorWindow::getWindow()->currentlyOpenProject.projectScenes.size()-1];
       }
 
       ImGui::MenuItem("Open Scene");
@@ -70,7 +70,7 @@ void MenuBar::draw(rune::RenderWindow& window)
 
       if(ImGui::MenuItem("Open Project"))
       {
-        EditorWindow::currentlyOpenProject = openProject();
+        EditorWindow::getWindow()->currentlyOpenProject = openProject();
       }
 
       if(ImGui::MenuItem("Save Project"))
@@ -83,7 +83,7 @@ void MenuBar::draw(rune::RenderWindow& window)
       if (ImGui::MenuItem("Build"))
       {
 
-        EditorWindow::currentlyOpenProject.buildProject();
+        EditorWindow::getWindow()->currentlyOpenProject.buildProject();
 
       }
 
@@ -118,22 +118,22 @@ void MenuBar::draw(rune::RenderWindow& window)
       {
 
         std::string objectName = "GameObject";
-        int smallestObjectNum = EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size();
+        int smallestObjectNum = EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects.size();
 
         //Disallow a new game object to be given the same name as another object
-        for(int i = 0; i < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); i ++)
+        for(int i = 0; i < EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects.size(); i ++)
         {
         
-          if(strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(),"GameObject") == 0)
+          if(strcmp(EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects[i]->objectName.c_str(),"GameObject") == 0)
           {
             
-            for (int i = 1; i < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); i++)
+            for (int i = 1; i < EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects.size(); i++)
             {
               bool foundSmaller = false;
-              for (int j = 0; j < EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
+              for (int j = 0; j < EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects.size(); j++)
               {
 
-                if (strcmp(EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects[j]->objectName.c_str(), ("GameObject (" + std::to_string(i) + ")").c_str()) == 0)
+                if (strcmp(EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects[j]->objectName.c_str(), ("GameObject (" + std::to_string(i) + ")").c_str()) == 0)
                 {
                   foundSmaller = true;
                 }
@@ -153,11 +153,11 @@ void MenuBar::draw(rune::RenderWindow& window)
         }
         
         //Create the new object in the scene
-        if (EditorWindow::currentlyOpenProject.projectScenes.size() > 0)
+        if (EditorWindow::getWindow()->currentlyOpenProject.projectScenes.size() > 0)
         {
           CreatedGameObject* newObject = new CreatedGameObject(objectName);
-          EditorWindow::currentlyOpenProject.activeScene->m_sceneObjects.push_back(newObject);
-          EditorWindow::selectedObject = newObject;
+          EditorWindow::getWindow()->currentlyOpenProject.activeScene->m_sceneObjects.push_back(newObject);
+          EditorWindow::getWindow()->selectedObject = newObject;
         }
 
       }
@@ -231,7 +231,7 @@ void MenuBar::draw(rune::RenderWindow& window)
     ImGui::NewLine();
 
     ImGui::SetItemDefaultFocus();
-    if (ImGui::Button("Cancel", ImVec2(120, 0))) { EditorWindow::currentlyOpenProject.setProjectName(""); ImGui::CloseCurrentPopup(); }
+    if (ImGui::Button("Cancel", ImVec2(120, 0))) { EditorWindow::getWindow()->currentlyOpenProject.setProjectName(""); ImGui::CloseCurrentPopup(); }
 
     ImGui::SameLine();
 
@@ -240,8 +240,8 @@ void MenuBar::draw(rune::RenderWindow& window)
       if (ImGui::Button("Create Project", ImVec2(120, 0)))
       {
         ImGui::CloseCurrentPopup();
-        EditorWindow::currentlyOpenProject.setProjectName((std::string)projectName);
-        EditorWindow::currentlyOpenProject.projectSaveLocation = projectDirectory;
+        EditorWindow::getWindow()->currentlyOpenProject.setProjectName((std::string)projectName);
+        EditorWindow::getWindow()->currentlyOpenProject.projectSaveLocation = projectDirectory;
       }
     }
 
@@ -251,7 +251,7 @@ void MenuBar::draw(rune::RenderWindow& window)
     ImGui::EndPopup();
   }
 
-  if (EditorWindow::currentlyOpenProject.getProjectName() == "")
+  if (EditorWindow::getWindow()->currentlyOpenProject.getProjectName() == "")
   {
 
     ImGui::OpenPopup("StartupMenu");
@@ -269,7 +269,7 @@ void MenuBar::draw(rune::RenderWindow& window)
       createNewProject = true;
       ImGui::CloseCurrentPopup();
 
-      EditorWindow::currentlyOpenProject.setProjectName("New Project");
+      EditorWindow::getWindow()->currentlyOpenProject.setProjectName("New Project");
 
     }
 
@@ -278,7 +278,7 @@ void MenuBar::draw(rune::RenderWindow& window)
     if (ImGui::Button("Open Project"))
     {
 
-      EditorWindow::currentlyOpenProject = openProject();
+      EditorWindow::getWindow()->currentlyOpenProject = openProject();
 
       ImGui::CloseCurrentPopup();
 
@@ -324,7 +324,7 @@ RuneEngineProject MenuBar::openProject()
 
   newProject.projectSaveLocation = str.substr(0,i+1);
 
-  EditorWindow::currentlyOpenProject.setProjectName(newProject.getProjectName());
+  EditorWindow::getWindow()->currentlyOpenProject.setProjectName(newProject.getProjectName());
 
   return newProject;
 
@@ -418,21 +418,21 @@ std::string MenuBar::saveFileBrowser()
 void MenuBar::displayComponents()
 {
 
-  bool disabled = EditorWindow::selectedObject != nullptr;
+  bool disabled = EditorWindow::getWindow()->selectedObject != nullptr;
 
   if (ImGui::MenuItem("Sprite Renderer", NULL, false, disabled))
   {
 
-    SpriteComponent* newComponent = new SpriteComponent("rune::Sprite", "Sprite Renderer", EditorWindow::selectedObject->gameObject,"test");
-    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+    SpriteComponent* newComponent = new SpriteComponent("rune::Sprite", "Sprite Renderer", EditorWindow::getWindow()->selectedObject->gameObject,"test");
+    EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
 
   }
 
   if (ImGui::MenuItem("Rectangle Renderer", NULL, false, disabled))
   {
 
-    RectangleComponent* newComponent = new RectangleComponent("rune::RectangleShape", "Rectangle Renderer", EditorWindow::selectedObject->gameObject,"test");
-    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+    RectangleComponent* newComponent = new RectangleComponent("rune::RectangleShape", "Rectangle Renderer", EditorWindow::getWindow()->selectedObject->gameObject,"test");
+    EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
 
 
   }
@@ -440,8 +440,8 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Rigid Body", NULL, false, disabled))
   {
 
-    RigidBodyComponent* newComponent = new RigidBodyComponent("physics::RigidBody", "RigidBody", EditorWindow::selectedObject->gameObject, "test");
-    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+    RigidBodyComponent* newComponent = new RigidBodyComponent("physics::RigidBody", "RigidBody", EditorWindow::getWindow()->selectedObject->gameObject, "test");
+    EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
 
   }
 
@@ -449,27 +449,27 @@ void MenuBar::displayComponents()
   {
 
     /*CreatedComponent newComponent(std::string(typeid(rune::ParticleEmitter).name()), "Particle Emitter", "test");
-    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+    EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
 
     //rune::ParticleEmitter emitter(rune::Vec2(0,0), rune::Vec2(0,0), rune::Color::White);
-    //EditorWindow::selectedObject->gameObject.addComponent(emitter);*/
+    //EditorWindow::getWindow()->selectedObject->gameObject.addComponent(emitter);*/
 
   }
 
   if (ImGui::MenuItem("Animator", NULL, false, disabled))
   {
-    AnimatorComponent* newComponent = new AnimatorComponent("rune::Animator", "Animator", EditorWindow::selectedObject->gameObject, "test");
-    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+    AnimatorComponent* newComponent = new AnimatorComponent("rune::Animator", "Animator", EditorWindow::getWindow()->selectedObject->gameObject, "test");
+    EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
   }
 
   if (ImGui::MenuItem("Light Source", NULL, false, disabled))
   {
 
     /*CreatedComponent newComponent(std::string(typeid(rune::LightSource).name()), "Light Source", "test");
-    EditorWindow::selectedObject->objectComponents.push_back(newComponent);
+    EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
 
     //rune::LightSource lightSource;
-    //EditorWindow::selectedObject->gameObject.addComponent(lightSource);*/
+    //EditorWindow::getWindow()->selectedObject->gameObject.addComponent(lightSource);*/
 
   }
 

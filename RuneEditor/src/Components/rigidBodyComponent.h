@@ -20,7 +20,7 @@ public:
 
     body.start();
 
-    EditorWindow::currentlyOpenProject.activeScene->scene->addPhysicsObject(body);
+    EditorWindow::getWindow()->currentlyOpenProject.activeScene->scene->addPhysicsObject(body);
 
   }
 

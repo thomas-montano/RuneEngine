@@ -25,7 +25,11 @@ private:
 
   void setUpStyle(void);
 
-  //EditorWindow();
+  EditorWindow()
+    : currentlyOpenProject("")
+  {
+  
+  }
 
 public:
 
@@ -33,20 +37,20 @@ public:
   {
     if (!editorWindow)
     {
-      editorWindow = new EditorWindow;
+      editorWindow = new EditorWindow();
     }
 
     return editorWindow;
   }
 
-  //EditorWindow(const EditorWindow&) = delete;
+  EditorWindow(const EditorWindow&) = delete;
 
   bool isSceneRunning = false;
 
   rune::FrameBuffer* viewPortBuffer;
 
-  static RuneEngineProject currentlyOpenProject;
-  static CreatedGameObject* selectedObject;
+  RuneEngineProject currentlyOpenProject;
+  CreatedGameObject* selectedObject;
 
   virtual void doInit(void);
   virtual void Draw(rune::RenderWindow&) override;
