@@ -34,7 +34,7 @@ public:
 
     if(ImGui::InputFloat("Object Mass",&mass,1.f,5.f,"%.2f"))
     {
-      body.getBodyStruct()->invMass = (int)mass == 0 ? 0 : (1.0/mass);
+      body.setMass(mass);
     }
 
     if(ImGui::DragFloat2("Gravity Vector",gravity))

@@ -107,6 +107,8 @@ public:
     void setUpObject(int width, int height, double mass, bool rotation);
     ///Recalculate the AABB based on the rigid body position.
     void updateAABB();
+    ///Set the mass of the object, more massive objects will react more slowly to collisions.
+    void setMass(float newMass);
     ///Return an AABB containing the information about the rigid body bounding box.
     AABB getBoundingBox(void);
     ///Adds to the rigid body angular velocity making it spin faster or slower.

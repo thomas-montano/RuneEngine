@@ -67,8 +67,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_a_b_b_8h_source.html",
-"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8abab7ac1dfd8679d8c693a92af1726510",
-"classrune_1_1_vec2.html#ae8f7a24506d0a4f6d68000fce9996d2b"
+"classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8ab44f21c5c0bee399c0d10dbf6d24c3fd",
+"classrune_1_1_vec2.html#ae4a18684354f614e54ab92bffa385fb4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

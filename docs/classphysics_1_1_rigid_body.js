@@ -24,6 +24,7 @@ var classphysics_1_1_rigid_body =
     [ "getWidth", "classphysics_1_1_rigid_body.html#a4e68247711b2f1506f977b70764182da", null ],
     [ "interpolatePosition", "classphysics_1_1_rigid_body.html#a0316a31c45ac2cbbb49f34d3d81c4864", null ],
     [ "setDynamicFriction", "classphysics_1_1_rigid_body.html#a23bf8688088579d61a4faff77f84e134", null ],
+    [ "setMass", "classphysics_1_1_rigid_body.html#a53727d143a76f482654e372d8a8a916b", null ],
     [ "setPosition", "classphysics_1_1_rigid_body.html#a7a465bee355241a1772e4352168f4d61", null ],
     [ "setPreviousPosition", "classphysics_1_1_rigid_body.html#a36c75b4b70764efbb44c67849ae94cc3", null ],
     [ "setRestitution", "classphysics_1_1_rigid_body.html#ae47207daa74c232221b1b7ff663f9ca4", null ],

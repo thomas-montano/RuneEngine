@@ -10,7 +10,7 @@
 physics::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::Vec2(0,0)*/)
 {
 
-  if (mass == 0)
+  if ((int)mass == 0)
   {
     objectBody.invMass = 0;
     objectBody.gravityFactor = 0;
@@ -149,6 +149,14 @@ void physics::RigidBody::updateAABB(void)
     objectBody.boundingBox.min = rune::Vec2(objectBody.xPos - 0.5*xProjection,objectBody.yPos-0.5*yProjection);
     objectBody.boundingBox.max = rune::Vec2(objectBody.xPos + 0.5*xProjection,objectBody.yPos+0.5*yProjection);
 
+}
+
+/**
+ * \param newMass The new mass of the object.
+ */
+void physics::RigidBody::setMass(float newMass)
+{
+  objectBody.invMass = (int)newMass == 0 ? 0 : (1.0 / newMass);
 }
 
 /**
