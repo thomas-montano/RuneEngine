@@ -50,17 +50,19 @@ protected:
 public:
   ///Default constructor to create a new rune::GameScene.
   GameScene();
+  ///Copy constructor for a GameScene.
+  GameScene(GameScene &newScene);
   ///Initializes the state.
   virtual void doInit(void);
   ///Reset the scene without unloading game objects.
   virtual void reInit(void);
-  void deInit(void);
+  virtual void deInit(void);
   virtual void pause(void);
   virtual void resume(void);
   virtual void updateFixed(void);
   virtual void updateVariable(void);
   virtual void Draw(RenderWindow& window);
-  virtual void updatePhysics(void);
+  void updatePhysics(void);
   virtual void handleCleanup(void);
   virtual void handleUI(RenderWindow& window);
   ///Call the start function for all the components on all the objects in the scene.

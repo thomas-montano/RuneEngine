@@ -82,17 +82,20 @@ void EditorWindow::updateVariable(void)
 
 }
 
-
 void EditorWindow::startScene()
 {
   std::cout << "Scene started!" << std::endl;
   isSceneRunning = true;
+
+  //runScene = rune::GameScene(*currentlyOpenProject.activeScene->scene);
 }
 
 void EditorWindow::stopScene()
 {
   std::cout << "Scene stopped!" << std::endl;
   isSceneRunning = false;
+
+  //*currentlyOpenProject.activeScene->scene = rune::GameScene(runScene);
 }
 
 void EditorWindow::setUpStyle(void)

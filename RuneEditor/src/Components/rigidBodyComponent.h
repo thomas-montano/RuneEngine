@@ -57,6 +57,11 @@ public:
       body.setPosition(rune::Vec2(parentObject->transform.getPosition().x + body.getBodyStruct()->vertexes[1].x, parentObject->transform.getPosition().y + body.getBodyStruct()->vertexes[1].y));
       body.setPreviousPosition(rune::Vec2(parentObject->transform.getPosition().x, parentObject->transform.getPosition().y));
     }
+    
+    if(parentObject->transform.getPosition() != body.getPosition())
+    {
+      body.setPosition(rune::Vec2(parentObject->transform.getPosition().x + body.getBodyStruct()->vertexes[1].x, parentObject->transform.getPosition().y + body.getBodyStruct()->vertexes[1].y));
+    }
 
     if(ImGui::DragFloat2("Body Velocity", velocity))
     {

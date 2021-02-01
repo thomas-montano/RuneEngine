@@ -21,6 +21,8 @@ private:
   SceneViewPort viewPort;
   bool initialSetUp = false;
 
+  rune::GameScene runScene;
+
   rune::Camera sceneCamera;
 
   void setUpStyle(void);

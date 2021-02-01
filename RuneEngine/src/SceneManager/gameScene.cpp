@@ -11,6 +11,36 @@ rune::GameScene::GameScene()
   variableClock.reset();
 }
 
+rune::GameScene::GameScene(GameScene& newScene)
+  : accumulator(0), dT(getGameInstance()->getDeltaTime()), frameStart(0)
+{
+  
+  this->isStateActive = newScene.isStateActive;
+
+  /*for(int i = 0; i < newScene.physicsBodies.size();i++)
+  {
+    physics::RigidBody* bodyPtr = new physics::RigidBody();
+    *bodyPtr = *newScene.physicsBodies[i];
+
+    std::cout << "Test" << std::endl;
+    //this->physicsBodies.push_back(bodyPtr);
+  }*/
+
+  for (GameObject** currentObject = newScene.sceneObjects.getList(); currentObject != nullptr; currentObject = newScene.sceneObjects.getNext())
+  {
+    GameObject objPtr = GameObject(**currentObject);
+    sceneObjects.add(&objPtr);
+  }
+
+  for(int i = 0; i < sceneObjects.size();i++)
+  {
+    for(int j = 0; j < sceneObjects[i]->getNumComponents();j++)
+    sceneObjects[i]->getComponentList()[j]->start();
+  }
+
+  std::cout << "Scene Copied" << std::endl;
+}
+
 /**
  * DoInit is responsible for initializing this State.  HandleCleanup will
  * be called if mCleanup is true so Derived classes should always call
@@ -22,7 +52,7 @@ void rune::GameScene::doInit(void)
 }
 
 /**
- * ReInit is responsible for Reseting this state when the
+ * ReInit is responsible for Resetting this state when the
  * StateManager::ResetActiveState() method is called.  This way a Game
  * State can be restarted without unloading and reloading the game assets
  */
@@ -162,7 +192,6 @@ void rune::GameScene::renderScene(RenderWindow& window)
 
 /**
  * Update the RigidBodies in the scene.
- * 
  */
 void rune::GameScene::updatePhysics(void)
 {

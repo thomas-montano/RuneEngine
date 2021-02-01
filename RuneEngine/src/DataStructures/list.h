@@ -6,7 +6,7 @@
  * To iterate through a list without copying or having to redo iterations, you should create a for loop like this:
  *
  * @code
- * for (TYPE* currentObject = myList.getList(); currentObject != nullptr; currentItem = myList.getNext())
+ * for (TYPE* currentObject = myList.getList(); currentObject != nullptr; currentObject = myList.getNext())
  * {
  *
  *   //Do stuff

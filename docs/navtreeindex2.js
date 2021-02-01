@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classrune_1_1_vec2.html#ae358585f03caebbd2e0de14036f43b40":[6,0,1,32,12],
 "classrune_1_1_vec2.html#ae4a18684354f614e54ab92bffa385fb4":[6,0,1,32,16],
 "classrune_1_1_vec2.html#ae8f7a24506d0a4f6d68000fce9996d2b":[6,0,1,32,14],
 "classrune_1_1_vec2.html#af41ab8a26e1c1cf4ac09b0abfded4933":[6,0,1,32,6],
@@ -49,8 +50,8 @@ var NAVTREEINDEX2 =
 "functions_enum.html":[6,3,3],
 "functions_eval.html":[6,3,4],
 "functions_f.html":[6,3,0,5],
-"functions_func.html":[6,3,1,0],
 "functions_func.html":[6,3,1],
+"functions_func.html":[6,3,1,0],
 "functions_func_b.html":[6,3,1,1],
 "functions_func_c.html":[6,3,1,2],
 "functions_func_d.html":[6,3,1,3],
