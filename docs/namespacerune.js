@@ -25,6 +25,7 @@ var namespacerune =
     [ "Resource", "classrune_1_1_resource.html", null ],
     [ "ResourceManager", "classrune_1_1_resource_manager.html", null ],
     [ "SceneManager", "classrune_1_1_scene_manager.html", "classrune_1_1_scene_manager" ],
+    [ "SceneSerializer", "classrune_1_1_scene_serializer.html", "classrune_1_1_scene_serializer" ],
     [ "Shader", "classrune_1_1_shader.html", "classrune_1_1_shader" ],
     [ "ShaderProgramSource", "structrune_1_1_shader_program_source.html", "structrune_1_1_shader_program_source" ],
     [ "Signal", "classrune_1_1_signal.html", "classrune_1_1_signal" ],

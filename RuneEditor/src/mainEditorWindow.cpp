@@ -87,7 +87,9 @@ void EditorWindow::startScene()
   std::cout << "Scene started!" << std::endl;
   isSceneRunning = true;
 
-  //runScene = rune::GameScene(*currentlyOpenProject.activeScene->scene);
+  serializer = rune::SceneSerializer(*currentlyOpenProject.activeScene->scene);
+
+  serializer.serialize(currentlyOpenProject.projectSaveLocation + currentlyOpenProject.getProjectName());
 }
 
 void EditorWindow::stopScene()
@@ -95,7 +97,7 @@ void EditorWindow::stopScene()
   std::cout << "Scene stopped!" << std::endl;
   isSceneRunning = false;
 
-  //*currentlyOpenProject.activeScene->scene = rune::GameScene(runScene);
+  serializer.deserialize(currentlyOpenProject.projectSaveLocation + currentlyOpenProject.getProjectName());
 }
 
 void EditorWindow::setUpStyle(void)

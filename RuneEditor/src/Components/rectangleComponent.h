@@ -36,7 +36,7 @@ public:
     ImGui::Text("Rectangle Dimensions:");
     ImGui::NextColumn();
     
-    if(ImGui::DragFloat2(" ", size, .1))
+    if(ImGui::DragFloat2(" ", size, .1, 0, FLT_MAX / INT_MAX))
     {
       parentObject->transform.setBounds(rune::Vec2(size[0], size[1]));
     }

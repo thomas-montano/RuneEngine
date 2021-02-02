@@ -42,7 +42,7 @@ public:
       body.getBodyStruct()->gravityFactor = rune::Vec2(gravity[0],gravity[1]);
     }
 
-    if(ImGui::DragFloat2("Collider Bounds", bounds))
+    if(ImGui::DragFloat2("Collider Bounds", bounds, 1,0, FLT_MAX/INT_MAX))
     {
       body.setUpObject(bounds[0],bounds[1],mass,false);
     }

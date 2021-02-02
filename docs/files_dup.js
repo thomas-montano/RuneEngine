@@ -34,6 +34,7 @@ var files_dup =
     [ "rigidBody.h", "rigid_body_8h_source.html", null ],
     [ "RuneEngine.h", "_rune_engine_8h_source.html", null ],
     [ "sceneManager.h", "scene_manager_8h_source.html", null ],
+    [ "SceneSerializer.h", "_scene_serializer_8h_source.html", null ],
     [ "shader.h", "shader_8h_source.html", null ],
     [ "signal.h", "signal_8h_source.html", null ],
     [ "sprite.h", "sprite_8h_source.html", null ],

@@ -1,7 +1,6 @@
 var classrune_1_1_game_object =
 [
     [ "GameObject", "classrune_1_1_game_object.html#ada3eaa70fd6bd718cd0027a428549a53", null ],
-    [ "GameObject", "classrune_1_1_game_object.html#af1b124a43aded8e2bc7cf7d59a6ccab0", null ],
     [ "addComponent", "classrune_1_1_game_object.html#a400268e68259e0e1631e04e30e2d9e96", null ],
     [ "getComponent", "classrune_1_1_game_object.html#ae48b11454e52b2514386d62e08f4fe31", null ],
     [ "getComponentList", "classrune_1_1_game_object.html#a33767608b48f8a7d96b0323ea058b427", null ],

@@ -5,7 +5,7 @@ var searchData=
   ['backspace_21',['BACKSPACE',['../classrune_1_1_keyboard.html#a9d6847653ae6b0451e62d7c7f5ffa2f8a5a398f9ab52240af58b8b5dea0a8bcbb',1,'rune::Keyboard']]],
   ['bind_22',['bind',['../classrune_1_1_frame_buffer.html#ac81a7ada5e968cc2e9ccace59e07c45d',1,'rune::FrameBuffer::bind()'],['../classrune_1_1_shader.html#ae88a14bdab9fbdd731944e3fa206ebb7',1,'rune::Shader::bind()'],['../classrune_1_1_texture.html#a574f72e9111f1b20b06e5b85b3cb9458',1,'rune::Texture::bind()']]],
   ['black_23',['Black',['../classrune_1_1_color.html#a9d4913e26118788d122e4b7018250bb7',1,'rune::Color']]],
-  ['blue_24',['blue',['../classrune_1_1_color.html#aefcd834a26d00dd7d489a0b0be7a1364',1,'rune::Color::blue()'],['../classrune_1_1_color.html#a5958b48f6e41cfabb99105e1b3dbab97',1,'rune::Color::Blue()']]],
+  ['blue_24',['Blue',['../classrune_1_1_color.html#a5958b48f6e41cfabb99105e1b3dbab97',1,'rune::Color::Blue()'],['../classrune_1_1_color.html#aefcd834a26d00dd7d489a0b0be7a1364',1,'rune::Color::blue()']]],
   ['body_25',['body',['../structphysics_1_1body.html',1,'physics']]],
   ['boundingbox_26',['boundingBox',['../classphysics_1_1_collider.html#a1cbd7a62037213aed3eb30f1a23d4c25',1,'physics::Collider::boundingBox()'],['../structphysics_1_1body.html#a76f4d9fa127e61d2e8aae7a5c728ceb7',1,'physics::body::boundingBox()']]],
   ['boxcollider_27',['BoxCollider',['../classphysics_1_1_box_collider.html',1,'physics']]],

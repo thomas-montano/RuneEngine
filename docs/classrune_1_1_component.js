@@ -1,7 +1,6 @@
 var classrune_1_1_component =
 [
     [ "Component", "classrune_1_1_component.html#a45c7fae6f7fe55eb22932c4a1304cfcb", null ],
-    [ "Component", "classrune_1_1_component.html#acabb2c4d23bc88f2e0ed3f7de60309b6", null ],
     [ "awake", "classrune_1_1_component.html#ab613ce1ef98d5480f11680238e900a61", null ],
     [ "fixedUpdate", "classrune_1_1_component.html#ac24759c39a2067026fb8f17487398c0c", null ],
     [ "isComponentEnabled", "classrune_1_1_component.html#a40b6a0b1c09a8eda00aadcb5e30b7949", null ],

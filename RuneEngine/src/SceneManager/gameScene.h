@@ -50,8 +50,6 @@ protected:
 public:
   ///Default constructor to create a new rune::GameScene.
   GameScene();
-  ///Copy constructor for a GameScene.
-  GameScene(GameScene &newScene);
   ///Initializes the state.
   virtual void doInit(void);
   ///Reset the scene without unloading game objects.
@@ -79,6 +77,8 @@ public:
   void submitToRenderer(rune::Drawable&);
   ///Add a physics object to the scene.
   void addPhysicsObject(physics::RigidBody& body);
+
+  friend class SceneSerializer;
 
 };
 }

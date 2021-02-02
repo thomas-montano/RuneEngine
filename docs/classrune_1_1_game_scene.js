@@ -1,7 +1,6 @@
 var classrune_1_1_game_scene =
 [
     [ "GameScene", "classrune_1_1_game_scene.html#a6333862919b9eb3357dd1ea5c800f7b2", null ],
-    [ "GameScene", "classrune_1_1_game_scene.html#a07edde6adb2642d1410d077608b2f9d8", null ],
     [ "addObjectToScene", "classrune_1_1_game_scene.html#a1e982c62723951c5abe8f824b38b503e", null ],
     [ "addPhysicsObject", "classrune_1_1_game_scene.html#ac2e6c1113b318a9084c97b461f35c335", null ],
     [ "deInit", "classrune_1_1_game_scene.html#a3ddab49b7e0abb5a1162104e3787860e", null ],
@@ -20,6 +19,7 @@ var classrune_1_1_game_scene =
     [ "updateFixed", "classrune_1_1_game_scene.html#a4bb0b773109b47d77723bb4299d507dd", null ],
     [ "updatePhysics", "classrune_1_1_game_scene.html#a47c471133f7cf81845528341a8f49941", null ],
     [ "updateVariable", "classrune_1_1_game_scene.html#afb18f01f76432c4425646b15d13af14f", null ],
+    [ "SceneSerializer", "classrune_1_1_game_scene.html#a5fa7cde0ffbc72d80ef032c1ea3e9c85", null ],
     [ "accumulator", "classrune_1_1_game_scene.html#a18e55f349455be06c70c85d940cc64a4", null ],
     [ "clearColor", "classrune_1_1_game_scene.html#a7e8162bc01226a40855bc9b958b1e89e", null ],
     [ "drawableObjects", "classrune_1_1_game_scene.html#a390d0aa2ffd2f40645fab4db98537f24", null ],

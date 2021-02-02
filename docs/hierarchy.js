@@ -41,6 +41,7 @@ var hierarchy =
     [ "rune::Resource", "classrune_1_1_resource.html", null ],
     [ "rune::ResourceManager", "classrune_1_1_resource_manager.html", null ],
     [ "rune::SceneManager", "classrune_1_1_scene_manager.html", null ],
+    [ "rune::SceneSerializer", "classrune_1_1_scene_serializer.html", null ],
     [ "rune::Shader", "classrune_1_1_shader.html", null ],
     [ "rune::ShaderProgramSource", "structrune_1_1_shader_program_source.html", null ],
     [ "rune::Signal", "classrune_1_1_signal.html", null ],

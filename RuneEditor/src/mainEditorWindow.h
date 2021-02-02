@@ -8,6 +8,8 @@
 #include "ResourcesTab/resourceTab.h"
 #include "SceneViewport/sceneViewport.h"
 
+#include <SceneManager/SceneSerializer.h>
+
 class EditorWindow : public rune::GameScene
 {
 
@@ -21,9 +23,9 @@ private:
   SceneViewPort viewPort;
   bool initialSetUp = false;
 
-  rune::GameScene runScene;
-
   rune::Camera sceneCamera;
+
+  rune::SceneSerializer serializer;
 
   void setUpStyle(void);
 

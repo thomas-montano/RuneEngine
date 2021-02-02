@@ -32,8 +32,6 @@ public:
   rune::Transform transform;
   ///Default empty constructor.
   GameObject();
-  ///Constructor to be used for copying another rune::GameObject.
-  GameObject(const GameObject& gameObject);
   ///Add a component to this game object.
   void addComponent(rune::Component&);
   ///Get the number of components present on this game object.
