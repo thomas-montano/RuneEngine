@@ -99,3 +99,8 @@ void rune::RectangleShape::setFillColor(rune::Color newColor)
 {
   m_fillColor = newColor;
 }
+
+rune::Color rune::RectangleShape::getFillColor()
+{
+  return m_fillColor;
+}

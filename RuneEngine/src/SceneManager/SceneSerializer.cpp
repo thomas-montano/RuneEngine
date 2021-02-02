@@ -4,8 +4,11 @@
 #include <Math/vec2.h>
 #include <Math/vec3.h>
 
+/// \cond
+
 namespace rune{
 
+  
   YAML::Emitter& operator<<(YAML::Emitter& out, const Vec3& v)
   {
     out << YAML::Flow;
@@ -20,6 +23,8 @@ namespace rune{
     return out;
   }
 }
+
+/// \endcond
 
 /**
  * \param scene The scene that should be serialized.
@@ -47,21 +52,26 @@ void rune::SceneSerializer::serialize(const std::string& filePath)
   {
   
     YAML::Emitter out;
-
     out << YAML::BeginMap;
-    out << YAML::Key << "Scene";
-    out << YAML::Value << "runTimeScene";
-    out << YAML::Key << "Entities";
+    out << YAML::Key << "Scene" << YAML::Value << sceneName;
+    out << YAML::Key << "Entities" << YAML::Value << YAML::BeginSeq;
+
+    int entityID = 0;
 
     for (GameObject** currentObject = m_scene->sceneObjects.getList(); currentObject != nullptr; currentObject = m_scene->sceneObjects.getNext())
     {
+      out << YAML::BeginMap;
+
+      out << YAML::Key << "Entity" << YAML::Value << entityID;
+      entityID++;
+      
       serializeObject(out,**currentObject);
+      out << YAML::EndMap;
     }
 
     out << YAML::EndSeq;
     out << YAML::EndMap;
 
-    YAML::EndMap;
     std::ofstream fout(filePath +".yaml");
 
     fout << out.c_str();
@@ -113,12 +123,29 @@ void rune::SceneSerializer::deserializeRuntime(const std::string& filePath)
 void rune::SceneSerializer::serializeObject(YAML::Emitter& out, rune::GameObject& object)
 {
 
-  auto ptr = object.getComponent<rune::Transform>();
+  auto ptrTransform = object.getComponent<rune::Transform>();
 
-  if(ptr != nullptr)
+  if(ptrTransform != nullptr)
   {
-    out << YAML::Key << "Position" << YAML::Value;
-    out << ptr->getPosition();
+    out << YAML::Key << "Transform";
+    
+    out << YAML::BeginMap;
+    out << YAML::Key << "Position" << YAML::Value << ptrTransform->getPosition();
+    out << YAML::Key << "Scale" << YAML::Value << ptrTransform->getScale();
+    out << YAML::Key << "Rotation" << YAML::Value << ptrTransform->getRotation();
+    out << YAML::Key << "Bounds" << YAML::Value << ptrTransform->getBounds();
+    out << YAML::EndMap;
+  }
+
+  auto ptrRect = object.getComponent<rune::RectangleShape>();
+
+  if(ptrRect != nullptr)
+  {
+    out << YAML::Key << "RectangleShape";
+
+    out << YAML::BeginMap;
+    out << YAML::Key << "Color" << YAML::Value << YAML::Flow << YAML::BeginSeq << (int)ptrRect->getFillColor().red << (int)ptrRect->getFillColor().green << (int)ptrRect->getFillColor().blue << (int)ptrRect->getFillColor().alpha << YAML::EndSeq;
+    out << YAML::EndMap;
   }
 
 }

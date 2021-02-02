@@ -5,7 +5,7 @@
 #include <imgui/imgui_impl_opengl3.h>
 #include <imgui/imgui_impl_glfw.h>
 
-rune::GameScene::GameScene() 
+rune::GameScene::GameScene()
   : accumulator(0), dT(getGameInstance()->getDeltaTime()), frameStart(0)
 {
   variableClock.reset();

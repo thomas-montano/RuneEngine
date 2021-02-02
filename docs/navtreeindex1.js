@@ -130,10 +130,11 @@ var NAVTREEINDEX1 =
 "classrune_1_1_rect.html#ac730230903f314b702ead30bf5c51941":[6,0,1,19,4],
 "classrune_1_1_rectangle_shape.html":[6,0,1,20],
 "classrune_1_1_rectangle_shape.html#a0a7026f17ce4977fc3b90cbe52cc8d25":[6,0,1,20,1],
-"classrune_1_1_rectangle_shape.html#a7c049363eda3b0f547f18788579ae0d5":[6,0,1,20,2],
-"classrune_1_1_rectangle_shape.html#a8487714247b0392019852fe36d3fd4b5":[6,0,1,20,3],
+"classrune_1_1_rectangle_shape.html#a5f05fb6f99d00f229b4e97b69f7fc514":[6,0,1,20,2],
+"classrune_1_1_rectangle_shape.html#a7c049363eda3b0f547f18788579ae0d5":[6,0,1,20,3],
+"classrune_1_1_rectangle_shape.html#a8487714247b0392019852fe36d3fd4b5":[6,0,1,20,4],
 "classrune_1_1_rectangle_shape.html#aaa15299d3e67e7b91c7358e1a0fadab0":[6,0,1,20,0],
-"classrune_1_1_rectangle_shape.html#acb968148b8f311167dee3154e8f19a70":[6,0,1,20,4],
+"classrune_1_1_rectangle_shape.html#acb968148b8f311167dee3154e8f19a70":[6,0,1,20,5],
 "classrune_1_1_render_window.html":[6,0,1,21],
 "classrune_1_1_render_window.html#a0a39a226d9f890abac9ce854769e6fac":[6,0,1,21,9],
 "classrune_1_1_render_window.html#a3c90c45ad48b883b509fc43e61d04b8e":[6,0,1,21,4],
@@ -161,6 +162,7 @@ var NAVTREEINDEX1 =
 "classrune_1_1_scene_serializer.html#a2228fefb5cf0f019da989d6fe4481e2b":[6,0,1,25,5],
 "classrune_1_1_scene_serializer.html#a69d25f06b72b438cebf2df537bdba834":[6,0,1,25,4],
 "classrune_1_1_scene_serializer.html#a732c59d18e94aad93afdbd02a88ca274":[6,0,1,25,6],
+"classrune_1_1_scene_serializer.html#a82e4c876f8d92efceec4ab601c94e124":[6,0,1,25,7],
 "classrune_1_1_scene_serializer.html#abd36b3bb9f5c52260cfe33a3e14c2abd":[6,0,1,25,2],
 "classrune_1_1_scene_serializer.html#ad91849aa7567cd5443427a68c28e3594":[6,0,1,25,1],
 "classrune_1_1_scene_serializer.html#af7646ca07ad296125d55f6e8ba9d7ef0":[6,0,1,25,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "classrune_1_1_vec2.html#a418c8098cbdac5a10ff014867a42848f":[6,0,1,33,19],
 "classrune_1_1_vec2.html#a488d402d4499bdb150d472cd35067cdc":[6,0,1,33,20],
 "classrune_1_1_vec2.html#a4fccda36f378cfc0bd8d5a7d9cb5f163":[6,0,1,33,7],
-"classrune_1_1_vec2.html#a5d83b495f4db527989049d746e60da99":[6,0,1,33,8],
-"classrune_1_1_vec2.html#a66db98c6441689676e4767db660c012a":[6,0,1,33,18],
-"classrune_1_1_vec2.html#a80a3e1106ac8c11cd2dad96c0688528a":[6,0,1,33,17]
+"classrune_1_1_vec2.html#a5d83b495f4db527989049d746e60da99":[6,0,1,33,8]
 };

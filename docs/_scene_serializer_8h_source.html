@@ -89,36 +89,40 @@ $(document).ready(function(){initNavTree('_scene_serializer_8h_source.html','');
 <div class="title">SceneSerializer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;core.h&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;gameScene.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>YAML{<span class="keyword">class </span>Emitter;}</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerune.html">rune</a>{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classrune_1_1_scene_serializer.html">    9</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="classrune_1_1_scene_serializer.html">SceneSerializer</a></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <a class="code" href="classrune_1_1_scene_serializer.html">SceneSerializer</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <a class="code" href="classrune_1_1_scene_serializer.html">SceneSerializer</a>(<a class="code" href="classrune_1_1_game_scene.html">rune::GameScene</a>&amp; scene);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keywordtype">void</span> serialize(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">void</span> serializeRuntime(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">void</span> deserialize(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keywordtype">void</span> deserializeRuntime(<span class="keyword">const</span> std::string&amp; filePath);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">void</span> serializeObject(YAML::Emitter&amp; out, <a class="code" href="classrune_1_1_game_object.html">rune::GameObject</a>&amp;);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classrune_1_1_game_scene.html">rune::GameScene</a>* m_scene;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}<span class="comment">//namespace rune</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;core.h&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;gameScene.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span>YAML{<span class="keyword">class </span>Emitter;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacerune.html">rune</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="classrune_1_1_scene_serializer.html">   17</a></span>&#160;<span class="keyword">class </span>RUNE_ENGINE <a class="code" href="classrune_1_1_scene_serializer.html">SceneSerializer</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classrune_1_1_scene_serializer.html#a82e4c876f8d92efceec4ab601c94e124">   21</a></span>&#160;  std::string <a class="code" href="classrune_1_1_scene_serializer.html#a82e4c876f8d92efceec4ab601c94e124">sceneName</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <a class="code" href="classrune_1_1_scene_serializer.html">SceneSerializer</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <a class="code" href="classrune_1_1_scene_serializer.html">SceneSerializer</a>(<a class="code" href="classrune_1_1_game_scene.html">rune::GameScene</a>&amp; scene);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;  <span class="keywordtype">void</span> serialize(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keywordtype">void</span> serializeRuntime(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keywordtype">void</span> deserialize(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keywordtype">void</span> deserializeRuntime(<span class="keyword">const</span> std::string&amp; filePath);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keywordtype">void</span> serializeObject(YAML::Emitter&amp; out, <a class="code" href="classrune_1_1_game_object.html">rune::GameObject</a>&amp;);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classrune_1_1_game_scene.html">rune::GameScene</a>* m_scene;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}<span class="comment">//namespace rune</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassrune_1_1_game_scene_html"><div class="ttname"><a href="classrune_1_1_game_scene.html">rune::GameScene</a></div><div class="ttdoc">This class is responsible for serving as a parent class for each instance of the game....</div><div class="ttdef"><b>Definition:</b> gameScene.h:29</div></div>
-<div class="ttc" id="aclassrune_1_1_scene_serializer_html"><div class="ttname"><a href="classrune_1_1_scene_serializer.html">rune::SceneSerializer</a></div><div class="ttdef"><b>Definition:</b> SceneSerializer.h:10</div></div>
+<div class="ttc" id="aclassrune_1_1_scene_serializer_html_a82e4c876f8d92efceec4ab601c94e124"><div class="ttname"><a href="classrune_1_1_scene_serializer.html#a82e4c876f8d92efceec4ab601c94e124">rune::SceneSerializer::sceneName</a></div><div class="ttdeci">std::string sceneName</div><div class="ttdoc">A string identifier for the stored scene, this will be written to the file.</div><div class="ttdef"><b>Definition:</b> SceneSerializer.h:21</div></div>
+<div class="ttc" id="aclassrune_1_1_scene_serializer_html"><div class="ttname"><a href="classrune_1_1_scene_serializer.html">rune::SceneSerializer</a></div><div class="ttdoc">An object that can be used to write a GameScene to a YAML encoded file.</div><div class="ttdef"><b>Definition:</b> SceneSerializer.h:18</div></div>
 <div class="ttc" id="anamespacerune_html"><div class="ttname"><a href="namespacerune.html">rune</a></div><div class="ttdoc">The main namespace to be used for interfacing with the engine.</div><div class="ttdef"><b>Definition:</b> animator.h:21</div></div>
 <div class="ttc" id="aclassrune_1_1_game_object_html"><div class="ttname"><a href="classrune_1_1_game_object.html">rune::GameObject</a></div><div class="ttdoc">Entity control system main object used for all objects in the scene.</div><div class="ttdef"><b>Definition:</b> gameObject.h:23</div></div>
 <!-- start footer part -->
@@ -126,7 +130,7 @@ $(document).ready(function(){initNavTree('_scene_serializer_8h_source.html','');
 			<ul>
 				<li class="navelem"><a class="el" href="dir_dc40422310fb88d4fb399319f11a5681.html">RuneEngine</a></li><li class="navelem"><a class="el" href="dir_7c293338c1b03e9273a7bae543bf144e.html">src</a></li><li class="navelem"><a class="el" href="dir_47a24ebbab17269d1d8cc602f5106f45.html">SceneManager</a></li><li class="navelem"><b>SceneSerializer.h</b></li>
 				<li class="footer">
-					Generated on Tue Feb 2 2021 09:39:20 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Feb 2 2021 12:53:34 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

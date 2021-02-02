@@ -87,16 +87,22 @@ $(document).ready(function(){initNavTree('classrune_1_1_scene_serializer.html','
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classrune_1_1_scene_serializer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rune::SceneSerializer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>An object that can be used to write a <a class="el" href="classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a> to a YAML encoded file.  
+ <a href="classrune_1_1_scene_serializer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_scene_serializer_8h_source.html">SceneSerializer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad91849aa7567cd5443427a68c28e3594"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_scene_serializer.html#ad91849aa7567cd5443427a68c28e3594">SceneSerializer</a> (<a class="el" href="classrune_1_1_game_scene.html">rune::GameScene</a> &amp;scene)</td></tr>
-<tr class="memdesc:ad91849aa7567cd5443427a68c28e3594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to create a <a class="el" href="classrune_1_1_scene_serializer.html">SceneSerializer</a>.  <a href="classrune_1_1_scene_serializer.html#ad91849aa7567cd5443427a68c28e3594">More...</a><br /></td></tr>
+<tr class="memdesc:ad91849aa7567cd5443427a68c28e3594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor to create a <a class="el" href="classrune_1_1_scene_serializer.html" title="An object that can be used to write a GameScene to a YAML encoded file.">SceneSerializer</a>.  <a href="classrune_1_1_scene_serializer.html#ad91849aa7567cd5443427a68c28e3594">More...</a><br /></td></tr>
 <tr class="separator:ad91849aa7567cd5443427a68c28e3594"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69d25f06b72b438cebf2df537bdba834"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_scene_serializer.html#a69d25f06b72b438cebf2df537bdba834">serialize</a> (const std::string &amp;filePath)</td></tr>
 <tr class="memdesc:a69d25f06b72b438cebf2df537bdba834"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the scene to a human readable file.  <a href="classrune_1_1_scene_serializer.html#a69d25f06b72b438cebf2df537bdba834">More...</a><br /></td></tr>
@@ -113,8 +119,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2228fefb5cf0f019da989d6fe4481e2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_scene_serializer.html#a2228fefb5cf0f019da989d6fe4481e2b">serializeObject</a> (YAML::Emitter &amp;out, <a class="el" href="classrune_1_1_game_object.html">rune::GameObject</a> &amp;)</td></tr>
 <tr class="memdesc:a2228fefb5cf0f019da989d6fe4481e2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a <a class="el" href="classrune_1_1_game_object.html" title="Entity control system main object used for all objects in the scene.">GameObject</a> to YAML.  <a href="classrune_1_1_scene_serializer.html#a2228fefb5cf0f019da989d6fe4481e2b">More...</a><br /></td></tr>
 <tr class="separator:a2228fefb5cf0f019da989d6fe4481e2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a82e4c876f8d92efceec4ab601c94e124"><td class="memItemLeft" align="right" valign="top"><a id="a82e4c876f8d92efceec4ab601c94e124"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrune_1_1_scene_serializer.html#a82e4c876f8d92efceec4ab601c94e124">sceneName</a></td></tr>
+<tr class="memdesc:a82e4c876f8d92efceec4ab601c94e124"><td class="mdescLeft">&#160;</td><td class="mdescRight">A string identifier for the stored scene, this will be written to the file. <br /></td></tr>
+<tr class="separator:a82e4c876f8d92efceec4ab601c94e124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>An object that can be used to write a <a class="el" href="classrune_1_1_game_scene.html" title="This class is responsible for serving as a parent class for each instance of the game....">GameScene</a> to a YAML encoded file. </p>
+<dl class="section author"><dt>Author</dt><dd>Thomas Montano </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>February 1 2021 </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad91849aa7567cd5443427a68c28e3594"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad91849aa7567cd5443427a68c28e3594">&#9670;&nbsp;</a></span>SceneSerializer()</h2>
 
@@ -131,7 +148,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Default constructor to create a <a class="el" href="classrune_1_1_scene_serializer.html">SceneSerializer</a>. </p>
+<p>Default constructor to create a <a class="el" href="classrune_1_1_scene_serializer.html" title="An object that can be used to write a GameScene to a YAML encoded file.">SceneSerializer</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">scene</td><td>The scene that should be serialized. </td></tr>
@@ -294,7 +311,7 @@ Public Member Functions</h2></td></tr>
 			<ul>
 				<li class="navelem"><a class="el" href="namespacerune.html">rune</a></li><li class="navelem"><a class="el" href="classrune_1_1_scene_serializer.html">SceneSerializer</a></li>
 				<li class="footer">
-					Generated on Tue Feb 2 2021 09:39:21 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
+					Generated on Tue Feb 2 2021 12:53:36 for the Rune Engine with <a href="http://www.doxygen.org/index.html">
 					<img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18.
 				</li>
 			</ul>

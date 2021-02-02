@@ -6,5 +6,6 @@ var classrune_1_1_scene_serializer =
     [ "deserializeRuntime", "classrune_1_1_scene_serializer.html#a1cbac12b66ca5453cf5e5a73e42d5307", null ],
     [ "serialize", "classrune_1_1_scene_serializer.html#a69d25f06b72b438cebf2df537bdba834", null ],
     [ "serializeObject", "classrune_1_1_scene_serializer.html#a2228fefb5cf0f019da989d6fe4481e2b", null ],
-    [ "serializeRuntime", "classrune_1_1_scene_serializer.html#a732c59d18e94aad93afdbd02a88ca274", null ]
+    [ "serializeRuntime", "classrune_1_1_scene_serializer.html#a732c59d18e94aad93afdbd02a88ca274", null ],
+    [ "sceneName", "classrune_1_1_scene_serializer.html#a82e4c876f8d92efceec4ab601c94e124", null ]
 ];

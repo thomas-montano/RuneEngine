@@ -13,7 +13,7 @@ public:
   CreatedScene(std::string newSceneName)
   {
     sceneName = newSceneName;
-    scene = new rune::GameScene;
+    scene = new rune::GameScene();
 
   }
 

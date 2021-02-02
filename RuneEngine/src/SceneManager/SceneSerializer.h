@@ -1,3 +1,11 @@
+/**
+ * @class rune::SceneSerializer
+ * @brief An object that can be used to write a GameScene to a YAML encoded file.
+ *
+ * @author Thomas Montano
+ * @date February 1 2021
+*/
+
 #pragma once
 #include <core.h>
 #include "gameScene.h"
@@ -9,6 +17,9 @@ namespace rune{
 class RUNE_ENGINE SceneSerializer
 {
 public:
+  ///A string identifier for the stored scene, this will be written to the file.
+  std::string sceneName;
+
   SceneSerializer();
   ///Default constructor to create a SceneSerializer.
   SceneSerializer(rune::GameScene& scene);

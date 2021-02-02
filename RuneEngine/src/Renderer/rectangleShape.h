@@ -57,7 +57,8 @@ public:
   RectangleShape(rune::Color newColor = rune::Color::White);
   ///Set the color used to fill the rectangle.
   void setFillColor(rune::Color newFillColor);
-
+  ///Get the color used to fill the rectangle.
+  rune::Color getFillColor();
 };
 }
 

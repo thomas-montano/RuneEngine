@@ -88,6 +88,7 @@ void EditorWindow::startScene()
   isSceneRunning = true;
 
   serializer = rune::SceneSerializer(*currentlyOpenProject.activeScene->scene);
+  serializer.sceneName = currentlyOpenProject.activeScene->sceneName;
 
   serializer.serialize(currentlyOpenProject.projectSaveLocation + currentlyOpenProject.getProjectName());
 }
