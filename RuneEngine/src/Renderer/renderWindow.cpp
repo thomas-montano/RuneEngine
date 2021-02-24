@@ -31,7 +31,7 @@ rune::RenderWindow::RenderWindow(int newWidth, int newHeight, std::string const&
 {
   
   glfwInit();
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
   glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 
   windowOpen = true;

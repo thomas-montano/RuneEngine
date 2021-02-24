@@ -101,6 +101,7 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Renderer\computeShader.cpp" />
     <ClCompile Include="src\Events\subject.cpp" />
     <ClCompile Include="src\imgui\imgui_tables.cpp" />
     <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
@@ -175,6 +176,7 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
     <ClCompile Include="src\YAML\tag.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Renderer\computeShader.h" />
     <ClInclude Include="src\Events\observer.h" />
     <ClInclude Include="src\Events\subject.h" />
     <ClInclude Include="src\Physics\AABB.h" />
