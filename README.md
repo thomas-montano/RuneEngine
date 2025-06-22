@@ -2,6 +2,9 @@
 # Rune Engine
 This is the GitHub for developing the Rune Engine. The engine is being developed by Thomas Montano, a Senior at Missouri University of Science and Technology.
 
+## Project Documentation
+- [Doxygen](https://thomasmontanogames.github.io/RuneEngine-Dev/)
+
 ## Getting Started
 
 Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.
@@ -33,6 +36,3 @@ Make sure you are building in 64-bit, Rune does not currently cupport 32-bit.
 - Animated Sprites
 - Debug Interface with imgui
 - Tile workflow and sprite workflow
-
-## Function Documentation
-- [Doxygen](https://thomasmontanogames.github.io/PrivateEye/)
