@@ -3,7 +3,7 @@
 This is the GitHub for developing the Rune Engine. The engine is being developed by Thomas Montano, a Senior at Missouri University of Science and Technology.
 
 ## Project Documentation
-- [Doxygen](https://thomasmontanogames.github.io/RuneEngine-Dev/)
+- [Doxygen](https://thomas-montano.github.io/RuneEngine-Dev/)
 
 ## Getting Started
 
