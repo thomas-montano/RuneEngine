@@ -11,7 +11,7 @@ Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other 
 
 You can check out the latest release of the engine here:
 
-https://github.com/ThomasMontanoGames/RuneEngine/releases
+https://github.com/thomas-montano/RuneEngine/releases
 
 ## Setting up a Project
 
