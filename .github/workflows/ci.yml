@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: ${{ matrix.configuration }} (${{ matrix.toolset }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        configuration: [Debug, Release]
+        toolset: [v143, v145]
+        include:
+          # v143 is what the projects target (Visual Studio 2022)
+          - toolset: v143
+            os: windows-2022
+          # v145 checks the code still builds with Visual Studio 2026
+          - toolset: v145
+            os: windows-2025-vs2026
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: microsoft/setup-msbuild@v3
+
+      - name: Build
+        run: msbuild RuneEngine.sln -m -p:Configuration=${{ matrix.configuration }} -p:Platform=x64 -p:PlatformToolset=${{ matrix.toolset }}
+
+      - name: Upload the build
+        if: matrix.configuration == 'Release' && matrix.toolset == 'v143'
+        uses: actions/upload-artifact@v7
+        with:
+          name: RuneEngine-win64-${{ github.sha }}
+          path: bin/Release-x64/
+          retention-days: 7
