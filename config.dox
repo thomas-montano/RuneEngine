@@ -1213,6 +1213,14 @@ HTML_EXTRA_STYLESHEET  = docs/extras/custom_dark_theme.css
 
 HTML_EXTRA_FILES       =
 
+# The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
+# should be rendered with a dark or light theme. DARK always generates dark
+# mode output, which matches the custom dark theme above.
+# The default value is: AUTO_LIGHT.
+# This tag requires that the tag GENERATE_HTML is set to YES.
+
+HTML_COLORSTYLE        = DARK
+
 # The HTML_COLORSTYLE_HUE tag controls the color of the HTML output. Doxygen
 # will adjust the colors in the style sheet and background images according to
 # this color. Hue is specified as an angle on a colorwheel, see

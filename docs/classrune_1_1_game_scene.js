@@ -2,7 +2,7 @@ var classrune_1_1_game_scene =
 [
     [ "GameScene", "classrune_1_1_game_scene.html#a6333862919b9eb3357dd1ea5c800f7b2", null ],
     [ "addObjectToScene", "classrune_1_1_game_scene.html#a1e982c62723951c5abe8f824b38b503e", null ],
-    [ "addPhysicsObject", "classrune_1_1_game_scene.html#ac2e6c1113b318a9084c97b461f35c335", null ],
+    [ "addPhysicsObject", "classrune_1_1_game_scene.html#aab56488be386117b68e5aaf9eddcc9d9", null ],
     [ "deInit", "classrune_1_1_game_scene.html#a3ddab49b7e0abb5a1162104e3787860e", null ],
     [ "doInit", "classrune_1_1_game_scene.html#a97362f5c75fafb9eb2fce36a474e5f4e", null ],
     [ "Draw", "classrune_1_1_game_scene.html#a613c11fc4b9d800ce8eb1840a8b87158", null ],
@@ -19,14 +19,13 @@ var classrune_1_1_game_scene =
     [ "updateFixed", "classrune_1_1_game_scene.html#a4bb0b773109b47d77723bb4299d507dd", null ],
     [ "updatePhysics", "classrune_1_1_game_scene.html#a47c471133f7cf81845528341a8f49941", null ],
     [ "updateVariable", "classrune_1_1_game_scene.html#afb18f01f76432c4425646b15d13af14f", null ],
-    [ "SceneSerializer", "classrune_1_1_game_scene.html#a5fa7cde0ffbc72d80ef032c1ea3e9c85", null ],
     [ "accumulator", "classrune_1_1_game_scene.html#a18e55f349455be06c70c85d940cc64a4", null ],
     [ "clearColor", "classrune_1_1_game_scene.html#a7e8162bc01226a40855bc9b958b1e89e", null ],
     [ "drawableObjects", "classrune_1_1_game_scene.html#a390d0aa2ffd2f40645fab4db98537f24", null ],
     [ "dT", "classrune_1_1_game_scene.html#a2e2c4527471c1737af4458c1e3907e36", null ],
     [ "frameStart", "classrune_1_1_game_scene.html#a0eb991d2650c2551826e6311d1d3646b", null ],
     [ "isStateActive", "classrune_1_1_game_scene.html#a2af958c563fe965ac285558547a30e04", null ],
-    [ "physicsBodies", "classrune_1_1_game_scene.html#a090b9a4df823e95c078c2db72bf5064e", null ],
+    [ "physicsBodies", "classrune_1_1_game_scene.html#adf42dbb3cf4de1a9814a7f7014c5b6f3", null ],
     [ "sceneObjects", "classrune_1_1_game_scene.html#a205199274c6823ec05c1c828e2b6b527", null ],
     [ "variableClock", "classrune_1_1_game_scene.html#a6b30e7f9d439fa10897cd302ccfdb18f", null ]
 ];

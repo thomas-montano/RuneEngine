@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['game_20objects_869',['Game Objects',['../game_objects.html',1,'']]],
-  ['game_20scenes_870',['Game Scenes',['../scenes.html',1,'']]]
+  ['creating_20an_20object_0',['Creating an Object',['../game_objects.html#objects',1,'']]]
 ];

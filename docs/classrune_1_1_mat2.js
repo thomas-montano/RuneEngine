@@ -23,5 +23,5 @@ var classrune_1_1_mat2 =
     [ "operator<<", "classrune_1_1_mat2.html#a282964f6219a5a041f69e6b3c7b12eec", null ],
     [ "operator==", "classrune_1_1_mat2.html#a4d62a08258e8c1c1664cfca54e8e17df", null ],
     [ "operator[]", "classrune_1_1_mat2.html#a4705d18e1daa5932121ea526b839d291", null ],
-    [ "operator<<", "classrune_1_1_mat2.html#a5e32c81fce1e96f0102dd37b50aa86a9", null ]
+    [ "operator<<", "classrune_1_1_mat2.html#ab9b60f44688ea0b5e9e29492c4824e71", null ]
 ];
