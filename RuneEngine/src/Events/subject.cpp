@@ -22,14 +22,13 @@ int rune::Subject::getNumObservers(void)
 }
 
 ///@param newObserver The observer that would like to be notified of signals.
-/// @return Whether or not the observer was successfully subscribed.
 void rune::Subject::subscribe(Observer& newObserver)
 {
   observers.push_back(&newObserver);
 }
 
 ///@param observer The observer that would no longer like to be notified of signals.
-/// @return Whether or not the observer was successfully subscribed.
+/// @return Whether or not the observer was successfully unsubscribed.
 bool rune::Subject::unsubscribe(Observer& observer)
 {
 

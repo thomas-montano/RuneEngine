@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Rune Engine<span id="projectnumber">&#160;Version 0.2.7-alpha</span>
+   <div id="projectname">Rune Engine<span id="projectnumber">&#160;Version 0.3.0</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -258,12 +258,10 @@ RUNE_ENGINE <a class="el" href="classrune_1_1_vec3.html">rune::Vec3</a>&#160;</t
 <tr class="memdesc:a0dcc2a1a019db8f6ebf5cb48fbdc368d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload of multiplication operator for a scalar on the left. <br /></td></tr>
 <tr class="memitem:a9d5b071fda26b92b7e8f3aebd5b0450a" id="r_a9d5b071fda26b92b7e8f3aebd5b0450a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9d5b071fda26b92b7e8f3aebd5b0450a">updatePhysics</a> (std::vector&lt; <a class="el" href="classrune_1_1_rigid_body.html">rune::RigidBody</a> * &gt; objects, double dT)</td></tr>
 <tr class="memdesc:a9d5b071fda26b92b7e8f3aebd5b0450a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function call made by the game scene to have objects get updated.  <br /></td></tr>
-<tr class="memitem:a3c171aae49eceeeeba7a7755f87f20e3" id="r_a3c171aae49eceeeeba7a7755f87f20e3"><td class="memItemLeft"><a id="a3c171aae49eceeeeba7a7755f87f20e3" name="a3c171aae49eceeeeba7a7755f87f20e3"></a>
-std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt;&#160;</td><td class="memItemRight"><b>broadPhaseCollisions</b> (std::vector&lt; <a class="el" href="classrune_1_1_rigid_body.html">rune::RigidBody</a> * &gt; boundingBoxes)</td></tr>
-<tr class="memdesc:a3c171aae49eceeeeba7a7755f87f20e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broad phase collision responsible for determining collisions based off of <a class="el" href="structrune_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">AABB</a>'s only. <br /></td></tr>
-<tr class="memitem:a5fef3077b3a7831bfa17acfccb65918e" id="r_a5fef3077b3a7831bfa17acfccb65918e"><td class="memItemLeft"><a id="a5fef3077b3a7831bfa17acfccb65918e" name="a5fef3077b3a7831bfa17acfccb65918e"></a>
-std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt;&#160;</td><td class="memItemRight"><b>narrowPhaseCollisions</b> (std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt; possibleCollisions)</td></tr>
-<tr class="memdesc:a5fef3077b3a7831bfa17acfccb65918e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into account. <br /></td></tr>
+<tr class="memitem:a3c171aae49eceeeeba7a7755f87f20e3" id="r_a3c171aae49eceeeeba7a7755f87f20e3"><td class="memItemLeft">std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3c171aae49eceeeeba7a7755f87f20e3">broadPhaseCollisions</a> (std::vector&lt; <a class="el" href="classrune_1_1_rigid_body.html">rune::RigidBody</a> * &gt; boundingBoxes)</td></tr>
+<tr class="memdesc:a3c171aae49eceeeeba7a7755f87f20e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broad phase collision responsible for determining collisions based off of <a class="el" href="structrune_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">AABB</a>'s only.  <br /></td></tr>
+<tr class="memitem:a5fef3077b3a7831bfa17acfccb65918e" id="r_a5fef3077b3a7831bfa17acfccb65918e"><td class="memItemLeft">std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a5fef3077b3a7831bfa17acfccb65918e">narrowPhaseCollisions</a> (std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt; possibleCollisions)</td></tr>
+<tr class="memdesc:a5fef3077b3a7831bfa17acfccb65918e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into account.  <br /></td></tr>
 <tr class="memitem:a5845297089fab6833a3951f904efaa7e" id="r_a5845297089fab6833a3951f904efaa7e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5845297089fab6833a3951f904efaa7e">resolveCollisions</a> (std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt; currentCollision)</td></tr>
 <tr class="memdesc:a5845297089fab6833a3951f904efaa7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the definite collisions in a physically realistic way.  <br /></td></tr>
 <tr class="memitem:a9e1730d90e829952a3d1a71324587197" id="r_a9e1730d90e829952a3d1a71324587197"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9e1730d90e829952a3d1a71324587197">positionalCorrection</a> (<a class="el" href="classrune_1_1_rigid_body.html">rune::RigidBody</a> *object1, <a class="el" href="classrune_1_1_rigid_body.html">rune::RigidBody</a> *object2, double penetration, <a class="el" href="classrune_1_1_vec2.html">rune::Vec2</a> normal)</td></tr>
@@ -293,6 +291,58 @@ std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collisio
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The main namespace to be used for interfacing with the engine. </p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a3c171aae49eceeeeba7a7755f87f20e3" name="a3c171aae49eceeeeba7a7755f87f20e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c171aae49eceeeeba7a7755f87f20e3">&#9670;&#160;</a></span>broadPhaseCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt; rune::broadPhaseCollisions </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classrune_1_1_rigid_body.html">rune::RigidBody</a> * &gt;</td>          <td class="paramname"><span class="paramname"><em>boundingBoxes</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Broad phase collision responsible for determining collisions based off of <a class="el" href="structrune_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">AABB</a>'s only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boundingBoxes</td><td>An array of pointers to rigid bodies that should be considered for collision. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Collision manifolds that have been found to be possibly colliding. </dd></dl>
+
+</div>
+</div>
+<a id="a5fef3077b3a7831bfa17acfccb65918e" name="a5fef3077b3a7831bfa17acfccb65918e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fef3077b3a7831bfa17acfccb65918e">&#9670;&#160;</a></span>narrowPhaseCollisions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt; rune::narrowPhaseCollisions </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structrune_1_1collision.html">rune::collision</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>possibleCollisions</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into account. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">possibleCollisions</td><td>Collision manifolds for <a class="el" href="structrune_1_1_a_a_b_b.html" title="Axis aligned bounding box for each object.">AABB</a>'s that were found to be colliding </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Collision manifolds that have been found to be definitely colliding. </dd></dl>
+
+</div>
+</div>
 <a id="a9e1730d90e829952a3d1a71324587197" name="a9e1730d90e829952a3d1a71324587197"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9e1730d90e829952a3d1a71324587197">&#9670;&#160;</a></span>positionalCorrection()</h2>
 

@@ -5,8 +5,8 @@
     <tab type="mainpage" visible="yes" title=""/>
     <tab type="pages" visible="yes" title="Programming Guides" intro="These guides will help you to utilize the Rune Engine. Feel free to refer back to this page whenever something seems unclear."/>
     <tab type="modules" visible="yes" title="" intro=""/>
-    <tab type="namespaces" visible="no" title="">
-      <tab type="namespacelist" visible="no" title="" intro=""/>
+    <tab type="namespaces" visible="yes" title="">
+      <tab type="namespacelist" visible="yes" title="" intro=""/>
       <tab type="namespacemembers" visible="no" title="" intro=""/>
     </tab>
     <tab type="interfaces" visible="yes" title="">

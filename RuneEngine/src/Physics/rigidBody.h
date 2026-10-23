@@ -25,9 +25,13 @@ class RigidBody;
 struct collision
 {
 
+    ///First rigid body involved in the collision
     RigidBody* objectOne;
+    ///Second rigid body involved in the collision
     RigidBody* objectTwo;
+    ///Unit normal of the collision, objectOne is pushed along it and objectTwo against it to separate them
     rune::Vec2 normalVector;
+    ///Penetration depth along the normal in world coordinates
     double depth;
 
     collision() : objectOne(nullptr), objectTwo(nullptr), normalVector(rune::Vec2(0,0)), depth(0)
@@ -41,7 +45,9 @@ struct collision
 struct AABB
 {
 
+  ///Corner with the smallest x and y values in world coordinates
   rune::Vec2 min;
+  ///Corner with the largest x and y values in world coordinates
   rune::Vec2 max;
 
   AABB() : min(rune::Vec2(0,0)), max(rune::Vec2(0,0))

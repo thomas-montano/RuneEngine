@@ -1,12 +1,12 @@
 var annotated_dup =
 [
     [ "rune", "namespacerune.html", [
-      [ "AABB", "structrune_1_1_a_a_b_b.html", null ],
+      [ "AABB", "structrune_1_1_a_a_b_b.html", "structrune_1_1_a_a_b_b" ],
       [ "Animator", "classrune_1_1_animator.html", "classrune_1_1_animator" ],
       [ "body", "structrune_1_1body.html", "structrune_1_1body" ],
       [ "Camera", "classrune_1_1_camera.html", "classrune_1_1_camera" ],
       [ "Clock", "classrune_1_1_clock.html", "classrune_1_1_clock" ],
-      [ "collision", "structrune_1_1collision.html", null ],
+      [ "collision", "structrune_1_1collision.html", "structrune_1_1collision" ],
       [ "Color", "classrune_1_1_color.html", "classrune_1_1_color" ],
       [ "Component", "classrune_1_1_component.html", "classrune_1_1_component" ],
       [ "Drawable", "classrune_1_1_drawable.html", "classrune_1_1_drawable" ],

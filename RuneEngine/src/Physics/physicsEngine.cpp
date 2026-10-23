@@ -77,7 +77,7 @@ void rune::updatePhysics(std::vector<rune::RigidBody*> objects, double dT)
  * @param boundingBoxes An array of pointers to rigid bodies that should be considered for collision.
  * @return Collision manifolds that have been found to be possibly colliding.
 */
-std::vector<rune::collision> rune::broadPhaseCollisions(std::vector<RigidBody*> boundingBoxes)
+std::vector<rune::collision> rune::broadPhaseCollisions(std::vector<rune::RigidBody*> boundingBoxes)
 {
 
   std::vector<collision> collisions(0); //Total collisions detected
@@ -167,7 +167,7 @@ std::vector<rune::collision> rune::broadPhaseCollisions(std::vector<RigidBody*> 
  * @param possibleCollisions Collision manifolds for AABB's that were found to be colliding
  * @return Collision manifolds that have been found to be definitely colliding.
 */
-std::vector<rune::collision> rune::narrowPhaseCollisions(std::vector<collision> possibleCollisions)
+std::vector<rune::collision> rune::narrowPhaseCollisions(std::vector<rune::collision> possibleCollisions)
 {
 
   std::vector<collision> definiteCollisions(0);

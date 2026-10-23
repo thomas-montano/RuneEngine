@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['x_0',['x',['../classrune_1_1_vec2.html#ae0fbd4d0a9ed1d125fea740a3314db84',1,'rune::Vec2::x'],['../classrune_1_1_vec3.html#a0901a5b5749e0d3fbdfb9bf598d0fbe4',1,'rune::Vec3::x']]],
-  ['xpos_1',['xPos',['../structrune_1_1body.html#a4e7148218e0a457c1f604823789c36d9',1,'rune::body']]]
+  ['white_0',['White',['../classrune_1_1_color.html#af6b662716f2a1a423791acb3a9f609e8',1,'rune::Color']]],
+  ['width_1',['width',['../classrune_1_1_rect.html#a52874419095d119bf4089970da98fccc',1,'rune::Rect']]]
 ];

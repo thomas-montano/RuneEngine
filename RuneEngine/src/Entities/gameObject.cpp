@@ -47,8 +47,7 @@ void rune::GameObject::instantiate(rune::GameObject& newObject)
 }
 
 /**
- * \param index The position in the components vector to be accessed.
- * \return A pointer to the component requested.
+ * \return A reference to the list of components attached to the game object.
  */
 std::vector<rune::Component*>& rune::GameObject::getComponentList()
 {

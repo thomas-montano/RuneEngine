@@ -27,7 +27,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="logo.png"/></td>
   <td id="projectalign">
-   <div id="projectname">Rune Engine<span id="projectnumber">&#160;Version 0.2.7-alpha</span>
+   <div id="projectname">Rune Engine<span id="projectnumber">&#160;Version 0.3.0</span>
    </div>
    <div id="projectbrief">Documentation for how to make games using the Rune Engine.</div>
   </td>
@@ -148,12 +148,16 @@ Collaboration diagram for rune::collision:</div>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a5b682e3e6de3f8fd0e596c100b06fe0b" id="r_a5b682e3e6de3f8fd0e596c100b06fe0b"><td class="memItemLeft"><a id="a5b682e3e6de3f8fd0e596c100b06fe0b" name="a5b682e3e6de3f8fd0e596c100b06fe0b"></a>
 <a class="el" href="classrune_1_1_rigid_body.html">RigidBody</a> *&#160;</td><td class="memItemRight"><b>objectOne</b></td></tr>
+<tr class="memdesc:a5b682e3e6de3f8fd0e596c100b06fe0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">First rigid body involved in the collision. <br /></td></tr>
 <tr class="memitem:a23b50e55777e4ea7ceb26c14e7904713" id="r_a23b50e55777e4ea7ceb26c14e7904713"><td class="memItemLeft"><a id="a23b50e55777e4ea7ceb26c14e7904713" name="a23b50e55777e4ea7ceb26c14e7904713"></a>
 <a class="el" href="classrune_1_1_rigid_body.html">RigidBody</a> *&#160;</td><td class="memItemRight"><b>objectTwo</b></td></tr>
+<tr class="memdesc:a23b50e55777e4ea7ceb26c14e7904713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Second rigid body involved in the collision. <br /></td></tr>
 <tr class="memitem:aa24e259c2fed406aa8df2705d99a3be6" id="r_aa24e259c2fed406aa8df2705d99a3be6"><td class="memItemLeft"><a id="aa24e259c2fed406aa8df2705d99a3be6" name="aa24e259c2fed406aa8df2705d99a3be6"></a>
 <a class="el" href="classrune_1_1_vec2.html">rune::Vec2</a>&#160;</td><td class="memItemRight"><b>normalVector</b></td></tr>
+<tr class="memdesc:aa24e259c2fed406aa8df2705d99a3be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unit normal of the collision, objectOne is pushed along it and objectTwo against it to separate them. <br /></td></tr>
 <tr class="memitem:a68217743576b29ee006a66abc32f323a" id="r_a68217743576b29ee006a66abc32f323a"><td class="memItemLeft"><a id="a68217743576b29ee006a66abc32f323a" name="a68217743576b29ee006a66abc32f323a"></a>
 double&#160;</td><td class="memItemRight"><b>depth</b></td></tr>
+<tr class="memdesc:a68217743576b29ee006a66abc32f323a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Penetration depth along the normal in world coordinates. <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Collision manifold used for reporting rigid body collisions. </p>

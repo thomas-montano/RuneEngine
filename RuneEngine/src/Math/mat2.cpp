@@ -266,7 +266,6 @@ rune::Mat2 rune::operator*(double scalar, Mat2& mat)
 }
 
 /**
- * \param right The matrix to invert.
  * \return The inverse of the square matrix.
  */
 rune::Mat2 rune::Mat2::invert()
