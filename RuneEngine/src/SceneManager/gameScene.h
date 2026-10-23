@@ -21,7 +21,6 @@
 #include <Renderer\camera.h>
 #include <Renderer\frameBuffer.h>
 #include <DataStructures\list.h>
-//#include <Physics\world.h>
 
 namespace rune{
 

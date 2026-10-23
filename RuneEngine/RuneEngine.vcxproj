@@ -101,19 +101,14 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Renderer\computeShader.cpp" />
     <ClCompile Include="src\Events\subject.cpp" />
     <ClCompile Include="src\imgui\imgui_tables.cpp" />
-    <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
-    <ClCompile Include="src\Physics\Colliders\circleCollider.cpp" />
-    <ClCompile Include="src\Physics\world.cpp" />
     <ClCompile Include="src\ResourceManager\resource.cpp" />
     <ClCompile Include="src\ResourceManager\resourceManager.cpp" />
     <ClCompile Include="src\Animation\animator.cpp" />
     <ClCompile Include="src\Entities\component.cpp" />
     <ClCompile Include="src\Input\mouse.cpp" />
     <ClCompile Include="src\Math\vec3.cpp" />
-    <ClCompile Include="src\Physics\Colliders\collider.cpp" />
     <ClCompile Include="src\Renderer\camera.cpp" />
     <ClCompile Include="src\imgui\imgui.cpp" />
     <ClCompile Include="src\imgui\imgui_demo.cpp" />
@@ -176,13 +171,8 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
     <ClCompile Include="src\YAML\tag.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Renderer\computeShader.h" />
     <ClInclude Include="src\Events\observer.h" />
     <ClInclude Include="src\Events\subject.h" />
-    <ClInclude Include="src\Physics\AABB.h" />
-    <ClInclude Include="src\Physics\Colliders\boxCollider.h" />
-    <ClInclude Include="src\Physics\Colliders\circleCollider.h" />
-    <ClInclude Include="src\Physics\collision.h" />
     <ClInclude Include="src\Renderer\rect.h" />
     <ClInclude Include="src\ResourceManager\resource.h" />
     <ClInclude Include="src\ResourceManager\resourceManager.h" />
@@ -191,7 +181,6 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
     <ClInclude Include="src\Entities\component.h" />
     <ClInclude Include="src\Input\mouse.h" />
     <ClInclude Include="src\Math\vec3.h" />
-    <ClInclude Include="src\Physics\Colliders\collider.h" />
     <ClInclude Include="src\Renderer\camera.h" />
     <ClInclude Include="src\imgui\imconfig.h" />
     <ClInclude Include="src\imgui\imgui.h" />
@@ -228,7 +217,6 @@ xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platf
     <ClInclude Include="src\Entities\transform.h" />
     <ClInclude Include="src\SceneManager\gameScene.h" />
     <ClInclude Include="src\SceneManager\sceneManager.h" />
-    <ClInclude Include="src\Physics\world.h" />
     <ClInclude Include="src\SceneManager\SceneSerializer.h" />
     <ClInclude Include="src\YAML\collectionstack.h" />
     <ClInclude Include="src\YAML\directives.h" />
