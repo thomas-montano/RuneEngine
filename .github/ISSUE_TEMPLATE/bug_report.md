@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Note: for support questions, please email montanot@mst.edu. This repository's issues are reserved for feature requests and bug reports.
+Note: this repository's issues are reserved for feature requests and bug reports.
 
 **Describe the bug**
 A clear and concise description of what the bug is.
@@ -32,8 +32,8 @@ If applicable, add screenshots to help explain your problem.
 Please paste your call stack here.
 
 **Please complete the following information:**
- - Engine Version [e.g. v0.2.6-alpha]
- - Visual Studio Version [e.g. Visual Studio 2019 16.4]
+ - Engine Version [e.g. v0.3.0]
+ - Visual Studio Version [e.g. Visual Studio 2022 17.14]
 
 **Additional context**
 Add any other context about the problem here.

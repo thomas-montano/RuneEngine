@@ -1,4 +1,4 @@
-![Private Eye Logo](Logo.png)
+![Rune Engine Logo](Logo.png)
 # Rune Engine
 This is the GitHub for the Rune Engine. The engine was developed by Thomas Montano from 2020 to 2021.
 

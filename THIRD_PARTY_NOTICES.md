@@ -5,10 +5,10 @@ distributed under its own license, reproduced or referenced below.
 
 | Component | Version | Location | License |
 | --- | --- | --- | --- |
-| [GLEW](http://glew.sourceforge.net/) | | `Dependencies/GLEW` | Modified BSD, Mesa 3-D (MIT) and Khronos (MIT); see `Dependencies/GLEW/LICENSE.txt` |
+| [GLEW](http://glew.sourceforge.net/) | 2.1.0 | `Dependencies/GLEW` | Modified BSD, Mesa 3-D (MIT) and Khronos (MIT); see `Dependencies/GLEW/LICENSE.txt` |
 | [GLFW](https://www.glfw.org/) | 3.3.2 | `Dependencies/GLFW` | zlib/libpng |
 | [Dear ImGui](https://github.com/ocornut/imgui) | 1.81 WIP (docking branch) | `RuneEngine/src/imgui` | MIT |
-| [yaml-cpp](https://github.com/jbeder/yaml-cpp) | | `Dependencies/yaml-cpp`, `RuneEngine/src/YAML` | MIT |
+| [yaml-cpp](https://github.com/jbeder/yaml-cpp) | 0.7.0 pre-release snapshot (early 2021) | `Dependencies/yaml-cpp`, `RuneEngine/src/YAML` | MIT |
 | [stb_image](https://github.com/nothings/stb) | 2.25 | `RuneEngine/src/Renderer/stb_image.h` | MIT or public domain (MIT shown below) |
 
 ## GLEW
