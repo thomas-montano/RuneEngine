@@ -8,7 +8,7 @@
 class RigidBodyComponent : public CreatedComponent
 {
 public:
-  physics::RigidBody body;
+  rune::RigidBody body;
   float gravity[2];
   float mass = 0.0f;
   float bounds[2];

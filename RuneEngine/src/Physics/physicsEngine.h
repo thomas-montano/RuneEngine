@@ -1,6 +1,6 @@
 /**
- * @namespace physics
- * @brief The physics module responsible for handling and resolving collisions between physics::Collider2D.
+ * @file physicsEngine.h
+ * @brief The physics module responsible for handling and resolving collisions between rune::RigidBody components.
  * 
  * @author Thomas Montano
  * @date March 2 2020
@@ -16,18 +16,18 @@
 #include <math.h>
 #include <algorithm>
 
-namespace physics{
+namespace rune{
 
 ///Function call made by the game scene to have objects get updated.
-void updatePhysics(std::vector<physics::RigidBody*> objects, double dT);
+void updatePhysics(std::vector<rune::RigidBody*> objects, double dT);
 ///Broad phase collision responsible for determining collisions based off of AABB's only.
-std::vector<physics::collision> broadPhaseCollisions(std::vector<physics::RigidBody*> boundingBoxes);
+std::vector<rune::collision> broadPhaseCollisions(std::vector<rune::RigidBody*> boundingBoxes);
 ///Narrow phase collision responsible for determining if a possible collision is actually a collision after taking rotation into account.
-std::vector<physics::collision> narrowPhaseCollisions(std::vector<physics::collision> possibleCollisions);
+std::vector<rune::collision> narrowPhaseCollisions(std::vector<rune::collision> possibleCollisions);
 ///Resolve the definite collisions in a physically realistic way.
-void resolveCollisions(std::vector<physics::collision> currentCollision);
+void resolveCollisions(std::vector<rune::collision> currentCollision);
 ///Correct the position of the object each frame so that it doesn't look like two objects are overlapping.
-void positionalCorrection(physics::RigidBody* object1, physics::RigidBody* object2, double penetration, rune::Vec2 normal);
+void positionalCorrection(rune::RigidBody* object1, rune::RigidBody* object2, double penetration, rune::Vec2 normal);
 ///Solve for the hypotenuse given the two sides of a triangle.
 double pythagoreanSolve(double a, double b);
 

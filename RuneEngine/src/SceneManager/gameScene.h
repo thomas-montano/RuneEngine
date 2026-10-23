@@ -30,7 +30,7 @@ protected:
   ///Whether or not the scene is currently active.
   bool isStateActive = false;
   ///The physics bodies in the scene to be simulated.
-  std::vector<physics::RigidBody*> physicsBodies;
+  std::vector<rune::RigidBody*> physicsBodies;
   ///Objects in the scene that need to have their components updated every frame.
   List<rune::GameObject*> sceneObjects;
   ///The drawable objects contained in the scene that should be rendered to the screen.
@@ -75,7 +75,7 @@ public:
   ///Submits a drawable object into the rendering stack to be drawn to the screen each frame.
   void submitToRenderer(rune::Drawable&);
   ///Add a physics object to the scene.
-  void addPhysicsObject(physics::RigidBody& body);
+  void addPhysicsObject(rune::RigidBody& body);
 
   friend class SceneSerializer;
 

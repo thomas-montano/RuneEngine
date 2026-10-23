@@ -149,11 +149,11 @@ void rune::SceneSerializer::serializeObject(YAML::Emitter& out, rune::GameObject
     out << YAML::EndMap;
   }
 
-  auto ptrBody = object.getComponent<physics::RigidBody>();
+  auto ptrBody = object.getComponent<rune::RigidBody>();
 
   if(ptrBody != nullptr)
   {
-    physics::body body = *ptrBody->getBodyStruct();
+    rune::body body = *ptrBody->getBodyStruct();
 
     out << YAML::Key << "RigidBody";
     out << YAML::BeginMap;

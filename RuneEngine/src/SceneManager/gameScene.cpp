@@ -90,7 +90,7 @@ void rune::GameScene::addObjectToScene(rune::GameObject& newObject)
   sceneObjects.add(&newObject);
 
   //If the new object has a physics component on it, add it to the physicsBody vector.
-  auto tempPtr = newObject.getComponent<physics::RigidBody>();
+  auto tempPtr = newObject.getComponent<rune::RigidBody>();
 
   if(tempPtr)
     physicsBodies.push_back(tempPtr);
@@ -103,7 +103,7 @@ void rune::GameScene::submitToRenderer(rune::Drawable& newDrawable)
   drawableObjects.push_back(&newDrawable);
 }
 
-void rune::GameScene::addPhysicsObject(physics::RigidBody& body)
+void rune::GameScene::addPhysicsObject(rune::RigidBody& body)
 {
   physicsBodies.push_back(&body);
 }
@@ -179,7 +179,7 @@ void rune::GameScene::updatePhysics(void)
   //Deal with physics updates
   while(accumulator > dT)
   {
-    physics::updatePhysics(physicsBodies, dT);
+    rune::updatePhysics(physicsBodies, dT);
 
     accumulator -= dT;
   }

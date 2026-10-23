@@ -1,5 +1,5 @@
 /**
- * @class physics::RigidBody
+ * @class rune::RigidBody
  * @brief Game object component that allows a game object to have collisions with other objects.
  * 
  * @author Thomas Montano
@@ -16,7 +16,7 @@
 #include <Entities\gameObject.h>
 #include <Renderer\rectangleShape.h>
 
-namespace physics{
+namespace rune{
 
 //Forward declaration of rigid body class
 class RigidBody;
@@ -99,7 +99,7 @@ private:
     std::vector<collision> involvedCollisions;
 
 public:
-    ///Initialize the physics::RigidBody to be approximately the same size as the rune::GameObject
+    ///Initialize the rune::RigidBody to be approximately the same size as the rune::GameObject
     virtual void start();
     ///Constructor to set up mass data of the RigidBody
     RigidBody(double mass = 0, rune::Vec2 gravity = rune::Vec2(0,0));
@@ -178,7 +178,7 @@ public:
 /**
  * @page physics Physics
  * 
- * Adding physical interactions is an important and fun part of making your game! In Rune, adding physics is as simple as attaching a physics::RigidBody component to
+ * Adding physical interactions is an important and fun part of making your game! In Rune, adding physics is as simple as attaching a rune::RigidBody component to
  * your rune::GameObject.
  * 
  * In your GameObject constructor, you will be required to initialize the RigidBody in one of two ways. One way is by doing nothing, this will create a RigidBody component
@@ -195,7 +195,7 @@ public:
  * class Player : public rune::GameObject
  * {
  * public:
- *  physics::RigidBody myBody;
+ *  rune::RigidBody myBody;
  * 
  *  Player();
  * 
@@ -206,7 +206,7 @@ public:
  * @section massChange Giving your RigidBody movement.
  * 
  * After you have initialized a RigidBody in your GameObject header file, go ahead and apply it to the GameObject. Remember that both of the arguments in the RigidBody
- * constructor are optional, and can be left out completely. Refer to the physics::RigidBody page for more information about these parameters.
+ * constructor are optional, and can be left out completely. Refer to the rune::RigidBody page for more information about these parameters.
  * 
  * @code
  * 

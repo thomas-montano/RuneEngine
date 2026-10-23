@@ -86,8 +86,7 @@ public:
  * public:
  *  rune::Sprite sprite;
  *  rune::AnimationController animController;
- *  physics::RigidBody body;
- *  physics::Collider2D collider;
+ *  rune::RigidBody body;
  * 
  *  //Create a constructor for object initialization.
  *  Player();
@@ -118,7 +117,6 @@ public:
  *  addComponent(sprite);
  *  addComponent(animController);
  *  addComponent(body);
- *  addComponent(collider);
  * 
  *  //This is also where you should add animations for your object.
  *  animController.addAnimation("idle",16,2,2,"Path to your sprite sheet");

@@ -35,7 +35,7 @@ namespace rune{
  * page Signals Signals
  * 
  * Objects in Rune communicate with each other through the concept of signals. For instance, when a rune::RigidBody collides with another rune::RigidBody a signal is sent to the parent rune::GameObject that a collision has happened.
- * This subsequently calls the `onCollisionEnter(physics::collision)` function on each component of that rune::GameObject.
+ * This subsequently calls the `onCollisionEnter(rune::collision)` function on each component of that rune::GameObject.
  * 
  * 
  */

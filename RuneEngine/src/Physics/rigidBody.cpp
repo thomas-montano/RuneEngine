@@ -7,7 +7,7 @@
  * \param mass The mass in units that the RigidBody will have.
  * \param gravity The gravity vector that this RigidBody will be subjected to.
  */
-physics::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::Vec2(0,0)*/)
+rune::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::Vec2(0,0)*/)
 {
 
   if ((int)mass == 0)
@@ -31,7 +31,7 @@ physics::RigidBody::RigidBody(double mass /*= 0*/, rune::Vec2 gravity /*= rune::
 
 }
 
-void physics::RigidBody::start()
+void rune::RigidBody::start()
 {
   //This is very temporary and needs to be handled better eventually!
   rune::Vec3 dimensions = rune::Vec3(parentObject->transform.getBounds());//parentObject->transform.getScale();
@@ -48,7 +48,7 @@ void physics::RigidBody::start()
  * @param mass Mass of the RigidBody to be used for physical simulations.
  * @param rotation Whether or not the RigidBody is allowed to rotate in 2D space.
 */
-void physics::RigidBody::setUpObject(int width, int height, double mass, bool rotation)
+void rune::RigidBody::setUpObject(int width, int height, double mass, bool rotation)
 {
 
     objectBody.vertexes[0] = rune::Vec2(-0.5*width,0.5*height); //Top left
@@ -76,7 +76,7 @@ void physics::RigidBody::setUpObject(int width, int height, double mass, bool ro
 /**
  * @param velocity Velocity vector to be added to the current object velocity.
 */
-void physics::RigidBody::addVelocity(rune::Vec2 velocity)
+void rune::RigidBody::addVelocity(rune::Vec2 velocity)
 {
 
     objectBody.velocity.x += velocity.x;
@@ -87,7 +87,7 @@ void physics::RigidBody::addVelocity(rune::Vec2 velocity)
 /**
  * @param newVel Velocity vector that will override the current object velocity.
 */
-void physics::RigidBody::setVelocity(rune::Vec2 newVel)
+void rune::RigidBody::setVelocity(rune::Vec2 newVel)
 {
     objectBody.velocity.x = newVel.x;
     objectBody.velocity.y = newVel.y;
@@ -96,7 +96,7 @@ void physics::RigidBody::setVelocity(rune::Vec2 newVel)
 /**
  * @param dT Amount of time in seconds that has passed since the last update. Used to calculate change in position based on velocity.
 */
-void physics::RigidBody::updatePosition(double dT)
+void rune::RigidBody::updatePosition(double dT)
 {
 
     objectBody.xPos += objectBody.velocity.x * dT;
@@ -109,7 +109,7 @@ void physics::RigidBody::updatePosition(double dT)
 /**
  * \param alpha linear interpolation factor.
  */
-void physics::RigidBody::interpolatePosition(double alpha)
+void rune::RigidBody::interpolatePosition(double alpha)
 {
 
   rune::Vec2 oldPosition = objectBody.oldPosition;
@@ -125,7 +125,7 @@ void physics::RigidBody::interpolatePosition(double alpha)
 
 }
 
-void physics::RigidBody::updateAABB(void)
+void rune::RigidBody::updateAABB(void)
 {
 
     double rotation = std::abs(static_cast<int>(objectBody.angleOfRotation)) % 180;
@@ -154,7 +154,7 @@ void physics::RigidBody::updateAABB(void)
 /**
  * \param newMass The new mass of the object.
  */
-void physics::RigidBody::setMass(float newMass)
+void rune::RigidBody::setMass(float newMass)
 {
   objectBody.invMass = (int)newMass == 0 ? 0 : (1.0 / newMass);
 }
@@ -162,7 +162,7 @@ void physics::RigidBody::setMass(float newMass)
 /**
  * @return The current gravity the object is being subjected to.
 */
-rune::Vec2 physics::RigidBody::getGravity(void)
+rune::Vec2 rune::RigidBody::getGravity(void)
 {
     return objectBody.gravityFactor;
 }
@@ -170,7 +170,7 @@ rune::Vec2 physics::RigidBody::getGravity(void)
 /**
  * @return Get 1 divided by the mass of the RigidBody.
 */
-double physics::RigidBody::getInvMass(void)
+double rune::RigidBody::getInvMass(void)
 {
     return objectBody.invMass;
 }
@@ -178,7 +178,7 @@ double physics::RigidBody::getInvMass(void)
 /**
  * @return Get the restitution of the object.
 */
-double physics::RigidBody::getRestitution(void)
+double rune::RigidBody::getRestitution(void)
 {
     return objectBody.restitution;
 }
@@ -186,7 +186,7 @@ double physics::RigidBody::getRestitution(void)
 /**
  * @param newRest Override the restitution of the RigidBody.
 */
-void physics::RigidBody::setRestitution(double newRest)
+void rune::RigidBody::setRestitution(double newRest)
 {
     objectBody.restitution = newRest > 1.0 ? 1.0:newRest;
 }
@@ -194,7 +194,7 @@ void physics::RigidBody::setRestitution(double newRest)
 /**
  * @param angularVel Angular velocity to be added to the RigidBody.
 */
-void physics::RigidBody::addAngularVelocity(double angularVel)
+void rune::RigidBody::addAngularVelocity(double angularVel)
 {
     objectBody.angularVelocity += angularVel;
 }
@@ -202,7 +202,7 @@ void physics::RigidBody::addAngularVelocity(double angularVel)
 /**
  * @param angle New orientation for the RigidBody to be set to.
 */
-void physics::RigidBody::setRotation(double angle)
+void rune::RigidBody::setRotation(double angle)
 {
     objectBody.angleOfRotation = angle;
 }
@@ -210,7 +210,7 @@ void physics::RigidBody::setRotation(double angle)
 /**
  * @return the AABB associated with the RigidBody.
 */
-physics::AABB physics::RigidBody::getBoundingBox(void)
+rune::AABB rune::RigidBody::getBoundingBox(void)
 {
     return objectBody.boundingBox;
 }
@@ -218,7 +218,7 @@ physics::AABB physics::RigidBody::getBoundingBox(void)
 /**
  * @param newPos Set the position of the RigidBody in world coordinates.
 */
-void physics::RigidBody::setPosition(rune::Vec2 newPos)
+void rune::RigidBody::setPosition(rune::Vec2 newPos)
 {
     objectBody.xPos = newPos.x;
     objectBody.yPos = newPos.y;
@@ -227,7 +227,7 @@ void physics::RigidBody::setPosition(rune::Vec2 newPos)
 /**
  * @param newPos Position vector to be added to the object's current position.
 */
-void physics::RigidBody::addPosition(rune::Vec2 newPos)
+void rune::RigidBody::addPosition(rune::Vec2 newPos)
 {
     objectBody.xPos += newPos.x;
     objectBody.yPos += newPos.y;
@@ -236,7 +236,7 @@ void physics::RigidBody::addPosition(rune::Vec2 newPos)
 /**
  * @return A vector that corresponds to the RigidBody position.
 */
-rune::Vec2 physics::RigidBody::getPosition(void)
+rune::Vec2 rune::RigidBody::getPosition(void)
 {
     return rune::Vec2(objectBody.xPos,objectBody.yPos);
 }
@@ -245,7 +245,7 @@ rune::Vec2 physics::RigidBody::getPosition(void)
  * @param i The index of the RigidBody vertex starting in the top left and going counter clockwise around.
  * @return The location of the vertex in world coordinates.
 */
-rune::Vec2 physics::RigidBody::getVertex(int i)
+rune::Vec2 rune::RigidBody::getVertex(int i)
 {
     double xPrime, yPrime;
     double x = objectBody.vertexes[i].x;
@@ -266,7 +266,7 @@ rune::Vec2 physics::RigidBody::getVertex(int i)
 /**
  * @return The velocity vector of the RigidBody.
 */
-rune::Vec2 physics::RigidBody::getVelocity(void)
+rune::Vec2 rune::RigidBody::getVelocity(void)
 {
     return objectBody.velocity;
 }
@@ -274,12 +274,12 @@ rune::Vec2 physics::RigidBody::getVelocity(void)
 /**
  * @return The coefficient of static friction for the RigidBody.
 */
-double physics::RigidBody::getStaticFriction(void)
+double rune::RigidBody::getStaticFriction(void)
 {
     return objectBody.staticFriction;
 }
 
-void physics::RigidBody::setStaticFriction(float friction)
+void rune::RigidBody::setStaticFriction(float friction)
 {
   objectBody.staticFriction = friction;
 }
@@ -287,12 +287,12 @@ void physics::RigidBody::setStaticFriction(float friction)
 /**
  * @return The coefficient of dynamic friction for the RigidBody.
 */
-double physics::RigidBody::getDynamicFriction(void)
+double rune::RigidBody::getDynamicFriction(void)
 {
     return objectBody.dynamicFriction;
 }
 
-void physics::RigidBody::setDynamicFriction(float friction)
+void rune::RigidBody::setDynamicFriction(float friction)
 {
   objectBody.dynamicFriction = friction;
 }
@@ -300,7 +300,7 @@ void physics::RigidBody::setDynamicFriction(float friction)
 /**
  * @return The current angle of the RigidBody.
 */
-double physics::RigidBody::getOrientation(void)
+double rune::RigidBody::getOrientation(void)
 {
     return objectBody.angleOfRotation;
 }
@@ -308,7 +308,7 @@ double physics::RigidBody::getOrientation(void)
 /**
  * @return The width in pixels of the RigidBody object.
 */
-double physics::RigidBody::getWidth(void)
+double rune::RigidBody::getWidth(void)
 {
     return 2*objectBody.vertexes[1].x;
 }
@@ -316,7 +316,7 @@ double physics::RigidBody::getWidth(void)
 /**
  * @return The height in pixels of the RigidBody object.
 */
-double physics::RigidBody::getHeight(void)
+double rune::RigidBody::getHeight(void)
 {
     return 2*objectBody.vertexes[1].y;
 }
@@ -324,7 +324,7 @@ double physics::RigidBody::getHeight(void)
 /**
  * @return 1 divided by the rotational inertia of the RigidBody.
 */
-double physics::RigidBody::getInvIntertia(void)
+double rune::RigidBody::getInvIntertia(void)
 {
     return objectBody.invInertia;
 }
@@ -332,7 +332,7 @@ double physics::RigidBody::getInvIntertia(void)
 /**
  * @return The position vector of the RigidBody from last frame.
 */
-rune::Vec2 physics::RigidBody::getPreviousPosition(void)
+rune::Vec2 rune::RigidBody::getPreviousPosition(void)
 {
     return objectBody.oldPosition;
 }
@@ -340,13 +340,13 @@ rune::Vec2 physics::RigidBody::getPreviousPosition(void)
 /**
  * @param newPos The position that the RigidBody was last frame.
 */
-void physics::RigidBody::setPreviousPosition(rune::Vec2 newPos)
+void rune::RigidBody::setPreviousPosition(rune::Vec2 newPos)
 {
     objectBody.oldPosition.x = newPos.x;
     objectBody.oldPosition.y = newPos.y;
 }
 
-void physics::RigidBody::clearCollisions(void)
+void rune::RigidBody::clearCollisions(void)
 {
   involvedCollisions.clear();
 }
@@ -354,7 +354,7 @@ void physics::RigidBody::clearCollisions(void)
 /**
  * @param newCollision Collision manifold to be stored in the GameObject associated with the RigidBody.
 */
-void physics::RigidBody::addCollision(collision newCollision)
+void rune::RigidBody::addCollision(collision newCollision)
 {
   involvedCollisions.push_back(newCollision);
 }
@@ -362,7 +362,7 @@ void physics::RigidBody::addCollision(collision newCollision)
 /**
  * @return The collision manifolds associated with this RigidBody.
 */
-std::vector<physics::collision> physics::RigidBody::getCollisions(void)
+std::vector<rune::collision> rune::RigidBody::getCollisions(void)
 {
   return involvedCollisions;
 }
@@ -370,7 +370,7 @@ std::vector<physics::collision> physics::RigidBody::getCollisions(void)
 /**
  * \return A pointer to the RigidBody data struct.
  */
-physics::body* physics::RigidBody::getBodyStruct(void)
+rune::body* rune::RigidBody::getBodyStruct(void)
 {
   return &objectBody;
 }

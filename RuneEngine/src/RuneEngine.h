@@ -40,7 +40,7 @@
 #include <Renderer/texture.h>
 #include <Renderer/drawable.h>
 
-#include <physics/rigidBody.h>
+#include <Physics/rigidBody.h>
 
 
 #ifndef RUNE_BUILD_DLL

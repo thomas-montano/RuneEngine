@@ -440,7 +440,7 @@ void MenuBar::displayComponents()
   if (ImGui::MenuItem("Rigid Body", NULL, false, disabled))
   {
 
-    RigidBodyComponent* newComponent = new RigidBodyComponent("physics::RigidBody", "RigidBody", EditorWindow::getWindow()->selectedObject->gameObject, "test");
+    RigidBodyComponent* newComponent = new RigidBodyComponent("rune::RigidBody", "RigidBody", EditorWindow::getWindow()->selectedObject->gameObject, "test");
     EditorWindow::getWindow()->selectedObject->objectComponents.push_back(newComponent);
 
   }
