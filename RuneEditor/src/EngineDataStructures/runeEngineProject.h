@@ -10,7 +10,7 @@ private:
 
 public:
 
-  std::string windowTag = " - Rune Engine Editor Version 0.2.7 - alpha";
+  std::string windowTag = " - Rune Engine Editor Version 0.3.0";
 
   std::vector<CreatedScene*> projectScenes;
   std::string projectSaveLocation;
