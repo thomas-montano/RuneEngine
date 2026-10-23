@@ -1,0 +1,115 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Build and draft the release
+    # Built with v143 so the binaries link from both Visual Studio 2022 and 2026
+    runs-on: windows-2022
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Check the version matches the tag
+        shell: pwsh
+        run: |
+          $version = $env:GITHUB_REF_NAME.Substring(1)
+          foreach ($file in 'config.dox', 'RuneEditor/src/EngineDataStructures/runeEngineProject.h') {
+            if (-not (Select-String -Path $file -SimpleMatch "Version $version`"" -Quiet)) {
+              Write-Output "::error file=$file::$file does not say Version $version"
+              exit 1
+            }
+          }
+          "VERSION=$version" >> $env:GITHUB_ENV
+          "PACKAGE=RuneEngine-$version-win64" >> $env:GITHUB_ENV
+
+      - uses: microsoft/setup-msbuild@v3
+
+      - name: Build Debug
+        run: msbuild RuneEngine.sln -m -p:Configuration=Debug -p:Platform=x64
+
+      - name: Build Release
+        run: msbuild RuneEngine.sln -m -p:Configuration=Release -p:Platform=x64
+
+      - name: Package
+        shell: pwsh
+        run: |
+          $root = "package/$env:PACKAGE"
+          $src = (Resolve-Path RuneEngine/src).Path
+
+          # Headers keep their folders because RuneEngine.h includes them as <Entities/gameObject.h>,
+          # and the shaders come along because sprite.h and rectangleShape.h #include them
+          Get-ChildItem $src -Recurse -Include *.h, *.glsl | ForEach-Object {
+            $target = Join-Path "$root/include" $_.FullName.Substring($src.Length + 1)
+            New-Item -ItemType Directory -Force (Split-Path $target) | Out-Null
+            Copy-Item $_.FullName $target
+          }
+
+          New-Item -ItemType Directory -Force "$root/lib", "$root/bin", "$root/editor" | Out-Null
+          Copy-Item bin/Release-x64/RuneEngine/RuneEngine.lib, bin/Debug-x64/RuneEngine/RuneEngine-d.lib "$root/lib"
+          Copy-Item bin/Release-x64/RuneEngine/RuneEngine.dll, bin/Release-x64/RuneEngine/RuneEngine.pdb,
+                    bin/Debug-x64/RuneEngine/RuneEngine-d.dll, bin/Debug-x64/RuneEngine/RuneEngine-d.pdb "$root/bin"
+          Copy-Item bin/Release-x64/RuneEditor/RuneEditor.exe, bin/Release-x64/RuneEditor/RuneEngine.dll "$root/editor"
+          Copy-Item LICENSE, THIRD_PARTY_NOTICES.md $root
+
+          # Windows' tar writes standard zip paths, Compress-Archive can write backslashes
+          & "$env:SystemRoot\System32\tar.exe" -a -c -f "$env:PACKAGE.zip" -C package $env:PACKAGE
+          $hash = (Get-FileHash "$env:PACKAGE.zip" -Algorithm SHA256).Hash.ToLower()
+          [IO.File]::WriteAllText("$PWD/$env:PACKAGE.zip.sha256", "$hash  $env:PACKAGE.zip`n")
+
+      - name: Draft the GitHub release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $flags = '--draft', '--generate-notes', '--title', "Rune Engine v$env:VERSION Release"
+          if ($env:VERSION.Contains('-')) { $flags += '--prerelease' }
+          gh release create $env:GITHUB_REF_NAME "$env:PACKAGE.zip" "$env:PACKAGE.zip.sha256" @flags
+
+  docs:
+    name: Deploy the documentation
+    needs: release
+    # Same platform the docs are generated on locally, so the output matches
+    runs-on: windows-2022
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency: pages
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install Doxygen and Graphviz
+        shell: pwsh
+        run: |
+          $zip = "$env:RUNNER_TEMP/doxygen.zip"
+          Invoke-WebRequest https://github.com/doxygen/doxygen/releases/download/Release_1_18_0/doxygen-1.18.0.windows.x64.bin.zip -OutFile $zip
+          Expand-Archive $zip "$env:RUNNER_TEMP/doxygen"
+          "$env:RUNNER_TEMP/doxygen" >> $env:GITHUB_PATH
+          choco install graphviz --version 16.1.0 --no-progress -y
+          "C:\Program Files\Graphviz\bin" >> $env:GITHUB_PATH
+
+      - name: Generate the documentation
+        shell: pwsh
+        run: |
+          # Doxygen still succeeds when dot is missing, it just leaves the diagrams out
+          dot -V
+          doxygen config.dox
+          # docs/extras holds the Doxygen inputs (footer, stylesheet, images), not part of the site
+          Remove-Item -Recurse docs/extras
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v5

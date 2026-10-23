@@ -53,3 +53,7 @@ dkms.conf
 .vs/
 bin/
 bin-int/
+
+# Doxygen output, deployed to GitHub Pages by the release workflow
+docs/*
+!docs/extras/
