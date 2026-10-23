@@ -85,7 +85,7 @@ public:
  * 
  * public:
  *  rune::Sprite sprite;
- *  rune::AnimationController animController;
+ *  rune::Animator animController;
  *  rune::RigidBody body;
  * 
  *  //Create a constructor for object initialization.

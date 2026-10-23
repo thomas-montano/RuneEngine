@@ -460,4 +460,6 @@ double* rune::Mat3::operator[](int index)
     return row2;
   if(index == 2)
     return row3;
+
+  return row1;
 }

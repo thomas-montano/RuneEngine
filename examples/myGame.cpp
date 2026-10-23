@@ -6,7 +6,7 @@
 int main(void)
 {
   //Initialize your game application to have a really awesome title.
-  rune::GameApplication* mainApplication = mainApplication->getApplication();
+  rune::GameApplication* mainApplication = rune::GameApplication::getApplication();
 
   getGameInstance()->getWindow()->setWindowTitle("My Game Title");
 
