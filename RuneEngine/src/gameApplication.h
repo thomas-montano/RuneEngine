@@ -146,17 +146,20 @@ public:
  * 
  * @subsection startup Getting Started
  * 
- * Visual Studio 2017 or 2019 is recommended. Rune is officially untested on other development environments and is only supported by Windows.
+ * Visual Studio 2022 or later is recommended. Rune is officially untested on other development environments and is only supported by Windows.
  *
- * You can check out the latest release of the engine here:
- * [Engine Downloads](https://github.com/ThomasMontanoGames/RuneEngine/releases)
+ * The engine source code is available on GitHub. Open RuneEngine.sln and build the x64 configuration you need:
+ * [Rune Engine Source](https://github.com/thomas-montano/RuneEngine)
+ *
+ * Prebuilt binaries of earlier versions can be found here:
+ * [Engine Downloads](https://github.com/thomas-montano/RuneEngine/releases)
  *
  * @subsection setup Setting up a New Rune Project
- * 
- * 1. Add the path "Rune Engine Directory"/include in the C/C++ settings of your project.
- * 2. Add the path "Rune Engine Directory"/lib in the linker settings of your project.
- * 3. Link the LIB files in the linker settings of your project. Use RuneEngine-d.lib and RuneEngine-d.dll for debug builds.
- * 4. Move the DLL files into your game's working directory. 
+ *
+ * 1. Add the path "Rune Engine Directory"/RuneEngine/src in the C/C++ settings of your project.
+ * 2. Add the path "Rune Engine Directory"/bin/Release-x64/RuneEngine (or Debug-x64) in the linker settings of your project.
+ * 3. Link RuneEngine.lib in the linker settings of your project. Use RuneEngine-d.lib and RuneEngine-d.dll for debug builds.
+ * 4. Move the DLL file into your game's working directory.
  * 5. Declare `RUNE_PLATFORM_WINDOWS` in the preprocessor definitions of your project.
  * 6. ```#include <RuneEngine.h>``` in the files using the engine.
  * 
@@ -180,6 +183,6 @@ public:
  * @subsection bugs Engine Issues
  * 
  * Found something that you think isn't working the way it's supposed to? Please submit a bug report on the github repository:
- * [Report an Issue](https://github.com/ThomasMontanoGames/RuneEngine/issues/new/choose)
+ * [Report an Issue](https://github.com/thomas-montano/RuneEngine/issues/new/choose)
  * 
  */
