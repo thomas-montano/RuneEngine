@@ -38,3 +38,8 @@ Make sure you are building in 64-bit, Rune does not currently support 32-bit.
 - Animated Sprites
 - Debug Interface with imgui
 - Tile workflow and sprite workflow
+
+## License
+Copyright 2020-2026 Thomas Montano.
+
+Rune Engine is licensed under the [Apache License 2.0](LICENSE). Third-party components bundled with the engine are covered by their own licenses; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
