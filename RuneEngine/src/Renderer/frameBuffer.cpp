@@ -1,0 +1,83 @@
+#include "frameBuffer.h"
+#include <gameApplication.h>
+#include <GL\glew.h>
+#include <gl\GLU.h>
+
+rune::FrameBuffer::FrameBuffer()
+  : bufferID(0), colorAttachment(0), width(0), height(0)
+{
+  invalidate();
+}
+
+rune::FrameBuffer::~FrameBuffer()
+{
+  glDeleteFramebuffers(1,&bufferID);
+}
+
+/**
+ * \param newSize The new size that should be used to create the frame buffer.
+ */
+void rune::FrameBuffer::setSize(rune::Vec2 newSize)
+{
+  width = newSize.x;
+  height = newSize.y;
+  invalidate();
+}
+
+/**
+ * \return The current size of the frame buffer in pixels.
+ */
+rune::Vec2 rune::FrameBuffer::getSize(void)
+{
+  return rune::Vec2(width,height);
+}
+
+void rune::FrameBuffer::invalidate()
+{
+  if (bufferID)
+  {
+    glDeleteFramebuffers(1, &bufferID);
+    glDeleteTextures(1, &colorAttachment);
+  }
+
+  glCreateFramebuffers(1, &bufferID);
+  glBindFramebuffer(GL_FRAMEBUFFER, bufferID);
+
+  glCreateTextures(GL_TEXTURE_2D, 1, &colorAttachment);
+  glBindTexture(GL_TEXTURE_2D, colorAttachment);
+
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
+
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+  glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, colorAttachment, 0);
+
+  /*if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
+  {
+  
+    std::cout << "Frame buffer error!" << std::endl;
+  
+  }*/
+
+  glBindFramebuffer(GL_FRAMEBUFFER,0);
+}
+
+void rune::FrameBuffer::bind()
+{
+  glBindFramebuffer(GL_FRAMEBUFFER, bufferID);
+  glViewport(0, 0, width, height);
+}
+
+void rune::FrameBuffer::unbind()
+{
+  glBindFramebuffer(GL_FRAMEBUFFER, 0);
+}
+
+/**
+ * \return An unsigned integer handle that references the color buffer.
+ */
+unsigned int rune::FrameBuffer::getColorBuffer()
+{
+  return colorAttachment;
+}

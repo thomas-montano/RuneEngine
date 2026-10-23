@@ -1,0 +1,134 @@
+#include "texture.h"
+#include "renderWindow.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
+#include <GL\glew.h>
+#include <GL\glu.h>
+#include <GLFW\glfw3.h>
+#include <iostream>
+
+/**
+ * @param path The file path for the texture that you would like to load relative to the main executable.
+ * @param filterMode The interpolation mode to be used for drawing the sprite.
+*/
+rune::Texture::Texture(std::string const& path, unsigned int filterMode)
+  : m_textureID(0), m_filePath(path), m_localBuffer(0),
+  m_width(0), m_height(0), m_BPP(0)
+{ 
+  //Load the png file and prepare it to be loaded as a texture
+  loadFromFile(path,filterMode);
+  
+}
+
+rune::Texture::Texture()
+:m_textureID(0), m_filePath(""), m_localBuffer(0),
+m_width(0), m_height(0), m_BPP(0)
+{
+
+}
+
+/**
+ * \param path The file path of the texture to be loaded in.
+ * \param filterMode The filter mode to be used for drawing. Set this to NEAREST_FILTER if using pixel art.
+ * \return Whether or not the file was able to be successfully loaded.
+ * @warning This function is expecting you to load a .png file. If you load anything else it will load incorrectly.
+ */
+bool rune::Texture::loadFromFile(std::string const& path, unsigned int filterMode)
+{
+
+  if(m_textureID)
+  {
+    
+    glDeleteTextures(1, &m_textureID);
+  
+  }
+
+  m_filePath = path;
+
+  //Load the png file and prepare it to be loaded as a texture
+  stbi_set_flip_vertically_on_load(1);
+  m_localBuffer = stbi_load(path.c_str(), &m_width, &m_height, &m_BPP, 4);
+
+  //Generate and bind a texture
+  glGenTextures(1, &m_textureID);
+  glBindTexture(GL_TEXTURE_2D, m_textureID);
+
+  //Set wrapping parameters for texture
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, filterMode);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, filterMode);
+
+  //load image, create texture and generate mipmaps
+  glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, m_width, m_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, m_localBuffer);
+  glGenerateMipmap(GL_TEXTURE_2D);
+
+  //Set the border to be red
+  //double borderColor[] = { 1.0f, 0.0f, 0.0f, 0.0f };
+  //glTexParameterfv(GL_TEXTURE_2D, GL_TEXTURE_BORDER_COLOR, borderColor);
+
+  glBindTexture(GL_TEXTURE_2D, 0);
+
+  if (m_localBuffer)
+  {
+    stbi_image_free(m_localBuffer);
+
+    return true;
+  }
+  else
+  {
+    std::cout << "Failed to load texture" << std::endl;
+    return false;
+  }
+
+}
+
+rune::Texture::~Texture()
+{
+  glDeleteTextures(1,&m_textureID);
+}
+
+/**
+ * @param slot The texture slot on the GPU that you would like to bind this texture to.
+*/
+void rune::Texture::bind(unsigned int slot)
+{
+
+  glActiveTexture(GL_TEXTURE0 + slot);
+  glBindTexture(GL_TEXTURE_2D, m_textureID);
+
+}
+
+void rune::Texture::unbind()
+{
+  glBindTexture(GL_TEXTURE_2D,0);
+}
+
+/**
+ * @return The index of the texture in OpenGL.
+*/
+unsigned int rune::Texture::getTextureID(void)
+{
+  return m_textureID;
+}
+
+/**
+ * @return The total height of the texture.
+*/
+unsigned int rune::Texture::getHeight(void)
+{
+  return m_height;
+}
+
+/**
+ * @return The total width of the texture.
+*/
+unsigned int rune::Texture::getWidth(void)
+{
+  return m_width;
+}
+
+unsigned char* rune::Texture::getTextureData(void)
+{
+  return m_localBuffer;
+}

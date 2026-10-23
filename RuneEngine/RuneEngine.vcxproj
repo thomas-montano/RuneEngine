@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{3FB42BF8-9308-45DD-BD70-45736CE06D64}</ProjectGuid>
+    <RootNamespace>RuneEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)-d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Configuration)-$(Platform)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)bin-int\$(Configuration)-$(Platform)\$(ProjectName)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;RUNE_BUILD_DLL;GLEW_STATIC;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)RuneEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLEW\lib\Release\x64;$(SolutionDir)Dependencies\GLFW\lib-vc2019</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;User32.lib;Gdi32.lib;Shell32.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PrivateEye\"
+xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\RuneEditor\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>RUNE_PLATFORM_WINDOWS;RUNE_BUILD_DLL;GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)RuneEngine\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>Default</LanguageStandard>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Dependencies\GLEW\lib\Release\x64;$(SolutionDir)Dependencies\GLFW\lib-vc2019</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw3.lib;opengl32.lib;glew32s.lib;User32.lib;Gdi32.lib;Shell32.lib</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\PrivateEye\"
+xcopy /y "$(OutDir)RuneEngine-d.dll" "$(SolutionDir)bin\$(Configuration)-$(Platform)\RuneEditor\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Renderer\computeShader.cpp" />
+    <ClCompile Include="src\Events\subject.cpp" />
+    <ClCompile Include="src\imgui\imgui_tables.cpp" />
+    <ClCompile Include="src\Physics\Colliders\boxCollider.cpp" />
+    <ClCompile Include="src\Physics\Colliders\circleCollider.cpp" />
+    <ClCompile Include="src\Physics\world.cpp" />
+    <ClCompile Include="src\ResourceManager\resource.cpp" />
+    <ClCompile Include="src\ResourceManager\resourceManager.cpp" />
+    <ClCompile Include="src\Animation\animator.cpp" />
+    <ClCompile Include="src\Entities\component.cpp" />
+    <ClCompile Include="src\Input\mouse.cpp" />
+    <ClCompile Include="src\Math\vec3.cpp" />
+    <ClCompile Include="src\Physics\Colliders\collider.cpp" />
+    <ClCompile Include="src\Renderer\camera.cpp" />
+    <ClCompile Include="src\imgui\imgui.cpp" />
+    <ClCompile Include="src\imgui\imgui_demo.cpp" />
+    <ClCompile Include="src\imgui\imgui_draw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\imgui\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="src\math\mat2.cpp" />
+    <ClCompile Include="src\gameApplication.cpp" />
+    <ClCompile Include="src\Entities\gameObject.cpp" />
+    <ClCompile Include="src\Input\keyboard.cpp" />
+    <ClCompile Include="src\Math\mat3.cpp" />
+    <ClCompile Include="src\Renderer\color.cpp" />
+    <ClCompile Include="src\Renderer\frameBuffer.cpp" />
+    <ClCompile Include="src\Lighting\lightSource.cpp" />
+    <ClCompile Include="src\Animation\objectAnimation.cpp" />
+    <ClCompile Include="src\Particles\particleEmitter.cpp" />
+    <ClCompile Include="src\Physics\physicsEngine.cpp" />
+    <ClCompile Include="src\Events\clock.cpp" />
+    <ClCompile Include="src\Events\signal.cpp" />
+    <ClCompile Include="src\Renderer\rectangleShape.cpp" />
+    <ClCompile Include="src\Renderer\renderWindow.cpp" />
+    <ClCompile Include="src\Renderer\shader.cpp" />
+    <ClCompile Include="src\Renderer\sprite.cpp" />
+    <ClCompile Include="src\Renderer\texture.cpp" />
+    <ClCompile Include="src\math\vec2.cpp" />
+    <ClCompile Include="src\Physics\rigidBody.cpp" />
+    <ClCompile Include="src\Entities\transform.cpp" />
+    <ClCompile Include="src\SceneManager\gameScene.cpp" />
+    <ClCompile Include="src\SceneManager\sceneManager.cpp" />
+    <ClCompile Include="src\SceneManager\SceneSerializer.cpp" />
+    <ClCompile Include="src\YAML\binary.cpp" />
+    <ClCompile Include="src\YAML\convert.cpp" />
+    <ClCompile Include="src\YAML\depthguard.cpp" />
+    <ClCompile Include="src\YAML\directives.cpp" />
+    <ClCompile Include="src\YAML\emit.cpp" />
+    <ClCompile Include="src\YAML\emitfromevents.cpp" />
+    <ClCompile Include="src\YAML\emitter.cpp" />
+    <ClCompile Include="src\YAML\emitterstate.cpp" />
+    <ClCompile Include="src\YAML\emitterutils.cpp" />
+    <ClCompile Include="src\YAML\exceptions.cpp" />
+    <ClCompile Include="src\YAML\exp.cpp" />
+    <ClCompile Include="src\YAML\memory.cpp" />
+    <ClCompile Include="src\YAML\node.cpp" />
+    <ClCompile Include="src\YAML\nodebuilder.cpp" />
+    <ClCompile Include="src\YAML\nodeevents.cpp" />
+    <ClCompile Include="src\YAML\node_data.cpp" />
+    <ClCompile Include="src\YAML\null.cpp" />
+    <ClCompile Include="src\YAML\ostream_wrapper.cpp" />
+    <ClCompile Include="src\YAML\parse.cpp" />
+    <ClCompile Include="src\YAML\parser.cpp" />
+    <ClCompile Include="src\YAML\regex_yaml.cpp" />
+    <ClCompile Include="src\YAML\scanner.cpp" />
+    <ClCompile Include="src\YAML\scanscalar.cpp" />
+    <ClCompile Include="src\YAML\scantag.cpp" />
+    <ClCompile Include="src\YAML\scantoken.cpp" />
+    <ClCompile Include="src\YAML\simplekey.cpp" />
+    <ClCompile Include="src\YAML\singledocparser.cpp" />
+    <ClCompile Include="src\YAML\stream.cpp" />
+    <ClCompile Include="src\YAML\tag.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Renderer\computeShader.h" />
+    <ClInclude Include="src\Events\observer.h" />
+    <ClInclude Include="src\Events\subject.h" />
+    <ClInclude Include="src\Physics\AABB.h" />
+    <ClInclude Include="src\Physics\Colliders\boxCollider.h" />
+    <ClInclude Include="src\Physics\Colliders\circleCollider.h" />
+    <ClInclude Include="src\Physics\collision.h" />
+    <ClInclude Include="src\Renderer\rect.h" />
+    <ClInclude Include="src\ResourceManager\resource.h" />
+    <ClInclude Include="src\ResourceManager\resourceManager.h" />
+    <ClInclude Include="src\Animation\animator.h" />
+    <ClInclude Include="src\DataStructures\list.h" />
+    <ClInclude Include="src\Entities\component.h" />
+    <ClInclude Include="src\Input\mouse.h" />
+    <ClInclude Include="src\Math\vec3.h" />
+    <ClInclude Include="src\Physics\Colliders\collider.h" />
+    <ClInclude Include="src\Renderer\camera.h" />
+    <ClInclude Include="src\imgui\imconfig.h" />
+    <ClInclude Include="src\imgui\imgui.h" />
+    <ClInclude Include="src\imgui\imgui_impl_glfw.h" />
+    <ClInclude Include="src\imgui\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\imgui\imgui_internal.h" />
+    <ClInclude Include="src\imgui\imstb_rectpack.h" />
+    <ClInclude Include="src\imgui\imstb_textedit.h" />
+    <ClInclude Include="src\imgui\imstb_truetype.h" />
+    <ClInclude Include="src\math\mat2.h" />
+    <ClInclude Include="src\core.h" />
+    <ClInclude Include="src\gameApplication.h" />
+    <ClInclude Include="src\Entities\gameObject.h" />
+    <ClInclude Include="src\Input\keyboard.h" />
+    <ClInclude Include="src\Math\mat3.h" />
+    <ClInclude Include="src\Renderer\color.h" />
+    <ClInclude Include="src\Renderer\frameBuffer.h" />
+    <ClInclude Include="src\RuneEngine.h" />
+    <ClInclude Include="src\Lighting\lightSource.h" />
+    <ClInclude Include="src\Animation\objectAnimation.h" />
+    <ClInclude Include="src\Particles\particleEmitter.h" />
+    <ClInclude Include="src\Physics\physicsEngine.h" />
+    <ClInclude Include="src\Events\clock.h" />
+    <ClInclude Include="src\Renderer\drawable.h" />
+    <ClInclude Include="src\Events\signal.h" />
+    <ClInclude Include="src\Renderer\rectangleShape.h" />
+    <ClInclude Include="src\Renderer\renderWindow.h" />
+    <ClInclude Include="src\Renderer\shader.h" />
+    <ClInclude Include="src\Renderer\sprite.h" />
+    <ClInclude Include="src\Renderer\stb_image.h" />
+    <ClInclude Include="src\Renderer\texture.h" />
+    <ClInclude Include="src\math\vec2.h" />
+    <ClInclude Include="src\Physics\rigidBody.h" />
+    <ClInclude Include="src\Entities\transform.h" />
+    <ClInclude Include="src\SceneManager\gameScene.h" />
+    <ClInclude Include="src\SceneManager\sceneManager.h" />
+    <ClInclude Include="src\Physics\world.h" />
+    <ClInclude Include="src\SceneManager\SceneSerializer.h" />
+    <ClInclude Include="src\YAML\collectionstack.h" />
+    <ClInclude Include="src\YAML\directives.h" />
+    <ClInclude Include="src\YAML\emitterstate.h" />
+    <ClInclude Include="src\YAML\emitterutils.h" />
+    <ClInclude Include="src\YAML\exp.h" />
+    <ClInclude Include="src\YAML\indentation.h" />
+    <ClInclude Include="src\YAML\nodebuilder.h" />
+    <ClInclude Include="src\YAML\nodeevents.h" />
+    <ClInclude Include="src\YAML\ptr_vector.h" />
+    <ClInclude Include="src\YAML\regeximpl.h" />
+    <ClInclude Include="src\YAML\regex_yaml.h" />
+    <ClInclude Include="src\YAML\scanner.h" />
+    <ClInclude Include="src\YAML\scanscalar.h" />
+    <ClInclude Include="src\YAML\scantag.h" />
+    <ClInclude Include="src\YAML\setting.h" />
+    <ClInclude Include="src\YAML\singledocparser.h" />
+    <ClInclude Include="src\YAML\stream.h" />
+    <ClInclude Include="src\YAML\streamcharsource.h" />
+    <ClInclude Include="src\YAML\stringsource.h" />
+    <ClInclude Include="src\YAML\tag.h" />
+    <ClInclude Include="src\YAML\token.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\Shaders\defaultRectangle.glsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="src\Shaders\rectangleBorder.glsl" />
+    <None Include="src\Shaders\spriteLit.glsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="src\Shaders\defaultSprite.glsl">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </ExcludedFromBuild>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+      </DeploymentContent>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\Renderer\knoxIdleSheet.png" />
+    <Image Include="src\Renderer\knoxV1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="src\imgui\imgui.natvis" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
